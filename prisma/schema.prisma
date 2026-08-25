@@ -19,6 +19,16 @@ enum TestAssignmentStatus {
   COMPLETED
 }
 
+enum TraitDimension {
+  INTEREST
+  PERSONALITY
+  APTITUDE
+  SUBJECT
+  SKILL
+  WORK_ENVIRONMENT
+  EDUCATION
+}
+
 enum TestStatus {
   DRAFT
   ACTIVE
@@ -387,6 +397,7 @@ model Career {
   jobGrowth           String
   topIndustries       String[]
   futureOutlook       String
+  minStudyLevel       String?
   seoTitle            String?
   seoDescription      String?
   seoKeywords         String[]
@@ -399,7 +410,23 @@ model Career {
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
 
+  traits CareerTrait[]
+
   @@index([name])
+  @@index([demandLevel])
+}
+
+model CareerTrait {
+  id        String         @id @default(cuid())
+  careerId  String
+  career    Career         @relation(fields: [careerId], references: [id], onDelete: Cascade)
+  dimension TraitDimension
+  value     String
+  weight    Float          @default(1)
+
+  @@unique([careerId, dimension, value])
+  @@index([dimension, value])
+  @@index([careerId])
 }
 
 model DailyUsage {
