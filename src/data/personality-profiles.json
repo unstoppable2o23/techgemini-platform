@@ -1,0 +1,98 @@
+{
+ "dimensions": [
+  {
+   "abbrev": "IE",
+   "name": "Extraversion (E) vs. Introversion (I)",
+   "subTitle": "Where you get your energy and how you interact with the world.",
+   "preferLabel": "Extraversion",
+   "preferTraits": [
+    "Recharge by spending time with people",
+    "Think out loud and enjoy discussion",
+    "Jump into new activities quickly",
+    "Have a wide circle of friends"
+   ],
+   "notPreferLabel": "Introversion",
+   "notPreferTraits": [
+    "Recharge with quiet time alone",
+    "Think first and speak when ready",
+    "Prefer observing before joining in",
+    "Value a few deep friendships"
+   ]
+  },
+  {
+   "abbrev": "SN",
+   "name": "Sensing (S) vs. Intuition (N)",
+   "subTitle": "How you take in information and learn.",
+   "preferLabel": "Sensing",
+   "preferTraits": [
+    "Trust facts and direct experience",
+    "Learn best with concrete examples",
+    "Follow step-by-step methods well",
+    "Focus on what is real and present"
+   ],
+   "notPreferLabel": "Intuition",
+   "notPreferTraits": [
+    "Trust hunches and inspiration",
+    "Enjoy theories and possibilities",
+    "Prefer figuring out your own approach",
+    "Focus on patterns and the future"
+   ]
+  },
+  {
+   "abbrev": "TF",
+   "name": "Thinking (T) vs. Feeling (F)",
+   "subTitle": "How you make decisions.",
+   "preferLabel": "Thinking",
+   "preferTraits": [
+    "Weigh logic and evidence first",
+    "Can deliver honest criticism",
+    "Value fairness and consistency",
+    "Stay objective under pressure"
+   ],
+   "notPreferLabel": "Feeling",
+   "notPreferTraits": [
+    "Weigh people and values first",
+    "Communicate with tact and care",
+    "Value harmony and empathy",
+    "Consider how choices affect others"
+   ]
+  },
+  {
+   "abbrev": "JP",
+   "name": "Judging (J) vs. Perceiving (P)",
+   "subTitle": "How you approach work, planning and decisions.",
+   "preferLabel": "Judging",
+   "preferTraits": [
+    "Plan ahead and follow the plan",
+    "Finish tasks before deadlines",
+    "Prefer clear decisions and closure",
+    "Keep things organised"
+   ],
+   "notPreferLabel": "Perceiving",
+   "notPreferTraits": [
+    "Stay flexible and adapt as you go",
+    "Work well close to deadlines",
+    "Like keeping options open",
+    "Improvise comfortably"
+   ]
+  }
+ ],
+ "profiles": {
+  "ESTJ": "Organised, dependable and straightforward, you like life to run on a clear plan. You notice when something is being done inefficiently and you naturally step in to fix it. People rely on you because you say what you will do and then do it.\nYou learn best when material is practical and connected to real outcomes, and you prefer teachers who explain expectations clearly. Facts, structure and proven methods give you confidence.\nYou work hardest when a goal is concrete and the path to it is orderly. A tip for growth: now and then, pause before deciding and ask how others feel about the plan — their input can make your good plans even better.",
+  "ESTP": "Fast-moving, bold and practical, you learn about the world by jumping in and doing. Rules and routines matter to you mainly when they serve a purpose you can see. You think best on your feet and stay calm when things change suddenly.\nYou prefer hands-on activities, real examples and quick feedback over long explanations. Theory makes sense to you once you have tried it in real life.\nYou bring energy and resourcefulness to any team. A tip for growth: practising patience with slow, detailed work will make your quick instincts even more powerful.",
+  "ESFJ": "Warm, loyal and attentive, you naturally notice what people need and try to provide it. You value harmony, traditions and being useful to the groups you belong to. Friends know you will remember the details that matter to them.\nYou learn best in cooperative settings where you can discuss ideas and feel supported. Clear expectations and encouragement bring out your best work.\nYou create stability and kindness wherever you go. A tip for growth: practising saying no sometimes will protect the energy you give so freely to others.",
+  "ESFP": "Cheerful, generous and spontaneous, you turn everyday moments into experiences people remember. You learn by doing, and sitting still for too long drains you. You are generous with praise and quick to include others.\nYou prefer lively, interactive learning with movement, variety and real-life relevance. Memorising dry facts is far harder for you than diving into an activity.\nYou lift the mood of any room. A tip for growth: building a little routine around your natural spontaneity helps you finish the great things you start.",
+  "ENTJ": "Strategic, decisive and ambitious, you see where things could go and start organising people and resources to get there. You enjoy challenges that stretch you and dislike busywork that wastes ability.\nYou learn best when you understand why a topic matters and how it connects to big goals. You respect competence — in teachers and in yourself.\nYou are a natural leader of projects and ideas. A tip for growth: deliberately listening before deciding will win people over to the strong plans you already make.",
+  "ENTP": "Inventive, curious and quick-witted, you love ideas for their own sake — especially spotting gaps, contradictions and new possibilities. Debating is sport for you; you play with ideas to understand them.\nYou learn best through exploration, open-ended questions and freedom to experiment. Repetition bores you, but a genuine puzzle will hold you for hours.\nYou spark innovation wherever you land. A tip for growth: finishing what you start turns your brilliant beginnings into real achievements.",
+  "ENFJ": "Insightful, encouraging and responsible, you are tuned in to people's potential and you love helping them reach it. You take your commitments seriously and often become the trusted voice in a group.\nYou learn best through discussion, stories and human connection, and you work hardest for teachers who believe in you.\nYou bring out the best in people. A tip for growth: protecting some quiet time for your own needs keeps your generous spirit sustainable.",
+  "ENFP": "Enthusiastic, imaginative and warm, you are driven by meaning and possibility. You start many projects because everything interesting is connected to everything else in your mind.\nYou learn best when you care about the subject, when you can be creative, and when learning feels like discovery rather than drill.\nYou inspire others with your energy and authenticity. A tip for growth: a simple system for finishing tasks frees your creativity instead of caging it.",
+  "ISTJ": "Careful, factual and deeply responsible, you are the person others trust with things that matter. You believe in doing things properly, honouring commitments and respecting what has proven itself over time.\nYou learn best from clear instructions, structured practice and material grounded in reality. You are patient with detail in a way most people are not.\nYou are the quiet backbone of every team. A tip for growth: trying new approaches occasionally keeps your reliable skills from becoming rigid ones.",
+  "ISFJ": "Gentle, conscientious and observant, you remember the small things about people and tasks, and you care for both quietly. You prefer steady, familiar settings where your diligence can shine.\nYou learn best with step-by-step guidance, practical examples and time to practise until something feels solid. You take feedback to heart and use it.\nYou are the dependable friend everyone deserves. A tip for growth: sharing your own opinions as confidently as you support others' will let your good judgment shine.",
+  "ISTP": "Quiet, practical and hands-on, you understand how things work by taking them apart — tools, games, systems or ideas. You stay calm in a crisis because you focus on what can be done right now.\nYou learn best by doing, tinkering and figuring things out yourself, with explanations kept short and relevant.\nYou are the problem-solver people call when something breaks. A tip for growth: planning ahead even a little helps your impressive adaptability go further.",
+  "ISFP": "Gentle, artistic and true to your feelings, you express yourself through what you make, wear and do rather than through long speeches. You value authenticity and quiet beauty.\nYou learn best through sensory, creative and hands-on experiences, at your own pace and in your own style. Pressure and competition close you down; freedom opens you up.\nYou bring taste, empathy and calm to everything you touch. A tip for growth: stretching yourself with gentle structure helps your talents reach more people.",
+  "INTJ": "Independent, strategic and standards-driven, you live in the world of ideas and long-range plans. You question everything, including things everyone else accepts, and you enjoy mastering complex systems.\nYou learn best when you can work independently, go deep, and connect topics to underlying principles. You have little patience for busywork but endless patience for understanding.\nYou are the architect of long-term visions. A tip for growth: explaining your reasoning to others along the way turns your private insights into shared wins.",
+  "INTP": "Analytical, curious and original, you want to know why things are true, not just that they are. You enjoy theories, models and mental puzzles, and you follow an idea wherever it leads.\nYou learn best through questioning, debating and independent exploration. You dislike arbitrary rules but respect logic.\nYou see connections others miss. A tip for growth: setting small deadlines turns your deep thinking into completed discoveries.",
+  "INFJ": "Insightful, principled and quietly idealistic, you look for deeper meaning in people, ideas and yourself. You are private yet deeply caring, often understanding others before they understand themselves.\nYou learn best when subjects connect to purpose and values, in calm settings where you can reflect and write.\nYou are the quiet advocate who imagines a better world and works steadily toward it. A tip for growth: voicing your insights early, not just when they are perfect, multiplies your impact.",
+  "INFP": "Imaginative, sincere and values-driven, you care most about authenticity — being true to what you believe matters. You have a rich inner world of stories, ideals and possibilities.\nYou learn best when you care deeply about the subject, when you can express yourself creatively, and when you can work at your own pace.\nYou bring depth and heart to everything you commit to. A tip for growth: practising small, routine habits protects your big dreams from staying dreams."
+ }
+}

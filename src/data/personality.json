@@ -1,0 +1,722 @@
+{
+ "193": {
+  "id": "193",
+  "name": "dwya_EI_page_1_q1",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "1931110118104": {
+    "id": "1931110118104",
+    "answer": "I feel energised after spending a whole day around lots of people.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "1931110119104": {
+    "id": "1931110119104",
+    "answer": "I need quiet time by myself to recharge after being around lots of people.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "194": {
+  "id": "194",
+  "name": "dwya_EI_page_1_q2",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "1941110218104": {
+    "id": "1941110218104",
+    "answer": "When an idea excites me, I want to talk about it with someone right away.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "1941110219104": {
+    "id": "1941110219104",
+    "answer": "When an idea strikes me, I prefer to develop it on my own before telling anyone.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "195": {
+  "id": "195",
+  "name": "dwya_EI_page_1_q3",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "1951110318104": {
+    "id": "1951110318104",
+    "answer": "Starting conversations with strangers is something I do without thinking.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "1951110319104": {
+    "id": "1951110319104",
+    "answer": "New people take time to grow on me; I keep a small circle of long-time friends.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "196": {
+  "id": "196",
+  "name": "dwya_EI_page_2_q4",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "1961110418104": {
+    "id": "1961110418104",
+    "answer": "In a group task I enjoy thinking out loud and building on ideas as we talk.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "1961110419104": {
+    "id": "1961110419104",
+    "answer": "In a group task I do my best thinking quietly and share my ideas once they are ready.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "197": {
+  "id": "197",
+  "name": "dwya_EI_page_2_q5",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "1971110518104": {
+    "id": "1971110518104",
+    "answer": "My ideal free day is packed with plans and people.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "1971110519104": {
+    "id": "1971110519104",
+    "answer": "My ideal free day is unhurried, with plenty of time to myself.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "198": {
+  "id": "198",
+  "name": "dwya_EI_page_2_q6",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "1981110618104": {
+    "id": "1981110618104",
+    "answer": "I am usually the one who gets a group moving and keeps the energy up.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "1981110619104": {
+    "id": "1981110619104",
+    "answer": "I am usually comfortable letting others lead the energy while I join in my own way.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "199": {
+  "id": "199",
+  "name": "dwya_EI_page_2_q7",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "1991110718104": {
+    "id": "1991110718104",
+    "answer": "Explaining a problem out loud to someone helps me solve it.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "1991110719104": {
+    "id": "1991110719104",
+    "answer": "Sitting alone with a problem until it makes sense helps me solve it.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "200": {
+  "id": "200",
+  "name": "dwya_EI_page_2_q8",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "2001110818104": {
+    "id": "2001110818104",
+    "answer": "I would rather jump into a new activity with a group than watch from the side.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "2001110819104": {
+    "id": "2001110819104",
+    "answer": "I would rather observe and practise privately before joining a group activity.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "201": {
+  "id": "201",
+  "name": "dwya_EI_page_2_q9",
+  "domain_id": 1,
+  "subdomain_id": "EI",
+  "options": {
+   "2011110918104": {
+    "id": "2011110918104",
+    "answer": "People who know me would call me outgoing and expressive.",
+    "marks": 1,
+    "pole": "E"
+   },
+   "2011110919104": {
+    "id": "2011110919104",
+    "answer": "People who know me would call me calm and reserved.",
+    "marks": 1,
+    "pole": "I"
+   }
+  }
+ },
+ "202": {
+  "id": "202",
+  "name": "dwya_JP_page_1_q1",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2021112820104": {
+    "id": "2021112820104",
+    "answer": "I plan my day in advance and feel best when I can follow that plan.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2021112821104": {
+    "id": "2021112821104",
+    "answer": "I keep my day flexible and decide what to do as the day unfolds.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "203": {
+  "id": "203",
+  "name": "dwya_JP_page_1_q2",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2031112920104": {
+    "id": "2031112920104",
+    "answer": "I finish my work early so I am not rushing near the deadline.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2031112921104": {
+    "id": "2031112921104",
+    "answer": "I often find that a approaching deadline is what finally gets me focused.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "204": {
+  "id": "204",
+  "name": "dwya_JP_page_1_q3",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2041113020104": {
+    "id": "2041113020104",
+    "answer": "A neat, organised workspace helps me concentrate.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2041113021104": {
+    "id": "2041113021104",
+    "answer": "I can work comfortably even when my surroundings are messy.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "205": {
+  "id": "205",
+  "name": "dwya_JP_page_2_q4",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2051113120104": {
+    "id": "2051113120104",
+    "answer": "Once I have made up my mind, I like to move forward without reopening the question.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2051113121104": {
+    "id": "2051113121104",
+    "answer": "I like keeping my options open in case something better comes along.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "206": {
+  "id": "206",
+  "name": "dwya_JP_page_2_q5",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2061113220104": {
+    "id": "2061113220104",
+    "answer": "Knowing the schedule ahead of time puts me at ease.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2061113221104": {
+    "id": "2061113221104",
+    "answer": "Leaving the schedule loose makes room for whatever feels right at the moment.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "207": {
+  "id": "207",
+  "name": "dwya_JP_page_2_q6",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2071113320104": {
+    "id": "2071113320104",
+    "answer": "I make to-do lists and enjoy crossing items off.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2071113321104": {
+    "id": "2071113321104",
+    "answer": "Lists feel limiting to me; I prefer to handle tasks as they come.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "208": {
+  "id": "208",
+  "name": "dwya_JP_page_2_q7",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2081113420104": {
+    "id": "2081113420104",
+    "answer": "I would rather decide quickly and adjust later only if I must.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2081113421104": {
+    "id": "2081113421104",
+    "answer": "I would rather wait until the last responsible moment to commit.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "209": {
+  "id": "209",
+  "name": "dwya_JP_page_2_q8",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2091113520104": {
+    "id": "2091113520104",
+    "answer": "Last-minute changes to my plans usually frustrate me.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2091113521104": {
+    "id": "2091113521104",
+    "answer": "Last-minute changes to my plans often make things more interesting.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "210": {
+  "id": "210",
+  "name": "dwya_JP_page_2_q9",
+  "domain_id": 4,
+  "subdomain_id": "JP",
+  "options": {
+   "2101113620104": {
+    "id": "2101113620104",
+    "answer": "I like tasks that follow a clear, repeatable process.",
+    "marks": 1,
+    "pole": "J"
+   },
+   "2101113621104": {
+    "id": "2101113621104",
+    "answer": "I like tasks that let me improvise and find my own route.",
+    "marks": 1,
+    "pole": "P"
+   }
+  }
+ },
+ "211": {
+  "id": "211",
+  "name": "dwya_SN_page_1_q1",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2111111022104": {
+    "id": "2111111022104",
+    "answer": "I trust information I can see, check and verify far more than a hunch.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2111111023104": {
+    "id": "2111111023104",
+    "answer": "I often follow my instincts and first impressions about things.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "212": {
+  "id": "212",
+  "name": "dwya_SN_page_1_q2",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2121111122104": {
+    "id": "2121111122104",
+    "answer": "Clear, step-by-step instructions are the best way for me to learn something new.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2121111123104": {
+    "id": "2121111123104",
+    "answer": "I learn best when I am free to explore and find my own way in.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "213": {
+  "id": "213",
+  "name": "dwya_SN_page_1_q3",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2131111222104": {
+    "id": "2131111222104",
+    "answer": "I easily recall exact details, numbers and facts that I have read or heard.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2131111223104": {
+    "id": "2131111223104",
+    "answer": "I remember the gist or overall feeling of something far better than its details.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "214": {
+  "id": "214",
+  "name": "dwya_SN_page_2_q4",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2141111322104": {
+    "id": "2141111322104",
+    "answer": "I enjoy school subjects that deal with real, practical situations.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2141111323104": {
+    "id": "2141111323104",
+    "answer": "I enjoy school subjects that explore ideas, theories and possibilities.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "215": {
+  "id": "215",
+  "name": "dwya_SN_page_2_q5",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2151111422104": {
+    "id": "2151111422104",
+    "answer": "A new concept makes sense to me once I see a concrete, real-life example.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2151111423104": {
+    "id": "2151111423104",
+    "answer": "A new concept excites me most when I imagine unusual ways it could be used.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "216": {
+  "id": "216",
+  "name": "dwya_SN_page_2_q6",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2161111522104": {
+    "id": "2161111522104",
+    "answer": "I prefer tasks where there is an established, reliable way of doing things.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2161111523104": {
+    "id": "2161111523104",
+    "answer": "I prefer tasks where I can invent a method nobody has tried before.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "217": {
+  "id": "217",
+  "name": "dwya_SN_page_2_q7",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2171111622104": {
+    "id": "2171111622104",
+    "answer": "Most of my attention goes to what is actually happening around me.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2171111623104": {
+    "id": "2171111623104",
+    "answer": "Most of my attention goes to patterns and what might happen in the future.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "218": {
+  "id": "218",
+  "name": "dwya_SN_page_2_q8",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2181111722104": {
+    "id": "2181111722104",
+    "answer": "I would rather become really good at one proven skill than dabble in many.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2181111723104": {
+    "id": "2181111723104",
+    "answer": "I would rather keep trying new skills than repeat the ones I already know.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "219": {
+  "id": "219",
+  "name": "dwya_SN_page_2_q9",
+  "domain_id": 2,
+  "subdomain_id": "SN",
+  "options": {
+   "2191111822104": {
+    "id": "2191111822104",
+    "answer": "I take language literally and expect descriptions to be exact.",
+    "marks": 1,
+    "pole": "S"
+   },
+   "2191111823104": {
+    "id": "2191111823104",
+    "answer": "I enjoy figurative language and reading between the lines.",
+    "marks": 1,
+    "pole": "N"
+   }
+  }
+ },
+ "220": {
+  "id": "220",
+  "name": "dwya_TF_page_1_q1",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2201111924104": {
+    "id": "2201111924104",
+    "answer": "When my friends are arguing, I pay most attention to whose facts hold up.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2201111925104": {
+    "id": "2201111925104",
+    "answer": "When my friends are arguing, I pay most attention to how everyone is feeling.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ },
+ "221": {
+  "id": "221",
+  "name": "dwya_TF_page_1_q2",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2211112024104": {
+    "id": "2211112024104",
+    "answer": "I can point out the flaws in someone's plan directly, without worrying about their reaction.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2211112025104": {
+    "id": "2211112025104",
+    "answer": "I choose my words carefully so that nobody feels hurt or discouraged.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ },
+ "222": {
+  "id": "222",
+  "name": "dwya_TF_page_1_q3",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2221112124104": {
+    "id": "2221112124104",
+    "answer": "I go with whichever option holds up best under logical scrutiny, even if it is unpopular.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2221112125104": {
+    "id": "2221112125104",
+    "answer": "Before anything else, I ask who will be affected and how they will feel.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ },
+ "223": {
+  "id": "223",
+  "name": "dwya_TF_page_2_q4",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2231112224104": {
+    "id": "2231112224104",
+    "answer": "I enjoy a good debate and will argue a side just to test the idea.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2231112225104": {
+    "id": "2231112225104",
+    "answer": "I would rather smooth over a disagreement than debate it.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ },
+ "224": {
+  "id": "224",
+  "name": "dwya_TF_page_2_q5",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2241112324104": {
+    "id": "2241112324104",
+    "answer": "To me, fair means the same rules apply to everybody.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2241112325104": {
+    "id": "2241112325104",
+    "answer": "To me, fair means accounting for each person's circumstances.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ },
+ "225": {
+  "id": "225",
+  "name": "dwya_TF_page_2_q6",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2251112424104": {
+    "id": "2251112424104",
+    "answer": "I give blunt, honest feedback because that is what actually helps people improve.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2251112425104": {
+    "id": "2251112425104",
+    "answer": "I start with encouragement and frame feedback gently.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ },
+ "226": {
+  "id": "226",
+  "name": "dwya_TF_page_2_q7",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2261112524104": {
+    "id": "2261112524104",
+    "answer": "Head over heart — analysis should decide important choices.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2261112525104": {
+    "id": "2261112525104",
+    "answer": "Heart and head together — how I feel belongs in important choices.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ },
+ "227": {
+  "id": "227",
+  "name": "dwya_TF_page_2_q8",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2271112624104": {
+    "id": "2271112624104",
+    "answer": "I am comfortable telling someone hard truths straight to their face.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2271112625104": {
+    "id": "2271112625104",
+    "answer": "I am comfortable softening hard truths to keep a relationship steady.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ },
+ "228": {
+  "id": "228",
+  "name": "dwya_TF_page_2_q9",
+  "domain_id": 3,
+  "subdomain_id": "TF",
+  "options": {
+   "2281112724104": {
+    "id": "2281112724104",
+    "answer": "I most admire people who stay cool and rational under pressure.",
+    "marks": 1,
+    "pole": "T"
+   },
+   "2281112725104": {
+    "id": "2281112725104",
+    "answer": "I most admire people who are warm and understanding under pressure.",
+    "marks": 1,
+    "pole": "F"
+   }
+  }
+ }
+}

@@ -1,0 +1,12 @@
+node_modules/
+.next/
+*.tsbuildinfo
+.env
+.env.local
+.env.production
+dist/
+
+.vercel
+.env*
+
+AISHE/

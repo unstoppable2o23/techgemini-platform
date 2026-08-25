@@ -1,0 +1,434 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  COUNSELOR
+  STUDENT
+  UNIVERSITY_ADMIN
+}
+
+enum TestAssignmentStatus {
+  ASSIGNED
+  COMPLETED
+}
+
+enum TestStatus {
+  DRAFT
+  ACTIVE
+  CLOSED
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+enum NotificationType {
+  TEST_COMPLETED
+  APPOINTMENT_SCHEDULED
+  APPOINTMENT_REMINDER
+  FEATURE_REQUEST
+  SYSTEM
+}
+
+enum StudentStatus {
+  ONLINE
+  IN_TEST
+  OFFLINE
+}
+
+enum ChatStatus {
+  PENDING
+  ACTIVE
+  CLOSED
+}
+
+model Tenant {
+  id           String   @id @default(cuid())
+  name         String
+  slug         String   @unique
+  subdomain    String   @unique
+  customDomain String?  @unique
+  logoUrl      String?
+  brandName    String?
+  primaryColor String   @default("#0F172A")
+  accentColor  String   @default("#3B82F6")
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  users User[]
+}
+
+model User {
+  id              String   @id @default(cuid())
+  email           String   @unique
+  passwordHash    String
+  firstName       String
+  lastName        String
+  role            Role     @default(STUDENT)
+  isActive        Boolean  @default(true)
+  avatarUrl       String?
+  logoUrl         String?
+  lastSeen          DateTime?
+  totalUsageMinutes Float      @default(0)
+  lastHeartbeatAt   DateTime?
+  tenantId          String
+  tenant          Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  counselorProfile        CounselorProfile?
+  studentProfile          StudentProfile?
+  sentNotifications       Notification[]    @relation("SentBy")
+  receivedNotifications   Notification[]    @relation("SentTo")
+  appointmentsAsUser      Appointment[]     @relation("AppointmentUser")
+  appointmentsAsCounselor Appointment[]     @relation("CounselorAppointments")
+  createdTests            Test[]
+  dailyUsage              DailyUsage[]
+  chatsAsStudent          Chat[]            @relation("StudentChats")
+  chatsAsCounselor        Chat[]            @relation("CounselorChats")
+  messages                Message[]
+  testAssignments         TestAssignment[]  @relation("StudentTestAssignments")
+  createdTestAssignments  TestAssignment[]  @relation("CreatedTestAssignments")
+
+  @@index([tenantId])
+  @@index([email])
+  @@index([role])
+}
+
+model CounselorProfile {
+  id                 String   @id @default(cuid())
+  userId             String   @unique
+  user               User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title              String?
+  bio                String?
+  phone              String?
+  whatsappCountryCode String?
+  whatsappNumber     String?
+  calendarId         String?
+  counsellingPrice   Int      @default(2000)
+  assessmentPrice    Int      @default(4000)
+  indiaPrice         Int      @default(14000)
+  internationalPrice Int      @default(95000)
+  upiId              String?
+  students           StudentProfile[] @relation("AssignedCounselor")
+  paymentProofs      PaymentProof[]
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model StudentProfile {
+  id            String        @id @default(cuid())
+  userId        String        @unique
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  counselorId   String?
+  counselor     CounselorProfile? @relation("AssignedCounselor", fields: [counselorId], references: [id])
+  dateOfBirth   DateTime?
+  mobile        String?
+  gender        String?
+  gradeLevel    String?
+  studyLevel    String?
+  exams         String[]  @default([])
+  nationality   String?
+  state         String?
+  hasEnglishResult Boolean @default(false)
+  englishTestType   String?
+  englishTestScore  String?
+  englishProficiency String?
+  tuitionBudget String?
+  fundingSource String?
+  preferredIntake String?
+  preferredYear String?
+  highestEducation String?
+  averageGrade  String?
+  careerPlanNotes String?
+  targetCountry String?
+  targetColleges String[]
+  targetCountries String[]
+  preferredCareer String?
+  prospectiveSessions String[]
+  careerPrefsFilled Boolean @default(false)
+  status        StudentStatus @default(OFFLINE)
+  featureAccess StudentFeatureAccess?
+  testResults   TestResult[]
+  appointments  Appointment[]
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  @@index([counselorId])
+}
+
+model StudentFeatureAccess {
+  id               String  @id @default(cuid())
+  studentProfileId String  @unique
+  studentProfile   StudentProfile @relation(fields: [studentProfileId], references: [id], onDelete: Cascade)
+  collegeSearch    Boolean @default(false)
+  collegeFinder    Boolean @default(false)
+  aiOddsCalculator Boolean @default(false)
+  mockTests        Boolean @default(false)
+  scholarshipHub   Boolean @default(false)
+  appointments     Boolean @default(false)
+  webinars         Boolean @default(false)
+  analytics        Boolean @default(false)
+  careerLibrary    Boolean @default(false)
+  chat             Boolean @default(true)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@index([studentProfileId])
+}
+
+model Test {
+  id           String     @id @default(cuid())
+  tenantId     String
+  title        String
+  description  String?
+  subject      String
+  durationMins Int
+  totalMarks   Int
+  status       TestStatus @default(DRAFT)
+  createdById  String
+  createdBy    User       @relation(fields: [createdById], references: [id])
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  results TestResult[]
+
+  @@index([tenantId])
+}
+
+model TestResult {
+  id                String   @id @default(cuid())
+  studentId         String
+  student           StudentProfile @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  testId            String
+  test              Test     @relation(fields: [testId], references: [id], onDelete: Cascade)
+  score             Int
+  totalMarks        Int
+  percentage        Float
+  answers           Json?
+  submittedAt       DateTime @default(now())
+  notifiedCounselor Boolean  @default(false)
+
+  @@index([studentId])
+  @@index([testId])
+}
+
+model TestAssignment {
+  id           String               @id @default(cuid())
+  tenantId     String
+  studentId    String
+  student      User                 @relation("StudentTestAssignments", fields: [studentId], references: [id], onDelete: Cascade)
+  assignedById String
+  assignedBy   User                 @relation("CreatedTestAssignments", fields: [assignedById], references: [id])
+  kind         String
+  token        String               @unique
+  status       TestAssignmentStatus @default(ASSIGNED)
+  answers      Json?
+  result       Json?
+  createdAt    DateTime             @default(now())
+  completedAt  DateTime?
+
+  @@index([tenantId])
+  @@index([studentId])
+}
+
+model Appointment {
+  id           String             @id @default(cuid())
+  studentId    String
+  student      StudentProfile     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  counselorId  String
+  counselor    User               @relation("CounselorAppointments", fields: [counselorId], references: [id])
+  userId       String
+  user         User               @relation("AppointmentUser", fields: [userId], references: [id])
+  title        String
+  package      String?
+  description  String?
+  startTime    DateTime
+  endTime      DateTime
+  meetLink     String?
+  amount       Int?
+  status       AppointmentStatus  @default(PENDING)
+  paymentProof PaymentProof?
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+
+  @@index([counselorId])
+  @@index([studentId])
+  @@index([startTime])
+}
+
+model PaymentProof {
+  id             String      @id @default(cuid())
+  appointmentId  String      @unique
+  appointment    Appointment @relation(fields: [appointmentId], references: [id], onDelete: Cascade)
+  fileUrl        String
+  fileName       String
+  verified       Boolean     @default(false)
+  counselorId    String
+  counselor      CounselorProfile @relation(fields: [counselorId], references: [id])
+  createdAt      DateTime    @default(now())
+  expiresAt      DateTime
+
+  @@index([expiresAt])
+  @@index([counselorId])
+}
+
+model Chat {
+  id          String     @id @default(cuid())
+  studentId   String
+  student     User       @relation("StudentChats", fields: [studentId], references: [id])
+  counselorId String
+  counselor   User       @relation("CounselorChats", fields: [counselorId], references: [id])
+  status      ChatStatus @default(PENDING)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  messages    Message[]
+
+  @@index([studentId])
+  @@index([counselorId])
+  @@index([status])
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  chatId    String
+  chat      Chat     @relation(fields: [chatId], references: [id], onDelete: Cascade)
+  senderId  String
+  sender    User     @relation(fields: [senderId], references: [id])
+  content   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([chatId, createdAt])
+}
+
+model University {
+  id                   String   @id @default(cuid())
+  tenantId             String
+  name                 String
+  country              String
+  region               String?
+  qsRank               Int?
+  previousRank         Int?
+  status               String?
+  size                 String?
+  focus                String?
+  research             String?
+  overallScore         Float?
+  academicRepScore     Float?
+  employerRepScore     Float?
+  facultyStudentScore  Float?
+  citationsScore       Float?
+  intlFacultyScore     Float?
+  intlStudentScore     Float?
+  employmentScore      Float?
+  sustainabilityScore  Float?
+  domains              String[] @default([])
+  webPages             String[] @default([])
+  logoUrl              String?
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  @@index([tenantId])
+  @@index([country])
+}
+
+model IndianInstitution {
+  id                    String  @id @default(cuid())
+  aisheCode             String? @unique
+  wdId                  String? @unique
+  name                  String
+  type                  String
+  state                 String
+  district              String?
+  website               String?
+  yearOfEstablishment   String?
+  location              String?
+  institutionType       String?
+  management            String?
+  universityAisheCode   String?
+  universityName        String?
+  source                String  @default("aishe")
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@index([type, state])
+  @@index([name])
+  @@index([state])
+  @@index([source])
+}
+
+model Career {
+  id                  String   @id @default(cuid())
+  name                String   @unique
+  slug                String   @unique
+  title               String
+  introduction        String
+  whoShouldPursue     String[]
+  eligibility         String[]
+  workNatureDesc      String
+  workNatureExamples  String[]
+  demandLevel         String
+  salaryCurrency      String
+  salaryEntry         String
+  salaryMedian        String?
+  salarySenior        String
+  jobGrowth           String
+  topIndustries       String[]
+  futureOutlook       String
+  seoTitle            String?
+  seoDescription      String?
+  seoKeywords         String[]
+  faqs                Json
+  pathways            Json
+  conventionalOptions Json
+  newAgeOptions       Json
+  aiRelatedOptions    Json
+  videoRecommendations Json
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@index([name])
+}
+
+model DailyUsage {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  date         DateTime
+  totalMinutes Float      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([userId, date])
+  @@index([date])
+  @@index([userId])
+}
+
+model Notification {
+  id          String           @id @default(cuid())
+  type        NotificationType
+  title       String
+  message     String
+  linkUrl     String?
+  read        Boolean          @default(false)
+  senderId    String?
+  sender      User?            @relation("SentBy", fields: [senderId], references: [id])
+  recipientId String
+  recipient   User             @relation("SentTo", fields: [recipientId], references: [id])
+  createdAt   DateTime         @default(now())
+
+  @@index([recipientId, read])
+  @@index([recipientId, createdAt])
+}

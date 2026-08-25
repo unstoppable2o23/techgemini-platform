@@ -1,0 +1,2486 @@
+{
+ "55": {
+  "id": "55",
+  "name": "lsi_default_q1",
+  "domain_id": 1,
+  "subdomain_id": "VIS",
+  "dimension": "VIS",
+  "polarity": 1,
+  "question": "Reading about a new topic suits me better than hearing someone explain it.",
+  "options": {
+   "55558101": {
+    "id": "55558101",
+    "answer": "1",
+    "marks": 1
+   },
+   "55559101": {
+    "id": "55559101",
+    "answer": "2",
+    "marks": 2
+   },
+   "555510101": {
+    "id": "555510101",
+    "answer": "3",
+    "marks": 3
+   },
+   "555511101": {
+    "id": "555511101",
+    "answer": "4",
+    "marks": 4
+   },
+   "555512101": {
+    "id": "555512101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "56": {
+  "id": "56",
+  "name": "lsi_default_q2",
+  "domain_id": 2,
+  "subdomain_id": "DES",
+  "dimension": "DES",
+  "polarity": 1,
+  "question": "Working at a proper table or desk is how I get the most done.",
+  "options": {
+   "56568101": {
+    "id": "56568101",
+    "answer": "1",
+    "marks": 1
+   },
+   "56569101": {
+    "id": "56569101",
+    "answer": "2",
+    "marks": 2
+   },
+   "565610101": {
+    "id": "565610101",
+    "answer": "3",
+    "marks": 3
+   },
+   "565611101": {
+    "id": "565611101",
+    "answer": "4",
+    "marks": 4
+   },
+   "565612101": {
+    "id": "565612101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "57": {
+  "id": "57",
+  "name": "lsi_default_q3",
+  "domain_id": 2,
+  "subdomain_id": "SND",
+  "dimension": "SND",
+  "polarity": 1,
+  "question": "Noise makes it very hard for me to concentrate.",
+  "options": {
+   "575713101": {
+    "id": "575713101",
+    "answer": "1",
+    "marks": 1
+   },
+   "575714101": {
+    "id": "575714101",
+    "answer": "2",
+    "marks": 2
+   },
+   "575715101": {
+    "id": "575715101",
+    "answer": "3",
+    "marks": 3
+   },
+   "575716101": {
+    "id": "575716101",
+    "answer": "4",
+    "marks": 4
+   },
+   "575717101": {
+    "id": "575717101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "58": {
+  "id": "58",
+  "name": "lsi_default_q4",
+  "domain_id": 2,
+  "subdomain_id": "MOB",
+  "dimension": "MOB",
+  "polarity": 0,
+  "question": "Sitting still for long stretches of time is easy for me.",
+  "options": {
+   "585813101": {
+    "id": "585813101",
+    "answer": "1",
+    "marks": 1
+   },
+   "585814101": {
+    "id": "585814101",
+    "answer": "2",
+    "marks": 2
+   },
+   "585815101": {
+    "id": "585815101",
+    "answer": "3",
+    "marks": 3
+   },
+   "585816101": {
+    "id": "585816101",
+    "answer": "4",
+    "marks": 4
+   },
+   "585817101": {
+    "id": "585817101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "59": {
+  "id": "59",
+  "name": "lsi_default_q5",
+  "domain_id": 2,
+  "subdomain_id": "ITK",
+  "dimension": "ITK",
+  "polarity": 1,
+  "question": "Munching on a snack is part of my study routine.",
+  "options": {
+   "59598101": {
+    "id": "59598101",
+    "answer": "1",
+    "marks": 1
+   },
+   "59599101": {
+    "id": "59599101",
+    "answer": "2",
+    "marks": 2
+   },
+   "595910101": {
+    "id": "595910101",
+    "answer": "3",
+    "marks": 3
+   },
+   "595911101": {
+    "id": "595911101",
+    "answer": "4",
+    "marks": 4
+   },
+   "595912101": {
+    "id": "595912101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "60": {
+  "id": "60",
+  "name": "lsi_default_q6",
+  "domain_id": 1,
+  "subdomain_id": "AUD",
+  "dimension": "AUD",
+  "polarity": 1,
+  "question": "I remember information better when someone explains it out loud to me.",
+  "options": {
+   "60608101": {
+    "id": "60608101",
+    "answer": "1",
+    "marks": 1
+   },
+   "60609101": {
+    "id": "60609101",
+    "answer": "2",
+    "marks": 2
+   },
+   "606010101": {
+    "id": "606010101",
+    "answer": "3",
+    "marks": 3
+   },
+   "606011101": {
+    "id": "606011101",
+    "answer": "4",
+    "marks": 4
+   },
+   "606012101": {
+    "id": "606012101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "61": {
+  "id": "61",
+  "name": "lsi_default_q7",
+  "domain_id": 2,
+  "subdomain_id": "LHT",
+  "dimension": "LHT",
+  "polarity": 1,
+  "question": "Bright lighting makes studying easier for me.",
+  "options": {
+   "61618101": {
+    "id": "61618101",
+    "answer": "1",
+    "marks": 1
+   },
+   "61619101": {
+    "id": "61619101",
+    "answer": "2",
+    "marks": 2
+   },
+   "616110101": {
+    "id": "616110101",
+    "answer": "3",
+    "marks": 3
+   },
+   "616111101": {
+    "id": "616111101",
+    "answer": "4",
+    "marks": 4
+   },
+   "616112101": {
+    "id": "616112101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "62": {
+  "id": "62",
+  "name": "lsi_default_q8",
+  "domain_id": 1,
+  "subdomain_id": "KIN",
+  "dimension": "KIN",
+  "polarity": 1,
+  "question": "I recall hands-on experiences better than things I merely saw or heard.",
+  "options": {
+   "62628101": {
+    "id": "62628101",
+    "answer": "1",
+    "marks": 1
+   },
+   "62629101": {
+    "id": "62629101",
+    "answer": "2",
+    "marks": 2
+   },
+   "626210101": {
+    "id": "626210101",
+    "answer": "3",
+    "marks": 3
+   },
+   "626211101": {
+    "id": "626211101",
+    "answer": "4",
+    "marks": 4
+   },
+   "626212101": {
+    "id": "626212101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "63": {
+  "id": "63",
+  "name": "lsi_default_q9",
+  "domain_id": 3,
+  "subdomain_id": "STR",
+  "dimension": "STR",
+  "polarity": 0,
+  "question": "I like assignments that leave me free to choose my own approach.",
+  "options": {
+   "636313101": {
+    "id": "636313101",
+    "answer": "1",
+    "marks": 1
+   },
+   "636314101": {
+    "id": "636314101",
+    "answer": "2",
+    "marks": 2
+   },
+   "636315101": {
+    "id": "636315101",
+    "answer": "3",
+    "marks": 3
+   },
+   "636316101": {
+    "id": "636316101",
+    "answer": "4",
+    "marks": 4
+   },
+   "636317101": {
+    "id": "636317101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "64": {
+  "id": "64",
+  "name": "lsi_default_q10",
+  "domain_id": 2,
+  "subdomain_id": "TMP",
+  "dimension": "TMP",
+  "polarity": 1,
+  "question": "My mind works best when the room feels warm.",
+  "options": {
+   "64648101": {
+    "id": "64648101",
+    "answer": "1",
+    "marks": 1
+   },
+   "64649101": {
+    "id": "64649101",
+    "answer": "2",
+    "marks": 2
+   },
+   "646410101": {
+    "id": "646410101",
+    "answer": "3",
+    "marks": 3
+   },
+   "646411101": {
+    "id": "646411101",
+    "answer": "4",
+    "marks": 4
+   },
+   "646412101": {
+    "id": "646412101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "65": {
+  "id": "65",
+  "name": "lsi_default_q11",
+  "domain_id": 2,
+  "subdomain_id": "DES",
+  "dimension": "DES",
+  "polarity": 1,
+  "question": "I do my studying sunk into a comfy sofa or armchair.",
+  "options": {
+   "656513101": {
+    "id": "656513101",
+    "answer": "1",
+    "marks": 1
+   },
+   "656514101": {
+    "id": "656514101",
+    "answer": "2",
+    "marks": 2
+   },
+   "656515101": {
+    "id": "656515101",
+    "answer": "3",
+    "marks": 3
+   },
+   "656516101": {
+    "id": "656516101",
+    "answer": "4",
+    "marks": 4
+   },
+   "656517101": {
+    "id": "656517101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "66": {
+  "id": "66",
+  "name": "lsi_default_q12",
+  "domain_id": 3,
+  "subdomain_id": "ALN",
+  "dimension": "ALN",
+  "polarity": 1,
+  "question": "Having a friend or two around makes studying better for me.",
+  "options": {
+   "66668101": {
+    "id": "66668101",
+    "answer": "1",
+    "marks": 1
+   },
+   "66669101": {
+    "id": "66669101",
+    "answer": "2",
+    "marks": 2
+   },
+   "666610101": {
+    "id": "666610101",
+    "answer": "3",
+    "marks": 3
+   },
+   "666611101": {
+    "id": "666611101",
+    "answer": "4",
+    "marks": 4
+   },
+   "666612101": {
+    "id": "666612101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "67": {
+  "id": "67",
+  "name": "lsi_default_q13",
+  "domain_id": 3,
+  "subdomain_id": "MOT",
+  "dimension": "MOT",
+  "polarity": 1,
+  "question": "The excitement of learning something new at school is something I love.",
+  "options": {
+   "67678101": {
+    "id": "67678101",
+    "answer": "1",
+    "marks": 1
+   },
+   "67679101": {
+    "id": "67679101",
+    "answer": "2",
+    "marks": 2
+   },
+   "676710101": {
+    "id": "676710101",
+    "answer": "3",
+    "marks": 3
+   },
+   "676711101": {
+    "id": "676711101",
+    "answer": "4",
+    "marks": 4
+   },
+   "676712101": {
+    "id": "676712101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "68": {
+  "id": "68",
+  "name": "lsi_default_q14",
+  "domain_id": 2,
+  "subdomain_id": "TMP",
+  "dimension": "TMP",
+  "polarity": 1,
+  "question": "Give me a hot sunny day over a chilly one any time.",
+  "options": {
+   "68688101": {
+    "id": "68688101",
+    "answer": "1",
+    "marks": 1
+   },
+   "68689101": {
+    "id": "68689101",
+    "answer": "2",
+    "marks": 2
+   },
+   "686810101": {
+    "id": "686810101",
+    "answer": "3",
+    "marks": 3
+   },
+   "686811101": {
+    "id": "686811101",
+    "answer": "4",
+    "marks": 4
+   },
+   "686812101": {
+    "id": "686812101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "69": {
+  "id": "69",
+  "name": "lsi_default_q15",
+  "domain_id": 1,
+  "subdomain_id": "TAC",
+  "dimension": "TAC",
+  "polarity": 1,
+  "question": "Handling models or real objects makes a topic easier for me to understand.",
+  "options": {
+   "69698101": {
+    "id": "69698101",
+    "answer": "1",
+    "marks": 1
+   },
+   "69699101": {
+    "id": "69699101",
+    "answer": "2",
+    "marks": 2
+   },
+   "696910101": {
+    "id": "696910101",
+    "answer": "3",
+    "marks": 3
+   },
+   "696911101": {
+    "id": "696911101",
+    "answer": "4",
+    "marks": 4
+   },
+   "696912101": {
+    "id": "696912101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "70": {
+  "id": "70",
+  "name": "lsi_default_q16",
+  "domain_id": 2,
+  "subdomain_id": "TIM",
+  "dimension": "TIM",
+  "polarity": 0,
+  "question": "Evening hours are when my schoolwork comes out best.",
+  "options": {
+   "707013101": {
+    "id": "707013101",
+    "answer": "1",
+    "marks": 1
+   },
+   "707014101": {
+    "id": "707014101",
+    "answer": "2",
+    "marks": 2
+   },
+   "707015101": {
+    "id": "707015101",
+    "answer": "3",
+    "marks": 3
+   },
+   "707016101": {
+    "id": "707016101",
+    "answer": "4",
+    "marks": 4
+   },
+   "707017101": {
+    "id": "707017101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "71": {
+  "id": "71",
+  "name": "lsi_default_q17",
+  "domain_id": 3,
+  "subdomain_id": "PER",
+  "dimension": "PER",
+  "polarity": 0,
+  "question": "Other activities often pull me away from my schoolwork.",
+  "options": {
+   "717113101": {
+    "id": "717113101",
+    "answer": "1",
+    "marks": 1
+   },
+   "717114101": {
+    "id": "717114101",
+    "answer": "2",
+    "marks": 2
+   },
+   "717115101": {
+    "id": "717115101",
+    "answer": "3",
+    "marks": 3
+   },
+   "717116101": {
+    "id": "717116101",
+    "answer": "4",
+    "marks": 4
+   },
+   "717117101": {
+    "id": "717117101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "72": {
+  "id": "72",
+  "name": "lsi_default_q18",
+  "domain_id": 2,
+  "subdomain_id": "MOB",
+  "dimension": "MOB",
+  "polarity": 1,
+  "question": "I find it hard to stay seated for long periods.",
+  "options": {
+   "72728101": {
+    "id": "72728101",
+    "answer": "1",
+    "marks": 1
+   },
+   "72729101": {
+    "id": "72729101",
+    "answer": "2",
+    "marks": 2
+   },
+   "727210101": {
+    "id": "727210101",
+    "answer": "3",
+    "marks": 3
+   },
+   "727211101": {
+    "id": "727211101",
+    "answer": "4",
+    "marks": 4
+   },
+   "727212101": {
+    "id": "727212101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "73": {
+  "id": "73",
+  "name": "lsi_default_q19",
+  "domain_id": 3,
+  "subdomain_id": "TCR",
+  "dimension": "TCR",
+  "polarity": 1,
+  "question": "It matters a lot to me that my teachers are pleased with my work.",
+  "options": {
+   "73738101": {
+    "id": "73738101",
+    "answer": "1",
+    "marks": 1
+   },
+   "73739101": {
+    "id": "73739101",
+    "answer": "2",
+    "marks": 2
+   },
+   "737310101": {
+    "id": "737310101",
+    "answer": "3",
+    "marks": 3
+   },
+   "737311101": {
+    "id": "737311101",
+    "answer": "4",
+    "marks": 4
+   },
+   "737312101": {
+    "id": "737312101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "74": {
+  "id": "74",
+  "name": "lsi_default_q20",
+  "domain_id": 2,
+  "subdomain_id": "SND",
+  "dimension": "SND",
+  "polarity": 1,
+  "question": "I can easily tune out background sounds while I work.",
+  "options": {
+   "74748101": {
+    "id": "74748101",
+    "answer": "1",
+    "marks": 1
+   },
+   "74749101": {
+    "id": "74749101",
+    "answer": "2",
+    "marks": 2
+   },
+   "747410101": {
+    "id": "747410101",
+    "answer": "3",
+    "marks": 3
+   },
+   "747411101": {
+    "id": "747411101",
+    "answer": "4",
+    "marks": 4
+   },
+   "747412101": {
+    "id": "747412101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "75": {
+  "id": "75",
+  "name": "lsi_default_q21",
+  "domain_id": 2,
+  "subdomain_id": "LHT",
+  "dimension": "LHT",
+  "polarity": 0,
+  "question": "I prefer studying in a dimly lit room.",
+  "options": {
+   "757513101": {
+    "id": "757513101",
+    "answer": "1",
+    "marks": 1
+   },
+   "757514101": {
+    "id": "757514101",
+    "answer": "2",
+    "marks": 2
+   },
+   "757515101": {
+    "id": "757515101",
+    "answer": "3",
+    "marks": 3
+   },
+   "757516101": {
+    "id": "757516101",
+    "answer": "4",
+    "marks": 4
+   },
+   "757517101": {
+    "id": "757517101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "76": {
+  "id": "76",
+  "name": "lsi_default_q22",
+  "domain_id": 3,
+  "subdomain_id": "ALN",
+  "dimension": "ALN",
+  "polarity": 0,
+  "question": "When tasks stack up, I would rather handle them solo.",
+  "options": {
+   "767613101": {
+    "id": "767613101",
+    "answer": "1",
+    "marks": 1
+   },
+   "767614101": {
+    "id": "767614101",
+    "answer": "2",
+    "marks": 2
+   },
+   "767615101": {
+    "id": "767615101",
+    "answer": "3",
+    "marks": 3
+   },
+   "767616101": {
+    "id": "767616101",
+    "answer": "4",
+    "marks": 4
+   },
+   "767617101": {
+    "id": "767617101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "77": {
+  "id": "77",
+  "name": "lsi_default_q23",
+  "domain_id": 2,
+  "subdomain_id": "ITK",
+  "dimension": "ITK",
+  "polarity": 0,
+  "question": "I avoid eating or drinking anything while I am studying.",
+  "options": {
+   "777713101": {
+    "id": "777713101",
+    "answer": "1",
+    "marks": 1
+   },
+   "777714101": {
+    "id": "777714101",
+    "answer": "2",
+    "marks": 2
+   },
+   "777715101": {
+    "id": "777715101",
+    "answer": "3",
+    "marks": 3
+   },
+   "777716101": {
+    "id": "777716101",
+    "answer": "4",
+    "marks": 4
+   },
+   "777717101": {
+    "id": "777717101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "78": {
+  "id": "78",
+  "name": "lsi_default_q24",
+  "domain_id": 2,
+  "subdomain_id": "DES",
+  "dimension": "DES",
+  "polarity": 1,
+  "question": "A firm, upright chair helps me focus better.",
+  "options": {
+   "78788101": {
+    "id": "78788101",
+    "answer": "1",
+    "marks": 1
+   },
+   "78789101": {
+    "id": "78789101",
+    "answer": "2",
+    "marks": 2
+   },
+   "787810101": {
+    "id": "787810101",
+    "answer": "3",
+    "marks": 3
+   },
+   "787811101": {
+    "id": "787811101",
+    "answer": "4",
+    "marks": 4
+   },
+   "787812101": {
+    "id": "787812101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "79": {
+  "id": "79",
+  "name": "lsi_default_q25",
+  "domain_id": 1,
+  "subdomain_id": "VIS",
+  "dimension": "VIS",
+  "polarity": 1,
+  "question": "Reading something myself helps me understand and remember it.",
+  "options": {
+   "79798101": {
+    "id": "79798101",
+    "answer": "1",
+    "marks": 1
+   },
+   "79799101": {
+    "id": "79799101",
+    "answer": "2",
+    "marks": 2
+   },
+   "797910101": {
+    "id": "797910101",
+    "answer": "3",
+    "marks": 3
+   },
+   "797911101": {
+    "id": "797911101",
+    "answer": "4",
+    "marks": 4
+   },
+   "797912101": {
+    "id": "797912101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "80": {
+  "id": "80",
+  "name": "lsi_default_q26",
+  "domain_id": 2,
+  "subdomain_id": "ITK",
+  "dimension": "ITK",
+  "polarity": 1,
+  "question": "Sipping or chewing something aids my thinking while studying.",
+  "options": {
+   "80808101": {
+    "id": "80808101",
+    "answer": "1",
+    "marks": 1
+   },
+   "80809101": {
+    "id": "80809101",
+    "answer": "2",
+    "marks": 2
+   },
+   "808010101": {
+    "id": "808010101",
+    "answer": "3",
+    "marks": 3
+   },
+   "808011101": {
+    "id": "808011101",
+    "answer": "4",
+    "marks": 4
+   },
+   "808012101": {
+    "id": "808012101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "81": {
+  "id": "81",
+  "name": "lsi_default_q27",
+  "domain_id": 1,
+  "subdomain_id": "TAC",
+  "dimension": "TAC",
+  "polarity": 1,
+  "question": "I love building and crafting things with my hands.",
+  "options": {
+   "81818101": {
+    "id": "81818101",
+    "answer": "1",
+    "marks": 1
+   },
+   "81819101": {
+    "id": "81819101",
+    "answer": "2",
+    "marks": 2
+   },
+   "818110101": {
+    "id": "818110101",
+    "answer": "3",
+    "marks": 3
+   },
+   "818111101": {
+    "id": "818111101",
+    "answer": "4",
+    "marks": 4
+   },
+   "818112101": {
+    "id": "818112101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "82": {
+  "id": "82",
+  "name": "lsi_default_q28",
+  "domain_id": 3,
+  "subdomain_id": "STR",
+  "dimension": "STR",
+  "polarity": 1,
+  "question": "Clear guidelines showing exactly what to do help me succeed.",
+  "options": {
+   "82828101": {
+    "id": "82828101",
+    "answer": "1",
+    "marks": 1
+   },
+   "82829101": {
+    "id": "82829101",
+    "answer": "2",
+    "marks": 2
+   },
+   "828210101": {
+    "id": "828210101",
+    "answer": "3",
+    "marks": 3
+   },
+   "828211101": {
+    "id": "828211101",
+    "answer": "4",
+    "marks": 4
+   },
+   "828212101": {
+    "id": "828212101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "83": {
+  "id": "83",
+  "name": "lsi_default_q29",
+  "domain_id": 2,
+  "subdomain_id": "MOB",
+  "dimension": "MOB",
+  "polarity": 1,
+  "question": "Getting up and moving around now and then helps me refocus.",
+  "options": {
+   "83838101": {
+    "id": "83838101",
+    "answer": "1",
+    "marks": 1
+   },
+   "83839101": {
+    "id": "83839101",
+    "answer": "2",
+    "marks": 2
+   },
+   "838310101": {
+    "id": "838310101",
+    "answer": "3",
+    "marks": 3
+   },
+   "838311101": {
+    "id": "838311101",
+    "answer": "4",
+    "marks": 4
+   },
+   "838312101": {
+    "id": "838312101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "84": {
+  "id": "84",
+  "name": "lsi_default_q30",
+  "domain_id": 2,
+  "subdomain_id": "TIM",
+  "dimension": "TIM",
+  "polarity": 1,
+  "question": "I remember things I learn in the morning better than anything else.",
+  "options": {
+   "84848101": {
+    "id": "84848101",
+    "answer": "1",
+    "marks": 1
+   },
+   "84849101": {
+    "id": "84849101",
+    "answer": "2",
+    "marks": 2
+   },
+   "848410101": {
+    "id": "848410101",
+    "answer": "3",
+    "marks": 3
+   },
+   "848411101": {
+    "id": "848411101",
+    "answer": "4",
+    "marks": 4
+   },
+   "848412101": {
+    "id": "848412101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "85": {
+  "id": "85",
+  "name": "lsi_default_q31",
+  "domain_id": 1,
+  "subdomain_id": "AUD",
+  "dimension": "AUD",
+  "polarity": 1,
+  "question": "Talking through a topic with others is how I learn it best.",
+  "options": {
+   "85858101": {
+    "id": "85858101",
+    "answer": "1",
+    "marks": 1
+   },
+   "85859101": {
+    "id": "85859101",
+    "answer": "2",
+    "marks": 2
+   },
+   "858510101": {
+    "id": "858510101",
+    "answer": "3",
+    "marks": 3
+   },
+   "858511101": {
+    "id": "858511101",
+    "answer": "4",
+    "marks": 4
+   },
+   "858512101": {
+    "id": "858512101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "86": {
+  "id": "86",
+  "name": "lsi_default_q32",
+  "domain_id": 3,
+  "subdomain_id": "PER",
+  "dimension": "PER",
+  "polarity": 1,
+  "question": "I stick with one assignment until it is finished before starting another.",
+  "options": {
+   "86868101": {
+    "id": "86868101",
+    "answer": "1",
+    "marks": 1
+   },
+   "86869101": {
+    "id": "86869101",
+    "answer": "2",
+    "marks": 2
+   },
+   "868610101": {
+    "id": "868610101",
+    "answer": "3",
+    "marks": 3
+   },
+   "868611101": {
+    "id": "868611101",
+    "answer": "4",
+    "marks": 4
+   },
+   "868612101": {
+    "id": "868612101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "87": {
+  "id": "87",
+  "name": "lsi_default_q33",
+  "domain_id": 3,
+  "subdomain_id": "MOT",
+  "dimension": "MOT",
+  "polarity": 0,
+  "question": "School does not interest me very much.",
+  "options": {
+   "878713101": {
+    "id": "878713101",
+    "answer": "1",
+    "marks": 1
+   },
+   "878714101": {
+    "id": "878714101",
+    "answer": "2",
+    "marks": 2
+   },
+   "878715101": {
+    "id": "878715101",
+    "answer": "3",
+    "marks": 3
+   },
+   "878716101": {
+    "id": "878716101",
+    "answer": "4",
+    "marks": 4
+   },
+   "878717101": {
+    "id": "878717101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "88": {
+  "id": "88",
+  "name": "lsi_default_q34",
+  "domain_id": 1,
+  "subdomain_id": "KIN",
+  "dimension": "KIN",
+  "polarity": 1,
+  "question": "Lessons that involve moving around are the ones I learn from most.",
+  "options": {
+   "88888101": {
+    "id": "88888101",
+    "answer": "1",
+    "marks": 1
+   },
+   "88889101": {
+    "id": "88889101",
+    "answer": "2",
+    "marks": 2
+   },
+   "888810101": {
+    "id": "888810101",
+    "answer": "3",
+    "marks": 3
+   },
+   "888811101": {
+    "id": "888811101",
+    "answer": "4",
+    "marks": 4
+   },
+   "888812101": {
+    "id": "888812101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "89": {
+  "id": "89",
+  "name": "lsi_default_q35",
+  "domain_id": 2,
+  "subdomain_id": "SND",
+  "dimension": "SND",
+  "polarity": 1,
+  "question": "Concentrating is difficult for me when there is noise.",
+  "options": {
+   "898913101": {
+    "id": "898913101",
+    "answer": "1",
+    "marks": 1
+   },
+   "898914101": {
+    "id": "898914101",
+    "answer": "2",
+    "marks": 2
+   },
+   "898915101": {
+    "id": "898915101",
+    "answer": "3",
+    "marks": 3
+   },
+   "898916101": {
+    "id": "898916101",
+    "answer": "4",
+    "marks": 4
+   },
+   "898917101": {
+    "id": "898917101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "90": {
+  "id": "90",
+  "name": "lsi_default_q36",
+  "domain_id": 1,
+  "subdomain_id": "AUD",
+  "dimension": "AUD",
+  "polarity": 1,
+  "question": "Spoken explanations stay with me longer than written ones.",
+  "options": {
+   "90908101": {
+    "id": "90908101",
+    "answer": "1",
+    "marks": 1
+   },
+   "90909101": {
+    "id": "90909101",
+    "answer": "2",
+    "marks": 2
+   },
+   "909010101": {
+    "id": "909010101",
+    "answer": "3",
+    "marks": 3
+   },
+   "909011101": {
+    "id": "909011101",
+    "answer": "4",
+    "marks": 4
+   },
+   "909012101": {
+    "id": "909012101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "91": {
+  "id": "91",
+  "name": "lsi_default_q37",
+  "domain_id": 2,
+  "subdomain_id": "LHT",
+  "dimension": "LHT",
+  "polarity": 0,
+  "question": "A softly lit room suits me better than a bright one.",
+  "options": {
+   "919113101": {
+    "id": "919113101",
+    "answer": "1",
+    "marks": 1
+   },
+   "919114101": {
+    "id": "919114101",
+    "answer": "2",
+    "marks": 2
+   },
+   "919115101": {
+    "id": "919115101",
+    "answer": "3",
+    "marks": 3
+   },
+   "919116101": {
+    "id": "919116101",
+    "answer": "4",
+    "marks": 4
+   },
+   "919117101": {
+    "id": "919117101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "92": {
+  "id": "92",
+  "name": "lsi_default_q38",
+  "domain_id": 1,
+  "subdomain_id": "KIN",
+  "dimension": "KIN",
+  "polarity": 1,
+  "question": "Doing experiments teaches me more than reading or hearing explanations.",
+  "options": {
+   "92928101": {
+    "id": "92928101",
+    "answer": "1",
+    "marks": 1
+   },
+   "92929101": {
+    "id": "92929101",
+    "answer": "2",
+    "marks": 2
+   },
+   "929210101": {
+    "id": "929210101",
+    "answer": "3",
+    "marks": 3
+   },
+   "929211101": {
+    "id": "929211101",
+    "answer": "4",
+    "marks": 4
+   },
+   "929212101": {
+    "id": "929212101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "93": {
+  "id": "93",
+  "name": "lsi_default_q39",
+  "domain_id": 3,
+  "subdomain_id": "MOT",
+  "dimension": "MOT",
+  "polarity": 0,
+  "question": "Getting started on my schoolwork feels like a struggle.",
+  "options": {
+   "939313101": {
+    "id": "939313101",
+    "answer": "1",
+    "marks": 1
+   },
+   "939314101": {
+    "id": "939314101",
+    "answer": "2",
+    "marks": 2
+   },
+   "939315101": {
+    "id": "939315101",
+    "answer": "3",
+    "marks": 3
+   },
+   "939316101": {
+    "id": "939316101",
+    "answer": "4",
+    "marks": 4
+   },
+   "939317101": {
+    "id": "939317101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "94": {
+  "id": "94",
+  "name": "lsi_default_q40",
+  "domain_id": 2,
+  "subdomain_id": "TMP",
+  "dimension": "TMP",
+  "polarity": 0,
+  "question": "My thinking is sharpest in a cool room.",
+  "options": {
+   "949413101": {
+    "id": "949413101",
+    "answer": "1",
+    "marks": 1
+   },
+   "949414101": {
+    "id": "949414101",
+    "answer": "2",
+    "marks": 2
+   },
+   "949415101": {
+    "id": "949415101",
+    "answer": "3",
+    "marks": 3
+   },
+   "949416101": {
+    "id": "949416101",
+    "answer": "4",
+    "marks": 4
+   },
+   "949417101": {
+    "id": "949417101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "95": {
+  "id": "95",
+  "name": "lsi_default_q41",
+  "domain_id": 2,
+  "subdomain_id": "DES",
+  "dimension": "DES",
+  "polarity": 1,
+  "question": "I get more done when I am settled on a carpet, couch or cosy chair.",
+  "options": {
+   "959513101": {
+    "id": "959513101",
+    "answer": "1",
+    "marks": 1
+   },
+   "959514101": {
+    "id": "959514101",
+    "answer": "2",
+    "marks": 2
+   },
+   "959515101": {
+    "id": "959515101",
+    "answer": "3",
+    "marks": 3
+   },
+   "959516101": {
+    "id": "959516101",
+    "answer": "4",
+    "marks": 4
+   },
+   "959517101": {
+    "id": "959517101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "96": {
+  "id": "96",
+  "name": "lsi_default_q42",
+  "domain_id": 3,
+  "subdomain_id": "TCR",
+  "dimension": "TCR",
+  "polarity": 1,
+  "question": "My teachers' feedback on my work matters to me.",
+  "options": {
+   "96968101": {
+    "id": "96968101",
+    "answer": "1",
+    "marks": 1
+   },
+   "96969101": {
+    "id": "96969101",
+    "answer": "2",
+    "marks": 2
+   },
+   "969610101": {
+    "id": "969610101",
+    "answer": "3",
+    "marks": 3
+   },
+   "969611101": {
+    "id": "969611101",
+    "answer": "4",
+    "marks": 4
+   },
+   "969612101": {
+    "id": "969612101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "97": {
+  "id": "97",
+  "name": "lsi_default_q43",
+  "domain_id": 2,
+  "subdomain_id": "ITK",
+  "dimension": "ITK",
+  "polarity": 1,
+  "question": "A snack keeps my mind sharp during study sessions.",
+  "options": {
+   "97978101": {
+    "id": "97978101",
+    "answer": "1",
+    "marks": 1
+   },
+   "97979101": {
+    "id": "97979101",
+    "answer": "2",
+    "marks": 2
+   },
+   "979710101": {
+    "id": "979710101",
+    "answer": "3",
+    "marks": 3
+   },
+   "979711101": {
+    "id": "979711101",
+    "answer": "4",
+    "marks": 4
+   },
+   "979712101": {
+    "id": "979712101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "98": {
+  "id": "98",
+  "name": "lsi_default_q44",
+  "domain_id": 1,
+  "subdomain_id": "VIS",
+  "dimension": "VIS",
+  "polarity": 1,
+  "question": "Pictures and diagrams help me understand faster than spoken explanations.",
+  "options": {
+   "98988101": {
+    "id": "98988101",
+    "answer": "1",
+    "marks": 1
+   },
+   "98989101": {
+    "id": "98989101",
+    "answer": "2",
+    "marks": 2
+   },
+   "989810101": {
+    "id": "989810101",
+    "answer": "3",
+    "marks": 3
+   },
+   "989811101": {
+    "id": "989811101",
+    "answer": "4",
+    "marks": 4
+   },
+   "989812101": {
+    "id": "989812101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "99": {
+  "id": "99",
+  "name": "lsi_default_q45",
+  "domain_id": 2,
+  "subdomain_id": "SND",
+  "dimension": "SND",
+  "polarity": 0,
+  "question": "Background noise never really bothers me when I am working.",
+  "options": {
+   "99998101": {
+    "id": "99998101",
+    "answer": "1",
+    "marks": 1
+   },
+   "99999101": {
+    "id": "99999101",
+    "answer": "2",
+    "marks": 2
+   },
+   "999910101": {
+    "id": "999910101",
+    "answer": "3",
+    "marks": 3
+   },
+   "999911101": {
+    "id": "999911101",
+    "answer": "4",
+    "marks": 4
+   },
+   "999912101": {
+    "id": "999912101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "100": {
+  "id": "100",
+  "name": "lsi_default_q46",
+  "domain_id": 3,
+  "subdomain_id": "MOT",
+  "dimension": "MOT",
+  "polarity": 1,
+  "question": "The grades I earn really matter to me.",
+  "options": {
+   "1001008101": {
+    "id": "1001008101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1001009101": {
+    "id": "1001009101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10010010101": {
+    "id": "10010010101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10010011101": {
+    "id": "10010011101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10010012101": {
+    "id": "10010012101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "101": {
+  "id": "101",
+  "name": "lsi_default_q47",
+  "domain_id": 3,
+  "subdomain_id": "PER",
+  "dimension": "PER",
+  "polarity": 1,
+  "question": "I make sure every piece of my schoolwork gets completed.",
+  "options": {
+   "1011018101": {
+    "id": "1011018101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1011019101": {
+    "id": "1011019101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10110110101": {
+    "id": "10110110101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10110111101": {
+    "id": "10110111101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10110112101": {
+    "id": "10110112101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "102": {
+  "id": "102",
+  "name": "lsi_default_q48",
+  "domain_id": 2,
+  "subdomain_id": "TIM",
+  "dimension": "TIM",
+  "polarity": 1,
+  "question": "My concentration is strongest earlier in the school day.",
+  "options": {
+   "1021028101": {
+    "id": "1021028101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1021029101": {
+    "id": "1021029101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10210210101": {
+    "id": "10210210101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10210211101": {
+    "id": "10210211101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10210212101": {
+    "id": "10210212101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "103": {
+  "id": "103",
+  "name": "lsi_default_q49",
+  "domain_id": 1,
+  "subdomain_id": "KIN",
+  "dimension": "KIN",
+  "polarity": 0,
+  "question": "Things I watched or listened to stick in my memory better than things I did.",
+  "options": {
+   "10310313101": {
+    "id": "10310313101",
+    "answer": "1",
+    "marks": 1
+   },
+   "10310314101": {
+    "id": "10310314101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10310315101": {
+    "id": "10310315101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10310316101": {
+    "id": "10310316101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10310317101": {
+    "id": "10310317101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "104": {
+  "id": "104",
+  "name": "lsi_default_q50",
+  "domain_id": 3,
+  "subdomain_id": "ALN",
+  "dimension": "ALN",
+  "polarity": 1,
+  "question": "When the class works as a team, my own contribution tends to be stronger.",
+  "options": {
+   "1041048101": {
+    "id": "1041048101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1041049101": {
+    "id": "1041049101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10410410101": {
+    "id": "10410410101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10410411101": {
+    "id": "10410411101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10410412101": {
+    "id": "10410412101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "105": {
+  "id": "105",
+  "name": "lsi_default_q51",
+  "domain_id": 1,
+  "subdomain_id": "KIN",
+  "dimension": "KIN",
+  "polarity": 1,
+  "question": "I concentrate best in class when the lesson lets me move.",
+  "options": {
+   "1051058101": {
+    "id": "1051058101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1051059101": {
+    "id": "1051059101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10510510101": {
+    "id": "10510510101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10510511101": {
+    "id": "10510511101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10510512101": {
+    "id": "10510512101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "106": {
+  "id": "106",
+  "name": "lsi_default_q52",
+  "domain_id": 3,
+  "subdomain_id": "STR",
+  "dimension": "STR",
+  "polarity": 0,
+  "question": "Open-ended tasks where I set the rules suit me best.",
+  "options": {
+   "10610613101": {
+    "id": "10610613101",
+    "answer": "1",
+    "marks": 1
+   },
+   "10610614101": {
+    "id": "10610614101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10610615101": {
+    "id": "10610615101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10610616101": {
+    "id": "10610616101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10610617101": {
+    "id": "10610617101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "107": {
+  "id": "107",
+  "name": "lsi_default_q53",
+  "domain_id": 3,
+  "subdomain_id": "TCR",
+  "dimension": "TCR",
+  "polarity": 0,
+  "question": "I try harder when my work is not for a teacher.",
+  "options": {
+   "10710713101": {
+    "id": "10710713101",
+    "answer": "1",
+    "marks": 1
+   },
+   "10710714101": {
+    "id": "10710714101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10710715101": {
+    "id": "10710715101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10710716101": {
+    "id": "10710716101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10710717101": {
+    "id": "10710717101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "108": {
+  "id": "108",
+  "name": "lsi_default_q54",
+  "domain_id": 1,
+  "subdomain_id": "KIN",
+  "dimension": "KIN",
+  "polarity": 0,
+  "question": "I would rather watch a demonstration than try the activity myself.",
+  "options": {
+   "10810813101": {
+    "id": "10810813101",
+    "answer": "1",
+    "marks": 1
+   },
+   "10810814101": {
+    "id": "10810814101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10810815101": {
+    "id": "10810815101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10810816101": {
+    "id": "10810816101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10810817101": {
+    "id": "10810817101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "109": {
+  "id": "109",
+  "name": "lsi_default_q55",
+  "domain_id": 3,
+  "subdomain_id": "ALN",
+  "dimension": "ALN",
+  "polarity": 0,
+  "question": "I get more done when I work by myself.",
+  "options": {
+   "10910913101": {
+    "id": "10910913101",
+    "answer": "1",
+    "marks": 1
+   },
+   "10910914101": {
+    "id": "10910914101",
+    "answer": "2",
+    "marks": 2
+   },
+   "10910915101": {
+    "id": "10910915101",
+    "answer": "3",
+    "marks": 3
+   },
+   "10910916101": {
+    "id": "10910916101",
+    "answer": "4",
+    "marks": 4
+   },
+   "10910917101": {
+    "id": "10910917101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "110": {
+  "id": "110",
+  "name": "lsi_default_q56",
+  "domain_id": 2,
+  "subdomain_id": "TIM",
+  "dimension": "TIM",
+  "polarity": 0,
+  "question": "My brain properly wakes up later in the day.",
+  "options": {
+   "11011013101": {
+    "id": "11011013101",
+    "answer": "1",
+    "marks": 1
+   },
+   "11011014101": {
+    "id": "11011014101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11011015101": {
+    "id": "11011015101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11011016101": {
+    "id": "11011016101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11011017101": {
+    "id": "11011017101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "111": {
+  "id": "111",
+  "name": "lsi_default_q57",
+  "domain_id": 3,
+  "subdomain_id": "MOT",
+  "dimension": "MOT",
+  "polarity": 0,
+  "question": "Caring about my schoolwork is a struggle for me.",
+  "options": {
+   "11111113101": {
+    "id": "11111113101",
+    "answer": "1",
+    "marks": 1
+   },
+   "11111114101": {
+    "id": "11111114101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11111115101": {
+    "id": "11111115101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11111116101": {
+    "id": "11111116101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11111117101": {
+    "id": "11111117101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "112": {
+  "id": "112",
+  "name": "lsi_default_q58",
+  "domain_id": 1,
+  "subdomain_id": "TAC",
+  "dimension": "TAC",
+  "polarity": 1,
+  "question": "Doodling or drawing while I learn helps ideas sink in.",
+  "options": {
+   "1121128101": {
+    "id": "1121128101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1121129101": {
+    "id": "1121129101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11211210101": {
+    "id": "11211210101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11211211101": {
+    "id": "11211211101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11211212101": {
+    "id": "11211212101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "113": {
+  "id": "113",
+  "name": "lsi_default_q59",
+  "domain_id": 1,
+  "subdomain_id": "AUD",
+  "dimension": "AUD",
+  "polarity": 1,
+  "question": "After hearing something once or twice, I can repeat it back fairly accurately.",
+  "options": {
+   "1131138101": {
+    "id": "1131138101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1131139101": {
+    "id": "1131139101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11311310101": {
+    "id": "11311310101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11311311101": {
+    "id": "11311311101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11311312101": {
+    "id": "11311312101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "114": {
+  "id": "114",
+  "name": "lsi_default_q60",
+  "domain_id": 3,
+  "subdomain_id": "PER",
+  "dimension": "PER",
+  "polarity": 0,
+  "question": "I usually have schoolwork lying around that is half-finished.",
+  "options": {
+   "11411413101": {
+    "id": "11411413101",
+    "answer": "1",
+    "marks": 1
+   },
+   "11411414101": {
+    "id": "11411414101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11411415101": {
+    "id": "11411415101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11411416101": {
+    "id": "11411416101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11411417101": {
+    "id": "11411417101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "115": {
+  "id": "115",
+  "name": "lsi_default_q61",
+  "domain_id": 1,
+  "subdomain_id": "TAC",
+  "dimension": "TAC",
+  "polarity": 1,
+  "question": "Hands-on making and building is among the best ways for me to learn.",
+  "options": {
+   "1151158101": {
+    "id": "1151158101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1151159101": {
+    "id": "1151159101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11511510101": {
+    "id": "11511510101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11511511101": {
+    "id": "11511511101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11511512101": {
+    "id": "11511512101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "116": {
+  "id": "116",
+  "name": "lsi_default_q62",
+  "domain_id": 2,
+  "subdomain_id": "LHT",
+  "dimension": "LHT",
+  "polarity": 1,
+  "question": "I like having strong, bright light while I work.",
+  "options": {
+   "1161168101": {
+    "id": "1161168101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1161169101": {
+    "id": "1161169101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11611610101": {
+    "id": "11611610101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11611611101": {
+    "id": "11611611101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11611612101": {
+    "id": "11611612101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "117": {
+  "id": "117",
+  "name": "lsi_default_q63",
+  "domain_id": 2,
+  "subdomain_id": "ITK",
+  "dimension": "ITK",
+  "polarity": 1,
+  "question": "While I work, I like to have something to chew or sip.",
+  "options": {
+   "1171178101": {
+    "id": "1171178101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1171179101": {
+    "id": "1171179101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11711710101": {
+    "id": "11711710101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11711711101": {
+    "id": "11711711101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11711712101": {
+    "id": "11711712101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "118": {
+  "id": "118",
+  "name": "lsi_default_q64",
+  "domain_id": 3,
+  "subdomain_id": "ALN",
+  "dimension": "ALN",
+  "polarity": 1,
+  "question": "Working through tough tasks with friends makes them easier for me.",
+  "options": {
+   "1181188101": {
+    "id": "1181188101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1181189101": {
+    "id": "1181189101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11811810101": {
+    "id": "11811810101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11811811101": {
+    "id": "11811811101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11811812101": {
+    "id": "11811812101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "119": {
+  "id": "119",
+  "name": "lsi_default_q65",
+  "domain_id": 2,
+  "subdomain_id": "MOB",
+  "dimension": "MOB",
+  "polarity": 0,
+  "question": "I can focus for hours as long as I stay in one place.",
+  "options": {
+   "11911913101": {
+    "id": "11911913101",
+    "answer": "1",
+    "marks": 1
+   },
+   "11911914101": {
+    "id": "11911914101",
+    "answer": "2",
+    "marks": 2
+   },
+   "11911915101": {
+    "id": "11911915101",
+    "answer": "3",
+    "marks": 3
+   },
+   "11911916101": {
+    "id": "11911916101",
+    "answer": "4",
+    "marks": 4
+   },
+   "11911917101": {
+    "id": "11911917101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "120": {
+  "id": "120",
+  "name": "lsi_default_q66",
+  "domain_id": 2,
+  "subdomain_id": "TIM",
+  "dimension": "TIM",
+  "polarity": 1,
+  "question": "My learning peaks in the morning hours.",
+  "options": {
+   "1201208101": {
+    "id": "1201208101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1201209101": {
+    "id": "1201209101",
+    "answer": "2",
+    "marks": 2
+   },
+   "12012010101": {
+    "id": "12012010101",
+    "answer": "3",
+    "marks": 3
+   },
+   "12012011101": {
+    "id": "12012011101",
+    "answer": "4",
+    "marks": 4
+   },
+   "12012012101": {
+    "id": "12012012101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "121": {
+  "id": "121",
+  "name": "lsi_default_q67",
+  "domain_id": 2,
+  "subdomain_id": "SND",
+  "dimension": "SND",
+  "polarity": 1,
+  "question": "For studying, nothing beats a quiet room.",
+  "options": {
+   "12112113101": {
+    "id": "12112113101",
+    "answer": "1",
+    "marks": 1
+   },
+   "12112114101": {
+    "id": "12112114101",
+    "answer": "2",
+    "marks": 2
+   },
+   "12112115101": {
+    "id": "12112115101",
+    "answer": "3",
+    "marks": 3
+   },
+   "12112116101": {
+    "id": "12112116101",
+    "answer": "4",
+    "marks": 4
+   },
+   "12112117101": {
+    "id": "12112117101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "122": {
+  "id": "122",
+  "name": "lsi_default_q68",
+  "domain_id": 2,
+  "subdomain_id": "TMP",
+  "dimension": "TMP",
+  "polarity": 0,
+  "question": "I would pick a cold breezy day over a hot one.",
+  "options": {
+   "12212213101": {
+    "id": "12212213101",
+    "answer": "1",
+    "marks": 1
+   },
+   "12212214101": {
+    "id": "12212214101",
+    "answer": "2",
+    "marks": 2
+   },
+   "12212215101": {
+    "id": "12212215101",
+    "answer": "3",
+    "marks": 3
+   },
+   "12212216101": {
+    "id": "12212216101",
+    "answer": "4",
+    "marks": 4
+   },
+   "12212217101": {
+    "id": "12212217101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ },
+ "123": {
+  "id": "123",
+  "name": "lsi_default_q69",
+  "domain_id": 3,
+  "subdomain_id": "STR",
+  "dimension": "STR",
+  "polarity": 1,
+  "question": "I want step-by-step directions for every assignment.",
+  "options": {
+   "1231238101": {
+    "id": "1231238101",
+    "answer": "1",
+    "marks": 1
+   },
+   "1231239101": {
+    "id": "1231239101",
+    "answer": "2",
+    "marks": 2
+   },
+   "12312310101": {
+    "id": "12312310101",
+    "answer": "3",
+    "marks": 3
+   },
+   "12312311101": {
+    "id": "12312311101",
+    "answer": "4",
+    "marks": 4
+   },
+   "12312312101": {
+    "id": "12312312101",
+    "answer": "5",
+    "marks": 5
+   }
+  }
+ }
+}
