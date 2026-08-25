@@ -1,0 +1,1340 @@
+{
+  "Aerospace Engineering": {
+    "cat": "Engineering",
+    "sub": "Aerospace",
+    "tech": [
+      "Aerodynamics",
+      "Propulsion Systems",
+      "CAD/CAE (CATIA)",
+      "Structural Analysis",
+      "Flight Mechanics"
+    ],
+    "soft": [
+      "Precision Mindset",
+      "Teamwork on Large Systems",
+      "Regulatory Awareness"
+    ],
+    "int": [
+      "Aircraft and spacecraft",
+      "Aerodynamics",
+      "Space missions"
+    ],
+    "per": [
+      "Precise",
+      "Ambitious",
+      "Systems thinker"
+    ],
+    "deg": [
+      "B.Tech/B.E. Aerospace Engineering",
+      "M.Tech Aerospace (IITs/IIST)"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "CATIA",
+      "ANSYS",
+      "MATLAB",
+      "XFLR5"
+    ],
+    "acts": [
+      "Designing aircraft components",
+      "Running simulations",
+      "Testing prototypes",
+      "Working with certification teams"
+    ],
+    "env": "Design offices, ISRO/DRDO/HAL facilities and manufacturing plants",
+    "path": [
+      "Graduate Engineer Trainee",
+      "Aerospace Engineer",
+      "Senior Engineer",
+      "Project Lead / Scientist"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Mechanical Engineering",
+      "Space Technology",
+      "Pilot"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Biomedical Engineering": {
+    "cat": "Engineering",
+    "sub": "Medical Technology",
+    "tech": [
+      "Medical Device Design",
+      "Biomaterials",
+      "Signal Processing",
+      "Regulatory Standards (ISO 13485)",
+      "CAD"
+    ],
+    "soft": [
+      "Cross-domain Learning",
+      "Empathy",
+      "Regulatory Diligence"
+    ],
+    "int": [
+      "Healthcare technology",
+      "Devices and diagnostics",
+      "Biology plus engineering"
+    ],
+    "per": [
+      "Empathetic",
+      "Innovative",
+      "Meticulous"
+    ],
+    "deg": [
+      "B.Tech/B.E. Biomedical Engineering",
+      "M.Tech Biomedical/Medical Imaging"
+    ],
+    "subj": [
+      "Physics",
+      "Biology",
+      "Mathematics"
+    ],
+    "tools": [
+      "SolidWorks",
+      "MATLAB",
+      "LabVIEW",
+      "ANSYS"
+    ],
+    "acts": [
+      "Designing medical devices",
+      "Testing equipment safety",
+      "Supporting hospital technology",
+      "Coordinating with doctors"
+    ],
+    "env": "Medical device companies, hospitals and research labs",
+    "path": [
+      "Biomedical Engineer",
+      "Senior Engineer",
+      "R&D Lead",
+      "Head of Medical Technology"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Mechanical Engineering",
+      "Health Informatics",
+      "Genetics"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Chemical Engineering": {
+    "cat": "Engineering",
+    "sub": "Process Engineering",
+    "tech": [
+      "Process Design",
+      "Thermodynamics",
+      "Reaction Engineering",
+      "Process Simulation (Aspen)",
+      "Plant Safety"
+    ],
+    "soft": [
+      "Safety Mindset",
+      "Scale-up Thinking",
+      "Team Coordination"
+    ],
+    "int": [
+      "Industrial processes",
+      "Chemistry at scale",
+      "Plant operations"
+    ],
+    "per": [
+      "Methodical",
+      "Safety-conscious",
+      "Practical"
+    ],
+    "deg": [
+      "B.Tech/B.E. Chemical Engineering",
+      "M.Tech Chemical/Process Engineering"
+    ],
+    "subj": [
+      "Chemistry",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Aspen Plus",
+      "MATLAB",
+      "HYSYS",
+      "AutoCAD"
+    ],
+    "acts": [
+      "Designing process plants",
+      "Optimising reactions",
+      "Ensuring plant safety",
+      "Troubleshooting operations"
+    ],
+    "env": "Refineries, petrochemical, pharma and specialty chemical plants",
+    "path": [
+      "Process Engineer",
+      "Senior Process Engineer",
+      "Plant Manager",
+      "Process Consultant"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Petroleum Engineering",
+      "Pharmacology",
+      "Food Technology"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Civil Engineering": {
+    "cat": "Engineering",
+    "sub": "Infrastructure",
+    "tech": [
+      "Structural Analysis",
+      "STAAD Pro/ETABS",
+      "Surveying",
+      "Construction Materials",
+      "Project Estimation"
+    ],
+    "soft": [
+      "Site Leadership",
+      "Negotiation",
+      "Safety Enforcement"
+    ],
+    "int": [
+      "Building structures",
+      "Infrastructure projects",
+      "Urban development"
+    ],
+    "per": [
+      "Practical",
+      "Responsible",
+      "Resilient"
+    ],
+    "deg": [
+      "B.Tech/B.E. Civil Engineering",
+      "M.Tech Structural/Geotechnical"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Chemistry"
+    ],
+    "tools": [
+      "STAAD Pro",
+      "AutoCAD",
+      "Revit",
+      "MS Project"
+    ],
+    "acts": [
+      "Designing structures",
+      "Supervising construction sites",
+      "Ensuring quality and safety",
+      "Coordinating contractors"
+    ],
+    "env": "Site offices and design firms; site postings are common in early years",
+    "path": [
+      "Site Engineer",
+      "Design/Site Engineer",
+      "Project Manager",
+      "Chief Engineer / Contractor"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Construction Management",
+      "Architecture",
+      "Urban Planning"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Electrical Engineering": {
+    "cat": "Engineering",
+    "sub": "Electrical Systems",
+    "tech": [
+      "Power Systems",
+      "Machines & Drives",
+      "Circuit Design",
+      "Power Electronics",
+      "MATLAB Simulation"
+    ],
+    "soft": [
+      "Safety Discipline",
+      "Analytical Rigour",
+      "Field Adaptability"
+    ],
+    "int": [
+      "Power and energy systems",
+      "Machines",
+      "Electrical design"
+    ],
+    "per": [
+      "Precise",
+      "Safety-first",
+      "Practical"
+    ],
+    "deg": [
+      "B.Tech/B.E. Electrical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "MATLAB",
+      "ETAP",
+      "AutoCAD Electrical",
+      "Oscilloscope"
+    ],
+    "acts": [
+      "Designing electrical layouts",
+      "Testing machines",
+      "Maintaining power systems",
+      "Commissioning equipment"
+    ],
+    "env": "Power plants, manufacturing plants, design consultancies and field sites",
+    "path": [
+      "Graduate Engineer",
+      "Electrical Engineer",
+      "Senior Engineer",
+      "Electrical Project Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Electronics Engineering",
+      "Renewable Energy Engineering",
+      "Mechanical Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Electronics Engineering": {
+    "cat": "Engineering",
+    "sub": "Electronics & Communication",
+    "tech": [
+      "VLSI/Embedded Systems",
+      "Communication Systems",
+      "PCB Design",
+      "Signal Processing",
+      "Microcontrollers"
+    ],
+    "soft": [
+      "Miniaturisation Focus",
+      "Prototyping Skill",
+      "Cross-domain Teamwork"
+    ],
+    "int": [
+      "Circuits and chips",
+      "Communication technology",
+      "Embedded gadgets"
+    ],
+    "per": [
+      "Precise",
+      "Innovative",
+      "Hands-on"
+    ],
+    "deg": [
+      "B.Tech/B.E. Electronics & Communication Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "MATLAB",
+      "KiCad/Altium",
+      "Keil",
+      "Oscilloscope"
+    ],
+    "acts": [
+      "Designing circuits and PCBs",
+      "Programming microcontrollers",
+      "Testing communication systems",
+      "Supporting chip design"
+    ],
+    "env": "Semiconductor firms, telecom companies and electronics manufacturing",
+    "path": [
+      "Electronics Engineer",
+      "Senior Engineer",
+      "Module Lead",
+      "VLSI / Embedded Architect"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Internet of Things",
+      "Electrical Engineering",
+      "Robotics Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Mechanical Engineering": {
+    "cat": "Engineering",
+    "sub": "Core Mechanical",
+    "tech": [
+      "Thermodynamics",
+      "Machine Design",
+      "CAD (SolidWorks)",
+      "Manufacturing Processes",
+      "FEA"
+    ],
+    "soft": [
+      "Spatial Visualisation",
+      "Hands-on Prototyping",
+      "Cross-functional Coordination"
+    ],
+    "int": [
+      "Machines and engines",
+      "Manufacturing",
+      "Automotive and robotics"
+    ],
+    "per": [
+      "Practical",
+      "Inventive",
+      "Resilient"
+    ],
+    "deg": [
+      "B.Tech/B.E. Mechanical Engineering",
+      "M.Tech Design/Thermal"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "SolidWorks",
+      "ANSYS",
+      "AutoCAD",
+      "3D Printer"
+    ],
+    "acts": [
+      "Designing machine components",
+      "Running stress simulations",
+      "Overseeing manufacturing",
+      "Testing prototypes"
+    ],
+    "env": "Automotive, manufacturing, energy and design firms; mix of office and shop floor",
+    "path": [
+      "Graduate Engineer Trainee",
+      "Design/Production Engineer",
+      "Senior Engineer",
+      "Engineering Manager"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Mechatronics Engineering",
+      "Robotics Engineering",
+      "Electric Vehicle Technology"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Robotics Engineering": {
+    "cat": "Engineering",
+    "sub": "Robotics & Automation",
+    "tech": [
+      "ROS",
+      "Control Systems",
+      "Computer Vision",
+      "Kinematics",
+      "Embedded Programming"
+    ],
+    "soft": [
+      "Systems Integration",
+      "Innovation",
+      "Cross-discipline Teamwork"
+    ],
+    "int": [
+      "Autonomous machines",
+      "Automation",
+      "AI-powered hardware"
+    ],
+    "per": [
+      "Inventive",
+      "Persistent",
+      "Systems thinker"
+    ],
+    "deg": [
+      "B.Tech/B.E. Robotics/Mechatronics/Mechanical",
+      "M.Tech Robotics"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "ROS",
+      "Gazebo",
+      "MATLAB",
+      "Python"
+    ],
+    "acts": [
+      "Programming robot behaviour",
+      "Integrating sensors and actuators",
+      "Simulating robot systems",
+      "Deploying automation on floors"
+    ],
+    "env": "Automation firms, research labs and manufacturing innovation centres",
+    "path": [
+      "Robotics Engineer",
+      "Senior Robotics Engineer",
+      "Robotics Lead",
+      "Automation Architect"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Artificial Intelligence",
+      "Mechatronics Engineering",
+      "Internet of Things"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Renewable Energy Engineering": {
+    "cat": "Engineering",
+    "sub": "Clean Energy",
+    "tech": [
+      "Solar PV Design",
+      "Wind Energy Systems",
+      "Energy Storage",
+      "Grid Integration",
+      "Energy Modelling (PVsyst)"
+    ],
+    "soft": [
+      "Sustainability Drive",
+      "Field Adaptability",
+      "Policy Awareness"
+    ],
+    "int": [
+      "Clean energy transition",
+      "Solar and wind projects",
+      "Climate impact"
+    ],
+    "per": [
+      "Purpose-driven",
+      "Practical",
+      "Field-ready"
+    ],
+    "deg": [
+      "B.Tech/B.E. Electrical/Energy Engineering",
+      "M.Tech Renewable Energy"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "PVsyst",
+      "HOMER",
+      "AutoCAD",
+      "SCADA"
+    ],
+    "acts": [
+      "Designing solar/wind plants",
+      "Assessing sites",
+      "Commissioning systems",
+      "Improving energy efficiency"
+    ],
+    "env": "Solar parks, wind farms, consultancies and government energy missions; travel to sites",
+    "path": [
+      "Energy Engineer",
+      "Senior Energy Engineer",
+      "Project Manager",
+      "Head of Renewables"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Electrical Engineering",
+      "Environmental Science",
+      "Electric Vehicle Technology"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Nanotechnology": {
+    "cat": "Engineering",
+    "sub": "Nanoscience",
+    "tech": [
+      "Nanofabrication",
+      "Characterisation (SEM/TEM)",
+      "Material Science",
+      "Cleanroom Protocols",
+      "Simulation Tools"
+    ],
+    "soft": [
+      "Research Patience",
+      "Precision",
+      "Scientific Writing"
+    ],
+    "int": [
+      "Materials at atomic scale",
+      "Research",
+      "Advanced applications"
+    ],
+    "per": [
+      "Curious",
+      "Precise",
+      "Academic"
+    ],
+    "deg": [
+      "B.Tech/B.E. + M.Tech Nanotechnology",
+      "M.Sc Nanoscience (PhD for research)"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "SEM",
+      "MATLAB",
+      "Cleanroom Equipment",
+      "Lithography Tools"
+    ],
+    "acts": [
+      "Synthesising nanomaterials",
+      "Characterising samples",
+      "Publishing findings",
+      "Developing applications in electronics/medicine"
+    ],
+    "env": "Research institutes, universities and deep-science startups",
+    "path": [
+      "Research Associate",
+      "Scientist",
+      "Senior Scientist",
+      "Lab Director / Professor"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Biotechnology Research",
+      "Chemical Engineering",
+      "Genetics"
+    ],
+    "minEdu": "Master's"
+  },
+  "Drone Technology": {
+    "cat": "Engineering",
+    "sub": "Unmanned Systems",
+    "tech": [
+      "Flight Controllers",
+      "Aerodynamics Basics",
+      "Payload Integration",
+      "DGCA Regulations",
+      "GIS/Photogrammetry"
+    ],
+    "soft": [
+      "Regulatory Compliance",
+      "Field Operations",
+      "Innovation"
+    ],
+    "int": [
+      "Unmanned aircraft",
+      "Aerial surveying",
+      "Drone applications in agriculture and mapping"
+    ],
+    "per": [
+      "Hands-on",
+      "Regulation-aware",
+      "Enterprising"
+    ],
+    "deg": [
+      "B.Tech/B.E. Electronics/Mechanical/Aerospace + DGCA drone pilot certification"
+    ],
+    "subj": [
+      "Physics",
+      "Electronics",
+      "Geography"
+    ],
+    "tools": [
+      "DJI Ground Station",
+      "QGroundControl",
+      "Pixhawk",
+      "Photogrammetry Software"
+    ],
+    "acts": [
+      "Flying survey missions",
+      "Maintaining drones",
+      "Processing aerial data",
+      "Ensuring regulatory compliance"
+    ],
+    "env": "Field sites for agriculture, surveying, defence and delivery projects",
+    "path": [
+      "Drone Operator",
+      "Drone Engineer",
+      "Fleet Lead",
+      "Drone Operations Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Aerospace Engineering",
+      "GIS Analyst",
+      "Agriculture Research"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Marine Engineering": {
+    "cat": "Engineering",
+    "sub": "Marine Systems",
+    "tech": [
+      "Marine Propulsion",
+      "Ship Systems",
+      "Naval Architecture Basics",
+      "Maintenance at Sea",
+      "Maritime Regulations"
+    ],
+    "soft": [
+      "Life-at-Sea Resilience",
+      "Mechanical Troubleshooting",
+      "Crew Leadership"
+    ],
+    "int": [
+      "Ships and ocean engineering",
+      "Long voyages",
+      "Marine machinery"
+    ],
+    "per": [
+      "Adventurous",
+      "Resilient",
+      "Disciplined"
+    ],
+    "deg": [
+      "B.Tech Marine Engineering",
+      "Merchant Navy Marine Engineering (IME)"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "Engine Room Simulators",
+      "Maintenance Software",
+      "Navigation Systems"
+    ],
+    "acts": [
+      "Operating ship engines",
+      "Maintaining marine systems",
+      "Managing engine crews",
+      "Ensuring voyage safety"
+    ],
+    "env": "Months at sea on merchant vessels; on-shore marine firms between voyages",
+    "path": [
+      "Junior Engineer (Sea)",
+      "Marine Engineer",
+      "Chief Engineer",
+      "Marine Superintendent"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Mechanical Engineering",
+      "Maritime Studies",
+      "Petroleum Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Mining Engineering": {
+    "cat": "Engineering",
+    "sub": "Mining & Minerals",
+    "tech": [
+      "Mine Planning",
+      "Rock Mechanics",
+      "Ventilation Systems",
+      "Mining Software (Surpac)",
+      "Safety Engineering"
+    ],
+    "soft": [
+      "Field Resilience",
+      "Safety Leadership",
+      "Regulatory Compliance"
+    ],
+    "int": [
+      "Mineral extraction",
+      "Large machinery",
+      "Geology in practice"
+    ],
+    "per": [
+      "Rugged",
+      "Safety-first",
+      "Practical"
+    ],
+    "deg": [
+      "B.Tech/B.E. Mining Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "Surpac",
+      "AutoCAD",
+      "Ventilation Simulation",
+      "Blast Design Tools"
+    ],
+    "acts": [
+      "Planning mine layouts",
+      "Supervising extraction",
+      "Ensuring mine safety",
+      "Restoring mined land"
+    ],
+    "env": "Mine sites in coal, metal and mineral belts; remote postings with stay facilities",
+    "path": [
+      "Mining Trainee",
+      "Mining Engineer",
+      "Mine Manager",
+      "General Manager (Mines)"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Petroleum Engineering",
+      "Civil Engineering",
+      "Environmental Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Petroleum Engineering": {
+    "cat": "Engineering",
+    "sub": "Oil & Gas",
+    "tech": [
+      "Reservoir Engineering",
+      "Drilling Operations",
+      "Well Logging",
+      "Petroleum Economics",
+      "Simulation Software"
+    ],
+    "soft": [
+      "High-stakes Operations",
+      "Analytical Depth",
+      "Remote-site Teamwork"
+    ],
+    "int": [
+      "Energy extraction",
+      "Subsurface science",
+      "Large energy projects"
+    ],
+    "per": [
+      "Adventurous",
+      "Analytical",
+      "Resilient"
+    ],
+    "deg": [
+      "B.Tech/B.E. Petroleum Engineering (ISM Dhanbad etc.)"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "Petrel",
+      "Eclipse",
+      "Well Logging Software"
+    ],
+    "acts": [
+      "Planning drilling programmes",
+      "Evaluating reservoirs",
+      "Managing extraction",
+      "Optimising recovery"
+    ],
+    "env": "Onshore/offshore rigs and energy company offices; rotations at well sites",
+    "path": [
+      "Petroleum Engineer",
+      "Senior Engineer",
+      "Reservoir Lead",
+      "Subsurface Manager"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Chemical Engineering",
+      "Marine Engineering",
+      "Mining Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Textile Engineering": {
+    "cat": "Engineering",
+    "sub": "Textile Technology",
+    "tech": [
+      "Spinning & Weaving Technology",
+      "Fabric Testing",
+      "Textile Machinery",
+      "Dyeing & Finishing",
+      "Quality Control"
+    ],
+    "soft": [
+      "Process Discipline",
+      "Quality Focus",
+      "Industry Networking"
+    ],
+    "int": [
+      "Fabric and fibres",
+      "Garment manufacturing",
+      "Textile innovation"
+    ],
+    "per": [
+      "Process-oriented",
+      "Detail-oriented",
+      "Practical"
+    ],
+    "deg": [
+      "B.Tech/B.E. Textile Technology"
+    ],
+    "subj": [
+      "Chemistry",
+      "Physics",
+      "Mathematics"
+    ],
+    "tools": [
+      "Textile Testing Equipment",
+      "CAD for Textiles",
+      "Lab Dyeing Machines"
+    ],
+    "acts": [
+      "Supervising production lines",
+      "Testing fabric quality",
+      "Improving processes",
+      "Developing new fabrics"
+    ],
+    "env": "Textile mills and garment manufacturing hubs (Surat, Tirupur, Ludhiana)",
+    "path": [
+      "Production Trainee",
+      "Textile Engineer",
+      "Plant Manager",
+      "Textile Technologist"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Fashion Design",
+      "Chemical Engineering",
+      "Textile Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Aircraft Maintenance Engineering": {
+    "cat": "Engineering",
+    "sub": "Aviation Maintenance",
+    "tech": [
+      "Aircraft Systems",
+      "Avionics",
+      "DGCA Licensing (AME)",
+      "Engine Maintenance",
+      "Airworthiness Checks"
+    ],
+    "soft": [
+      "Certification Discipline",
+      "Safety Accountability",
+      "Shift Reliability"
+    ],
+    "int": [
+      "Aircraft systems",
+      "Aviation safety",
+      "Hands-on machinery"
+    ],
+    "per": [
+      "Certification-minded",
+      "Precise",
+      "Responsible"
+    ],
+    "deg": [
+      "DGCA-approved AME programme",
+      "B.Tech Aeronautical + AME licence"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Electronics"
+    ],
+    "tools": [
+      "Avionics Test Equipment",
+      "Maintenance Manuals",
+      "Diagnostic Tools"
+    ],
+    "acts": [
+      "Inspecting aircraft",
+      "Repairing engines and avionics",
+      "Certifying airworthiness",
+      "Maintaining maintenance logs"
+    ],
+    "env": "Airports, MRO facilities and airline hangars; shift work",
+    "path": [
+      "AME Trainee",
+      "Licensed AME",
+      "Senior AME",
+      "Maintenance Manager"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Aerospace Engineering",
+      "Pilot",
+      "Aviation"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Electric Vehicle Technology": {
+    "cat": "Engineering",
+    "sub": "Electric Mobility",
+    "tech": [
+      "Battery Management Systems",
+      "Electric Drivetrains",
+      "Power Electronics",
+      "Vehicle Dynamics",
+      "Charging Infrastructure"
+    ],
+    "soft": [
+      "Future-mobility Passion",
+      "Cross-domain Integration",
+      "Prototype Testing"
+    ],
+    "int": [
+      "Electric vehicles",
+      "Sustainable transport",
+      "Battery technology"
+    ],
+    "per": [
+      "Forward-looking",
+      "Hands-on",
+      "Collaborative"
+    ],
+    "deg": [
+      "B.Tech/B.E. Electrical/Mechanical + EV certification",
+      "M.Tech EV Technology"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "MATLAB/Simulink",
+      "Battery Testers",
+      "CAN Bus Tools",
+      "CAD"
+    ],
+    "acts": [
+      "Designing battery packs",
+      "Testing drivetrains",
+      "Optimising range",
+      "Setting up charging networks"
+    ],
+    "env": "EV manufacturers (Ola Electric, Ather, Tata Motors EV), battery firms and startups",
+    "path": [
+      "EV Engineer",
+      "Senior EV Engineer",
+      "EV Systems Lead",
+      "EV Programme Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Electrical Engineering",
+      "Mechanical Engineering",
+      "Renewable Energy Engineering"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Space Technology": {
+    "cat": "Engineering",
+    "sub": "Space Systems",
+    "tech": [
+      "Orbital Mechanics",
+      "Satellite Systems",
+      "Rocket Propulsion",
+      "Ground Station Operations",
+      "Space-grade Electronics"
+    ],
+    "soft": [
+      "Mission-critical Rigour",
+      "Systems Integration",
+      "Research Collaboration"
+    ],
+    "int": [
+      "Satellites and launch vehicles",
+      "Space exploration",
+      "Deep-tech missions"
+    ],
+    "per": [
+      "Ambitious",
+      "Precise",
+      "Mission-driven"
+    ],
+    "deg": [
+      "B.Tech/B.E. Aerospace/Electronics",
+      "M.Tech Space Technology (IIST)"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "GMAT",
+      "STK",
+      "CAD",
+      "Ground Station Software"
+    ],
+    "acts": [
+      "Designing satellite subsystems",
+      "Simulating orbits",
+      "Testing space hardware",
+      "Supporting launch campaigns"
+    ],
+    "env": "ISRO, private space startups (Skyroot, Agnikul, Pixxel) and global space firms",
+    "path": [
+      "Engineer (Space Systems)",
+      "Senior Engineer",
+      "Subsystem Lead",
+      "Mission Director"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Aerospace Engineering",
+      "Electronics Engineering",
+      "Quantum Computing Research"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Mechatronics Engineering": {
+    "cat": "Engineering",
+    "sub": "Mechatronics & Automation",
+    "tech": [
+      "Mechatronic System Design",
+      "PLC/SCADA",
+      "Sensors & Actuators",
+      "Control Systems",
+      "Industrial Automation"
+    ],
+    "soft": [
+      "Mechanical-Electronics Bridge",
+      "Automation Thinking",
+      "Factory Coordination"
+    ],
+    "int": [
+      "Smart machinery",
+      "Factory automation",
+      "Integrated systems"
+    ],
+    "per": [
+      "Integrative",
+      "Hands-on",
+      "Systematic"
+    ],
+    "deg": [
+      "B.Tech/B.E. Mechatronics Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "PLC Programming Suites",
+      "MATLAB",
+      "SolidWorks",
+      "SCADA"
+    ],
+    "acts": [
+      "Designing automated machinery",
+      "Programming PLCs",
+      "Integrating sensors",
+      "Commissioning factory lines"
+    ],
+    "env": "Manufacturing plants and automation integrators; shop floor and design office mix",
+    "path": [
+      "Automation Engineer",
+      "Mechatronics Engineer",
+      "Senior Automation Engineer",
+      "Automation Project Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Robotics Engineering",
+      "Mechanical Engineering",
+      "Electronics Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Environmental Engineering": {
+    "cat": "Engineering",
+    "sub": "Environmental Systems",
+    "tech": [
+      "Water & Wastewater Treatment",
+      "Air Pollution Control",
+      "Environmental Impact Assessment",
+      "Solid Waste Management",
+      "Modelling Tools"
+    ],
+    "soft": [
+      "Regulatory Navigation",
+      "Impact Assessment",
+      "Stakeholder Communication"
+    ],
+    "int": [
+      "Pollution control",
+      "Sustainable infrastructure",
+      "Environmental compliance"
+    ],
+    "per": [
+      "Purpose-driven",
+      "Regulation-savvy",
+      "Field-ready"
+    ],
+    "deg": [
+      "B.Tech/B.E. Civil/Environmental Engineering",
+      "M.Tech Environmental Engineering"
+    ],
+    "subj": [
+      "Chemistry",
+      "Biology",
+      "Mathematics"
+    ],
+    "tools": [
+      "EIA Software",
+      "Water Modelling Tools",
+      "GIS",
+      "Air Quality Monitors"
+    ],
+    "acts": [
+      "Designing treatment plants",
+      "Conducting impact assessments",
+      "Monitoring pollution",
+      "Advising industries on compliance"
+    ],
+    "env": "Consultancies, pollution control boards, industries and municipal bodies; site visits",
+    "path": [
+      "Environmental Engineer",
+      "Senior Environmental Engineer",
+      "EIA Consultant",
+      "Environmental Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Environmental Science",
+      "Civil Engineering",
+      "Sustainability"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Industrial Quality Engineering": {
+    "cat": "Manufacturing",
+    "sub": "Quality Engineering",
+    "tech": [
+      "Six Sigma",
+      "Statistical Process Control",
+      "Quality Management Systems (ISO)",
+      "Root Cause Analysis",
+      "Measurement Systems"
+    ],
+    "soft": [
+      "Quality Mindset",
+      "Data-driven Persuasion",
+      "Cross-team Training"
+    ],
+    "int": [
+      "Manufacturing excellence",
+      "Process improvement",
+      "Standards and audits"
+    ],
+    "per": [
+      "Meticulous",
+      "Data-driven",
+      "Persistent"
+    ],
+    "deg": [
+      "B.Tech/B.E. Mechanical/Industrial Engineering",
+      "B.E. + Six Sigma Black Belt"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Statistics"
+    ],
+    "tools": [
+      "Minitab",
+      "SPC Software",
+      "ISO Audit Checklists",
+      "CMM Machines"
+    ],
+    "acts": [
+      "Auditing production quality",
+      "Running improvement projects",
+      "Reducing defect rates",
+      "Training floor teams"
+    ],
+    "env": "Manufacturing plants across automotive, pharma and consumer goods",
+    "path": [
+      "Quality Engineer",
+      "Senior Quality Engineer",
+      "Quality Manager",
+      "Plant Quality Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Mechanical Engineering",
+      "Operations Management",
+      "Industrial Safety"
+    ],
+    "minEdu": "Bachelor's"
+  }
+}

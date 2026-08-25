@@ -1,0 +1,2034 @@
+{
+  "Business Management": {
+    "cat": "Business & Management",
+    "sub": "General Management",
+    "tech": [
+      "Excel Modelling",
+      "Business Intelligence Tools",
+      "Presentation Software"
+    ],
+    "soft": [
+      "Leadership",
+      "Negotiation",
+      "Strategic Thinking"
+    ],
+    "int": [
+      "Running organisations",
+      "Business strategy",
+      "People leadership"
+    ],
+    "per": [
+      "Confident",
+      "Decisive",
+      "People-savvy"
+    ],
+    "deg": [
+      "BBA + MBA",
+      "B.Com + MBA",
+      "Any degree + CAT/XAT for MBA"
+    ],
+    "subj": [
+      "Business Studies",
+      "Economics",
+      "Accountancy"
+    ],
+    "tools": [
+      "Excel",
+      "Power BI",
+      "SAP",
+      "CRM Software"
+    ],
+    "acts": [
+      "Planning business operations",
+      "Leading teams",
+      "Reviewing performance",
+      "Driving growth initiatives"
+    ],
+    "env": "Corporate offices across every industry; fast-paced, meeting-heavy",
+    "path": [
+      "Management Trainee",
+      "Assistant Manager",
+      "Manager",
+      "Business Head / CEO track"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Operations Management",
+      "Strategy Consulting",
+      "Entrepreneurship"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Entrepreneurship": {
+    "cat": "Business & Management",
+    "sub": "Startups & Ventures",
+    "tech": [
+      "Business Model Design",
+      "Digital Marketing Basics",
+      "Financial Modelling",
+      "Product Thinking"
+    ],
+    "soft": [
+      "Risk Tolerance",
+      "Resilience",
+      "Resourcefulness"
+    ],
+    "int": [
+      "Building ventures",
+      "Solving market gaps",
+      "Innovation"
+    ],
+    "per": [
+      "Ambitious",
+      "Resilient",
+      "Opportunity-spotting"
+    ],
+    "deg": [
+      "Any degree (BBA/B.Tech common)",
+      "MBA is optional, not required"
+    ],
+    "subj": [
+      "Business Studies",
+      "Economics",
+      "Any passion domain"
+    ],
+    "tools": [
+      "Canvas/Lean Stack",
+      "Google Analytics",
+      "Razorpay/Stripe",
+      "Notion"
+    ],
+    "acts": [
+      "Validating ideas with customers",
+      "Building products and teams",
+      "Raising funds",
+      "Selling and iterating"
+    ],
+    "env": "Startups, co-working spaces and remote; high variability and ownership",
+    "path": [
+      "Founder / Early Employee",
+      "Startup Operator",
+      "Growth-stage Founder",
+      "Serial Entrepreneur / Investor"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Product Management",
+      "Venture Capital Analyst",
+      "Digital Marketing"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Human Resource Management": {
+    "cat": "Business & Management",
+    "sub": "People Operations",
+    "tech": [
+      "HRMS Platforms",
+      "Recruitment Tools (ATS)",
+      "Excel & HR Analytics",
+      "Labour Law Basics"
+    ],
+    "soft": [
+      "Empathy",
+      "Confidentiality",
+      "Conflict Resolution"
+    ],
+    "int": [
+      "People and culture",
+      "Organisation building",
+      "Talent development"
+    ],
+    "per": [
+      "Empathetic",
+      "Fair",
+      "Communicative"
+    ],
+    "deg": [
+      "BBA + MBA (HR)",
+      "Any degree + PG Diploma in HR"
+    ],
+    "subj": [
+      "Business Studies",
+      "Psychology",
+      "Economics"
+    ],
+    "tools": [
+      "SAP HR",
+      "Zoho People",
+      "LinkedIn Recruiter",
+      "Naukri/ATS"
+    ],
+    "acts": [
+      "Hiring and onboarding",
+      "Managing performance cycles",
+      "Resolving employee concerns",
+      "Designing policies"
+    ],
+    "env": "Corporate HR offices across all industries; hybrid common",
+    "path": [
+      "HR Trainee",
+      "HR Executive",
+      "HR Business Partner",
+      "CHRO"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Psychology",
+      "Business Management",
+      "Corporate Communication"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Operations Management": {
+    "cat": "Business & Management",
+    "sub": "Operations",
+    "tech": [
+      "Operations Analytics",
+      "ERP Systems",
+      "Lean/Six Sigma",
+      "Capacity Planning",
+      "Excel"
+    ],
+    "soft": [
+      "Process Discipline",
+      "Crisis Management",
+      "Team Coordination"
+    ],
+    "int": [
+      "Making systems run efficiently",
+      "Process improvement",
+      "Logistics of production"
+    ],
+    "per": [
+      "Organised",
+      "Decisive",
+      "Detail-driven"
+    ],
+    "deg": [
+      "B.Tech/B.E. + MBA (Operations)",
+      "BBA + certification"
+    ],
+    "subj": [
+      "Mathematics",
+      "Business Studies",
+      "Economics"
+    ],
+    "tools": [
+      "SAP",
+      "Lean Tools",
+      "Power BI",
+      "MS Project"
+    ],
+    "acts": [
+      "Planning production schedules",
+      "Improving process efficiency",
+      "Managing vendors",
+      "Ensuring delivery targets"
+    ],
+    "env": "Manufacturing plants, e-commerce warehouses and service operations",
+    "path": [
+      "Operations Executive",
+      "Operations Manager",
+      "Senior Operations Manager",
+      "COO track"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Supply Chain Management",
+      "Business Management",
+      "Industrial Quality Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Project Management": {
+    "cat": "Business & Management",
+    "sub": "Project Delivery",
+    "tech": [
+      "PMP/PRINCE2 Methods",
+      "Agile/Scrum",
+      "Project Tools (MS Project/Jira)",
+      "Budgeting",
+      "Risk Registers"
+    ],
+    "soft": [
+      "Stakeholder Management",
+      "Prioritisation",
+      "Accountability"
+    ],
+    "int": [
+      "Delivering complex projects",
+      "Coordinating teams",
+      "Timelines and budgets"
+    ],
+    "per": [
+      "Organised",
+      "Accountable",
+      "Persuasive"
+    ],
+    "deg": [
+      "Any degree + PMP/PRINCE2/CSM certification",
+      "B.Tech + project experience common"
+    ],
+    "subj": [
+      "Business Studies",
+      "Mathematics",
+      "Any domain of interest"
+    ],
+    "tools": [
+      "Jira",
+      "MS Project",
+      "Confluence",
+      "Smartsheet"
+    ],
+    "acts": [
+      "Planning project scopes",
+      "Tracking milestones",
+      "Managing risks",
+      "Reporting to leadership"
+    ],
+    "env": "IT, construction, consulting and product companies; hybrid",
+    "path": [
+      "Project Coordinator",
+      "Project Manager",
+      "Senior Project Manager",
+      "Programme Director"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Product Management",
+      "Construction Management",
+      "Business Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Product Management": {
+    "cat": "Business & Management",
+    "sub": "Product",
+    "tech": [
+      "Product Analytics",
+      "Roadmapping Tools",
+      "SQL Basics",
+      "A/B Testing",
+      "User Research Methods"
+    ],
+    "soft": [
+      "User Empathy",
+      "Prioritisation",
+      "Cross-functional Leadership"
+    ],
+    "int": [
+      "Building products users love",
+      "Market and user research",
+      "Tech-business bridge"
+    ],
+    "per": [
+      "User-obsessed",
+      "Analytical",
+      "Influential"
+    ],
+    "deg": [
+      "Any degree; B.Tech + MBA common",
+      "Product certifications (reforge etc.)"
+    ],
+    "subj": [
+      "Any stream",
+      "Business Studies",
+      "Psychology"
+    ],
+    "tools": [
+      "Jira",
+      "Figma",
+      "Amplitude/Mixpanel",
+      "SQL"
+    ],
+    "acts": [
+      "Defining product roadmaps",
+      "Writing requirements",
+      "Analysing user behaviour",
+      "Coordinating design and engineering"
+    ],
+    "env": "Tech product companies and startups; hybrid and remote-friendly",
+    "path": [
+      "Associate Product Manager",
+      "Product Manager",
+      "Senior PM",
+      "Director of Product / CPO"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Business Analytics",
+      "User Experience Design UX",
+      "Entrepreneurship"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Strategy Consulting": {
+    "cat": "Business & Management",
+    "sub": "Consulting",
+    "tech": [
+      "Case Frameworks",
+      "Excel Modelling",
+      "Market Research",
+      "Presentation Design"
+    ],
+    "soft": [
+      "Structured Problem Solving",
+      "Executive Communication",
+      "Client Empathy"
+    ],
+    "int": [
+      "Solving business problems",
+      "Diverse industries",
+      "High-impact advisory"
+    ],
+    "per": [
+      "Analytical",
+      "Articulate",
+      "Composed"
+    ],
+    "deg": [
+      "Any degree + MBA from a top school (typical entry)",
+      "CA/CFA also enter"
+    ],
+    "subj": [
+      "Economics",
+      "Business Studies",
+      "Mathematics"
+    ],
+    "tools": [
+      "Excel",
+      "PowerPoint",
+      "Tableau",
+      "Market Databases"
+    ],
+    "acts": [
+      "Structuring client problems",
+      "Conducting market analysis",
+      "Building recommendations",
+      "Presenting to leadership"
+    ],
+    "env": "Consulting firms (MBB and boutiques); travel-heavy, demanding hours",
+    "path": [
+      "Business Analyst",
+      "Consultant",
+      "Engagement Manager",
+      "Partner"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Business Management",
+      "Financial Analysis",
+      "Product Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Construction Management": {
+    "cat": "Business & Management",
+    "sub": "Construction",
+    "tech": [
+      "Construction Planning Software",
+      "Cost Estimation",
+      "Contracts & Billing",
+      "Safety Management",
+      "BIM Basics"
+    ],
+    "soft": [
+      "Site Leadership",
+      "Contract Negotiation",
+      "Deadline Management"
+    ],
+    "int": [
+      "Large building projects",
+      "Site execution",
+      "Infrastructure growth"
+    ],
+    "per": [
+      "Commanding",
+      "Practical",
+      "Deadline-driven"
+    ],
+    "deg": [
+      "B.Tech/B.E. Civil + MBA/PGP Construction Management"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Business Studies"
+    ],
+    "tools": [
+      "MS Project",
+      "Primavera",
+      "AutoCAD",
+      "ERP"
+    ],
+    "acts": [
+      "Planning construction schedules",
+      "Managing contractors",
+      "Controlling costs",
+      "Ensuring site safety"
+    ],
+    "env": "Construction sites and developer offices; site-heavy role",
+    "path": [
+      "Site Engineer",
+      "Construction Manager",
+      "Senior Construction Manager",
+      "Project Director"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Civil Engineering",
+      "Project Management",
+      "Architecture"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Retail Management": {
+    "cat": "Business & Management",
+    "sub": "Retail Operations",
+    "tech": [
+      "POS Systems",
+      "Inventory Management Software",
+      "Retail Analytics",
+      "Merchandising Tools"
+    ],
+    "soft": [
+      "Customer Focus",
+      "Team Leadership",
+      "Merchandising Sense"
+    ],
+    "int": [
+      "Consumer behaviour",
+      "Store operations",
+      "Brand experience"
+    ],
+    "per": [
+      "Customer-first",
+      "Energetic",
+      "Organised"
+    ],
+    "deg": [
+      "BBA Retail/BBA + MBA",
+      "Any degree + retail experience"
+    ],
+    "subj": [
+      "Business Studies",
+      "Economics",
+      "Mathematics"
+    ],
+    "tools": [
+      "SAP Retail",
+      "POS Software",
+      "Planogram Tools"
+    ],
+    "acts": [
+      "Running store operations",
+      "Planning inventory",
+      "Training sales staff",
+      "Driving store sales targets"
+    ],
+    "env": "Stores, malls and retail head offices; weekend work common",
+    "path": [
+      "Store Trainee",
+      "Store Manager",
+      "Area Manager",
+      "Retail Operations Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Sales Management",
+      "Supply Chain Management",
+      "Digital Marketing"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Event Management": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Events & Experiences",
+    "tech": [
+      "Event Management Software",
+      "Budgeting Tools",
+      "Vendor Management",
+      "Design Basics"
+    ],
+    "soft": [
+      "Multi-tasking Under Pressure",
+      "Vendor Negotiation",
+      "Creativity"
+    ],
+    "int": [
+      "Creating experiences",
+      "Live events",
+      "Logistics of gatherings"
+    ],
+    "per": [
+      "Energetic",
+      "Persuasive",
+      "Calm under chaos"
+    ],
+    "deg": [
+      "Any degree + event management diploma/certification"
+    ],
+    "subj": [
+      "Business Studies",
+      "English",
+      "Any stream"
+    ],
+    "tools": [
+      "Eventbrite",
+      "Trello",
+      "Canva",
+      "Budget Sheets"
+    ],
+    "acts": [
+      "Planning event concepts",
+      "Coordinating vendors",
+      "Managing on-ground execution",
+      "Handling client expectations"
+    ],
+    "env": "Offices, venues and on-site; irregular hours around event dates",
+    "path": [
+      "Event Coordinator",
+      "Event Manager",
+      "Senior Event Manager",
+      "Events Agency Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Hotel Management",
+      "Digital Marketing",
+      "Public Relations"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Image Consulting": {
+    "cat": "Business & Management",
+    "sub": "Personal Branding",
+    "tech": [
+      "Styling Principles",
+      "Grooming Standards",
+      "Presentation Coaching",
+      "Personal Branding Tools"
+    ],
+    "soft": [
+      "Empathy",
+      "Confidence Building",
+      "Observation"
+    ],
+    "int": [
+      "Personal styling",
+      "Etiquette",
+      "Confidence coaching"
+    ],
+    "per": [
+      "Polished",
+      "Encouraging",
+      "Perceptive"
+    ],
+    "deg": [
+      "Any degree + image consulting certification (ICBI etc.)"
+    ],
+    "subj": [
+      "English",
+      "Psychology",
+      "Any stream"
+    ],
+    "tools": [
+      "Style Analysis Kits",
+      "Presentation Software",
+      "Wardrobe Planning Tools"
+    ],
+    "acts": [
+      "Advising on professional image",
+      "Conducting grooming workshops",
+      "Coaching presentation skills",
+      "Building client confidence"
+    ],
+    "env": "Self-employed practice, corporate workshops and finishing schools",
+    "path": [
+      "Image Consultant",
+      "Senior Consultant",
+      "Corporate Trainer",
+      "Personal Branding Coach"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Corporate Training",
+      "Career Counselling",
+      "Fashion Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Financial Analysis": {
+    "cat": "Finance & Accounting",
+    "sub": "Corporate Finance",
+    "tech": [
+      "Financial Modelling",
+      "Valuation (DCF/Comps)",
+      "Excel (Advanced)",
+      "Financial Statements",
+      "Bloomberg/Capital IQ"
+    ],
+    "soft": [
+      "Analytical Rigour",
+      "Attention to Detail",
+      "Business Judgement"
+    ],
+    "int": [
+      "Company performance",
+      "Valuation",
+      "Markets"
+    ],
+    "per": [
+      "Analytical",
+      "Sceptical",
+      "Detail-oriented"
+    ],
+    "deg": [
+      "B.Com/BBA + CFA (Level 1+)",
+      "B.Tech + MBA Finance"
+    ],
+    "subj": [
+      "Accountancy",
+      "Economics",
+      "Mathematics"
+    ],
+    "tools": [
+      "Excel",
+      "Bloomberg",
+      "Capital IQ",
+      "Power BI"
+    ],
+    "acts": [
+      "Building financial models",
+      "Analysing statements",
+      "Preparing investment notes",
+      "Tracking market trends"
+    ],
+    "env": "Investment banks, corporates, rating agencies; demanding deadlines",
+    "path": [
+      "Financial Analyst",
+      "Senior Analyst",
+      "Finance Manager",
+      "CFO track / Fund roles"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Investment Banking",
+      "Chartered Accountancy",
+      "Business Analytics"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Chartered Accountancy": {
+    "cat": "Finance & Accounting",
+    "sub": "Accounting & Audit",
+    "tech": [
+      "Accounting Standards (Ind AS)",
+      "Audit Procedures",
+      "Taxation (GST/Income Tax)",
+      "Tally/ERP Accounting",
+      "Excel"
+    ],
+    "soft": [
+      "Professional Ethics",
+      "Analytical Accuracy",
+      "Client Management"
+    ],
+    "int": [
+      "Audit and assurance",
+      "Taxation",
+      "Corporate compliance"
+    ],
+    "per": [
+      "Ethical",
+      "Meticulous",
+      "Persistent"
+    ],
+    "deg": [
+      "CA (ICAI) — Foundation, Intermediate, Final",
+      "B.Com alongside is common"
+    ],
+    "subj": [
+      "Accountancy",
+      "Economics",
+      "Business Studies"
+    ],
+    "tools": [
+      "Tally",
+      "SAP FICO",
+      "Income Tax Portal",
+      "Excel"
+    ],
+    "acts": [
+      "Auditing company books",
+      "Filing tax returns",
+      "Advising on compliance",
+      "Certifying financial statements"
+    ],
+    "env": "CA firms, corporates and own practice; long hours during audit/tax season",
+    "path": [
+      "Article Trainee",
+      "CA",
+      "Senior CA / Partner",
+      "CFO / Practising Partner"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Cost and Management Accounting",
+      "Financial Analysis",
+      "Company Secretaryship"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Cost and Management Accounting": {
+    "cat": "Finance & Accounting",
+    "sub": "Cost & Management Accounting",
+    "tech": [
+      "Cost Accounting Standards",
+      "Budgeting & Variance Analysis",
+      "ERP (SAP FICO)",
+      "Excel",
+      "Indirect Tax"
+    ],
+    "soft": [
+      "Cost Consciousness",
+      "Analytical Precision",
+      "Business Partnering"
+    ],
+    "int": [
+      "Cost optimisation",
+      "Management decision support",
+      "Pricing"
+    ],
+    "per": [
+      "Analytical",
+      "Practical",
+      "Ethical"
+    ],
+    "deg": [
+      "CMA (ICMAI) — Foundation, Intermediate, Final",
+      "B.Com alongside"
+    ],
+    "subj": [
+      "Accountancy",
+      "Mathematics",
+      "Economics"
+    ],
+    "tools": [
+      "SAP FICO",
+      "Tally",
+      "Excel",
+      "ERP Systems"
+    ],
+    "acts": [
+      "Computing product costs",
+      "Preparing budgets",
+      "Analysing variances",
+      "Supporting pricing decisions"
+    ],
+    "env": "Manufacturing and corporate finance offices across industries",
+    "path": [
+      "CMA Trainee",
+      "Cost Accountant",
+      "Cost Manager",
+      "Financial Controller"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Chartered Accountancy",
+      "Operations Management",
+      "Financial Analysis"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Company Secretaryship": {
+    "cat": "Law",
+    "sub": "Corporate Governance",
+    "tech": [
+      "Companies Act Compliance",
+      "SEBI Regulations",
+      "Board Meeting Management",
+      "Secretarial Software",
+      "Filing Portals (MCA)"
+    ],
+    "soft": [
+      "Regulatory Precision",
+      "Governance Judgement",
+      "Board-level Communication"
+    ],
+    "int": [
+      "Corporate law",
+      "Governance",
+      "Compliance frameworks"
+    ],
+    "per": [
+      "Precise",
+      "Ethical",
+      "Diplomatic"
+    ],
+    "deg": [
+      "CS (ICSI) — Foundation? Executive, Professional",
+      "LLB often added"
+    ],
+    "subj": [
+      "Business Studies",
+      "Economics",
+      "English"
+    ],
+    "tools": [
+      "MCA Portal",
+      "Compliance Software",
+      "MS Office"
+    ],
+    "acts": [
+      "Ensuring statutory compliance",
+      "Managing board meetings",
+      "Filing regulatory returns",
+      "Advising directors"
+    ],
+    "env": "Corporate secretarial departments and CS firms",
+    "path": [
+      "CS Trainee",
+      "Company Secretary",
+      "Senior CS / Compliance Head",
+      "General Counsel track"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Law",
+      "Chartered Accountancy",
+      "Business Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Financial Planning": {
+    "cat": "Finance & Accounting",
+    "sub": "Personal Financial Planning",
+    "tech": [
+      "Financial Planning Tools",
+      "Mutual Fund Analysis",
+      "Tax Planning Basics",
+      "Insurance Products",
+      "Excel"
+    ],
+    "soft": [
+      "Client Empathy",
+      "Trust Building",
+      "Simplifying Complexity"
+    ],
+    "int": [
+      "Personal finance",
+      "Helping families plan",
+      "Investment products"
+    ],
+    "per": [
+      "Trustworthy",
+      "Patient",
+      "Advisory-minded"
+    ],
+    "deg": [
+      "Any degree + CFP certification",
+      "NISM certifications for advisory"
+    ],
+    "subj": [
+      "Mathematics",
+      "Economics",
+      "Business Studies"
+    ],
+    "tools": [
+      "Financial Planning Software",
+      "MF Utilities",
+      "Excel",
+      "CRM"
+    ],
+    "acts": [
+      "Building client financial plans",
+      "Recommending investments",
+      "Reviewing portfolios",
+      "Explaining tax-efficient strategies"
+    ],
+    "env": "Banks, wealth firms and independent practice; client meetings dominate",
+    "path": [
+      "Financial Planner",
+      "Senior Financial Planner",
+      "Wealth Manager",
+      "Practice Owner"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Investment Advisory",
+      "Insurance Underwriting",
+      "Financial Analysis"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Investment Advisory": {
+    "cat": "Finance & Accounting",
+    "sub": "Investment Advisory",
+    "tech": [
+      "Portfolio Analysis",
+      "Market Research",
+      "NISM Certifications",
+      "Risk Profiling",
+      "Excel"
+    ],
+    "soft": [
+      "Market Judgement",
+      "Client Trust",
+      "Composure in Volatility"
+    ],
+    "int": [
+      "Markets and investments",
+      "Portfolio strategy",
+      "Client wealth growth"
+    ],
+    "per": [
+      "Analytical",
+      "Composed",
+      "Client-focused"
+    ],
+    "deg": [
+      "B.Com/BBA + NISM/CFA",
+      "MBA Finance preferred for senior roles"
+    ],
+    "subj": [
+      "Economics",
+      "Mathematics",
+      "Accountancy"
+    ],
+    "tools": [
+      "Bloomberg",
+      "Portfolio Management Software",
+      "Excel",
+      "Market Terminals"
+    ],
+    "acts": [
+      "Advising on portfolios",
+      "Researching investment options",
+      "Monitoring market movements",
+      "Reviewing client goals"
+    ],
+    "env": "Wealth management firms, brokerages and banks; market-hours intensity",
+    "path": [
+      "Advisory Associate",
+      "Investment Advisor",
+      "Senior Advisor",
+      "Wealth Management Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Financial Planning",
+      "Financial Analysis",
+      "Investment Banking"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Investment Banking": {
+    "cat": "Finance & Accounting",
+    "sub": "Investment Banking",
+    "tech": [
+      "Financial Modelling (M&A/LBO)",
+      "Valuation",
+      "Pitch Books",
+      "Excel & PowerPoint (Advanced)",
+      "Data Rooms"
+    ],
+    "soft": [
+      "High-stakes Endurance",
+      "Precision",
+      "Deal Negotiation Support"
+    ],
+    "int": [
+      "Mergers and acquisitions",
+      "Capital markets",
+      "Large deals"
+    ],
+    "per": [
+      "Driven",
+      "Resilient",
+      "Precise"
+    ],
+    "deg": [
+      "Any degree + MBA Finance from a top school (typical)",
+      "CA/CFA also enter"
+    ],
+    "subj": [
+      "Economics",
+      "Accountancy",
+      "Mathematics"
+    ],
+    "tools": [
+      "Excel",
+      "Capital IQ",
+      "Bloomberg",
+      "PowerPoint"
+    ],
+    "acts": [
+      "Building deal models",
+      "Preparing pitch materials",
+      "Supporting transactions",
+      "Coordinating due diligence"
+    ],
+    "env": "Investment banks (global and Indian); intense hours, deal-driven travel",
+    "path": [
+      "Analyst",
+      "Associate",
+      "Vice President",
+      "Managing Director"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Financial Analysis",
+      "Strategy Consulting",
+      "Venture Capital Analyst"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Risk Management": {
+    "cat": "Finance & Accounting",
+    "sub": "Risk & Compliance",
+    "tech": [
+      "Risk Modelling",
+      "Basel Frameworks",
+      "Regulatory Reporting",
+      "Excel/Python Analytics",
+      "GRC Tools"
+    ],
+    "soft": [
+      "Prudent Judgement",
+      "Regulatory Awareness",
+      "Escalation Discipline"
+    ],
+    "int": [
+      "Identifying financial risks",
+      "Compliance frameworks",
+      "Stress testing"
+    ],
+    "per": [
+      "Prudent",
+      "Thorough",
+      "Independent"
+    ],
+    "deg": [
+      "B.Com/BBA + FRM certification",
+      "MBA Finance + risk specialisation"
+    ],
+    "subj": [
+      "Mathematics",
+      "Economics",
+      "Accountancy"
+    ],
+    "tools": [
+      "SAS Risk",
+      "Excel",
+      "GRC Platforms",
+      "SQL"
+    ],
+    "acts": [
+      "Assessing credit/market risks",
+      "Stress testing portfolios",
+      "Reporting to regulators",
+      "Designing risk controls"
+    ],
+    "env": "Banks, NBFCs, insurers and consulting risk practices",
+    "path": [
+      "Risk Analyst",
+      "Risk Manager",
+      "Senior Risk Manager",
+      "Chief Risk Officer"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Actuarial Science",
+      "Financial Analysis",
+      "Business Analytics"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Actuarial Science": {
+    "cat": "Finance & Accounting",
+    "sub": "Actuarial & Insurance",
+    "tech": [
+      "Probability & Statistics",
+      "Actuarial Models",
+      "Excel & R/Python",
+      "Insurance Mathematics",
+      "Solvency Modelling"
+    ],
+    "soft": [
+      "Long-term Exam Persistence",
+      "Mathematical Depth",
+      "Business Communication"
+    ],
+    "int": [
+      "Risk mathematics",
+      "Insurance and pensions",
+      "Statistical modelling"
+    ],
+    "per": [
+      "Mathematical",
+      "Patient",
+      "Precise"
+    ],
+    "deg": [
+      "B.Sc Actuarial/Maths + ACET entry, then IFoA/IAI papers (multiple years)"
+    ],
+    "subj": [
+      "Mathematics",
+      "Statistics",
+      "Economics"
+    ],
+    "tools": [
+      "R",
+      "Excel",
+      "Prophet",
+      "Python"
+    ],
+    "acts": [
+      "Pricing insurance products",
+      "Modelling mortality and risk",
+      "Valuing liabilities",
+      "Advising on reserves"
+    ],
+    "env": "Insurance companies, reinsurance, pension funds and consulting; exam-heavy early career",
+    "path": [
+      "Actuarial Trainee",
+      "Actuarial Analyst",
+      "Qualified Actuary",
+      "Chief Actuary"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Risk Management",
+      "Data Science",
+      "Insurance Underwriting"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Insurance Underwriting": {
+    "cat": "Finance & Accounting",
+    "sub": "Insurance",
+    "tech": [
+      "Underwriting Guidelines",
+      "Risk Assessment Models",
+      "Actuarial Data Basics",
+      "Policy Systems",
+      "Excel"
+    ],
+    "soft": [
+      "Risk Judgement",
+      "Decision Consistency",
+      "Documentation Discipline"
+    ],
+    "int": [
+      "Assessing insurance risks",
+      "Policy pricing",
+      "Claims patterns"
+    ],
+    "per": [
+      "Prudent",
+      "Consistent",
+      "Detail-oriented"
+    ],
+    "deg": [
+      "Any degree + insurance certifications (III)",
+      "B.Com/BBA common"
+    ],
+    "subj": [
+      "Mathematics",
+      "Economics",
+      "Business Studies"
+    ],
+    "tools": [
+      "Underwriting Systems",
+      "Excel",
+      "Actuarial Tables",
+      "Policy Admin Software"
+    ],
+    "acts": [
+      "Evaluating policy applications",
+      "Setting premiums",
+      "Assessing risk exposure",
+      "Coordinating with actuaries"
+    ],
+    "env": "Insurance company offices (life and general)",
+    "path": [
+      "Underwriting Trainee",
+      "Underwriter",
+      "Senior Underwriter",
+      "Underwriting Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Actuarial Science",
+      "Risk Management",
+      "Financial Planning"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Retail Banking": {
+    "cat": "Finance & Accounting",
+    "sub": "Banking",
+    "tech": [
+      "Core Banking Systems",
+      "Loan Processing",
+      "KYC/AML Compliance",
+      "Excel",
+      "CRM"
+    ],
+    "soft": [
+      "Customer Service",
+      "Regulatory Compliance",
+      "Sales Discipline"
+    ],
+    "int": [
+      "Banking products",
+      "Customer relationships",
+      "Financial services"
+    ],
+    "per": [
+      "Trustworthy",
+      "Service-minded",
+      "Target-driven"
+    ],
+    "deg": [
+      "Any degree + bank exams (IBPS/SBI PO) or direct campus hiring"
+    ],
+    "subj": [
+      "Business Studies",
+      "Economics",
+      "Mathematics"
+    ],
+    "tools": [
+      "Core Banking Software",
+      "CRM",
+      "KYC Systems",
+      "Excel"
+    ],
+    "acts": [
+      "Serving account holders",
+      "Processing loans",
+      "Ensuring KYC compliance",
+      "Meeting branch targets"
+    ],
+    "env": "Bank branches and regional offices; customer-facing",
+    "path": [
+      "Probationary Officer",
+      "Branch Manager",
+      "Regional Manager",
+      "General Manager"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Insurance Underwriting",
+      "Financial Planning",
+      "Sales Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Fintech": {
+    "cat": "Finance & Accounting",
+    "sub": "Financial Technology",
+    "tech": [
+      "Payment Systems (UPI)",
+      "API Integrations",
+      "Data Analytics",
+      "Regulatory Tech (RBI/SEBI)",
+      "Product Basics"
+    ],
+    "soft": [
+      "Finance-Tech Bridge",
+      "Fast Iteration",
+      "Compliance Awareness"
+    ],
+    "int": [
+      "Digital payments",
+      "Financial products + code",
+      "Startups in finance"
+    ],
+    "per": [
+      "Innovative",
+      "Adaptable",
+      "Compliance-aware"
+    ],
+    "deg": [
+      "B.Tech/B.E. + finance interest",
+      "B.Com + tech certification (both routes exist)"
+    ],
+    "subj": [
+      "Computer Science",
+      "Economics",
+      "Mathematics"
+    ],
+    "tools": [
+      "UPI SDKs",
+      "SQL",
+      "Razorpay/Payment Gateways",
+      "Analytics Tools"
+    ],
+    "acts": [
+      "Building payment products",
+      "Analysing transaction data",
+      "Ensuring regulatory compliance",
+      "Working with banks and partners"
+    ],
+    "env": "Fintech startups (Razorpay, CRED, PhonePe) and bank innovation teams",
+    "path": [
+      "Fintech Associate",
+      "Fintech Specialist",
+      "Product/Senior Lead",
+      "Head of Fintech Product"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Product Management",
+      "Software Engineering",
+      "Business Analytics"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Venture Capital Analyst": {
+    "cat": "Finance & Accounting",
+    "sub": "Venture Capital",
+    "tech": [
+      "Market Mapping",
+      "Financial Modelling",
+      "Deal Diligence",
+      "Cap Table Analysis",
+      "Excel"
+    ],
+    "soft": [
+      "Deal Sourcing Instinct",
+      "Founder Empathy",
+      "Convincing Writing"
+    ],
+    "int": [
+      "Startups and founders",
+      "Emerging technology markets",
+      "Deal-making"
+    ],
+    "per": [
+      "Opinionated",
+      "Curious",
+      "Networked"
+    ],
+    "deg": [
+      "Any degree + MBA (typical)",
+      "B.Tech + startup experience also enter"
+    ],
+    "subj": [
+      "Economics",
+      "Business Studies",
+      "Any technology domain"
+    ],
+    "tools": [
+      "Excel",
+      "Crunchbase",
+      "Pitch Decks",
+      "Notion"
+    ],
+    "acts": [
+      "Sourcing startup deals",
+      "Evaluating pitch decks",
+      "Conducting due diligence",
+      "Supporting portfolio companies"
+    ],
+    "env": "VC firms; small teams, founder meetings and market travel",
+    "path": [
+      "Analyst",
+      "Associate",
+      "Principal",
+      "Partner"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Entrepreneurship",
+      "Investment Banking",
+      "Product Management"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Digital Marketing": {
+    "cat": "Marketing & Advertising",
+    "sub": "Digital Marketing",
+    "tech": [
+      "SEO/SEM",
+      "Google/Meta Ads",
+      "Analytics (GA4)",
+      "Content Marketing",
+      "Email Automation"
+    ],
+    "soft": [
+      "Creative Experimentation",
+      "Data-driven Optimisation",
+      "Trend Awareness"
+    ],
+    "int": [
+      "Online growth",
+      "Consumer behaviour online",
+      "Content and campaigns"
+    ],
+    "per": [
+      "Creative",
+      "Analytical",
+      "Adaptable"
+    ],
+    "deg": [
+      "Any degree + digital marketing certification",
+      "BBA/MBA Marketing common"
+    ],
+    "subj": [
+      "Business Studies",
+      "English",
+      "Any stream"
+    ],
+    "tools": [
+      "Google Ads",
+      "Meta Ads Manager",
+      "GA4",
+      "Semrush"
+    ],
+    "acts": [
+      "Planning campaigns",
+      "Optimising ad spend",
+      "Analysing funnel metrics",
+      "Coordinating content calendars"
+    ],
+    "env": "Agencies, startups and brand marketing teams; hybrid/remote common",
+    "path": [
+      "Digital Marketing Executive",
+      "Digital Marketing Manager",
+      "Growth Lead",
+      "CMO track"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Growth Marketing",
+      "Social Media Management",
+      "Content Creation"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Growth Marketing": {
+    "cat": "Marketing & Advertising",
+    "sub": "Growth",
+    "tech": [
+      "A/B Testing",
+      "Funnel Analytics",
+      "Lifecycle Marketing",
+      "SQL Basics",
+      "Referral Loops"
+    ],
+    "soft": [
+      "Experimentation Discipline",
+      "Cross-functional Agility",
+      "Metric Obsession"
+    ],
+    "int": [
+      "Rapid user growth",
+      "Product-led growth",
+      "Experiment design"
+    ],
+    "per": [
+      "Experimental",
+      "Metric-driven",
+      "Fast-moving"
+    ],
+    "deg": [
+      "Any degree; analytics ability matters more"
+    ],
+    "subj": [
+      "Business Studies",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "GA4",
+      "Mixpanel",
+      "CleverTap",
+      "Growth Tools"
+    ],
+    "acts": [
+      "Designing growth experiments",
+      "Optimising activation and retention",
+      "Building referral programmes",
+      "Analysing cohort behaviour"
+    ],
+    "env": "Startups and product companies; fast-paced, metric-heavy",
+    "path": [
+      "Growth Associate",
+      "Growth Marketer",
+      "Growth Lead",
+      "VP Growth"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Digital Marketing",
+      "Product Management",
+      "Business Analytics"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Performance Marketing": {
+    "cat": "Marketing & Advertising",
+    "sub": "Paid Acquisition",
+    "tech": [
+      "Google/Meta Ads (Advanced)",
+      "ROAS Optimisation",
+      "Landing Page Testing",
+      "Attribution Models",
+      "Marketing APIs"
+    ],
+    "soft": [
+      "Budget Discipline",
+      "Rapid Optimisation",
+      "Reporting Clarity"
+    ],
+    "int": [
+      "Paid campaigns",
+      "Conversion optimisation",
+      "Ad creatives"
+    ],
+    "per": [
+      "Metric-obsessed",
+      "Decisive",
+      "Experimental"
+    ],
+    "deg": [
+      "Any degree + performance marketing certifications"
+    ],
+    "subj": [
+      "Business Studies",
+      "Mathematics",
+      "English"
+    ],
+    "tools": [
+      "Google Ads",
+      "Meta Ads",
+      "Google Ads Editor",
+      "Supermetrics"
+    ],
+    "acts": [
+      "Running paid campaigns",
+      "Optimising bids and creatives",
+      "Managing budgets",
+      "Reporting ROAS"
+    ],
+    "env": "Agencies and in-house growth teams; campaign-deadline intensity",
+    "path": [
+      "Performance Executive",
+      "Performance Marketing Manager",
+      "Senior Manager",
+      "Head of Performance"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Digital Marketing",
+      "Growth Marketing",
+      "Social Media Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Brand Management": {
+    "cat": "Marketing & Advertising",
+    "sub": "Brand",
+    "tech": [
+      "Brand Analytics",
+      "Consumer Research",
+      "Market Studies",
+      "Media Planning Basics",
+      "Presentation Tools"
+    ],
+    "soft": [
+      "Brand Storytelling",
+      "Consumer Empathy",
+      "Cross-agency Coordination"
+    ],
+    "int": [
+      "Building brands",
+      "Consumer psychology",
+      "Advertising campaigns"
+    ],
+    "per": [
+      "Creative",
+      "Insightful",
+      "Persuasive"
+    ],
+    "deg": [
+      "BBA + MBA Marketing from a good school (typical FMCG route)"
+    ],
+    "subj": [
+      "Business Studies",
+      "Psychology",
+      "English"
+    ],
+    "tools": [
+      "Nielsen Data",
+      "Kantar Reports",
+      "Excel",
+      "Media Planning Tools"
+    ],
+    "acts": [
+      "Defining brand strategy",
+      "Planning campaigns with agencies",
+      "Tracking brand health",
+      "Launching new products"
+    ],
+    "env": "FMCG, consumer durables and lifestyle companies; agency coordination",
+    "path": [
+      "Assistant Brand Manager",
+      "Brand Manager",
+      "Category Manager",
+      "CMO track"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Digital Marketing",
+      "Market Research Analyst",
+      "Public Relations"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Social Media Management": {
+    "cat": "Marketing & Advertising",
+    "sub": "Social Media",
+    "tech": [
+      "Platform Algorithms",
+      "Content Scheduling Tools",
+      "Community Management",
+      "Short-form Video Editing",
+      "Social Analytics"
+    ],
+    "soft": [
+      "Trend Instinct",
+      "Community Empathy",
+      "Crisis Response"
+    ],
+    "int": [
+      "Social platforms",
+      "Memes and trends",
+      "Community building"
+    ],
+    "per": [
+      "Trendy",
+      "Responsive",
+      "Creative"
+    ],
+    "deg": [
+      "Any degree + portfolio of social work"
+    ],
+    "subj": [
+      "English",
+      "Business Studies",
+      "Any stream"
+    ],
+    "tools": [
+      "Meta Business Suite",
+      "Hootsuite",
+      "Canva",
+      "CapCut"
+    ],
+    "acts": [
+      "Planning content calendars",
+      "Managing communities",
+      "Responding to trends",
+      "Reporting engagement"
+    ],
+    "env": "Brands, agencies and creator economy; always-on platforms",
+    "path": [
+      "Social Media Executive",
+      "Social Media Manager",
+      "Content Lead",
+      "Head of Social"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Content Creation",
+      "Digital Marketing",
+      "Public Relations"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Market Research Analyst": {
+    "cat": "Marketing & Advertising",
+    "sub": "Consumer Research",
+    "tech": [
+      "Survey Design",
+      "Statistical Analysis (SPSS)",
+      "Focus Group Methods",
+      "Data Visualisation",
+      "Report Writing"
+    ],
+    "soft": [
+      "Question Design",
+      "Objective Analysis",
+      "Insight Communication"
+    ],
+    "int": [
+      "Consumer behaviour",
+      "Survey research",
+      "Market trends"
+    ],
+    "per": [
+      "Objective",
+      "Curious",
+      "Thorough"
+    ],
+    "deg": [
+      "Any degree + MBA Marketing/Research preferred",
+      "B.A. Psychology/Economics also enter"
+    ],
+    "subj": [
+      "Statistics",
+      "Psychology",
+      "Economics"
+    ],
+    "tools": [
+      "SPSS",
+      "Qualtrics",
+      "Excel",
+      "Tableau"
+    ],
+    "acts": [
+      "Designing surveys",
+      "Conducting focus groups",
+      "Analysing consumer data",
+      "Writing insight reports"
+    ],
+    "env": "Research agencies, consulting firms and brand insight teams",
+    "path": [
+      "Research Executive",
+      "Market Research Analyst",
+      "Insights Manager",
+      "Head of Consumer Insights"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Business Analytics",
+      "Psychology",
+      "Brand Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Sales Management": {
+    "cat": "Sales",
+    "sub": "Sales Leadership",
+    "tech": [
+      "CRM (Salesforce)",
+      "Sales Analytics",
+      "Pipeline Management",
+      "Quota Tracking",
+      "Excel"
+    ],
+    "soft": [
+      "Persuasion",
+      "Coaching Salespeople",
+      "Rejection Resilience"
+    ],
+    "int": [
+      "Closing deals",
+      "Building client relationships",
+      "Revenue growth"
+    ],
+    "per": [
+      "Persuasive",
+      "Resilient",
+      "Goal-driven"
+    ],
+    "deg": [
+      "Any degree; MBA Sales/Marketing preferred for MNC tracks"
+    ],
+    "subj": [
+      "Business Studies",
+      "English",
+      "Economics"
+    ],
+    "tools": [
+      "Salesforce",
+      "HubSpot",
+      "Excel",
+      "Sales Engagement Tools"
+    ],
+    "acts": [
+      "Setting sales targets",
+      "Coaching field teams",
+      "Negotiating large deals",
+      "Reviewing pipelines"
+    ],
+    "env": "Field and office mix across pharma, FMCG, IT services and manufacturing",
+    "path": [
+      "Sales Executive",
+      "Area Sales Manager",
+      "Regional Sales Manager",
+      "VP Sales"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Business Development",
+      "Retail Management",
+      "Business Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Business Development": {
+    "cat": "Sales",
+    "sub": "Business Development",
+    "tech": [
+      "Lead Generation Tools",
+      "CRM",
+      "Outreach Platforms",
+      "Market Research",
+      "Proposal Writing"
+    ],
+    "soft": [
+      "Prospecting Persistence",
+      "Relationship Building",
+      "Solution Positioning"
+    ],
+    "int": [
+      "Opening new markets",
+      "Partnership deals",
+      "Client acquisition"
+    ],
+    "per": [
+      "Proactive",
+      "Charming",
+      "Persistent"
+    ],
+    "deg": [
+      "Any degree; BBA/B.Tech + MBA common in IT services"
+    ],
+    "subj": [
+      "Business Studies",
+      "English",
+      "Economics"
+    ],
+    "tools": [
+      "LinkedIn Sales Navigator",
+      "HubSpot",
+      "Outreach",
+      "Excel"
+    ],
+    "acts": [
+      "Identifying new clients",
+      "Running outreach campaigns",
+      "Negotiating partnerships",
+      "Coordinating proposals"
+    ],
+    "env": "IT services, SaaS and consulting firms; client meetings and travel",
+    "path": [
+      "Business Development Executive",
+      "BD Manager",
+      "Senior BD Manager",
+      "Head of Partnerships"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Sales Management",
+      "Digital Marketing",
+      "Strategy Consulting"
+    ],
+    "minEdu": "Bachelor's"
+  }
+}

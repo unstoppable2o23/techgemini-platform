@@ -384,6 +384,9 @@ model Career {
   name                String   @unique
   slug                String   @unique
   title               String
+  category            String?
+  subcategory         String?
+  shortDescription    String?
   introduction        String
   whoShouldPursue     String[]
   eligibility         String[]
@@ -398,6 +401,24 @@ model Career {
   topIndustries       String[]
   futureOutlook       String
   minStudyLevel       String?
+  technicalSkills     String[] @default([])
+  softSkills          String[] @default([])
+  interests           String[] @default([])
+  personalityTraits   String[] @default([])
+  recommendedDegrees  String[] @default([])
+  recommendedSubjects String[] @default([])
+  toolsAndTechnologies String[] @default([])
+  workActivities      String[] @default([])
+  workEnvironment     String?
+  careerPath          String[] @default([])
+  automationRisk      String?
+  indiaRelevance      String?
+  globalRelevance     String?
+  remotePotential     String?
+  relatedCareers      String[] @default([])
+  alternativeCareers  String[] @default([])
+  isEmerging          Boolean  @default(false)
+  isActive            Boolean  @default(true)
   seoTitle            String?
   seoDescription      String?
   seoKeywords         String[]
@@ -414,6 +435,8 @@ model Career {
 
   @@index([name])
   @@index([demandLevel])
+  @@index([category])
+  @@index([isActive])
 }
 
 model CareerTrait {

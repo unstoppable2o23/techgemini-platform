@@ -1,0 +1,622 @@
+[
+  {
+    "name": "Market Research Analyst",
+    "title": "Market Research Analyst",
+    "introduction": "Market Research Analysts study consumers, competitors and markets to answer business questions. They design surveys, run focus groups and turn data into insights that guide brands.",
+    "whoShouldPursue": [
+      "Students curious about consumer behaviour",
+      "Analytical minds who like surveys and data",
+      "Clear writers who enjoy insights"
+    ],
+    "workNature": {
+      "description": "Market research analysts design surveys, conduct focus groups and analyse consumer data for insights.",
+      "examples": [
+        "Designing surveys",
+        "Conducting focus groups",
+        "Analysing consumer data"
+      ]
+    },
+    "eligibility": [
+      "Any degree + MBA Marketing/Research preferred",
+      "B.A. Psychology/Economics also enter",
+      "Statistical analysis ability"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "8-13 LPA",
+        "senior": "16-28 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+18%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Research Agencies",
+        "Consulting Firms",
+        "FMCG Brands",
+        "Media Houses"
+      ],
+      "futureOutlook": "Brands increasingly want evidence over intuition — market research is professionalising with better tools and pay."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Bachelor's Degree",
+            "description": "Any graduation with statistics/psychology exposure."
+          },
+          {
+            "title": "Research Skills",
+            "description": "Learn survey design, SPSS and reporting."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Research Executive at agencies",
+        "description": "Consumer research projects."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Social Listening Analyst",
+        "description": "Analysing online consumer conversations."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Consumer Insights Analyst",
+        "description": "AI-based consumer trend analysis."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Market Research Analyst Career in India: Salary & Skills",
+      "description": "Market Research Analyst career guide for India — skills, salary and research agency careers.",
+      "keywords": [
+        "market research analyst India",
+        "market research salary",
+        "consumer research career"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Market Research Analyst do?",
+          "answer": "They study consumers and markets through surveys, focus groups and data analysis."
+        },
+        {
+          "question": "Which skills matter most?",
+          "answer": "Survey design, statistics and clear insight storytelling."
+        }
+      ]
+    },
+    "cat": "Marketing & Advertising",
+    "sub": "Consumer Research",
+    "tech": [
+      "Survey Design",
+      "Statistical Analysis (SPSS)",
+      "Focus Group Methods",
+      "Data Visualisation",
+      "Report Writing"
+    ],
+    "soft": [
+      "Question Design",
+      "Objective Analysis",
+      "Insight Communication"
+    ],
+    "int": [
+      "Consumer behaviour",
+      "Survey research",
+      "Market trends"
+    ],
+    "per": [
+      "Objective",
+      "Curious",
+      "Thorough"
+    ],
+    "deg": [
+      "Any degree + MBA Marketing/Research preferred",
+      "B.A. Psychology/Economics also enter"
+    ],
+    "subj": [
+      "Statistics",
+      "Psychology",
+      "Economics"
+    ],
+    "tools": [
+      "SPSS",
+      "Qualtrics",
+      "Excel",
+      "Tableau"
+    ],
+    "acts": [
+      "Designing surveys",
+      "Conducting focus groups",
+      "Analysing consumer data",
+      "Writing insight reports"
+    ],
+    "env": "Research agencies, consulting firms and brand insight teams",
+    "path": [
+      "Research Executive",
+      "Market Research Analyst",
+      "Insights Manager",
+      "Head of Consumer Insights"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Business Analytics",
+      "Psychology",
+      "Brand Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Cyber Law",
+    "title": "Cyber Law Specialist",
+    "introduction": "Cyber Law Specialists handle legal issues of the internet — data privacy, cybercrime, digital contracts and IT Act compliance. As India digitises, cyber legal expertise is exploding in demand.",
+    "whoShouldPursue": [
+      "Law students interested in technology",
+      "Those who like emerging legal areas",
+      "Tech-savvy legal minds"
+    ],
+    "workNature": {
+      "description": "Cyber law specialists advise on data privacy, handle cybercrime cases and ensure IT Act compliance.",
+      "examples": [
+        "Advising on data privacy",
+        "Handling cybercrime cases",
+        "Drafting technology contracts"
+      ]
+    },
+    "eligibility": [
+      "LLB degree",
+      "Cyber law certification/diploma",
+      "Technology interest essential"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "10-18 LPA",
+        "senior": "22-40 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+25%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Law Firms",
+        "Information Technology",
+        "Government & Regulators",
+        "Corporate Legal Teams"
+      ],
+      "futureOutlook": "The Digital Personal Data Protection Act has created massive compliance demand — every tech company now needs cyber law expertise."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "LLB",
+            "description": "Law degree with cyber/IT law electives."
+          },
+          {
+            "title": "Specialisation",
+            "description": "PG diploma in cyber law/cyber security."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Cyber Law Counsel at IT companies",
+        "description": "Technology law advisory."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Data Protection Officer (DPO)",
+        "description": "DPDP Act compliance leadership."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Governance Counsel",
+        "description": "Legal advisory for AI systems."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Cyber Law Career in India: Salary, Courses & DPDP Act Demand",
+      "description": "Cyber Law career guide for India — courses, DPDP Act compliance demand and salary.",
+      "keywords": [
+        "cyber law career India",
+        "cyber law salary",
+        "DPDP act lawyer"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Cyber Law Specialist do?",
+          "answer": "They handle data privacy, cybercrime and technology law compliance."
+        },
+        {
+          "question": "Why is cyber law growing?",
+          "answer": "The DPDP Act and rising cybercrime make legal tech expertise essential."
+        }
+      ]
+    },
+    "cat": "Law",
+    "sub": "Technology Law",
+    "tech": [
+      "IT Act 2000",
+      "DPDP Act Compliance",
+      "Cybercrime Procedures",
+      "Data Privacy Frameworks",
+      "Technology Contracts"
+    ],
+    "soft": [
+      "Tech-Legal Bridge",
+      "Precise Drafting",
+      "Regulatory Interpretation"
+    ],
+    "int": [
+      "Internet law and policy",
+      "Cybercrime justice",
+      "Emerging technology regulation"
+    ],
+    "per": [
+      "Analytical",
+      "Tech-savvy",
+      "Ethical"
+    ],
+    "deg": [
+      "LLB degree",
+      "Cyber law certification/diploma preferred"
+    ],
+    "subj": [
+      "Law",
+      "Computer Science",
+      "English"
+    ],
+    "tools": [
+      "IT Act & DPDP References",
+      "Legal Research Databases",
+      "Compliance Checklists"
+    ],
+    "acts": [
+      "Advising on data privacy",
+      "Handling cybercrime cases",
+      "Drafting technology contracts",
+      "Ensuring IT Act compliance"
+    ],
+    "env": "Law firms, IT companies, regulators and corporate legal teams; remote-friendly",
+    "path": [
+      "Cyber Law Associate",
+      "Cyber Law Specialist",
+      "Senior Counsel",
+      "Data Protection Officer / Partner"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Law",
+      "Cyber Security",
+      "Intellectual Property Rights"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Forensic Accounting",
+    "title": "Forensic Accountant",
+    "introduction": "Forensic Accountants investigate financial fraud — tracing hidden money, analysing manipulated books and supporting legal cases. They combine accounting with investigative instinct.",
+    "whoShouldPursue": [
+      "Commerce students with investigative instincts",
+      "Detail-oriented CA/CMA aspirants",
+      "Those fascinated by fraud detection"
+    ],
+    "workNature": {
+      "description": "Forensic accountants investigate fraud, trace transactions and support litigation with financial analysis.",
+      "examples": [
+        "Investigating fraud",
+        "Tracing transactions",
+        "Supporting litigation"
+      ]
+    },
+    "eligibility": [
+      "B.Com + CA/CMA (or pursuing)",
+      "Forensic accounting certification preferred",
+      "Investigative mindset"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "5-9 LPA",
+        "median": "12-20 LPA",
+        "senior": "25-45 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+20%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Big 4 Consulting Firms",
+        "Banking & Financial Services",
+        "Law Enforcement Support",
+        "Corporate Investigation Teams"
+      ],
+      "futureOutlook": "Rising financial fraud, ED/CBI investigations and corporate disputes are driving strong demand for forensic accountants in India."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "B.Com + CA/CMA",
+            "description": "Commerce degree with professional accounting qualification."
+          },
+          {
+            "title": "Forensic Specialisation",
+            "description": "Certified Forensic Accounting / CFE credential."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Forensic Accountant at Big 4",
+        "description": "Fraud investigation engagements."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Crypto Tracing Analyst",
+        "description": "Blockchain fraud investigation."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Fraud Detection Analyst",
+        "description": "AI-based anomaly detection."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Forensic Accounting Career in India: Salary, Courses & Scope",
+      "description": "Forensic Accounting career guide for India — courses, salary and fraud investigation careers.",
+      "keywords": [
+        "forensic accounting India",
+        "forensic accountant salary",
+        "fraud investigation career"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Forensic Accountant do?",
+          "answer": "They investigate financial fraud and support legal cases with financial analysis."
+        },
+        {
+          "question": "Which qualification is best?",
+          "answer": "CA/CMA plus a Certified Fraud Examiner (CFE) credential is the strongest combination."
+        }
+      ]
+    },
+    "cat": "Finance & Accounting",
+    "sub": "Forensic Accounting",
+    "tech": [
+      "Fraud Investigation Techniques",
+      "Financial Statement Analysis",
+      "Data Analytics for Audit",
+      "Tracing & Asset Recovery",
+      "Litigation Support"
+    ],
+    "soft": [
+      "Investigative Scepticism",
+      "Report Precision",
+      "Composure Under Pressure"
+    ],
+    "int": [
+      "Financial fraud detection",
+      "Investigation work",
+      "Corporate accountability"
+    ],
+    "per": [
+      "Sceptical",
+      "Meticulous",
+      "Persistent"
+    ],
+    "deg": [
+      "B.Com + CA/CMA (or pursuing)",
+      "Forensic accounting certification preferred"
+    ],
+    "subj": [
+      "Accountancy",
+      "Mathematics",
+      "Business Studies"
+    ],
+    "tools": [
+      "Excel (Advanced)",
+      "IDEA/ACL Analytics",
+      "ERP Systems",
+      "Forensic Tools"
+    ],
+    "acts": [
+      "Investigating fraud",
+      "Tracing transactions",
+      "Supporting litigation",
+      "Quantifying losses"
+    ],
+    "env": "Big 4 firms, investigation practices and corporate forensic teams",
+    "path": [
+      "Forensic Accounting Associate",
+      "Forensic Accountant",
+      "Senior Forensic Accountant",
+      "Forensic Practice Partner"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Chartered Accountancy",
+      "Risk Management",
+      "Law"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Gemology and Gem Testing",
+    "title": "Gemologist",
+    "introduction": "Gemologists identify, grade and value gemstones — diamonds, emeralds, rubies and sapphires. India's Surat diamond industry and Jaipur gem trade employ gemologists at every stage of the pipeline.",
+    "whoShouldPursue": [
+      "Students fascinated by gemstones",
+      "Precision observers with scientific temper",
+      "Those interested in the gem trade"
+    ],
+    "workNature": {
+      "description": "Gemologists test and grade gemstones using instruments, certify quality and support the gem trade.",
+      "examples": [
+        "Grading diamonds",
+        "Identifying gemstones",
+        "Certifying quality"
+      ]
+    },
+    "eligibility": [
+      "Any degree + gemology diploma (GG/Gemology from IGI/GIA)",
+      "Sharp observational skills",
+      "Interest in the gem trade"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3-5.5 LPA",
+        "median": "6-11 LPA",
+        "senior": "14-26 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+10%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Diamond Industry (Surat)",
+        "Gem Trade (Jaipur)",
+        "Jewellery Brands",
+        "Testing Laboratories"
+      ],
+      "futureOutlook": "Lab-grown diamonds and certification demand are creating new roles for trained gemologists in India's largest gem processing industry."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Gemology Diploma",
+            "description": "Graduate Gemologist (GIA) or IGI gemology diploma."
+          },
+          {
+            "title": "Industry Entry",
+            "description": "Join grading labs, brands or the gem trade."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Gemologist at grading labs",
+        "description": "Diamond and gem certification."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Lab-grown Diamond Grader",
+        "description": "Testing lab-grown stones."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Gem Identification Analyst",
+        "description": "AI-based stone identification."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Gemology Career in India: Courses, Salary & Diamond Industry",
+      "description": "Gemology career guide for India — GIA/IGI courses, salary and diamond industry careers.",
+      "keywords": [
+        "gemology career India",
+        "gemologist salary India",
+        "diamond industry career"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Gemologist do?",
+          "answer": "They identify, grade and certify gemstones using scientific instruments."
+        },
+        {
+          "question": "Where do gemologists work in India?",
+          "answer": "Surat's diamond industry, Jaipur's gem trade, grading labs and jewellery brands."
+        }
+      ]
+    },
+    "cat": "Design & Creative",
+    "sub": "Gemology",
+    "tech": [
+      "Diamond Grading (4Cs)",
+      "Gem Identification Instruments",
+      "Refractometer & Spectroscope",
+      "Lab-grown Diamond Detection",
+      "Certification Standards"
+    ],
+    "soft": [
+      "Keen Observation",
+      "Grading Consistency",
+      "Trade Ethics"
+    ],
+    "int": [
+      "Gemstones and diamonds",
+      "Precision testing",
+      "Luxury trade"
+    ],
+    "per": [
+      "Observant",
+      "Consistent",
+      "Ethical"
+    ],
+    "deg": [
+      "Gemology diploma (GIA/IGI)",
+      "Any degree + gem testing certification"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Any stream"
+    ],
+    "tools": [
+      "Loupe & Microscope",
+      "Refractometer",
+      "Spectroscope",
+      "Diamond Testers"
+    ],
+    "acts": [
+      "Grading diamonds",
+      "Identifying gemstones",
+      "Certifying quality",
+      "Supporting the gem trade"
+    ],
+    "env": "Grading labs, gem trading hubs (Surat/Jaipur/Mumbai) and jewellery brands",
+    "path": [
+      "Gem Testing Assistant",
+      "Gemologist",
+      "Senior Gemologist",
+      "Lab Head / Trade Consultant"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Jewellery Design",
+      "Forensic Accounting",
+      "Retail Management"
+    ],
+    "minEdu": "Bachelor's"
+  }
+]

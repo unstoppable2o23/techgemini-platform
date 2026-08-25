@@ -275,6 +275,151 @@ export default function CareerDetailClient({ career }: { career: any }) {
           </div>
         </div>
       )}
+
+      {(career.technicalSkills?.length > 0 || career.softSkills?.length > 0) && (
+        <div>
+          <SectionHeader icon={Cpu} tint="from-blue-500 to-blue-500">Skills</SectionHeader>
+          <div className="space-y-4">
+            {career.technicalSkills?.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-2">Technical Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {career.technicalSkills.map((s: string, i: number) => (
+                    <span key={i} className="rounded-full border bg-card px-3 py-1 text-xs">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+            {career.softSkills?.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-2">Soft Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {career.softSkills.map((s: string, i: number) => (
+                    <span key={i} className="rounded-full border border-accent/30 bg-accent/5 px-3 py-1 text-xs text-accent">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {(career.recommendedDegrees?.length > 0 || career.recommendedSubjects?.length > 0) && (
+        <div>
+          <SectionHeader icon={GraduationCap} tint="from-blue-500 to-blue-500">Education & Degrees</SectionHeader>
+          <div className="space-y-3">
+            {career.recommendedDegrees?.length > 0 && (
+              <div className="space-y-2">
+                {career.recommendedDegrees.map((d: string, i: number) => (
+                  <div key={i} className="flex items-start gap-2 text-sm">
+                    <GraduationCap className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                    <span>{d}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+            {career.recommendedSubjects?.length > 0 && (
+              <div className="flex flex-wrap gap-2 pt-1">
+                {career.recommendedSubjects.map((s: string, i: number) => (
+                  <span key={i} className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent">{s}</span>
+                ))}
+              </div>
+            )}
+            {career.minStudyLevel && (
+              <p className="text-xs text-muted-foreground">Minimum education: <span className="font-medium">{career.minStudyLevel}</span></p>
+            )}
+          </div>
+        </div>
+      )}
+
+      {(career.interests?.length > 0 || career.personalityTraits?.length > 0) && (
+        <div>
+          <SectionHeader icon={Users} tint="from-blue-500 to-blue-500">Interests & Personality Fit</SectionHeader>
+          <div className="space-y-4">
+            {career.interests?.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-2">You'll enjoy this career if you like</h3>
+                <ul className="space-y-1.5">
+                  {career.interests.map((s: string, i: number) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {career.personalityTraits?.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-2">Traits that fit well</h3>
+                <div className="flex flex-wrap gap-2">
+                  {career.personalityTraits.map((s: string, i: number) => (
+                    <span key={i} className="rounded-full border bg-card px-3 py-1 text-xs">{s}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {(career.workEnvironment || career.workActivities?.length > 0) && (
+        <div>
+          <SectionHeader icon={Briefcase} tint="from-blue-500 to-blue-500">Work Environment</SectionHeader>
+          <div className="space-y-2.5">
+            {career.workEnvironment && (
+              <p className="text-sm text-muted-foreground">{career.workEnvironment}</p>
+            )}
+            {career.workActivities?.length > 0 && (
+              <div className="space-y-2">
+                {career.workActivities.map((w: string, i: number) => (
+                  <div key={i} className="flex items-start gap-2 text-sm">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                    <span>{w}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {(career.relatedCareers?.length > 0 || career.alternativeCareers?.length > 0) && (
+        <div>
+          <SectionHeader icon={Target} tint="from-blue-500 to-blue-500">Related Careers</SectionHeader>
+          <div className="flex flex-wrap gap-2">
+            {[...(career.relatedCareers || []), ...(career.alternativeCareers || [])].map((name: string, i: number) => {
+              const slug = typeof name === "string" ? name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "";
+              return (
+                <Link
+                  key={i}
+                  href={`/career-library/${slug}`}
+                  className="rounded-full border bg-card px-3.5 py-1.5 text-xs font-medium transition-colors hover:border-accent hover:text-accent"
+                >
+                  {name}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {(career.automationRisk || career.remotePotential || career.indiaRelevance) && (
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          {[
+            ["Automation Risk", career.automationRisk],
+            ["Remote Potential", career.remotePotential],
+            ["India Relevance", career.indiaRelevance],
+          ].map(([label, value]) =>
+            value ? (
+              <div key={label as string} className="rounded-xl border bg-card p-3 text-center">
+                <p className="text-xs text-muted-foreground">{label}</p>
+                <p className="text-sm font-semibold mt-0.5">{value as string}</p>
+              </div>
+            ) : null
+          )}
+        </div>
+      )}
     </div>
   );
 }

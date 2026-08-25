@@ -1,0 +1,3406 @@
+[
+  {
+    "name": "Textile Design",
+    "title": "Textile Designer",
+    "introduction": "Textile Designers create the prints, weaves and patterns that become fabrics for fashion and home. They blend artistry with manufacturing knowledge for India's huge textile industry.",
+    "whoShouldPursue": [
+      "Artistic students who love patterns",
+      "Those interested in fabrics and craft",
+      "Detail-oriented creatives"
+    ],
+    "workNature": {
+      "description": "Textile designers create repeat patterns, design weaves and coordinate with mills for production.",
+      "examples": [
+        "Designing prints and weaves",
+        "Creating repeat patterns",
+        "Coordinating with mills"
+      ]
+    },
+    "eligibility": [
+      "B.Des Textile Design (NIFT/NID)",
+      "Portfolio of pattern/print work",
+      "Fabric knowledge"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "7-12 LPA",
+        "senior": "15-25 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+12%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Home Furnishing Export",
+        "Fashion Brands",
+        "Textile Mills",
+        "Craft Sector"
+      ],
+      "futureOutlook": "India's home furnishing and apparel export market values original textile design, and handcrafted Indian prints have global demand."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "B.Des Textile Design",
+            "description": "From NIFT/NID or design institutes."
+          },
+          {
+            "title": "Portfolio Building",
+            "description": "Build print and weave portfolio for brands."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Textile Designer at export houses",
+        "description": "Home furnishing prints."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Sustainable Textile Designer",
+        "description": "Eco-friendly fabric design."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Print Designer",
+        "description": "AI-assisted pattern generation."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Textile Designer Career in India: Salary, Courses & Scope",
+      "description": "Textile Design career guide for India — NIFT courses, salary and textile industry careers.",
+      "keywords": [
+        "textile designer India",
+        "textile design salary",
+        "NIFT textile design"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Textile Designer do?",
+          "answer": "They create prints, weaves and patterns for fabrics used in fashion and home furnishings."
+        },
+        {
+          "question": "Is NIFT necessary?",
+          "answer": "NIFT/NID help, but strong portfolios can open doors too."
+        }
+      ]
+    },
+    "cat": "Design & Creative",
+    "sub": "Textiles",
+    "tech": [
+      "Print Design (Repeat Patterns)",
+      "Weave Design",
+      "Textile CAD",
+      "Fabric Knowledge",
+      "Colour Theory"
+    ],
+    "soft": [
+      "Pattern Creativity",
+      "Trend Sensitivity",
+      "Mill Coordination"
+    ],
+    "int": [
+      "Fabrics and prints",
+      "Home and fashion textiles",
+      "Craft traditions"
+    ],
+    "per": [
+      "Artistic",
+      "Detail-oriented",
+      "Trend-aware"
+    ],
+    "deg": [
+      "B.Des Textile Design (NIFT/NID)"
+    ],
+    "subj": [
+      "Art",
+      "Chemistry",
+      "Home Science"
+    ],
+    "tools": [
+      "Adobe Suite",
+      "Textile CAD",
+      "Print Sampling",
+      "Looms"
+    ],
+    "acts": [
+      "Designing prints and weaves",
+      "Creating repeat patterns",
+      "Coordinating with mills",
+      "Following fabric trends"
+    ],
+    "env": "Export houses, home/fashion textile brands and design studios",
+    "path": [
+      "Textile Designer",
+      "Senior Textile Designer",
+      "Design Manager",
+      "Textile Design Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Fashion Design",
+      "Textile Engineering",
+      "Graphic Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Jewellery Design",
+    "title": "Jewellery Designer",
+    "introduction": "Jewellery Designers create ornaments — from traditional gold pieces to modern diamond collections. India's gem and jewellery industry is one of the largest in the world.",
+    "whoShouldPursue": [
+      "Students who love intricate design",
+      "Those interested in gems and luxury",
+      "Patient, detailed artists"
+    ],
+    "workNature": {
+      "description": "Jewellery designers sketch collections, create CAD models and coordinate with karigars for production.",
+      "examples": [
+        "Designing jewellery collections",
+        "Creating CAD models",
+        "Selecting gemstones"
+      ]
+    },
+    "eligibility": [
+      "B.Des Jewellery Design or diploma",
+      "CAD skills (Matrix/RhinoGold)",
+      "Gemstone knowledge"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "7-13 LPA",
+        "senior": "16-30 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+10%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Jewellery Brands (Tanishq etc.)",
+        "Export Houses",
+        "Luxury Retail",
+        "Own Labels"
+      ],
+      "futureOutlook": "Organised jewellery retail is growing fast in India, and brands need designers who understand both tradition and modern aesthetics."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "B.Des/Diploma",
+            "description": "Jewellery design degree or diploma with CAD."
+          },
+          {
+            "title": "Industry Entry",
+            "description": "Join brands or export houses."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Designer at jewellery brands",
+        "description": "Collection design for retail."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Lab-grown Diamond Designer",
+        "description": "Modern sustainable jewellery."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Jewellery Visualiser",
+        "description": "AI-based design visualisation."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Jewellery Design Career in India: Salary, Courses & Scope",
+      "description": "Jewellery Design career guide for India — courses, salary and gem industry careers.",
+      "keywords": [
+        "jewellery design India",
+        "jewellery designer salary",
+        "jewellery design course"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Jewellery Designer do?",
+          "answer": "They design jewellery collections, create CAD models and work with karigars."
+        },
+        {
+          "question": "Is CAD necessary?",
+          "answer": "Yes — Matrix/RhinoGold CAD skills are industry standard now."
+        }
+      ]
+    },
+    "cat": "Design & Creative",
+    "sub": "Jewellery",
+    "tech": [
+      "Jewellery Illustration",
+      "CAD (Matrix/RhinoGold)",
+      "Gemstone Knowledge",
+      "Metallurgy Basics",
+      "Manufacturing Processes"
+    ],
+    "soft": [
+      "Intricate Detail Work",
+      "Market Awareness",
+      "Craft Appreciation"
+    ],
+    "int": [
+      "Ornaments and gemstones",
+      "Heritage craft",
+      "Luxury design"
+    ],
+    "per": [
+      "Meticulous",
+      "Artistic",
+      "Patient"
+    ],
+    "deg": [
+      "B.Des Jewellery Design",
+      "Diploma + CAD certification"
+    ],
+    "subj": [
+      "Art",
+      "Chemistry",
+      "Physics"
+    ],
+    "tools": [
+      "RhinoGold/Matrix",
+      "Sketching Kits",
+      "Gem Testing Loupes",
+      "3D Printers"
+    ],
+    "acts": [
+      "Designing jewellery collections",
+      "Creating CAD models",
+      "Selecting gemstones",
+      "Coordinating with karigars"
+    ],
+    "env": "Jewellery houses (Tanishq etc.), export houses and own labels",
+    "path": [
+      "Jewellery Designer",
+      "Senior Designer",
+      "Design Head",
+      "Own Jewellery Label"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Fashion Design",
+      "Gemology",
+      "Fine Arts"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Filmmaking and Direction",
+    "title": "Filmmaker / Director",
+    "introduction": "Filmmakers and Directors bring stories to the screen — leading crews, guiding actors and making hundreds of creative decisions. OTT platforms have created massive demand for new directors.",
+    "whoShouldPursue": [
+      "Storytellers with visual imagination",
+      "Leaders who stay calm on sets",
+      "Those passionate about cinema"
+    ],
+    "workNature": {
+      "description": "Directors lead shoots, work with actors, guide editing and manage production crews.",
+      "examples": [
+        "Directing shoots",
+        "Working with actors",
+        "Guiding edit and sound"
+      ]
+    },
+    "eligibility": [
+      "FTII/film school diploma or any degree + strong showreel",
+      "Set experience as assistant director",
+      "Deep understanding of storytelling"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-8 LPA",
+        "median": "12-25 LPA",
+        "senior": "40-100+ LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+20%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Film Production",
+        "OTT Platforms",
+        "Advertising Films",
+        "Independent Cinema"
+      ],
+      "futureOutlook": "OTT platforms are commissioning more Indian content than ever — new directors with fresh stories are in demand across languages."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Film School",
+            "description": "FTII/sr film institute direction programme."
+          },
+          {
+            "title": "Assist & Build",
+            "description": "Assist directors while building a showreel."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Director at production houses",
+        "description": "Films, series and ad films."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "OTT Series Director",
+        "description": "Directing streaming series."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Pre-visualisation Director",
+        "description": "AI-assisted shot planning."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Filmmaking Career in India: FTII, OTT Direction & Salary",
+      "description": "Filmmaking and Direction career guide for India — film schools, OTT opportunities and director careers.",
+      "keywords": [
+        "filmmaking career India",
+        "film director salary",
+        "FTII career"
+      ],
+      "faqs": [
+        {
+          "question": "How do I become a film director?",
+          "answer": "Film school (FTII) or assist directors while building a strong showreel."
+        },
+        {
+          "question": "Is OTT creating opportunities?",
+          "answer": "Yes — streaming platforms commission more Indian content every year."
+        }
+      ]
+    },
+    "cat": "Media & Communication",
+    "sub": "Film & OTT",
+    "tech": [
+      "Direction & Storytelling",
+      "Camera & Lighting Basics",
+      "Editing (Premiere/Resolve)",
+      "Screenplay Structure",
+      "Production Management"
+    ],
+    "soft": [
+      "Creative Leadership",
+      "Visual Storytelling",
+      "Set Decision-making"
+    ],
+    "int": [
+      "Films and series",
+      "Visual narratives",
+      "Directing performances"
+    ],
+    "per": [
+      "Visionary",
+      "Decisive",
+      "Collaborative"
+    ],
+    "deg": [
+      "FTII/ film school diploma",
+      "Any degree + strong showreel and set experience"
+    ],
+    "subj": [
+      "English",
+      "Art",
+      "Any stream"
+    ],
+    "tools": [
+      "Cameras",
+      "Premiere/Resolve",
+      "Shot Lists",
+      "Storyboarding Tools"
+    ],
+    "acts": [
+      "Directing shoots",
+      "Working with actors",
+      "Guiding edit and sound",
+      "Managing production crews"
+    ],
+    "env": "Film/OTT production houses, ad films and independent cinema; project-based",
+    "path": [
+      "Assistant Director",
+      "Director",
+      "Established Director",
+      "Producer / Showrunner"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Animation",
+      "Creative Writing",
+      "Sound Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Radio Jockey and Anchoring",
+    "title": "Radio Jockey / Anchor",
+    "introduction": "Radio Jockeys entertain thousands of listeners daily with music, chat and wit. Podcasts and digital audio have expanded this career beyond FM stations.",
+    "whoShouldPursue": [
+      "Expressive speakers with quick wit",
+      "Those who love music and entertainment",
+      "Confident communicators"
+    ],
+    "workNature": {
+      "description": "RJs host live shows, interview guests, read scripts naturally and build listener communities.",
+      "examples": [
+        "Hosting live shows",
+        "Interviewing guests",
+        "Reading scripts naturally"
+      ]
+    },
+    "eligibility": [
+      "Any degree + voice/anchoring training",
+      "Mass communication preferred",
+      "Voice modulation and spontaneity"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "2.5-5 LPA",
+        "median": "6-12 LPA",
+        "senior": "15-25 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+10%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "FM Radio",
+        "Podcast Networks",
+        "Digital Audio",
+        "Event Anchoring"
+      ],
+      "futureOutlook": "Podcasting and regional audio content are booming — RJs with digital presence can build personal brands beyond radio."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Bachelor's Degree",
+            "description": "Mass communication preferred."
+          },
+          {
+            "title": "Voice Training",
+            "description": "Voice modulation and showreel development."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Radio Jockey at FM stations",
+        "description": "Live radio shows."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Podcast Host",
+        "description": "Independent podcast creation."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Audio Content Producer",
+        "description": "AI-assisted audio production."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Radio Jockey Career in India: Salary, Courses & Scope",
+      "description": "Radio Jockey career guide for India — courses, salary and broadcast careers.",
+      "keywords": [
+        "radio jockey India",
+        "RJ salary",
+        "radio jockey course"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Radio Jockey do?",
+          "answer": "They host radio shows — mixing music, chat and interviews for listeners."
+        },
+        {
+          "question": "Do I need a specific degree?",
+          "answer": "Any degree works; voice quality and spontaneity matter more."
+        }
+      ]
+    },
+    "cat": "Media & Communication",
+    "sub": "Broadcast Anchoring",
+    "tech": [
+      "Voice Modulation",
+      "Broadcast Console Basics",
+      "Scripting for Ear",
+      "Live Show Handling",
+      "Podcast Production"
+    ],
+    "soft": [
+      "Spontaneous Speech",
+      "Audience Connection",
+      "Voice Stamina"
+    ],
+    "int": [
+      "Radio and audio shows",
+      "Public speaking",
+      "Music and entertainment"
+    ],
+    "per": [
+      "Expressive",
+      "Witty",
+      "Energetic"
+    ],
+    "deg": [
+      "Any degree + voice/anchoring training",
+      "Mass communication preferred"
+    ],
+    "subj": [
+      "English",
+      "Mass Communication",
+      "Music"
+    ],
+    "tools": [
+      "Broadcast Consoles",
+      "Microphones",
+      "Audio Processors",
+      "Podcast Recorders"
+    ],
+    "acts": [
+      "Hosting live shows",
+      "Interviewing guests",
+      "Reading scripts naturally",
+      "Building listener community"
+    ],
+    "env": "Radio stations, podcast studios and digital audio networks; morning/evening show hours",
+    "path": [
+      "Radio Jockey",
+      "Popular RJ",
+      "Show Producer",
+      "Programming Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Content Creation",
+      "Public Relations",
+      "Sound Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Special Education",
+    "title": "Special Educator",
+    "introduction": "Special Educators teach children with diverse learning needs — creating individualised plans that help every child learn their way. It is one of the most meaningful careers in education.",
+    "whoShouldPursue": [
+      "Students with exceptional patience",
+      "Those passionate about inclusion",
+      "Empathetic future teachers"
+    ],
+    "workNature": {
+      "description": "Special educators create IEPs, teach adapted lessons and coordinate with therapists and families.",
+      "examples": [
+        "Creating IEPs",
+        "Teaching adapted lessons",
+        "Tracking individual progress"
+      ]
+    },
+    "eligibility": [
+      "B.Ed Special Education (RCI-recognised)",
+      "Compassion and adaptability",
+      "Understanding of diverse disabilities"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3-5.5 LPA",
+        "median": "6-10 LPA",
+        "senior": "12-20 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+15%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Special Schools",
+        "Inclusive Schools",
+        "Therapy Centres",
+        "Early Intervention"
+      ],
+      "futureOutlook": "Inclusive education policy and autism awareness are driving demand for RCI-registered special educators across India."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "B.Ed Special Education",
+            "description": "RCI-recognised B.Ed Special Education."
+          },
+          {
+            "title": "RCI Registration",
+            "description": "Register with Rehabilitation Council of India."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Special Educator at schools",
+        "description": "Inclusive classroom support."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Early Intervention Specialist",
+        "description": "Working with young children."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Learning Support Specialist",
+        "description": "AI-assisted learning tools."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Special Education Career in India: B.Ed, Salary & Scope",
+      "description": "Special Education career guide for India — RCI B.Ed courses, salary and inclusive education careers.",
+      "keywords": [
+        "special educator India",
+        "B.Ed special education salary",
+        "RCI special education"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Special Educator do?",
+          "answer": "They teach children with special needs using individualised methods and plans."
+        },
+        {
+          "question": "Is RCI registration required?",
+          "answer": "Yes — RCI registration is mandatory to practise as a special educator in India."
+        }
+      ]
+    },
+    "cat": "Education",
+    "sub": "Special Education",
+    "tech": [
+      "Individualised Education Plans (IEP)",
+      "Disability-specific Methods",
+      "Assistive Technology",
+      "Behaviour Intervention",
+      "Assessment Adaptation"
+    ],
+    "soft": [
+      "Extraordinary Patience",
+      "Individualised Creativity",
+      "Family Partnership"
+    ],
+    "int": [
+      "Inclusive education",
+      "Diverse learning needs",
+      "Child development"
+    ],
+    "per": [
+      "Compassionate",
+      "Adaptive",
+      "Persistent"
+    ],
+    "deg": [
+      "B.Ed Special Education (RCI-recognised)",
+      "D.Ed Special Education"
+    ],
+    "subj": [
+      "Education",
+      "Psychology",
+      "Any stream"
+    ],
+    "tools": [
+      "IEP Templates",
+      "Assistive Devices",
+      "Visual Aids",
+      "Therapy Coordination"
+    ],
+    "acts": [
+      "Creating IEPs",
+      "Teaching adapted lessons",
+      "Tracking individual progress",
+      "Coordinating with therapists"
+    ],
+    "env": "Special schools, inclusive mainstream schools and therapy centres",
+    "path": [
+      "Special Educator",
+      "Senior Special Educator",
+      "Inclusion Coordinator",
+      "Special Education Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "School Education",
+      "Speech-Language Pathology",
+      "Occupational Therapy"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Anthropology",
+    "title": "Anthropologist",
+    "introduction": "Anthropologists study human cultures, communities and traditions — living among communities to understand how people live, believe and organise societies.",
+    "whoShouldPursue": [
+      "Students curious about cultures",
+      "Patient observers and writers",
+      "Those interested in communities and tribes"
+    ],
+    "workNature": {
+      "description": "Anthropologists conduct fieldwork, interview communities and write ethnographies about cultures.",
+      "examples": [
+        "Conducting fieldwork",
+        "Interviewing communities",
+        "Writing ethnographies"
+      ]
+    },
+    "eligibility": [
+      "BA/MA Anthropology",
+      "Fieldwork interest and patience",
+      "Writing and observation skills"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "7-12 LPA",
+        "senior": "14-24 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+8%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Universities & Research",
+        "Development Organisations",
+        "Museums",
+        "Government Tribal Welfare"
+      ],
+      "futureOutlook": "Development organisations and tribal welfare programmes increasingly need anthropological insight for community-sensitive design."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "BA/MA Anthropology",
+            "description": "Bachelor's and master's degrees."
+          },
+          {
+            "title": "PhD (Research)",
+            "description": "For academic and research careers."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Anthropologist at research institutes",
+        "description": "Cultural research."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "UX Ethnographer",
+        "description": "Applying anthropology to user research."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Cultural Data Analyst",
+        "description": "AI-assisted cultural analysis."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Anthropology Career in India: Courses, Salary & Scope",
+      "description": "Anthropology career guide for India — courses, salary and research careers.",
+      "keywords": [
+        "anthropology career India",
+        "anthropologist salary",
+        "MA anthropology"
+      ],
+      "faqs": [
+        {
+          "question": "What does an Anthropologist do?",
+          "answer": "They study human cultures through immersive fieldwork and research."
+        },
+        {
+          "question": "Where do anthropologists work?",
+          "answer": "Universities, development organisations, museums and government tribal welfare."
+        }
+      ]
+    },
+    "cat": "Humanities",
+    "sub": "Anthropology",
+    "tech": [
+      "Ethnographic Fieldwork",
+      "Qualitative Research Methods",
+      "Cultural Analysis",
+      "Field Documentation",
+      "Anthropological Theory"
+    ],
+    "soft": [
+      "Cultural Immersion",
+      "Observational Patience",
+      "Reflexive Writing"
+    ],
+    "int": [
+      "Human cultures",
+      "Communities and traditions",
+      "Field research"
+    ],
+    "per": [
+      "Open-minded",
+      "Patient",
+      "Reflective"
+    ],
+    "deg": [
+      "BA/MA Anthropology",
+      "PhD for research careers"
+    ],
+    "subj": [
+      "History",
+      "Sociology",
+      "Biology"
+    ],
+    "tools": [
+      "Field Notebooks",
+      "Recording Equipment",
+      "Qualitative Analysis Software"
+    ],
+    "acts": [
+      "Conducting fieldwork",
+      "Interviewing communities",
+      "Writing ethnographies",
+      "Advising on cultural impact"
+    ],
+    "env": "Universities, research institutes, development organisations and museums; field travel",
+    "path": [
+      "Research Assistant",
+      "Anthropologist",
+      "Senior Researcher",
+      "Professor / Applied Anthropology Lead"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Sociology",
+      "History and Archaeology",
+      "Social Work and Development Sector"
+    ],
+    "minEdu": "Master's"
+  },
+  {
+    "name": "Sociology",
+    "title": "Sociologist",
+    "introduction": "Sociologists study how societies work — inequality, family, caste, migration and social change. Their research informs policy and development programmes.",
+    "whoShouldPursue": [
+      "Students curious about society",
+      "Analytical minds who care about justice",
+      "Writers and researchers"
+    ],
+    "workNature": {
+      "description": "Sociologists study social patterns, conduct surveys and evaluate social programmes.",
+      "examples": [
+        "Studying social patterns",
+        "Conducting surveys and interviews",
+        "Evaluating social programmes"
+      ]
+    },
+    "eligibility": [
+      "BA/MA Sociology",
+      "Research and writing skills",
+      "Statistical or qualitative analysis ability"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "7-12 LPA",
+        "senior": "14-24 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+8%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Universities & Think Tanks",
+        "Development Organisations",
+        "Policy Research",
+        "Government Programmes"
+      ],
+      "futureOutlook": "Evidence-based policymaking is growing in India — sociologists find roles in think tanks, development research and programme evaluation."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "BA/MA Sociology",
+            "description": "Bachelor's and master's degrees."
+          },
+          {
+            "title": "PhD (Research)",
+            "description": "For academic and research careers."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Sociologist at think tanks",
+        "description": "Social research."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Impact Evaluation Researcher",
+        "description": "Evaluating social programmes."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Social Data Analyst",
+        "description": "AI-assisted social data analysis."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Sociology Career in India: Courses, Salary & Scope",
+      "description": "Sociology career guide for India — courses, salary and research careers.",
+      "keywords": [
+        "sociology career India",
+        "sociologist salary",
+        "MA sociology scope"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Sociologist do?",
+          "answer": "They study social patterns, inequality and change through research."
+        },
+        {
+          "question": "What can I do after MA Sociology?",
+          "answer": "Research roles, development sector, policy research and academia."
+        }
+      ]
+    },
+    "cat": "Humanities",
+    "sub": "Sociology",
+    "tech": [
+      "Social Research Methods",
+      "Survey Analysis",
+      "Qualitative Interviews",
+      "Social Statistics",
+      "Policy Evaluation"
+    ],
+    "soft": [
+      "Sociological Imagination",
+      "Empathy Across Classes",
+      "Analytical Writing"
+    ],
+    "int": [
+      "Society and inequality",
+      "Social change",
+      "Community studies"
+    ],
+    "per": [
+      "Empathetic",
+      "Analytical",
+      "Questioning"
+    ],
+    "deg": [
+      "BA/MA Sociology",
+      "PhD for research/academia"
+    ],
+    "subj": [
+      "Sociology",
+      "Political Science",
+      "Statistics"
+    ],
+    "tools": [
+      "SPSS",
+      "Survey Tools",
+      "Qualitative Coding Software"
+    ],
+    "acts": [
+      "Studying social patterns",
+      "Conducting surveys and interviews",
+      "Evaluating social programmes",
+      "Publishing findings"
+    ],
+    "env": "Universities, think tanks, development organisations and policy research",
+    "path": [
+      "Research Associate",
+      "Sociologist",
+      "Senior Researcher",
+      "Professor / Research Director"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Social Work and Development Sector",
+      "Anthropology",
+      "Public Policy and Governance"
+    ],
+    "minEdu": "Master's"
+  },
+  {
+    "name": "Political Science",
+    "title": "Political Scientist / Analyst",
+    "introduction": "Political Scientists analyse political systems, governance and public policy — working in research, media, consultancies and academia.",
+    "whoShouldPursue": [
+      "Students interested in politics and governance",
+      "Analytical writers and debaters",
+      "Future policy researchers"
+    ],
+    "workNature": {
+      "description": "Political scientists analyse political systems, research governance and write policy briefs.",
+      "examples": [
+        "Analysing political systems",
+        "Researching governance",
+        "Writing policy briefs"
+      ]
+    },
+    "eligibility": [
+      "BA/MA Political Science",
+      "Research and analytical writing skills",
+      "Interest in current affairs"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-7 LPA",
+        "median": "8-14 LPA",
+        "senior": "16-30 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+12%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Think Tanks",
+        "Political Consultancies",
+        "Media",
+        "Universities"
+      ],
+      "futureOutlook": "Political consulting, election analysis and policy research are professionalising rapidly in India."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "BA/MA Political Science",
+            "description": "Bachelor's and master's degrees."
+          },
+          {
+            "title": "M.Phil/PhD",
+            "description": "For research and academic careers."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Political Analyst at think tanks",
+        "description": "Governance research."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Political Data Analyst",
+        "description": "Election and polling analytics."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Political Trend Analyst",
+        "description": "AI-based trend analysis."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Political Science Career in India: Courses, Salary & Scope",
+      "description": "Political Science career guide for India — courses, salary and research careers.",
+      "keywords": [
+        "political science career India",
+        "political analyst salary",
+        "MA political science"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Political Scientist do?",
+          "answer": "They analyse political systems, governance and public policy through research."
+        },
+        {
+          "question": "What careers follow political science?",
+          "answer": "Research, political consulting, media, civil services and academia."
+        }
+      ]
+    },
+    "cat": "Psychology & Social Sciences",
+    "sub": "Political Science",
+    "tech": [
+      "Political Analysis",
+      "Policy Research",
+      "Constitutional Knowledge",
+      "Data-driven Political Studies",
+      "Survey & Polling Basics"
+    ],
+    "soft": [
+      "Balanced Analysis",
+      "Debate & Writing",
+      "Systems Understanding"
+    ],
+    "int": [
+      "Politics and governance",
+      "Public policy",
+      "Political systems"
+    ],
+    "per": [
+      "Engaged",
+      "Analytical",
+      "Articulate"
+    ],
+    "deg": [
+      "BA/MA Political Science",
+      "M.Phil/PhD for research careers"
+    ],
+    "subj": [
+      "Political Science",
+      "History",
+      "Economics"
+    ],
+    "tools": [
+      "Research Databases",
+      "Statistical Tools",
+      "Policy Documents",
+      "Survey Platforms"
+    ],
+    "acts": [
+      "Analysing political systems",
+      "Researching governance",
+      "Writing policy briefs",
+      "Tracking legislation"
+    ],
+    "env": "Universities, think tanks, political consultancies and media",
+    "path": [
+      "Research Associate",
+      "Political Analyst",
+      "Senior Analyst / Professor",
+      "Policy Director"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Public Policy and Governance",
+      "Law",
+      "Civil Services"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "History and Archaeology",
+    "title": "Historian / Archaeologist",
+    "introduction": "Historians and Archaeologists reconstruct the past — from archives and manuscripts to excavated sites and artefacts. India's layered history offers endless discovery.",
+    "whoShouldPursue": [
+      "Students fascinated by the past",
+      "Patient researchers and field workers",
+      "Those who love stories and evidence"
+    ],
+    "workNature": {
+      "description": "Historians study archives while archaeologists excavate sites — both document and interpret the past.",
+      "examples": [
+        "Excavating sites",
+        "Studying archives",
+        "Documenting heritage"
+      ]
+    },
+    "eligibility": [
+      "BA/MA History or Archaeology",
+      "PG Diploma in Archaeology (ASI) for field roles",
+      "Research patience"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "6-11 LPA",
+        "senior": "13-22 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+6%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Archaeological Survey of India",
+        "Museums",
+        "Universities",
+        "Heritage Tourism"
+      ],
+      "futureOutlook": "Heritage tourism and cultural preservation projects are creating roles beyond academia for history and archaeology graduates."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "BA/MA History/Archaeology",
+            "description": "Bachelor's and master's degrees."
+          },
+          {
+            "title": "ASI/Field Route",
+            "description": "PG diploma and ASI field opportunities."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Archaeologist at ASI",
+        "description": "Excavation and conservation."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Digital Heritage Specialist",
+        "description": "Digitising heritage records."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Artefact Analysis Researcher",
+        "description": "AI-assisted artefact study."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "History and Archaeology Career in India: Salary & Scope",
+      "description": "History and Archaeology career guide for India — courses, ASI careers and salary.",
+      "keywords": [
+        "archaeology career India",
+        "historian salary India",
+        "MA archaeology"
+      ],
+      "faqs": [
+        {
+          "question": "What does an Archaeologist do?",
+          "answer": "They excavate and study sites and artefacts to reconstruct the past."
+        },
+        {
+          "question": "How do I join ASI?",
+          "answer": "Through UPSC/ASI recruitment for archaeologist positions after a master's."
+        }
+      ]
+    },
+    "cat": "Humanities",
+    "sub": "History & Archaeology",
+    "tech": [
+      "Archival Research",
+      "Excavation Methods",
+      "Artifact Analysis",
+      "Historiography",
+      "Heritage Documentation"
+    ],
+    "soft": [
+      "Source Criticism",
+      "Field Patience",
+      "Narrative Reconstruction"
+    ],
+    "int": [
+      "The past",
+      "Excavation and discovery",
+      "Preserving heritage"
+    ],
+    "per": [
+      "Curious",
+      "Patient",
+      "Detail-loving"
+    ],
+    "deg": [
+      "BA/MA History or Archaeology",
+      "PG Diploma in Archaeology (ASI) for field roles"
+    ],
+    "subj": [
+      "History",
+      "Geography",
+      "Any stream"
+    ],
+    "tools": [
+      "Excavation Kits",
+      "Archives",
+      "Dating Methods",
+      "GIS for Heritage"
+    ],
+    "acts": [
+      "Excavating sites",
+      "Studying archives",
+      "Documenting heritage",
+      "Publishing historical research"
+    ],
+    "env": "ASI, museums, universities and heritage organisations; field and archive work",
+    "path": [
+      "Research Assistant",
+      "Historian / Archaeologist",
+      "Senior Archaeologist",
+      "Professor / Heritage Director"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Anthropology",
+      "Museum Curation and Conservation",
+      "Civil Services"
+    ],
+    "minEdu": "Master's"
+  },
+  {
+    "name": "Clinical Psychology",
+    "title": "Clinical Psychologist",
+    "introduction": "Clinical Psychologists diagnose and treat mental health conditions through therapy and assessment. Mental health awareness in India is growing — and trained clinical psychologists are scarce.",
+    "whoShouldPursue": [
+      "Students who want therapy careers",
+      "Composed, empathetic individuals",
+      "Those committed to long-term training"
+    ],
+    "workNature": {
+      "description": "Clinical psychologists diagnose conditions, deliver psychotherapy and maintain clinical records.",
+      "examples": [
+        "Diagnosing mental health conditions",
+        "Delivering psychotherapy",
+        "Maintaining case records"
+      ]
+    },
+    "eligibility": [
+      "MA/M.Sc Psychology",
+      "M.Phil Clinical Psychology (RCI) — mandatory for clinical practice",
+      "Supervised clinical training"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "4-7 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-40 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+25%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Hospitals",
+        "Mental Health Clinics",
+        "Tele-therapy Platforms",
+        "Private Practice"
+      ],
+      "futureOutlook": "Mental health awareness in India is at an all-time high, and the therapist-to-population ratio is extremely low — clinical psychologists are urgently needed."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "MA/M.Sc Psychology",
+            "description": "Master's in psychology."
+          },
+          {
+            "title": "M.Phil Clinical Psychology",
+            "description": "RCI-recognised M.Phil (2 years, licensed practice)."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Clinical Psychologist at hospitals",
+        "description": "Clinical assessment and therapy."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Tele-therapy Psychologist",
+        "description": "Online therapy delivery."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI-Assisted Therapy Documentation",
+        "description": "AI-based clinical documentation."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Clinical Psychology Career in India: M.Phil, Salary & Scope",
+      "description": "Clinical Psychology career guide for India — M.Phil, RCI licensing, salary and therapy careers.",
+      "keywords": [
+        "clinical psychology India",
+        "clinical psychologist salary",
+        "M.Phil clinical psychology"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Clinical Psychologist do?",
+          "answer": "They diagnose and treat mental health conditions through therapy and assessment."
+        },
+        {
+          "question": "Is M.Phil necessary?",
+          "answer": "RCI-recognised M.Phil Clinical Psychology is required for licensed clinical practice in India."
+        }
+      ]
+    },
+    "cat": "Psychology & Social Sciences",
+    "sub": "Clinical Psychology",
+    "tech": [
+      "Psychodiagnostic Testing",
+      "Psychotherapy (CBT/DBT)",
+      "Clinical Interviewing",
+      "Mental Health Act Awareness",
+      "Case Formulation"
+    ],
+    "soft": [
+      "Therapeutic Presence",
+      "Clinical Judgement",
+      "Emotional Boundaries"
+    ],
+    "int": [
+      "Mental disorders and treatment",
+      "Therapy",
+      "Clinical research"
+    ],
+    "per": [
+      "Composed",
+      "Empathetic",
+      "Clinically rigorous"
+    ],
+    "deg": [
+      "MA/M.Sc Psychology + M.Phil Clinical Psychology (RCI)",
+      "PsyD pathway also exists"
+    ],
+    "subj": [
+      "Psychology",
+      "Biology",
+      "Statistics"
+    ],
+    "tools": [
+      "Psychometric Batteries",
+      "Therapy Manuals",
+      "Case Records",
+      "Tele-therapy Platforms"
+    ],
+    "acts": [
+      "Diagnosing mental health conditions",
+      "Delivering psychotherapy",
+      "Maintaining case records",
+      "Working in multidisciplinary teams"
+    ],
+    "env": "Hospitals, mental health clinics, private practice and tele-therapy platforms",
+    "path": [
+      "Clinical Psychologist",
+      "Senior Clinical Psychologist",
+      "Consultant Psychologist",
+      "Clinic Director"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Psychology",
+      "Counselling Psychology",
+      "Psychiatry"
+    ],
+    "emerging": true,
+    "minEdu": "Master's"
+  },
+  {
+    "name": "Social Work and Development Sector",
+    "title": "Social Worker / Development Professional",
+    "introduction": "Social Workers and Development Professionals run programmes that uplift communities — education, health, livelihoods and rights. NGOs, government missions and CSR teams all need them.",
+    "whoShouldPursue": [
+      "Students passionate about social justice",
+      "Field-ready empathetic individuals",
+      "Those who want impact over income"
+    ],
+    "workNature": {
+      "description": "Social workers run welfare programmes, work with communities and liaise with government.",
+      "examples": [
+        "Working with communities",
+        "Running welfare programmes",
+        "Liaising with government"
+      ]
+    },
+    "eligibility": [
+      "BSW/MSW degree",
+      "Field interest essential",
+      "Empathy and resilience"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3-6 LPA",
+        "median": "6-12 LPA",
+        "senior": "15-30 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+12%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "NGOs",
+        "CSR Teams",
+        "International Agencies (UN etc.)",
+        "Government Missions"
+      ],
+      "futureOutlook": "CSR spending mandates and professionalising development sector are creating better-paid roles for MSW graduates."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "BSW/MSW",
+            "description": "Bachelor/Master of Social Work."
+          },
+          {
+            "title": "Development Sector Entry",
+            "description": "Join NGOs, CSR teams or agencies."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Social Worker at NGOs",
+        "description": "Community programmes."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "CSR Programme Manager",
+        "description": "Corporate social responsibility programmes."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Impact Data Analyst",
+        "description": "AI-assisted impact measurement."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Social Work Career in India: MSW, Salary & NGO Careers",
+      "description": "Social Work career guide for India — MSW, NGO salaries and development sector careers.",
+      "keywords": [
+        "social work career India",
+        "MSW salary",
+        "NGO jobs India"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Social Worker do?",
+          "answer": "They run community programmes and support marginalised groups."
+        },
+        {
+          "question": "Is the development sector well-paid?",
+          "answer": "International agencies and CSR roles pay competitively; grassroots roles pay less but offer deep impact."
+        }
+      ]
+    },
+    "cat": "Psychology & Social Sciences",
+    "sub": "Social Work",
+    "tech": [
+      "Case Work Methods",
+      "Community Mobilisation",
+      "M&E Frameworks",
+      "Report & Proposal Writing",
+      "Government Scheme Knowledge"
+    ],
+    "soft": [
+      "Grassroots Empathy",
+      "Advocacy",
+      "Programme Management"
+    ],
+    "int": [
+      "Social justice",
+      "Community development",
+      "Uplifting marginalised groups"
+    ],
+    "per": [
+      "Compassionate",
+      "Resilient",
+      "Mobilising"
+    ],
+    "deg": [
+      "BSW/MSW (Master of Social Work)"
+    ],
+    "subj": [
+      "Sociology",
+      "Political Science",
+      "Any stream"
+    ],
+    "tools": [
+      "M&E Frameworks",
+      "Case Management Tools",
+      "Survey Kits",
+      "Proposal Templates"
+    ],
+    "acts": [
+      "Working with communities",
+      "Running welfare programmes",
+      "Liaising with government",
+      "Writing impact reports"
+    ],
+    "env": "NGOs, government missions, CSR teams and international development agencies; field work",
+    "path": [
+      "Field Worker / Community Organiser",
+      "Social Worker",
+      "Programme Manager",
+      "NGO Director / CSR Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Sociology",
+      "Public Health",
+      "Public Policy and Governance"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Foreign Services",
+    "title": "Indian Foreign Service (IFS) Officer",
+    "introduction": "IFS Officers represent India abroad — negotiating agreements, building relationships with other nations and supporting Indian citizens overseas. It is among the most prestigious careers in India.",
+    "whoShouldPursue": [
+      "Students interested in global affairs",
+      "Diplomatic, poised communicators",
+      "Those aiming for UPSC with international focus"
+    ],
+    "workNature": {
+      "description": "IFS officers represent India at embassies, negotiate agreements and support citizens overseas.",
+      "examples": [
+        "Representing India abroad",
+        "Negotiating agreements",
+        "Reporting on host countries"
+      ]
+    },
+    "eligibility": [
+      "Any degree + UPSC Civil Services (IFS service allocation)",
+      "Foreign language training post-selection",
+      "Global awareness and adaptability"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "8-14 LPA (plus foreign allowances)",
+        "median": "20-35 LPA",
+        "senior": "50+ LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+5%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Ministry of External Affairs",
+        "Indian Embassies & Consulates",
+        "International Organisations"
+      ],
+      "futureOutlook": "India's growing global role means expanded diplomatic presence — more embassies and multilateral engagement need IFS officers."
+    },
+    "pathways": [
+      {
+        "name": "Exam Route",
+        "steps": [
+          {
+            "title": "Graduation",
+            "description": "Any bachelor's degree."
+          },
+          {
+            "title": "UPSC CSE",
+            "description": "Civil Services Examination with IFS allocation."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "IFS Officer at embassies",
+        "description": "Diplomatic postings worldwide."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Multilateral Diplomat",
+        "description": "UN and multilateral engagement."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Policy Briefing Officer",
+        "description": "AI-assisted policy analysis."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "IFS Officer Career in India: UPSC Path, Salary & Life",
+      "description": "Indian Foreign Service career guide — UPSC path, IFS salary, postings and diplomatic life.",
+      "keywords": [
+        "IFS officer career",
+        "IFS salary India",
+        "UPSC IFS"
+      ],
+      "faqs": [
+        {
+          "question": "How do I become an IFS officer?",
+          "answer": "Clear UPSC Civil Services Examination and opt for the Indian Foreign Service."
+        },
+        {
+          "question": "Do IFS officers travel a lot?",
+          "answer": "Yes — postings rotate across Indian embassies worldwide every few years."
+        }
+      ]
+    },
+    "cat": "Government & Public Services",
+    "sub": "Diplomacy",
+    "tech": [
+      "International Relations Analysis",
+      "Diplomatic Protocol",
+      "Policy Drafting",
+      "Negotiation",
+      "Language Proficiency"
+    ],
+    "soft": [
+      "Diplomatic Tact",
+      "Cultural Adaptability",
+      "Strategic Communication"
+    ],
+    "int": [
+      "Global affairs",
+      "Representing India",
+      "International negotiation"
+    ],
+    "per": [
+      "Poised",
+      "Discreet",
+      "Globally minded"
+    ],
+    "deg": [
+      "Any degree + UPSC Civil Services (IFS)",
+      "Foreign language training post-selection"
+    ],
+    "subj": [
+      "Political Science",
+      "History",
+      "Economics"
+    ],
+    "tools": [
+      "Policy Briefs",
+      "Treaty Documents",
+      "Language Training"
+    ],
+    "acts": [
+      "Representing India abroad",
+      "Negotiating agreements",
+      "Reporting on host countries",
+      "Supporting Indian citizens overseas"
+    ],
+    "env": "Indian embassies and consulates worldwide, MEA Delhi; periodic postings",
+    "path": [
+      "IFS Probationer",
+      "Third Secretary / Diplomat",
+      "Ambassador",
+      "Foreign Secretary track"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Civil Services",
+      "Public Policy and Governance",
+      "Political Science"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Public Policy and Governance",
+    "title": "Public Policy Professional",
+    "introduction": "Public Policy professionals research and recommend solutions to public problems — education, health, urbanisation, climate — working with governments and think tanks at scale.",
+    "whoShouldPursue": [
+      "Students who want to fix systems",
+      "Analytical minds with civic passion",
+      "Writers and researchers"
+    ],
+    "workNature": {
+      "description": "Policy professionals research problems, draft recommendations and support government programmes.",
+      "examples": [
+        "Researching policy problems",
+        "Drafting policy recommendations",
+        "Supporting government programmes"
+      ]
+    },
+    "eligibility": [
+      "Any degree + Master's in Public Policy",
+      "Analytical and writing skills",
+      "Interest in governance"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+22%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Policy Think Tanks",
+        "Government Advisory",
+        "Consulting",
+        "CSR & Foundations"
+      ],
+      "futureOutlook": "Evidence-based governance is growing in India — policy schools (Kautilya etc.) graduates are increasingly hired by governments and consultancies."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Bachelor's Degree",
+            "description": "Any graduation."
+          },
+          {
+            "title": "Master's in Public Policy",
+            "description": "MPP from Kautilya, Harvard-type programmes."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Policy Consultant at think tanks",
+        "description": "Policy research and advisory."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Government Innovation Consultant",
+        "description": "Digital governance projects."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Policy Research Analyst",
+        "description": "AI-assisted policy research."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Public Policy Career in India: MPP, Salary & Think Tank Jobs",
+      "description": "Public Policy career guide for India — MPP degree, think tank jobs and salary.",
+      "keywords": [
+        "public policy career India",
+        "MPP salary India",
+        "policy think tank jobs"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Public Policy professional do?",
+          "answer": "They research public problems and recommend policy solutions to governments."
+        },
+        {
+          "question": "Is public policy a good career?",
+          "answer": "Yes — it is growing fast with impact at scale and competitive salaries."
+        }
+      ]
+    },
+    "cat": "Government & Public Services",
+    "sub": "Public Policy",
+    "tech": [
+      "Policy Analysis Frameworks",
+      "Data for Policy (Excel/R)",
+      "Stakeholder Consultation",
+      "Monitoring & Evaluation",
+      "Government Scheme Knowledge"
+    ],
+    "soft": [
+      "Policy Writing",
+      "Government Navigation",
+      "Evidence Communication"
+    ],
+    "int": [
+      "Solving public problems",
+      "Government systems",
+      "Impact at scale"
+    ],
+    "per": [
+      "Impact-driven",
+      "Analytical",
+      "Diplomatic"
+    ],
+    "deg": [
+      "Any degree + Master's in Public Policy (Kautilya/Harvard-type programmes)"
+    ],
+    "subj": [
+      "Economics",
+      "Political Science",
+      "Statistics"
+    ],
+    "tools": [
+      "Policy Databases",
+      "Data Tools",
+      "M&E Frameworks",
+      "Presentation Software"
+    ],
+    "acts": [
+      "Researching policy problems",
+      "Drafting policy recommendations",
+      "Supporting government programmes",
+      "Evaluating impact"
+    ],
+    "env": "Government advisory bodies, think tanks (NITI-type), consultancies and CSR policy teams",
+    "path": [
+      "Policy Associate",
+      "Policy Consultant",
+      "Senior Policy Specialist",
+      "Policy Director"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Economics",
+      "Law",
+      "Social Work and Development Sector"
+    ],
+    "emerging": true,
+    "minEdu": "Master's"
+  },
+  {
+    "name": "Horticulture",
+    "title": "Horticulturist",
+    "introduction": "Horticulturists cultivate fruits, vegetables, flowers and plants — combining plant science with market sense. India's fruit and flower economy runs on horticulture expertise.",
+    "whoShouldPursue": [
+      "Students who love plants",
+      "Those interested in agri-business",
+      "Patient, field-oriented individuals"
+    ],
+    "workNature": {
+      "description": "Horticulturists cultivate fruits and flowers, manage nurseries and advise growers.",
+      "examples": [
+        "Cultivating fruits and flowers",
+        "Managing nurseries",
+        "Advising growers"
+      ]
+    },
+    "eligibility": [
+      "B.Sc Horticulture",
+      "M.Sc for research roles",
+      "Field interest"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3-5.5 LPA",
+        "median": "6-10 LPA",
+        "senior": "12-20 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+12%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Horticulture Departments",
+        "Export Houses",
+        "Nurseries & Agri Companies",
+        "Protected Cultivation"
+      ],
+      "futureOutlook": "Export-oriented horticulture, protected cultivation and floriculture are growing segments with government support."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "B.Sc Horticulture",
+            "description": "Bachelor's degree (ICAR pattern)."
+          },
+          {
+            "title": "M.Sc Horticulture",
+            "description": "Master's for advanced roles."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Horticulture Officer",
+        "description": "Government horticulture departments."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Protected Cultivation Specialist",
+        "description": "Greenhouse and polyhouse farming."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Crop Monitoring Specialist",
+        "description": "AI-based crop health monitoring."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Horticulture Career in India: Courses, Salary & Scope",
+      "description": "Horticulture career guide for India — courses, salary and plant science careers.",
+      "keywords": [
+        "horticulture career India",
+        "horticulture salary",
+        "BSc horticulture"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Horticulturist do?",
+          "answer": "They cultivate fruits, vegetables and flowers and advise growers."
+        },
+        {
+          "question": "Is horticulture different from agriculture?",
+          "description": "Yes — horticulture focuses on fruits, vegetables, flowers and plantations."
+        }
+      ]
+    },
+    "cat": "Agriculture",
+    "sub": "Horticulture",
+    "tech": [
+      "Fruit & Vegetable Cultivation",
+      "Floriculture",
+      "Post-harvest Handling",
+      "Nursery Management",
+      "Protected Cultivation"
+    ],
+    "soft": [
+      "Plant Care Expertise",
+      "Market Linkage Sense",
+      "Field Patience"
+    ],
+    "int": [
+      "Fruits, flowers and vegetables",
+      "Gardening science",
+      "Agri-entrepreneurship"
+    ],
+    "per": [
+      "Green-thumbed",
+      "Patient",
+      "Market-savvy"
+    ],
+    "deg": [
+      "B.Sc Horticulture",
+      "M.Sc Horticulture"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Business Studies"
+    ],
+    "tools": [
+      "Greenhouse Systems",
+      "Soil Testing Kits",
+      "Grafting Tools",
+      "Post-harvest Equipment"
+    ],
+    "acts": [
+      "Cultivating fruits and flowers",
+      "Managing nurseries",
+      "Advising growers",
+      "Developing export-quality produce"
+    ],
+    "env": "Horticulture farms, government horticulture departments and agri-export firms; field-based",
+    "path": [
+      "Horticulture Officer",
+      "Horticulturist",
+      "Senior Horticulturist",
+      "Horticulture Director / Exporter"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Agriculture Research",
+      "Landscape Design",
+      "Agri Business Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Fisheries Science",
+    "title": "Fisheries Professional",
+    "introduction": "Fisheries Science professionals manage fish farming and aquatic food production — India is among the world's top fish producers, and aquaculture is booming.",
+    "whoShouldPursue": [
+      "Students interested in aquatic life",
+      "Those from coastal regions",
+      "Hands-on science lovers"
+    ],
+    "workNature": {
+      "description": "Fisheries professionals manage fish farms, advise aqua farmers and monitor water quality.",
+      "examples": [
+        "Managing fish farms",
+        "Advising aqua farmers",
+        "Monitoring water quality"
+      ]
+    },
+    "eligibility": [
+      "B.F.Sc (Bachelor of Fisheries Science)",
+      "Field interest",
+      "Willingness to work near water bodies"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "7-12 LPA",
+        "senior": "14-24 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+14%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Aquaculture Companies",
+        "Fisheries Departments",
+        "Seafood Export",
+        "Research Institutes"
+      ],
+      "futureOutlook": "The PM Matsya Sampada Yojana is investing heavily in aquaculture — fisheries graduates are in growing demand."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "B.F.Sc",
+            "description": "Bachelor of Fisheries Science."
+          },
+          {
+            "title": "M.F.Sc",
+            "description": "Master's for advanced roles."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Fisheries Officer",
+        "description": "Government fisheries departments."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Biofloc Aquaculture Specialist",
+        "description": "Modern aquaculture techniques."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Water Quality Analyst",
+        "description": "AI-based pond monitoring."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Fisheries Science Career in India: B.F.Sc, Salary & Scope",
+      "description": "Fisheries Science career guide for India — B.F.Sc course, salary and aquaculture careers.",
+      "keywords": [
+        "fisheries science career India",
+        "BFSc salary",
+        "aquaculture career"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Fisheries professional do?",
+          "answer": "They manage fish farming, advise farmers and monitor aquatic health."
+        },
+        {
+          "question": "What is the PM Matsya Sampada Yojana?",
+          "description": "A government scheme investing in fisheries infrastructure and aquaculture."
+        }
+      ]
+    },
+    "cat": "Agriculture",
+    "sub": "Fisheries Science",
+    "tech": [
+      "Aquaculture Techniques",
+      "Fish Processing",
+      "Aquatic Animal Health",
+      "Pond Management",
+      "Marine Fisheries Basics"
+    ],
+    "soft": [
+      "Aquaculture Patience",
+      "Field Adaptability",
+      "Farmer Extension Skill"
+    ],
+    "int": [
+      "Fish farming",
+      "Aquatic ecosystems",
+      "Blue economy"
+    ],
+    "per": [
+      "Hands-on",
+      "Observant",
+      "Water-comfortable"
+    ],
+    "deg": [
+      "B.F.Sc (Bachelor of Fisheries Science)",
+      "M.F.Sc specialisation"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "Water Quality Kits",
+      "Aquaculture Ponds",
+      "Hatchery Equipment",
+      "Nets & Sampling Tools"
+    ],
+    "acts": [
+      "Managing fish farms",
+      "Advising aqua farmers",
+      "Monitoring water quality",
+      "Developing hatchery techniques"
+    ],
+    "env": "Fish farms, coastal and inland aquaculture zones, fisheries departments",
+    "path": [
+      "Fisheries Officer",
+      "Aquaculture Specialist",
+      "Senior Fisheries Scientist",
+      "Fisheries Development Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Marine Biology",
+      "Agriculture Research",
+      "Food Technology"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "AgriTech",
+    "title": "AgriTech Professional",
+    "introduction": "AgriTech professionals build technology for farming — apps, drones, sensors and market platforms that raise farmer incomes. Indian AgriTech startups are transforming agriculture.",
+    "whoShouldPursue": [
+      "Students who love agri + technology",
+      "Startup-minded field workers",
+      "Problem solvers for rural India"
+    ],
+    "workNature": {
+      "description": "AgriTech professionals build agri products, train farmers and pilot solutions in fields.",
+      "examples": [
+        "Building agri-tech products",
+        "Training farmers on tools",
+        "Analysing farm data"
+      ]
+    },
+    "eligibility": [
+      "B.Tech/B.Sc Agriculture + tech skills",
+      "B.Tech + agri exposure (both routes)",
+      "Field pilot experience"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "10-18 LPA",
+        "senior": "22-40 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+30%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "AgriTech Startups",
+        "Agri-input Companies",
+        "Food Supply Chain",
+        "Rural Fintech"
+      ],
+      "futureOutlook": "AgriTech startups raised record funding, and digital agriculture missions are pushing adoption — a high-growth intersection of tech and farming."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Bachelor's Degree",
+            "description": "B.Tech/B.Sc Agriculture with tech interest."
+          },
+          {
+            "title": "AgriTech Skills",
+            "description": "Learn data tools, drones and farm apps."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "AgriTech Associate at startups",
+        "description": "Field product development."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Precision Farming Specialist",
+        "description": "Data-driven farming solutions."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Crop Advisory Engineer",
+        "description": "AI-based crop advisory systems."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "AgriTech Career in India: Salary, Startups & Scope",
+      "description": "AgriTech career guide for India — startups, salary and technology careers in agriculture.",
+      "keywords": [
+        "agritech career India",
+        "agritech salary",
+        "agriculture technology jobs"
+      ],
+      "faqs": [
+        {
+          "question": "What is AgriTech?",
+          "answer": "Technology for agriculture — apps, drones, sensors and platforms that help farmers."
+        },
+        {
+          "question": "Do I need an agriculture degree?",
+          "answer": "Agriculture or engineering both work — field empathy plus tech skills is the combination."
+        }
+      ]
+    },
+    "cat": "Agriculture",
+    "sub": "Agricultural Technology",
+    "tech": [
+      "Agri Data Platforms",
+      "Precision Agriculture Tools",
+      "Remote Sensing for Farms",
+      "Mobile Agri Apps",
+      "Basic Agronomy"
+    ],
+    "soft": [
+      "Farmer Empathy",
+      "Tech-Agri Bridge",
+      "Field Pilot Discipline"
+    ],
+    "int": [
+      "Technology for farming",
+      "Agri startups",
+      "Improving farm incomes"
+    ],
+    "per": [
+      "Innovative",
+      "Farmer-empathetic",
+      "Field-ready"
+    ],
+    "deg": [
+      "B.Tech/B.Sc Agriculture + tech skills",
+      "B.Tech + agri exposure (both routes)"
+    ],
+    "subj": [
+      "Biology",
+      "Computer Science",
+      "Business Studies"
+    ],
+    "tools": [
+      "Precision Ag Software",
+      "Drones",
+      "Satellite Data Platforms",
+      "Farm Apps"
+    ],
+    "acts": [
+      "Building agri-tech products",
+      "Training farmers on tools",
+      "Analysing farm data",
+      "Piloting solutions in fields"
+    ],
+    "env": "AgriTech startups (DeHaat, Ninjacart etc.) and agri-input companies; field + office",
+    "path": [
+      "AgriTech Associate",
+      "AgriTech Specialist",
+      "Product Lead",
+      "AgriTech Founder / Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Agriculture Research",
+      "Product Management",
+      "GIS Analyst"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Packaging Technology",
+    "title": "Packaging Technologist",
+    "introduction": "Packaging Technologists design the boxes, pouches and wrappers that protect everything from chips to medicines. Sustainable packaging is one of the hottest areas in manufacturing.",
+    "whoShouldPursue": [
+      "Students interested in materials and design",
+      "Sustainability-minded engineers",
+      "Detail-oriented technologists"
+    ],
+    "workNature": {
+      "description": "Packaging technologists design packaging solutions, test strength and reduce packaging waste.",
+      "examples": [
+        "Designing packaging solutions",
+        "Testing packaging strength",
+        "Reducing packaging waste"
+      ]
+    },
+    "eligibility": [
+      "B.Tech/B.Sc Packaging Technology (IIP)",
+      "Material science interest",
+      "Design sensibility"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "7-12 LPA",
+        "senior": "15-25 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+15%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "FMCG",
+        "Packaging Manufacturers",
+        "Pharmaceuticals",
+        "E-commerce"
+      ],
+      "futureOutlook": "E-commerce growth and plastic reduction regulations are driving innovation in sustainable packaging — technologists are in demand."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "B.Tech/B.Sc Packaging",
+            "description": "From Indian Institute of Packaging."
+          },
+          {
+            "title": "Industry Entry",
+            "description": "Join FMCG or packaging firms."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Packaging Technologist at FMCG",
+        "description": "Product packaging development."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Sustainable Packaging Specialist",
+        "description": "Eco-friendly packaging design."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Packaging Design Analyst",
+        "description": "AI-based packaging optimisation."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Packaging Technology Career in India: Salary & Scope",
+      "description": "Packaging Technology career guide for India — IIP courses, salary and FMCG packaging careers.",
+      "keywords": [
+        "packaging technology India",
+        "packaging engineer salary",
+        "IIP course"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Packaging Technologist do?",
+          "answer": "They design and test packaging for products — balancing protection, cost and sustainability."
+        },
+        {
+          "question": "Where is IIP located?",
+          "description": "Indian Institute of Packaging is headquartered in Mumbai with centres across India."
+        }
+      ]
+    },
+    "cat": "Manufacturing",
+    "sub": "Packaging",
+    "tech": [
+      "Packaging Materials Science",
+      "Packaging Design Software",
+      "Food & Pharma Packaging Standards",
+      "Testing Equipment",
+      "Sustainable Packaging"
+    ],
+    "soft": [
+      "Product Protection Focus",
+      "Sustainability Awareness",
+      "Client Coordination"
+    ],
+    "int": [
+      "Packaging innovation",
+      "Sustainable materials",
+      "Consumer packaging design"
+    ],
+    "per": [
+      "Material-curious",
+      "Detail-oriented",
+      "Sustainability-minded"
+    ],
+    "deg": [
+      "B.Tech/B.Sc Packaging Technology (IIP)"
+    ],
+    "subj": [
+      "Chemistry",
+      "Physics",
+      "Design"
+    ],
+    "tools": [
+      "Packaging Testers",
+      "CAD",
+      "Barrier Testing Equipment",
+      "Sustainability Calculators"
+    ],
+    "acts": [
+      "Designing packaging solutions",
+      "Testing packaging strength",
+      "Reducing packaging waste",
+      "Coordinating with product teams"
+    ],
+    "env": "Packaging companies, FMCG packaging departments and testing labs",
+    "path": [
+      "Packaging Technologist",
+      "Senior Packaging Technologist",
+      "Packaging Manager",
+      "Packaging Development Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Food Technology",
+      "Mechanical Engineering",
+      "Industrial Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Ceramic Technology",
+    "title": "Ceramic Technologist",
+    "introduction": "Ceramic Technologists work on tiles, sanitaryware, refractories and advanced ceramics — India's ceramic clusters supply domestic and export markets.",
+    "whoShouldPursue": [
+      "Students interested in materials",
+      "Process-focused engineers",
+      "Those near ceramic manufacturing hubs"
+    ],
+    "workNature": {
+      "description": "Ceramic technologists produce ceramic products, test materials and improve kiln processes.",
+      "examples": [
+        "Producing ceramic products",
+        "Testing material properties",
+        "Improving kiln processes"
+      ]
+    },
+    "eligibility": [
+      "B.Tech Ceramic Technology",
+      "Material testing interest",
+      "Process discipline"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "6-11 LPA",
+        "senior": "13-22 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+8%",
+      "demandLevel": "Medium",
+      "topIndustries": [
+        "Tiles & Sanitaryware",
+        "Refractories",
+        "Advanced Ceramics",
+        "Glass"
+      ],
+      "futureOutlook": "Construction demand and advanced ceramic applications (electronics, medical) keep the field stable, with Morbi's tile industry as a major employer."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "B.Tech Ceramic Technology",
+            "description": "From specialised institutions."
+          },
+          {
+            "title": "Plant Roles",
+            "description": "Join ceramic manufacturing plants."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Ceramic Technologist at plants",
+        "description": "Tile and sanitaryware production."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Advanced Ceramics Engineer",
+        "description": "Electronics-grade ceramics."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Kiln Optimisation Engineer",
+        "description": "AI-based kiln control."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Ceramic Technology Career in India: Salary & Scope",
+      "description": "Ceramic Technology career guide for India — courses, salary and ceramic industry careers.",
+      "keywords": [
+        "ceramic technology India",
+        "ceramic engineer salary",
+        "ceramic career"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Ceramic Technologist do?",
+          "answer": "They produce and test ceramic materials — tiles, sanitaryware, refractories."
+        },
+        {
+          "question": "Where are ceramic jobs located?",
+          "answer": "Morbi (Gujarat), Khurja (UP) and refractory plants across India."
+        }
+      ]
+    },
+    "cat": "Manufacturing",
+    "sub": "Ceramics & Materials",
+    "tech": [
+      "Ceramic Processing",
+      "Kiln Operations",
+      "Ceramic Material Characterisation",
+      "Glaze Technology",
+      "Refractory Materials"
+    ],
+    "soft": [
+      "High-temperature Process Discipline",
+      "Material Testing Rigour",
+      "Plant Coordination"
+    ],
+    "int": [
+      "Ceramic materials",
+      "High-temperature manufacturing",
+      "Industrial materials"
+    ],
+    "per": [
+      "Process-focused",
+      "Precise",
+      "Hands-on"
+    ],
+    "deg": [
+      "B.Tech Ceramic Technology",
+      "M.Tech Ceramic/Materials"
+    ],
+    "subj": [
+      "Chemistry",
+      "Physics",
+      "Mathematics"
+    ],
+    "tools": [
+      "Kilns",
+      "XRD/Testing Equipment",
+      "Glaze Labs",
+      "Moulds"
+    ],
+    "acts": [
+      "Producing ceramic products",
+      "Testing material properties",
+      "Improving kiln processes",
+      "Developing new ceramic formulations"
+    ],
+    "env": "Ceramic clusters (Morbi, Khurja), sanitaryware and refractory plants",
+    "path": [
+      "Ceramic Technologist",
+      "Senior Technologist",
+      "Production Manager",
+      "Plant Head"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Chemical Engineering",
+      "Packaging Technology",
+      "Mechanical Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Industrial Safety",
+    "title": "Industrial Safety Officer",
+    "introduction": "Industrial Safety Officers protect workers from accidents — auditing plants, training teams and enforcing safety standards. Every factory, plant and construction site needs them.",
+    "whoShouldPursue": [
+      "Students with safety-first mindset",
+      "Assertive, systematic individuals",
+      "Those interested in industrial operations"
+    ],
+    "workNature": {
+      "description": "Safety officers conduct audits, train workers and investigate incidents at industrial sites.",
+      "examples": [
+        "Conducting safety audits",
+        "Training workers on safety",
+        "Investigating incidents"
+      ]
+    },
+    "eligibility": [
+      "B.Tech/B.E. or any degree + safety certification (ADIS)",
+      "Knowledge of safety standards (OSHA/ISO 45001)",
+      "Assertive communication"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3.5-6 LPA",
+        "median": "7-12 LPA",
+        "senior": "15-28 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+12%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Manufacturing",
+        "Oil & Gas",
+        "Construction",
+        "Chemical Plants"
+      ],
+      "futureOutlook": "Safety regulations are tightening and ESG standards require documented safety systems — certified safety officers are in demand."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Degree + ADIS",
+            "description": "Any degree with Advanced Diploma in Industrial Safety."
+          },
+          {
+            "title": "Certifications",
+            "description": "NEBOSH/IOSH certifications add value."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Safety Officer at plants",
+        "description": "Plant safety management."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "EHS Digital Specialist",
+        "description": "Digital safety management systems."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Safety Monitoring Analyst",
+        "description": "AI-based incident prediction."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Industrial Safety Career in India: ADIS, Salary & Jobs",
+      "description": "Industrial Safety career guide for India — ADIS course, salary and EHS careers.",
+      "keywords": [
+        "industrial safety career India",
+        "safety officer salary",
+        "ADIS course"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Safety Officer do?",
+          "answer": "They audit plants, train workers and investigate accidents to keep workplaces safe."
+        },
+        {
+          "question": "Which certification is best?",
+          "answer": "ADIS is standard in India; NEBOSH/IOSH add global value."
+        }
+      ]
+    },
+    "cat": "Manufacturing",
+    "sub": "Industrial Safety",
+    "tech": [
+      "Safety Audits & Standards (OSHA/ISO 45001)",
+      "Hazard Analysis (HAZOP)",
+      "Fire Safety Systems",
+      "Risk Assessment",
+      "Safety Documentation"
+    ],
+    "soft": [
+      "Safety Authority",
+      "Training Delivery",
+      "Incident Investigation Rigour"
+    ],
+    "int": [
+      "Worker safety",
+      "Preventing accidents",
+      "Safety culture building"
+    ],
+    "per": [
+      "Vigilant",
+      "Assertive",
+      "Systematic"
+    ],
+    "deg": [
+      "B.Tech/B.E. + industrial safety certification (ADIS)",
+      "Any degree + safety diplomas"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "HAZOP Tools",
+      "Safety Audit Checklists",
+      "PPE Systems",
+      "Incident Software"
+    ],
+    "acts": [
+      "Conducting safety audits",
+      "Training workers on safety",
+      "Investigating incidents",
+      "Ensuring regulatory compliance"
+    ],
+    "env": "Manufacturing plants, construction sites, oil & gas and chemical industries",
+    "path": [
+      "Safety Officer",
+      "Safety Engineer",
+      "Safety Manager",
+      "EHS Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Industrial Quality Engineering",
+      "Chemical Engineering",
+      "Mechanical Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Sports Analytics",
+    "title": "Sports Analyst",
+    "introduction": "Sports Analysts use data and video to improve team performance — analysing players, tactics and opponents. Cricket, football and kabaddi leagues are professionalising analytics fast.",
+    "whoShouldPursue": [
+      "Sports-obsessed data lovers",
+      "Statistical minds",
+      "Those who want sports careers off the field"
+    ],
+    "workNature": {
+      "description": "Sports analysts analyse player data, build performance models and create scouting reports.",
+      "examples": [
+        "Analysing player data",
+        "Building performance models",
+        "Creating scouting reports"
+      ]
+    },
+    "eligibility": [
+      "B.Tech/B.Sc degree",
+      "Python/R and statistics skills",
+      "Deep sports domain knowledge"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "10-18 LPA",
+        "senior": "22-40 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+25%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Sports Franchises (IPL/ISL)",
+        "Sports Analytics Firms",
+        "Media & Betting Analytics",
+        "Academies"
+      ],
+      "futureOutlook": "Indian sports leagues are adopting analytics like global clubs — data-savvy sports lovers have a genuine new career path."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Bachelor's Degree",
+            "description": "B.Tech/B.Sc with statistics/data skills."
+          },
+          {
+            "title": "Sports Analytics Skills",
+            "description": "Learn sports data tools and build analysis portfolio."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Sports Analyst at franchises",
+        "description": "Team performance analysis."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Player Recruitment Analyst",
+        "description": "Data-driven player scouting."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Match Prediction Analyst",
+        "description": "AI-based match analysis."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Sports Analytics Career in India: Salary, Skills & Teams",
+      "description": "Sports Analytics career guide for India — skills, salary and franchise analytics careers.",
+      "keywords": [
+        "sports analytics India",
+        "sports analyst salary",
+        "cricket analytics career"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Sports Analyst do?",
+          "answer": "They analyse player and team data to improve performance and strategy."
+        },
+        {
+          "question": "Which sports use analytics in India?",
+          "answer": "Cricket leads, followed by football (ISL), kabaddi and basketball."
+        }
+      ]
+    },
+    "cat": "Sports & Fitness",
+    "sub": "Sports Analytics",
+    "tech": [
+      "Python/R",
+      "Sports Data APIs",
+      "Video Analysis Tools",
+      "Statistical Modelling",
+      "Visualisation"
+    ],
+    "soft": [
+      "Sports Domain Knowledge",
+      "Statistical Modelling",
+      "Insight Storytelling"
+    ],
+    "int": [
+      "Numbers behind sport",
+      "Strategy analysis",
+      "Player performance data"
+    ],
+    "per": [
+      "Analytical",
+      "Sports-obsessed",
+      "Detail-oriented"
+    ],
+    "deg": [
+      "B.Tech/B.Sc + sports analytics certification",
+      "Statistics/Data Science background"
+    ],
+    "subj": [
+      "Mathematics",
+      "Statistics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Python",
+      "R",
+      "Hudl",
+      "Sports Data APIs"
+    ],
+    "acts": [
+      "Analysing player data",
+      "Building performance models",
+      "Supporting team strategy",
+      "Creating scouting reports"
+    ],
+    "env": "Sports franchises, leagues, analytics firms and betting/media analytics",
+    "path": [
+      "Sports Analytics Associate",
+      "Sports Analyst",
+      "Senior Analyst",
+      "Head of Analytics"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Data Science",
+      "Sports Management",
+      "Business Analytics"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Cosmetology and Beauty Wellness",
+    "title": "Cosmetologist",
+    "introduction": "Cosmetologists provide advanced skin, hair and beauty treatments — a booming wellness industry where skilled professionals build strong client careers or their own salons.",
+    "whoShouldPursue": [
+      "Students interested in beauty and skincare",
+      "Aesthetic, hygiene-focused individuals",
+      "Future salon owners"
+    ],
+    "workNature": {
+      "description": "Cosmetologists provide beauty treatments, advise skincare routines and manage salon services.",
+      "examples": [
+        "Providing beauty treatments",
+        "Advising skincare routines",
+        "Managing salon services"
+      ]
+    },
+    "eligibility": [
+      "Beauty & wellness certification (CIDESCO/CIBTAC preferred)",
+      "Any degree + professional academy training",
+      "Hygiene discipline"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "2.5-5 LPA",
+        "median": "5-10 LPA",
+        "senior": "12-25 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+15%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Salon Chains",
+        "Luxury Spas",
+        "Wellness Centres",
+        "Own Studios"
+      ],
+      "futureOutlook": "Organised beauty and wellness retail is expanding fast in India — certified professionals with CIDESCO/CIBTAC credentials earn premium salaries."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Certification",
+            "description": "CIDESCO/CIBTAC or academy certification."
+          },
+          {
+            "title": "Specialisation",
+            "description": "Advanced skin, hair or aesthetic treatments."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Beauty Therapist at salons",
+        "description": "Salon treatments and services."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Medical Aesthetician",
+        "description": "Clinical skin treatments."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Skin Analysis Consultant",
+        "description": "AI-based skin analysis."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Cosmetology Career in India: Courses, Salary & Scope",
+      "description": "Cosmetology career guide for India — CIDESCO courses, salary and salon careers.",
+      "keywords": [
+        "cosmetology career India",
+        "CIDESCO salary India",
+        "beauty career"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Cosmetologist do?",
+          "answer": "They provide advanced skin and hair treatments in salons and wellness centres."
+        },
+        {
+          "question": "Which certification is best?",
+          "answer": "CIDESCO and CIBTAC are internationally recognised."
+        }
+      ]
+    },
+    "cat": "Hospitality & Tourism",
+    "sub": "Beauty & Wellness",
+    "tech": [
+      "Skin & Hair Treatments",
+      "Advanced Beauty Therapy",
+      "Salon Hygiene Standards",
+      "Product Knowledge",
+      "Client Consultation"
+    ],
+    "soft": [
+      "Client Rapport",
+      "Aesthetic Sense",
+      "Hygiene Discipline"
+    ],
+    "int": [
+      "Beauty and skincare",
+      "Wellness industry",
+      "Making people feel confident"
+    ],
+    "per": [
+      "Aesthetic",
+      "Warm",
+      "Hygiene-focused"
+    ],
+    "deg": [
+      "Beauty & wellness certification (CIDESCO/CIBTAC preferred)",
+      "Any degree + professional academy training"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Any stream"
+    ],
+    "tools": [
+      "Salon Equipment",
+      "Treatment Products",
+      "Skin Analysis Tools"
+    ],
+    "acts": [
+      "Providing beauty treatments",
+      "Advising skincare routines",
+      "Managing salon services",
+      "Keeping up with techniques"
+    ],
+    "env": "Salons, wellness centres, luxury spas and own studios",
+    "path": [
+      "Beauty Therapist",
+      "Senior Therapist",
+      "Salon Manager",
+      "Own Salon / Brand Ambassador"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Yoga and Wellness Instruction",
+      "Nutrition and Dietetics",
+      "Fashion Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Yoga and Wellness Instruction",
+    "title": "Yoga Instructor",
+    "introduction": "Yoga Instructors teach mind-body wellness — asana, pranayama and meditation. India's ancient practice is now a global wellness industry, and certified teachers are in demand worldwide.",
+    "whoShouldPursue": [
+      "Students passionate about yoga",
+      "Calm, disciplined individuals",
+      "Those who want wellness careers"
+    ],
+    "workNature": {
+      "description": "Yoga instructors teach sessions, design wellness programmes and adapt yoga for individuals.",
+      "examples": [
+        "Teaching yoga sessions",
+        "Designing wellness programmes",
+        "Adapting yoga for individuals"
+      ]
+    },
+    "eligibility": [
+      "Yoga certification (YCB Level)",
+      "BA Yoga / PG Diploma Yoga Therapy",
+      "Personal practice discipline"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "2.5-5 LPA",
+        "median": "5-10 LPA",
+        "senior": "12-25 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+20%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Yoga Studios",
+        "Wellness Resorts",
+        "Corporate Wellness",
+        "Online Classes"
+      ],
+      "futureOutlook": "Yoga's global popularity and India's wellness tourism keep certified instructors in demand — international resorts actively recruit Indian teachers."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Yoga Certification",
+            "description": "YCB Level certification or BA Yoga."
+          },
+          {
+            "title": "Specialisation",
+            "description": "Yoga therapy or specific styles."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Yoga Instructor at studios",
+        "description": "Group and personal classes."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Yoga Therapist",
+        "description": "Therapeutic yoga for conditions."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI Wellness Programme Designer",
+        "description": "AI-assisted wellness planning."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Yoga Instructor Career in India: Certification, Salary & Scope",
+      "description": "Yoga Instructor career guide for India — YCB certification, salary and wellness careers.",
+      "keywords": [
+        "yoga instructor India",
+        "yoga teacher salary",
+        "YCB certification"
+      ],
+      "faqs": [
+        {
+          "question": "What does a Yoga Instructor do?",
+          "answer": "They teach yoga asana, pranayama and meditation for wellness."
+        },
+        {
+          "question": "Which certification is needed?",
+          "answer": "YCB (Yoga Certification Board) certification is the government-recognised standard."
+        }
+      ]
+    },
+    "cat": "Hospitality & Tourism",
+    "sub": "Yoga & Wellness",
+    "tech": [
+      "Yoga Asana & Pranayama",
+      "Therapeutic Yoga",
+      "Anatomy for Yoga",
+      "Meditation Techniques",
+      "Yoga Certification (QCI/YCB)"
+    ],
+    "soft": [
+      "Calm Presence",
+      "Individual Attention",
+      "Philosophical Depth"
+    ],
+    "int": [
+      "Yoga and wellness",
+      "Mind-body practices",
+      "Holistic health"
+    ],
+    "per": [
+      "Calm",
+      "Disciplined",
+      "Nurturing"
+    ],
+    "deg": [
+      "Yoga certification (YCB Level)",
+      "BA Yoga / PG Diploma Yoga Therapy"
+    ],
+    "subj": [
+      "Physical Education",
+      "Biology",
+      "Philosophy"
+    ],
+    "tools": [
+      "Yoga Props",
+      "Meditation Spaces",
+      "Class Management Apps"
+    ],
+    "acts": [
+      "Teaching yoga sessions",
+      "Designing wellness programmes",
+      "Adapting yoga for individuals",
+      "Leading retreats"
+    ],
+    "env": "Yoga studios, wellness resorts, corporates and online classes",
+    "path": [
+      "Yoga Instructor",
+      "Senior Yoga Teacher",
+      "Yoga Therapist",
+      "Wellness Centre Founder"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Physical Training",
+      "Nutrition and Dietetics",
+      "Performing Arts"
+    ],
+    "minEdu": "Bachelor's"
+  }
+]

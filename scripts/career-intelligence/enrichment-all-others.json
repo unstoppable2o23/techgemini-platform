@@ -1,0 +1,5228 @@
+{
+  "Graphic Design": {
+    "cat": "Design & Creative",
+    "sub": "Visual Communication",
+    "tech": [
+      "Adobe Photoshop/Illustrator",
+      "Typography",
+      "Brand Identity Design",
+      "Layout Design",
+      "Figma"
+    ],
+    "soft": [
+      "Visual Storytelling",
+      "Client Feedback Handling",
+      "Trend Awareness"
+    ],
+    "int": [
+      "Visual art",
+      "Branding",
+      "Digital media"
+    ],
+    "per": [
+      "Creative",
+      "Observant",
+      "Receptive to feedback"
+    ],
+    "deg": [
+      "B.Des Graphic Design",
+      "Any degree + design portfolio"
+    ],
+    "subj": [
+      "Art",
+      "Computer Science",
+      "English"
+    ],
+    "tools": [
+      "Photoshop",
+      "Illustrator",
+      "Figma",
+      "Canva"
+    ],
+    "acts": [
+      "Designing brand identities",
+      "Creating marketing creatives",
+      "Preparing print/digital files",
+      "Presenting design concepts"
+    ],
+    "env": "Agencies, in-house design teams and freelance; portfolio-driven hiring",
+    "path": [
+      "Junior Designer",
+      "Graphic Designer",
+      "Senior Designer",
+      "Creative Director"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "UI Design",
+      "Animation",
+      "User Experience Design UX"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Animation": {
+    "cat": "Design & Creative",
+    "sub": "Animation & VFX",
+    "tech": [
+      "Maya/Blender",
+      "2D/3D Animation",
+      "Rigging Basics",
+      "After Effects",
+      "Storyboarding"
+    ],
+    "soft": [
+      "Frame-by-frame Patience",
+      "Motion Sense",
+      "Deadline Reliability"
+    ],
+    "int": [
+      "Animated films",
+      "Gaming art",
+      "Visual storytelling"
+    ],
+    "per": [
+      "Imaginative",
+      "Patient",
+      "Observant"
+    ],
+    "deg": [
+      "B.Des/B.Sc Animation",
+      "Any degree + animation diploma + showreel"
+    ],
+    "subj": [
+      "Art",
+      "Computer Science",
+      "Physics"
+    ],
+    "tools": [
+      "Maya",
+      "Blender",
+      "After Effects",
+      "Toon Boom"
+    ],
+    "acts": [
+      "Animating characters and scenes",
+      "Building storyboards",
+      "Rendering sequences",
+      "Refining frames from feedback"
+    ],
+    "env": "Animation studios, OTT/gaming studios and ad agencies; deadline-driven sprints",
+    "path": [
+      "Animator",
+      "Senior Animator",
+      "Animation Lead",
+      "Animation Director"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Multimedia and Gaming",
+      "Graphic Design",
+      "Filmmaking and Direction"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Fashion Design": {
+    "cat": "Design & Creative",
+    "sub": "Fashion",
+    "tech": [
+      "Pattern Making",
+      "Draping",
+      "Fashion Illustration",
+      "Textile Knowledge",
+      "Garment Construction"
+    ],
+    "soft": [
+      "Trend Forecasting",
+      "Aesthetic Judgement",
+      "Client Understanding"
+    ],
+    "int": [
+      "Clothing and style",
+      "Textiles",
+      "Runway and retail"
+    ],
+    "per": [
+      "Creative",
+      "Trend-aware",
+      "Persistent"
+    ],
+    "deg": [
+      "B.Des Fashion Design (NIFT/NID)",
+      "Diploma + portfolio"
+    ],
+    "subj": [
+      "Art",
+      "English",
+      "Home Science"
+    ],
+    "tools": [
+      "CLO 3D",
+      "Illustrator",
+      "Pattern Tools",
+      "Sewing Machines"
+    ],
+    "acts": [
+      "Sketching collections",
+      "Selecting fabrics",
+      "Overseeing sampling",
+      "Presenting at showcases"
+    ],
+    "env": "Fashion houses, export houses, retail brands and own labels",
+    "path": [
+      "Design Assistant",
+      "Fashion Designer",
+      "Senior Designer",
+      "Head Designer / Own Label"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Textile Design",
+      "Textile Engineering",
+      "Retail Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Fine Arts": {
+    "cat": "Design & Creative",
+    "sub": "Fine Arts",
+    "tech": [
+      "Drawing & Painting Techniques",
+      "Sculpture",
+      "Art History",
+      "Exhibition Practices",
+      "Digital Art Basics"
+    ],
+    "soft": [
+      "Original Voice",
+      "Self-promotion",
+      "Resilience to Critique"
+    ],
+    "int": [
+      "Art-making",
+      "Galleries and exhibitions",
+      "Visual expression"
+    ],
+    "per": [
+      "Expressive",
+      "Independent",
+      "Reflective"
+    ],
+    "deg": [
+      "BFA (Bachelor of Fine Arts)",
+      "MFA"
+    ],
+    "subj": [
+      "Art",
+      "Art History",
+      "Any stream"
+    ],
+    "tools": [
+      "Paints & Canvases",
+      "Sculpting Tools",
+      "Digital Tablets",
+      "Gallery Portfolios"
+    ],
+    "acts": [
+      "Creating artworks",
+      "Preparing exhibitions",
+      "Selling through galleries",
+      "Taking commissions"
+    ],
+    "env": "Studios, galleries, public art projects and residencies; self-directed",
+    "path": [
+      "Emerging Artist",
+      "Practising Artist",
+      "Established Artist",
+      "Art Professor / Curator track"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Graphic Design",
+      "Artificial Intelligence",
+      "Photography"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Industrial Design": {
+    "cat": "Design & Creative",
+    "sub": "Product & Industrial Design",
+    "tech": [
+      "Industrial Design Sketching",
+      "CAD Modelling",
+      "Prototyping (3D Printing)",
+      "Materials & Manufacturing",
+      "Ergonomics"
+    ],
+    "soft": [
+      "Form and Function Balance",
+      "User Empathy",
+      "Manufacturing Awareness"
+    ],
+    "int": [
+      "Physical products",
+      "Design innovation",
+      "Consumer goods"
+    ],
+    "per": [
+      "Inventive",
+      "Practical",
+      "User-focused"
+    ],
+    "deg": [
+      "B.Des Industrial/Product Design (NID/IIT)",
+      "B.Tech + design portfolio"
+    ],
+    "subj": [
+      "Physics",
+      "Art",
+      "Mathematics"
+    ],
+    "tools": [
+      "SolidWorks",
+      "Rhino",
+      "KeyShot",
+      "3D Printers"
+    ],
+    "acts": [
+      "Sketching product concepts",
+      "Building prototypes",
+      "Testing usability",
+      "Coordinating with manufacturers"
+    ],
+    "env": "Design studios, consumer product companies and startups",
+    "path": [
+      "Junior Industrial Designer",
+      "Industrial Designer",
+      "Senior Designer",
+      "Design Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Product Design",
+      "Mechanical Engineering",
+      "User Experience Design UX"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Interior Design": {
+    "cat": "Design & Creative",
+    "sub": "Interior Spaces",
+    "tech": [
+      "Space Planning",
+      "3D Visualisation (SketchUp/3ds Max)",
+      "Material Knowledge",
+      "Lighting Design",
+      "Vastu Awareness (client-driven)"
+    ],
+    "soft": [
+      "Client Vision Translation",
+      "Budget Management",
+      "Vendor Coordination"
+    ],
+    "int": [
+      "Living spaces",
+      "Aesthetics and function",
+      "Renovation projects"
+    ],
+    "per": [
+      "Aesthetic",
+      "Practical",
+      "Client-tuned"
+    ],
+    "deg": [
+      "B.Des Interior Design",
+      "B.Arch + interior specialisation",
+      "Diploma + portfolio"
+    ],
+    "subj": [
+      "Art",
+      "Physics",
+      "Mathematics"
+    ],
+    "tools": [
+      "SketchUp",
+      "3ds Max",
+      "AutoCAD",
+      "V-Ray"
+    ],
+    "acts": [
+      "Planning space layouts",
+      "Selecting materials and finishes",
+      "Coordinating contractors",
+      "Presenting 3D concepts"
+    ],
+    "env": "Design firms, real estate developers and own practice; client-site visits",
+    "path": [
+      "Junior Interior Designer",
+      "Interior Designer",
+      "Senior Designer",
+      "Own Studio"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Architecture",
+      "Landscape Design",
+      "Civil Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Photography": {
+    "cat": "Design & Creative",
+    "sub": "Photography",
+    "tech": [
+      "Camera Mastery (DSLR/Mirrorless)",
+      "Lighting Techniques",
+      "Photo Editing (Lightroom/Photoshop)",
+      "Composition",
+      "Genre Specialisation"
+    ],
+    "soft": [
+      "Visual Eye",
+      "Client Direction",
+      "Business Self-promotion"
+    ],
+    "int": [
+      "Capturing moments",
+      "Visual stories",
+      "Travel or people"
+    ],
+    "per": [
+      "Observant",
+      "Artistic",
+      "Enterprising"
+    ],
+    "deg": [
+      "Any degree + photography diploma/portfolio",
+      "BFA Photography also available"
+    ],
+    "subj": [
+      "Art",
+      "English",
+      "Any stream"
+    ],
+    "tools": [
+      "DSLR/Mirrorless Camera",
+      "Lightroom",
+      "Photoshop",
+      "Lighting Kits"
+    ],
+    "acts": [
+      "Shooting assignments",
+      "Editing photo sets",
+      "Building portfolios",
+      "Marketing services"
+    ],
+    "env": "Studios, weddings, media houses, brands and freelance; location work",
+    "path": [
+      "Assistant Photographer",
+      "Photographer",
+      "Established Photographer",
+      "Studio Owner"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Filmmaking and Direction",
+      "Graphic Design",
+      "Content Creation"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Product Design": {
+    "cat": "Design & Creative",
+    "sub": "Digital Product Design",
+    "tech": [
+      "Figma (Advanced)",
+      "Design Systems",
+      "Prototyping",
+      "User Research",
+      "Basic Frontend Awareness"
+    ],
+    "soft": [
+      "User Advocacy",
+      "Business Sense",
+      "Iteration Discipline"
+    ],
+    "int": [
+      "Digital products",
+      "Problem-solving through design",
+      "Startups"
+    ],
+    "per": [
+      "User-focused",
+      "Analytical",
+      "Collaborative"
+    ],
+    "deg": [
+      "B.Des (any design)",
+      "B.Tech + design transition (portfolio-based)"
+    ],
+    "subj": [
+      "Art",
+      "Computer Science",
+      "Psychology"
+    ],
+    "tools": [
+      "Figma",
+      "Maze",
+      "Notion",
+      "Framer"
+    ],
+    "acts": [
+      "Designing product flows",
+      "Running design sprints",
+      "Testing with users",
+      "Working with engineering"
+    ],
+    "env": "Tech product companies and startups; hybrid/remote",
+    "path": [
+      "Product Designer",
+      "Senior Product Designer",
+      "Lead Product Designer",
+      "Head of Design"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "User Experience Design UX",
+      "UI Design",
+      "Product Management"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "User Experience Design UX": {
+    "cat": "Design & Creative",
+    "sub": "User Experience",
+    "tech": [
+      "User Research",
+      "Wireframing & Prototyping",
+      "Usability Testing",
+      "Information Architecture",
+      "Figma"
+    ],
+    "soft": [
+      "Empathy",
+      "Facilitation",
+      "Evidence-based Reasoning"
+    ],
+    "int": [
+      "Understanding user behaviour",
+      "Solving usability problems",
+      "Research-driven design"
+    ],
+    "per": [
+      "Empathetic",
+      "Analytical",
+      "Collaborative"
+    ],
+    "deg": [
+      "B.Des HCI/Any degree + UX certification and portfolio"
+    ],
+    "subj": [
+      "Psychology",
+      "Computer Science",
+      "Design"
+    ],
+    "tools": [
+      "Figma",
+      "Maze",
+      "Miro",
+      "Hotjar"
+    ],
+    "acts": [
+      "Conducting user interviews",
+      "Mapping user journeys",
+      "Testing prototypes",
+      "Improving product usability"
+    ],
+    "env": "Tech companies, agencies and startups; hybrid/remote",
+    "path": [
+      "UX Designer",
+      "Senior UX Designer",
+      "UX Lead",
+      "Head of Design / UX Researcher track"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Product Design",
+      "UI Design",
+      "Psychology"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Textile Design": {
+    "cat": "Design & Creative",
+    "sub": "Textiles",
+    "tech": [
+      "Print Design (Repeat Patterns)",
+      "Weave Design",
+      "Textile CAD",
+      "Fabric Knowledge",
+      "Colour Theory"
+    ],
+    "soft": [
+      "Pattern Creativity",
+      "Trend Sensitivity",
+      "Mill Coordination"
+    ],
+    "int": [
+      "Fabrics and prints",
+      "Home and fashion textiles",
+      "Craft traditions"
+    ],
+    "per": [
+      "Artistic",
+      "Detail-oriented",
+      "Trend-aware"
+    ],
+    "deg": [
+      "B.Des Textile Design (NIFT/NID)"
+    ],
+    "subj": [
+      "Art",
+      "Chemistry",
+      "Home Science"
+    ],
+    "tools": [
+      "Adobe Suite",
+      "Textile CAD",
+      "Print Sampling",
+      "Looms"
+    ],
+    "acts": [
+      "Designing prints and weaves",
+      "Creating repeat patterns",
+      "Coordinating with mills",
+      "Following fabric trends"
+    ],
+    "env": "Export houses, home/fashion textile brands and design studios",
+    "path": [
+      "Textile Designer",
+      "Senior Textile Designer",
+      "Design Manager",
+      "Textile Design Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Fashion Design",
+      "Textile Engineering",
+      "Graphic Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Jewellery Design": {
+    "cat": "Design & Creative",
+    "sub": "Jewellery",
+    "tech": [
+      "Jewellery Illustration",
+      "CAD (Matrix/RhinoGold)",
+      "Gemstone Knowledge",
+      "Metallurgy Basics",
+      "Manufacturing Processes"
+    ],
+    "soft": [
+      "Intricate Detail Work",
+      "Market Awareness",
+      "Craft Appreciation"
+    ],
+    "int": [
+      "Ornaments and gemstones",
+      "Heritage craft",
+      "Luxury design"
+    ],
+    "per": [
+      "Meticulous",
+      "Artistic",
+      "Patient"
+    ],
+    "deg": [
+      "B.Des Jewellery Design",
+      "Diploma + CAD certification"
+    ],
+    "subj": [
+      "Art",
+      "Chemistry",
+      "Physics"
+    ],
+    "tools": [
+      "RhinoGold/Matrix",
+      "Sketching Kits",
+      "Gem Testing Loupes",
+      "3D Printers"
+    ],
+    "acts": [
+      "Designing jewellery collections",
+      "Creating CAD models",
+      "Selecting gemstones",
+      "Coordinating with karigars"
+    ],
+    "env": "Jewellery houses (Tanishq etc.), export houses and own labels",
+    "path": [
+      "Jewellery Designer",
+      "Senior Designer",
+      "Design Head",
+      "Own Jewellery Label"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Fashion Design",
+      "Gemology",
+      "Fine Arts"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Journalism": {
+    "cat": "Media & Communication",
+    "sub": "News & Reporting",
+    "tech": [
+      "News Writing",
+      "Fact-checking Methods",
+      "Video Reporting",
+      "Data Journalism Basics",
+      "Social Reporting"
+    ],
+    "soft": [
+      "Investigative Persistence",
+      "Deadline Speed",
+      "Ethical Judgement"
+    ],
+    "int": [
+      "Current affairs",
+      "Truth-seeking",
+      "Storytelling"
+    ],
+    "per": [
+      "Curious",
+      "Fearless",
+      "Ethical"
+    ],
+    "deg": [
+      "BA/BM Journalism & Mass Communication",
+      "Any degree + MA Journalism"
+    ],
+    "subj": [
+      "English",
+      "Political Science",
+      "History"
+    ],
+    "tools": [
+      "CMS Platforms",
+      "Recording Gear",
+      "Fact-check Databases",
+      "Editing Software"
+    ],
+    "acts": [
+      "Reporting stories",
+      "Interviewing sources",
+      "Verifying facts",
+      "Producing news packages"
+    ],
+    "env": "Newsrooms (TV, digital, print); deadline and shift driven; field reporting",
+    "path": [
+      "Trainee Reporter",
+      "Reporter/Correspondent",
+      "Senior Correspondent",
+      "Editor"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Content Creation",
+      "Public Relations",
+      "Political Science"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Content Creation": {
+    "cat": "Media & Communication",
+    "sub": "Digital Content",
+    "tech": [
+      "Scripting",
+      "Video Editing (Premiere/CapCut)",
+      "SEO Writing",
+      "Thumbnail/Graphic Design",
+      "Platform Analytics"
+    ],
+    "soft": [
+      "Audience Instinct",
+      "Consistency",
+      "On-camera Confidence"
+    ],
+    "int": [
+      "Creating videos and posts",
+      "Building an audience",
+      "Niche expertise"
+    ],
+    "per": [
+      "Creative",
+      "Consistent",
+      "Trend-aware"
+    ],
+    "deg": [
+      "Any degree; portfolio and audience matter more"
+    ],
+    "subj": [
+      "English",
+      "Any passion domain",
+      "Marketing"
+    ],
+    "tools": [
+      "Premiere Pro",
+      "CapCut",
+      "Canva",
+      "YouTube Studio"
+    ],
+    "acts": [
+      "Writing scripts",
+      "Filming and editing",
+      "Publishing on platforms",
+      "Engaging with audiences"
+    ],
+    "env": "Creator economy, media brands and in-house content teams; remote-friendly",
+    "path": [
+      "Content Creator",
+      "Established Creator",
+      "Content Lead for Brands",
+      "Media Entrepreneur"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Social Media Management",
+      "Filmmaking and Direction",
+      "Digital Marketing"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Corporate Communication": {
+    "cat": "Media & Communication",
+    "sub": "Corporate Communications",
+    "tech": [
+      "Internal Comms Platforms",
+      "Crisis Communication Playbooks",
+      "Presentation Design",
+      "Intranet Tools",
+      "Media Monitoring"
+    ],
+    "soft": [
+      "Executive Writing",
+      "Message Consistency",
+      "Stakeholder Sensitivity"
+    ],
+    "int": [
+      "Corporate storytelling",
+      "Internal culture",
+      "Leadership communication"
+    ],
+    "per": [
+      "Articulate",
+      "Discreet",
+      "Strategic"
+    ],
+    "deg": [
+      "Any degree + MBA Communication/PR preferred"
+    ],
+    "subj": [
+      "English",
+      "Business Studies",
+      "Psychology"
+    ],
+    "tools": [
+      "SharePoint",
+      "Slack/Teams",
+      "Canva",
+      "Media Monitoring Tools"
+    ],
+    "acts": [
+      "Writing leadership messages",
+      "Managing internal campaigns",
+      "Handling crisis communication",
+      "Coordinating with PR agencies"
+    ],
+    "env": "Corporate head offices across industries",
+    "path": [
+      "Communications Associate",
+      "Communications Manager",
+      "Senior Manager",
+      "Head of Corporate Communications"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Public Relations",
+      "Business Management",
+      "Journalism"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Creative Writing": {
+    "cat": "Media & Communication",
+    "sub": "Creative Writing",
+    "tech": [
+      "Narrative Structure",
+      "Editing & Rewriting",
+      "Genre Craft",
+      "Publishing Platforms",
+      "Self-editing"
+    ],
+    "soft": [
+      "Original Voice",
+      "Disciplined Writing Habit",
+      "Feedback Resilience"
+    ],
+    "int": [
+      "Stories and language",
+      "Books and screen",
+      "Imaginative worlds"
+    ],
+    "per": [
+      "Imaginative",
+      "Disciplined",
+      "Reflective"
+    ],
+    "deg": [
+      "BA English Literature + writing practice",
+      "Creative writing programmes optional"
+    ],
+    "subj": [
+      "English",
+      "History",
+      "Any stream"
+    ],
+    "tools": [
+      "Scrivener",
+      "Google Docs",
+      "Grammarly",
+      "Publishing Platforms"
+    ],
+    "acts": [
+      "Writing books or scripts",
+      "Editing drafts",
+      "Submitting to publishers",
+      "Building readership"
+    ],
+    "env": "Freelance, publishing houses, OTT/film writing rooms and self-publishing",
+    "path": [
+      "Aspiring Writer",
+      "Published Writer",
+      "Established Author",
+      "Screenwriter / Showrunner track"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Filmmaking and Direction",
+      "Journalism",
+      "Content Creation"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Interpretation and Translation": {
+    "cat": "Media & Communication",
+    "sub": "Language Services",
+    "tech": [
+      "CAT Tools (SDL Trados)",
+      "Machine Translation Post-editing",
+      "Glossary Management",
+      "Subtitle Tools",
+      "Domain Terminology"
+    ],
+    "soft": [
+      "Bilingual Precision",
+      "Cultural Sensitivity",
+      "Confidentiality"
+    ],
+    "int": [
+      "Languages",
+      "Cross-cultural exchange",
+      "Linguistic precision"
+    ],
+    "per": [
+      "Precise",
+      "Culturally aware",
+      "Disciplined"
+    ],
+    "deg": [
+      "BA in languages + translation certification",
+      "Native-level proficiency in two+ languages"
+    ],
+    "subj": [
+      "English",
+      "Foreign Language",
+      "Any domain specialisation"
+    ],
+    "tools": [
+      "Trados",
+      "MemoQ",
+      "Subtitle Editors",
+      "Termbases"
+    ],
+    "acts": [
+      "Translating documents",
+      "Interpreting live conversations",
+      "Localising content",
+      "Maintaining terminology banks"
+    ],
+    "env": "MNCs, language service companies, courts and freelance; remote-friendly",
+    "path": [
+      "Junior Translator",
+      "Translator/Interpreter",
+      "Certified Interpreter",
+      "Language Services Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Content Creation",
+      "Corporate Communication",
+      "International Relations and Diplomacy"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Multimedia and Gaming": {
+    "cat": "Media & Communication",
+    "sub": "Gaming & Multimedia",
+    "tech": [
+      "Unity/Unreal Engine",
+      "Game Art & Design",
+      "Level Design",
+      "3D Modelling",
+      "Game Monetisation Basics"
+    ],
+    "soft": [
+      "Play-centred Creativity",
+      "Team Production Discipline",
+      "Player Empathy"
+    ],
+    "int": [
+      "Video games",
+      "Interactive storytelling",
+      "Game art"
+    ],
+    "per": [
+      "Playful",
+      "Technical",
+      "Collaborative"
+    ],
+    "deg": [
+      "B.Des/B.Sc Game Design or Animation",
+      "Any degree + game portfolio"
+    ],
+    "subj": [
+      "Art",
+      "Computer Science",
+      "Physics"
+    ],
+    "tools": [
+      "Unity",
+      "Unreal Engine",
+      "Blender",
+      "Substance Painter"
+    ],
+    "acts": [
+      "Designing game levels",
+      "Creating game art",
+      "Testing gameplay",
+      "Balancing game mechanics"
+    ],
+    "env": "Gaming studios (Indian and global), esports companies and remote teams",
+    "path": [
+      "Game Artist / Level Designer",
+      "Game Designer",
+      "Senior Game Designer",
+      "Game Director"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Animation",
+      "Software Engineering",
+      "Esports Management"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Performing Arts": {
+    "cat": "Media & Communication",
+    "sub": "Performing Arts",
+    "tech": [
+      "Stage Performance",
+      "Classical/Contemporary Techniques",
+      "Choreography/Direction Basics",
+      "Voice & Body Training",
+      "Audience Craft"
+    ],
+    "soft": [
+      "Stage Presence",
+      "Disciplined Practice",
+      "Performance Nerve"
+    ],
+    "int": [
+      "Dance, music or theatre",
+      "Live performance",
+      "Cultural arts"
+    ],
+    "per": [
+      "Expressive",
+      "Disciplined",
+      "Confident"
+    ],
+    "deg": [
+      "Professional training (guru-shishya or institution)",
+      "BA/MA Performing Arts"
+    ],
+    "subj": [
+      "Dance/Music/Drama",
+      "Any stream",
+      "History"
+    ],
+    "tools": [
+      "Instruments",
+      "Stage & Studio Practice",
+      "Recording Tools"
+    ],
+    "acts": [
+      "Performing on stage",
+      "Rehearsing rigorously",
+      "Teaching performing arts",
+      "Building artistic repertoire"
+    ],
+    "env": "Troupes, film/TV industries, cultural institutions and teaching studios",
+    "path": [
+      "Performing Artist",
+      "Recognised Performer",
+      "Lead Artist / Choreographer",
+      "Artistic Director / Guru"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Filmmaking and Direction",
+      "Yoga and Wellness Instruction",
+      "Education Administration"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Public Relations": {
+    "cat": "Media & Communication",
+    "sub": "Public Relations",
+    "tech": [
+      "Press Release Writing",
+      "Media List Management",
+      "PR Measurement Tools",
+      "Crisis Communication",
+      "Event Press Management"
+    ],
+    "soft": [
+      "Media Relationship Building",
+      "Persuasive Writing",
+      "Crisis Composure"
+    ],
+    "int": [
+      "Media coverage",
+      "Brand reputation",
+      "Story pitching"
+    ],
+    "per": [
+      "Persuasive",
+      "Networked",
+      "Composed"
+    ],
+    "deg": [
+      "Any degree + PR/Mass Communication preferred"
+    ],
+    "subj": [
+      "English",
+      "Business Studies",
+      "Political Science"
+    ],
+    "tools": [
+      "Media Databases",
+      "Cision/Meltwater",
+      "Press Release Drafts",
+      "Monitoring Tools"
+    ],
+    "acts": [
+      "Pitching stories to journalists",
+      "Writing press releases",
+      "Managing media events",
+      "Handling reputation issues"
+    ],
+    "env": "PR agencies and corporate communications teams; deadline and media-cycle driven",
+    "path": [
+      "PR Executive",
+      "PR Manager",
+      "Account Director",
+      "Communications Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Corporate Communication",
+      "Journalism",
+      "Social Media Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Sound Engineering": {
+    "cat": "Media & Communication",
+    "sub": "Audio Production",
+    "tech": [
+      "DAW Proficiency (Pro Tools)",
+      "Mixing & Mastering",
+      "Live Sound Setup",
+      "Acoustics Basics",
+      "Recording Techniques"
+    ],
+    "soft": [
+      "Critical Listening",
+      "Technical Calm",
+      "Artist Sensitivity"
+    ],
+    "int": [
+      "Music production",
+      "Live concerts",
+      "Film audio"
+    ],
+    "per": [
+      "Detail-listening",
+      "Patient",
+      "Technical"
+    ],
+    "deg": [
+      "Any degree + audio engineering diploma/certification"
+    ],
+    "subj": [
+      "Physics",
+      "Music",
+      "Computer Science"
+    ],
+    "tools": [
+      "Pro Tools",
+      "Logic Pro",
+      "Mixing Consoles",
+      "Microphones & Monitors"
+    ],
+    "acts": [
+      "Recording sessions",
+      "Mixing tracks",
+      "Setting up live sound",
+      "Mastering audio for release"
+    ],
+    "env": "Studios, concert venues, OTT/film production and podcast studios",
+    "path": [
+      "Assistant Sound Engineer",
+      "Sound Engineer",
+      "Senior Mixing Engineer",
+      "Audio Director / Studio Owner"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Filmmaking and Direction",
+      "Music Production",
+      "Animation"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Filmmaking and Direction": {
+    "cat": "Media & Communication",
+    "sub": "Film & OTT",
+    "tech": [
+      "Direction & Storytelling",
+      "Camera & Lighting Basics",
+      "Editing (Premiere/Resolve)",
+      "Screenplay Structure",
+      "Production Management"
+    ],
+    "soft": [
+      "Creative Leadership",
+      "Visual Storytelling",
+      "Set Decision-making"
+    ],
+    "int": [
+      "Films and series",
+      "Visual narratives",
+      "Directing performances"
+    ],
+    "per": [
+      "Visionary",
+      "Decisive",
+      "Collaborative"
+    ],
+    "deg": [
+      "FTII/ film school diploma",
+      "Any degree + strong showreel and set experience"
+    ],
+    "subj": [
+      "English",
+      "Art",
+      "Any stream"
+    ],
+    "tools": [
+      "Cameras",
+      "Premiere/Resolve",
+      "Shot Lists",
+      "Storyboarding Tools"
+    ],
+    "acts": [
+      "Directing shoots",
+      "Working with actors",
+      "Guiding edit and sound",
+      "Managing production crews"
+    ],
+    "env": "Film/OTT production houses, ad films and independent cinema; project-based",
+    "path": [
+      "Assistant Director",
+      "Director",
+      "Established Director",
+      "Producer / Showrunner"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Animation",
+      "Creative Writing",
+      "Sound Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Radio Jockey and Anchoring": {
+    "cat": "Media & Communication",
+    "sub": "Broadcast Anchoring",
+    "tech": [
+      "Voice Modulation",
+      "Broadcast Console Basics",
+      "Scripting for Ear",
+      "Live Show Handling",
+      "Podcast Production"
+    ],
+    "soft": [
+      "Spontaneous Speech",
+      "Audience Connection",
+      "Voice Stamina"
+    ],
+    "int": [
+      "Radio and audio shows",
+      "Public speaking",
+      "Music and entertainment"
+    ],
+    "per": [
+      "Expressive",
+      "Witty",
+      "Energetic"
+    ],
+    "deg": [
+      "Any degree + voice/anchoring training",
+      "Mass communication preferred"
+    ],
+    "subj": [
+      "English",
+      "Mass Communication",
+      "Music"
+    ],
+    "tools": [
+      "Broadcast Consoles",
+      "Microphones",
+      "Audio Processors",
+      "Podcast Recorders"
+    ],
+    "acts": [
+      "Hosting live shows",
+      "Interviewing guests",
+      "Reading scripts naturally",
+      "Building listener community"
+    ],
+    "env": "Radio stations, podcast studios and digital audio networks; morning/evening show hours",
+    "path": [
+      "Radio Jockey",
+      "Popular RJ",
+      "Show Producer",
+      "Programming Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Content Creation",
+      "Public Relations",
+      "Sound Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "School Education": {
+    "cat": "Education",
+    "sub": "School Teaching",
+    "tech": [
+      "Lesson Planning",
+      "Classroom Assessment",
+      "Smart Classroom Tools",
+      "Subject Pedagogy",
+      "Student Psychology"
+    ],
+    "soft": [
+      "Explaining Clearly",
+      "Patience",
+      "Classroom Management"
+    ],
+    "int": [
+      "Teaching children",
+      "Subject mastery",
+      "Shaping young minds"
+    ],
+    "per": [
+      "Patient",
+      "Encouraging",
+      "Organised"
+    ],
+    "deg": [
+      "B.A/B.Sc + B.Ed (CTET/TET for government schools)",
+      "M.Ed for leadership"
+    ],
+    "subj": [
+      "Choose teaching subjects",
+      "Education",
+      "Psychology"
+    ],
+    "tools": [
+      "Smart Boards",
+      "Google Classroom",
+      "Assessment Tools",
+      "Lesson Plan Templates"
+    ],
+    "acts": [
+      "Teaching lessons",
+      "Assessing learning",
+      "Guiding students",
+      "Engaging parents"
+    ],
+    "env": "Schools (government and private); fixed academic calendar",
+    "path": [
+      "Teacher",
+      "Senior Teacher",
+      "Head of Department",
+      "Principal"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Special Education",
+      "Education Administration",
+      "EdTech Specialist"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Higher Education and Academia": {
+    "cat": "Education",
+    "sub": "Academia & Research",
+    "tech": [
+      "Academic Research Methods",
+      "Publication Writing",
+      "Curriculum Design",
+      "Conference Presentation",
+      "Grant Writing"
+    ],
+    "soft": [
+      "Deep Subject Mastery",
+      "Mentoring",
+      "Academic Writing"
+    ],
+    "int": [
+      "Research and knowledge",
+      "Teaching adults",
+      "Scholarly contribution"
+    ],
+    "per": [
+      "Scholarly",
+      "Mentoring",
+      "Curious"
+    ],
+    "deg": [
+      "Masters in discipline + NET/SET",
+      "PhD required for professorship"
+    ],
+    "subj": [
+      "Chosen discipline",
+      "Research Methods",
+      "English"
+    ],
+    "tools": [
+      "Research Databases",
+      "LaTeX/Word",
+      "Statistical Software",
+      "Reference Managers"
+    ],
+    "acts": [
+      "Teaching university courses",
+      "Publishing research",
+      "Guiding dissertations",
+      "Applying for research grants"
+    ],
+    "env": "Universities, colleges and research institutes",
+    "path": [
+      "Assistant Professor",
+      "Associate Professor",
+      "Professor",
+      "Department Head / Dean"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "School Education",
+      "Data Science",
+      "Law"
+    ],
+    "minEdu": "Master's"
+  },
+  "Education Administration": {
+    "cat": "Education",
+    "sub": "Educational Leadership",
+    "tech": [
+      "Education Management Systems",
+      "Budgeting",
+      "Policy Compliance (Board Norms)",
+      "Scheduling Tools",
+      "Data-driven School Improvement"
+    ],
+    "soft": [
+      "Institutional Leadership",
+      "Parent & Board Communication",
+      "Staff Development"
+    ],
+    "int": [
+      "Running institutions",
+      "Education quality",
+      "Systems and policy"
+    ],
+    "per": [
+      "Leader",
+      "Organised",
+      "Diplomatic"
+    ],
+    "deg": [
+      "B.Ed/M.Ed + education leadership/management degree",
+      "Principal requires teaching experience"
+    ],
+    "subj": [
+      "Education",
+      "Business Studies",
+      "Psychology"
+    ],
+    "tools": [
+      "School ERP",
+      "MS Office",
+      "Board Compliance Portals"
+    ],
+    "acts": [
+      "Managing school operations",
+      "Leading teacher development",
+      "Ensuring board compliance",
+      "Planning academic calendars"
+    ],
+    "env": "Schools, college administrations and education groups",
+    "path": [
+      "Coordinator",
+      "Vice Principal",
+      "Principal",
+      "Director of Institutions"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "School Education",
+      "Business Management",
+      "Public Policy and Governance"
+    ],
+    "minEdu": "Master's"
+  },
+  "Corporate Training": {
+    "cat": "Education",
+    "sub": "Corporate Learning & Development",
+    "tech": [
+      "Training Need Analysis",
+      "Instructional Design",
+      "LMS Administration",
+      "Facilitation Tools",
+      "Learning Analytics"
+    ],
+    "soft": [
+      "Facilitation Charisma",
+      "Business Alignment",
+      "Content Design"
+    ],
+    "int": [
+      "Adult learning",
+      "Workplace skills",
+      "Training delivery"
+    ],
+    "per": [
+      "Engaging",
+      "Adaptable",
+      "Business-aware"
+    ],
+    "deg": [
+      "Any degree + training/instructional design certification",
+      "MBA HR also common"
+    ],
+    "subj": [
+      "Business Studies",
+      "Psychology",
+      "English"
+    ],
+    "tools": [
+      "Articulate",
+      "MS Teams Training",
+      "LMS Platforms",
+      "Assessment Tools"
+    ],
+    "acts": [
+      "Conducting workshops",
+      "Designing training content",
+      "Measuring training impact",
+      "Coaching managers"
+    ],
+    "env": "Corporate L&D departments and training firms; travel for sessions",
+    "path": [
+      "Trainer",
+      "L&D Specialist",
+      "L&D Manager",
+      "Head of Learning & Development"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Human Resource Management",
+      "EdTech Specialist",
+      "Career Counselling"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Career Counselling": {
+    "cat": "Education",
+    "sub": "Career Guidance",
+    "tech": [
+      "Psychometric Assessment Tools",
+      "Career Databases",
+      "Counselling Frameworks",
+      "College Admission Knowledge",
+      "Report Interpretation"
+    ],
+    "soft": [
+      "Empathetic Listening",
+      "Student Motivation",
+      "Parent Communication"
+    ],
+    "int": [
+      "Guiding career choices",
+      "Student development",
+      "Education pathways"
+    ],
+    "per": [
+      "Empathetic",
+      "Knowledgeable",
+      "Encouraging"
+    ],
+    "deg": [
+      "Any degree + career counselling certification",
+      "Psychology background preferred"
+    ],
+    "subj": [
+      "Psychology",
+      "Any stream",
+      "Education"
+    ],
+    "tools": [
+      "Psychometric Platforms",
+      "College Databases",
+      "Counselling Software"
+    ],
+    "acts": [
+      "Assessing student aptitudes",
+      "Conducting counselling sessions",
+      "Recommending pathways",
+      "Guiding college applications"
+    ],
+    "env": "Schools, counselling companies and independent practice; one-on-one and group sessions",
+    "path": [
+      "Counsellor",
+      "Senior Career Counsellor",
+      "Head Counsellor",
+      "Independent Practice"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Psychology",
+      "Corporate Training",
+      "Mentoring and Coaching"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Mentoring and Coaching": {
+    "cat": "Education",
+    "sub": "Coaching & Mentoring",
+    "tech": [
+      "Coaching Frameworks (ICF)",
+      "Assessment Tools",
+      "Goal-tracking Systems",
+      "Feedback Models",
+      "Session Structuring"
+    ],
+    "soft": [
+      "Powerful Questioning",
+      "Non-judgemental Listening",
+      "Goal Accountability"
+    ],
+    "int": [
+      "Unlocking human potential",
+      "One-on-one development",
+      "Leadership growth"
+    ],
+    "per": [
+      "Perceptive",
+      "Encouraging",
+      "Grounded"
+    ],
+    "deg": [
+      "Any degree + ICF/EMCC coaching certification",
+      "Senior industry experience valued"
+    ],
+    "subj": [
+      "Psychology",
+      "Business Studies",
+      "Any stream"
+    ],
+    "tools": [
+      "Coaching Platforms",
+      "Assessment Instruments",
+      "Session Frameworks"
+    ],
+    "acts": [
+      "Running coaching sessions",
+      "Setting development goals",
+      "Giving structured feedback",
+      "Tracking growth journeys"
+    ],
+    "env": "Corporate coaching, executive practices and education; remote-friendly",
+    "path": [
+      "Coach",
+      "Certified Coach",
+      "Executive Coach",
+      "Coaching Practice Owner"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Career Counselling",
+      "Corporate Training",
+      "Psychology"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Special Education": {
+    "cat": "Education",
+    "sub": "Special Education",
+    "tech": [
+      "Individualised Education Plans (IEP)",
+      "Disability-specific Methods",
+      "Assistive Technology",
+      "Behaviour Intervention",
+      "Assessment Adaptation"
+    ],
+    "soft": [
+      "Extraordinary Patience",
+      "Individualised Creativity",
+      "Family Partnership"
+    ],
+    "int": [
+      "Inclusive education",
+      "Diverse learning needs",
+      "Child development"
+    ],
+    "per": [
+      "Compassionate",
+      "Adaptive",
+      "Persistent"
+    ],
+    "deg": [
+      "B.Ed Special Education (RCI-recognised)",
+      "D.Ed Special Education"
+    ],
+    "subj": [
+      "Education",
+      "Psychology",
+      "Any stream"
+    ],
+    "tools": [
+      "IEP Templates",
+      "Assistive Devices",
+      "Visual Aids",
+      "Therapy Coordination"
+    ],
+    "acts": [
+      "Creating IEPs",
+      "Teaching adapted lessons",
+      "Tracking individual progress",
+      "Coordinating with therapists"
+    ],
+    "env": "Special schools, inclusive mainstream schools and therapy centres",
+    "path": [
+      "Special Educator",
+      "Senior Special Educator",
+      "Inclusion Coordinator",
+      "Special Education Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "School Education",
+      "Speech-Language Pathology",
+      "Occupational Therapy"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Psychology": {
+    "cat": "Psychology & Social Sciences",
+    "sub": "Psychology",
+    "tech": [
+      "Psychological Assessment",
+      "Counselling Techniques",
+      "Research Methods & Statistics",
+      "Behavioural Analysis",
+      "Case Documentation"
+    ],
+    "soft": [
+      "Deep Listening",
+      "Non-judgement",
+      "Ethical Confidentiality"
+    ],
+    "int": [
+      "Human mind and behaviour",
+      "Mental health",
+      "Research on behaviour"
+    ],
+    "per": [
+      "Empathetic",
+      "Observant",
+      "Ethical"
+    ],
+    "deg": [
+      "BA/B.Sc Psychology",
+      "MA/M.Sc Psychology + M.Phil/PsyD for clinical practice"
+    ],
+    "subj": [
+      "Psychology",
+      "Biology",
+      "Statistics"
+    ],
+    "tools": [
+      "Assessment Scales",
+      "SPSS/R",
+      "Therapy Frameworks (CBT)",
+      "Case Notes"
+    ],
+    "acts": [
+      "Conducting assessments",
+      "Providing therapy/counselling",
+      "Conducting research",
+      "Writing case reports"
+    ],
+    "env": "Clinics, hospitals, schools, corporates and research settings",
+    "path": [
+      "Psychology Graduate",
+      "Counsellor/Assistant Psychologist",
+      "Clinical Psychologist (RCI)",
+      "Senior Psychologist / Practice Owner"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Clinical Psychology",
+      "Human Resource Management",
+      "Career Counselling"
+    ],
+    "minEdu": "Master's"
+  },
+  "Clinical Psychology": {
+    "cat": "Psychology & Social Sciences",
+    "sub": "Clinical Psychology",
+    "tech": [
+      "Psychodiagnostic Testing",
+      "Psychotherapy (CBT/DBT)",
+      "Clinical Interviewing",
+      "Mental Health Act Awareness",
+      "Case Formulation"
+    ],
+    "soft": [
+      "Therapeutic Presence",
+      "Clinical Judgement",
+      "Emotional Boundaries"
+    ],
+    "int": [
+      "Mental disorders and treatment",
+      "Therapy",
+      "Clinical research"
+    ],
+    "per": [
+      "Composed",
+      "Empathetic",
+      "Clinically rigorous"
+    ],
+    "deg": [
+      "MA/M.Sc Psychology + M.Phil Clinical Psychology (RCI)",
+      "PsyD pathway also exists"
+    ],
+    "subj": [
+      "Psychology",
+      "Biology",
+      "Statistics"
+    ],
+    "tools": [
+      "Psychometric Batteries",
+      "Therapy Manuals",
+      "Case Records",
+      "Tele-therapy Platforms"
+    ],
+    "acts": [
+      "Diagnosing mental health conditions",
+      "Delivering psychotherapy",
+      "Maintaining case records",
+      "Working in multidisciplinary teams"
+    ],
+    "env": "Hospitals, mental health clinics, private practice and tele-therapy platforms",
+    "path": [
+      "Clinical Psychologist",
+      "Senior Clinical Psychologist",
+      "Consultant Psychologist",
+      "Clinic Director"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Psychology",
+      "Psychiatry",
+      "Counselling Psychology"
+    ],
+    "emerging": true,
+    "minEdu": "Master's"
+  },
+  "Economics": {
+    "cat": "Psychology & Social Sciences",
+    "sub": "Economics",
+    "tech": [
+      "Econometrics",
+      "Statistical Analysis (R/Stata)",
+      "Economic Modelling",
+      "Data Interpretation",
+      "Policy Analysis"
+    ],
+    "soft": [
+      "Analytical Rigour",
+      "Policy Thinking",
+      "Clear Economic Writing"
+    ],
+    "int": [
+      "Markets and economies",
+      "Policy questions",
+      "Data-driven social questions"
+    ],
+    "per": [
+      "Analytical",
+      "Curious",
+      "Policy-minded"
+    ],
+    "deg": [
+      "BA/B.Sc Economics",
+      "MA/M.Sc Economics (DSE/IGIDR etc.)"
+    ],
+    "subj": [
+      "Economics",
+      "Mathematics",
+      "Statistics"
+    ],
+    "tools": [
+      "R",
+      "Stata",
+      "Excel",
+      "Econometric Packages"
+    ],
+    "acts": [
+      "Analysing economic data",
+      "Building models",
+      "Writing policy notes",
+      "Forecasting trends"
+    ],
+    "env": "Think tanks, government bodies, banks, consulting and academia",
+    "path": [
+      "Economic Researcher / Analyst",
+      "Economist",
+      "Senior Economist",
+      "Chief Economist / Policy Director"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Business Analytics",
+      "Public Policy and Governance",
+      "Financial Analysis"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Anthropology": {
+    "cat": "Humanities",
+    "sub": "Anthropology",
+    "tech": [
+      "Ethnographic Fieldwork",
+      "Qualitative Research Methods",
+      "Cultural Analysis",
+      "Field Documentation",
+      "Anthropological Theory"
+    ],
+    "soft": [
+      "Cultural Immersion",
+      "Observational Patience",
+      "Reflexive Writing"
+    ],
+    "int": [
+      "Human cultures",
+      "Communities and traditions",
+      "Field research"
+    ],
+    "per": [
+      "Open-minded",
+      "Patient",
+      "Reflective"
+    ],
+    "deg": [
+      "BA/MA Anthropology",
+      "PhD for research careers"
+    ],
+    "subj": [
+      "History",
+      "Sociology",
+      "Biology"
+    ],
+    "tools": [
+      "Field Notebooks",
+      "Recording Equipment",
+      "Qualitative Analysis Software"
+    ],
+    "acts": [
+      "Conducting fieldwork",
+      "Interviewing communities",
+      "Writing ethnographies",
+      "Advising on cultural impact"
+    ],
+    "env": "Universities, research institutes, development organisations and museums; field travel",
+    "path": [
+      "Research Assistant",
+      "Anthropologist",
+      "Senior Researcher",
+      "Professor / Applied Anthropology Lead"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Sociology",
+      "History and Archaeology",
+      "Social Work and Development Sector"
+    ],
+    "minEdu": "Master's"
+  },
+  "Sociology": {
+    "cat": "Humanities",
+    "sub": "Sociology",
+    "tech": [
+      "Social Research Methods",
+      "Survey Analysis",
+      "Qualitative Interviews",
+      "Social Statistics",
+      "Policy Evaluation"
+    ],
+    "soft": [
+      "Sociological Imagination",
+      "Empathy Across Classes",
+      "Analytical Writing"
+    ],
+    "int": [
+      "Society and inequality",
+      "Social change",
+      "Community studies"
+    ],
+    "per": [
+      "Empathetic",
+      "Analytical",
+      "Questioning"
+    ],
+    "deg": [
+      "BA/MA Sociology",
+      "PhD for research/academia"
+    ],
+    "subj": [
+      "Sociology",
+      "Political Science",
+      "Statistics"
+    ],
+    "tools": [
+      "SPSS",
+      "Survey Tools",
+      "Qualitative Coding Software"
+    ],
+    "acts": [
+      "Studying social patterns",
+      "Conducting surveys and interviews",
+      "Evaluating social programmes",
+      "Publishing findings"
+    ],
+    "env": "Universities, think tanks, development organisations and policy research",
+    "path": [
+      "Research Associate",
+      "Sociologist",
+      "Senior Researcher",
+      "Professor / Research Director"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Social Work and Development Sector",
+      "Anthropology",
+      "Public Policy and Governance"
+    ],
+    "minEdu": "Master's"
+  },
+  "Political Science": {
+    "cat": "Psychology & Social Sciences",
+    "sub": "Political Science",
+    "tech": [
+      "Political Analysis",
+      "Policy Research",
+      "Constitutional Knowledge",
+      "Data-driven Political Studies",
+      "Survey & Polling Basics"
+    ],
+    "soft": [
+      "Balanced Analysis",
+      "Debate & Writing",
+      "Systems Understanding"
+    ],
+    "int": [
+      "Politics and governance",
+      "Public policy",
+      "Political systems"
+    ],
+    "per": [
+      "Engaged",
+      "Analytical",
+      "Articulate"
+    ],
+    "deg": [
+      "BA/MA Political Science",
+      "M.Phil/PhD for research careers"
+    ],
+    "subj": [
+      "Political Science",
+      "History",
+      "Economics"
+    ],
+    "tools": [
+      "Research Databases",
+      "Statistical Tools",
+      "Policy Documents",
+      "Survey Platforms"
+    ],
+    "acts": [
+      "Analysing political systems",
+      "Researching governance",
+      "Writing policy briefs",
+      "Tracking legislation"
+    ],
+    "env": "Universities, think tanks, political consultancies and media",
+    "path": [
+      "Research Associate",
+      "Political Analyst",
+      "Senior Analyst / Professor",
+      "Policy Director"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Public Policy and Governance",
+      "Law",
+      "Civil Services"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "History and Archaeology": {
+    "cat": "Humanities",
+    "sub": "History & Archaeology",
+    "tech": [
+      "Archival Research",
+      "Excavation Methods",
+      "Artifact Analysis",
+      "Historiography",
+      "Heritage Documentation"
+    ],
+    "soft": [
+      "Source Criticism",
+      "Field Patience",
+      "Narrative Reconstruction"
+    ],
+    "int": [
+      "The past",
+      "Excavation and discovery",
+      "Preserving heritage"
+    ],
+    "per": [
+      "Curious",
+      "Patient",
+      "Detail-loving"
+    ],
+    "deg": [
+      "BA/MA History or Archaeology",
+      "PG Diploma in Archaeology (ASI) for field roles"
+    ],
+    "subj": [
+      "History",
+      "Geography",
+      "Any stream"
+    ],
+    "tools": [
+      "Excavation Kits",
+      "Archives",
+      "Dating Methods",
+      "GIS for Heritage"
+    ],
+    "acts": [
+      "Excavating sites",
+      "Studying archives",
+      "Documenting heritage",
+      "Publishing historical research"
+    ],
+    "env": "ASI, museums, universities and heritage organisations; field and archive work",
+    "path": [
+      "Research Assistant",
+      "Historian / Archaeologist",
+      "Senior Archaeologist",
+      "Professor / Heritage Director"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Anthropology",
+      "Museum Curation and Conservation",
+      "Civil Services"
+    ],
+    "minEdu": "Master's"
+  },
+  "Social Work and Development Sector": {
+    "cat": "Psychology & Social Sciences",
+    "sub": "Social Work",
+    "tech": [
+      "Case Work Methods",
+      "Community Mobilisation",
+      "M&E Frameworks",
+      "Report & Proposal Writing",
+      "Government Scheme Knowledge"
+    ],
+    "soft": [
+      "Grassroots Empathy",
+      "Advocacy",
+      "Programme Management"
+    ],
+    "int": [
+      "Social justice",
+      "Community development",
+      "Uplifting marginalised groups"
+    ],
+    "per": [
+      "Compassionate",
+      "Resilient",
+      "Mobilising"
+    ],
+    "deg": [
+      "BSW/MSW (Master of Social Work)"
+    ],
+    "subj": [
+      "Sociology",
+      "Political Science",
+      "Any stream"
+    ],
+    "tools": [
+      "M&E Frameworks",
+      "Case Management Tools",
+      "Survey Kits",
+      "Proposal Templates"
+    ],
+    "acts": [
+      "Working with communities",
+      "Running welfare programmes",
+      "Liaising with government",
+      "Writing impact reports"
+    ],
+    "env": "NGOs, government missions, CSR teams and international development agencies; field work",
+    "path": [
+      "Field Worker / Community Organiser",
+      "Social Worker",
+      "Programme Manager",
+      "NGO Director / CSR Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Sociology",
+      "Public Health",
+      "Public Policy and Governance"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Foreign Services": {
+    "cat": "Government & Public Services",
+    "sub": "Diplomacy",
+    "tech": [
+      "International Relations Analysis",
+      "Diplomatic Protocol",
+      "Policy Drafting",
+      "Negotiation",
+      "Language Proficiency"
+    ],
+    "soft": [
+      "Diplomatic Tact",
+      "Cultural Adaptability",
+      "Strategic Communication"
+    ],
+    "int": [
+      "Global affairs",
+      "Representing India",
+      "International negotiation"
+    ],
+    "per": [
+      "Poised",
+      "Discreet",
+      "Globally minded"
+    ],
+    "deg": [
+      "Any degree + UPSC CSE (IFS)",
+      "Foreign language training post-selection"
+    ],
+    "subj": [
+      "Political Science",
+      "History",
+      "Economics"
+    ],
+    "tools": [
+      "Policy Briefs",
+      "Treaty Documents",
+      "Language Training"
+    ],
+    "acts": [
+      "Representing India abroad",
+      "Negotiating agreements",
+      "Reporting on host countries",
+      "Supporting Indian citizens overseas"
+    ],
+    "env": "Indian embassies and consulates worldwide, MEA Delhi; periodic postings",
+    "path": [
+      "IFS Probationer",
+      "Third Secretary / Diplomat",
+      "Ambassador",
+      "Foreign Secretary track"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Civil Services",
+      "Public Policy and Governance",
+      "Political Science"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Public Policy and Governance": {
+    "cat": "Government & Public Services",
+    "sub": "Public Policy",
+    "tech": [
+      "Policy Analysis Frameworks",
+      "Data for Policy (Excel/R)",
+      "Stakeholder Consultation",
+      "Monitoring & Evaluation",
+      "Government Scheme Knowledge"
+    ],
+    "soft": [
+      "Policy Writing",
+      "Government Navigation",
+      "Evidence Communication"
+    ],
+    "int": [
+      "Solving public problems",
+      "Government systems",
+      "Impact at scale"
+    ],
+    "per": [
+      "Impact-driven",
+      "Analytical",
+      "Diplomatic"
+    ],
+    "deg": [
+      "Any degree + Master's in Public Policy (Kautilya/Harvard-type programmes)"
+    ],
+    "subj": [
+      "Economics",
+      "Political Science",
+      "Statistics"
+    ],
+    "tools": [
+      "Policy Databases",
+      "Data Tools",
+      "M&E Frameworks",
+      "Presentation Software"
+    ],
+    "acts": [
+      "Researching policy problems",
+      "Drafting policy recommendations",
+      "Supporting government programmes",
+      "Evaluating impact"
+    ],
+    "env": "Government advisory bodies, think tanks (NITI-type), consultancies and CSR policy teams",
+    "path": [
+      "Policy Associate",
+      "Policy Consultant",
+      "Senior Policy Specialist",
+      "Policy Director"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Economics",
+      "Law",
+      "Social Work and Development Sector"
+    ],
+    "emerging": true,
+    "minEdu": "Master's"
+  },
+  "Civil Services": {
+    "cat": "Government & Public Services",
+    "sub": "Civil Services",
+    "tech": [
+      "Administration & Governance",
+      "Policy Implementation",
+      "Public Finance Basics",
+      "Constitutional Framework",
+      "E-governance Systems"
+    ],
+    "soft": [
+      "Public Service Motivation",
+      "Decision-making Under Scrutiny",
+      "Ethical Integrity"
+    ],
+    "int": [
+      "Governance",
+      "Public administration",
+      "Serving citizens at scale"
+    ],
+    "per": [
+      "Principled",
+      "Resilient",
+      "Responsible"
+    ],
+    "deg": [
+      "Any degree + UPSC Civil Services Examination (IAS/IPS/IFS etc.)"
+    ],
+    "subj": [
+      "Any graduation stream",
+      "Polity & Governance",
+      "Current Affairs"
+    ],
+    "tools": [
+      "e-Governance Platforms",
+      "Government Files & Systems",
+      "Data Dashboards"
+    ],
+    "acts": [
+      "Administering districts/departments",
+      "Implementing government schemes",
+      "Resolving public grievances",
+      "Coordinating development work"
+    ],
+    "env": "District and state administration across India; transfers and high public visibility",
+    "path": [
+      "Probationer (LBSNAA)",
+      "Sub-divisional/District Officer",
+      "Department Secretary",
+      "Chief Secretary"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Public Policy and Governance",
+      "Law",
+      "Political Science"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Defence Services": {
+    "cat": "Government & Public Services",
+    "sub": "Defence Forces",
+    "tech": [
+      "Military Strategy",
+      "Weapons & Equipment",
+      "Field Craft",
+      "Defence Communication Systems",
+      "Physical Combat Training"
+    ],
+    "soft": [
+      "Discipline",
+      "Courage",
+      "Team Bonding"
+    ],
+    "int": [
+      "Serving the nation",
+      "Military operations",
+      "Leadership in adversity"
+    ],
+    "per": [
+      "Brave",
+      "Disciplined",
+      "Committed"
+    ],
+    "deg": [
+      "NDA after 12th / CDS after graduation",
+      "Technical entries via TGC/SSC"
+    ],
+    "subj": [
+      "Any stream",
+      "Physical Education",
+      "Current Affairs"
+    ],
+    "tools": [
+      "Defence Equipment",
+      "Communication Systems",
+      "Simulation Training"
+    ],
+    "acts": [
+      "Leading troops",
+      "Conducting operations",
+      "Maintaining readiness",
+      "Serving in diverse terrains"
+    ],
+    "env": "Cantons, borders and operational areas across terrains; regimented life",
+    "path": [
+      "Cadet (NDA/CDS)",
+      "Officer (Lieutenant etc.)",
+      "Company/Battalion Commander",
+      "General Officer"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Airforce",
+      "Law Enforcement Studies",
+      "Physical Training"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Airforce": {
+    "cat": "Government & Public Services",
+    "sub": "Air Force",
+    "tech": [
+      "Aircraft Systems",
+      "Aviation Operations",
+      "Air Defence Systems",
+      "Aeronautical Basics",
+      "Radar & Communication"
+    ],
+    "soft": [
+      "Aerial Precision",
+      "Split-second Decisions",
+      "Team Discipline"
+    ],
+    "int": [
+      "Flying and aircraft",
+      "Air defence",
+      "Advanced aviation technology"
+    ],
+    "per": [
+      "Precise",
+      "Brave",
+      "Disciplined"
+    ],
+    "deg": [
+      "NDA (flying branch)",
+      "AFCAT/CDS after graduation",
+      "Technical branch via AFCAT (technical)"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "English"
+    ],
+    "tools": [
+      "Fighter/Transport Aircraft",
+      "Radar Systems",
+      "Simulators"
+    ],
+    "acts": [
+      "Flying operational missions",
+      "Maintaining aircraft",
+      "Leading air operations",
+      "Air defence readiness"
+    ],
+    "env": "Air force stations across India; flying and technical duties",
+    "path": [
+      "Cadet / Flight Cadet",
+      "Flying Officer / Officer",
+      "Squadron Leader",
+      "Air Commodore and above"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Defence Services",
+      "Pilot",
+      "Aerospace Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Staff Selection Services": {
+    "cat": "Government & Public Services",
+    "sub": "SSC Government Roles",
+    "tech": [
+      "Office Administration",
+      "Government Procedures",
+      "Data Entry & Documentation",
+      "Excel",
+      "Departmental Rules"
+    ],
+    "soft": [
+      "Process Discipline",
+      "Public Interaction",
+      "Exam Persistence"
+    ],
+    "int": [
+      "Government service",
+      "Administrative roles",
+      "Job security with public duty"
+    ],
+    "per": [
+      "Diligent",
+      "Patient",
+      "Rule-abiding"
+    ],
+    "deg": [
+      "Any degree + SSC CGL/CHSL examination"
+    ],
+    "subj": [
+      "Any graduation stream",
+      "Mathematics",
+      "English"
+    ],
+    "tools": [
+      "Government Portals",
+      "MS Office",
+      "Departmental Software"
+    ],
+    "acts": [
+      "Handling departmental files",
+      "Assisting administration",
+      "Maintaining records",
+      "Supporting public service delivery"
+    ],
+    "env": "Government offices and ministries across India",
+    "path": [
+      "Assistant Section Officer",
+      "Section Officer",
+      "Under Secretary",
+      "Departmental leadership via departmental exams"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Low",
+    "rem": "Low",
+    "rel": [
+      "Civil Services",
+      "Retail Banking",
+      "Public Policy and Governance"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Economic Services": {
+    "cat": "Government & Public Services",
+    "sub": "Economic Services (IES)",
+    "tech": [
+      "Economic Analysis for Government",
+      "Statistical Services",
+      "Policy Evaluation",
+      "Data Collection Systems",
+      "Econometrics"
+    ],
+    "soft": [
+      "Policy Analytics",
+      "Report Writing",
+      "Statistical Rigour"
+    ],
+    "int": [
+      "India's economy",
+      "Policy data",
+      "Economic planning"
+    ],
+    "per": [
+      "Analytical",
+      "Precise",
+      "Public-spirited"
+    ],
+    "deg": [
+      "PG in Economics/Applied Economics + UPSC IES examination"
+    ],
+    "subj": [
+      "Economics",
+      "Statistics",
+      "Mathematics"
+    ],
+    "tools": [
+      "Statistical Software",
+      "Government Data Systems",
+      "Survey Instruments"
+    ],
+    "acts": [
+      "Analysing economic data for ministries",
+      "Preparing official statistics",
+      "Evaluating economic programmes",
+      "Drafting economic reports"
+    ],
+    "env": "Ministries, NSSO, planning bodies and economic divisions of government",
+    "path": [
+      "IES Officer",
+      "Deputy Director",
+      "Director",
+      "Economic Adviser"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Economics",
+      "Civil Services",
+      "Public Policy and Governance"
+    ],
+    "minEdu": "Master's"
+  },
+  "Disaster Management": {
+    "cat": "Government & Public Services",
+    "sub": "Disaster Management",
+    "tech": [
+      "Disaster Response Protocols",
+      "GIS for Disaster Mapping",
+      "Relief Operations",
+      "Early Warning Systems",
+      "NDMA Frameworks"
+    ],
+    "soft": [
+      "Crisis Leadership",
+      "Rapid Decision-making",
+      "Community Coordination"
+    ],
+    "int": [
+      "Emergency response",
+      "Preparedness planning",
+      "Public safety at scale"
+    ],
+    "per": [
+      "Calm in crisis",
+      "Coordinating",
+      "Field-hardy"
+    ],
+    "deg": [
+      "Any degree + PG Diploma/MBA in Disaster Management (NIDM etc.)"
+    ],
+    "subj": [
+      "Geography",
+      "Any stream",
+      "Public Administration"
+    ],
+    "tools": [
+      "GIS",
+      "Early Warning Systems",
+      "Relief Management Software"
+    ],
+    "acts": [
+      "Preparing disaster plans",
+      "Coordinating relief operations",
+      "Training response teams",
+      "Assessing damage and recovery"
+    ],
+    "env": "Disaster-prone regions, NDMA/SDMA offices and relief operations; on-call during events",
+    "path": [
+      "Disaster Management Officer",
+      "Programme Coordinator",
+      "State Disaster Lead",
+      "National Disaster Response Leadership"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Civil Services",
+      "Environmental Science",
+      "Social Work and Development Sector"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Aviation": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Aviation Industry",
+    "tech": [
+      "Airport Operations Systems",
+      "Passenger Service Systems",
+      "Safety & Security Protocols",
+      "Cargo Handling",
+      "DGCA Regulations"
+    ],
+    "soft": [
+      "Passenger Service",
+      "Security Vigilance",
+      "Shift Flexibility"
+    ],
+    "int": [
+      "Airports and airlines",
+      "Travel industry",
+      "Operations coordination"
+    ],
+    "per": [
+      "Well-groomed",
+      "Service-minded",
+      "Alert"
+    ],
+    "deg": [
+      "Any degree + aviation/airport operations certification",
+      "BBA Aviation Management also available"
+    ],
+    "subj": [
+      "English",
+      "Business Studies",
+      "Geography"
+    ],
+    "tools": [
+      "Departure Control Systems",
+      " baggage Systems",
+      "Safety Checklists"
+    ],
+    "acts": [
+      "Coordinating flights",
+      "Assisting passengers",
+      "Managing ground operations",
+      "Ensuring safety compliance"
+    ],
+    "env": "Airports and airline offices across India and abroad; shift work",
+    "path": [
+      "Airport Operations Executive",
+      "Duty Manager",
+      "Airport Manager",
+      "Airport Operations Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Pilot",
+      "Cabin Services",
+      "Hotel Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Cabin Services": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Cabin Crew",
+    "tech": [
+      "In-flight Service Standards",
+      "Safety & Emergency Procedures",
+      "First Aid Certification",
+      "Grooming Standards",
+      "Passenger Announcements"
+    ],
+    "soft": [
+      "Passenger Warmth",
+      "Emergency Calm",
+      "Grooming Discipline"
+    ],
+    "int": [
+      "Travel and flying",
+      "Hospitality service",
+      "Meeting new people"
+    ],
+    "per": [
+      "Poised",
+      "Caring",
+      "Adaptable"
+    ],
+    "deg": [
+      "12th pass/Any degree + airline cabin crew training certification"
+    ],
+    "subj": [
+      "English",
+      "Hospitality",
+      "Any stream"
+    ],
+    "tools": [
+      "Safety Equipment",
+      "In-flight Service Carts",
+      "Announcement Systems"
+    ],
+    "acts": [
+      "Ensuring passenger safety",
+      "Serving in-flight meals",
+      "Handling emergencies",
+      "Representing the airline"
+    ],
+    "env": "Aircraft cabins across domestic and international routes; irregular hours",
+    "path": [
+      "Cabin Crew",
+      "Senior Cabin Crew",
+      "Purser",
+      "In-flight Trainer / Cabin Crew Manager"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Aviation",
+      "Hotel Management",
+      "Pilot"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Culinary Arts": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Culinary Arts",
+    "tech": [
+      "Cooking Techniques",
+      "Kitchen Station Management",
+      "Food Plating & Presentation",
+      "Menu Development",
+      "Food Safety (FSSAI)"
+    ],
+    "soft": [
+      "Creativity on the Plate",
+      "Kitchen Stamina",
+      "Team Coordination"
+    ],
+    "int": [
+      "Cooking and flavours",
+      "Food presentation",
+      "Global cuisines"
+    ],
+    "per": [
+      "Creative",
+      "Stamina-driven",
+      "Perfectionist"
+    ],
+    "deg": [
+      "BHM Culinary specialisation",
+      "Diploma in Culinary Arts (IHM etc.)"
+    ],
+    "subj": [
+      "Home Science",
+      "Chemistry",
+      "English"
+    ],
+    "tools": [
+      "Professional Kitchen Equipment",
+      "Plating Tools",
+      "Recipe Management",
+      "Ovens & Ranges"
+    ],
+    "acts": [
+      "Preparing dishes",
+      "Designing menus",
+      "Managing kitchen stations",
+      "Ensuring food safety"
+    ],
+    "env": "Hotel kitchens, restaurants, cloud kitchens and cruise lines; hot, fast-paced shifts",
+    "path": [
+      "Commis Chef",
+      "Chef de Partie",
+      "Sous Chef",
+      "Executive Chef"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Hotel Management",
+      "Food Technology",
+      "Event Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Hotel Management": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Hotel Operations",
+    "tech": [
+      "Property Management Systems (PMS)",
+      "Revenue Management",
+      "F&B Operations",
+      "Guest Service Standards",
+      "OTA Management"
+    ],
+    "soft": [
+      "Guest Delight Focus",
+      "Multi-department Coordination",
+      "Grace Under Pressure"
+    ],
+    "int": [
+      "Hospitality service",
+      "Luxury experiences",
+      "Global travel industry"
+    ],
+    "per": [
+      "Warm",
+      "Professional",
+      "Multitasking"
+    ],
+    "deg": [
+      "BHM (Bachelor of Hotel Management)",
+      "BSc Hospitality + MBA Hotel Management"
+    ],
+    "subj": [
+      "English",
+      "Business Studies",
+      "Geography"
+    ],
+    "tools": [
+      "Opera PMS",
+      "Revenue Systems",
+      "F&B Software",
+      "OTA Portals"
+    ],
+    "acts": [
+      "Managing guest experiences",
+      "Overseeing F&B or front office",
+      "Handling occupancy and revenue",
+      "Training service teams"
+    ],
+    "env": "Hotel chains (Taj, Marriott, Oberoi) across India and abroad; shifts",
+    "path": [
+      "Management Trainee",
+      "Department Manager",
+      "Department Head",
+      "General Manager"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Event Management",
+      "Travel and Tourism Management",
+      "Culinary Arts"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Pilot": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Commercial Flying",
+    "tech": [
+      "Flight Training (CPL)",
+      "Aircraft Systems",
+      "Navigation & Meteorology",
+      "Radio Telephony",
+      "Simulator Proficiency"
+    ],
+    "soft": [
+      "Cockpit Discipline",
+      "Split-second Judgement",
+      "Crew Communication"
+    ],
+    "int": [
+      "Flying aircraft",
+      "Aviation",
+      "Precision operations"
+    ],
+    "per": [
+      "Precise",
+      "Composed",
+      "Responsible"
+    ],
+    "deg": [
+      "CPL (Commercial Pilot Licence) from DGCA-approved flying school",
+      "Class 1 medical mandatory"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "English"
+    ],
+    "tools": [
+      "Aircraft",
+      "Flight Simulators",
+      "Navigation Instruments",
+      "Flight Computers"
+    ],
+    "acts": [
+      "Flying commercial aircraft",
+      "Pre-flight planning",
+      "Managing in-flight operations",
+      "Ensuring passenger safety"
+    ],
+    "env": "Airlines across India and abroad; cockpit, irregular schedules, travel",
+    "path": [
+      "Student Pilot",
+      "Co-pilot (First Officer)",
+      "Captain",
+      "Training Captain / Commander"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Airforce",
+      "Aircraft Maintenance Engineering",
+      "Aviation"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Travel and Tourism Management": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Tourism Management",
+    "tech": [
+      "Travel Booking Systems (GDS)",
+      "Tour Package Design",
+      "Destination Knowledge",
+      "Visa & Documentation",
+      "Tourism Marketing"
+    ],
+    "soft": [
+      "Destination Storytelling",
+      "Customer Care",
+      "Multi-vendor Coordination"
+    ],
+    "int": [
+      "Travel and destinations",
+      "Cultural exchange",
+      "Tour operations"
+    ],
+    "per": [
+      "Well-travelled",
+      "Organised",
+      "People-loving"
+    ],
+    "deg": [
+      "BBA Tourism/Travel Management",
+      "Any degree + tourism certification (IATA)"
+    ],
+    "subj": [
+      "Geography",
+      "English",
+      "Business Studies"
+    ],
+    "tools": [
+      "Amadeus/GDS",
+      "Booking Platforms",
+      "CRM",
+      "Itinerary Builders"
+    ],
+    "acts": [
+      "Designing tour packages",
+      "Booking travel and stays",
+      "Guiding travellers",
+      "Managing tour operations"
+    ],
+    "env": "Travel companies, tourism boards and own agencies; destination travel",
+    "path": [
+      "Travel Consultant",
+      "Tour Operations Manager",
+      "Regional Manager",
+      "Travel Company Owner"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Hotel Management",
+      "Aviation",
+      "Event Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Architecture": {
+    "cat": "Architecture & Planning",
+    "sub": "Architecture",
+    "tech": [
+      "Architectural Design",
+      "AutoCAD/Revit",
+      "Building Bylaws",
+      "Model Making",
+      "Sustainable Design"
+    ],
+    "soft": [
+      "Spatial Creativity",
+      "Client Vision Translation",
+      "Bylaw Navigation"
+    ],
+    "int": [
+      "Designing buildings",
+      "Spaces and light",
+      "Built environment"
+    ],
+    "per": [
+      "Creative",
+      "Precise",
+      "Visionary"
+    ],
+    "deg": [
+      "B.Arch (5 years, NATA/JEE Paper 2)",
+      "M.Arch specialisation"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Art"
+    ],
+    "tools": [
+      "AutoCAD",
+      "Revit",
+      "SketchUp",
+      "Lumion"
+    ],
+    "acts": [
+      "Designing buildings",
+      "Preparing drawings and models",
+      "Coordinating with engineers",
+      "Site supervision"
+    ],
+    "env": "Architecture firms and own practice; design office with site visits",
+    "path": [
+      "Architectural Intern",
+      "Architect",
+      "Senior Architect",
+      "Principal Architect"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Interior Design",
+      "Civil Engineering",
+      "Urban Planning"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Urban Planning": {
+    "cat": "Architecture & Planning",
+    "sub": "Urban Planning",
+    "tech": [
+      "Master Planning",
+      "GIS for Planning",
+      "Urban Regulations (DCR)",
+      "Transport Planning Basics",
+      "Land Use Analysis"
+    ],
+    "soft": [
+      "Long-range Vision",
+      "Multi-stakeholder Negotiation",
+      "Policy Interpretation"
+    ],
+    "int": [
+      "Cities and how they work",
+      "Public infrastructure",
+      "Sustainable development"
+    ],
+    "per": [
+      "Big-picture",
+      "Negotiating",
+      "Public-minded"
+    ],
+    "deg": [
+      "B.Plan (Bachelor of Planning)",
+      "B.Arch + M.Plan Urban Planning"
+    ],
+    "subj": [
+      "Mathematics",
+      "Geography",
+      "Economics"
+    ],
+    "tools": [
+      "GIS",
+      "AutoCAD",
+      "Planning Software",
+      "Data Dashboards"
+    ],
+    "acts": [
+      "Preparing city master plans",
+      "Analysing land use",
+      "Consulting communities",
+      "Advising development authorities"
+    ],
+    "env": "Urban development authorities, consultancies and smart-city missions",
+    "path": [
+      "Planning Assistant",
+      "Urban Planner",
+      "Senior Urban Planner",
+      "City Planning Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Architecture",
+      "GIS Analyst",
+      "Civil Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Landscape Design": {
+    "cat": "Architecture & Planning",
+    "sub": "Landscape Architecture",
+    "tech": [
+      "Landscape Design Software",
+      "Plant Knowledge",
+      "Site Grading & Drainage",
+      "Sustainable Landscaping",
+      "3D Visualisation"
+    ],
+    "soft": [
+      "Living-design Sensibility",
+      "Site Reading",
+      "Client Vision Matching"
+    ],
+    "int": [
+      "Outdoor spaces",
+      "Plants and ecology",
+      "Design with nature"
+    ],
+    "per": [
+      "Artistic",
+      "Ecological",
+      "Practical"
+    ],
+    "deg": [
+      "B.Arch/B.Des + M.Arch Landscape",
+      "B.Sc Horticulture + landscape design diploma"
+    ],
+    "subj": [
+      "Biology",
+      "Art",
+      "Physics"
+    ],
+    "tools": [
+      "AutoCAD",
+      "SketchUp",
+      "Lumion",
+      "Plant Databases"
+    ],
+    "acts": [
+      "Designing gardens and campuses",
+      "Selecting plants",
+      "Planning irrigation",
+      "Supervising landscape execution"
+    ],
+    "env": "Landscape firms, architecture practices, real estate developers and resorts",
+    "path": [
+      "Landscape Designer",
+      "Landscape Architect",
+      "Senior Landscape Architect",
+      "Landscape Principal"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Architecture",
+      "Horticulture",
+      "Interior Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Environmental Science": {
+    "cat": "Environment & Sustainability",
+    "sub": "Environmental Science",
+    "tech": [
+      "Environmental Monitoring",
+      "Pollution Analysis",
+      "EIA Support",
+      "Field Sampling",
+      "Data Analysis"
+    ],
+    "soft": [
+      "Field Resilience",
+      "Scientific Reporting",
+      "Conservation Ethics"
+    ],
+    "int": [
+      "Ecosystems and pollution",
+      "Climate issues",
+      "Conservation"
+    ],
+    "per": [
+      "Observant",
+      "Purposeful",
+      "Field-ready"
+    ],
+    "deg": [
+      "B.Sc Environmental Science",
+      "M.Sc Environmental Science (field roles value experience)"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Geography"
+    ],
+    "tools": [
+      "Air/Water Quality Monitors",
+      "GIS",
+      "Sampling Kits",
+      "Statistical Software"
+    ],
+    "acts": [
+      "Sampling air/water/soil",
+      "Analysing pollution data",
+      "Writing environmental reports",
+      "Supporting conservation projects"
+    ],
+    "env": "Research institutes, pollution control boards, NGOs and industries; field work",
+    "path": [
+      "Environmental Scientist",
+      "Senior Environmental Scientist",
+      "Environmental Consultant",
+      "Sustainability Scientist"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Environmental Engineering",
+      "Climate Science",
+      "Sustainability"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Climate Science": {
+    "cat": "Environment & Sustainability",
+    "sub": "Climate Science",
+    "tech": [
+      "Climate Modelling",
+      "Atmospheric Data Analysis",
+      "Remote Sensing for Climate",
+      "Python/R for Climate Data",
+      "IPCC Framework Knowledge"
+    ],
+    "soft": [
+      "Complex Data Handling",
+      "Global Policy Literacy",
+      "Scientific Communication"
+    ],
+    "int": [
+      "Climate change",
+      "Earth systems",
+      "Global environmental policy"
+    ],
+    "per": [
+      "Analytical",
+      "Global-minded",
+      "Research-driven"
+    ],
+    "deg": [
+      "B.Sc Physics/Meteorology/Environmental Science",
+      "M.Sc/MTech Atmospheric Science or Climate Science (PhD for research)"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Geography"
+    ],
+    "tools": [
+      "Climate Models",
+      "Python",
+      "Remote Sensing Tools",
+      "Research Datasets"
+    ],
+    "acts": [
+      "Analysing climate data",
+      "Running climate models",
+      "Studying extreme events",
+      "Contributing to climate assessments"
+    ],
+    "env": "Research institutes (IITM etc.), universities and international climate bodies",
+    "path": [
+      "Climate Research Assistant",
+      "Climate Scientist",
+      "Senior Scientist",
+      "Lead Climate Scientist"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Environmental Science",
+      "Data Science",
+      "Sustainability Analytics"
+    ],
+    "minEdu": "Master's"
+  },
+  "Sustainability": {
+    "cat": "Environment & Sustainability",
+    "sub": "Sustainability",
+    "tech": [
+      "ESG Frameworks",
+      "Sustainability Reporting (GRI/BRSR)",
+      "Carbon Accounting",
+      "Life Cycle Assessment",
+      "Stakeholder Engagement"
+    ],
+    "soft": [
+      "Change Management",
+      "Business-Sustainability Bridge",
+      "Reporting Discipline"
+    ],
+    "int": [
+      "Sustainable business",
+      "Climate action in companies",
+      "ESG investing"
+    ],
+    "per": [
+      "Purpose-driven",
+      "Business-aware",
+      "Persuasive"
+    ],
+    "deg": [
+      "Any degree + sustainability/ESG certification",
+      "MBA Sustainability also valued"
+    ],
+    "subj": [
+      "Business Studies",
+      "Environmental Science",
+      "Economics"
+    ],
+    "tools": [
+      "GRI Standards",
+      "Carbon Accounting Tools",
+      "Excel",
+      "Reporting Platforms"
+    ],
+    "acts": [
+      "Building sustainability strategies",
+      "Preparing ESG reports",
+      "Measuring carbon footprints",
+      "Driving green initiatives"
+    ],
+    "env": "Corporates, consulting firms and sustainability-focused startups",
+    "path": [
+      "Sustainability Associate",
+      "Sustainability Specialist",
+      "ESG Manager",
+      "Chief Sustainability Officer"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Sustainability Analytics",
+      "Environmental Science",
+      "Public Policy and Governance"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Sustainability Analytics": {
+    "cat": "Environment & Sustainability",
+    "sub": "Sustainability Data",
+    "tech": [
+      "Carbon Data Analysis",
+      "ESG Data Platforms",
+      "Python/Excel Analytics",
+      "Life Cycle Assessment Tools",
+      "Reporting Standards"
+    ],
+    "soft": [
+      "Data-driven Sustainability",
+      "Framework Fluency",
+      "Cross-team Communication"
+    ],
+    "int": [
+      "Measuring environmental impact",
+      "Data for climate action",
+      "ESG metrics"
+    ],
+    "per": [
+      "Analytical",
+      "Purposeful",
+      "Precise"
+    ],
+    "deg": [
+      "B.Tech/B.Sc + sustainability analytics certification",
+      "Data background + ESG training"
+    ],
+    "subj": [
+      "Statistics",
+      "Environmental Science",
+      "Computer Science"
+    ],
+    "tools": [
+      "LCA Software",
+      "Excel",
+      "Python",
+      "ESG Platforms"
+    ],
+    "acts": [
+      "Measuring emissions",
+      "Building ESG dashboards",
+      "Analysing sustainability data",
+      "Supporting disclosures"
+    ],
+    "env": "Consulting firms, corporates and ESG data platforms",
+    "path": [
+      "Sustainability Analyst",
+      "ESG Analyst",
+      "Senior ESG Analyst",
+      "Head of Sustainability Analytics"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Sustainability",
+      "Data Science",
+      "Business Analytics"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Forestry": {
+    "cat": "Environment & Sustainability",
+    "sub": "Forestry",
+    "tech": [
+      "Forest Survey & Inventory",
+      "Silviculture",
+      "Wildlife Management Basics",
+      "Forest Laws (Indian Forest Act)",
+      "Remote Sensing for Forests"
+    ],
+    "soft": [
+      "Field Endurance",
+      "Conservation Commitment",
+      "Community Liaison"
+    ],
+    "int": [
+      "Forests and wildlife",
+      "Conservation service",
+      "Outdoor science"
+    ],
+    "per": [
+      "Field-hardy",
+      "Conservation-minded",
+      "Independent"
+    ],
+    "deg": [
+      "B.Sc Forestry",
+      "M.Sc Forestry; Indian Forest Service via UPSC for officer roles"
+    ],
+    "subj": [
+      "Biology",
+      "Geography",
+      "Chemistry"
+    ],
+    "tools": [
+      "Forest Inventory Tools",
+      "GPS",
+      "Remote Sensing Data",
+      "Field Kits"
+    ],
+    "acts": [
+      "Surveying forests",
+      "Managing forest resources",
+      "Preventing illegal felling",
+      "Working with forest communities"
+    ],
+    "env": "Forest ranges, national parks and state forest departments; rugged field postings",
+    "path": [
+      "Forester",
+      "Assistant Conservator of Forests",
+      "Deputy Conservator",
+      "Conservator of Forests / IFS"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Wildlife Biology",
+      "Environmental Science",
+      "Agriculture Research"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Agriculture Research": {
+    "cat": "Agriculture",
+    "sub": "Agricultural Research",
+    "tech": [
+      "Field Trial Design",
+      "Crop Science",
+      "Soil Analysis",
+      "Agricultural Statistics",
+      "Lab Techniques"
+    ],
+    "soft": [
+      "Field Patience",
+      "Scientific Method",
+      "Farmer Communication"
+    ],
+    "int": [
+      "Crop improvement",
+      "Soil and seeds",
+      "Feeding the nation"
+    ],
+    "per": [
+      "Patient",
+      "Scientific",
+      "Field-ready"
+    ],
+    "deg": [
+      "B.Sc Agriculture",
+      "M.Sc Agriculture (ICAR-AIEEA) (PhD for scientist roles)"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "Field Trial Software",
+      "Soil Testing Kits",
+      "ICAR Databases",
+      "Statistical Tools"
+    ],
+    "acts": [
+      "Conducting crop trials",
+      "Studying soil health",
+      "Developing better varieties",
+      "Advising farmers on practices"
+    ],
+    "env": "ICAR institutes, agricultural universities, KVKs and agri companies; field and lab mix",
+    "path": [
+      "Agricultural Research Assistant",
+      "Agricultural Scientist",
+      "Senior Scientist",
+      "Research Director / ICAR Scientist"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Horticulture",
+      "AgriTech",
+      "Genetics"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Agri Business Management": {
+    "cat": "Agriculture",
+    "sub": "Agri Business",
+    "tech": [
+      "Agri Supply Chains",
+      "Commodity Markets",
+      "Agri Finance Basics",
+      "Market Linkage Platforms",
+      "Excel"
+    ],
+    "soft": [
+      "Rural Market Understanding",
+      "Negotiation",
+      "Value-chain Thinking"
+    ],
+    "int": [
+      "Agri commerce",
+      "Farm-to-market systems",
+      "Rural entrepreneurship"
+    ],
+    "per": [
+      "Enterprising",
+      "Rural-empathetic",
+      "Negotiating"
+    ],
+    "deg": [
+      "B.Sc Agriculture + MBA Agri Business (MANAGE/IIMs)",
+      "BBA Agri Business"
+    ],
+    "subj": [
+      "Biology",
+      "Business Studies",
+      "Economics"
+    ],
+    "tools": [
+      "eNAM Platform",
+      "Commodity Market Tools",
+      "Excel",
+      "Agri Databases"
+    ],
+    "acts": [
+      "Managing agri supply chains",
+      "Trading commodities",
+      "Building farmer linkages",
+      "Running agri-input businesses"
+    ],
+    "env": "Agri-input companies, food processors, commodity firms and agri startups; rural and corporate mix",
+    "path": [
+      "Agri Business Executive",
+      "Agri Business Manager",
+      "Regional Head",
+      "Agri Business Director"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Agriculture Research",
+      "Supply Chain Management",
+      "AgriTech"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Dairy Technology": {
+    "cat": "Agriculture",
+    "sub": "Dairy Technology",
+    "tech": [
+      "Milk Processing",
+      "Dairy Plant Operations",
+      "Dairy Chemistry & Microbiology",
+      "Product Development",
+      "Quality Standards (FSSAI)"
+    ],
+    "soft": [
+      "Process Hygiene",
+      "Quality Focus",
+      "Plant Coordination"
+    ],
+    "int": [
+      "Dairy products",
+      "Food processing",
+      "Dairy cooperatives"
+    ],
+    "per": [
+      "Hygiene-focused",
+      "Process-driven",
+      "Practical"
+    ],
+    "deg": [
+      "B.Tech Dairy Technology",
+      "B.Sc Dairy + PG Diploma"
+    ],
+    "subj": [
+      "Chemistry",
+      "Biology",
+      "Mathematics"
+    ],
+    "tools": [
+      "Pasteurisers",
+      "Testing Labs",
+      "Plant Machinery",
+      "FSSAI Standards"
+    ],
+    "acts": [
+      "Processing milk into products",
+      "Ensuring product quality",
+      "Managing dairy plants",
+      "Developing new dairy products"
+    ],
+    "env": "Dairy plants and cooperatives (Amul-type), food companies; plant-based work",
+    "path": [
+      "Dairy Technologist",
+      "Senior Dairy Technologist",
+      "Plant Manager",
+      "Dairy Operations Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Food Technology",
+      "Microbiology",
+      "Agri Business Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Food Technology": {
+    "cat": "Agriculture",
+    "sub": "Food Technology",
+    "tech": [
+      "Food Processing Techniques",
+      "Food Chemistry",
+      "Food Safety Standards (FSSAI/HACCP)",
+      "Product Development",
+      "Packaging Technology"
+    ],
+    "soft": [
+      "Safety-first Mindset",
+      "Product Creativity",
+      "Sensory Analysis"
+    ],
+    "int": [
+      "Food science",
+      "Packaged foods",
+      "Nutrition technology"
+    ],
+    "per": [
+      "Precise",
+      "Innovative",
+      "Safety-conscious"
+    ],
+    "deg": [
+      "B.Tech/B.Sc Food Technology",
+      "M.Tech Food Technology"
+    ],
+    "subj": [
+      "Chemistry",
+      "Biology",
+      "Mathematics"
+    ],
+    "tools": [
+      "Food Testing Labs",
+      "Processing Equipment",
+      "Sensory Analysis Tools",
+      "HACCP Systems"
+    ],
+    "acts": [
+      "Developing food products",
+      "Ensuring food safety",
+      "Improving processing methods",
+      "Meeting quality standards"
+    ],
+    "env": "Food companies (Nestlé, ITC Foods etc.), QC labs and FSSAI-related roles",
+    "path": [
+      "Food Technologist",
+      "Senior Food Technologist",
+      "NPD Manager",
+      "Food Plant Quality Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Dairy Technology",
+      "Microbiology",
+      "Packaging Technology"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Horticulture": {
+    "cat": "Agriculture",
+    "sub": "Horticulture",
+    "tech": [
+      "Fruit & Vegetable Cultivation",
+      "Floriculture",
+      "Post-harvest Handling",
+      "Nursery Management",
+      "Protected Cultivation"
+    ],
+    "soft": [
+      "Plant Care Expertise",
+      "Market Linkage Sense",
+      "Field Patience"
+    ],
+    "int": [
+      "Fruits, flowers and vegetables",
+      "Gardening science",
+      "Agri-entrepreneurship"
+    ],
+    "per": [
+      "Green-thumbed",
+      "Patient",
+      "Market-savvy"
+    ],
+    "deg": [
+      "B.Sc Horticulture",
+      "M.Sc Horticulture"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Business Studies"
+    ],
+    "tools": [
+      "Greenhouse Systems",
+      "Soil Testing Kits",
+      "Grafting Tools",
+      "Post-harvest Equipment"
+    ],
+    "acts": [
+      "Cultivating fruits and flowers",
+      "Managing nurseries",
+      "Advising growers",
+      "Developing export-quality produce"
+    ],
+    "env": "Horticulture farms, government horticulture departments and agri-export firms; field-based",
+    "path": [
+      "Horticulture Officer",
+      "Horticulturist",
+      "Senior Horticulturist",
+      "Horticulture Director / Exporter"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Agriculture Research",
+      "Landscape Design",
+      "Agri Business Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Fisheries Science": {
+    "cat": "Agriculture",
+    "sub": "Fisheries Science",
+    "tech": [
+      "Aquaculture Techniques",
+      "Fish Processing",
+      "Aquatic Animal Health",
+      "Pond Management",
+      "Marine Fisheries Basics"
+    ],
+    "soft": [
+      "Aquaculture Patience",
+      "Field Adaptability",
+      "Farmer Extension Skill"
+    ],
+    "int": [
+      "Fish farming",
+      "Aquatic ecosystems",
+      "Blue economy"
+    ],
+    "per": [
+      "Hands-on",
+      "Observant",
+      "Water-comfortable"
+    ],
+    "deg": [
+      "B.F.Sc (Bachelor of Fisheries Science)",
+      "M.F.Sc specialisation"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "Water Quality Kits",
+      "Aquaculture Ponds",
+      "Hatchery Equipment",
+      "Nets & Sampling Tools"
+    ],
+    "acts": [
+      "Managing fish farms",
+      "Advising aqua farmers",
+      "Monitoring water quality",
+      "Developing hatchery techniques"
+    ],
+    "env": "Fish farms, coastal and inland aquaculture zones, fisheries departments",
+    "path": [
+      "Fisheries Officer",
+      "Aquaculture Specialist",
+      "Senior Fisheries Scientist",
+      "Fisheries Development Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Marine Biology",
+      "Agriculture Research",
+      "Food Technology"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "AgriTech": {
+    "cat": "Agriculture",
+    "sub": "Agricultural Technology",
+    "tech": [
+      "Agri Data Platforms",
+      "Precision Agriculture Tools",
+      "Remote Sensing for Farms",
+      "Mobile Agri Apps",
+      "Basic Agronomy"
+    ],
+    "soft": [
+      "Farmer Empathy",
+      "Tech-Agri Bridge",
+      "Field Pilot Discipline"
+    ],
+    "int": [
+      "Technology for farming",
+      "Agri startups",
+      "Improving farm incomes"
+    ],
+    "per": [
+      "Innovative",
+      "Farmer-empathetic",
+      "Field-ready"
+    ],
+    "deg": [
+      "B.Tech/B.Sc Agriculture + tech skills",
+      "B.Tech + agri exposure (both routes)"
+    ],
+    "subj": [
+      "Biology",
+      "Computer Science",
+      "Business Studies"
+    ],
+    "tools": [
+      "Precision Ag Software",
+      "Drones",
+      "Satellite Data Platforms",
+      "Farm Apps"
+    ],
+    "acts": [
+      "Building agri-tech products",
+      "Training farmers on tools",
+      "Analysing farm data",
+      "Piloting solutions in fields"
+    ],
+    "env": "AgriTech startups (DeHaat, Ninjacart etc.) and agri-input companies; field + office",
+    "path": [
+      "AgriTech Associate",
+      "AgriTech Specialist",
+      "Product Lead",
+      "AgriTech Founder / Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Agriculture Research",
+      "Product Management",
+      "GIS Analyst"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Packaging Technology": {
+    "cat": "Manufacturing",
+    "sub": "Packaging",
+    "tech": [
+      "Packaging Materials Science",
+      "Packaging Design Software",
+      "Food & Pharma Packaging Standards",
+      "Testing Equipment",
+      "Sustainable Packaging"
+    ],
+    "soft": [
+      "Product Protection Focus",
+      "Sustainability Awareness",
+      "Client Coordination"
+    ],
+    "int": [
+      "Packaging innovation",
+      "Sustainable materials",
+      "Consumer packaging design"
+    ],
+    "per": [
+      "Material-curious",
+      "Detail-oriented",
+      "Sustainability-minded"
+    ],
+    "deg": [
+      "B.Tech/B.Sc Packaging Technology (IIP), "
+    ],
+    "subj": [
+      "Chemistry",
+      "Physics",
+      "Design"
+    ],
+    "tools": [
+      "Packaging Testers",
+      "CAD",
+      "Barrier Testing Equipment",
+      "Sustainability Calculators"
+    ],
+    "acts": [
+      "Designing packaging solutions",
+      "Testing packaging strength",
+      "Reducing packaging waste",
+      "Coordinating with product teams"
+    ],
+    "env": "Packaging companies, FMCG packaging departments and testing labs",
+    "path": [
+      "Packaging Technologist",
+      "Senior Packaging Technologist",
+      "Packaging Manager",
+      "Packaging Development Head"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Food Technology",
+      "Mechanical Engineering",
+      "Industrial Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Ceramic Technology": {
+    "cat": "Manufacturing",
+    "sub": "Ceramics & Materials",
+    "tech": [
+      "Ceramic Processing",
+      "Kiln Operations",
+      "Ceramic Material Characterisation",
+      "Glaze Technology",
+      "Refractory Materials"
+    ],
+    "soft": [
+      "High-temperature Process Discipline",
+      "Material Testing Rigour",
+      "Plant Coordination"
+    ],
+    "int": [
+      "Ceramic materials",
+      "High-temperature manufacturing",
+      "Industrial materials"
+    ],
+    "per": [
+      "Process-focused",
+      "Precise",
+      "Hands-on"
+    ],
+    "deg": [
+      "B.Tech Ceramic Technology",
+      "M.Tech Ceramic/Materials"
+    ],
+    "subj": [
+      "Chemistry",
+      "Physics",
+      "Mathematics"
+    ],
+    "tools": [
+      "Kilns",
+      "XRD/Testing Equipment",
+      "Glaze Labs",
+      "Moulds"
+    ],
+    "acts": [
+      "Producing ceramic products",
+      "Testing material properties",
+      "Improving kiln processes",
+      "Developing new ceramic formulations"
+    ],
+    "env": "Ceramic clusters (Morbi, Khurja), sanitaryware and refractory plants",
+    "path": [
+      "Ceramic Technologist",
+      "Senior Technologist",
+      "Production Manager",
+      "Plant Head"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Chemical Engineering",
+      "Packaging Technology",
+      "Mechanical Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Industrial Safety": {
+    "cat": "Manufacturing",
+    "sub": "Industrial Safety",
+    "tech": [
+      "Safety Audits & Standards (OSHA/ISO 45001)",
+      "Hazard Analysis (HAZOP)",
+      "Fire Safety Systems",
+      "Risk Assessment",
+      "Safety Documentation"
+    ],
+    "soft": [
+      "Safety Authority",
+      "Training Delivery",
+      "Incident Investigation Rigour"
+    ],
+    "int": [
+      "Worker safety",
+      "Preventing accidents",
+      "Safety culture building"
+    ],
+    "per": [
+      "Vigilant",
+      "Assertive",
+      "Systematic"
+    ],
+    "deg": [
+      "B.Tech/B.E. + industrial safety certification (ADIS)",
+      "Any degree + safety diplomas"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "HAZOP Tools",
+      "Safety Audit Checklists",
+      "PPE Systems",
+      "Incident Software"
+    ],
+    "acts": [
+      "Conducting safety audits",
+      "Training workers on safety",
+      "Investigating incidents",
+      "Ensuring regulatory compliance"
+    ],
+    "env": "Manufacturing plants, construction sites, oil & gas and chemical industries",
+    "path": [
+      "Safety Officer",
+      "Safety Engineer",
+      "Safety Manager",
+      "EHS Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Industrial Quality Engineering",
+      "Chemical Engineering",
+      "Mechanical Engineering"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Logistics and Transportation Management": {
+    "cat": "Logistics & Supply Chain",
+    "sub": "Logistics",
+    "tech": [
+      "Transport Management Systems",
+      "Route Optimisation",
+      "Fleet Management",
+      "Logistics Analytics",
+      "GST & E-way Bill Systems"
+    ],
+    "soft": [
+      "Route Efficiency Thinking",
+      "Vendor Negotiation",
+      "Deadline Pressure Handling"
+    ],
+    "int": [
+      "Moving goods efficiently",
+      "Fleet operations",
+      "National logistics networks"
+    ],
+    "per": [
+      "Coordination-strong",
+      "Cost-conscious",
+      "Deadline-driven"
+    ],
+    "deg": [
+      "Any degree + logistics certification",
+      "MBA Logistics/Supply Chain preferred"
+    ],
+    "subj": [
+      "Business Studies",
+      "Mathematics",
+      "Geography"
+    ],
+    "tools": [
+      "TMS",
+      "GPS Tracking",
+      "Excel",
+      "Freight Platforms"
+    ],
+    "acts": [
+      "Planning transport routes",
+      "Managing fleets and carriers",
+      "Tracking shipments",
+      "Reducing logistics costs"
+    ],
+    "env": "Logistics companies, e-commerce (Delhivery etc.) and manufacturing transport desks",
+    "path": [
+      "Logistics Executive",
+      "Logistics Manager",
+      "Regional Logistics Head",
+      "Head of Transportation"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Supply Chain Management",
+      "Operations Management",
+      "Air Traffic Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Supply Chain Management": {
+    "cat": "Logistics & Supply Chain",
+    "sub": "Supply Chain",
+    "tech": [
+      "SCM Software (SAP SCM)",
+      "Demand Planning",
+      "Inventory Optimisation",
+      "Supplier Management",
+      "SC Analytics"
+    ],
+    "soft": [
+      "End-to-end Thinking",
+      "Supplier Negotiation",
+      "Forecast Discipline"
+    ],
+    "int": [
+      "Global supply chains",
+      "Demand and supply balance",
+      "Cost-efficient networks"
+    ],
+    "per": [
+      "Analytical",
+      "Coordinating",
+      "Forward-planning"
+    ],
+    "deg": [
+      "B.Tech/B.E. + MBA Supply Chain/Operations",
+      "Any degree + SCM certification"
+    ],
+    "subj": [
+      "Mathematics",
+      "Business Studies",
+      "Economics"
+    ],
+    "tools": [
+      "SAP",
+      "Kinaxis",
+      "Excel",
+      "Power BI"
+    ],
+    "acts": [
+      "Forecasting demand",
+      "Managing suppliers",
+      "Optimising inventory",
+      "Coordinating end-to-end flow"
+    ],
+    "env": "Manufacturing, e-commerce and retail supply chain offices",
+    "path": [
+      "Supply Chain Analyst",
+      "Supply Chain Manager",
+      "Senior Manager",
+      "Chief Supply Chain Officer"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Logistics and Transportation Management",
+      "Operations Management",
+      "Business Analytics"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Maritime Studies": {
+    "cat": "Logistics & Supply Chain",
+    "sub": "Maritime & Shipping",
+    "tech": [
+      "Shipping Documentation",
+      "Port Operations",
+      "Chartering Basics",
+      "Maritime Law Awareness",
+      "Freight Systems"
+    ],
+    "soft": [
+      "Global Trade Understanding",
+      "Documentation Precision",
+      "Port Coordination"
+    ],
+    "int": [
+      "Shipping and ports",
+      "Global trade",
+      "Maritime commerce"
+    ],
+    "per": [
+      "Trade-minded",
+      "Precise",
+      "Coordinating"
+    ],
+    "deg": [
+      "BBA/B.Sc Shipping & Logistics",
+      "Any degree + shipping certification"
+    ],
+    "subj": [
+      "Business Studies",
+      "Geography",
+      "Economics"
+    ],
+    "tools": [
+      "Shipping Documentation Systems",
+      "Port Community Systems",
+      "Excel",
+      "Freight Platforms"
+    ],
+    "acts": [
+      "Managing port documentation",
+      "Coordinating vessel operations",
+      "Handling cargo bookings",
+      "Liaising with customs"
+    ],
+    "env": "Ports, shipping lines, freight forwarders and CHA offices",
+    "path": [
+      "Shipping Executive",
+      "Operations Manager",
+      "Port Operations Head",
+      "Shipping Company Manager"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Logistics and Transportation Management",
+      "Marine Engineering",
+      "Supply Chain Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Air Traffic Management": {
+    "cat": "Logistics & Supply Chain",
+    "sub": "Air Traffic Management",
+    "tech": [
+      "Air Traffic Control Systems",
+      "Radar Operation",
+      "Aviation Communication (RT)",
+      "Flight Data Processing",
+      "Airspace Regulations"
+    ],
+    "soft": [
+      "Sustained Concentration",
+      "Split-second Communication",
+      "Zero-error Discipline"
+    ],
+    "int": [
+      "Managing air traffic",
+      "Aviation safety",
+      "High-stakes coordination"
+    ],
+    "per": [
+      "Hyper-focused",
+      "Calm",
+      "Responsible"
+    ],
+    "deg": [
+      "Any degree (Physics/Maths) + ATC training via AAI (ATC exam)"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "English"
+    ],
+    "tools": [
+      "Radar Consoles",
+      "RT Communication",
+      "Flight Data Systems",
+      "Simulation Training"
+    ],
+    "acts": [
+      "Directing aircraft movements",
+      "Maintaining safe separation",
+      "Coordinating between flights",
+      "Managing airspace flow"
+    ],
+    "env": "Airport control towers and ATC centres; high-focus shift work",
+    "path": [
+      "ATC Trainee",
+      "Air Traffic Controller",
+      "Senior ATC Officer",
+      "ATC Manager"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Aviation",
+      "Pilot",
+      "Logistics and Transportation Management"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Professional Sports": {
+    "cat": "Sports & Fitness",
+    "sub": "Professional Sports",
+    "tech": [
+      "Sport-specific Skills",
+      "Performance Analytics Awareness",
+      "Sports Nutrition Basics",
+      "Injury Prevention",
+      "Video Analysis"
+    ],
+    "soft": [
+      "Competitive Drive",
+      "Discipline",
+      "Handling Public Attention"
+    ],
+    "int": [
+      "Playing at the highest level",
+      "Fitness excellence",
+      "Representing teams and country"
+    ],
+    "per": [
+      "Competitive",
+      "Disciplined",
+      "Resilient"
+    ],
+    "deg": [
+      "No formal degree required; sports quota in colleges supports education alongside"
+    ],
+    "subj": [
+      "Physical Education",
+      "Any stream",
+      "Sports Science"
+    ],
+    "tools": [
+      "Performance Trackers",
+      "Video Analysis",
+      "Fitness Equipment",
+      "Nutrition Plans"
+    ],
+    "acts": [
+      "Training daily",
+      "Competing in tournaments",
+      "Maintaining peak fitness",
+      "Working with coaches and analysts"
+    ],
+    "env": "Sports academies, national teams, leagues (IPL/ISL etc.) and international circuits",
+    "path": [
+      "Academy Player",
+      "State/National Player",
+      "Professional Contract",
+      "National Team / League Star"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Sports Coaching",
+      "Sports Analytics",
+      "Sports Physiotherapy"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Sports Coaching": {
+    "cat": "Sports & Fitness",
+    "sub": "Sports Coaching",
+    "tech": [
+      "Coaching Methodology",
+      "Performance Analysis Tools",
+      "Periodisation Planning",
+      "Sports Science Basics",
+      "Video Feedback Systems"
+    ],
+    "soft": [
+      "Athlete Motivation",
+      "Tactical Teaching",
+      "Long-term Development Planning"
+    ],
+    "int": [
+      "Developing athletes",
+      "Game strategy",
+      "Sports excellence"
+    ],
+    "per": [
+      "Motivating",
+      "Strategic",
+      "Patient"
+    ],
+    "deg": [
+      "NIS Certification (NS NIS Patiala)",
+      "B.P.Ed/M.P.Ed",
+      "Former athlete experience valued"
+    ],
+    "subj": [
+      "Physical Education",
+      "Sports Science",
+      "Any stream"
+    ],
+    "tools": [
+      "Video Analysis Software",
+      "Fitness Testing Kits",
+      "Training Planners"
+    ],
+    "acts": [
+      "Planning training programmes",
+      "Coaching sessions",
+      "Analysing athlete performance",
+      "Preparing teams for competition"
+    ],
+    "env": "Sports academies, schools, state teams and professional franchises",
+    "path": [
+      "Assistant Coach",
+      "Head Coach",
+      "State/National Coach",
+      "High-performance Director"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Professional Sports",
+      "Physical Training",
+      "Sports Analytics"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Physical Training": {
+    "cat": "Sports & Fitness",
+    "sub": "Fitness Training",
+    "tech": [
+      "Exercise Science",
+      "Strength & Conditioning",
+      "Fitness Assessment",
+      "Nutrition Basics",
+      "Certification (ACSM/NASM)"
+    ],
+    "soft": [
+      "Client Motivation",
+      "Form Correction Eye",
+      "Programme Design"
+    ],
+    "int": [
+      "Fitness and training",
+      "Body transformation",
+      "Healthy lifestyles"
+    ],
+    "per": [
+      "Energetic",
+      "Motivating",
+      "Knowledgeable"
+    ],
+    "deg": [
+      "Any degree + fitness certification (ACSM/NASM/K11)",
+      "B.P.Ed also valued"
+    ],
+    "subj": [
+      "Physical Education",
+      "Biology",
+      "Any stream"
+    ],
+    "tools": [
+      "Gym Equipment",
+      "Fitness Trackers",
+      "Assessment Tools",
+      "Training Apps"
+    ],
+    "acts": [
+      "Designing workout plans",
+      "Coaching clients",
+      "Tracking fitness progress",
+      "Ensuring safe technique"
+    ],
+    "env": "Gyms, fitness chains, corporate wellness and online coaching",
+    "path": [
+      "Fitness Trainer",
+      "Senior Trainer",
+      "Head Coach",
+      "Gym Owner / Online Coach"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Nutrition and Dietetics",
+      "Sports Coaching",
+      "Yoga and Wellness Instruction"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Sports Management": {
+    "cat": "Sports & Fitness",
+    "sub": "Sports Business",
+    "tech": [
+      "Sports Analytics Tools",
+      "Event Management Software",
+      "Sponsorship Management",
+      "Fan Engagement Platforms",
+      "Excel"
+    ],
+    "soft": [
+      "Sports Business Sense",
+      "Sponsorship Negotiation",
+      "Fan Community Understanding"
+    ],
+    "int": [
+      "Sports industry",
+      "Leagues and events",
+      "Athlete management"
+    ],
+    "per": [
+      "Business-minded",
+      "Sports-passionate",
+      "Networker"
+    ],
+    "deg": [
+      "BBA/MBA Sports Management",
+      "Any degree + sports industry experience"
+    ],
+    "subj": [
+      "Business Studies",
+      "Physical Education",
+      "Marketing"
+    ],
+    "tools": [
+      "Event Platforms",
+      "Analytics Tools",
+      "CRM",
+      "Sponsorship Decks"
+    ],
+    "acts": [
+      "Managing leagues and events",
+      "Handling athlete contracts",
+      "Securing sponsorships",
+      "Growing fan engagement"
+    ],
+    "env": "Sports leagues (IPL/ISL), federations, sports startups and agencies",
+    "path": [
+      "Sports Management Executive",
+      "Sports Manager",
+      "League/Team Manager",
+      "Sports Business Head"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Event Management",
+      "Sports Coaching",
+      "Marketing"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Sports Physiotherapy": {
+    "cat": "Sports & Fitness",
+    "sub": "Sports Rehabilitation",
+    "tech": [
+      "Sports Injury Assessment",
+      "Sports-specific Rehab",
+      "Taping & Manual Therapy",
+      "Return-to-play Protocols",
+      "Biomechanics Analysis"
+    ],
+    "soft": [
+      "Athlete Rapport",
+      "Match-day Readiness",
+      "Injury Prevention Thinking"
+    ],
+    "int": [
+      "Athlete recovery",
+      "Sports injuries",
+      "Performance support"
+    ],
+    "per": [
+      "Hands-on",
+      "Match-day calm",
+      "Preventive"
+    ],
+    "deg": [
+      "BPT + MPT Sports Physiotherapy"
+    ],
+    "subj": [
+      "Biology",
+      "Physical Education",
+      "Physics"
+    ],
+    "tools": [
+      "Taping Kits",
+      "Electrotherapy",
+      "Rehab Equipment",
+      "Biomechanics Tools"
+    ],
+    "acts": [
+      "Treating sports injuries",
+      "Running rehab programmes",
+      "Supporting teams on match days",
+      "Preventing injuries"
+    ],
+    "env": "Sports teams, academies, sports medicine centres and leagues",
+    "path": [
+      "Sports Physiotherapist",
+      "Team Physiotherapist",
+      "Head Physiotherapist",
+      "High-performance Rehab Lead"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Physiotherapy",
+      "Sports Coaching",
+      "Professional Sports"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Sports Analytics": {
+    "cat": "Sports & Fitness",
+    "sub": "Sports Analytics",
+    "tech": [
+      "Python/R",
+      "Sports Data APIs",
+      "Video Analysis Tools",
+      "Statistical Modelling",
+      "Visualisation"
+    ],
+    "soft": [
+      "Sports Domain Knowledge",
+      "Statistical Modelling",
+      "Insight Storytelling"
+    ],
+    "int": [
+      "Numbers behind sport",
+      "Strategy analysis",
+      "Player performance data"
+    ],
+    "per": [
+      "Analytical",
+      "Sports-obsessed",
+      "Detail-oriented"
+    ],
+    "deg": [
+      "B.Tech/B.Sc + sports analytics certification",
+      "Statistics/Data Science background"
+    ],
+    "subj": [
+      "Mathematics",
+      "Statistics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Python",
+      "R",
+      "Hudl",
+      "Sports Data APIs"
+    ],
+    "acts": [
+      "Analysing player data",
+      "Building performance models",
+      "Supporting team strategy",
+      "Creating scouting reports"
+    ],
+    "env": "Sports franchises, leagues, analytics firms and betting/media analytics",
+    "path": [
+      "Sports Analytics Associate",
+      "Sports Analyst",
+      "Senior Analyst",
+      "Head of Analytics"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Data Science",
+      "Sports Management",
+      "Business Analytics"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Cosmetology and Beauty Wellness": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Beauty & Wellness",
+    "tech": [
+      "Skin & Hair Treatments",
+      "Advanced Beauty Therapy",
+      "Salon Hygiene Standards",
+      "Product Knowledge",
+      "Client Consultation"
+    ],
+    "soft": [
+      "Client Rapport",
+      "Aesthetic Sense",
+      "Hygiene Discipline"
+    ],
+    "int": [
+      "Beauty and skincare",
+      "Wellness industry",
+      "Making people feel confident"
+    ],
+    "per": [
+      "Aesthetic",
+      "Warm",
+      "Hygiene-focused"
+    ],
+    "deg": [
+      "Beauty & wellness certification (CIDESCO/CIBTAC preferred)",
+      "Any degree + professional academy training"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Any stream"
+    ],
+    "tools": [
+      "Salon Equipment",
+      "Treatment Products",
+      "Skin Analysis Tools"
+    ],
+    "acts": [
+      "Providing beauty treatments",
+      "Advising skincare routines",
+      "Managing salon services",
+      "Keeping up with techniques"
+    ],
+    "env": "Salons, wellness centres, luxury spas and own studios",
+    "path": [
+      "Beauty Therapist",
+      "Senior Therapist",
+      "Salon Manager",
+      "Own Salon / Brand Ambassador"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Yoga and Wellness Instruction",
+      "Nutrition and Dietetics",
+      "Fashion Design"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "Yoga and Wellness Instruction": {
+    "cat": "Hospitality & Tourism",
+    "sub": "Yoga & Wellness",
+    "tech": [
+      "Yoga Asana & Pranayama",
+      "Therapeutic Yoga",
+      "Anatomy for Yoga",
+      "Meditation Techniques",
+      "Yoga Certification (QCI/YCB)"
+    ],
+    "soft": [
+      "Calm Presence",
+      "Individual Attention",
+      "Philosophical Depth"
+    ],
+    "int": [
+      "Yoga and wellness",
+      "Mind-body practices",
+      "Holistic health"
+    ],
+    "per": [
+      "Calm",
+      "Disciplined",
+      "Nurturing"
+    ],
+    "deg": [
+      "Yoga certification (YCB Level)",
+      "BA Yoga / PG Diploma Yoga Therapy"
+    ],
+    "subj": [
+      "Physical Education",
+      "Biology",
+      "Philosophy"
+    ],
+    "tools": [
+      "Yoga Props",
+      "Meditation Spaces",
+      "Class Management Apps"
+    ],
+    "acts": [
+      "Teaching yoga sessions",
+      "Designing wellness programmes",
+      "Adapting yoga for individuals",
+      "Leading retreats"
+    ],
+    "env": "Yoga studios, wellness resorts, corporates and online classes",
+    "path": [
+      "Yoga Instructor",
+      "Senior Yoga Teacher",
+      "Yoga Therapist",
+      "Wellness Centre Founder"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Physical Training",
+      "Nutrition and Dietetics",
+      "Performing Arts"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  "User Interface Design": {
+    "cat": "Design & Creative",
+    "sub": "Interface Design",
+    "tech": [
+      "Figma",
+      "Design Systems",
+      "Typography & Colour",
+      "Responsive Design",
+      "Interaction Design"
+    ],
+    "soft": [
+      "Pixel Perfection",
+      "Consistency Discipline",
+      "Developer Collaboration"
+    ],
+    "int": [
+      "Interfaces and visuals",
+      "Design systems",
+      "Apps and websites"
+    ],
+    "per": [
+      "Detail-oriented",
+      "Aesthetic",
+      "Systematic"
+    ],
+    "deg": [
+      "B.Des or any degree + strong UI portfolio"
+    ],
+    "subj": [
+      "Art",
+      "Computer Science",
+      "Mathematics"
+    ],
+    "tools": [
+      "Figma",
+      "Sketch",
+      "Adobe XD",
+      "Zeplin"
+    ],
+    "acts": [
+      "Designing screen layouts",
+      "Building design systems",
+      "Handing off specs to developers",
+      "Polishing visual details"
+    ],
+    "env": "Product companies, agencies and remote design teams",
+    "path": [
+      "UI Designer",
+      "Senior UI Designer",
+      "Product Designer",
+      "Design Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Graphic Design",
+      "User Experience Design UX",
+      "Product Design"
+    ],
+    "minEdu": "Bachelor's"
+  }
+}
