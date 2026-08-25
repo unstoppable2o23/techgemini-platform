@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { randomBytes } from "crypto";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
@@ -62,15 +63,19 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Student not found" }, { status: 404 });
     }
 
-    const token = tokenForStudent(student, kind as TestKind);
-    const existing = await prisma.testAssignment.findUnique({ where: { token } });
+    // duplicate check by student + kind (not by deterministic token) so
+    // tokens can carry high entropy without breaking permanent-link semantics
+    const existing = await prisma.testAssignment.findFirst({
+      where: { studentId: student.id, kind },
+    });
     if (existing) {
       return NextResponse.json(
-        { error: "This test is already assigned to this student." },
+        { error: "This test is already assigned to this student.", existingToken: existing.token },
         { status: 409 }
       );
     }
 
+    const token = `${tokenForStudent(student, kind as TestKind)}-${randomBytes(8).toString("hex").toUpperCase()}`;
     const assignment = await prisma.testAssignment.create({
       data: {
         tenantId: user.tenantId,

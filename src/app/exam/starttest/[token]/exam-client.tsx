@@ -190,17 +190,29 @@ export function ExamClient({ token, kind }: Props) {
     setPdfBusy(false);
   }
 
-  function retake() {
+  async function retake() {
+    // A deliberate retake creates a NEW assignment so the previous result
+    // and its history are never overwritten.
+    try {
+      const res = await fetch("/api/tests/assignments/retake", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        localStorage.removeItem(progressKey);
+        localStorage.removeItem(resultKey);
+        window.location.href = `/exam/starttest/${data.token}`;
+        return;
+      }
+    } catch {}
+    // fallback: reset local state on the same assignment (server keeps history)
     setAnswers({});
     setReport(null);
     setIdx(0);
     localStorage.removeItem(progressKey);
     localStorage.removeItem(resultKey);
-    fetch("/api/tests/assignments/progress", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ token, answers: {} }),
-    }).catch(() => {});
   }
 
   if (!ready) return null;
@@ -593,9 +605,12 @@ export function ExamClient({ token, kind }: Props) {
             <span>Generated {new Date().toLocaleDateString()}</span>
           </div>
         </div>
-      </div>
-    );
-  }
+      <p className="mt-4 text-center text-xs text-slate-400">
+        Assessment completed. Your Career Profile has been updated.
+      </p>
+    </div>
+  );
+}
 
   if (!current) return null;
 

@@ -1,8 +1,8 @@
-import streamBank from "@/data/stream-selector.json";
-import idealBank from "@/data/ideal-career.json";
-import personalityBank from "@/data/personality.json";
-import intelligencesBank from "@/data/intelligences.json";
-import learningBank from "@/data/learning-productivity.json";
+import streamBank from "../data/stream-selector.json" with { type: "json" };
+import idealBank from "../data/ideal-career.json" with { type: "json" };
+import personalityBank from "../data/personality.json" with { type: "json" };
+import intelligencesBank from "../data/intelligences.json" with { type: "json" };
+import learningBank from "../data/learning-productivity.json" with { type: "json" };
 
 export type TestKind = "stream" | "ideal" | "personality" | "intelligences" | "learning";
 
@@ -44,7 +44,8 @@ export function questionsFor(kind: TestKind): Record<string, RawQuestion> {
   if (kind === "stream") return STREAM_QUESTIONS;
   if (kind === "ideal") return IDEAL_QUESTIONS;
   if (kind === "personality") return PERSONALITY_QUESTIONS;
-  return INTELLIGENCES_QUESTIONS;
+  if (kind === "intelligences") return INTELLIGENCES_QUESTIONS;
+  return LEARNING_QUESTIONS;
 }
 
 export type StudentRef = {

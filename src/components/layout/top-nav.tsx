@@ -36,6 +36,7 @@ import {
   Building2,
   Settings,
   LogOut,
+  ClipboardCheck,
   type LucideIcon,
 } from "lucide-react";
 
@@ -58,6 +59,7 @@ const COUNSELOR_NAV_ITEMS: NavItem[] = [
 ];
 
 const STUDENT_NAV_ITEMS: NavItem[] = [
+  { label: "Career Profile", href: "/career-profile", icon: ClipboardCheck },
   { label: "College Finder", href: "/college-finder", featureKey: "collegeFinder", icon: Search },
   { label: "AI Odds Calculator", href: "/odds-calculator", featureKey: "aiOddsCalculator", icon: Target },
   { label: "Mock Tests", href: "/mock-tests", featureKey: "mockTests", icon: FileText },

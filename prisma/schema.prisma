@@ -19,6 +19,13 @@ enum TestAssignmentStatus {
   COMPLETED
 }
 
+enum ProfileLevel {
+  EMPTY
+  PARTIAL
+  DEVELOPING
+  COMPLETE
+}
+
 enum TraitDimension {
   INTEREST
   PERSONALITY
@@ -110,6 +117,7 @@ model User {
   messages                Message[]
   testAssignments         TestAssignment[]  @relation("StudentTestAssignments")
   createdTestAssignments  TestAssignment[]  @relation("CreatedTestAssignments")
+  careerProfile           StudentCareerProfile?
 
   @@index([tenantId])
   @@index([email])
@@ -235,22 +243,60 @@ model TestResult {
 }
 
 model TestAssignment {
-  id           String               @id @default(cuid())
-  tenantId     String
-  studentId    String
-  student      User                 @relation("StudentTestAssignments", fields: [studentId], references: [id], onDelete: Cascade)
-  assignedById String
-  assignedBy   User                 @relation("CreatedTestAssignments", fields: [assignedById], references: [id])
-  kind         String
-  token        String               @unique
-  status       TestAssignmentStatus @default(ASSIGNED)
-  answers      Json?
-  result       Json?
-  createdAt    DateTime             @default(now())
-  completedAt  DateTime?
+  id                String               @id @default(cuid())
+  tenantId          String
+  studentId         String
+  student           User                 @relation("StudentTestAssignments", fields: [studentId], references: [id], onDelete: Cascade)
+  assignedById      String
+  assignedBy        User                 @relation("CreatedTestAssignments", fields: [assignedById], references: [id])
+  kind              String
+  token             String               @unique
+  status            TestAssignmentStatus @default(ASSIGNED)
+  answers           Json?
+  result            Json?
+  assessmentVersion String               @default("1.0")
+  profileProcessedAt DateTime?
+  createdAt         DateTime             @default(now())
+  completedAt       DateTime?
 
   @@index([tenantId])
   @@index([studentId])
+}
+
+model StudentCareerProfile {
+  id               String       @id @default(cuid())
+  studentId        String       @unique
+  student          User         @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  profileVersion   String       @default("1.0")
+  completeness     Float        @default(0)
+  level            ProfileLevel @default(EMPTY)
+  primaryInterests String[]     @default([])
+  strengths        String[]     @default([])
+  metadata         Json?
+  lastCalculatedAt DateTime     @default(now())
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  signals StudentCareerSignal[]
+
+  @@index([studentId])
+}
+
+model StudentCareerSignal {
+  id                 String         @id @default(cuid())
+  profileId          String
+  profile            StudentCareerProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  dimension          TraitDimension
+  value              String
+  score              Float
+  sourceAssessment   String
+  sourceAssignmentId String?
+  confidence         Float          @default(1)
+  metadata           Json?
+
+  @@unique([profileId, dimension, value, sourceAssessment])
+  @@index([dimension, value])
+  @@index([profileId])
 }
 
 model Appointment {
