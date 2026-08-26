@@ -52,6 +52,20 @@ interface SubjectLink {
   category: string;
 }
 
+interface InstitutionItem {
+  id: string;
+  name: string;
+  dataset: "indian" | "global";
+  type: string | null;
+  state: string | null;
+  district: string | null;
+  website: string | null;
+  institutionType: string | null;
+  universityName: string | null;
+  country: string | null;
+  qsRank: number | null;
+}
+
 const DEMAND_STYLES: Record<string, string> = {
   High: "bg-white/20 text-white border border-white/30",
   Medium: "bg-white/20 text-white border border-white/30",
@@ -144,6 +158,28 @@ export default function CareerDetailClient({ career }: { career: any }) {
   });
   const [pathwaysLoading, setPathwaysLoading] = useState(true);
 
+  const [institutions, setInstitutions] = useState<{
+    list: InstitutionItem[];
+    total: number;
+    page: number;
+    totalPages: number;
+    verified: boolean;
+    mappingBasis: string;
+    source: string;
+    disclaimer: string | null;
+  }>({
+    list: [],
+    total: 0,
+    page: 1,
+    totalPages: 0,
+    verified: false,
+    mappingBasis: "",
+    source: "",
+    disclaimer: null,
+  });
+  const [institutionsLoading, setInstitutionsLoading] = useState(false);
+  const [institutionsVisible, setInstitutionsVisible] = useState(false);
+
   useEffect(() => {
     async function fetchPathways() {
       try {
@@ -165,6 +201,36 @@ export default function CareerDetailClient({ career }: { career: any }) {
     }
     fetchPathways();
   }, [career.id]);
+
+  async function loadInstitutions(pageToLoad: number) {
+    setInstitutionsLoading(true);
+    try {
+      const res = await fetch(`/api/careers/${career.id}/institutions?page=${pageToLoad}&limit=20`);
+      if (res.ok) {
+        const data = await res.json();
+        setInstitutions({
+          list: data.institutions || [],
+          total: data.total || 0,
+          page: data.page || 1,
+          totalPages: data.totalPages || 0,
+          verified: !!data.verified,
+          mappingBasis: data.mappingBasis || "",
+          source: data.source || "",
+          disclaimer: data.disclaimer || null,
+        });
+      }
+    } catch (e) {
+      console.error("Failed to fetch institutions:", e);
+    } finally {
+      setInstitutionsLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    if (institutionsVisible) {
+      loadInstitutions(1);
+    }
+  }, [institutionsVisible, career.id]);
 
   return (
     <div className="space-y-6 p-6 pt-20 max-w-4xl mx-auto">
@@ -475,6 +541,88 @@ export default function CareerDetailClient({ career }: { career: any }) {
                         <span key={i} className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent">{s.name}</span>
                       ))}
                     </div>
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {(educationPathways.primary.length > 0 || educationPathways.alternative.length > 0 || educationPathways.optional.length > 0) && (
+        <div>
+          <SectionHeader icon={Landmark} tint="from-blue-500 to-blue-500">Institutions Offering Related Programs</SectionHeader>
+          <div className="rounded-2xl border bg-card p-5 space-y-3">
+            {!institutionsVisible && (
+              <Button variant="outline" size="sm" onClick={() => setInstitutionsVisible(true)}>
+                View Related Institutions
+              </Button>
+            )}
+            {institutionsVisible && institutionsLoading && (
+              <div className="text-sm text-muted-foreground">Loading institutions...</div>
+            )}
+            {institutionsVisible && !institutionsLoading && institutions.list.length === 0 && (
+              <p className="text-sm text-muted-foreground">
+                {institutions.disclaimer || "No verified institution mappings are available for this education pathway yet."}
+              </p>
+            )}
+            {institutionsVisible && !institutionsLoading && institutions.list.length > 0 && (
+              <>
+                {!institutions.verified && institutions.disclaimer && (
+                  <p className="text-xs text-amber-600 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+                    {institutions.disclaimer}
+                  </p>
+                )}
+                <div className="space-y-2">
+                  {institutions.list.map((inst) => (
+                    <div key={inst.id} className="flex items-start gap-3 text-sm p-3 rounded-lg border bg-background">
+                      <Landmark className="h-5 w-5 mt-0.5 text-blue-500 shrink-0" />
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium">{inst.name}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {[inst.institutionType || inst.type, inst.state, inst.country].filter(Boolean).join(" · ")}
+                        </p>
+                        {inst.website && (
+                          <a
+                            href={inst.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-accent hover:underline break-all"
+                          >
+                            {inst.website}
+                          </a>
+                        )}
+                      </div>
+                      {inst.dataset === "global" && (
+                        <Badge variant="secondary" className="text-xs">Global</Badge>
+                      )}
+                      {inst.dataset === "indian" && (
+                        <Badge variant="outline" className="text-xs">India</Badge>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                {institutions.totalPages > 1 && (
+                  <div className="flex items-center gap-2 pt-1">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      disabled={institutions.page <= 1 || institutionsLoading}
+                      onClick={() => loadInstitutions(institutions.page - 1)}
+                    >
+                      Previous
+                    </Button>
+                    <span className="text-xs text-muted-foreground">
+                      Page {institutions.page} of {institutions.totalPages} ({institutions.total} institutions)
+                    </span>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      disabled={institutions.page >= institutions.totalPages || institutionsLoading}
+                      onClick={() => loadInstitutions(institutions.page + 1)}
+                    >
+                      Next
+                    </Button>
                   </div>
                 )}
               </>

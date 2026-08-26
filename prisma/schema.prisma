@@ -574,6 +574,24 @@ model CareerEducationPathway {
   @@index([type])
 }
 
+model EducationInstitutionMapping {
+  id                   String   @id @default(cuid())
+  degreeId             String?
+  specializationId     String?
+  universityId         String?
+  indianInstitutionId  String?
+  mappingType          String   @default("CATEGORY_DERIVED")
+  confidence           Float    @default(0)
+  source               String   @default("system")
+  notes                String?
+  createdAt            DateTime @default(now())
+
+  @@index([degreeId])
+  @@index([specializationId])
+  @@index([universityId])
+  @@index([indianInstitutionId])
+}
+
 model DailyUsage {
   id           String   @id @default(cuid())
   userId       String
