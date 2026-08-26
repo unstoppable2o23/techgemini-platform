@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,37 @@ import {
   Laptop,
   Landmark,
   Wallet,
+  BookOpen,
+  Award,
+  Star,
 } from "lucide-react";
+
+interface EducationPathway {
+  id: string;
+  priority: string;
+  notes: string;
+  degree: {
+    id: string;
+    name: string;
+    slug: string;
+    educationLevel: string;
+    duration: string | null;
+    eligibility: string | null;
+    category: string;
+  } | null;
+  specialization: {
+    id: string;
+    name: string;
+    slug: string;
+  } | null;
+}
+
+interface SubjectLink {
+  id: string;
+  name: string;
+  slug: string;
+  category: string;
+}
 
 const DEMAND_STYLES: Record<string, string> = {
   High: "bg-white/20 text-white border border-white/30",
@@ -99,6 +129,42 @@ export default function CareerDetailClient({ career }: { career: any }) {
   const visiblePathways = showAllPathways ? pathways : pathways.slice(0, 1);
   const clean = (v?: string) => (typeof v === "string" ? v.replace(/^\?+/, "") : v || "");
   const industries = career.topIndustries || [];
+
+  // Education pathways state
+  const [educationPathways, setEducationPathways] = useState<{
+    primary: EducationPathway[];
+    alternative: EducationPathway[];
+    optional: EducationPathway[];
+    subjects: SubjectLink[];
+  }>({
+    primary: [],
+    alternative: [],
+    optional: [],
+    subjects: [],
+  });
+  const [pathwaysLoading, setPathwaysLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchPathways() {
+      try {
+        const res = await fetch(`/api/careers/${career.id}/education-pathways`);
+        if (res.ok) {
+          const data = await res.json();
+          setEducationPathways({
+            primary: data.educationPathways?.primary || [],
+            alternative: data.educationPathways?.alternative || [],
+            optional: data.educationPathways?.optional || [],
+            subjects: data.recommendedSubjects || [],
+          });
+        }
+      } catch (e) {
+        console.error("Failed to fetch education pathways:", e);
+      } finally {
+        setPathwaysLoading(false);
+      }
+    }
+    fetchPathways();
+  }, [career.id]);
 
   return (
     <div className="space-y-6 p-6 pt-20 max-w-4xl mx-auto">
@@ -304,29 +370,114 @@ export default function CareerDetailClient({ career }: { career: any }) {
         </div>
       )}
 
-      {(career.recommendedDegrees?.length > 0 || career.recommendedSubjects?.length > 0) && (
+
+      {(educationPathways.primary.length > 0 || educationPathways.alternative.length > 0 || educationPathways.optional.length > 0 || educationPathways.subjects.length > 0) && (
         <div>
-          <SectionHeader icon={GraduationCap} tint="from-blue-500 to-blue-500">Education & Degrees</SectionHeader>
-          <div className="space-y-3">
-            {career.recommendedDegrees?.length > 0 && (
-              <div className="space-y-2">
-                {career.recommendedDegrees.map((d: string, i: number) => (
-                  <div key={i} className="flex items-start gap-2 text-sm">
-                    <GraduationCap className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-                    <span>{d}</span>
+          <SectionHeader icon={GraduationCap} tint="from-blue-500 to-blue-500">Education Pathways</SectionHeader>
+          <div className="space-y-4">
+            {pathwaysLoading && <div className="text-sm text-muted-foreground">Loading education pathways...</div>}
+            {!pathwaysLoading && (
+              <>
+                {educationPathways.primary.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
+                      <Star className="h-4 w-4 text-yellow-500" /> Primary Pathways
+                    </h3>
+                    <div className="space-y-2">
+                      {educationPathways.primary.map((p, i) => (
+                        <div key={i} className="flex items-start gap-3 text-sm p-3 rounded-lg border bg-card">
+                          <GraduationCap className="h-5 w-5 mt-0.5 text-green-500 shrink-0" />
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium">{p.degree?.name}</p>
+                            {p.specialization && (
+                              <p className="text-xs text-muted-foreground">Specialization: {p.specialization.name}</p>
+                            )}
+                            {p.degree?.educationLevel && (
+                              <p className="text-xs text-muted-foreground">{p.degree.educationLevel}</p>
+                            )}
+                            {p.degree?.duration && (
+                              <p className="text-xs text-muted-foreground">Duration: {p.degree.duration}</p>
+                            )}
+                            {p.notes && (
+                              <p className="text-xs text-muted-foreground mt-1">{p.notes}</p>
+                            )}
+                          </div>
+                          <Badge variant="secondary" className="text-xs">Primary</Badge>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                ))}
-              </div>
-            )}
-            {career.recommendedSubjects?.length > 0 && (
-              <div className="flex flex-wrap gap-2 pt-1">
-                {career.recommendedSubjects.map((s: string, i: number) => (
-                  <span key={i} className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent">{s}</span>
-                ))}
-              </div>
-            )}
-            {career.minStudyLevel && (
-              <p className="text-xs text-muted-foreground">Minimum education: <span className="font-medium">{career.minStudyLevel}</span></p>
+                )}
+                {educationPathways.alternative.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
+                      <Award className="h-4 w-4 text-blue-500" /> Alternative Pathways
+                    </h3>
+                    <div className="space-y-2">
+                      {educationPathways.alternative.map((p, i) => (
+                        <div key={i} className="flex items-start gap-3 text-sm p-3 rounded-lg border bg-card">
+                          <GraduationCap className="h-5 w-5 mt-0.5 text-blue-500 shrink-0" />
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium">{p.degree?.name}</p>
+                            {p.specialization && (
+                              <p className="text-xs text-muted-foreground">Specialization: {p.specialization.name}</p>
+                            )}
+                            {p.degree?.educationLevel && (
+                              <p className="text-xs text-muted-foreground">{p.degree.educationLevel}</p>
+                            )}
+                            {p.degree?.duration && (
+                              <p className="text-xs text-muted-foreground">Duration: {p.degree.duration}</p>
+                            )}
+                            {p.notes && (
+                              <p className="text-xs text-muted-foreground mt-1">{p.notes}</p>
+                            )}
+                          </div>
+                          <Badge variant="outline" className="text-xs">Alternative</Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {educationPathways.optional.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
+                      <BookOpen className="h-4 w-4 text-purple-500" /> Optional Pathways
+                    </h3>
+                    <div className="space-y-2">
+                      {educationPathways.optional.map((p, i) => (
+                        <div key={i} className="flex items-start gap-3 text-sm p-3 rounded-lg border bg-card">
+                          <GraduationCap className="h-5 w-5 mt-0.5 text-purple-500 shrink-0" />
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium">{p.degree?.name}</p>
+                            {p.specialization && (
+                              <p className="text-xs text-muted-foreground">Specialization: {p.specialization.name}</p>
+                            )}
+                            {p.degree?.educationLevel && (
+                              <p className="text-xs text-muted-foreground">{p.degree.educationLevel}</p>
+                            )}
+                            {p.notes && (
+                              <p className="text-xs text-muted-foreground mt-1">{p.notes}</p>
+                            )}
+                          </div>
+                          <Badge variant="outline" className="text-xs">Optional</Badge>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {educationPathways.subjects.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
+                      <BookOpen className="h-4 w-4 text-orange-500" /> Recommended Subjects
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {educationPathways.subjects.map((s, i) => (
+                        <span key={i} className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent">{s.name}</span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>

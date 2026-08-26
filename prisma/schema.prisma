@@ -480,24 +480,98 @@ model Career {
   updatedAt           DateTime @updatedAt
 
   traits CareerTrait[]
+  careerEducationPathways CareerEducationPathway[]
 
   @@index([name])
   @@index([demandLevel])
   @@index([category])
-  @@index([isActive])
+@@index([isActive])
+ }
+
+ model CareerTrait {
+   id        String         @id @default(cuid())
+   careerId  String
+   career    Career         @relation(fields: [careerId], references: [id], onDelete: Cascade)
+   dimension TraitDimension
+   value     String
+   weight    Float          @default(1)
+
+   @@unique([careerId, dimension, value])
+   @@index([dimension, value])
+   @@index([careerId])
+ }
+
+ model Degree {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  slug          String   @unique
+  educationLevel String   @default("Bachelor's")
+  description   String?
+  duration      String?
+  eligibility   String?
+  category      String   @default("Undergraduate")
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([category])
+@@index([isActive])
+  careerEducationPathways CareerEducationPathway[]
+  specializations Specialization[]
 }
 
-model CareerTrait {
-  id        String         @id @default(cuid())
-  careerId  String
-  career    Career         @relation(fields: [careerId], references: [id], onDelete: Cascade)
-  dimension TraitDimension
-  value     String
-  weight    Float          @default(1)
+ model Specialization {
+  id            String   @id @default(cuid())
+  name          String
+  slug          String
+  degreeId      String
+  degree        Degree     @relation(fields: [degreeId], references: [id], onDelete: Cascade)
+  description   String?
+  isPrimary     Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
 
-  @@unique([careerId, dimension, value])
-  @@index([dimension, value])
+  @@unique([degreeId, name])
+@@index([degreeId])
+  careerEducationPathways CareerEducationPathway[]
+}
+
+ model Subject {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  slug          String   @unique
+  aliasOf       String?  
+  description   String?
+  category      String   @default("Academic")
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([category])
+@@index([isActive])
+  careerEducationPathways CareerEducationPathway[]
+}
+
+model CareerEducationPathway {
+  id               String   @id @default(cuid())
+  careerId         String
+  career           Career     @relation(fields: [careerId], references: [id], onDelete: Cascade)
+  degreeId         String?
+  degree           Degree?    @relation(fields: [degreeId], references: [id], onDelete: Cascade)
+  specializationId String?
+  specialization   Specialization? @relation(fields: [specializationId], references: [id], onDelete: Cascade)
+  subjectId        String?
+  subject          Subject?   @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+  priority         String     @default("ALTERNATIVE") // PRIMARY, ALTERNATIVE, OPTIONAL
+  notes            String?
+  type             String     @default("DEGREE_PATHWAY") // DEGREE_PATHWAY, SUBJECT_LINK
+
   @@index([careerId])
+  @@index([degreeId])
+  @@index([specializationId])
+  @@index([subjectId])
+  @@index([priority])
+  @@index([type])
 }
 
 model DailyUsage {
