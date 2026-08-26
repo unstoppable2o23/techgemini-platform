@@ -4,6 +4,8 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { CareerProfileClient } from "./career-profile-client";
 
+const ALL_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
+
 export default async function CareerProfilePage() {
   const session = await getServerSession(authOptions);
   if (!session?.user) redirect("/auth/login");
@@ -11,7 +13,18 @@ export default async function CareerProfilePage() {
 
   const studentProfile = await prisma.studentProfile.findUnique({
     where: { userId: session.user.id },
-    include: { featureAccess: true },
+    select: {
+      preferredCareer: true,
+      studyLevel: true,
+      gradeLevel: true,
+      highestEducation: true,
+      averageGrade: true,
+      targetCountry: true,
+      state: true,
+      careerPlanNotes: true,
+      tuitionBudget: true,
+      exams: true,
+    },
   });
 
   const profile = await prisma.studentCareerProfile.findUnique({
@@ -26,7 +39,9 @@ export default async function CareerProfilePage() {
   });
 
   const completedKinds = [
-    ...new Set(assignments.filter((a) => a.status === "COMPLETED").map((a) => a.kind)),
+    ...new Set(
+      assignments.filter((a) => a.status === "COMPLETED").map((a) => a.kind)
+    ),
   ];
 
   return (
@@ -35,6 +50,7 @@ export default async function CareerProfilePage() {
         profile
           ? {
               completeness: profile.completeness,
+              assessmentCompleteness: profile.assessmentCompleteness,
               level: profile.level,
               primaryInterests: profile.primaryInterests,
               strengths: profile.strengths,
@@ -43,12 +59,15 @@ export default async function CareerProfilePage() {
                 dimension: s.dimension,
                 value: s.value,
                 score: s.score,
+                sourceType: s.sourceType,
                 confidence: s.confidence,
               })),
             }
           : null
       }
       completedKinds={completedKinds}
+      allKinds={ALL_KINDS}
+      studentCareerInputs={studentProfile}
     />
   );
 }

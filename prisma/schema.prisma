@@ -262,13 +262,13 @@ model TestAssignment {
   @@index([tenantId])
   @@index([studentId])
 }
-
 model StudentCareerProfile {
   id               String       @id @default(cuid())
   studentId        String       @unique
   student          User         @relation(fields: [studentId], references: [id], onDelete: Cascade)
   profileVersion   String       @default("1.0")
   completeness     Float        @default(0)
+  assessmentCompleteness Float  @default(0)
   level            ProfileLevel @default(EMPTY)
   primaryInterests String[]     @default([])
   strengths        String[]     @default([])
@@ -289,12 +289,14 @@ model StudentCareerSignal {
   dimension          TraitDimension
   value              String
   score              Float
-  sourceAssessment   String
+  sourceType         String         @default("ASSESSMENT")
+  sourceAssessment   String?
   sourceAssignmentId String?
+  sourceVersion      String         @default("1.0")
   confidence         Float          @default(1)
   metadata           Json?
 
-  @@unique([profileId, dimension, value, sourceAssessment])
+  @@unique([profileId, dimension, value, sourceType])
   @@index([dimension, value])
   @@index([profileId])
 }

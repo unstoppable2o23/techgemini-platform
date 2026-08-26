@@ -1,78 +1,134 @@
 /**
- * Profile completeness calculation.
+ * Dual completeness calculation:
+ * 1. Assessment Completeness — how much of the assessment suite is done
+ * 2. Career Profile Completeness — how much total career-relevant info exists
  *
- * Weights are implementation defaults chosen for product usefulness — they
- * are NOT scientific validity claims. Adjust COMPLETENESS_WEIGHTS to change
- * the calculation; the level thresholds can also be tuned independently.
+ * Weights are implementation defaults, NOT scientific validity claims.
  */
 
-export const COMPLETENESS_WEIGHTS = {
-  assessmentCoverage: 0.4, // split evenly across the 5 assessments
-  dimensions: {
-    INTEREST: 0.15,
-    PERSONALITY: 0.1,
-    APTITUDE: 0.15,
-    SKILL: 0.1,
-    SUBJECT: 0.05,
-    WORK_ENVIRONMENT: 0.05,
+const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
+
+// ---- Assessment Completeness ----
+// Simple: fraction of the 5 assessments completed × 100
+
+export function calculateAssessmentCompleteness(
+  completedKinds: string[]
+): { score: number; completed: string[]; missing: string[] } {
+  const completed = new Set(completedKinds);
+  const done = ASSESSMENT_KINDS.filter((k) => completed.has(k));
+  const missing = ASSESSMENT_KINDS.filter((k) => !completed.has(k));
+  return {
+    score: Math.round((done.length / ASSESSMENT_KINDS.length) * 100),
+    completed: done,
+    missing,
+  };
+}
+
+// ---- Career Profile Completeness ----
+// Weighted: assessments (40%) + profile data (60%)
+// A student with zero assessments but rich profile data can reach ~60%.
+
+export const PROFILE_COMPLETENESS_WEIGHTS = {
+  assessmentSuite: 0.4,
+  preferredCareer: 0.1,
+  academicLevel: 0.08,
+  academicPerformance: 0.06,
+  educationLevel: 0.06,
+  locationPreference: 0.05,
+  careerNotes: 0.05,
+  dimensionSignals: {
+    INTEREST: 0.05,
+    PERSONALITY: 0.05,
+    APTITUDE: 0.05,
+    SKILL: 0.03,
+    WORK_ENVIRONMENT: 0.03,
   },
-  EDUCATION: 0.0, // education signals come from the stream assessment; folded into coverage
 } as const;
 
-const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"] as const;
-
-export const DIMENSION_WEIGHTS: Record<string, number> = {
-  INTEREST: COMPLETENESS_WEIGHTS.dimensions.INTEREST,
-  PERSONALITY: COMPLETENESS_WEIGHTS.dimensions.PERSONALITY,
-  APTITUDE: COMPLETENESS_WEIGHTS.dimensions.APTITUDE,
-  SKILL: COMPLETENESS_WEIGHTS.dimensions.SKILL,
-  SUBJECT: COMPLETENESS_WEIGHTS.dimensions.SUBJECT,
-  WORK_ENVIRONMENT: COMPLETENESS_WEIGHTS.dimensions.WORK_ENVIRONMENT,
-  EDUCATION: COMPLETENESS_WEIGHTS.EDUCATION,
-};
-
-export type CompletenessInput = {
+export type ProfileCompletenessInput = {
   completedAssessments: string[];
   dimensionsWithSignals: string[];
+  hasProfileData: boolean;
+  hasPreferredCareer: boolean;
 };
 
-export type CompletenessResult = {
+export type ProfileCompletenessResult = {
   score: number;
   level: "EMPTY" | "PARTIAL" | "DEVELOPING" | "COMPLETE";
   assessmentCoverage: number;
   dimensionBreakdown: Record<string, number>;
+  profileDataContribution: number;
+  assessmentContribution: number;
 };
 
-export function calculateCompleteness(input: CompletenessInput): CompletenessResult {
+export function calculateProfileCompleteness(
+  input: ProfileCompletenessInput
+): ProfileCompletenessResult {
+  const W = PROFILE_COMPLETENESS_WEIGHTS;
   const completed = new Set(input.completedAssessments);
-  const assessmentCoverage =
+
+  const assessmentContribution =
     (ASSESSMENT_KINDS.reduce((acc, k) => acc + (completed.has(k) ? 1 : 0), 0) /
       ASSESSMENT_KINDS.length) *
-    COMPLETENESS_WEIGHTS.assessmentCoverage *
+    W.assessmentSuite *
     100;
 
+  let profileDataContribution = 0;
   const dimensionBreakdown: Record<string, number> = {};
-  let dimensionTotal = 0;
-  for (const [dimension, weight] of Object.entries(DIMENSION_WEIGHTS)) {
-    if (weight === 0) {
-      dimensionBreakdown[dimension] = 0;
-      continue;
-    }
-    const has = input.dimensionsWithSignals.includes(dimension);
-    const contribution = has ? weight * 100 : 0;
-    dimensionBreakdown[dimension] = contribution;
-    dimensionTotal += contribution;
+
+  if (input.hasPreferredCareer) {
+    profileDataContribution += W.preferredCareer * 100;
+  }
+  if (input.hasProfileData) {
+    // StudentProfile data exists (grade, exams, state, etc.)
+    profileDataContribution +=
+      (W.academicLevel + W.academicPerformance + W.educationLevel + W.locationPreference) * 100;
   }
 
-  const score = Math.round((assessmentCoverage + dimensionTotal) * 10) / 10;
+  for (const [dim, weight] of Object.entries(W.dimensionSignals)) {
+    const has = input.dimensionsWithSignals.includes(dim);
+    const contribution = has ? weight * 100 : 0;
+    dimensionBreakdown[dim] = contribution;
+    profileDataContribution += contribution;
+  }
+
+  const score =
+    Math.round((assessmentContribution + profileDataContribution) * 10) / 10;
 
   const level =
-    score === 0 ? "EMPTY" : score < 40 ? "PARTIAL" : score < 80 ? "DEVELOPING" : "COMPLETE";
+    score === 0
+      ? "EMPTY"
+      : score < 25
+        ? "PARTIAL"
+        : score < 60
+          ? "DEVELOPING"
+          : "COMPLETE";
 
   return {
     score,
     level,
-    assessmentCoverage: Math.round(assessmentCoverage * 10) / 10,
+    assessmentCoverage: Math.round(assessmentContribution * 10) / 10,
     dimensionBreakdown,
+    profileDataContribution: Math.round(profileDataContribution * 10) / 10,
+    assessmentContribution: Math.round(assessmentContribution * 10) / 10,
+  };
+}
+
+// ---- Legacy export for backward compatibility ----
+export function calculateCompleteness(input: {
+  completedAssessments: string[];
+  dimensionsWithSignals: string[];
+}): { score: number; level: "EMPTY" | "PARTIAL" | "DEVELOPING" | "COMPLETE"; assessmentCoverage: number; dimensionBreakdown: Record<string, number> } {
+  const result = calculateProfileCompleteness({
+    completedAssessments: input.completedAssessments,
+    dimensionsWithSignals: input.dimensionsWithSignals,
+    hasProfileData: false,
+    hasPreferredCareer: false,
+  });
+  return {
+    score: result.score,
+    level: result.level,
+    assessmentCoverage: result.assessmentCoverage,
+    dimensionBreakdown: result.dimensionBreakdown,
   };
 }

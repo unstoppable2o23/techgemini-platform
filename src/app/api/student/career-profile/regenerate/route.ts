@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { generateStudentCareerProfile } from "@/lib/career-profile/generate";
 
-export async function POST(_request: NextRequest) {
+export async function POST(request: NextRequest) {
   const session = await getServerSession(authOptions);
   if (!session?.user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -18,6 +18,9 @@ export async function POST(_request: NextRequest) {
     return NextResponse.json({ ok: true, result });
   } catch (error) {
     console.error("Profile regeneration failed:", error);
-    return NextResponse.json({ error: "Failed to regenerate profile" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to regenerate profile" },
+      { status: 500 }
+    );
   }
 }

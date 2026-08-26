@@ -2,30 +2,116 @@ import { prisma } from "@/lib/prisma";
 import type { TraitDimension } from "@prisma/client";
 import type { ExamReport } from "../tests";
 import { normalizeAssessmentReport } from "./normalize";
-import { calculateCompleteness } from "./completeness";
+import { calculateAssessmentCompleteness, calculateProfileCompleteness } from "./completeness";
 
 const KINDS: string[] = ["stream", "ideal", "personality", "intelligences", "learning"];
 
+export type ProfileSignalInput = {
+  dimension: TraitDimension;
+  value: string;
+  score: number;
+  sourceType: string;
+  sourceAssessment: string | null;
+  sourceAssignmentId: string | null;
+  sourceVersion: string;
+  confidence: number;
+};
+
 export type ProfileGenerationResult = {
   profileId: string;
-  completeness: number;
+  profileCompleteness: number;
+  assessmentCompleteness: number;
   level: string;
   signals: number;
   assessmentCoverage: string[];
-  created: boolean;
+  hasAssessmentData: boolean;
+  hasProfileData: boolean;
 };
 
+function mapStudentProfileToSignals(
+  profile: {
+    gradeLevel: string | null;
+    studyLevel: string | null;
+    exams: string[];
+    state: string | null;
+    preferredCareer: string | null;
+    highestEducation: string | null;
+    averageGrade: string | null;
+    targetCountry: string | null;
+    careerPlanNotes: string | null;
+    tuitionBudget: string | null;
+  }
+): ProfileSignalInput[] {
+  const signals: ProfileSignalInput[] = [];
+  const push = (
+    dimension: TraitDimension,
+    value: string,
+    score: number,
+    sourceType: string
+  ) => {
+    if (!value?.trim()) return;
+    signals.push({
+      dimension,
+      value: value.trim(),
+      score,
+      sourceType,
+      sourceAssessment: null,
+      sourceAssignmentId: null,
+      sourceVersion: "1.0",
+      confidence: 1,
+    });
+  };
+
+  if (profile.preferredCareer) {
+    push("INTEREST", profile.preferredCareer, 100, "STUDENT_PROFILE");
+  }
+  if (profile.studyLevel) {
+    push("EDUCATION", `study_level:${profile.studyLevel}`, 100, "STUDENT_PROFILE");
+  }
+  if (profile.highestEducation) {
+    push("EDUCATION", `highest_education:${profile.highestEducation}`, 100, "ACADEMIC");
+  }
+  if (profile.gradeLevel) {
+    push("EDUCATION", `grade_level:${profile.gradeLevel}`, 100, "ACADEMIC");
+  }
+  if (profile.averageGrade) {
+    push("EDUCATION", `average_grade:${profile.averageGrade}`, 100, "ACADEMIC");
+  }
+  for (const exam of profile.exams || []) {
+    if (exam?.trim()) push("EDUCATION", `exam:${exam.trim()}`, 100, "ACADEMIC");
+  }
+  if (profile.state) {
+    push("WORK_ENVIRONMENT", `state:${profile.state}`, 100, "STUDENT_PROFILE");
+  }
+  if (profile.targetCountry) {
+    push("WORK_ENVIRONMENT", `target_country:${profile.targetCountry}`, 100, "PREFERENCE");
+  }
+  if (profile.tuitionBudget) {
+    push("WORK_ENVIRONMENT", `budget:${profile.tuitionBudget}`, 100, "PREFERENCE");
+  }
+  if (profile.careerPlanNotes) {
+    for (const line of profile.careerPlanNotes.split(/[.\n]/)) {
+      const trimmed = line.trim();
+      if (trimmed.length > 10) {
+        push("INTEREST", `career_note:${trimmed.slice(0, 100)}`, 50, "STUDENT_PROFILE");
+      }
+    }
+  }
+
+  return signals;
+}
+
 /**
- * Generates (or regenerates) the normalized Student Career Profile from the
- * student's latest COMPLETED assessment assignments.
+ * Generates (or regenerates) the Student Career Profile from ALL available
+ * sources: completed assessments AND StudentProfile non-psychometric data.
  *
- * Idempotent: signals are replaced wholesale inside a transaction and the
- * profile row is upserted, so running this any number of times produces the
- * same final state.
+ * Idempotent: signals are replaced wholesale inside a transaction.
+ * Zero-assessment students get a valid profile from StudentProfile alone.
  */
 export async function generateStudentCareerProfile(
   userId: string
 ): Promise<ProfileGenerationResult | null> {
+  // ---- load latest COMPLETED assessment per kind ----
   const assignments = await prisma.testAssignment.findMany({
     where: {
       studentId: userId,
@@ -37,7 +123,6 @@ export async function generateStudentCareerProfile(
       id: true,
       kind: true,
       result: true,
-      completedAt: true,
       assessmentVersion: true,
     },
   });
@@ -48,18 +133,10 @@ export async function generateStudentCareerProfile(
   }
 
   const completedAssessments: string[] = [];
-  const allSignals: Array<{
-    dimension: TraitDimension;
-    value: string;
-    score: number;
-    confidence: number;
-    sourceAssessment: string;
-    sourceAssignmentId: string;
-    sourceVersion: string;
-  }> = [];
+  const processedAssignments: string[] = [];
+  const assessmentSignals: ProfileSignalInput[] = [];
   const primaryInterests = new Set<string>();
   const strengths = new Set<string>();
-  const processedAssignments: string[] = [];
 
   for (const kind of KINDS) {
     const assignment = latestByKind.get(kind);
@@ -68,63 +145,92 @@ export async function generateStudentCareerProfile(
     processedAssignments.push(assignment.id);
 
     const report = assignment.result as ExamReport;
-    const { signals, primaryInterests: pi, strengths: strengthsList } = normalizeAssessmentReport(
-      kind,
-      report,
-      {
+    const version = assignment.assessmentVersion || "1.0";
+    const { signals, primaryInterests: pi, strengths: sl } =
+      normalizeAssessmentReport(kind, report, {
         assignmentId: assignment.id,
-        version: assignment.assessmentVersion || "1.0",
-      }
-    );
+        version,
+      });
     for (const s of signals) {
-      allSignals.push({ ...s, sourceAssignmentId: assignment.id });
+      assessmentSignals.push({
+        dimension: s.dimension,
+        value: s.value,
+        score: s.score,
+        sourceType: "ASSESSMENT",
+        sourceAssessment: s.sourceAssessment,
+        sourceAssignmentId: assignment.id,
+        sourceVersion: s.sourceVersion || version,
+        confidence: s.confidence,
+      });
     }
     for (const p of pi) primaryInterests.add(p);
-    for (const s2 of strengthsList) strengths.add(s2);
+    for (const s of sl) strengths.add(s);
   }
 
-  const dimensionsWithSignals = [
-    ...new Set(allSignals.map((s) => s.dimension as string)),
-  ];
-  const completeness = calculateCompleteness({
-    completedAssessments,
-    dimensionsWithSignals,
+  // ---- load StudentProfile non-psychometric data ----
+  const studentProfile = await prisma.studentProfile.findUnique({
+    where: { userId },
+    select: {
+      gradeLevel: true,
+      studyLevel: true,
+      exams: true,
+      state: true,
+      preferredCareer: true,
+      highestEducation: true,
+      averageGrade: true,
+      targetCountry: true,
+      careerPlanNotes: true,
+      tuitionBudget: true,
+    },
   });
 
+  const profileSignals = studentProfile
+    ? mapStudentProfileToSignals(studentProfile)
+    : [];
+
+  const allSignals = [...assessmentSignals, ...profileSignals];
+
+  // ---- dual completeness ----
+  const assessmentCompleteness = calculateAssessmentCompleteness(completedAssessments);
+  const dimensionsWithSignals = [...new Set(allSignals.map((s) => s.dimension as string))];
+  const profileCompleteness = calculateProfileCompleteness({
+    completedAssessments,
+    dimensionsWithSignals,
+    hasProfileData: profileSignals.length > 0,
+    hasPreferredCareer: Boolean(studentProfile?.preferredCareer),
+  });
+
+  // ---- persist ----
   const profile = await prisma.$transaction(async (tx) => {
     const existing = await tx.studentCareerProfile.findUnique({
       where: { studentId: userId },
     });
 
+    const profileData = {
+      completeness: profileCompleteness.score,
+      assessmentCompleteness: assessmentCompleteness.score,
+      level: profileCompleteness.level,
+      primaryInterests: [...primaryInterests].slice(0, 10),
+      strengths: [...strengths].slice(0, 12),
+      lastCalculatedAt: new Date(),
+      metadata: {
+        assessmentCoverage: completedAssessments,
+        dimensionBreakdown: profileCompleteness.dimensionBreakdown,
+        completedAssessments,
+        hasAssessmentData: assessmentSignals.length > 0,
+        hasProfileData: profileSignals.length > 0,
+        profileSignalCount: profileSignals.length,
+        assessmentSignalCount: assessmentSignals.length,
+      },
+    };
+
     const upserted = existing
       ? await tx.studentCareerProfile.update({
           where: { id: existing.id },
-          data: {
-            completeness: completeness.score,
-            level: completeness.level,
-            primaryInterests: [...primaryInterests].slice(0, 10),
-            strengths: [...strengths].slice(0, 12),
-            lastCalculatedAt: new Date(),
-            metadata: {
-              assessmentCoverage: completeness.assessmentCoverage,
-              dimensionBreakdown: completeness.dimensionBreakdown,
-              completedAssessments,
-            },
-          },
+          data: profileData,
         })
       : await tx.studentCareerProfile.create({
-          data: {
-            studentId: userId,
-            completeness: completeness.score,
-            level: completeness.level,
-            primaryInterests: [...primaryInterests].slice(0, 10),
-            strengths: [...strengths].slice(0, 12),
-            metadata: {
-              assessmentCoverage: completeness.assessmentCoverage,
-              dimensionBreakdown: completeness.dimensionBreakdown,
-              completedAssessments,
-            },
-          },
+          data: { studentId: userId, ...profileData },
         });
 
     await tx.studentCareerSignal.deleteMany({ where: { profileId: upserted.id } });
@@ -135,10 +241,11 @@ export async function generateStudentCareerProfile(
           dimension: s.dimension,
           value: s.value,
           score: s.score,
+          sourceType: s.sourceType,
           sourceAssessment: s.sourceAssessment,
           sourceAssignmentId: s.sourceAssignmentId,
-          confidence: s.confidence,
           sourceVersion: s.sourceVersion,
+          confidence: s.confidence,
         })),
       });
     }
@@ -146,7 +253,6 @@ export async function generateStudentCareerProfile(
     return upserted;
   });
 
-  // mark assignments as profile-processed (non-blocking, best-effort)
   if (processedAssignments.length > 0) {
     await prisma.testAssignment.updateMany({
       where: { id: { in: processedAssignments } },
@@ -156,10 +262,12 @@ export async function generateStudentCareerProfile(
 
   return {
     profileId: profile.id,
-    completeness: profile.completeness,
+    profileCompleteness: profile.completeness,
+    assessmentCompleteness: profile.assessmentCompleteness,
     level: profile.level,
     signals: allSignals.length,
     assessmentCoverage: completedAssessments,
-    created: !latestByKind.size ? false : true,
+    hasAssessmentData: assessmentSignals.length > 0,
+    hasProfileData: profileSignals.length > 0,
   };
 }
