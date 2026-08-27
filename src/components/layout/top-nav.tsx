@@ -17,7 +17,18 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
+  closeAllDropdowns,
 } from "@/components/ui/dropdown-menu";
+import {
+  STUDENT_GROUPS,
+  COUNSELOR_GROUPS,
+  UNIVERSITY_ADMIN_NAV_ITEMS,
+  SUPER_ADMIN_EXTRA,
+  canShowItem,
+  isGroupActive,
+  type NavChild,
+  type NavGroup,
+} from "@/components/layout/nav-config";
 import {
   Bell,
   Lock,
@@ -27,217 +38,16 @@ import {
   MoreHorizontal,
   ChevronDown,
   Compass,
-  Route,
   BrainCircuit,
-  MessagesSquare,
   Settings,
   LogOut,
   Users,
-  FileText,
-  BarChart3,
-  Target,
-  Library,
-  Flame,
-  GraduationCap,
-  Building2,
-  Search,
-  CalendarDays,
-  MessageSquare,
-  Calculator,
-  Trophy,
-  Landmark,
   ClipboardCheck,
   type LucideIcon,
 } from "lucide-react";
 
-type NavChild = {
-  label: string;
-  href: string;
-  icon: LucideIcon;
-  featureKey?: string;
-  description?: string;
-  primary?: boolean;
-};
-
-type NavGroup = {
-  label: string;
-  icon: LucideIcon;
-  items: NavChild[];
-  extraActivePaths?: string[];
-};
-
-// Canonical student information architecture.
-const STUDENT_GROUPS: NavGroup[] = [
-  {
-    label: "Discover",
-    icon: Compass,
-    items: [
-      {
-        label: "Career Matches",
-        href: "/career-matches",
-        icon: Target,
-        description: "Personalized careers based on your profile",
-        primary: true,
-      },
-      {
-        label: "Career Library",
-        href: "/career-library",
-        icon: Library,
-        featureKey: "careerLibrary",
-        description: "Explore all careers",
-      },
-      {
-        label: "Trending Careers",
-        href: "/career-library?tab=trending",
-        icon: Flame,
-        description: "Emerging and trending careers",
-      },
-    ],
-  },
-  {
-    label: "Plan",
-    icon: Route,
-    extraActivePaths: ["/career-preferences"],
-    items: [
-      {
-        label: "Career Profile",
-        href: "/career-profile",
-        icon: ClipboardCheck,
-        description: "Understand your strengths and interests",
-      },
-      {
-        label: "Education Pathways",
-        href: "/education",
-        icon: GraduationCap,
-        description: "Explore degrees and specializations",
-      },
-      {
-        label: "Universities",
-        href: "/indian-colleges",
-        icon: Building2,
-        description: "Find institutions that fit your path",
-      },
-      {
-        label: "College Finder",
-        href: "/college-finder",
-        icon: Search,
-        featureKey: "collegeFinder",
-        description: "Search institutions directly",
-      },
-    ],
-  },
-  {
-    label: "Assess",
-    icon: BrainCircuit,
-    items: [
-      {
-        label: "Career Assessments",
-        href: "/assessments",
-        icon: ClipboardCheck,
-        description: "Optional assessments that enrich recommendations",
-      },
-      {
-        label: "Mock Tests",
-        href: "/mock-tests",
-        icon: FileText,
-        featureKey: "mockTests",
-        description: "Academic preparation",
-      },
-    ],
-  },
-  {
-    label: "Connect",
-    icon: MessagesSquare,
-    items: [
-      {
-        label: "Appointments",
-        href: "/appointments",
-        icon: CalendarDays,
-        featureKey: "appointments",
-        description: "Book and manage sessions",
-      },
-      {
-        label: "Messages",
-        href: "/messages",
-        icon: MessageSquare,
-        description: "Chat with your counselor",
-      },
-      {
-        label: "Discuss with Counselor",
-        href: "/appointments",
-        icon: Users,
-        description: "Get a second opinion",
-      },
-    ],
-  },
-  {
-    label: "More",
-    icon: MoreHorizontal,
-    items: [
-      {
-        label: "AI Odds Calculator",
-        href: "/odds-calculator",
-        icon: Calculator,
-        featureKey: "aiOddsCalculator",
-        description: "Estimate your admission chances",
-      },
-      {
-        label: "Scholarships",
-        href: "/scholarships",
-        icon: Trophy,
-        featureKey: "scholarshipHub",
-        description: "Find funding opportunities",
-      },
-      {
-        label: "Indian Colleges & Universities",
-        href: "/indian-colleges",
-        icon: Landmark,
-        description: "Browse institutions across India",
-      },
-    ],
-  },
-];
-
-const COUNSELOR_NAV_ITEMS: NavChild[] = [
-  { label: "Student Management", href: "/students", icon: Users },
-  { label: "Tests", href: "/tests/assign", icon: FileText },
-  { label: "Universities", href: "/universities", icon: Building2 },
-  { label: "Indian Colleges and Universities", href: "/indian-colleges", icon: Landmark },
-  { label: "Career Library", href: "/career-library", icon: Library },
-  { label: "Calendar", href: "/calendar", icon: CalendarDays },
-  { label: "Messages", href: "/messages", icon: MessageSquare },
-  { label: "Analytics", href: "/analytics", icon: BarChart3 },
-];
-
-const UNIVERSITY_ADMIN_NAV_ITEMS: NavChild[] = [
-  { label: "Universities", href: "/universities", icon: Building2 },
-  { label: "Indian Colleges and Universities", href: "/indian-colleges", icon: Landmark },
-];
-
-const SUPER_ADMIN_EXTRA: NavChild = {
-  label: "Counselors",
-  href: "/admin/counselors",
-  icon: Users,
-};
-
-function canShowItem(flags: any, item: NavChild): boolean {
-  if (!item.featureKey) return true;
-  return flags?.[item.featureKey] === true;
-}
-
 function dispatchDenied(item: NavChild) {
   window.dispatchEvent(new CustomEvent("open-access-denied", { detail: item }));
-}
-
-function isGroupActive(group: NavGroup, pathname: string): boolean {
-  const inItems = group.items.some((it) => {
-    const base = it.href.split("?")[0];
-    return pathname === base || pathname.startsWith(base + "/");
-  });
-  const inExtra = (group.extraActivePaths ?? []).some(
-    (p) => pathname === p || pathname.startsWith(p + "/")
-  );
-  return inItems || inExtra;
 }
 
 function NavLink({
@@ -310,7 +120,6 @@ function NavDropdown({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        aria-haspopup="menu"
         aria-label={`${group.label} menu`}
         className={cn(
           "inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-medium transition-colors",
@@ -323,10 +132,7 @@ function NavDropdown({
         <span>{group.label}</span>
         <ChevronDown className="h-3.5 w-3.5 opacity-70" />
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        role="menu"
-        className="left-0 right-auto w-80 p-2"
-      >
+      <DropdownMenuContent className="w-80 p-2">
         <p className="px-2 py-1 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
           {group.label}
         </p>
@@ -334,9 +140,8 @@ function NavDropdown({
           const enabled = canShowItem(flags, item);
           const ItemIcon = item.icon;
           return (
-            <DropdownMenuItem key={item.href + item.label} role="none">
+            <DropdownMenuItem key={item.href + item.label}>
               <Link
-                role="menuitem"
                 href={enabled ? item.href : "#"}
                 onClick={(e) => {
                   if (!enabled) {
@@ -346,7 +151,7 @@ function NavDropdown({
                 }}
                 className={cn(
                   "flex w-full items-start gap-3 rounded-lg px-2 py-2",
-                  !enabled && "opacity-70"
+                  !enabled && "opacity-80"
                 )}
               >
                 <span
@@ -407,8 +212,10 @@ export function TopNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close any open menu (sheet + dropdowns) on navigation.
   useEffect(() => {
     setSheet(null);
+    closeAllDropdowns();
   }, [pathname]);
 
   useEffect(() => {
@@ -427,15 +234,18 @@ export function TopNav() {
   const isSuperAdmin = role === "SUPER_ADMIN";
   const isUniversityAdmin = role === "UNIVERSITY_ADMIN";
   const isStudent = role === "STUDENT";
-  const showGroups = isStudent && authStatus === "authenticated";
+  const showStudentGroups = isStudent && authStatus === "authenticated";
+  const showCounselorGroups = isCounselor && authStatus === "authenticated";
+  const showUniversityAdmin = isUniversityAdmin && authStatus === "authenticated";
 
-  const navItems: NavChild[] = isUniversityAdmin
-    ? UNIVERSITY_ADMIN_NAV_ITEMS
-    : isCounselor
-    ? isSuperAdmin
-      ? [...COUNSELOR_NAV_ITEMS, SUPER_ADMIN_EXTRA]
-      : COUNSELOR_NAV_ITEMS
-    : [];
+  let counselorGroups = COUNSELOR_GROUPS;
+  if (isSuperAdmin) {
+    counselorGroups = COUNSELOR_GROUPS.map((g) =>
+      g.label === "More"
+        ? { ...g, items: [...g.items, ...SUPER_ADMIN_EXTRA] }
+        : g
+    );
+  }
 
   const initials =
     `${session?.user?.firstName?.[0] || ""}${session?.user?.lastName?.[0] || ""}`.toUpperCase() ||
@@ -492,8 +302,8 @@ export function TopNav() {
 
         {authStatus === "authenticated" ? (
           <>
-            {showGroups ? (
-              <ul className="hidden min-w-0 flex-1 items-center justify-center gap-1 overflow-x-auto no-scrollbar md:flex">
+            {showStudentGroups ? (
+              <ul className="hidden min-w-0 flex-1 items-center justify-center gap-1 md:flex">
                 <li>
                   <NavLink
                     href="/dashboard"
@@ -516,9 +326,33 @@ export function TopNav() {
                   />
                 </li>
               </ul>
-            ) : (
-              <ul className="hidden min-w-0 flex-1 items-center justify-center gap-1 overflow-x-auto no-scrollbar md:flex">
-                {navItems.map((item) => {
+            ) : showCounselorGroups ? (
+              <ul className="hidden min-w-0 flex-1 items-center justify-center gap-1 md:flex">
+                <li>
+                  <NavLink
+                    href="/dashboard"
+                    active={pathname === "/dashboard" || pathname.startsWith("/dashboard/")}
+                    icon={LayoutDashboard}
+                    label="Home"
+                  />
+                </li>
+                {counselorGroups.map((group) => (
+                  <li key={group.label}>
+                    <NavDropdown group={group} pathname={pathname} flags={flags} />
+                  </li>
+                ))}
+              </ul>
+            ) : showUniversityAdmin ? (
+              <ul className="hidden min-w-0 flex-1 items-center justify-center gap-1 md:flex">
+                <li>
+                  <NavLink
+                    href="/dashboard"
+                    active={pathname === "/dashboard" || pathname.startsWith("/dashboard/")}
+                    icon={LayoutDashboard}
+                    label="Home"
+                  />
+                </li>
+                {UNIVERSITY_ADMIN_NAV_ITEMS.map((item) => {
                   const isActive = pathname.startsWith(item.href);
                   const Icon = item.icon;
                   return (
@@ -526,20 +360,20 @@ export function TopNav() {
                       <Link
                         href={item.href}
                         className={cn(
-                          "group relative inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1.5 text-sm font-medium transition-all duration-300 hover:-translate-y-0.5",
+                          "inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-colors",
                           isActive
                             ? "bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-accent/30"
                             : "text-muted-foreground hover:bg-accent/10 hover:text-foreground"
                         )}
                       >
                         <Icon className="h-4 w-4" />
-                        <span className="hidden xl:inline">{item.label}</span>
+                        <span>{item.label}</span>
                       </Link>
                     </li>
                   );
                 })}
               </ul>
-            )}
+            ) : null}
 
             <div className="flex shrink-0 items-center gap-2 pl-2">
               <Badge
@@ -566,21 +400,15 @@ export function TopNav() {
                   }
                 }}
               >
-                <DropdownMenuTrigger>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="relative h-9 w-9 rounded-full border border-border/70 bg-white/70 shadow-sm hover:bg-white"
-                  >
-                    <Bell className="h-5 w-5" />
-                    {unreadCount > 0 && (
-                      <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-rose-500 text-[10px] font-bold text-white shadow">
-                        {unreadCount > 9 ? "9+" : unreadCount}
-                      </span>
-                    )}
-                  </Button>
+                <DropdownMenuTrigger className="relative flex h-9 w-9 items-center justify-center rounded-full border border-border/70 bg-white/70 shadow-sm hover:bg-white">
+                  <Bell className="h-5 w-5" />
+                  {unreadCount > 0 && (
+                    <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-rose-500 text-[10px] font-bold text-white shadow">
+                      {unreadCount > 9 ? "9+" : unreadCount}
+                    </span>
+                  )}
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-80">
+                <DropdownMenuContent align="end" className="w-80">
                   <div className="flex items-center justify-between border-b px-4 py-2">
                     <span className="text-sm font-semibold">Notifications</span>
                     {unreadCount > 0 && (
@@ -630,7 +458,7 @@ export function TopNav() {
                     {initials}
                   </span>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56">
+                <DropdownMenuContent align="end" className="w-56">
                   <div className="flex items-center gap-3 border-b px-3 py-2">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent text-sm font-bold text-white">
                       {initials}
@@ -737,7 +565,66 @@ export function TopNav() {
         </nav>
       )}
 
-      {/* Mobile sheet */}
+      {/* Mobile bottom navigation for counselors */}
+      {isCounselor && authStatus === "authenticated" && (
+        <nav
+          className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-white/95 backdrop-blur-xl pb-[env(safe-area-inset-bottom)] md:hidden"
+          aria-label="Mobile navigation"
+        >
+          <ul className="grid grid-cols-5 items-stretch">
+            <li>
+              <NavLink
+                href="/dashboard"
+                active={pathname === "/dashboard" || pathname.startsWith("/dashboard/")}
+                icon={LayoutDashboard}
+                label="Home"
+              />
+            </li>
+            <li>
+              <BottomNavButton
+                active={isGroupActive(counselorGroups[0], pathname)}
+                icon={Users}
+                label="Students"
+                onClick={() =>
+                  setSheet({ title: "Students", items: counselorGroups[0].items })
+                }
+              />
+            </li>
+            <li>
+              <BottomNavButton
+                active={isGroupActive(counselorGroups[2], pathname)}
+                icon={counselorGroups[2].icon}
+                label="Resources"
+                onClick={() =>
+                  setSheet({ title: "Resources", items: counselorGroups[2].items })
+                }
+              />
+            </li>
+            <li>
+              <BottomNavButton
+                active={isGroupActive(counselorGroups[3], pathname)}
+                icon={counselorGroups[3].icon}
+                label="Connect"
+                onClick={() =>
+                  setSheet({ title: "Connect", items: counselorGroups[3].items })
+                }
+              />
+            </li>
+            <li>
+              <BottomNavButton
+                active={isGroupActive(counselorGroups[5], pathname)}
+                icon={MoreHorizontal}
+                label="More"
+                onClick={() =>
+                  setSheet({ title: "More", items: counselorGroups[5].items })
+                }
+              />
+            </li>
+          </ul>
+        </nav>
+      )}
+
+      {/* Mobile sheet (shared by student + counselor) */}
       {sheet && (
         <div
           className="fixed inset-0 z-50 flex flex-col justify-end md:hidden"
@@ -778,7 +665,7 @@ export function TopNav() {
                       }}
                       className={cn(
                         "flex items-center gap-3 rounded-xl border border-border bg-card px-3 py-3 text-sm font-medium text-foreground",
-                        !enabled && "opacity-70"
+                        !enabled && "opacity-80"
                       )}
                     >
                       <span
