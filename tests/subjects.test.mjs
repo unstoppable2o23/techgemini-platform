@@ -2,6 +2,7 @@ import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
 import { PrismaClient } from "@prisma/client";
 import { saveCareerPreferences } from "../src/lib/student/profile.ts";
+import { seedSubjects, SUBJECT_SEED } from "../scripts/seed-subjects.mjs";
 
 const prisma = new PrismaClient();
 const suffix = Date.now() + "_" + Math.random().toString(36).slice(2, 7);
@@ -146,4 +147,33 @@ test("subject selection is idempotent (no duplicate stored)", async () => {
   const p = await prisma.studentProfile.findUnique({ where: { userId: user.id } });
   const count = p.subjectsStudied.filter((n) => n === subject.name).length;
   assert.equal(count, 1, "same subject must not be stored twice");
+});
+
+test("subject seed restores the previous canonical subject catalogue", async () => {
+  const res = await seedSubjects(prisma);
+  assert.equal(res.total, SUBJECT_SEED.length);
+  const names = SUBJECT_SEED.map((s) => s.name);
+  const stored = await prisma.subject.findMany({
+    where: { name: { in: names }, isActive: true },
+    select: { id: true, name: true, slug: true },
+  });
+  assert.equal(stored.length, names.length, "all canonical subjects must be present and active");
+  // slugs must be unique (no duplicate records)
+  const slugs = new Set(stored.map((s) => s.slug));
+  assert.equal(slugs.size, names.length, "subject slugs must be unique");
+  // every subject exposes a canonical id
+  for (const s of stored) assert.ok(s.id, "subject must have a canonical id");
+});
+
+test("/api/subjects-equivalent query returns the previous subject options", async () => {
+  const subs = await prisma.subject.findMany({
+    where: { isActive: true },
+    select: { id: true, name: true, category: true },
+    orderBy: { name: "asc" },
+  });
+  const expected = SUBJECT_SEED.map((s) => s.name).sort();
+  const got = subs.map((s) => s.name).sort();
+  for (const n of expected) {
+    assert.ok(got.includes(n), `previous subject option "${n}" must be available`);
+  }
 });

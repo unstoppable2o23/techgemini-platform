@@ -1300,7 +1300,15 @@ function SubjectMulti({
                     </button>
                   </li>
                 ))}
-                {filtered.length === 0 && (
+                {subjects.length === 0 ? (
+                  <li
+                    role="option"
+                    aria-selected={false}
+                    className="px-3 py-2 text-sm text-muted-foreground"
+                  >
+                    No subjects are available right now.
+                  </li>
+                ) : filtered.length === 0 ? (
                   <li
                     role="option"
                     aria-selected={false}
@@ -1308,7 +1316,7 @@ function SubjectMulti({
                   >
                     No matching subject.
                   </li>
-                )}
+                ) : null}
                 <li role="option" aria-selected={false}>
                   <button
                     type="button"
