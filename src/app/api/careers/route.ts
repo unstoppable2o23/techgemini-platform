@@ -41,37 +41,43 @@ export async function GET(request: NextRequest) {
         ? [{ category: sortOrder as "asc" | "desc" }, { name: "asc" as const }]
         : { name: sortOrder as "asc" | "desc" };
 
-  const careers = await prisma.career.findMany({
-    where,
-    orderBy,
-    select: {
-      id: true,
-      name: true,
-      slug: true,
-      title: true,
-      category: true,
-      subcategory: true,
-      shortDescription: true,
-      demandLevel: true,
-      jobGrowth: true,
-      salaryEntry: true,
-      salarySenior: true,
-      topIndustries: true,
-      isEmerging: true,
-      minStudyLevel: true,
-    },
-  });
+  try {
+    const careers = await prisma.career.findMany({
+      where,
+      orderBy,
+      take: 500,
+      select: {
+        id: true,
+        name: true,
+        slug: true,
+        title: true,
+        category: true,
+        subcategory: true,
+        shortDescription: true,
+        demandLevel: true,
+        jobGrowth: true,
+        salaryEntry: true,
+        salarySenior: true,
+        topIndustries: true,
+        isEmerging: true,
+        minStudyLevel: true,
+      },
+    });
 
-  const categories = await prisma.career.findMany({
-    where: { isActive: true, category: { not: null } },
-    select: { category: true },
-    distinct: ["category"],
-    orderBy: { category: "asc" },
-  });
+    const categories = await prisma.career.findMany({
+      where: { isActive: true, category: { not: null } },
+      select: { category: true },
+      distinct: ["category"],
+      orderBy: { category: "asc" },
+    });
 
-  return NextResponse.json({
-    careers,
-    total: careers.length,
-    categories: categories.map((c) => c.category).filter(Boolean),
-  });
+    return NextResponse.json({
+      careers,
+      total: careers.length,
+      categories: categories.map((c) => c.category).filter(Boolean),
+    });
+  } catch (error) {
+    console.error("Careers query failed:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

@@ -43,7 +43,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const tenantId = request.headers.get("x-tenant-id") || "default";
+    const host = request.headers.get("host") || "";
+    const tenantSub = extractSubdomain(host);
+    const tenantId = tenantSub === "default" ? "default" : tenantSub;
 
     let tenant = await prisma.tenant.findUnique({
       where: { subdomain: tenantId },
@@ -99,4 +101,17 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+function extractSubdomain(hostname: string): string {
+  const host = hostname.replace(/:\d+$/, "");
+  const parts = host.split(".");
+  if (
+    host.includes("localhost") ||
+    host.includes("127.0.0.1") ||
+    parts.length < 3
+  ) {
+    return "default";
+  }
+  return parts[0];
 }

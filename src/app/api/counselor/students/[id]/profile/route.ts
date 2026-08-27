@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { loadAuthorizedStudent } from "@/lib/counselor/access";
 
 export async function GET(
   _request: NextRequest,
@@ -11,21 +12,22 @@ export async function GET(
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
+  if (session.user.role === "STUDENT") {
+    if (session.user.id !== id) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+  } else {
+    const auth = await loadAuthorizedStudent(id, session);
+    if (!auth.ok) {
+      return NextResponse.json({ error: "Forbidden" }, { status: auth.status });
+    }
+  }
+
   const student = await prisma.user.findUnique({
     where: { id },
     include: { studentProfile: true },
   });
   if (!student || student.role !== "STUDENT") return NextResponse.json({ error: "Not found" }, { status: 404 });
-
-  if (session.user.role === "COUNSELOR") {
-    const cp = await prisma.counselorProfile.findUnique({ where: { userId: session.user.id } });
-    if (!cp || student.studentProfile?.counselorId !== cp.id) {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-    }
-  } else if (session.user.role === "STUDENT" && student.id !== session.user.id) {
-    // Students may only read their own profile.
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
 
   const { passwordHash: _ph, ...safe } = student;
   return NextResponse.json({ student: safe });
@@ -39,20 +41,15 @@ export async function PATCH(
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const student = await prisma.user.findUnique({
-    where: { id },
-    include: { studentProfile: true },
-  });
-  if (!student || student.role !== "STUDENT") return NextResponse.json({ error: "Not found" }, { status: 404 });
-
-  if (session.user.role === "COUNSELOR") {
-    const cp = await prisma.counselorProfile.findUnique({ where: { userId: session.user.id } });
-    if (!cp || student.studentProfile?.counselorId !== cp.id) {
+  if (session.user.role === "STUDENT") {
+    if (session.user.id !== id) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
-  } else if (session.user.role === "STUDENT" && student.id !== session.user.id) {
-    // Students may only edit their own profile.
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  } else {
+    const auth = await loadAuthorizedStudent(id, session);
+    if (!auth.ok) {
+      return NextResponse.json({ error: "Forbidden" }, { status: auth.status });
+    }
   }
 
   try {

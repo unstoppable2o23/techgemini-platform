@@ -30,6 +30,7 @@ async function main() {
       name: c.name,
       slug: slugify(c.name),
       title: c.title || c.name,
+      category: c.category || "Other",
       introduction: c.introduction || "",
       whoShouldPursue: c.whoShouldPursue || [],
       eligibility: c.eligibility || [],
