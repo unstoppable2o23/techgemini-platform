@@ -45,7 +45,7 @@ async function main() {
     },
   });
 
-  await prisma.counselorProfile.upsert({
+  const counselorProfile = await prisma.counselorProfile.upsert({
     where: { userId: counselorUser.id },
     update: {},
     create: {
@@ -79,6 +79,42 @@ async function main() {
       counselorId: counselorProfile.id,
     },
   });
+
+  // Assign all five psychometric assessments to the demo student so the
+  // guided journey and "My Tests" show the complete set (including the
+  // Learning & Productivity assessment). Idempotent across re-seeds.
+  const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
+  const TOKEN_PREFIX = {
+    stream: "STREAM",
+    ideal: "IDEAL",
+    personality: "PERSONALITY",
+    intelligences: "INTELLIGENCE",
+    learning: "LEARNING",
+  };
+  const slugify = (s) =>
+    s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  const crypto = require("crypto");
+  for (const kind of ASSESSMENT_KINDS) {
+    const existing = await prisma.testAssignment.findFirst({
+      where: { studentId: studentUser.id, kind },
+    });
+    if (!existing) {
+      const name = `${studentUser.firstName} ${studentUser.lastName}`;
+      const token = `${TOKEN_PREFIX[kind]}-${slugify(name)}-${studentUser.id
+        .slice(-6)
+        .toUpperCase()}-${crypto.randomBytes(4).toString("hex").toUpperCase()}`;
+      await prisma.testAssignment.create({
+        data: {
+          tenantId: tenant.id,
+          studentId: studentUser.id,
+          assignedById: counselorUser.id,
+          kind,
+          token,
+          status: "ASSIGNED",
+        },
+      });
+    }
+  }
 
   await prisma.studentFeatureAccess.upsert({
     where: { studentProfileId: studentProfile.id },
