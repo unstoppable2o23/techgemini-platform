@@ -1122,6 +1122,7 @@ function SubjectMulti({
   onOtherChange: (v: string) => void;
   onOtherAdd: () => void;
 }) {
+  const [open, setOpen] = useState(false);
   const filtered = subjects.filter((s) => s.name.toLowerCase().includes(query.toLowerCase())).slice(0, 30);
   return (
     <div className="space-y-3">
@@ -1139,15 +1140,23 @@ function SubjectMulti({
         <div className="flex gap-2">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-            <Input value={query} onChange={(e) => onQuery(e.target.value)} placeholder="Search subjects..." className="pl-9" />
+            <Input
+              value={query}
+              onChange={(e) => onQuery(e.target.value)}
+              onFocus={() => setOpen(true)}
+              onBlur={() => setTimeout(() => setOpen(false), 150)}
+              placeholder="Search subjects..."
+              className="pl-9"
+            />
           </div>
         </div>
-        {query && (
+        {(open || query) && (
           <ul className="absolute z-20 mt-1 w-full max-h-56 overflow-y-auto rounded-md border bg-background shadow-lg">
             {filtered.map((s) => (
               <li key={s.id}>
                 <button
                   type="button"
+                  onMouseDown={(e) => e.preventDefault()}
                   onClick={() => onToggle(s.name, s.id)}
                   className="flex w-full items-center justify-between gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left"
                 >

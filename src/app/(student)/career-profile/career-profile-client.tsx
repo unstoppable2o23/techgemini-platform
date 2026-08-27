@@ -99,6 +99,13 @@ export function CareerProfileClient({
         title="Career Profile"
         description="Your assessments and career information, normalised for career matching."
         eyebrow="Career Intelligence"
+        actions={
+          <Link href="/career-preferences">
+            <Button size="sm" variant="outline">
+              Edit profile
+            </Button>
+          </Link>
+        }
       />
 
       {/* ---- Completeness bars ---- */}
