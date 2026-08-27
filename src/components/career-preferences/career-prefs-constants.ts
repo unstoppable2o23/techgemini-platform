@@ -166,3 +166,86 @@ export const COUNTRY_OPTIONS = Object.keys(FLAG_CODES).concat(["Other"]);
 export function flagFor(country: string): string {
   return FLAG_CODES[country] || FLAG_CODES[country.replace(" / ", "/")] || "🌍";
 }
+
+export const SUBJECT_OPTIONS = [
+  "Mathematics",
+  "Physics",
+  "Chemistry",
+  "Biology",
+  "Computer Science",
+  "Statistics",
+  "Economics",
+  "Accountancy",
+  "Business Studies",
+  "English",
+  "History",
+  "Geography",
+  "Psychology",
+  "Political Science",
+  "Sociology",
+  "Art & Design",
+  "Languages",
+  "Other",
+];
+
+export const ACTIVITY_OPTIONS = [
+  "Coding / Technology",
+  "Solving problems",
+  "Working with numbers",
+  "Research",
+  "Designing",
+  "Writing",
+  "Communication",
+  "Teaching",
+  "Helping people",
+  "Business / Entrepreneurship",
+  "Working with machines",
+  "Building / Making things",
+  "Working outdoors",
+  "Working with data",
+  "Creating content",
+  "Working with animals",
+  "Science / Experiments",
+  "Leadership",
+  "Planning / Organizing",
+];
+
+export const EXAM_OPTIONS = [
+  "SAT",
+  "ACT",
+  "JEE Main",
+  "JEE Advanced",
+  "NEET",
+  "AP (Advanced Placement)",
+  "A-Levels",
+  "IB (International Baccalaureate)",
+  "CUET",
+  "TOEFL",
+  "IELTS",
+  "PTE",
+  "GRE",
+  "GMAT",
+  "Other",
+];
+
+export const STUDY_LEVEL_OPTIONS = [
+  "Secondary School (Grades 9-10)",
+  "Senior Secondary (Grades 11-12)",
+  "Diploma",
+  "Bachelor's Degree",
+  "Master's Degree",
+  "Doctoral Degree",
+  "Other",
+];
+
+export const GRADE_LEVEL_OPTIONS = [
+  "Grade 9",
+  "Grade 10",
+  "Grade 11",
+  "Grade 12",
+  "Year 1",
+  "Year 2",
+  "Year 3",
+  "Year 4",
+  "Graduate",
+];

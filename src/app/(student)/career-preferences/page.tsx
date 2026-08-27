@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
-import { CareerPreferencesEditor } from "./career-preferences-editor";
+import { StudentOnboardingFlow } from "@/components/career-preferences/student-onboarding-flow";
 
 export default async function CareerPreferencesPage() {
   const session = await getServerSession(authOptions);
@@ -11,10 +11,15 @@ export default async function CareerPreferencesPage() {
   const profile = await prisma.studentProfile.findUnique({
     where: { userId: session.user.id },
     select: {
-      targetColleges: true,
-      targetCountries: true,
-      preferredCareer: true,
-      prospectiveSessions: true,
+      dateOfBirth: true,
+      mobile: true,
+      gender: true,
+      gradeLevel: true,
+      studyLevel: true,
+      exams: true,
+      subjectsStudied: true,
+      subjectsEnjoyed: true,
+      activityInterests: true,
       nationality: true,
       state: true,
       hasEnglishResult: true,
@@ -23,6 +28,10 @@ export default async function CareerPreferencesPage() {
       englishProficiency: true,
       tuitionBudget: true,
       fundingSource: true,
+      targetColleges: true,
+      targetCountries: true,
+      preferredCareer: true,
+      prospectiveSessions: true,
       preferredIntake: true,
       preferredYear: true,
       highestEducation: true,
@@ -32,9 +41,10 @@ export default async function CareerPreferencesPage() {
     },
   });
 
+  const filled = profile?.careerPrefsFilled ?? false;
   const initial = {
     targetColleges: profile?.targetColleges || [],
-    collegeNotFinalized: profile?.careerPrefsFilled ? profile.targetColleges.length === 0 : false,
+    collegeNotFinalized: filled ? (profile?.targetColleges?.length ?? 0) === 0 : false,
     nationality: profile?.nationality || "",
     state: profile?.state || "",
     hasEnglishResult: profile?.hasEnglishResult ?? false,
@@ -44,26 +54,30 @@ export default async function CareerPreferencesPage() {
     tuitionBudget: profile?.tuitionBudget || "",
     fundingSource: profile?.fundingSource || "",
     targetCountries: profile?.targetCountries || [],
-    countryNotFinalized: profile?.careerPrefsFilled ? profile.targetCountries.length === 0 : false,
+    countryNotFinalized: filled ? (profile?.targetCountries?.length ?? 0) === 0 : false,
     preferredCareer: profile?.preferredCareer || "",
-    careerNotFinalized: profile?.careerPrefsFilled ? !profile.preferredCareer : false,
+    careerNotFinalized: filled ? !profile?.preferredCareer : false,
     prospectiveSessions: profile?.prospectiveSessions || [],
     preferredIntake: profile?.preferredIntake || "",
     preferredYear: profile?.preferredYear || "",
     highestEducation: profile?.highestEducation || "",
     averageGrade: profile?.averageGrade || "",
     careerPlanNotes: profile?.careerPlanNotes || "",
+    gradeLevel: profile?.gradeLevel || "",
+    studyLevel: profile?.studyLevel || "",
+    exams: profile?.exams || [],
+    subjectsStudied: profile?.subjectsStudied || [],
+    subjectsEnjoyed: profile?.subjectsEnjoyed || [],
+    activityInterests: profile?.activityInterests || [],
+    mobile: profile?.mobile || "",
+    gender: profile?.gender || "",
+    dateOfBirth: profile?.dateOfBirth ? profile.dateOfBirth.toISOString().slice(0, 10) : "",
   };
 
   return (
     <div className="min-h-screen flex items-start justify-center px-4 py-16">
       <div className="w-full max-w-3xl space-y-6">
-        <CareerPreferencesEditor
-          title={profile?.careerPrefsFilled ? "Edit your Career Preferences" : "Tell us about your Career Preferences"}
-          description="Your career preferences help us provide you with the most relevant and updated information!"
-          initial={initial}
-          isNew={!profile?.careerPrefsFilled}
-        />
+        <StudentOnboardingFlow initial={initial} isNew={!filled} />
       </div>
     </div>
   );

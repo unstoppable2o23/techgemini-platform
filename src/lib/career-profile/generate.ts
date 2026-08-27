@@ -40,6 +40,9 @@ function mapStudentProfileToSignals(
     targetCountry: string | null;
     careerPlanNotes: string | null;
     tuitionBudget: string | null;
+    subjectsStudied: string[];
+    subjectsEnjoyed: string[];
+    activityInterests: string[];
   }
 ): ProfileSignalInput[] {
   const signals: ProfileSignalInput[] = [];
@@ -96,6 +99,16 @@ function mapStudentProfileToSignals(
         push("INTEREST", `career_note:${trimmed.slice(0, 100)}`, 50, "STUDENT_PROFILE");
       }
     }
+  }
+
+  for (const subject of profile.subjectsStudied || []) {
+    if (subject?.trim()) push("INTEREST", `subject_studied:${subject.trim()}`, 85, "STUDENT_PROFILE");
+  }
+  for (const subject of profile.subjectsEnjoyed || []) {
+    if (subject?.trim()) push("INTEREST", `subject_enjoyed:${subject.trim()}`, 80, "STUDENT_PROFILE");
+  }
+  for (const activity of profile.activityInterests || []) {
+    if (activity?.trim()) push("INTEREST", `activity:${activity.trim()}`, 80, "STUDENT_PROFILE");
   }
 
   return signals;
@@ -181,6 +194,9 @@ export async function generateStudentCareerProfile(
       targetCountry: true,
       careerPlanNotes: true,
       tuitionBudget: true,
+      subjectsStudied: true,
+      subjectsEnjoyed: true,
+      activityInterests: true,
     },
   });
 

@@ -157,6 +157,9 @@ model StudentProfile {
   gradeLevel    String?
   studyLevel    String?
   exams         String[]  @default([])
+  subjectsStudied  String[] @default([])
+  subjectsEnjoyed  String[] @default([])
+  activityInterests String[] @default([])
   nationality   String?
   state         String?
   hasEnglishResult Boolean @default(false)

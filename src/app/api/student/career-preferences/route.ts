@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { saveCareerPreferences, PrefsValidationError } from "@/lib/student/profile";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
@@ -18,6 +19,9 @@ export async function GET() {
       gradeLevel: true,
       studyLevel: true,
       exams: true,
+      subjectsStudied: true,
+      subjectsEnjoyed: true,
+      activityInterests: true,
       nationality: true,
       state: true,
       hasEnglishResult: true,
@@ -50,37 +54,12 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
-
-    const data: any = {
-      targetColleges: body.targetColleges || [],
-      targetCountries: body.targetCountries || [],
-      preferredCareer: body.preferredCareer || null,
-      prospectiveSessions: body.prospectiveSessions || [],
-      studyLevel: body.studyLevel || null,
-      exams: body.exams || [],
-      nationality: body.nationality || null,
-      state: body.state || null,
-      hasEnglishResult: body.hasEnglishResult ?? false,
-      englishTestType: body.englishTestType || null,
-      englishTestScore: body.englishTestScore || null,
-      englishProficiency: body.englishProficiency || null,
-      tuitionBudget: body.tuitionBudget || null,
-      fundingSource: body.fundingSource || null,
-      preferredIntake: body.preferredIntake || null,
-      preferredYear: body.preferredYear || null,
-      highestEducation: body.highestEducation || null,
-      averageGrade: body.averageGrade || null,
-      careerPlanNotes: body.careerPlanNotes || null,
-      careerPrefsFilled: true,
-    };
-
-    await prisma.studentProfile.update({
-      where: { userId: session.user.id },
-      data,
-    });
-
-    return NextResponse.json({ success: true });
+    const result = await saveCareerPreferences(session.user.id, body);
+    return NextResponse.json(result);
   } catch (error) {
+    if (error instanceof PrefsValidationError) {
+      return NextResponse.json({ error: error.message }, { status: error.status });
+    }
     console.error("Career preferences error:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
