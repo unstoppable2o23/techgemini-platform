@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/ui/page-header";
 import { Skeleton } from "@/components/ui/skeleton";
+import Breadcrumbs from "@/components/student/breadcrumbs";
 import { CheckCircle2, AlertCircle, TrendingUp, Info } from "lucide-react";
 
 type MatchReason = {
@@ -138,6 +139,7 @@ export function CareerMatchesClient() {
 
   return (
     <div className="space-y-6 p-6 pt-20 max-w-3xl mx-auto">
+      <Breadcrumbs items={[{ label: "Discover" }, { label: "Career Matches" }]} />
       <PageHeader
         icon={TrendingUp}
         title="Your Career Matches"

@@ -35,6 +35,7 @@ import { formatUsageMinutes } from "@/lib/format-utils";
 import { PageHeader } from "@/components/ui/page-header";
 import { StatCard } from "@/components/ui/stat-card";
 import { getStudentDashboard } from "@/lib/student/dashboard.ts";
+import { buildStudentJourney } from "@/lib/student/journey.ts";
 import StudentIntelligenceHub from "./student-intelligence-hub";
 
 export default async function DashboardPage() {
@@ -174,6 +175,18 @@ export default async function DashboardPage() {
   const featureAccess = studentProfile?.featureAccess;
   const dashboard = await getStudentDashboard(user.id);
 
+  const appointmentCount = await prisma.appointment
+    .count({
+      where: {
+        studentId: studentProfile?.id,
+        status: { in: ["CONFIRMED", "COMPLETED", "PENDING"] },
+      },
+    })
+    .catch(() => 0);
+  const journey = buildStudentJourney(dashboard, {
+    appointmentBooked: appointmentCount > 0,
+  });
+
   const recentResults = await prisma.testResult.findMany({
     where: { studentId: studentProfile?.id },
     orderBy: { submittedAt: "desc" },
@@ -196,7 +209,11 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-6 p-6 pt-20">
-      <StudentIntelligenceHub dashboard={dashboard} studentName={user.firstName} />
+      <StudentIntelligenceHub
+        dashboard={dashboard}
+        studentName={user.firstName}
+        journey={journey}
+      />
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {featureCards.map((f) => (

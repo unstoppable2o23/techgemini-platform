@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import SaveButton from "@/components/student/save-button";
+import StudentJourney from "@/components/student/journey";
 import {
   SectionHeading,
   EmptyState,
@@ -28,6 +29,7 @@ import {
   Clock,
 } from "lucide-react";
 import type { StudentDashboard } from "@/lib/student/dashboard.ts";
+import type { StudentJourney as StudentJourneyData } from "@/lib/student/journey.ts";
 
 function MappingBadge({ status }: { status?: string }) {
   if (!status) return null;
@@ -59,9 +61,11 @@ function nextActionHref(text: string): string | null {
 export default function StudentIntelligenceHub({
   dashboard,
   studentName,
+  journey,
 }: {
   dashboard: StudentDashboard;
   studentName?: string;
+  journey?: StudentJourneyData;
 }) {
   const d = dashboard;
   const completed = d.assessmentCompletedCount;
@@ -151,6 +155,8 @@ export default function StudentIntelligenceHub({
           </p>
         )}
       </section>
+
+      {journey && <StudentJourney journey={journey} />}
 
       {/* CAREER MATCHES */}
       <section className="space-y-4">

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/student/display";
+import Breadcrumbs from "@/components/student/breadcrumbs";
 import { Bookmark, Trash2, ArrowRight, Sparkles, GraduationCap, Building2, Eye } from "lucide-react";
 
 type SavedItem = {
@@ -80,6 +81,7 @@ export default function SavedPage() {
 
   return (
     <div className="mx-auto max-w-4xl space-y-6 p-6">
+      <Breadcrumbs items={[{ label: "Saved" }]} />
       <div>
         <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Your list</p>
         <h1 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">My Shortlist</h1>
