@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useId } from "react";
 import { useRouter } from "next/navigation";
 import {
   GraduationCap,
@@ -22,6 +22,7 @@ import {
   User,
   BookOpen,
   Heart,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -187,6 +188,8 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
   const [submitting, setSubmitting] = useState(false);
 
   const [subjects, setSubjects] = useState<SubjectOption[]>([]);
+  const [subjectsLoading, setSubjectsLoading] = useState(true);
+  const [subjectsError, setSubjectsError] = useState(false);
   const [subjectQuery, setSubjectQuery] = useState("");
   const [subjectKind, setSubjectKind] = useState<"studied" | "enjoyed">("studied");
 
@@ -217,10 +220,25 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
   }
 
   useEffect(() => {
+    let active = true;
+    setSubjectsLoading(true);
+    setSubjectsError(false);
     fetch("/api/subjects")
       .then((r) => r.json())
-      .then((d) => setSubjects(d.subjects || []))
-      .catch(() => {});
+      .then((d) => {
+        if (!active) return;
+        setSubjects(d.subjects || []);
+      })
+      .catch(() => {
+        if (!active) return;
+        setSubjectsError(true);
+      })
+      .finally(() => {
+        if (active) setSubjectsLoading(false);
+      });
+    return () => {
+      active = false;
+    };
   }, []);
 
   // ---- career search ----
@@ -565,8 +583,10 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
             </Field>
 
             <Field icon={BookOpen} label="Which subjects do you currently study?">
-              <SubjectMulti
+                <SubjectMulti
                 subjects={subjects}
+                loading={subjectsLoading}
+                error={subjectsError}
                 selectedNames={[...values.subjectsStudied, ...values.subjectOtherStudied]}
                 query={subjectKind === "studied" ? subjectQuery : ""}
                 onQuery={(q) => {
@@ -585,8 +605,10 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
               label="Which subjects do you enjoy most?"
               hint="This tells us what you'd love to keep doing — different from the subjects you study."
             >
-              <SubjectMulti
+                <SubjectMulti
                 subjects={subjects}
+                loading={subjectsLoading}
+                error={subjectsError}
                 selectedNames={[...values.subjectsEnjoyed, ...values.subjectOtherEnjoyed]}
                 query={subjectKind === "enjoyed" ? subjectQuery : ""}
                 onQuery={(q) => {
@@ -1112,6 +1134,8 @@ function SubjectMulti({
   otherValue,
   onOtherChange,
   onOtherAdd,
+  loading,
+  error,
 }: {
   subjects: SubjectOption[];
   selectedNames: string[];
@@ -1121,14 +1145,81 @@ function SubjectMulti({
   otherValue: string;
   onOtherChange: (v: string) => void;
   onOtherAdd: () => void;
+  loading?: boolean;
+  error?: boolean;
 }) {
   const [open, setOpen] = useState(false);
-  const filtered = subjects.filter((s) => s.name.toLowerCase().includes(query.toLowerCase())).slice(0, 30);
+  const [active, setActive] = useState(0);
+  const [showOther, setShowOther] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const otherInputRef = useRef<HTMLInputElement>(null);
+  const optionRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const listId = useId();
+
+  const filtered = subjects
+    .filter((s) => s.name.toLowerCase().includes(query.toLowerCase()))
+    .slice(0, 50);
+  const otherIndex = filtered.length;
+  const hasOtherSelected = selectedNames.some(
+    (n) => !subjects.some((s) => s.name === n)
+  );
+
+  useEffect(() => {
+    if (hasOtherSelected) setShowOther(true);
+  }, [hasOtherSelected]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node))
+        setOpen(false);
+    };
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, [open]);
+
+  function openMenu() {
+    setOpen(true);
+    setActive(0);
+    inputRef.current?.focus();
+  }
+
+  function selectSubject(s: SubjectOption) {
+    onToggle(s.name, s.id);
+    inputRef.current?.focus();
+  }
+
+  function onKeyDown(e: React.KeyboardEvent) {
+    if (e.key === "Escape") {
+      setOpen(false);
+      return;
+    }
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setActive((i) => Math.min(i + 1, otherIndex));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setActive((i) => Math.max(i - 1, 0));
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      if (active < filtered.length) {
+        selectSubject(filtered[active]);
+      } else {
+        setShowOther(true);
+        setTimeout(() => otherInputRef.current?.focus(), 0);
+      }
+    }
+  }
+
   return (
-    <div className="space-y-3">
+    <div className="space-y-3" ref={wrapRef}>
       <div className="flex flex-wrap gap-2">
         {selectedNames.map((n) => (
-          <span key={n} className="inline-flex items-center gap-1 bg-accent/10 text-accent text-sm px-3 py-1.5 rounded-full">
+          <span
+            key={n}
+            className="inline-flex items-center gap-1 bg-accent/10 text-accent text-sm px-3 py-1.5 rounded-full"
+          >
             {n}
             <button type="button" onClick={() => onToggle(n)} aria-label={`Remove ${n}`}>
               <X className="h-3 w-3" />
@@ -1136,47 +1227,133 @@ function SubjectMulti({
           </span>
         ))}
       </div>
+
       <div className="relative">
         <div className="flex gap-2">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
+              ref={inputRef}
+              role="combobox"
+              aria-expanded={open}
+              aria-controls={listId}
+              aria-autocomplete="list"
+              aria-label="Search or pick subjects"
               value={query}
-              onChange={(e) => onQuery(e.target.value)}
+              onChange={(e) => {
+                onQuery(e.target.value);
+                if (!open) setOpen(true);
+              }}
               onFocus={() => setOpen(true)}
-              onBlur={() => setTimeout(() => setOpen(false), 150)}
-              placeholder="Search subjects..."
-              className="pl-9"
+              onClick={() => setOpen(true)}
+              onKeyDown={onKeyDown}
+              placeholder="Search or pick subjects..."
+              className="pl-9 pr-9"
             />
+            <button
+              type="button"
+              onClick={openMenu}
+              aria-label="Toggle subject list"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground"
+            >
+              <ChevronDown className="h-4 w-4" />
+            </button>
           </div>
         </div>
-        {(open || query) && (
-          <ul className="absolute z-20 mt-1 w-full max-h-56 overflow-y-auto rounded-md border bg-background shadow-lg">
-            {filtered.map((s) => (
-              <li key={s.id}>
-                <button
-                  type="button"
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => onToggle(s.name, s.id)}
-                  className="flex w-full items-center justify-between gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left"
-                >
-                  <span>{s.name}</span>
-                  {selectedNames.includes(s.name) && <Check className="h-3.5 w-3.5 text-accent" />}
-                </button>
+
+        {open && (
+          <ul
+            id={listId}
+            role="listbox"
+            aria-label="Subjects"
+            className="absolute z-20 mt-1 w-full max-h-60 overflow-y-auto rounded-md border bg-background shadow-lg"
+          >
+            {loading && (
+              <li className="px-3 py-2 text-sm text-muted-foreground">Loading subjects…</li>
+            )}
+            {error && (
+              <li className="px-3 py-2 text-sm text-destructive">
+                We couldn&apos;t load the subject list. Please try again.
               </li>
-            ))}
-            {filtered.length === 0 && (
-              <li className="px-3 py-2 text-sm text-muted-foreground">No matching subject.</li>
+            )}
+            {!loading && !error && (
+              <>
+                {filtered.map((s, i) => (
+                  <li key={s.id} role="option" aria-selected={selectedNames.includes(s.name)}>
+                    <button
+                      type="button"
+                      ref={(el) => {
+                        optionRefs.current[i] = el;
+                      }}
+                      onMouseEnter={() => setActive(i)}
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => selectSubject(s)}
+                      className={cn(
+                        "flex w-full items-center justify-between gap-2 px-3 py-2 text-sm text-left hover:bg-accent/10",
+                        active === i && "bg-accent/10"
+                      )}
+                    >
+                      <span>{s.name}</span>
+                      {selectedNames.includes(s.name) && (
+                        <Check className="h-3.5 w-3.5 text-accent" />
+                      )}
+                    </button>
+                  </li>
+                ))}
+                {filtered.length === 0 && (
+                  <li
+                    role="option"
+                    aria-selected={false}
+                    className="px-3 py-2 text-sm text-muted-foreground"
+                  >
+                    No matching subject.
+                  </li>
+                )}
+                <li role="option" aria-selected={false}>
+                  <button
+                    type="button"
+                    ref={(el) => {
+                      optionRefs.current[otherIndex] = el;
+                    }}
+                    onMouseEnter={() => setActive(otherIndex)}
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => {
+                      setShowOther(true);
+                      setTimeout(() => otherInputRef.current?.focus(), 0);
+                    }}
+                    className={cn(
+                      "flex w-full items-center gap-2 px-3 py-2 text-sm text-left hover:bg-accent/10",
+                      active === otherIndex && "bg-accent/10"
+                    )}
+                  >
+                    <Plus className="h-3.5 w-3.5 text-muted-foreground" /> Other…
+                  </button>
+                </li>
+              </>
             )}
           </ul>
         )}
       </div>
-      <div className="flex items-center gap-2">
-        <Input value={otherValue} onChange={(e) => onOtherChange(e.target.value)} placeholder="Other subject (specify)" className="max-w-[260px]" />
-        <Button variant="outline" type="button" onClick={onOtherAdd} disabled={!otherValue.trim()}>
-          <Plus className="h-4 w-4" /> Add
-        </Button>
-      </div>
+
+      {showOther && (
+        <div className="flex items-center gap-2">
+          <Input
+            ref={otherInputRef}
+            value={otherValue}
+            onChange={(e) => onOtherChange(e.target.value)}
+            placeholder="Please specify"
+            className="max-w-[260px]"
+          />
+          <Button
+            variant="outline"
+            type="button"
+            onClick={onOtherAdd}
+            disabled={!otherValue.trim()}
+          >
+            <Plus className="h-4 w-4" /> Add
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
