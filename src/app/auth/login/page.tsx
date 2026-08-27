@@ -230,16 +230,6 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <label className="flex cursor-pointer select-none items-center gap-2 text-[13px] text-slate-700">
-              <input type="checkbox" className="peer sr-only" defaultChecked />
-              <span className="grid h-4 w-4 shrink-0 place-items-center rounded-[5px] border-[1.5px] border-slate-400 bg-white transition-colors peer-checked:border-blue-600 peer-checked:bg-blue-600">
-                <svg viewBox="0 0 10 8" className="h-2.5 w-2.5 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M1 4l2.5 2.5L9 1" />
-                </svg>
-              </span>
-              Keep me signed in for 30 days
-            </label>
-
             <button
               type="submit"
               disabled={loading}
@@ -249,11 +239,6 @@ export default function LoginPage() {
               {!loading && <ArrowRight className="h-4 w-4" />}
             </button>
           </form>
-
-          <p className="mt-8 text-center text-[11.5px] text-[#94a3b8]">
-            By signing in you agree to our <a href="#" className="text-[#64748b] underline-offset-2 hover:underline">Terms</a> and{" "}
-            <a href="#" className="text-[#64748b] underline-offset-2 hover:underline">Privacy Policy</a>.
-          </p>
         </div>
       </main>
     </div>
