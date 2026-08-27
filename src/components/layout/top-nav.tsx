@@ -304,15 +304,13 @@ function NavDropdown({
   pathname: string;
   flags: any;
 }) {
-  const [open, setOpen] = useState(false);
   const active = isGroupActive(group, pathname);
   const Icon = group.icon;
 
   return (
-    <DropdownMenu onOpenChange={setOpen}>
+    <DropdownMenu>
       <DropdownMenuTrigger
         aria-haspopup="menu"
-        aria-expanded={open}
         aria-label={`${group.label} menu`}
         className={cn(
           "inline-flex items-center gap-1 rounded-full px-3 py-1.5 text-sm font-medium transition-colors",
@@ -323,12 +321,7 @@ function NavDropdown({
       >
         <Icon className="h-4 w-4" />
         <span>{group.label}</span>
-        <ChevronDown
-          className={cn(
-            "h-3.5 w-3.5 opacity-70 transition-transform",
-            open && "rotate-180"
-          )}
-        />
+        <ChevronDown className="h-3.5 w-3.5 opacity-70" />
       </DropdownMenuTrigger>
       <DropdownMenuContent
         role="menu"
