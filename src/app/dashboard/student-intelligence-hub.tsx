@@ -160,6 +160,29 @@ export default function StudentIntelligenceHub({
                     </div>
                     <SaveButton itemType="CAREER" itemId={m.careerId} />
                   </div>
+                  {m.developmentAreas && m.developmentAreas.length > 0 && (
+                    <div className="mt-2">
+                      <p className="text-xs font-medium text-amber-700">Development areas</p>
+                      <div className="flex flex-wrap gap-1.5 mt-1">
+                        {(m.developmentAreas as string[]).slice(0, 3).map((s: string, i: number) => (
+                          <Badge key={i} variant="outline" className="text-amber-700 border-amber-200">
+                            {s}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {m.reasons && m.reasons.length > 0 && (
+                    <p className="text-xs text-muted-foreground mt-2">{m.reasons[0].text}</p>
+                  )}
+                  <div className="mt-2">
+                    <Link
+                      href={`/career-library/${m.career.slug}`}
+                      className="text-xs text-accent hover:underline"
+                    >
+                      View Career →
+                    </Link>
+                  </div>
                   {d.careerMatchDisclaimer && (
                     <p className="text-xs text-amber-700 mt-2">{d.careerMatchDisclaimer}</p>
                   )}
@@ -176,32 +199,99 @@ export default function StudentIntelligenceHub({
         </CardContent>
       </Card>
 
-      {/* Education pathways */}
-      {d.educationPathways && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <GraduationCap className="h-5 w-5" /> Recommended Education Pathways
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2 text-sm">
-              {d.educationPathways.primary.slice(0, 3).map((p: any) => (
-                <div key={p.id} className="rounded-lg border p-3">
-                  <p className="font-medium">
-                    {p.degree?.name || "Degree"}
-                    {p.specialization?.name ? ` → ${p.specialization.name}` : ""}
+      {/* Education pathways — always visible, with meaningful empty states */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <GraduationCap className="h-5 w-5" /> Recommended Education Pathways
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {!d.educationPathways ? (
+            <p className="text-sm text-muted-foreground">
+              Education pathways appear once your top career match is available.
+            </p>
+          ) : (
+            <div className="space-y-4 text-sm">
+              {d.educationPathways.primary.length > 0 ? (
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1">
+                    Primary
                   </p>
-                  {p.notes && <p className="text-xs text-muted-foreground">{p.notes}</p>}
+                  <div className="space-y-2">
+                    {d.educationPathways.primary.slice(0, 3).map((p: any) => (
+                      <div key={p.id} className="rounded-lg border p-3">
+                        <p className="font-medium">
+                          {p.degree?.name || "Degree"}
+                          {p.specialization?.name ? ` → ${p.specialization.name}` : ""}
+                        </p>
+                        {p.notes && <p className="text-xs text-muted-foreground">{p.notes}</p>}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              ))}
-              {d.educationPathways.primary.length === 0 && (
-                <p className="text-muted-foreground">No primary pathways mapped yet.</p>
+              ) : (
+                <p className="text-muted-foreground">
+                  No primary pathways are mapped yet for this career.
+                </p>
+              )}
+
+              {d.educationPathways.alternative.length > 0 && (
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1">
+                    Alternative
+                  </p>
+                  <div className="space-y-2">
+                    {d.educationPathways.alternative.slice(0, 2).map((p: any) => (
+                      <div key={p.id} className="rounded-lg border p-3">
+                        <p className="font-medium">
+                          {p.degree?.name || "Degree"}
+                          {p.specialization?.name ? ` → ${p.specialization.name}` : ""}
+                        </p>
+                        {p.notes && <p className="text-xs text-muted-foreground">{p.notes}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {d.educationPathways.optional.length > 0 && (
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1">
+                    Optional
+                  </p>
+                  <div className="space-y-2">
+                    {d.educationPathways.optional.slice(0, 2).map((p: any) => (
+                      <div key={p.id} className="rounded-lg border p-3">
+                        <p className="font-medium">
+                          {p.degree?.name || "Degree"}
+                          {p.specialization?.name ? ` → ${p.specialization.name}` : ""}
+                        </p>
+                        {p.notes && <p className="text-xs text-muted-foreground">{p.notes}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {d.educationPathways.recommendedSubjects?.length > 0 && (
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-1">
+                    Recommended Subjects
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {d.educationPathways.recommendedSubjects.map((s: any, i: number) => (
+                      <Badge key={i} variant="secondary">
+                        {s?.name || s}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
               )}
             </div>
-          </CardContent>
-        </Card>
-      )}
+          )}
+        </CardContent>
+      </Card>
 
       {/* University matches */}
       <Card>
@@ -213,7 +303,9 @@ export default function StudentIntelligenceHub({
         <CardContent>
           {!d.universityMatches || d.universityMatches.length === 0 ? (
             <p className="text-sm text-muted-foreground">
-              No suitable institution candidates are currently available for this pathway.
+              {d.topCareerId
+                ? "No suitable institution candidates are currently available for this pathway."
+                : "Complete your top career match to see personalized university recommendations."}
             </p>
           ) : (
             <div className="space-y-3">

@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/prisma";
+import { prisma } from "../prisma.ts";
 import type { TraitDimension } from "@prisma/client";
 import type { ExamReport } from "../tests";
 import { normalizeAssessmentReport } from "./normalize";

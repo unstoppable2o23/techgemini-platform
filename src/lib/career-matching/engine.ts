@@ -1,6 +1,6 @@
-import { prisma } from "@/lib/prisma";
+import { prisma } from "../prisma.ts";
 import type { TraitDimension } from "@prisma/client";
-import { generateStudentCareerProfile } from "@/lib/career-profile/generate";
+import { generateStudentCareerProfile } from "../career-profile/generate.ts";
 import { scoreCareer, rankMatches } from "./score";
 import type { CareerCandidate, CareerMatch, CareerMatchInput, MatchResult } from "./types";
 import { NO_ASSESSMENT_DISCLAIMER } from "./config";

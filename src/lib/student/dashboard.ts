@@ -1,7 +1,18 @@
+import { prisma } from "../prisma.ts";
 import { getStudentBasics, type StudentBasics } from "./basics.ts";
 import { getCareerMatches } from "../career-matching/engine.ts";
 import { getUniversityMatchesForStudent } from "../university-matching/engine.ts";
 import { getTrends } from "../career-trends/service.ts";
+
+const FALLBACK_BASICS: StudentBasics = {
+  profileCompleteness: 0,
+  hasAssessments: false,
+  assessmentProgress: [],
+  assessmentCompletedCount: 0,
+  savedCount: 0,
+  savedItems: [],
+  nextSteps: ["Complete your profile to see personalized recommendations."],
+};
 
 export type StudentDashboard = StudentBasics & {
   topCareerMatches: any[];
@@ -14,7 +25,12 @@ export type StudentDashboard = StudentBasics & {
 };
 
 export async function getStudentDashboard(userId: string): Promise<StudentDashboard> {
-  const basics = await getStudentBasics(userId);
+  let basics: StudentBasics = FALLBACK_BASICS;
+  try {
+    basics = await getStudentBasics(userId);
+  } catch (e) {
+    console.error("[dashboard] getStudentBasics failed:", e);
+  }
 
   let topCareerMatches: any[] = [];
   let careerMatchDisclaimer: string | null = null;
@@ -28,22 +44,29 @@ export async function getStudentDashboard(userId: string): Promise<StudentDashbo
     topCareerMatches = matches.matches;
     careerMatchDisclaimer = matches.disclaimer ?? null;
     topCareerId = topCareerMatches[0]?.career?.id ?? null;
-  } catch {
+  } catch (e) {
+    console.error("[dashboard] getCareerMatches failed:", e);
     careerMatchDisclaimer = "Career matches are currently unavailable.";
   }
 
   if (topCareerId) {
-    const path = await prismaPathways(topCareerId);
-    educationPathways = path;
+    try {
+      educationPathways = await prismaPathways(topCareerId);
+    } catch (e) {
+      console.error("[dashboard] education pathways failed:", e);
+      educationPathways = null;
+    }
     try {
       const uni = await getUniversityMatchesForStudent(userId, {
         careerId: topCareerId,
         limit: 3,
       });
       universityMatches = uni.matches;
-      universityMatchDisclaimer = (uni as any).disclaimer ?? null;
-    } catch {
+      universityMatchDisclaimer = uni.disclaimer ?? null;
+    } catch (e) {
+      console.error("[dashboard] university matches failed:", e);
       universityMatches = null;
+      universityMatchDisclaimer = "Personalized university matches are currently unavailable.";
     }
   }
 
@@ -51,7 +74,8 @@ export async function getStudentDashboard(userId: string): Promise<StudentDashbo
   try {
     const t = await getTrends({ type: "trending", limit: 6 });
     trendingCareers = t.trends;
-  } catch {
+  } catch (e) {
+    console.error("[dashboard] getTrends failed:", e);
     trendingCareers = [];
   }
 
@@ -68,7 +92,6 @@ export async function getStudentDashboard(userId: string): Promise<StudentDashbo
 }
 
 async function prismaPathways(careerId: string) {
-  const { prisma } = await import("../prisma.ts");
   const pathways = await prisma.careerEducationPathway.findMany({
     where: { careerId, type: "DEGREE_PATHWAY" },
     include: { degree: true, specialization: true },

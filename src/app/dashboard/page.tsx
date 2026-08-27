@@ -48,9 +48,26 @@ export default async function DashboardPage() {
   if (isStudent) {
     const profile = await prisma.studentProfile.findUnique({
       where: { userId: user.id },
-      select: { careerPrefsFilled: true },
+      select: {
+        careerPrefsFilled: true,
+        gradeLevel: true,
+        studyLevel: true,
+        preferredCareer: true,
+        nationality: true,
+        exams: true,
+      },
     });
-    if (!profile?.careerPrefsFilled) {
+    // Only block brand-new students with essentially no profile data.
+    // Students who already have profile information (even without the
+    // "prefs filled" flag or any assessments) must still see recommendations.
+    const hasMinimalProfile =
+      profile &&
+      (profile.gradeLevel ||
+        profile.studyLevel ||
+        profile.preferredCareer ||
+        profile.nationality ||
+        (profile.exams && profile.exams.length > 0));
+    if (!profile || (!profile.careerPrefsFilled && !hasMinimalProfile)) {
       redirect("/career-preferences");
     }
   }
@@ -186,6 +203,8 @@ export default async function DashboardPage() {
         eyebrow="Overview"
       />
 
+      <StudentIntelligenceHub dashboard={dashboard} />
+
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {featureCards.map((f) => (
           <Card key={f.label} className={!f.enabled ? "opacity-50" : ""}>
@@ -276,7 +295,6 @@ export default async function DashboardPage() {
         </Card>
       )}
 
-      <StudentIntelligenceHub dashboard={dashboard} />
     </div>
   );
 }
