@@ -23,6 +23,10 @@ export default async function StudentManagementPage() {
         : {}),
     },
     include: {
+      careerProfile: { select: { completeness: true } },
+      _count: {
+        select: { testAssignments: { where: { status: "COMPLETED" } } },
+      },
       studentProfile: {
         include: {
           featureAccess: true,
@@ -35,7 +39,7 @@ export default async function StudentManagementPage() {
   });
 
   const safeStudents = students.map((s) => {
-    const { passwordHash: _ph, studentProfile, ...rest } = s;
+    const { passwordHash: _ph, studentProfile, careerProfile, _count, ...rest } = s;
     const safeProfile = studentProfile
       ? {
           ...studentProfile,
@@ -52,8 +56,49 @@ export default async function StudentManagementPage() {
             : null,
         }
       : null;
-    return { ...rest, studentProfile: safeProfile };
+    return {
+      ...rest,
+      studentProfile: safeProfile,
+      assessmentCompleted: _count?.testAssignments ?? 0,
+      assessmentTotal: 5,
+      profileCompleteness: careerProfile?.completeness ?? null,
+      preferredCareer: studentProfile?.preferredCareer ?? null,
+    };
   });
 
-  return <StudentManagementClient students={safeStudents} />;
+  const total = safeStudents.length;
+  const assessmentComplete = safeStudents.filter(
+    (s) => (s.assessmentCompleted ?? 0) >= 5
+  ).length;
+  const profileWithData = safeStudents.filter(
+    (s) => (s.profileCompleteness ?? 0) > 0
+  ).length;
+  const avgProfile = total
+    ? Math.round(
+        safeStudents.reduce((a, s) => a + (s.profileCompleteness ?? 0), 0) / total
+      )
+    : 0;
+  const withCareer = safeStudents.filter((s) => s.preferredCareer).length;
+
+  const stats = [
+    { label: "Assigned students", value: total },
+    { label: "Assessments complete", value: `${assessmentComplete}/${total}` },
+    { label: "Profile started", value: `${profileWithData}/${total}` },
+    { label: "Avg profile completeness", value: `${avgProfile}%` },
+    { label: "With career interest", value: `${withCareer}/${total}` },
+  ];
+
+  return (
+    <div className="space-y-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+        {stats.map((s) => (
+          <div key={s.label} className="rounded-xl border bg-card p-4">
+            <p className="text-xs text-muted-foreground">{s.label}</p>
+            <p className="text-xl font-semibold">{s.value}</p>
+          </div>
+        ))}
+      </div>
+      <StudentManagementClient students={safeStudents} />
+    </div>
+  );
 }

@@ -620,6 +620,57 @@ model CareerTrend {
   @@index([region])
 }
 
+model CounselorNote {
+  id          String   @id @default(cuid())
+  studentId   String
+  counselorId String
+  type        String   @default("GENERAL")
+  content     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([studentId])
+  @@index([counselorId])
+  @@index([type])
+}
+
+model CounselorAction {
+  id          String     @id @default(cuid())
+  studentId   String
+  counselorId String
+  type        String     @default("GENERAL")
+  title       String
+  description String?
+  dueDate     DateTime?
+  completed   Boolean    @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([studentId])
+  @@index([counselorId])
+  @@index([completed])
+  @@index([dueDate])
+}
+
+model CounselorRecommendationFeedback {
+  id                 String   @id @default(cuid())
+  studentId          String
+  counselorId        String
+  recommendationType String
+  careerId           String?
+  institutionId      String?
+  institutionType    String?
+  decision           String
+  note               String?
+  createdAt          DateTime @default(now())
+
+  @@index([studentId])
+  @@index([counselorId])
+  @@index([recommendationType])
+  @@index([careerId])
+  @@index([institutionId])
+}
+
 model DailyUsage {
   id           String   @id @default(cuid())
   userId       String

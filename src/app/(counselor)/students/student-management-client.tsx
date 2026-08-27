@@ -31,7 +31,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Avatar } from "@/components/ui/avatar";
-import { Search, CheckCircle2, XCircle, KeyRound, Plus, Loader2, Clock, User } from "lucide-react";
+import { Search, CheckCircle2, XCircle, KeyRound, Plus, Loader2, Clock, User, Eye } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
 import { formatUsageMinutes } from "@/lib/format-utils";
 import { CareerPreferencesForm, type CareerPrefsValues } from "@/components/career-preferences/career-preferences-form";
@@ -402,6 +402,9 @@ export function StudentManagementClient({
                 <TableHead>Status</TableHead>
                 <TableHead>Last Seen</TableHead>
                 <TableHead>Usage Time</TableHead>
+                <TableHead>Assessment</TableHead>
+                <TableHead>Profile</TableHead>
+                <TableHead>Career</TableHead>
                 <TableHead>Account</TableHead>
                 <TableHead className="min-w-[400px]">
                   Feature Access
@@ -412,10 +415,10 @@ export function StudentManagementClient({
             <TableBody>
               {filteredStudents.length === 0 ? (
                 <TableRow>
-                  <TableCell
-                    colSpan={7}
-                    className="h-32 text-center text-muted-foreground"
-                  >
+                      <TableCell
+                        colSpan={10}
+                        className="h-32 text-center text-muted-foreground"
+                      >
                     No students found
                   </TableCell>
                 </TableRow>
@@ -476,6 +479,24 @@ export function StudentManagementClient({
                       </TableCell>
 
                       <TableCell>
+                        <span className="text-sm text-muted-foreground whitespace-nowrap">
+                          {student.assessmentCompleted ?? 0}/{student.assessmentTotal ?? 5} done
+                        </span>
+                      </TableCell>
+
+                      <TableCell>
+                        <span className="text-sm text-muted-foreground whitespace-nowrap">
+                          {student.profileCompleteness != null ? `${student.profileCompleteness}%` : "—"}
+                        </span>
+                      </TableCell>
+
+                      <TableCell>
+                        <span className="text-sm text-muted-foreground whitespace-nowrap">
+                          {student.preferredCareer || "—"}
+                        </span>
+                      </TableCell>
+
+                      <TableCell>
                         <Switch
                           checked={student.isActive}
                           onCheckedChange={(checked) =>
@@ -517,6 +538,10 @@ export function StudentManagementClient({
 
                       <TableCell className="text-right">
                         <div className="flex items-center justify-end gap-1">
+                          <Button variant="ghost" size="icon" className="h-8 w-8" title="Open 360 View"
+                            onClick={() => router.push(`/counselor/students/${student.id}`)}>
+                            <Eye className="h-4 w-4" />
+                          </Button>
                           <Button variant="ghost" size="icon" className="h-8 w-8" title="View Profile"
                             onClick={() => openProfile(student)}>
                             <User className="h-4 w-4" />
