@@ -141,6 +141,9 @@ export function AssignClient({
                       <SelectItem value="intelligences">
                         Multiple Intelligences (54 questions)
                       </SelectItem>
+                      <SelectItem value="learning">
+                        Learning &amp; Productivity
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

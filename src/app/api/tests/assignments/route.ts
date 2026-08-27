@@ -5,7 +5,13 @@ import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { tokenForStudent, type TestKind } from "@/lib/tests";
 
-const counselorScope = (userId: string) => ({
+// Counselor-scoped lookups. The relation path differs by model:
+// - User.studentProfile (StudentProfile) -> counselor.userId   (used for the POST student lookup)
+// - TestAssignment.student (User) -> studentProfile.counselor.userId  (used for the GET list)
+const counselorUserScope = (userId: string) => ({
+  studentProfile: { counselor: { userId } },
+});
+const counselorAssignmentScope = (userId: string) => ({
   student: { studentProfile: { counselor: { userId } } },
 });
 
@@ -22,7 +28,7 @@ export async function GET() {
   const assignments = await prisma.testAssignment.findMany({
     where: {
       tenantId: user.tenantId,
-      ...(user.role === "COUNSELOR" ? counselorScope(user.id) : {}),
+      ...(user.role === "COUNSELOR" ? counselorAssignmentScope(user.id) : {}),
     },
     include: {
       student: { select: { firstName: true, lastName: true, email: true } },
@@ -55,7 +61,7 @@ export async function POST(request: NextRequest) {
         role: "STUDENT",
         isActive: true,
         tenantId: user.tenantId,
-        ...(user.role === "COUNSELOR" ? counselorScope(user.id) : {}),
+        ...(user.role === "COUNSELOR" ? counselorUserScope(user.id) : {}),
       },
       select: { id: true, firstName: true, lastName: true },
     });
