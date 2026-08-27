@@ -156,6 +156,7 @@ model StudentProfile {
   gender        String?
   gradeLevel    String?
   studyLevel    String?
+  studyAbroad   String? // "yes" | "no" | "unsure" — controls study-abroad question set
   exams         String[]  @default([])
   subjectsStudied  String[] @default([])
   subjectsEnjoyed  String[] @default([])

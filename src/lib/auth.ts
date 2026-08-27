@@ -81,9 +81,16 @@ export const authOptions = {
   pages: {
     signIn: "/auth/login",
   },
+  // Secure cookies in production (NextAuth prefixes with __Secure- and sets
+  // secure when NEXTAUTH_URL is https). In development cookies stay plain.
+  useSecureCookies: process.env.NODE_ENV === "production",
   session: {
     strategy: "jwt",
+    // Persistent session: 7 days. The token is refreshed daily while the user
+    // is active (updateAge), so a normal session does NOT terminate just
+    // because the tab was idle for a few minutes.
     maxAge: 60 * 60 * 24 * 7,
+    updateAge: 60 * 60 * 24,
   },
   secret: process.env.NEXTAUTH_SECRET,
 };

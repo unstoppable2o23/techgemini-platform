@@ -31,88 +31,104 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import {
-  CAREER_OPTIONS,
   EDUCATION_OPTIONS,
   BUDGET_OPTIONS,
   FUNDING_OPTIONS,
   PROFICIENCY_OPTIONS,
   INTAKE_OPTIONS,
   START_YEAR_OPTIONS,
-  SESSION_OPTIONS,
   ENGLISH_TEST_OPTIONS,
   NATIONALITY_OPTIONS,
   INDIAN_STATES,
   COUNTRY_OPTIONS,
-  SUBJECT_OPTIONS,
   ACTIVITY_OPTIONS,
   EXAM_OPTIONS,
   STUDY_LEVEL_OPTIONS,
-  GRADE_LEVEL_OPTIONS,
   flagFor,
 } from "./career-prefs-constants";
 
 type Values = {
-  targetColleges: string[];
-  collegeNotFinalized: boolean;
   nationality: string;
   state: string;
+  studyLevel: string;
+  studyLevelOther: string;
+  gradeLevel: string;
+  highestEducation: string;
+  highestEducationOther: string;
+  mobile: string;
+  gender: string;
+  dateOfBirth: string;
+  averageGrade: string;
+  averageGradeUnknown: boolean;
+  exams: string[];
+  subjectsStudied: string[];
+  subjectIdsStudied: string[];
+  subjectsEnjoyed: string[];
+  subjectIdsEnjoyed: string[];
+  subjectOtherStudied: string[];
+  subjectOtherEnjoyed: string[];
+  subjectOther: string;
+  activityInterests: string[];
+  preferredCareer: string;
+  careerId: string;
+  careerNotFinalized: boolean;
+  studyAbroad: string;
+  targetCountries: string[];
+  countryNotFinalized: boolean;
+  targetColleges: string[];
+  targetCollegeIds: string[];
+  collegeNotFinalized: boolean;
+  tuitionBudget: string;
+  fundingSource: string;
   hasEnglishResult: boolean;
   englishTestType: string;
   englishTestScore: string;
   englishProficiency: string;
-  tuitionBudget: string;
-  fundingSource: string;
-  targetCountries: string[];
-  countryNotFinalized: boolean;
-  preferredCareer: string;
-  careerNotFinalized: boolean;
-  prospectiveSessions: string[];
   preferredIntake: string;
   preferredYear: string;
-  highestEducation: string;
-  averageGrade: string;
   careerPlanNotes: string;
-  gradeLevel: string;
-  studyLevel: string;
-  exams: string[];
-  subjectsStudied: string[];
-  subjectsEnjoyed: string[];
-  activityInterests: string[];
-  mobile: string;
-  gender: string;
-  dateOfBirth: string;
 };
 
 const EMPTY: Values = {
-  targetColleges: [],
-  collegeNotFinalized: false,
   nationality: "",
   state: "",
+  studyLevel: "",
+  studyLevelOther: "",
+  gradeLevel: "",
+  highestEducation: "",
+  highestEducationOther: "",
+  mobile: "",
+  gender: "",
+  dateOfBirth: "",
+  averageGrade: "",
+  averageGradeUnknown: false,
+  exams: [],
+  subjectsStudied: [],
+  subjectIdsStudied: [],
+  subjectsEnjoyed: [],
+  subjectIdsEnjoyed: [],
+  subjectOtherStudied: [],
+  subjectOtherEnjoyed: [],
+  subjectOther: "",
+  activityInterests: [],
+  preferredCareer: "",
+  careerId: "",
+  careerNotFinalized: false,
+  studyAbroad: "",
+  targetCountries: [],
+  countryNotFinalized: false,
+  targetColleges: [],
+  targetCollegeIds: [],
+  collegeNotFinalized: false,
+  tuitionBudget: "",
+  fundingSource: "",
   hasEnglishResult: false,
   englishTestType: "",
   englishTestScore: "",
   englishProficiency: "",
-  tuitionBudget: "",
-  fundingSource: "",
-  targetCountries: [],
-  countryNotFinalized: false,
-  preferredCareer: "",
-  careerNotFinalized: false,
-  prospectiveSessions: [],
   preferredIntake: "",
   preferredYear: "",
-  highestEducation: "",
-  averageGrade: "",
   careerPlanNotes: "",
-  gradeLevel: "",
-  studyLevel: "",
-  exams: [],
-  subjectsStudied: [],
-  subjectsEnjoyed: [],
-  activityInterests: [],
-  mobile: "",
-  gender: "",
-  dateOfBirth: "",
 };
 
 const STEPS = [
@@ -124,20 +140,60 @@ const STEPS = [
 ];
 
 type CollegeResult = { id: string; name: string; country?: string; state?: string; kind: "uni" | "indian" };
+type SubjectOption = { id: string; name: string };
 
-export function StudentOnboardingFlow({
-  initial,
-  isNew,
-}: {
-  initial?: Partial<Values>;
-  isNew: boolean;
-}) {
+// Context-aware highest-completed-education options based on the current stage.
+function highestEducationOptions(studyLevel: string): string[] {
+  const sl = (studyLevel || "").toLowerCase();
+  const isSchool = sl.includes("class") || sl.includes("secondary") || sl.includes("school");
+  const isUndergrad =
+    sl.includes("undergraduate") || sl.includes("bachelor") || sl === "year 1 undergraduate" || sl === "year 2 undergraduate" || sl === "year 3 undergraduate" || sl === "year 4 undergraduate";
+  const isPostgrad = sl.includes("postgraduate") || sl.includes("master");
+  const isDoctoral = sl.includes("doctoral") || sl.includes("ph.d");
+
+  let base: string[];
+  if (isSchool) {
+    base = ["Still in school", "Primary School", "Middle School", "Secondary School (Grade 10)", "Grade 12 / High School"];
+  } else if (isUndergrad) {
+    base = ["Grade 12 / High School", "Diploma", "Bachelor's Degree"];
+  } else if (isPostgrad) {
+    base = ["Bachelor's Degree", "Postgraduate Diploma / Certificate", "Master's Degree"];
+  } else if (isDoctoral) {
+    base = ["Master's Degree", "Doctoral Degree"];
+  } else {
+    base = [...EDUCATION_OPTIONS];
+  }
+  if (!base.includes("Other")) base.push("Other");
+  return base;
+}
+
+export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Values>; isNew: boolean }) {
   const router = useRouter();
   const [step, setStep] = useState(0);
-  const [values, setValues] = useState<Values>({ ...EMPTY, ...initial });
+  const [values, setValues] = useState<Values>(() => {
+    const base = { ...EMPTY, ...initial };
+    // If a prefilled value isn't one of the standard options, surface it via "Other".
+    if (base.studyLevel && !STUDY_LEVEL_OPTIONS.includes(base.studyLevel)) {
+      base.studyLevelOther = base.studyLevel;
+      base.studyLevel = "Other";
+    }
+    if (base.highestEducation && !EDUCATION_OPTIONS.includes(base.highestEducation) && base.highestEducation !== "Other") {
+      base.highestEducationOther = base.highestEducation;
+      base.highestEducation = "Other";
+    }
+    return base;
+  });
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [careerOptions, setCareerOptions] = useState<string[]>(CAREER_OPTIONS);
+
+  const [subjects, setSubjects] = useState<SubjectOption[]>([]);
+  const [subjectQuery, setSubjectQuery] = useState("");
+  const [subjectKind, setSubjectKind] = useState<"studied" | "enjoyed">("studied");
+
+  const [careerQuery, setCareerQuery] = useState("");
+  const [careerResults, setCareerResults] = useState<{ id: string; name: string }[]>([]);
+  const [careerOpen, setCareerOpen] = useState(false);
+  const careerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const [collegeQuery, setCollegeQuery] = useState("");
   const [collegeResults, setCollegeResults] = useState<CollegeResult[]>([]);
@@ -152,21 +208,45 @@ export function StudentOnboardingFlow({
     setError("");
   }
 
+  function toggleArrayField(field: "exams" | "activityInterests", value: string) {
+    setValues((prev) => {
+      const arr = prev[field];
+      return { ...prev, [field]: arr.includes(value) ? arr.filter((x) => x !== value) : [...arr, value] };
+    });
+    setError("");
+  }
+
   useEffect(() => {
-    fetch("/api/careers")
+    fetch("/api/subjects")
       .then((r) => r.json())
-      .then((data) => {
-        const dbNames = (data.careers || []).map((c: any) => c.name).filter(Boolean);
-        setCareerOptions((prev) => {
-          const combined = [...prev];
-          for (const n of dbNames) {
-            if (!combined.some((c) => c.toLowerCase() === n.toLowerCase())) combined.push(n);
-          }
-          return combined;
-        });
-      })
+      .then((d) => setSubjects(d.subjects || []))
       .catch(() => {});
   }, []);
+
+  // ---- career search ----
+  async function searchCareers(query: string) {
+    if (!query || query.length < 2) {
+      setCareerResults([]);
+      setCareerOpen(false);
+      return;
+    }
+    const res = await fetch(`/api/careers?search=${encodeURIComponent(query)}`);
+    const data = await res.json();
+    setCareerResults((data.careers || []).map((c: any) => ({ id: c.id, name: c.name })).slice(0, 12));
+    setCareerOpen(true);
+  }
+  function handleCareerChange(q: string) {
+    setCareerQuery(q);
+    if (careerTimer.current) clearTimeout(careerTimer.current);
+    careerTimer.current = setTimeout(() => searchCareers(q), 250);
+  }
+  function selectCareer(c: { id: string; name: string }) {
+    set("careerId", c.id);
+    set("preferredCareer", c.name);
+    setCareerQuery(c.name);
+    setCareerResults([]);
+    setCareerOpen(false);
+  }
 
   // ---- college search ----
   async function searchColleges(query: string) {
@@ -177,11 +257,10 @@ export function StudentOnboardingFlow({
     }
     const res = await fetch(`/api/student/college-search?q=${encodeURIComponent(query)}`);
     const data = await res.json();
-    const results: CollegeResult[] = [
-      ...data.universities.map((u: any) => ({ id: u.id, name: u.name, country: u.country, kind: "uni" as const })),
-      ...data.institutions.map((i: any) => ({ id: i.id, name: i.name, state: i.state, kind: "indian" as const })),
-    ];
-    setCollegeResults(results);
+    setCollegeResults([
+      ...(data.universities || []).map((u: any) => ({ id: u.id, name: u.name, country: u.country, kind: "uni" as const })),
+      ...(data.institutions || []).map((i: any) => ({ id: i.id, name: i.name, state: i.state, kind: "indian" as const })),
+    ]);
     setCollegeOpen(true);
   }
   function handleCollegeChange(q: string) {
@@ -189,55 +268,82 @@ export function StudentOnboardingFlow({
     if (collegeTimer.current) clearTimeout(collegeTimer.current);
     collegeTimer.current = setTimeout(() => searchColleges(q), 250);
   }
-  function addCollege(name: string) {
-    if (name && !values.targetColleges.includes(name)) {
-      set("targetColleges", [...values.targetColleges, name]);
+  function addCollege(r: CollegeResult) {
+    if (!values.targetCollegeIds.includes(r.id)) {
+      set("targetCollegeIds", [...values.targetCollegeIds, r.id]);
+      set("targetColleges", [...values.targetColleges, r.name]);
     }
     setCollegeQuery("");
     setCollegeResults([]);
     setCollegeOpen(false);
   }
+  function removeCollege(id: string) {
+    set("targetCollegeIds", values.targetCollegeIds.filter((x) => x !== id));
+    const name = values.targetColleges[values.targetCollegeIds.indexOf(id)];
+    set("targetColleges", values.targetColleges.filter((x) => x !== name));
+  }
 
   function addCountry(name: string) {
-    if (name && !values.targetCountries.includes(name)) {
-      set("targetCountries", [...values.targetCountries, name]);
-    }
+    if (name && !values.targetCountries.includes(name)) set("targetCountries", [...values.targetCountries, name]);
     setCountryQuery("");
     setCountryOpen(false);
   }
 
-  function toggleArray(field: "exams" | "subjectsStudied" | "subjectsEnjoyed" | "activityInterests" | "prospectiveSessions", value: string) {
-    setValues((prev) => {
-      const arr = prev[field] as string[];
-      const next = arr.includes(value) ? arr.filter((x) => x !== value) : [...arr, value];
-      return { ...prev, [field]: next };
-    });
+  function toggleSubject(kind: "studied" | "enjoyed", name: string, id?: string) {
+    const idsKey = kind === "studied" ? "subjectIdsStudied" : "subjectIdsEnjoyed";
+    const namesKey = kind === "studied" ? "subjectsStudied" : "subjectsEnjoyed";
+    const otherKey = kind === "studied" ? "subjectOtherStudied" : "subjectOtherEnjoyed";
+    // Remove from the explicit "Other" list if present.
+    if (values[otherKey].includes(name)) {
+      set(otherKey, values[otherKey].filter((x) => x !== name));
+      return;
+    }
+    const ids = values[idsKey];
+    const names = values[namesKey];
+    const has = names.includes(name);
+    set(namesKey, has ? names.filter((x) => x !== name) : [...names, name]);
+    if (id) set(idsKey, has ? ids.filter((x) => x !== id) : [...ids, id]);
     setError("");
+  }
+  function addOtherSubject(kind: "studied" | "enjoyed") {
+    const name = values.subjectOther.trim();
+    if (!name) return;
+    const otherKey = kind === "studied" ? "subjectOtherStudied" : "subjectOtherEnjoyed";
+    if (!values[otherKey].includes(name)) set(otherKey, [...values[otherKey], name]);
+    setSubjectQuery("");
+    set("subjectOther", "");
   }
 
   function validateStep(s: number): string | null {
     if (s === 0) {
       if (!values.nationality) return "Please select your nationality.";
       if (values.nationality === "Indian" && !values.state) return "Please select your state.";
-      if (!values.studyLevel) return "Please select your study level.";
-      if (!values.highestEducation) return "Please select your highest education.";
+      if (!values.studyLevel) return "Please tell us what you are currently studying.";
+      if (values.studyLevel === "Other" && !values.studyLevelOther.trim())
+        return "Please specify your current level of study.";
+      if (values.highestEducation === "Other" && !values.highestEducationOther.trim())
+        return "Please specify your highest completed education.";
     }
     if (s === 1) {
-      if (!values.gradeLevel) return "Please select your grade level.";
-      if (!values.averageGrade) return "Please enter your average grade.";
-      const g = parseFloat(values.averageGrade);
-      if (isNaN(g) || g < 0 || g > 100) return "Average grade must be between 0 and 100.";
+      if (!values.averageGradeUnknown) {
+        if (!values.averageGrade) return "Please enter your average grade, or select 'I'm not sure yet'.";
+        const g = parseFloat(values.averageGrade);
+        if (isNaN(g) || g < 0 || g > 100) return "Average grade must be between 0 and 100.";
+      }
     }
     if (s === 2) {
-      if (!values.preferredCareer && !values.careerNotFinalized)
-        return "Please choose a preferred career or tick 'I haven't finalized the career yet'.";
+      if (!values.careerNotFinalized && !values.careerId && !values.preferredCareer)
+        return "Please choose a preferred career or select \"I haven't decided yet\".";
     }
     if (s === 3) {
-      if (values.targetColleges.length === 0 && !values.collegeNotFinalized)
-        return "Please add at least one target college or tick 'I haven't finalized the college yet'.";
-      if (values.targetCountries.length === 0 && !values.countryNotFinalized)
-        return "Please add at least one target country or tick 'I haven't finalized the country yet'.";
-      if (!values.tuitionBudget) return "Please select your tuition budget.";
+      if (!values.studyAbroad) return "Please let us know if you're planning to study abroad.";
+      if (values.studyAbroad === "yes") {
+        if (values.targetCountries.length === 0 && !values.countryNotFinalized)
+          return "Please add at least one country or select \"I haven't finalized the country yet\".";
+        if (values.targetColleges.length === 0 && !values.collegeNotFinalized)
+          return "Please add at least one college or select \"I haven't finalized the college yet\".";
+        if (!values.tuitionBudget) return "Please select your annual tuition budget.";
+      }
       if (values.hasEnglishResult) {
         if (!values.englishTestType) return "Please select an English exam type.";
         const score = parseFloat(values.englishTestScore);
@@ -272,11 +378,15 @@ export function StudentOnboardingFlow({
     }
     setSubmitting(true);
     setError("");
+    const payload = {
+      ...values,
+      averageGrade: values.averageGradeUnknown ? "" : values.averageGrade,
+    };
     try {
       const res = await fetch("/api/student/career-preferences", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) {
         const data = await res.json();
@@ -290,36 +400,35 @@ export function StudentOnboardingFlow({
     }
   }
 
-  const filteredCountries = COUNTRY_OPTIONS.filter((c) =>
-    c.toLowerCase().includes(countryQuery.toLowerCase())
-  ).slice(0, 8);
+  const filteredCountries = COUNTRY_OPTIONS.filter((c) => c.toLowerCase().includes(countryQuery.toLowerCase())).slice(0, 8);
+  const heOptions = highestEducationOptions(values.studyLevel);
 
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle className="text-2xl">
-          {isNew ? "Tell us about yourself" : "Edit your Career Preferences"}
-        </CardTitle>
+        <CardTitle className="text-2xl">{isNew ? "Tell us about yourself" : "Edit your profile"}</CardTitle>
         <CardDescription>
-          Your answers help us recommend the right careers, colleges and pathways.
+          Help us understand you. There are no wrong answers — you can change these anytime.
         </CardDescription>
         <StepIndicator step={step} />
       </CardHeader>
       <CardContent className="space-y-6">
         {error && (
-          <p className="text-sm text-destructive text-center bg-destructive/10 rounded-md py-2 px-3">
-            {error}
-          </p>
+          <p className="text-sm text-destructive text-center bg-destructive/10 rounded-md py-2 px-3">{error}</p>
         )}
 
         {step === 0 && (
           <div className="space-y-5">
             <Field icon={Globe} label="What is your nationality?">
               <Select value={values.nationality} onValueChange={(v) => set("nationality", v)}>
-                <SelectTrigger className="w-full"><SelectValue>Select nationality...</SelectValue></SelectTrigger>
+                <SelectTrigger className="w-full">
+                  <SelectValue>Select nationality...</SelectValue>
+                </SelectTrigger>
                 <SelectContent>
                   {NATIONALITY_OPTIONS.map((n) => (
-                    <SelectItem key={n} value={n}>{n}</SelectItem>
+                    <SelectItem key={n} value={n}>
+                      {n}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
@@ -327,10 +436,14 @@ export function StudentOnboardingFlow({
                 <div className="mt-3 space-y-2">
                   <Label>Which state are you from?</Label>
                   <Select value={values.state} onValueChange={(v) => set("state", v)}>
-                    <SelectTrigger className="w-full"><SelectValue>Select state...</SelectValue></SelectTrigger>
+                    <SelectTrigger className="w-full">
+                      <SelectValue>Select state...</SelectValue>
+                    </SelectTrigger>
                     <SelectContent>
                       {INDIAN_STATES.map((s) => (
-                        <SelectItem key={s} value={s}>{s}</SelectItem>
+                        <SelectItem key={s} value={s}>
+                          {s}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -338,28 +451,55 @@ export function StudentOnboardingFlow({
               )}
             </Field>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field icon={Layers} label="What is your study level?">
-                <Select value={values.studyLevel} onValueChange={(v) => set("studyLevel", v)}>
-                  <SelectTrigger className="w-full"><SelectValue>Select study level...</SelectValue></SelectTrigger>
-                  <SelectContent>
-                    {STUDY_LEVEL_OPTIONS.map((s) => (
-                      <SelectItem key={s} value={s}>{s}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </Field>
-              <Field icon={Layers} label="Highest level of education?">
+            <Field icon={Layers} label="What are you currently studying?">
+              <Select value={values.studyLevel} onValueChange={(v) => set("studyLevel", v)}>
+                <SelectTrigger className="w-full">
+                  <SelectValue>Select your current stage...</SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {STUDY_LEVEL_OPTIONS.map((s) => (
+                    <SelectItem key={s} value={s}>
+                      {s}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {values.studyLevel === "Other" && (
+                <div className="mt-3">
+                  <Input
+                    value={values.studyLevelOther}
+                    onChange={(e) => set("studyLevelOther", e.target.value)}
+                    placeholder="Please specify your current level of study"
+                  />
+                </div>
+              )}
+            </Field>
+
+            {values.studyLevel && values.studyLevel !== "Other" && (
+              <Field icon={Layers} label="What is the highest level of education you have completed?">
                 <Select value={values.highestEducation} onValueChange={(v) => set("highestEducation", v)}>
-                  <SelectTrigger className="w-full"><SelectValue>Select education...</SelectValue></SelectTrigger>
+                  <SelectTrigger className="w-full">
+                    <SelectValue>Select highest education...</SelectValue>
+                  </SelectTrigger>
                   <SelectContent>
-                    {EDUCATION_OPTIONS.map((e) => (
-                      <SelectItem key={e} value={e}>{e}</SelectItem>
+                    {heOptions.map((e) => (
+                      <SelectItem key={e} value={e}>
+                        {e}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
+                {values.highestEducation === "Other" && (
+                  <div className="mt-3">
+                    <Input
+                      value={values.highestEducationOther}
+                      onChange={(e) => set("highestEducationOther", e.target.value)}
+                      placeholder="Please specify your highest completed education"
+                    />
+                  </div>
+                )}
               </Field>
-            </div>
+            )}
 
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Mobile (optional)">
@@ -367,10 +507,14 @@ export function StudentOnboardingFlow({
               </Field>
               <Field label="Gender (optional)">
                 <Select value={values.gender} onValueChange={(v) => set("gender", v)}>
-                  <SelectTrigger className="w-full"><SelectValue>Select gender...</SelectValue></SelectTrigger>
+                  <SelectTrigger className="w-full">
+                    <SelectValue>Select gender...</SelectValue>
+                  </SelectTrigger>
                   <SelectContent>
                     {["Male", "Female", "Other", "Prefer not to say"].map((g) => (
-                      <SelectItem key={g} value={g}>{g}</SelectItem>
+                      <SelectItem key={g} value={g}>
+                        {g}
+                      </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
@@ -384,264 +528,490 @@ export function StudentOnboardingFlow({
 
         {step === 1 && (
           <div className="space-y-5">
-            <Field icon={BookOpen} label="What is your grade / year level?">
-              <Select value={values.gradeLevel} onValueChange={(v) => set("gradeLevel", v)}>
-                <SelectTrigger className="w-full"><SelectValue>Select grade level...</SelectValue></SelectTrigger>
-                <SelectContent>
-                  {GRADE_LEVEL_OPTIONS.map((g) => (
-                    <SelectItem key={g} value={g}>{g}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </Field>
-
-            <Field icon={Layers} label="What is your average grade? (Scale 1-100)" hint="We match your academics against programs in your range.">
-              <Input type="number" inputMode="decimal" min={0} max={100} step="any"
-                value={values.averageGrade} onChange={(e) => set("averageGrade", e.target.value)} placeholder="e.g. 85" />
+            <Field
+              icon={Layers}
+              label="What is your current overall academic average?"
+              hint="Enter your overall average/percentage from recent results. This is not an entrance-exam score (not JEE, SAT, IELTS, etc.)."
+            >
+              <div className="flex items-center gap-3">
+                <Input
+                  type="number"
+                  inputMode="decimal"
+                  min={0}
+                  max={100}
+                  step="any"
+                  disabled={values.averageGradeUnknown}
+                  value={values.averageGrade}
+                  onChange={(e) => set("averageGrade", e.target.value)}
+                  placeholder="e.g. 85"
+                  className="max-w-[200px]"
+                />
+                <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={values.averageGradeUnknown}
+                    onChange={(e) => {
+                      set("averageGradeUnknown", e.target.checked);
+                      if (e.target.checked) set("averageGrade", "");
+                    }}
+                  />
+                  I'm not sure yet
+                </label>
+              </div>
             </Field>
 
             <Field icon={BookOpen} label="Which exams have you taken or plan to take? (optional)">
-              <ChipMulti options={EXAM_OPTIONS} selected={values.exams} onToggle={(v) => toggleArray("exams", v)} />
+              <ChipMulti options={EXAM_OPTIONS} selected={values.exams} onToggle={(v) => toggleArrayField("exams", v)} />
             </Field>
 
-            <Field icon={BookOpen} label="Which subjects do you study?">
-              <ChipMulti options={SUBJECT_OPTIONS} selected={values.subjectsStudied} onToggle={(v) => toggleArray("subjectsStudied", v)} />
+            <Field icon={BookOpen} label="Which subjects do you currently study?">
+              <SubjectMulti
+                subjects={subjects}
+                selectedNames={[...values.subjectsStudied, ...values.subjectOtherStudied]}
+                query={subjectKind === "studied" ? subjectQuery : ""}
+                onQuery={(q) => {
+                  setSubjectKind("studied");
+                  setSubjectQuery(q);
+                }}
+                onToggle={(name, id) => toggleSubject("studied", name, id)}
+                otherValue={values.subjectOther}
+                onOtherChange={(v) => set("subjectOther", v)}
+                onOtherAdd={() => addOtherSubject("studied")}
+              />
             </Field>
 
-            <Field icon={Heart} label="Which subjects do you enjoy most?" hint="Tells us what you'd love to keep doing.">
-              <ChipMulti options={SUBJECT_OPTIONS} selected={values.subjectsEnjoyed} onToggle={(v) => toggleArray("subjectsEnjoyed", v)} />
+            <Field
+              icon={Heart}
+              label="Which subjects do you enjoy most?"
+              hint="This tells us what you'd love to keep doing — different from the subjects you study."
+            >
+              <SubjectMulti
+                subjects={subjects}
+                selectedNames={[...values.subjectsEnjoyed, ...values.subjectOtherEnjoyed]}
+                query={subjectKind === "enjoyed" ? subjectQuery : ""}
+                onQuery={(q) => {
+                  setSubjectKind("enjoyed");
+                  setSubjectQuery(q);
+                }}
+                onToggle={(name, id) => toggleSubject("enjoyed", name, id)}
+                otherValue={values.subjectOther}
+                onOtherChange={(v) => set("subjectOther", v)}
+                onOtherAdd={() => addOtherSubject("enjoyed")}
+              />
             </Field>
           </div>
         )}
 
         {step === 2 && (
           <div className="space-y-5">
-            <Field icon={Briefcase} label="What is your preferred career? *">
+            <Field icon={Briefcase} label="Which career are you interested in?">
               {!values.careerNotFinalized ? (
-                <Select value={values.preferredCareer} onValueChange={(v) => set("preferredCareer", v)}>
-                  <SelectTrigger className="w-full"><SelectValue>Choose a career...</SelectValue></SelectTrigger>
-                  <SelectContent>
-                    {careerOptions.map((c) => (
-                      <SelectItem key={c} value={c}>{c}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <div className="space-y-2">
+                  <div className="relative">
+                    <div className="flex gap-2">
+                      <div className="relative flex-1">
+                        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                        <Input
+                          value={careerQuery}
+                          onFocus={() => values.careerId && setCareerOpen(true)}
+                          onChange={(e) => handleCareerChange(e.target.value)}
+                          placeholder="Search careers (e.g. Engineering, Design)..."
+                          className="pl-9"
+                        />
+                      </div>
+                    </div>
+                    {careerOpen && careerResults.length > 0 && (
+                      <ul className="absolute z-20 mt-1 w-full max-h-64 overflow-y-auto rounded-md border bg-background shadow-lg">
+                        {careerResults.map((c) => (
+                          <li key={c.id}>
+                            <button
+                              type="button"
+                              onClick={() => selectCareer(c)}
+                              className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left"
+                            >
+                              {c.name}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                  {values.preferredCareer && (
+                    <p className="text-sm text-muted-foreground">
+                      Selected: <span className="font-medium text-foreground">{values.preferredCareer}</span>
+                    </p>
+                  )}
+                </div>
               ) : (
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Lock className="h-3.5 w-3.5" /> Career marked as not yet finalized
+                  <Lock className="h-3.5 w-3.5" /> Career marked as not yet decided
                 </div>
               )}
-              <CheckableBanner label="I haven't finalized the career yet"
-                checked={values.careerNotFinalized} onChange={(v) => set("careerNotFinalized", v)} />
+              <CheckableBanner
+                label="I haven't decided yet"
+                checked={values.careerNotFinalized}
+                onChange={(v) => {
+                  set("careerNotFinalized", v);
+                  if (v) {
+                    set("careerId", "");
+                    set("preferredCareer", "");
+                  }
+                }}
+              />
             </Field>
 
-            <Field icon={Heart} label="What activities do you enjoy? (helps us understand your interests)" hint="Pick all that apply.">
-              <ChipMulti options={ACTIVITY_OPTIONS} selected={values.activityInterests} onToggle={(v) => toggleArray("activityInterests", v)} />
+            <Field
+              icon={Heart}
+              label="What activities do you enjoy?"
+              hint="Pick all that apply. These are interests, not a test result."
+            >
+              <ChipMulti options={ACTIVITY_OPTIONS} selected={values.activityInterests} onToggle={(v) => toggleArrayField("activityInterests", v)} />
             </Field>
 
-            <Field icon={Megaphone} label="How can we help you in your career planning? (optional)">
-              <Textarea value={values.careerPlanNotes} onChange={(e) => set("careerPlanNotes", e.target.value)}
-                placeholder="Share your ambitions, questions, or anything you'd like guidance on..." rows={4} />
+            <Field icon={Megaphone} label="Tell us what you're thinking about for your future (optional)">
+              <Textarea
+                value={values.careerPlanNotes}
+                onChange={(e) => set("careerPlanNotes", e.target.value)}
+                placeholder="Share your ambitions, questions, or anything you'd like guidance on..."
+                rows={4}
+              />
             </Field>
           </div>
         )}
 
         {step === 3 && (
           <div className="space-y-5">
-            <Field icon={Globe} label="Which countries are you interested in?">
+            <Field icon={Globe} label="Are you planning to study abroad?">
               <div className="flex flex-wrap gap-2">
-                {values.targetCountries.map((c) => (
-                  <span key={c} className="inline-flex items-center gap-1.5 bg-accent/10 text-accent text-sm px-3 py-1.5 rounded-full mr-2 mb-2">
-                    <span className="text-base leading-none">{flagFor(c)}</span>
-                    <span className="max-w-[200px] truncate">{c}</span>
-                    <button type="button" onClick={() => set("targetCountries", values.targetCountries.filter((x) => x !== c))} aria-label={`Remove ${c}`}>
-                      <X className="h-3 w-3" />
-                    </button>
-                  </span>
-                ))}
-              </div>
-              {!values.countryNotFinalized && (
-                <div className="relative">
-                  <div className="flex gap-2">
-                    <div className="relative flex-1">
-                      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                      <Input value={countryQuery} onFocus={() => setCountryOpen(true)}
-                        onChange={(e) => { setCountryQuery(e.target.value); setCountryOpen(true); }}
-                        placeholder="Choose a country... (start typing)" className="pl-9" />
-                    </div>
-                    <Button variant="outline" type="button" onClick={() => addCountry(countryQuery)}><Plus className="h-4 w-4" /></Button>
-                  </div>
-                  {countryOpen && (countryQuery || filteredCountries.length > 0) && (
-                    <ul className="absolute z-20 mt-1 w-full max-h-64 overflow-y-auto rounded-md border bg-background shadow-lg">
-                      {filteredCountries.map((c) => (
-                        <li key={c}>
-                          <button type="button" onClick={() => addCountry(c)}
-                            className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left">
-                            <span className="text-base leading-none">{flagFor(c)}</span><span>{c}</span>
-                          </button>
-                        </li>
-                      ))}
-                      {countryQuery.length >= 2 && filteredCountries.length === 0 && (
-                        <li>
-                          <button type="button" onClick={() => addCountry(countryQuery)}
-                            className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left">
-                            <span className="text-base leading-none">🌍</span><span>Add &quot;{countryQuery}&quot;</span>
-                          </button>
-                        </li>
-                      )}
-                    </ul>
-                  )}
-                </div>
-              )}
-              <CheckableBanner label="I haven't finalized the country yet"
-                checked={values.countryNotFinalized} onChange={(v) => set("countryNotFinalized", v)} />
-            </Field>
-
-            <Field icon={GraduationCap} label="What colleges are you targeting? *" hint="Search all universities and Indian colleges from our database.">
-              {values.targetColleges.map((c) => (
-                <span key={c} className="inline-flex items-center gap-1 bg-accent/10 text-accent text-sm px-3 py-1.5 rounded-full mr-2 mb-2">
-                  <span className="max-w-[240px] truncate">{c}</span>
-                  <button type="button" onClick={() => set("targetColleges", values.targetColleges.filter((x) => x !== c))} aria-label={`Remove ${c}`}>
-                    <X className="h-3 w-3" />
-                  </button>
-                </span>
-              ))}
-              {!values.collegeNotFinalized && (
-                <div className="relative">
-                  <div className="flex gap-2">
-                    <div className="relative flex-1">
-                      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                      <Input value={collegeQuery} onFocus={() => { if (collegeResults.length) setCollegeOpen(true); }}
-                        onChange={(e) => handleCollegeChange(e.target.value)} placeholder="Choose a college... (start typing)" className="pl-9" />
-                    </div>
-                    <Button variant="outline" type="button" onClick={() => addCollege(collegeQuery)}><Plus className="h-4 w-4" /></Button>
-                  </div>
-                  {collegeOpen && collegeResults.length > 0 && (
-                    <ul className="absolute z-20 mt-1 w-full max-h-64 overflow-y-auto rounded-md border bg-background shadow-lg">
-                      {collegeResults.map((r) => (
-                        <li key={`${r.kind}-${r.id}`}>
-                          <button type="button" onClick={() => addCollege(r.name)}
-                            className="flex w-full items-center justify-between gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left">
-                            <span className="truncate">{r.name}</span>
-                            <span className="shrink-0 text-xs text-muted-foreground">
-                              {r.kind === "uni" ? (r.country ? `🌍 ${r.country}` : "University") : `🇮🇳 ${r.state || "Indian College"}`}
-                            </span>
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  {collegeQuery.length >= 2 && collegeOpen && collegeResults.length === 0 && (
-                    <p className="text-xs text-muted-foreground mt-1">No matches found. Press the + button to add your own college.</p>
-                  )}
-                </div>
-              )}
-              <CheckableBanner label="I haven't finalized the college yet"
-                checked={values.collegeNotFinalized} onChange={(v) => set("collegeNotFinalized", v)} />
-            </Field>
-
-            <Field icon={Wallet} label="Select your tuition budget (USD, annual)?">
-              <div className="grid gap-2 sm:grid-cols-2">
-                {BUDGET_OPTIONS.map((b) => (
-                  <button key={b} type="button" onClick={() => set("tuitionBudget", b)}
-                    className={cn("rounded-lg border px-4 py-3 text-sm text-left transition-colors",
-                      values.tuitionBudget === b ? "bg-accent/10 border-accent text-accent font-medium" : "text-foreground border-border hover:border-accent")}>
-                    {b}
-                  </button>
-                ))}
-              </div>
-              {values.tuitionBudget && (
-                <div className="mt-3 space-y-2">
-                  <Label>What is your source of funds?</Label>
-                  <div className="grid gap-2">
-                    {FUNDING_OPTIONS.map((f) => (
-                      <button key={f} type="button" onClick={() => set("fundingSource", f)}
-                        className={cn("rounded-lg border px-4 py-3 text-sm text-left transition-colors",
-                          values.fundingSource === f ? "bg-accent/10 border-accent text-accent font-medium" : "text-foreground border-border hover:border-accent")}>
-                        {f}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </Field>
-
-            <Field icon={Languages} label="Let's talk about English tests">
-              <div className="flex flex-wrap gap-2">
-                {["Yes, I have results", "No, I don't have results"].map((opt) => {
-                  const active = values.hasEnglishResult === (opt === "Yes, I have results");
+                {[
+                  { v: "yes", label: "Yes" },
+                  { v: "no", label: "No" },
+                  { v: "unsure", label: "Not sure yet" },
+                ].map((opt) => {
+                  const active = values.studyAbroad === opt.v;
                   return (
-                    <button key={opt} type="button" onClick={() => set("hasEnglishResult", opt === "Yes, I have results")}
-                      className={cn("rounded-full px-4 py-2 text-sm border transition-colors",
-                        active ? "bg-accent text-accent-foreground border-accent" : "text-muted-foreground border-border hover:border-accent")}>
-                      {opt}
+                    <button
+                      key={opt.v}
+                      type="button"
+                      onClick={() => set("studyAbroad", opt.v)}
+                      className={cn(
+                        "rounded-full px-4 py-2 text-sm border transition-colors",
+                        active ? "bg-accent text-accent-foreground border-accent" : "text-muted-foreground border-border hover:border-accent"
+                      )}
+                    >
+                      {opt.label}
                     </button>
                   );
                 })}
               </div>
-              {values.hasEnglishResult ? (
-                <div className="grid gap-4 sm:grid-cols-2 mt-3">
-                  <div className="space-y-2">
-                    <Label>English Exam Type *</Label>
-                    <Select value={values.englishTestType} onValueChange={(v) => { set("englishTestType", v); set("englishTestScore", ""); }}>
-                      <SelectTrigger><SelectValue>Select your exam...</SelectValue></SelectTrigger>
+            </Field>
+
+            {values.studyAbroad !== "no" && (
+              <>
+                <Field icon={Globe} label="Which countries are you interested in studying in?">
+                  <div className="flex flex-wrap gap-2">
+                    {values.targetCountries.map((c) => (
+                      <span
+                        key={c}
+                        className="inline-flex items-center gap-1.5 bg-accent/10 text-accent text-sm px-3 py-1.5 rounded-full mr-2 mb-2"
+                      >
+                        <span className="text-base leading-none">{flagFor(c)}</span>
+                        <span className="max-w-[200px] truncate">{c}</span>
+                        <button
+                          type="button"
+                          onClick={() => set("targetCountries", values.targetCountries.filter((x) => x !== c))}
+                          aria-label={`Remove ${c}`}
+                        >
+                          <X className="h-3 w-3" />
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                  {!values.countryNotFinalized && (
+                    <div className="relative">
+                      <div className="flex gap-2">
+                        <div className="relative flex-1">
+                          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                          <Input
+                            value={countryQuery}
+                            onFocus={() => setCountryOpen(true)}
+                            onChange={(e) => {
+                              setCountryQuery(e.target.value);
+                              setCountryOpen(true);
+                            }}
+                            placeholder="Search countries..."
+                            className="pl-9"
+                          />
+                        </div>
+                        <Button variant="outline" type="button" onClick={() => addCountry(countryQuery)}>
+                          <Plus className="h-4 w-4" />
+                        </Button>
+                      </div>
+                      {countryOpen && (countryQuery || filteredCountries.length > 0) && (
+                        <ul className="absolute z-20 mt-1 w-full max-h-64 overflow-y-auto rounded-md border bg-background shadow-lg">
+                          {filteredCountries.map((c) => (
+                            <li key={c}>
+                              <button
+                                type="button"
+                                onClick={() => addCountry(c)}
+                                className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left"
+                              >
+                                <span className="text-base leading-none">{flagFor(c)}</span>
+                                <span>{c}</span>
+                              </button>
+                            </li>
+                          ))}
+                          {countryQuery.length >= 2 && filteredCountries.length === 0 && (
+                            <li>
+                              <button
+                                type="button"
+                                onClick={() => addCountry(countryQuery)}
+                                className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left"
+                              >
+                                <span className="text-base leading-none">🌍</span>
+                                <span>Add &quot;{countryQuery}&quot;</span>
+                              </button>
+                            </li>
+                          )}
+                        </ul>
+                      )}
+                    </div>
+                  )}
+                  <CheckableBanner
+                    label="I haven't finalized the country yet"
+                    checked={values.countryNotFinalized}
+                    onChange={(v) => set("countryNotFinalized", v)}
+                  />
+                </Field>
+
+                <Field icon={GraduationCap} label="Which colleges or universities are you considering?">
+                  <div className="flex flex-wrap gap-2">
+                    {values.targetColleges.map((c, i) => (
+                      <span
+                        key={`${values.targetCollegeIds[i] || c}`}
+                        className="inline-flex items-center gap-1 bg-accent/10 text-accent text-sm px-3 py-1.5 rounded-full mr-2 mb-2"
+                      >
+                        <span className="max-w-[240px] truncate">{c}</span>
+                        <button
+                          type="button"
+                          onClick={() => removeCollege(values.targetCollegeIds[i])}
+                          aria-label={`Remove ${c}`}
+                        >
+                          <X className="h-3 w-3" />
+                        </button>
+                      </span>
+                    ))}
+                  </div>
+                  {!values.collegeNotFinalized && (
+                    <div className="relative">
+                      <div className="flex gap-2">
+                        <div className="relative flex-1">
+                          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                          <Input
+                            value={collegeQuery}
+                            onFocus={() => collegeResults.length && setCollegeOpen(true)}
+                            onChange={(e) => handleCollegeChange(e.target.value)}
+                            placeholder="Search colleges and universities..."
+                            className="pl-9"
+                          />
+                        </div>
+                        <Button variant="outline" type="button" onClick={() => addCollege(collegeResults[0])} disabled={!collegeResults.length}>
+                          <Plus className="h-4 w-4" />
+                        </Button>
+                      </div>
+                      {collegeOpen && collegeResults.length > 0 && (
+                        <ul className="absolute z-20 mt-1 w-full max-h-64 overflow-y-auto rounded-md border bg-background shadow-lg">
+                          {collegeResults.map((r) => (
+                            <li key={`${r.kind}-${r.id}`}>
+                              <button
+                                type="button"
+                                onClick={() => addCollege(r)}
+                                className="flex w-full items-center justify-between gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left"
+                              >
+                                <span className="truncate">{r.name}</span>
+                                <span className="shrink-0 text-xs text-muted-foreground">
+                                  {r.kind === "uni" ? (r.country ? `🌍 ${r.country}` : "University") : `🇮🇳 ${r.state || "Indian College"}`}
+                                </span>
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  )}
+                  <CheckableBanner
+                    label="I haven't finalized the college yet"
+                    checked={values.collegeNotFinalized}
+                    onChange={(v) => set("collegeNotFinalized", v)}
+                  />
+                </Field>
+
+                <Field icon={Wallet} label="What annual tuition budget are you comfortable planning for?">
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {BUDGET_OPTIONS.map((b) => (
+                      <button
+                        key={b}
+                        type="button"
+                        onClick={() => set("tuitionBudget", b)}
+                        className={cn(
+                          "rounded-lg border px-4 py-3 text-sm text-left transition-colors",
+                          values.tuitionBudget === b
+                            ? "bg-accent/10 border-accent text-accent font-medium"
+                            : "text-foreground border-border hover:border-accent"
+                        )}
+                      >
+                        {b}
+                      </button>
+                    ))}
+                  </div>
+                  {values.tuitionBudget && (
+                    <p className="text-xs text-muted-foreground mt-2">
+                      This is your approximate tuition per year, not including living costs unless stated.
+                    </p>
+                  )}
+                  {values.tuitionBudget && (
+                    <div className="mt-3 space-y-2">
+                      <Label>What is your source of funds?</Label>
+                      <div className="grid gap-2">
+                        {FUNDING_OPTIONS.map((f) => (
+                          <button
+                            key={f}
+                            type="button"
+                            onClick={() => set("fundingSource", f)}
+                            className={cn(
+                              "rounded-lg border px-4 py-3 text-sm text-left transition-colors",
+                              values.fundingSource === f
+                                ? "bg-accent/10 border-accent text-accent font-medium"
+                                : "text-foreground border-border hover:border-accent"
+                            )}
+                          >
+                            {f}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </Field>
+
+                <Field icon={Languages} label="Will you need an English-language test for your applications?">
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { v: true, label: "Yes, I have / will take one" },
+                      { v: false, label: "No" },
+                    ].map((opt) => {
+                      const active = values.hasEnglishResult === opt.v;
+                      return (
+                        <button
+                          key={String(opt.v)}
+                          type="button"
+                          onClick={() => set("hasEnglishResult", opt.v)}
+                          className={cn(
+                            "rounded-full px-4 py-2 text-sm border transition-colors",
+                            active ? "bg-accent text-accent-foreground border-accent" : "text-muted-foreground border-border hover:border-accent"
+                          )}
+                        >
+                          {opt.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  {values.hasEnglishResult ? (
+                    <div className="grid gap-4 sm:grid-cols-2 mt-3">
+                      <div className="space-y-2">
+                        <Label>English exam type</Label>
+                        <Select
+                          value={values.englishTestType}
+                          onValueChange={(v) => {
+                            set("englishTestType", v);
+                            set("englishTestScore", "");
+                          }}
+                        >
+                          <SelectTrigger>
+                            <SelectValue>Select your exam...</SelectValue>
+                          </SelectTrigger>
+                          <SelectContent>
+                            {ENGLISH_TEST_OPTIONS.map((t) => (
+                              <SelectItem key={t.name} value={t.label}>
+                                {t.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label>Overall score</Label>
+                        <Input
+                          type="number"
+                          inputMode="decimal"
+                          min={0}
+                          max={999}
+                          step="any"
+                          value={values.englishTestScore}
+                          onChange={(e) => set("englishTestScore", e.target.value)}
+                          placeholder="e.g. 7.5"
+                        />
+                        {values.englishTestType && (
+                          <p className="text-xs text-muted-foreground">
+                            {ENGLISH_TEST_OPTIONS.find((t) => t.label === values.englishTestType)?.hint}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="space-y-2 mt-3">
+                      <Label>How would you describe your current English proficiency?</Label>
+                      <Select value={values.englishProficiency} onValueChange={(v) => set("englishProficiency", v)}>
+                        <SelectTrigger className="w-full">
+                          <SelectValue>Select your proficiency...</SelectValue>
+                        </SelectTrigger>
+                        <SelectContent>
+                          {PROFICIENCY_OPTIONS.map((p) => (
+                            <SelectItem key={p} value={p}>
+                              {p}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  )}
+                </Field>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <Field icon={Calendar} label="Preferred intake (optional)">
+                    <Select value={values.preferredIntake} onValueChange={(v) => set("preferredIntake", v)}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue>Select intake...</SelectValue>
+                      </SelectTrigger>
                       <SelectContent>
-                        {ENGLISH_TEST_OPTIONS.map((t) => (
-                          <SelectItem key={t.name} value={t.label}>{t.label}</SelectItem>
+                        {INTAKE_OPTIONS.map((i) => (
+                          <SelectItem key={i} value={i}>
+                            {i}
+                          </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label>Overall Score *</Label>
-                    <Input type="number" inputMode="decimal" min={0} max={999} step="any"
-                      value={values.englishTestScore} onChange={(e) => set("englishTestScore", e.target.value)} placeholder="e.g. 7.5" />
-                    {values.englishTestType && (
-                      <p className="text-xs text-muted-foreground">
-                        {ENGLISH_TEST_OPTIONS.find((t) => t.label === values.englishTestType)?.hint}
-                      </p>
-                    )}
-                  </div>
+                  </Field>
+                  <Field icon={Calendar} label="Preferred start year (optional)">
+                    <Select value={values.preferredYear} onValueChange={(v) => set("preferredYear", v)}>
+                      <SelectTrigger className="w-full">
+                        <SelectValue>Select year...</SelectValue>
+                      </SelectTrigger>
+                      <SelectContent>
+                        {START_YEAR_OPTIONS.map((y) => (
+                          <SelectItem key={y} value={y}>
+                            {y}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </Field>
                 </div>
-              ) : (
-                <div className="space-y-2 mt-3">
-                  <Label>What's your current English proficiency?</Label>
-                  <Select value={values.englishProficiency} onValueChange={(v) => set("englishProficiency", v)}>
-                    <SelectTrigger className="w-full"><SelectValue>Select your proficiency...</SelectValue></SelectTrigger>
-                    <SelectContent>
-                      {PROFICIENCY_OPTIONS.map((p) => (
-                        <SelectItem key={p} value={p}>{p}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              )}
-            </Field>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Field icon={Calendar} label="Preferred intake (optional)">
-                <Select value={values.preferredIntake} onValueChange={(v) => set("preferredIntake", v)}>
-                  <SelectTrigger className="w-full"><SelectValue>Select intake...</SelectValue></SelectTrigger>
-                  <SelectContent>
-                    {INTAKE_OPTIONS.map((i) => (<SelectItem key={i} value={i}>{i}</SelectItem>))}
-                  </SelectContent>
-                </Select>
-              </Field>
-              <Field icon={Calendar} label="Preferred start year (optional)">
-                <Select value={values.preferredYear} onValueChange={(v) => set("preferredYear", v)}>
-                  <SelectTrigger className="w-full"><SelectValue>Select year...</SelectValue></SelectTrigger>
-                  <SelectContent>
-                    {START_YEAR_OPTIONS.map((y) => (<SelectItem key={y} value={y}>{y}</SelectItem>))}
-                  </SelectContent>
-                </Select>
-              </Field>
-            </div>
+              </>
+            )}
           </div>
         )}
 
-        {step === 4 && (
-          <Review values={values} />
-        )}
+        {step === 4 && <Review values={values} />}
 
         <div className="flex items-center justify-between pt-2">
           <Button type="button" variant="ghost" onClick={back} disabled={step === 0 || submitting}>
@@ -672,8 +1042,12 @@ function StepIndicator({ step }: { step: number }) {
         const done = i < step;
         return (
           <li key={s.title} className="flex flex-1 items-center gap-2">
-            <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-medium",
-              active ? "bg-accent text-accent-foreground border-accent" : done ? "bg-accent/20 text-accent border-accent" : "text-muted-foreground border-border")}>
+            <span
+              className={cn(
+                "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-xs font-medium",
+                active ? "bg-accent text-accent-foreground border-accent" : done ? "bg-accent/20 text-accent border-accent" : "text-muted-foreground border-border"
+              )}
+            >
               {done ? <Check className="h-4 w-4" /> : <Icon className="h-4 w-4" />}
             </span>
             <span className={cn("hidden text-xs sm:block", active ? "text-foreground font-medium" : "text-muted-foreground")}>{s.title}</span>
@@ -712,9 +1086,15 @@ function ChipMulti({ options, selected, onToggle }: { options: string[]; selecte
       {options.map((o) => {
         const active = selected.includes(o);
         return (
-          <button key={o} type="button" onClick={() => onToggle(o)}
-            className={cn("rounded-full px-4 py-2 text-sm border transition-colors",
-              active ? "bg-accent text-accent-foreground border-accent" : "text-muted-foreground border-border hover:border-accent")}>
+          <button
+            key={o}
+            type="button"
+            onClick={() => onToggle(o)}
+            className={cn(
+              "rounded-full px-4 py-2 text-sm border transition-colors",
+              active ? "bg-accent text-accent-foreground border-accent" : "text-muted-foreground border-border hover:border-accent"
+            )}
+          >
             {o}
           </button>
         );
@@ -723,19 +1103,91 @@ function ChipMulti({ options, selected, onToggle }: { options: string[]; selecte
   );
 }
 
+function SubjectMulti({
+  subjects,
+  selectedNames,
+  query,
+  onQuery,
+  onToggle,
+  otherValue,
+  onOtherChange,
+  onOtherAdd,
+}: {
+  subjects: SubjectOption[];
+  selectedNames: string[];
+  query: string;
+  onQuery: (q: string) => void;
+  onToggle: (name: string, id?: string) => void;
+  otherValue: string;
+  onOtherChange: (v: string) => void;
+  onOtherAdd: () => void;
+}) {
+  const filtered = subjects.filter((s) => s.name.toLowerCase().includes(query.toLowerCase())).slice(0, 30);
+  return (
+    <div className="space-y-3">
+      <div className="flex flex-wrap gap-2">
+        {selectedNames.map((n) => (
+          <span key={n} className="inline-flex items-center gap-1 bg-accent/10 text-accent text-sm px-3 py-1.5 rounded-full">
+            {n}
+            <button type="button" onClick={() => onToggle(n)} aria-label={`Remove ${n}`}>
+              <X className="h-3 w-3" />
+            </button>
+          </span>
+        ))}
+      </div>
+      <div className="relative">
+        <div className="flex gap-2">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Input value={query} onChange={(e) => onQuery(e.target.value)} placeholder="Search subjects..." className="pl-9" />
+          </div>
+        </div>
+        {query && (
+          <ul className="absolute z-20 mt-1 w-full max-h-56 overflow-y-auto rounded-md border bg-background shadow-lg">
+            {filtered.map((s) => (
+              <li key={s.id}>
+                <button
+                  type="button"
+                  onClick={() => onToggle(s.name, s.id)}
+                  className="flex w-full items-center justify-between gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left"
+                >
+                  <span>{s.name}</span>
+                  {selectedNames.includes(s.name) && <Check className="h-3.5 w-3.5 text-accent" />}
+                </button>
+              </li>
+            ))}
+            {filtered.length === 0 && (
+              <li className="px-3 py-2 text-sm text-muted-foreground">No matching subject.</li>
+            )}
+          </ul>
+        )}
+      </div>
+      <div className="flex items-center gap-2">
+        <Input value={otherValue} onChange={(e) => onOtherChange(e.target.value)} placeholder="Other subject (specify)" className="max-w-[260px]" />
+        <Button variant="outline" type="button" onClick={onOtherAdd} disabled={!otherValue.trim()}>
+          <Plus className="h-4 w-4" /> Add
+        </Button>
+      </div>
+    </div>
+  );
+}
+
 function Review({ values }: { values: Values }) {
   const rows: [string, string][] = [
     ["Nationality", values.nationality || "—"],
     ["State", values.state || "—"],
-    ["Study level", values.studyLevel || "—"],
-    ["Highest education", values.highestEducation || "—"],
-    ["Grade level", values.gradeLevel || "—"],
-    ["Average grade", values.averageGrade ? `${values.averageGrade}%` : "—"],
+    ["Currently studying", values.studyLevel === "Other" ? values.studyLevelOther || "—" : values.studyLevel || "—"],
+    ["Highest education", values.highestEducation === "Other" ? values.highestEducationOther || "—" : values.highestEducation || "—"],
+    ["Average grade", values.averageGradeUnknown ? "Not sure yet" : values.averageGrade ? `${values.averageGrade}%` : "—"],
     ["Exams", values.exams.length ? values.exams.join(", ") : "—"],
-    ["Subjects studied", values.subjectsStudied.length ? values.subjectsStudied.join(", ") : "—"],
-    ["Subjects enjoyed", values.subjectsEnjoyed.length ? values.subjectsEnjoyed.join(", ") : "—"],
-    ["Preferred career", values.careerNotFinalized ? "Not finalized yet" : values.preferredCareer || "—"],
+    ["Subjects studied", [...values.subjectsStudied, ...values.subjectOtherStudied].length ? [...values.subjectsStudied, ...values.subjectOtherStudied].join(", ") : "—"],
+    ["Subjects enjoyed", [...values.subjectsEnjoyed, ...values.subjectOtherEnjoyed].length ? [...values.subjectsEnjoyed, ...values.subjectOtherEnjoyed].join(", ") : "—"],
+    ["Preferred career", values.careerNotFinalized ? "Not decided yet" : values.preferredCareer || "—"],
     ["Activities", values.activityInterests.length ? values.activityInterests.join(", ") : "—"],
+    [
+      "Study abroad",
+      values.studyAbroad === "yes" ? "Yes" : values.studyAbroad === "no" ? "No" : values.studyAbroad === "unsure" ? "Not sure yet" : "—",
+    ],
     ["Countries", values.countryNotFinalized ? "Not finalized yet" : values.targetCountries.join(", ") || "—"],
     ["Colleges", values.collegeNotFinalized ? "Not finalized yet" : values.targetColleges.join(", ") || "—"],
     ["Tuition budget", values.tuitionBudget || "—"],

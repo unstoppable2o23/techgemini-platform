@@ -18,6 +18,7 @@ export async function GET() {
       gender: true,
       gradeLevel: true,
       studyLevel: true,
+      studyAbroad: true,
       exams: true,
       subjectsStudied: true,
       subjectsEnjoyed: true,

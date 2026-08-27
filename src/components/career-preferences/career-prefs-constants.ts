@@ -229,12 +229,17 @@ export const EXAM_OPTIONS = [
 ];
 
 export const STUDY_LEVEL_OPTIONS = [
-  "Secondary School (Grades 9-10)",
-  "Senior Secondary (Grades 11-12)",
-  "Diploma",
-  "Bachelor's Degree",
-  "Master's Degree",
-  "Doctoral Degree",
+  "Class 8",
+  "Class 9",
+  "Class 10",
+  "Class 11",
+  "Class 12",
+  "Year 1 Undergraduate",
+  "Year 2 Undergraduate",
+  "Year 3 Undergraduate",
+  "Year 4 Undergraduate",
+  "Postgraduate",
+  "Doctoral",
   "Other",
 ];
 

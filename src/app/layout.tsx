@@ -6,7 +6,6 @@ import { SessionProvider } from "@/providers/session-provider";
 import { TenantThemeProvider } from "@/providers/tenant-theme-provider";
 import { TopNav } from "@/components/layout/top-nav";
 import { AccessDeniedModal } from "@/components/access-denied-modal";
-import { SessionTimeout } from "@/components/session-timeout";
 import { Toaster } from "@/components/ui/toaster";
 import { prisma } from "@/lib/prisma";
 import "./globals.css";
@@ -83,7 +82,6 @@ export default async function RootLayout({
           <TenantThemeProvider>
             <TopNav />
             <main className="pb-20 md:pb-0">{children}</main>
-            <SessionTimeout />
             <AccessDeniedModal />
             <Toaster />
           </TenantThemeProvider>
