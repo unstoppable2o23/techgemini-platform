@@ -592,6 +592,34 @@ model EducationInstitutionMapping {
   @@index([indianInstitutionId])
 }
 
+model CareerTrend {
+  id                String   @id @default(cuid())
+  careerId          String
+  period            String   @default("2026")
+  region            String   @default("GLOBAL")
+  trendScore        Float    @default(0)
+  demandIndicator   String?
+  growthIndicator   String?
+  trending          Boolean  @default(false)
+  emerging          Boolean  @default(false)
+  fastGrowing       Boolean  @default(false)
+  futureFacing      Boolean  @default(false)
+  source            String   @default("SYSTEM_DERIVED")
+  sourceUrl         String?
+  methodology       String?
+  recordedAt        DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([careerId, period, region, source])
+  @@index([careerId])
+  @@index([period])
+  @@index([trending])
+  @@index([emerging])
+  @@index([fastGrowing])
+  @@index([futureFacing])
+  @@index([region])
+}
+
 model DailyUsage {
   id           String   @id @default(cuid())
   userId       String

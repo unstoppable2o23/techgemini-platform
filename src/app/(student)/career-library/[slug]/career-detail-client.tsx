@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import CareerTrendSection from "./career-trend-section";
 import {
   ArrowLeft,
   Briefcase,
@@ -684,6 +685,11 @@ export default function CareerDetailClient({ career }: { career: any }) {
           </div>
         </div>
       )}
+
+      <div>
+        <SectionHeader icon={TrendingUp} tint="from-blue-500 to-blue-500">Career Trend &amp; Outlook</SectionHeader>
+        <CareerTrendSection careerId={career.id} />
+      </div>
 
       {(educationPathways.primary.length > 0 || educationPathways.alternative.length > 0 || educationPathways.optional.length > 0) && (
         <div>
