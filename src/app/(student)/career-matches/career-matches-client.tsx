@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -58,13 +58,30 @@ const STRENGTH_STYLES: Record<string, { label: string; variant: string }> = {
 export function CareerMatchesClient() {
   const [data, setData] = useState<MatchData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const load = useCallback(() => {
+    setLoading(true);
+    setError(null);
+    fetch("/api/student/career-matches?limit=20")
+      .then((r) => r.json().then((d) => ({ ok: r.ok, d })))
+      .then(({ ok, d }: { ok: boolean; d: any }) => {
+        if (ok && d && Array.isArray(d.matches)) {
+          setData(d);
+        } else {
+          setError(d?.error || "We couldn't load your career matches right now.");
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        setError("We couldn't load your career matches right now.");
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
-    fetch("/api/student/career-matches?limit=20")
-      .then((r) => r.json())
-      .then(setData)
-      .catch(() => setLoading(false));
-  }, []);
+    load();
+  }, [load]);
 
   if (loading) {
     return (
@@ -73,6 +90,24 @@ export function CareerMatchesClient() {
         {[1, 2, 3].map((i) => (
           <Skeleton key={i} className="h-32 rounded-2xl" />
         ))}
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="space-y-6 p-6 pt-20 max-w-3xl mx-auto">
+        <PageHeader icon={TrendingUp} title="Career Matches" description="" eyebrow="" />
+        <Card>
+          <CardContent className="py-10 text-center">
+            <p className="text-sm text-muted-foreground">{error}</p>
+            <div className="mt-4">
+              <Button size="sm" onClick={load}>
+                Try again
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     );
   }

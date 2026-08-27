@@ -37,8 +37,16 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("Career matching failed:", error);
     return NextResponse.json(
-      { error: "Failed to generate career matches" },
-      { status: 500 }
+      {
+        matches: [],
+        totalCareersScored: 0,
+        studentSignalsUsed: 0,
+        assessmentCoverage: [],
+        hasAssessmentData: false,
+        disclaimer:
+          "We couldn't generate your career matches right now. Please try again shortly.",
+      },
+      { status: 200 }
     );
   }
 }
