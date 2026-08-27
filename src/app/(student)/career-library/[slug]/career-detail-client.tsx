@@ -66,6 +66,24 @@ interface InstitutionItem {
   qsRank: number | null;
 }
 
+interface UniMatch {
+  institution: {
+    id: string;
+    name: string;
+    dataset: "indian" | "global";
+    state: string | null;
+    country: string | null;
+    website: string | null;
+    institutionType: string | null;
+  };
+  matchScore: number;
+  confidence: number;
+  mappingStatus: "curated" | "institutionType-category" | "none";
+  reasons: string[];
+  limitations: string[];
+  evidence: string[];
+}
+
 const DEMAND_STYLES: Record<string, string> = {
   High: "bg-white/20 text-white border border-white/30",
   Medium: "bg-white/20 text-white border border-white/30",
@@ -180,6 +198,12 @@ export default function CareerDetailClient({ career }: { career: any }) {
   const [institutionsLoading, setInstitutionsLoading] = useState(false);
   const [institutionsVisible, setInstitutionsVisible] = useState(false);
 
+  const [uniMatches, setUniMatches] = useState<UniMatch[]>([]);
+  const [uniLoading, setUniLoading] = useState(false);
+  const [uniVisible, setUniVisible] = useState(false);
+  const [uniError, setUniError] = useState<string | null>(null);
+  const [uniExpanded, setUniExpanded] = useState<string | null>(null);
+
   useEffect(() => {
     async function fetchPathways() {
       try {
@@ -231,6 +255,36 @@ export default function CareerDetailClient({ career }: { career: any }) {
       loadInstitutions(1);
     }
   }, [institutionsVisible, career.id]);
+
+  async function loadUniversityMatches() {
+    setUniLoading(true);
+    setUniError(null);
+    try {
+      const res = await fetch(`/api/student/university-matches?careerId=${career.id}&limit=10`);
+      if (res.status === 401 || res.status === 403) {
+        setUniError("Sign in as a student to see your personalized university matches.");
+        setUniMatches([]);
+        return;
+      }
+      if (res.ok) {
+        const data = await res.json();
+        setUniMatches(data.matches || []);
+      } else {
+        setUniError("Unable to load university matches.");
+      }
+    } catch (e) {
+      console.error("Failed to fetch university matches:", e);
+      setUniError("Unable to load university matches.");
+    } finally {
+      setUniLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    if (uniVisible) {
+      loadUniversityMatches();
+    }
+  }, [uniVisible, career.id]);
 
   return (
     <div className="space-y-6 p-6 pt-20 max-w-4xl mx-auto">
@@ -626,6 +680,97 @@ export default function CareerDetailClient({ career }: { career: any }) {
                   </div>
                 )}
               </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {(educationPathways.primary.length > 0 || educationPathways.alternative.length > 0 || educationPathways.optional.length > 0) && (
+        <div>
+          <SectionHeader icon={GraduationCap} tint="from-blue-500 to-blue-500">Recommended Universities For You</SectionHeader>
+          <div className="rounded-2xl border bg-card p-5 space-y-3">
+            {!uniVisible && (
+              <Button variant="outline" size="sm" onClick={() => setUniVisible(true)}>
+                View Your University Matches
+              </Button>
+            )}
+            {uniVisible && uniLoading && (
+              <div className="text-sm text-muted-foreground">Calculating your personalized matches...</div>
+            )}
+            {uniVisible && uniError && (
+              <p className="text-sm text-muted-foreground">{uniError}</p>
+            )}
+            {uniVisible && !uniLoading && !uniError && uniMatches.length === 0 && (
+              <p className="text-sm text-muted-foreground">
+                No institution candidates are connected to this career&apos;s education pathways yet.
+              </p>
+            )}
+            {uniVisible && !uniLoading && uniMatches.length > 0 && (
+              <div className="space-y-3">
+                {uniMatches.map((m) => (
+                  <div key={m.institution.id} className="rounded-lg border bg-background p-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium">{m.institution.name}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {[m.institution.institutionType, m.institution.state, m.institution.country].filter(Boolean).join(" · ")}
+                        </p>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <p className="text-sm font-semibold text-accent">{m.matchScore}% match</p>
+                        <p className="text-xs text-muted-foreground">Confidence {m.confidence}%</p>
+                      </div>
+                    </div>
+                    <div className="mt-2 flex flex-wrap gap-2 items-center">
+                      {m.mappingStatus === "curated" && (
+                        <Badge variant="secondary" className="text-xs">Verified mapping</Badge>
+                      )}
+                      {m.mappingStatus === "institutionType-category" && (
+                        <Badge variant="outline" className="text-xs text-amber-600 border-amber-300">Category-based</Badge>
+                      )}
+                      {m.mappingStatus === "none" && (
+                        <Badge variant="outline" className="text-xs">Unverified</Badge>
+                      )}
+                      {m.institution.website && (
+                        <a href={m.institution.website} target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline break-all">
+                          Visit
+                        </a>
+                      )}
+                      <Button variant="ghost" size="sm" className="text-xs" onClick={() => setUniExpanded(uniExpanded === m.institution.id ? null : m.institution.id)}>
+                        {uniExpanded === m.institution.id ? "Hide" : "Why?"}
+                      </Button>
+                    </div>
+                    {uniExpanded === m.institution.id && (
+                      <div className="mt-3 space-y-2 text-xs">
+                        {m.reasons.length > 0 && (
+                          <div>
+                            <p className="font-medium mb-1">Why recommended</p>
+                            <ul className="list-disc pl-4 space-y-0.5 text-muted-foreground">
+                              {m.reasons.slice(0, 4).map((r, i) => <li key={i}>{r}</li>)}
+                            </ul>
+                          </div>
+                        )}
+                        {m.limitations.length > 0 && (
+                          <div>
+                            <p className="font-medium mb-1 text-amber-700">Limitations</p>
+                            <ul className="list-disc pl-4 space-y-0.5 text-muted-foreground">
+                              {m.limitations.slice(0, 4).map((l, i) => <li key={i}>{l}</li>)}
+                            </ul>
+                          </div>
+                        )}
+                        {m.evidence.length > 0 && (
+                          <div>
+                            <p className="font-medium mb-1">Evidence</p>
+                            <ul className="list-disc pl-4 space-y-0.5 text-muted-foreground">
+                              {m.evidence.slice(0, 3).map((e, i) => <li key={i}>{e}</li>)}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             )}
           </div>
         </div>
