@@ -38,6 +38,8 @@ import {
   LogOut,
   ClipboardCheck,
   Bookmark,
+  Calculator,
+  MoreHorizontal,
   type LucideIcon,
 } from "lucide-react";
 
@@ -60,17 +62,27 @@ const COUNSELOR_NAV_ITEMS: NavItem[] = [
 ];
 
 const STUDENT_NAV_ITEMS: NavItem[] = [
-  { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Home", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Career Matches", href: "/career-matches", icon: Target },
   { label: "Career Profile", href: "/career-profile", icon: ClipboardCheck },
+  { label: "Universities", href: "/universities", icon: Building2 },
   { label: "Saved", href: "/saved", icon: Bookmark },
-  { label: "College Finder", href: "/college-finder", featureKey: "collegeFinder", icon: Search },
-  { label: "AI Odds Calculator", href: "/odds-calculator", featureKey: "aiOddsCalculator", icon: Target },
-  { label: "Mock Tests", href: "/mock-tests", featureKey: "mockTests", icon: FileText },
-  { label: "Scholarships", href: "/scholarships", featureKey: "scholarshipHub", icon: Trophy },
   { label: "Career Library", href: "/career-library", featureKey: "careerLibrary", icon: Library },
-  { label: "Indian Colleges and Universities", href: "/indian-colleges", icon: Landmark },
   { label: "Appointments", href: "/appointments", featureKey: "appointments", icon: CalendarDays },
   { label: "Messages", href: "/messages", icon: MessageSquare },
+  { label: "College Finder", href: "/college-finder", featureKey: "collegeFinder", icon: Search },
+  { label: "AI Odds Calculator", href: "/odds-calculator", featureKey: "aiOddsCalculator", icon: Calculator },
+  { label: "Mock Tests", href: "/mock-tests", featureKey: "mockTests", icon: FileText },
+  { label: "Scholarships", href: "/scholarships", featureKey: "scholarshipHub", icon: Trophy },
+  { label: "Indian Colleges and Universities", href: "/indian-colleges", icon: Landmark },
+];
+
+// Compact primary destinations for the student mobile bottom navigation.
+const STUDENT_BOTTOM_NAV: NavItem[] = [
+  { label: "Home", href: "/dashboard", icon: LayoutDashboard },
+  { label: "Careers", href: "/career-matches", icon: Target },
+  { label: "Universities", href: "/universities", icon: Building2 },
+  { label: "Saved", href: "/saved", icon: Bookmark },
 ];
 
 const UNIVERSITY_ADMIN_NAV_ITEMS: NavItem[] = [
@@ -107,6 +119,7 @@ export function TopNav() {
   const isCounselor = role === "COUNSELOR" || role === "SUPER_ADMIN";
   const isSuperAdmin = role === "SUPER_ADMIN";
   const isUniversityAdmin = role === "UNIVERSITY_ADMIN";
+  const isStudent = role === "STUDENT";
   const navItems = isUniversityAdmin
     ? UNIVERSITY_ADMIN_NAV_ITEMS
     : isCounselor
@@ -377,6 +390,43 @@ export function TopNav() {
             })}
           </ul>
         </div>
+      )}
+
+      {session && isStudent && (
+        <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-border bg-white/95 backdrop-blur-xl pb-[env(safe-area-inset-bottom)]">
+          <ul className="grid grid-cols-5 items-stretch">
+            {STUDENT_BOTTOM_NAV.map((item) => {
+              const enabled = canShowItem(item);
+              const isActive = pathname === item.href || (item.href !== "/dashboard" && pathname.startsWith(item.href));
+              const Icon = item.icon;
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={enabled ? item.href : "#"}
+                    onClick={(e: React.MouseEvent) => handleNavClick(e, item)}
+                    className={`flex flex-col items-center justify-center gap-0.5 py-2 text-[10px] font-medium transition-colors ${
+                      isActive ? "text-accent" : "text-muted-foreground"
+                    }`}
+                  >
+                    <Icon className="h-5 w-5" />
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+            <li>
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen((o) => !o)}
+                className="flex w-full flex-col items-center justify-center gap-0.5 py-2 text-[10px] font-medium text-muted-foreground"
+                aria-label="More"
+              >
+                <MoreHorizontal className="h-5 w-5" />
+                More
+              </button>
+            </li>
+          </ul>
+        </nav>
       )}
     </header>
   );

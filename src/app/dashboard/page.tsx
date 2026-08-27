@@ -196,14 +196,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-6 p-6 pt-20">
-      <PageHeader
-        icon={GraduationCap}
-        title="Student Dashboard"
-        description={`Welcome back, ${user.firstName}`}
-        eyebrow="Overview"
-      />
-
-      <StudentIntelligenceHub dashboard={dashboard} />
+      <StudentIntelligenceHub dashboard={dashboard} studentName={user.firstName} />
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {featureCards.map((f) => (

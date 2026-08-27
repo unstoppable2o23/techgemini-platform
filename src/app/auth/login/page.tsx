@@ -4,13 +4,26 @@ import { useState, useEffect, useRef } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Mail, Lock, ArrowRight, ArrowLeft, LayoutDashboard } from "lucide-react";
+import {
+  Mail,
+  Lock,
+  ArrowRight,
+  ArrowLeft,
+  LayoutDashboard,
+  Eye,
+  EyeOff,
+  Compass,
+  GraduationCap,
+  MessagesSquare,
+  CheckCircle2,
+} from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 
 export default function LoginPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [logoUrl, setLogoUrl] = useState<string | undefined>();
@@ -39,6 +52,10 @@ export default function LoginPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!email || !password) {
+      setError("Please enter your email and password.");
+      return;
+    }
     setLoading(true);
     setError("");
 
@@ -58,18 +75,18 @@ export default function LoginPage() {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-slate-200 bg-white py-2.5 pl-10 pr-3.5 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50";
+    "w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-3.5 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50";
 
   return (
     <div className="grid min-h-screen bg-[#f0f4f8] lg:grid-cols-2">
       {/* Branded aside */}
       <aside
         className="relative hidden flex-col overflow-hidden px-12 py-10 text-white lg:flex"
-        style={{ background: "linear-gradient(135deg, #2563eb, #8b5cf6)" }}
+        style={{ background: "linear-gradient(150deg, #1d4ed8, #4f46e5)" }}
       >
         <div
           className="pointer-events-none absolute -right-1/4 -top-1/4 aspect-square w-4/5 rounded-full"
-          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.18), transparent 60%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.16), transparent 60%)" }}
         />
         <div
           className="pointer-events-none absolute -bottom-1/3 -left-1/5 aspect-square w-4/5 rounded-full"
@@ -90,28 +107,32 @@ export default function LoginPage() {
 
         <div className="relative z-10 mt-auto max-w-md">
           <span className="block text-[10px] font-medium uppercase tracking-[0.18em] text-white/70">
-            Secure · Workspace
+            Career + Education Guidance
           </span>
           <h1 className="mt-3.5 text-3xl font-bold leading-tight tracking-tight">
-            Your study-abroad cockpit, all in one place.
+            Discover the career and study path that fits <span className="underline decoration-white/40">you</span>.
           </h1>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/85">
-            Admissions, counselors, colleges, test prep, and progress — managed from a single, focused dashboard.
+            Answer a few questions, explore personalized careers, and find where to study — all in one calm, guided space.
           </p>
-          <figure className="mt-8 rounded-xl border border-white/15 bg-white/10 p-5 text-[13px] leading-relaxed text-white/90 backdrop-blur">
-            &ldquo;Dozens of students, one workspace. Everything about their applications finally lives in the same place.&rdquo;
-            <figcaption className="mt-3 flex items-center gap-2.5 text-xs text-white/75">
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-[11px] font-semibold">
-                AK
-              </span>
-              Career Counselor
-            </figcaption>
-          </figure>
+
+          <ul className="mt-8 space-y-3 text-sm text-white/90">
+            {[
+              { icon: Compass, text: "Careers matched to your interests and strengths" },
+              { icon: GraduationCap, text: "Clear education pathways for each career" },
+              { icon: MessagesSquare, text: "Guidance from your counselor when you need it" },
+            ].map((f, i) => (
+              <li key={i} className="flex items-center gap-3">
+                <CheckCircle2 className="h-4 w-4 shrink-0 text-white/80" />
+                {f.text}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="relative z-10 mt-auto flex gap-5 pt-6 text-[10px] tracking-wide text-white/55">
           <span>© 2026</span>
-          <span>SECURE · ENCRYPTED</span>
+          <span>PRIVATE · GUIDED</span>
         </div>
       </aside>
 
@@ -125,7 +146,6 @@ export default function LoginPage() {
             <ArrowLeft className="h-3.5 w-3.5" /> Back to home
           </Link>
           <div className="flex items-center gap-2 text-xs text-[#64748b]">
-            {/* Mobile brand */}
             <span className="flex items-center gap-2 lg:hidden">
               <span className="flex h-6 w-6 items-center justify-center rounded-md bg-blue-600 text-white">
                 {logoUrl ? (
@@ -147,12 +167,14 @@ export default function LoginPage() {
         <div className="mx-auto w-full max-w-[400px] py-12 text-[#1e293b]">
           <h2 className="text-[26px] font-bold tracking-tight">Welcome back</h2>
           <p className="mt-1 text-[13.5px] leading-relaxed text-[#64748b]">
-            Sign in to your workspace to pick up where you left off.
+            Sign in to continue exploring your careers and study options.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4" noValidate>
             {error && (
-              <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>
+              <p className="rounded-xl bg-red-50 px-3 py-2.5 text-sm text-red-600" role="alert">
+                {error}
+              </p>
             )}
 
             <div>
@@ -166,30 +188,45 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@company.com"
+                  placeholder="you@example.com"
                   required
                   autoComplete="email"
+                  aria-invalid={!!error}
                   className={inputClass}
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="password" className="mb-1.5 block text-[13px] font-medium text-slate-700">
-                Password
-              </label>
+              <div className="mb-1.5 flex items-center justify-between">
+                <label htmlFor="password" className="block text-[13px] font-medium text-slate-700">
+                  Password
+                </label>
+                <Link href="/auth/forgot-password" className="text-xs font-medium text-blue-600 hover:text-blue-700">
+                  Forgot password?
+                </Link>
+              </div>
               <div className="relative">
                 <Lock className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
                 <input
                   id="password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
                   autoComplete="current-password"
+                  aria-invalid={!!error}
                   className={inputClass}
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((s) => !s)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 rounded-md p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-600"
+                >
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
               </div>
             </div>
 
@@ -206,7 +243,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="mt-1 flex w-full items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-600/20 transition hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-60"
+              className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-blue-600/20 transition hover:bg-blue-700 disabled:pointer-events-none disabled:opacity-60"
             >
               {loading ? "Signing in…" : "Sign in"}
               {!loading && <ArrowRight className="h-4 w-4" />}

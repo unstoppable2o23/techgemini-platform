@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Bookmark, Trash2, ArrowRight } from "lucide-react";
+import { EmptyState } from "@/components/student/display";
+import { Bookmark, Trash2, ArrowRight, Sparkles, GraduationCap, Building2, Eye } from "lucide-react";
 
 type SavedItem = {
   id: string;
@@ -17,11 +18,19 @@ type SavedItem = {
   createdAt: string;
 };
 
-const TYPE_LABEL: Record<string, string> = {
-  CAREER: "Careers",
-  EDUCATION: "Education",
-  UNIVERSITY: "Universities",
+const TYPE_META: Record<string, { label: string; icon: typeof Bookmark }> = {
+  CAREER: { label: "Careers", icon: Sparkles },
+  EDUCATION: { label: "Education", icon: GraduationCap },
+  UNIVERSITY: { label: "Universities", icon: Building2 },
 };
+
+function formatDate(iso: string): string {
+  try {
+    return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  } catch {
+    return "";
+  }
+}
 
 export default function SavedPage() {
   const router = useRouter();
@@ -70,64 +79,83 @@ export default function SavedPage() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6">
+    <div className="mx-auto max-w-4xl space-y-6 p-6">
       <div>
-        <h1 className="text-2xl font-semibold">Your Shortlist</h1>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">Your list</p>
+        <h1 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">My Shortlist</h1>
+        <p className="mt-1 text-sm text-muted-foreground">
           Careers, education pathways, and universities you saved for later.
         </p>
       </div>
 
-      {loading && <p className="text-sm text-muted-foreground">Loading…</p>}
-      {error && (
-        <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">
-          {error}
+      {loading && (
+        <div className="space-y-3">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="h-16 animate-pulse rounded-xl border bg-muted/30" />
+          ))}
         </div>
+      )}
+
+      {error && (
+        <div className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800">{error}</div>
       )}
 
       {!loading && items.length === 0 && (
-        <Card>
-          <CardContent className="p-6 text-center text-muted-foreground">
-            <Bookmark className="h-8 w-8 mx-auto mb-2 opacity-40" />
-            <p>No saved items yet.</p>
-            <p className="text-xs mt-1">
-              Save careers or universities to build your shortlist.
-            </p>
-            <Link
-              href="/career-library"
-              className="inline-flex items-center gap-1 mt-3 text-accent hover:underline text-sm"
-            >
+        <EmptyState
+          icon={Bookmark}
+          title="Nothing saved yet"
+          description="Tap the save icon on any career or university to keep it here and compare later."
+          action={
+            <Link href="/career-library" className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
               Explore careers <ArrowRight className="h-3.5 w-3.5" />
             </Link>
-          </CardContent>
-        </Card>
+          }
+        />
       )}
 
-      {Object.entries(grouped).map(([type, list]) => (
-        <div key={type}>
-          <h2 className="font-semibold mb-2">{TYPE_LABEL[type] ?? type}</h2>
-          <div className="space-y-2">
-            {list.map((item) => (
-              <Card key={item.id}>
-                <CardContent className="p-3 flex items-center justify-between gap-3">
-                  <Link href={item.href} className="min-w-0">
-                    <p className="font-medium truncate hover:text-accent">{item.title}</p>
-                    <p className="text-xs text-muted-foreground">{TYPE_LABEL[type]}</p>
-                  </Link>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => remove(item)}
-                    title="Remove"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      ))}
+      {!loading &&
+        Object.entries(grouped).map(([type, list]) => {
+          const meta = TYPE_META[type] ?? { label: type, icon: Bookmark };
+          const Icon = meta.icon;
+          return (
+            <section key={type} className="space-y-2">
+              <h2 className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                <Icon className="h-4 w-4 text-accent" />
+                {meta.label}
+                <span className="text-xs font-normal text-muted-foreground">({list.length})</span>
+              </h2>
+              <div className="space-y-2">
+                {list.map((item) => (
+                  <Card key={item.id} className="border-accent/10 shadow-sm">
+                    <CardContent className="flex items-center gap-3 p-3">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                        <Icon className="h-4 w-4" />
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <Link href={item.href} className="block truncate text-sm font-medium text-foreground hover:text-accent">
+                          {item.title}
+                        </Link>
+                        <p className="text-xs text-muted-foreground">
+                          Saved {formatDate(item.createdAt)}
+                          {item.note ? ` · ${item.note}` : ""}
+                        </p>
+                      </div>
+                      <Link
+                        href={item.href}
+                        className="hidden items-center gap-1 text-sm font-medium text-accent hover:underline sm:inline-flex"
+                      >
+                        <Eye className="h-4 w-4" /> View
+                      </Link>
+                      <Button variant="ghost" size="icon" onClick={() => remove(item)} title="Remove" aria-label={`Remove ${item.title}`}>
+                        <Trash2 className="h-4 w-4 text-muted-foreground hover:text-destructive" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          );
+        })}
     </div>
   );
 }
