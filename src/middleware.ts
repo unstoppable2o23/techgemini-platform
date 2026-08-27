@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { getToken } from "next-auth/jwt";
 
 const AUTH_PATHS = [
   "/auth/login",
@@ -7,7 +8,7 @@ const AUTH_PATHS = [
   "/auth/forgot-password",
 ];
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const hostname = request.headers.get("host") || "";
   const subdomain = extractSubdomain(hostname);
@@ -20,13 +21,22 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Validate the session token instead of only checking cookie presence.
+  // A present-but-expired cookie previously caused a redirect loop between
+  // /auth/login (this middleware) and /dashboard (getServerSession -> null).
+  let isAuthenticated = false;
+  try {
+    const token = await getToken({
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET,
+    });
+    isAuthenticated = Boolean(token);
+  } catch {
+    isAuthenticated = false;
+  }
+
   if (AUTH_PATHS.some((p) => pathname.startsWith(p))) {
-    const cookie = request.headers.get("cookie") || "";
-    if (
-      cookie.includes("next-auth.session-token") ||
-      cookie.includes("__Secure-next-auth.session-token") ||
-      cookie.includes("__Host-next-auth.session-token")
-    ) {
+    if (isAuthenticated) {
       return NextResponse.redirect(new URL("/dashboard", request.url));
     }
     return NextResponse.next();
@@ -37,11 +47,9 @@ export function middleware(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-tenant-id", tenantId);
 
-  const response = NextResponse.next({
+  return NextResponse.next({
     request: { headers: requestHeaders },
   });
-
-  return response;
 }
 
 function extractSubdomain(hostname: string): string {
