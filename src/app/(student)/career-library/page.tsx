@@ -3,7 +3,6 @@ import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import CareerLibraryClient from "./career-library-client";
-import TrendingCareersSection from "./trending-careers-section";
 
 export default async function CareerLibraryPage() {
   const session = await getServerSession(authOptions);
@@ -20,10 +19,5 @@ export default async function CareerLibraryPage() {
 
   if (!studentProfile?.featureAccess?.careerLibrary) redirect("/dashboard");
 
-  return (
-    <>
-      <TrendingCareersSection />
-      <CareerLibraryClient />
-    </>
-  );
+  return <CareerLibraryClient />;
 }

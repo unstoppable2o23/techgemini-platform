@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import SaveButton from "@/components/student/save-button";
+import { MatchPill, ConfidencePill } from "@/components/student/display";
 import CareerTrendSection from "./career-trend-section";
 import {
   ArrowLeft,
@@ -105,12 +106,10 @@ type Pathway = { name?: string; steps?: { title?: string; description?: string }
 function Accordion({
   icon,
   title,
-  tint,
   items,
 }: {
   icon: React.ReactNode;
   title: string;
-  tint: string;
   items: OptionItem[];
 }) {
   const [open, setOpen] = useState(false);
@@ -121,7 +120,7 @@ function Accordion({
         className="w-full flex items-center justify-between px-4 py-3.5 text-left hover:bg-accent/5 transition-colors"
       >
         <span className="flex items-center gap-2.5 font-medium">
-          <span className={`flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br ${tint} text-white`}>
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10 text-accent">
             {icon}
           </span>
           {title}
@@ -144,10 +143,10 @@ function Accordion({
   );
 }
 
-function SectionHeader({ icon: Icon, tint, children }: { icon: any; tint: string; children: React.ReactNode }) {
+function SectionHeader({ icon: Icon, children }: { icon: any; children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2.5 mb-4">
-      <span className={`flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br ${tint} text-white shadow-sm`}>
+      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent/10 text-accent shadow-sm">
         <Icon className="h-5 w-5" />
       </span>
       <h2 className="text-lg font-semibold">{children}</h2>
@@ -297,7 +296,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
       </Link>
 
       {/* HERO */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-accent to-primary p-8 md:p-10 text-white shadow-xl">
+      <div className="relative overflow-hidden rounded-3xl bg-accent p-8 md:p-10 text-white shadow-xl">
         <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-white/10 blur-3xl" />
         <div className="relative z-10">
@@ -342,7 +341,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
               : "—";
           return (
             <div key={s.label} className="rounded-2xl border bg-card p-4 transition-shadow hover:shadow-md">
-              <span className={`mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${s.grad} text-white shadow-sm`}>
+              <span className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent shadow-sm">
                 <Icon className="h-5 w-5" />
               </span>
               <p className="text-xs text-muted-foreground">{s.label}</p>
@@ -362,7 +361,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
       )}
 
       <div>
-        <SectionHeader icon={GraduationCap} tint="from-blue-500 to-blue-500">Eligibility &amp; Requirements</SectionHeader>
+        <SectionHeader icon={GraduationCap}>Eligibility &amp; Requirements</SectionHeader>
         <div className="space-y-2.5 rounded-2xl border bg-card p-5">
           {career.eligibility.map((e: string, i: number) => (
             <li key={i} className="flex items-start gap-2 text-sm list-none">
@@ -374,7 +373,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
       </div>
 
       <div>
-        <SectionHeader icon={Users} tint="from-blue-500 to-blue-500">Who Should Pursue This?</SectionHeader>
+        <SectionHeader icon={Users}>Who Should Pursue This?</SectionHeader>
         <div className="space-y-2.5 rounded-2xl border bg-card p-5">
           {career.whoShouldPursue.map((w: string, i: number) => (
             <li key={i} className="flex items-start gap-2 text-sm list-none">
@@ -386,7 +385,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
       </div>
 
       <div>
-        <SectionHeader icon={Clock} tint="from-blue-500 to-blue-500">Work Nature &amp; Reality</SectionHeader>
+        <SectionHeader icon={Clock}>Work Nature &amp; Reality</SectionHeader>
         <div className="rounded-2xl border bg-card p-5">
           <p className="text-sm text-muted-foreground mb-3">{career.workNatureDesc}</p>
           <div className="space-y-2.5">
@@ -402,7 +401,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
 
       {pathways.length > 0 && (
         <div>
-          <SectionHeader icon={Target} tint="from-blue-500 to-blue-500">Career Pathways</SectionHeader>
+          <SectionHeader icon={Target}>Career Pathways</SectionHeader>
           <div className="space-y-3">
             {visiblePathways.map((p: Pathway, i: number) => (
               <div key={i} className="overflow-hidden rounded-2xl border bg-card">
@@ -439,23 +438,23 @@ export default function CareerDetailClient({ career }: { career: any }) {
       )}
 
       <div>
-        <SectionHeader icon={Briefcase} tint="from-blue-500 to-blue-500">Career Options</SectionHeader>
+        <SectionHeader icon={Briefcase}>Career Options</SectionHeader>
         <div className="space-y-2.5">
           {career.conventionalOptions?.length > 0 && (
-            <Accordion icon={<Briefcase className="h-4 w-4" />} title="Conventional Options" tint="from-slate-500 to-slate-600" items={career.conventionalOptions} />
+            <Accordion icon={<Briefcase className="h-4 w-4" />} title="Conventional Options" items={career.conventionalOptions} />
           )}
           {career.newAgeOptions?.length > 0 && (
-            <Accordion icon={<Sparkles className="h-4 w-4" />} title="New-Age Options" tint="from-blue-500 to-blue-500" items={career.newAgeOptions} />
+            <Accordion icon={<Sparkles className="h-4 w-4" />} title="New-Age Options" items={career.newAgeOptions} />
           )}
           {career.aiRelatedOptions?.length > 0 && (
-            <Accordion icon={<Cpu className="h-4 w-4" />} title="AI-Related Options" tint="from-blue-500 to-blue-500" items={career.aiRelatedOptions} />
+            <Accordion icon={<Cpu className="h-4 w-4" />} title="AI-Related Options" items={career.aiRelatedOptions} />
           )}
         </div>
       </div>
 
       {faqs.length > 0 && (
         <div>
-          <SectionHeader icon={Sparkles} tint="from-blue-500 to-blue-500">FAQs</SectionHeader>
+          <SectionHeader icon={Sparkles}>FAQs</SectionHeader>
           <div className="space-y-2.5">
             {faqs.map((f, i) => (
               <div key={i} className="rounded-xl border bg-card p-4 transition-shadow hover:shadow-md">
@@ -469,7 +468,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
 
       {(career.technicalSkills?.length > 0 || career.softSkills?.length > 0) && (
         <div>
-          <SectionHeader icon={Cpu} tint="from-blue-500 to-blue-500">Skills</SectionHeader>
+          <SectionHeader icon={Cpu}>Skills</SectionHeader>
           <div className="space-y-4">
             {career.technicalSkills?.length > 0 && (
               <div>
@@ -498,7 +497,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
 
       {(educationPathways.primary.length > 0 || educationPathways.alternative.length > 0 || educationPathways.optional.length > 0 || educationPathways.subjects.length > 0) && (
         <div>
-          <SectionHeader icon={GraduationCap} tint="from-blue-500 to-blue-500">Education Pathways</SectionHeader>
+          <SectionHeader icon={GraduationCap}>Education Pathways</SectionHeader>
           <div className="space-y-4">
             {pathwaysLoading && <div className="text-sm text-muted-foreground">Loading education pathways...</div>}
             {!pathwaysLoading && (
@@ -610,7 +609,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
 
       {(educationPathways.primary.length > 0 || educationPathways.alternative.length > 0 || educationPathways.optional.length > 0) && (
         <div>
-          <SectionHeader icon={Landmark} tint="from-blue-500 to-blue-500">Institutions Offering Related Programs</SectionHeader>
+          <SectionHeader icon={Landmark}>Institutions Offering Related Programs</SectionHeader>
           <div className="rounded-2xl border bg-card p-5 space-y-3">
             {!institutionsVisible && (
               <Button variant="outline" size="sm" onClick={() => setInstitutionsVisible(true)}>
@@ -635,7 +634,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
                 <div className="space-y-2">
                   {institutions.list.map((inst) => (
                     <div key={inst.id} className="flex items-start gap-3 text-sm p-3 rounded-lg border bg-background">
-                      <Landmark className="h-5 w-5 mt-0.5 text-blue-500 shrink-0" />
+                      <Landmark className="h-5 w-5 mt-0.5 text-accent shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="font-medium">{inst.name}</p>
                         <p className="text-xs text-muted-foreground">
@@ -691,13 +690,13 @@ export default function CareerDetailClient({ career }: { career: any }) {
       )}
 
       <div>
-        <SectionHeader icon={TrendingUp} tint="from-blue-500 to-blue-500">Career Trend &amp; Outlook</SectionHeader>
+        <SectionHeader icon={TrendingUp}>Career Trend &amp; Outlook</SectionHeader>
         <CareerTrendSection careerId={career.id} />
       </div>
 
       {(educationPathways.primary.length > 0 || educationPathways.alternative.length > 0 || educationPathways.optional.length > 0) && (
         <div>
-          <SectionHeader icon={GraduationCap} tint="from-blue-500 to-blue-500">Recommended Universities For You</SectionHeader>
+          <SectionHeader icon={GraduationCap}>Recommended Universities For You</SectionHeader>
           <div className="rounded-2xl border bg-card p-5 space-y-3">
             {!uniVisible && (
               <Button variant="outline" size="sm" onClick={() => setUniVisible(true)}>
@@ -726,9 +725,9 @@ export default function CareerDetailClient({ career }: { career: any }) {
                           {[m.institution.institutionType, m.institution.state, m.institution.country].filter(Boolean).join(" · ")}
                         </p>
                       </div>
-                      <div className="text-right shrink-0">
-                        <p className="text-sm font-semibold text-accent">{m.matchScore}% match</p>
-                        <p className="text-xs text-muted-foreground">Confidence {m.confidence}%</p>
+                      <div className="flex flex-col items-end gap-1 shrink-0">
+                        <MatchPill score={m.matchScore} />
+                        <ConfidencePill confidence={m.confidence} />
                       </div>
                     </div>
                     <div className="mt-2 flex flex-wrap gap-2 items-center">
@@ -788,7 +787,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
 
       {(career.interests?.length > 0 || career.personalityTraits?.length > 0) && (
         <div>
-          <SectionHeader icon={Users} tint="from-blue-500 to-blue-500">Interests & Personality Fit</SectionHeader>
+          <SectionHeader icon={Users}>Interests & Personality Fit</SectionHeader>
           <div className="space-y-4">
             {career.interests?.length > 0 && (
               <div>
@@ -819,7 +818,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
 
       {(career.workEnvironment || career.workActivities?.length > 0) && (
         <div>
-          <SectionHeader icon={Briefcase} tint="from-blue-500 to-blue-500">Work Environment</SectionHeader>
+          <SectionHeader icon={Briefcase}>Work Environment</SectionHeader>
           <div className="space-y-2.5">
             {career.workEnvironment && (
               <p className="text-sm text-muted-foreground">{career.workEnvironment}</p>
@@ -840,7 +839,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
 
       {(career.relatedCareers?.length > 0 || career.alternativeCareers?.length > 0) && (
         <div>
-          <SectionHeader icon={Target} tint="from-blue-500 to-blue-500">Related Careers</SectionHeader>
+          <SectionHeader icon={Target}>Related Careers</SectionHeader>
           <div className="flex flex-wrap gap-2">
             {[...(career.relatedCareers || []), ...(career.alternativeCareers || [])].map((name: string, i: number) => {
               const slug = typeof name === "string" ? name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "";
