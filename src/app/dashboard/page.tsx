@@ -34,6 +34,8 @@ import {
 import { formatUsageMinutes } from "@/lib/format-utils";
 import { PageHeader } from "@/components/ui/page-header";
 import { StatCard } from "@/components/ui/stat-card";
+import { getStudentDashboard } from "@/lib/student/dashboard.ts";
+import StudentIntelligenceHub from "./student-intelligence-hub";
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions);
@@ -153,6 +155,7 @@ export default async function DashboardPage() {
     include: { featureAccess: true },
   });
   const featureAccess = studentProfile?.featureAccess;
+  const dashboard = await getStudentDashboard(user.id);
 
   const recentResults = await prisma.testResult.findMany({
     where: { studentId: studentProfile?.id },
@@ -272,6 +275,8 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
       )}
+
+      <StudentIntelligenceHub dashboard={dashboard} />
     </div>
   );
 }

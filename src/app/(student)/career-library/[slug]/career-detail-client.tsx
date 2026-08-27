@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import SaveButton from "@/components/student/save-button";
 import CareerTrendSection from "./career-trend-section";
 import {
   ArrowLeft,
@@ -319,6 +320,9 @@ export default function CareerDetailClient({ career }: { career: any }) {
             {career.title}
           </h1>
           <p className="text-white/85 mt-4 max-w-2xl text-base md:text-lg">{career.introduction}</p>
+          <div className="mt-5">
+            <SaveButton itemType="CAREER" itemId={career.id} />
+          </div>
         </div>
       </div>
 
