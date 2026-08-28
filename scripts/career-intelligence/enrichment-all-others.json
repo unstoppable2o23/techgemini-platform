@@ -5224,5 +5224,68 @@
       "Product Design"
     ],
     "minEdu": "Bachelor's"
+  },
+  "Game Development": {
+    "cat": "Technology & Software",
+    "tech": ["Unity/Unreal Engine", "C#/C++", "Game Design"],
+    "deg": ["B.SC Computer Science/Game Development", "B.TECH/B.E. Computer Science", "ANY degree + game portfolio"],
+    "subj": ["Computer Science", "Mathematics", "Physics", "Design", "Art & Design"],
+    "minEdu": "Bachelor's"
+  },
+  "Information Technology Business Analysis": {
+    "cat": "Technology & Software",
+    "tech": ["Requirements Analysis", "SQL", "Data Modelling"],
+    "deg": ["B.TECH/B.E. Computer Science", "BCA/MCA", "B.COM/BBA + analytics certification"],
+    "subj": ["Computer Science", "Mathematics", "Business Studies", "Statistics"],
+    "minEdu": "Bachelor's"
+  },
+  "Veterinary Science": {
+    "cat": "Healthcare & Medicine",
+    "tech": ["Animal Care", "Clinical Diagnostics", "Surgery Assistance"],
+    "deg": ["B.V.Sc & A.H.", "ANY life-science degree"],
+    "subj": ["Biology", "Chemistry", "Physics"],
+    "minEdu": "Bachelor's"
+  },
+  "Forensic Science": {
+    "cat": "Life Sciences",
+    "tech": ["Evidence Handling", "Laboratory Analysis", "Chain of Custody"],
+    "deg": ["B.TECH/B.E./BCA + forensic certifications", "ANY life-science degree", "M.Sc Cyber Forensics"],
+    "subj": ["Biology", "Chemistry", "Forensic Science", "Physics"],
+    "minEdu": "Bachelor's"
+  },
+  "Visual Merchandising": {
+    "cat": "Marketing & Advertising",
+    "tech": ["Visual Display", "Retail Planning", "Space Design"],
+    "deg": ["BBA Retail/BBA + MBA", "B.Des Graphic Design", "ANY degree + retail experience", "B.Des Fashion Design"],
+    "subj": ["Art & Design", "Business Studies", "Design", "Marketing"],
+    "minEdu": "Bachelor's"
+  },
+  "Advertising": {
+    "cat": "Marketing & Advertising",
+    "tech": ["Campaign Management", "Copywriting", "Media Planning"],
+    "deg": ["BBA/MBA Marketing common", "BA/BM Journalism & Mass Communication", "ANY degree + MBA Marketing/Research preferred", "BA English Literature + writing practice"],
+    "subj": ["Marketing", "Business Studies", "English", "Mass Communication"],
+    "minEdu": "Bachelor's"
+  },
+  "Agricultural Engineering": {
+    "cat": "Agriculture",
+    "tech": ["Irrigation Systems", "Farm Machinery Design", "Soil Conservation"],
+    "deg": ["B.TECH/B.E. Agricultural Engineering", "B.SC Agriculture", "B.TECH/B.E. Civil Engineering"],
+    "subj": ["Physics", "Mathematics", "Chemistry", "Biology"],
+    "minEdu": "Bachelor's"
+  },
+  "Wildlife Biology": {
+    "cat": "Life Sciences",
+    "tech": ["Field Survey", "Species Identification", "Ecological Statistics"],
+    "deg": ["B.SC Marine Biology/Zoology", "B.SC Environmental Science", "ANY life-science degree"],
+    "subj": ["Biology", "Chemistry", "Geography", "Environmental Science"],
+    "minEdu": "Bachelor's"
+  },
+  "Library Sciences": {
+    "cat": "Education",
+    "tech": ["Cataloguing", "Information Organisation", "Research Methods"],
+    "deg": ["M.Lib", "ANY degree"],
+    "subj": ["English", "Languages", "Research Methods"],
+    "minEdu": "Master's"
   }
 }

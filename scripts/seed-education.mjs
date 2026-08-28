@@ -23,6 +23,8 @@ const EDUCATION_LEVELS = {
   "MCA": "Master's",
   "M.Des": "Master's",
   "M.Arch": "Master's",
+  "M.LIB": "Master's",
+  "MLIS": "Master's",
   "MD": "Master's",
   "MS": "Master's",
   "PhD": "Doctoral",
