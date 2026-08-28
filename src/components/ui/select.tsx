@@ -103,23 +103,31 @@ const SelectContent = React.forwardRef<
   const localRef = React.useRef<HTMLDivElement>(null);
   const [style, setStyle] = React.useState<React.CSSProperties | null>(null);
 
-  React.useLayoutEffect(() => {
+  const measure = React.useCallback(() => {
     if (!ctx?.open || !ctx.triggerRef.current) return;
     const t = ctx.triggerRef.current.getBoundingClientRect();
     const h = localRef.current?.offsetHeight ?? 220;
-    let top = t.bottom + window.scrollY + 4;
-    const viewBottom = window.scrollY + window.innerHeight;
-    if (top + h > viewBottom - 8) {
-      top = Math.max(window.scrollY + 8, t.top + window.scrollY - h - 4);
-    }
-    setStyle({
-      position: "absolute",
-      top,
-      left: t.left + window.scrollX,
-      width: t.width,
-      zIndex: 60,
-    });
-  }, [ctx?.open, children]);
+    let top = t.bottom + 4;
+    if (top + h > window.innerHeight - 8) top = Math.max(8, t.top - h - 4);
+    setStyle({ position: "fixed", top, left: t.left, width: t.width, zIndex: 60 });
+  }, [ctx?.open]);
+
+  React.useLayoutEffect(() => {
+    measure();
+  }, [measure]);
+
+  React.useEffect(() => {
+    if (!ctx?.open) return;
+    const onScroll = () => measure();
+    window.addEventListener("scroll", onScroll, true);
+    window.addEventListener("resize", onScroll);
+    window.visualViewport?.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll, true);
+      window.removeEventListener("resize", onScroll);
+      window.visualViewport?.removeEventListener("resize", onScroll);
+    };
+  }, [ctx?.open, measure]);
 
   if (!ctx?.open) return null;
 
@@ -137,7 +145,7 @@ const SelectContent = React.forwardRef<
           if (typeof ref === "function") ref(node);
           else if (ref) (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
         }}
-        style={style ?? (ctx.coords ? { position: "absolute", top: ctx.coords.top + window.scrollY, left: ctx.coords.left + window.scrollX, width: ctx.coords.width, zIndex: 60 } : undefined)}
+        style={style ?? (ctx.coords ? { position: "fixed", ...ctx.coords, zIndex: 60 } : undefined)}
         className={cn(
           "max-h-60 overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80",
           className
