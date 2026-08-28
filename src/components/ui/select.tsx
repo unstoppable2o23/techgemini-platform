@@ -59,7 +59,7 @@ const SelectTrigger = React.forwardRef<
   return (
     <button
       ref={(node) => {
-        ctx?.triggerRef.current && (ctx.triggerRef.current = node);
+        if (ctx) ctx.triggerRef.current = node;
         if (typeof ref === "function") ref(node);
         else if (ref) (ref as React.MutableRefObject<HTMLButtonElement | null>).current = node;
       }}
