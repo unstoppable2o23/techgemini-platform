@@ -397,11 +397,6 @@ export default function RegisterPage() {
             </button>
           </form>
 
-          <p className="mt-6 text-center text-[11.5px] text-[#94a3b8]">
-            By creating an account you agree to our{" "}
-            <a href="#" className="text-[#64748b] underline-offset-2 hover:underline">Terms</a> and{" "}
-            <a href="#" className="text-[#64748b] underline-offset-2 hover:underline">Privacy Policy</a>.
-          </p>
         </div>
       </main>
     </div>
