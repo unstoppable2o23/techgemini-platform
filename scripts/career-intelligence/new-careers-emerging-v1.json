@@ -1,0 +1,5489 @@
+[
+  {
+    "name": "Computer Vision Engineer",
+    "title": "Computer Vision Engineer",
+    "cat": "Data & AI",
+    "sub": "Computer Vision",
+    "introduction": "Computer Vision Engineers build systems that let machines interpret images, video, and spatial data. They design models for object detection, segmentation, and recognition used in autonomous vehicles, medical imaging, retail, and manufacturing inspection.",
+    "whoShouldPursue": [
+      "Engineers who enjoy math, geometry, and visual problem solving",
+      "Builders who want their models to run in the physical world",
+      "People motivated by measurable accuracy improvements"
+    ],
+    "workNature": {
+      "description": "You train and deploy models that extract meaning from pixels, then integrate them into cameras, robots, or cloud pipelines.",
+      "examples": [
+        "Building defect-detection on a factory line",
+        "Training a medical scan segmentation model",
+        "Optimizing inference for an edge camera"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Computer Science, Engineering, or Mathematics",
+      "Strong Python and deep learning fundamentals",
+      "Comfort with linear algebra and probability"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Automotive",
+        "Healthcare",
+        "Manufacturing",
+        "Retail"
+      ],
+      "futureOutlook": "Demand is rising as vision models move from labs to cameras, warehouses, and vehicles.",
+      "salary": {
+        "entry": "6-12 LPA",
+        "median": "15-30 LPA",
+        "senior": "35-70 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "University route",
+        "steps": [
+          {
+            "title": "Study a technical bachelor's",
+            "description": "Pursue Computer Science, Electronics, or Mathematics and build a portfolio of vision projects."
+          },
+          {
+            "title": "Specialize",
+            "description": "Take courses or a master's in computer vision, machine learning, or robotics."
+          },
+          {
+            "title": "Ship production systems",
+            "description": "Work on detection, tracking, or segmentation deployed to real devices."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "OpenCV",
+      "CUDA",
+      "ONNX"
+    ],
+    "soft": [
+      "Problem solving",
+      "Analytical thinking",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "detail_oriented",
+      "innovative",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Computer Science"
+    ],
+    "tools": [
+      "PyTorch",
+      "OpenCV",
+      "TensorRT",
+      "Weights & Biases"
+    ],
+    "acts": [
+      "Developing algorithms",
+      "Analyzing data",
+      "Programming"
+    ],
+    "env": "Lab, office, or hybrid with GPU compute access",
+    "path": [
+      "Computer Vision Engineer",
+      "Senior CV Engineer",
+      "Perception Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Computer Vision Engineer Career Path 2026",
+      "description": "Learn how to become a Computer Vision Engineer in India and globally, the skills required, and where the field is heading.",
+      "keywords": [
+        "computer vision engineer",
+        "opencv",
+        "image recognition",
+        "perception engineer"
+      ],
+      "faqs": [
+        {
+          "q": "Is computer vision a good career?",
+          "a": "Yes. Vision models are moving into vehicles, factories, and clinics, creating sustained demand for engineers who can build and ship them."
+        },
+        {
+          "q": "Which degree is best for computer vision?",
+          "a": "A bachelor's in Computer Science, Electronics, or Mathematics followed by specialization in ML or vision."
+        }
+      ]
+    },
+    "rel": [
+      "Machine Learning Engineering",
+      "Robotics Engineering",
+      "Data Science"
+    ]
+  },
+  {
+    "name": "NLP Engineer",
+    "title": "NLP Engineer",
+    "cat": "Data & AI",
+    "sub": "Natural Language Processing",
+    "introduction": "NLP Engineers build systems that understand and generate human language, from search and chatbots to document intelligence and translation. They work with transformers, large language models, and retrieval pipelines.",
+    "whoShouldPursue": [
+      "People fascinated by language and computation",
+      "Engineers comfortable with text data and evaluation",
+      "Builders who like shipping assistants and search"
+    ],
+    "workNature": {
+      "description": "You design prompts, fine-tune models, and build retrieval or classification systems on top of language models.",
+      "examples": [
+        "Building a document Q&A assistant",
+        "Fine-tuning a translation model",
+        "Detecting toxic or unsafe text"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Computer Science, Linguistics, or Mathematics",
+      "Strong Python and ML fundamentals",
+      "Familiarity with transformers and embeddings"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Finance",
+        "Healthcare",
+        "Customer Support"
+      ],
+      "futureOutlook": "Language models are being embedded into every product, sustaining strong demand for NLP Engineers.",
+      "salary": {
+        "entry": "6-12 LPA",
+        "median": "15-30 LPA",
+        "senior": "35-70 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "University + self-study route",
+        "steps": [
+          {
+            "title": "Study CS or linguistics",
+            "description": "Build a foundation in programming, statistics, and language structure."
+          },
+          {
+            "title": "Learn transformers",
+            "description": "Study sequence models, embeddings, and modern LLM architectures."
+          },
+          {
+            "title": "Build language products",
+            "description": "Ship a chatbot, search, or document-intelligence system."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "PyTorch",
+      "Hugging Face",
+      "LangChain",
+      "spaCy"
+    ],
+    "soft": [
+      "Communication",
+      "Problem solving",
+      "Analytical thinking"
+    ],
+    "int": [
+      "technology",
+      "research",
+      "creative"
+    ],
+    "per": [
+      "curious",
+      "logical",
+      "detail_oriented"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Computer Science",
+      "English",
+      "Mathematics",
+      "Statistics"
+    ],
+    "tools": [
+      "Hugging Face Transformers",
+      "spaCy",
+      "Vector databases"
+    ],
+    "acts": [
+      "Developing algorithms",
+      "Analyzing data",
+      "Programming"
+    ],
+    "env": "Office or remote with cloud compute",
+    "path": [
+      "NLP Engineer",
+      "LLM Engineer",
+      "Conversational AI Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "NLP Engineer Career Guide 2026",
+      "description": "Explore the NLP Engineer role, required skills, and how large language models are shaping the career.",
+      "keywords": [
+        "nlp engineer",
+        "llm engineer",
+        "natural language processing",
+        "transformers"
+      ],
+      "faqs": [
+        {
+          "q": "What does an NLP Engineer do?",
+          "a": "They build systems that read, understand, and generate text, often on top of large language models."
+        },
+        {
+          "q": "Do I need a linguistics degree for NLP?",
+          "a": "Not necessarily; a CS or math background with ML skills is the most common route, though linguistics helps."
+        }
+      ]
+    },
+    "rel": [
+      "Machine Learning Engineering",
+      "Data Science",
+      "Computer Vision Engineer"
+    ]
+  },
+  {
+    "name": "MLOps Engineer",
+    "title": "MLOps Engineer",
+    "cat": "Data & AI",
+    "sub": "ML Infrastructure",
+    "introduction": "MLOps Engineers make machine learning reliable in production. They build pipelines for training, deployment, monitoring, and retraining so models stay accurate and available.",
+    "whoShouldPursue": [
+      "Engineers who like systems and automation",
+      "People who enjoy bridging data science and DevOps",
+      "Builders who care about reliability"
+    ],
+    "workNature": {
+      "description": "You automate the lifecycle of models from data to serving, with monitoring and rollback.",
+      "examples": [
+        "Building a model training pipeline",
+        "Setting up model monitoring",
+        "Automating deployment with CI/CD"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Computer Science or Engineering",
+      "Experience with cloud, containers, and CI/CD",
+      "Understanding of ML workflows"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Finance",
+        "Healthcare",
+        "Retail"
+      ],
+      "futureOutlook": "As models move to production, teams need engineers who keep them healthy and observable.",
+      "salary": {
+        "entry": "6-12 LPA",
+        "median": "15-30 LPA",
+        "senior": "35-70 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Engineering route",
+        "steps": [
+          {
+            "title": "Learn software and cloud",
+            "description": "Master Python, Docker, Kubernetes, and a major cloud platform."
+          },
+          {
+            "title": "Understand ML workflows",
+            "description": "Learn training, serving, and evaluation of models."
+          },
+          {
+            "title": "Own production ML",
+            "description": "Build pipelines, monitoring, and rollback for live models."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "Docker",
+      "Kubernetes",
+      "MLflow",
+      "Terraform",
+      "AWS"
+    ],
+    "soft": [
+      "Collaboration",
+      "Problem solving",
+      "Communication"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "systematic",
+      "reliable",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "BCA",
+      "MCA",
+      "B.SC IT"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics"
+    ],
+    "tools": [
+      "MLflow",
+      "Kubeflow",
+      "Docker",
+      "GitHub Actions"
+    ],
+    "acts": [
+      "Programming",
+      "Developing algorithms",
+      "Monitoring systems"
+    ],
+    "env": "Remote or office with cloud access",
+    "path": [
+      "MLOps Engineer",
+      "Senior MLOps Engineer",
+      "ML Platform Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "MLOps Engineer Career Path 2026",
+      "description": "Understand what MLOps Engineers do, the tooling they use, and how to break into the role.",
+      "keywords": [
+        "mlops engineer",
+        "ml pipelines",
+        "model deployment",
+        "kubernetes ml"
+      ],
+      "faqs": [
+        {
+          "q": "Is MLOps the same as DevOps?",
+          "a": "It extends DevOps with model training, versioning, monitoring, and retraining concerns."
+        },
+        {
+          "q": "Which skills matter most for MLOps?",
+          "a": "Cloud, containers, CI/CD, and a solid understanding of how models are trained and served."
+        }
+      ]
+    },
+    "rel": [
+      "DevOps",
+      "Machine Learning Engineering",
+      "Cloud Computing"
+    ]
+  },
+  {
+    "name": "Data Governance Analyst",
+    "title": "Data Governance Analyst",
+    "cat": "Data & AI",
+    "sub": "Data Governance",
+    "introduction": "Data Governance Analysts establish policies, standards, and controls so an organization's data is accurate, secure, and compliant. They bridge legal, business, and technical teams.",
+    "whoShouldPursue": [
+      "Analysts who like structure and rules",
+      "People interested in privacy and compliance",
+      "Communicators who can translate policy into practice"
+    ],
+    "workNature": {
+      "description": "You define data ownership, classification, and quality rules, then monitor adherence.",
+      "examples": [
+        "Creating a data classification policy",
+        "Running a data quality audit",
+        "Mapping data for compliance"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in any field; CS, Business, or Law helpful",
+      "Understanding of databases and regulation",
+      "Strong documentation skills"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Finance",
+        "Healthcare",
+        "Technology",
+        "Government"
+      ],
+      "futureOutlook": "Stricter privacy rules and AI governance are increasing demand for people who can manage data responsibly.",
+      "salary": {
+        "entry": "6-12 LPA",
+        "median": "15-30 LPA",
+        "senior": "35-70 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Analyst route",
+        "steps": [
+          {
+            "title": "Study a relevant bachelor's",
+            "description": "Pursue CS, Business, or Law with an interest in data."
+          },
+          {
+            "title": "Learn governance frameworks",
+            "description": "Study privacy law, data quality, and catalog tooling."
+          },
+          {
+            "title": "Own a governance program",
+            "description": "Run classification, lineage, and compliance monitoring."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "SQL",
+      "Collibra",
+      "Alation",
+      "Python",
+      "Data Catalogs"
+    ],
+    "soft": [
+      "Communication",
+      "Analytical thinking",
+      "Attention to detail"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "communication"
+    ],
+    "per": [
+      "meticulous",
+      "dependable",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.Com",
+      "BBA",
+      "MBA",
+      "MBA"
+    ],
+    "subj": [
+      "Computer Science",
+      "Economics",
+      "Business Studies",
+      "Law"
+    ],
+    "tools": [
+      "Collibra",
+      "Alation",
+      "SQL",
+      "Excel"
+    ],
+    "acts": [
+      "Analyzing data",
+      "Documenting policies",
+      "Coordinating teams"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Data Governance Analyst",
+      "Data Steward",
+      "Head of Data Governance"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Data Governance Analyst Career 2026",
+      "description": "Learn the Data Governance Analyst role, required skills, and why it matters for AI and compliance.",
+      "keywords": [
+        "data governance",
+        "data steward",
+        "data quality",
+        "privacy compliance"
+      ],
+      "faqs": [
+        {
+          "q": "What is data governance?",
+          "a": "It is the set of policies and controls that keep data accurate, secure, and compliant."
+        },
+        {
+          "q": "Do I need a technical degree?",
+          "a": "A technical or business degree helps, but the role values documentation and regulatory understanding highly."
+        }
+      ]
+    },
+    "rel": [
+      "Business Analytics",
+      "AI Governance Specialist",
+      "Data Science"
+    ]
+  },
+  {
+    "name": "AI Governance Specialist",
+    "title": "AI Governance Specialist",
+    "cat": "Data & AI",
+    "sub": "AI Policy",
+    "introduction": "AI Governance Specialists ensure AI systems are safe, fair, and lawful. They build review processes, risk assessments, and documentation for responsible deployment of models.",
+    "whoShouldPursue": [
+      "People interested in ethics, law, and technology",
+      "Communicators who can bridge policy and engineering",
+      "Analysts who like risk frameworks"
+    ],
+    "workNature": {
+      "description": "You assess model risks, define acceptable-use policies, and coordinate audits and disclosures.",
+      "examples": [
+        "Running a model risk assessment",
+        "Drafting an AI use policy",
+        "Coordinating a regulatory audit"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Law, CS, Policy, or related field",
+      "Understanding of AI capabilities and risk",
+      "Strong writing and facilitation skills"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Finance",
+        "Healthcare",
+        "Public Sector"
+      ],
+      "futureOutlook": "New AI regulations are creating dedicated governance roles across industries.",
+      "salary": {
+        "entry": "6-12 LPA",
+        "median": "15-30 LPA",
+        "senior": "35-70 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Policy + tech route",
+        "steps": [
+          {
+            "title": "Study law, policy, or CS",
+            "description": "Build understanding of regulation and how AI works."
+          },
+          {
+            "title": "Learn risk frameworks",
+            "description": "Study AI safety, fairness, and audit methods."
+          },
+          {
+            "title": "Run governance programs",
+            "description": "Lead reviews, disclosures, and compliance for model deployment."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Model Cards",
+      "Risk Registers",
+      "Python",
+      "Documentation Tools"
+    ],
+    "soft": [
+      "Communication",
+      "Critical thinking",
+      "Collaboration"
+    ],
+    "int": [
+      "communication",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "principled",
+      "analytical",
+      "diplomatic"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "LLB",
+      "MBA"
+    ],
+    "subj": [
+      "Law",
+      "Computer Science",
+      "Economics",
+      "English"
+    ],
+    "tools": [
+      "Model documentation",
+      "Audit trackers",
+      "Policy wikis"
+    ],
+    "acts": [
+      "Assessing risk",
+      "Documenting",
+      "Coordinating teams"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "AI Governance Specialist",
+      "AI Risk Manager",
+      "Head of Responsible AI"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "AI Governance Specialist Career 2026",
+      "description": "Discover the AI Governance Specialist role, the skills needed, and how regulation is shaping demand.",
+      "keywords": [
+        "ai governance",
+        "responsible ai",
+        "ai risk",
+        "ai policy"
+      ],
+      "faqs": [
+        {
+          "q": "What does AI governance do?",
+          "a": "It ensures AI is deployed safely and lawfully through risk reviews, policies, and audits."
+        },
+        {
+          "q": "Is this a technical role?",
+          "a": "It is cross-functional; technical literacy helps, but policy and communication are central."
+        }
+      ]
+    },
+    "rel": [
+      "AI Governance Specialist",
+      "Data Governance Analyst",
+      "Cyber Law"
+    ]
+  },
+  {
+    "name": "Cloud Security Engineer",
+    "title": "Cloud Security Engineer",
+    "cat": "Technology & Software",
+    "sub": "Cloud Security",
+    "introduction": "Cloud Security Engineers protect cloud infrastructure, identities, and data. They design secure architectures, manage access, and respond to threats across cloud platforms.",
+    "whoShouldPursue": [
+      "Security-minded engineers",
+      "People who enjoy infrastructure and automation",
+      "Defenders who like staying ahead of attackers"
+    ],
+    "workNature": {
+      "description": "You harden cloud accounts, automate guardrails, and investigate incidents.",
+      "examples": [
+        "Designing least-privilege IAM",
+        "Building threat detection",
+        "Running a cloud incident drill"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS, Engineering, or related",
+      "Cloud and security fundamentals",
+      "Hands-on with a major cloud provider"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Finance",
+        "Healthcare",
+        "Government"
+      ],
+      "futureOutlook": "As workloads move to cloud, securing them remains a top priority for every organization.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "13-25 LPA",
+        "senior": "30-60 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Security engineering route",
+        "steps": [
+          {
+            "title": "Learn cloud fundamentals",
+            "description": "Get proficient with AWS, Azure, or GCP and networking."
+          },
+          {
+            "title": "Build security skills",
+            "description": "Study IAM, encryption, and threat modeling."
+          },
+          {
+            "title": "Defend production systems",
+            "description": "Implement guardrails, detection, and incident response."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "AWS",
+      "Azure",
+      "Terraform",
+      "IAM",
+      "Python",
+      "SIEM"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Analytical thinking"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "vigilant",
+      "systematic",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "LLB"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "AWS IAM",
+      "Terraform",
+      "CloudTrail",
+      "Sentinel"
+    ],
+    "acts": [
+      "Securing systems",
+      "Monitoring",
+      "Programming"
+    ],
+    "env": "Remote or office with cloud access",
+    "path": [
+      "Cloud Security Engineer",
+      "Senior Cloud Security Engineer",
+      "Cloud Security Architect"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Cloud Security Engineer Career 2026",
+      "description": "Learn how to become a Cloud Security Engineer, the skills required, and career outlook.",
+      "keywords": [
+        "cloud security",
+        "cloud engineer",
+        "aws security",
+        "cybersecurity"
+      ],
+      "faqs": [
+        {
+          "q": "Is cloud security in demand?",
+          "a": "Yes. Securing cloud infrastructure is a top priority as companies migrate workloads."
+        },
+        {
+          "q": "Which certifications help?",
+          "a": "Cloud provider security associate certs and general security certifications are valued."
+        }
+      ]
+    },
+    "rel": [
+      "Cyber Security",
+      "DevOps",
+      "Cloud Computing"
+    ]
+  },
+  {
+    "name": "Penetration Tester",
+    "title": "Penetration Tester",
+    "cat": "Technology & Software",
+    "sub": "Offensive Security",
+    "introduction": "Penetration Testers simulate attacks to find weaknesses before malicious actors do. They test networks, applications, and cloud setups and report actionable fixes.",
+    "whoShouldPursue": [
+      "Hackers with ethics",
+      "People who enjoy puzzles and adversarial thinking",
+      "Testers who like hands-on work"
+    ],
+    "workNature": {
+      "description": "You plan and run authorized attacks, then document findings and remediation.",
+      "examples": [
+        "Testing a web app for injection flaws",
+        "Simulating phishing campaigns",
+        "Assessing cloud misconfigurations"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS or related; skill matters most",
+      "Strong networking and scripting",
+      "Ethical mindset and certifications valued"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Finance",
+        "Government",
+        "Consulting"
+      ],
+      "futureOutlook": "Continuous testing is now expected, keeping demand steady for skilled testers.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "13-25 LPA",
+        "senior": "30-60 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Hands-on route",
+        "steps": [
+          {
+            "title": "Build fundamentals",
+            "description": "Learn networking, Linux, and a scripting language."
+          },
+          {
+            "title": "Practice legally",
+            "description": "Use lab platforms and capture-the-flag challenges."
+          },
+          {
+            "title": "Get certified and test",
+            "description": "Earn a pentest certification and run engagements."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "Burp Suite",
+      "Metasploit",
+      "Linux",
+      "Wireshark"
+    ],
+    "soft": [
+      "Communication",
+      "Problem solving",
+      "Curiosity"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "curious",
+      "persistent",
+      "ethical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "LLB"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Burp Suite",
+      "Metasploit",
+      "Nmap",
+      "Kali Linux"
+    ],
+    "acts": [
+      "Testing systems",
+      "Analyzing vulnerabilities",
+      "Reporting"
+    ],
+    "env": "Remote or lab environment",
+    "path": [
+      "Penetration Tester",
+      "Senior Pentester",
+      "Red Team Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Penetration Tester Career Guide 2026",
+      "description": "Explore the Penetration Tester role, skills, certifications, and demand.",
+      "keywords": [
+        "penetration tester",
+        "ethical hacker",
+        "pentest",
+        "offensive security"
+      ],
+      "faqs": [
+        {
+          "q": "Do I need a degree to be a pentester?",
+          "a": "A degree helps but demonstrable skills and certifications are often what employers check."
+        },
+        {
+          "q": "Is penetration testing legal?",
+          "a": "Only when authorized; ethical testers work under formal agreements and scope."
+        }
+      ]
+    },
+    "rel": [
+      "Cyber Security",
+      "Cloud Security Engineer",
+      "Digital Forensics"
+    ]
+  },
+  {
+    "name": "Cryptography Engineer",
+    "title": "Cryptography Engineer",
+    "cat": "Technology & Software",
+    "sub": "Cryptography",
+    "introduction": "Cryptography Engineers design and implement the math that keeps data private and authentic. They work on encryption, key management, and post-quantum readiness.",
+    "whoShouldPursue": [
+      "Mathematicians who like to code",
+      "Engineers fascinated by security theory",
+      "Builders of trust infrastructure"
+    ],
+    "workNature": {
+      "description": "You implement cryptographic protocols, evaluate their strength, and protect against attacks.",
+      "examples": [
+        "Building secure key exchange",
+        "Hardening a payment protocol",
+        "Evaluating post-quantum algorithms"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's or master's in CS, Math, or Engineering",
+      "Strong math, especially number theory",
+      "Programming and security fundamentals"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Finance",
+        "Government",
+        "Security"
+      ],
+      "futureOutlook": "Post-quantum migration and privacy regulation are sustaining specialized demand.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "13-25 LPA",
+        "senior": "30-60 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Math + engineering route",
+        "steps": [
+          {
+            "title": "Study math and CS",
+            "description": "Build deep foundations in algebra, number theory, and programming."
+          },
+          {
+            "title": "Learn applied crypto",
+            "description": "Study protocols, implementations, and common pitfalls."
+          },
+          {
+            "title": "Implement secure systems",
+            "description": "Build and review cryptographic components in production."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "C",
+      "Rust",
+      "Python",
+      "OpenSSL",
+      "Elliptic Curves"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Problem solving",
+      "Precision"
+    ],
+    "int": [
+      "problem_solving",
+      "research",
+      "technology"
+    ],
+    "per": [
+      "precise",
+      "logical",
+      "innovative"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Mathematics",
+      "Computer Science",
+      "Physics"
+    ],
+    "tools": [
+      "OpenSSL",
+      "Rust crypto crates",
+      "SageMath"
+    ],
+    "acts": [
+      "Developing algorithms",
+      "Programming",
+      "Analyzing security"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Cryptography Engineer",
+      "Security Protocol Engineer",
+      "Principal Cryptographer"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Cryptography Engineer Career 2026",
+      "description": "Understand the Cryptography Engineer role, required math and coding skills, and outlook.",
+      "keywords": [
+        "cryptography engineer",
+        "encryption",
+        "post quantum",
+        "security engineer"
+      ],
+      "faqs": [
+        {
+          "q": "Do I need a PhD in cryptography?",
+          "a": "Not always; strong math plus engineering skill is enough for applied roles, while research leans academic."
+        },
+        {
+          "q": "What is post-quantum cryptography?",
+          "a": "New algorithms designed to resist attacks from future quantum computers."
+        }
+      ]
+    },
+    "rel": [
+      "Cyber Security",
+      "Cloud Security Engineer",
+      "Blockchain Technology"
+    ]
+  },
+  {
+    "name": "Security Operations Analyst",
+    "title": "Security Operations Analyst",
+    "cat": "Technology & Software",
+    "sub": "Security Operations",
+    "introduction": "Security Operations Analysts monitor systems for attacks, triage alerts, and coordinate responses. They are the front line of an organization's defense.",
+    "whoShouldPursue": [
+      "People who stay calm under pressure",
+      "Analysts who like monitoring and investigation",
+      "Team players in incident response"
+    ],
+    "workNature": {
+      "description": "You watch dashboards, investigate anomalies, and help contain incidents.",
+      "examples": [
+        "Triage a phishing alert",
+        "Investigating unusual logins",
+        "Coordinating a breach response"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS or related; certifications valued",
+      "Networking and log analysis skills",
+      "Attention to detail"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Finance",
+        "Healthcare",
+        "Government"
+      ],
+      "futureOutlook": "Always-on monitoring is standard, keeping steady demand for SOC talent.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "13-25 LPA",
+        "senior": "30-60 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "SOC route",
+        "steps": [
+          {
+            "title": "Learn the basics",
+            "description": "Study networking, operating systems, and security fundamentals."
+          },
+          {
+            "title": "Join a SOC",
+            "description": "Start as an analyst triaging alerts and learning tooling."
+          },
+          {
+            "title": "Specialize",
+            "description": "Move into threat hunting, IR, or detection engineering."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "SIEM",
+      "Splunk",
+      "Python",
+      "EDR",
+      "Linux"
+    ],
+    "soft": [
+      "Communication",
+      "Calm under pressure",
+      "Analytical thinking"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "vigilant",
+      "methodical",
+      "team_oriented"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "LLB"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Splunk",
+      "Microsoft Sentinel",
+      "CrowdStrike",
+      "Wireshark"
+    ],
+    "acts": [
+      "Monitoring",
+      "Investigating",
+      "Responding to incidents"
+    ],
+    "env": "Shift-based SOC or remote",
+    "path": [
+      "Security Operations Analyst",
+      "SOC Tier 2",
+      "Incident Response Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Security Operations Analyst Career 2026",
+      "description": "Learn what a Security Operations Analyst does, the skills needed, and career growth.",
+      "keywords": [
+        "security operations",
+        "soc analyst",
+        "siem",
+        "cybersecurity"
+      ],
+      "faqs": [
+        {
+          "q": "What is a SOC analyst?",
+          "a": "A security operations center analyst who monitors and responds to threats."
+        },
+        {
+          "q": "Is the work stressful?",
+          "a": "It can be during incidents, but good teams and tooling make it manageable."
+        }
+      ]
+    },
+    "rel": [
+      "Cyber Security",
+      "Cloud Security Engineer",
+      "Penetration Tester"
+    ]
+  },
+  {
+    "name": "Quantitative Analyst",
+    "title": "Quantitative Analyst",
+    "cat": "Finance & Accounting",
+    "sub": "Quantitative Finance",
+    "introduction": "Quantitative Analysts build mathematical models for pricing, risk, and trading. They combine statistics, programming, and finance to find edges in markets.",
+    "whoShouldPursue": [
+      "Strong mathematicians",
+      "People who like markets and modeling",
+      "Rigorous, data-driven thinkers"
+    ],
+    "workNature": {
+      "description": "You research signals, build models, and test them on historical data.",
+      "examples": [
+        "Pricing a derivative",
+        "Backtesting a strategy",
+        "Modeling portfolio risk"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's or master's in Math, Stats, CS, or Finance",
+      "Excellent quantitative skills",
+      "Proficiency in Python or C++"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Finance",
+        "Trading",
+        "Investment",
+        "Fintech"
+      ],
+      "futureOutlook": "Quant methods remain central to modern markets, though competition for roles is intense.",
+      "salary": {
+        "entry": "6-12 LPA",
+        "median": "14-28 LPA",
+        "senior": "32-65 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Quant route",
+        "steps": [
+          {
+            "title": "Study math or stats",
+            "description": "Build deep quantitative foundations."
+          },
+          {
+            "title": "Learn markets and code",
+            "description": "Study finance and implement models in Python or C++."
+          },
+          {
+            "title": "Join a desk or fund",
+            "description": "Research, backtest, and deploy strategies."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "C++",
+      "Pandas",
+      "SQL",
+      "NumPy"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Rigor",
+      "Communication"
+    ],
+    "int": [
+      "problem_solving",
+      "research",
+      "business"
+    ],
+    "per": [
+      "logical",
+      "precise",
+      "competitive"
+    ],
+    "deg": [
+      "B.Sc Statistics",
+      "M.Sc Data Science",
+      "M.SC Data Science",
+      "M.SC Mathematics",
+      "B.Com",
+      "BBA",
+      "MBA"
+    ],
+    "subj": [
+      "Mathematics",
+      "Statistics",
+      "Economics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "Bloomberg Terminal"
+    ],
+    "acts": [
+      "Modeling",
+      "Analyzing data",
+      "Programming"
+    ],
+    "env": "Office (trading floor) or remote",
+    "path": [
+      "Quantitative Analyst",
+      "Senior Quant",
+      "Quant Research Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": false,
+    "seo": {
+      "title": "Quantitative Analyst Career Guide 2026",
+      "description": "Explore the Quantitative Analyst role, skills, and how to break in.",
+      "keywords": [
+        "quantitative analyst",
+        "quant",
+        "quant finance",
+        "trading models"
+      ],
+      "faqs": [
+        {
+          "q": "Do quants need a PhD?",
+          "a": "Not always; strong master's candidates are hired, though research roles often prefer PhDs."
+        },
+        {
+          "q": "Which languages do quants use?",
+          "a": "Python for research and C++ for low-latency production systems."
+        }
+      ]
+    },
+    "rel": [
+      "Algorithmic Trading Developer",
+      "Fintech",
+      "Payments Engineer"
+    ]
+  },
+  {
+    "name": "Algorithmic Trading Developer",
+    "title": "Algorithmic Trading Developer",
+    "cat": "Finance & Accounting",
+    "sub": "Trading Systems",
+    "introduction": "Algorithmic Trading Developers build the systems that execute trades automatically. They combine low-latency engineering with quant strategies.",
+    "whoShouldPursue": [
+      "Engineers who like speed and markets",
+      "People who enjoy systems programming",
+      "Builders who thrive on performance"
+    ],
+    "workNature": {
+      "description": "You implement execution engines, connectors, and risk checks for automated trading.",
+      "examples": [
+        "Building an order router",
+        "Reducing latency in execution",
+        "Implementing risk limits"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS, Engineering, Math, or Finance",
+      "Strong programming, ideally C++ or Python",
+      "Interest in markets"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Finance",
+        "Trading",
+        "Fintech"
+      ],
+      "futureOutlook": "Automation in markets continues, though roles are selective and performance-sensitive.",
+      "salary": {
+        "entry": "6-12 LPA",
+        "median": "14-28 LPA",
+        "senior": "32-65 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Engineering route",
+        "steps": [
+          {
+            "title": "Study CS or engineering",
+            "description": "Build strong systems programming skills."
+          },
+          {
+            "title": "Learn markets",
+            "description": "Understand order types, exchanges, and risk."
+          },
+          {
+            "title": "Build trading systems",
+            "description": "Implement execution and connectivity with low latency."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "C++",
+      "Python",
+      "Kafka",
+      "Linux",
+      "SQL"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Pressure handling"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "precise",
+      "fast_thinking",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.Sc Statistics",
+      "M.Sc Data Science",
+      "B.Com",
+      "BBA",
+      "MBA"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Economics"
+    ],
+    "tools": [
+      "C++",
+      "Python",
+      "Kdb+",
+      "Grafana"
+    ],
+    "acts": [
+      "Programming",
+      "Developing systems",
+      "Monitoring"
+    ],
+    "env": "Office or remote with market access",
+    "path": [
+      "Algo Trading Developer",
+      "Low Latency Engineer",
+      "Trading Systems Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": false,
+    "seo": {
+      "title": "Algorithmic Trading Developer Career 2026",
+      "description": "Learn what Algorithmic Trading Developers build and the skills required.",
+      "keywords": [
+        "algorithmic trading",
+        "algo trading developer",
+        "trading systems",
+        "low latency"
+      ],
+      "faqs": [
+        {
+          "q": "Is algo trading the same as quant?",
+          "a": "Quants design strategies; developers build the systems that execute them, often with overlap."
+        },
+        {
+          "q": "Which language is best?",
+          "a": "C++ for latency-critical paths, Python for research and tooling."
+        }
+      ]
+    },
+    "rel": [
+      "Quantitative Analyst",
+      "Fintech",
+      "Payments Engineer"
+    ]
+  },
+  {
+    "name": "Payments Engineer",
+    "title": "Payments Engineer",
+    "cat": "Finance & Accounting",
+    "sub": "Payments Infrastructure",
+    "introduction": "Payments Engineers build the systems that move money reliably and securely. They work on ledgers, gateways, fraud controls, and reconciliation.",
+    "whoShouldPursue": [
+      "Engineers who like reliability",
+      "People interested in finance infrastructure",
+      "Builders who value correctness"
+    ],
+    "workNature": {
+      "description": "You implement payment flows, integrations, and controls that must be correct every time.",
+      "examples": [
+        "Building a payment gateway",
+        "Designing an idempotent ledger",
+        "Integrating a fraud check"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS or Engineering",
+      "Strong backend and database skills",
+      "Care for correctness and security"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Fintech",
+        "E-commerce",
+        "Banking",
+        "Technology"
+      ],
+      "futureOutlook": "Digital payments keep growing, driving sustained demand for payments specialists.",
+      "salary": {
+        "entry": "6-12 LPA",
+        "median": "14-28 LPA",
+        "senior": "32-65 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Backend route",
+        "steps": [
+          {
+            "title": "Study CS or engineering",
+            "description": "Build backend and database fundamentals."
+          },
+          {
+            "title": "Learn payments domain",
+            "description": "Study ledgers, gateways, and compliance."
+          },
+          {
+            "title": "Build money movement",
+            "description": "Implement reliable, auditable payment systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Java",
+      "Go",
+      "Python",
+      "PostgreSQL",
+      "Kafka"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Reliability"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "meticulous",
+      "trustworthy",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "BCA",
+      "MCA",
+      "B.Com",
+      "BBA",
+      "MBA"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Economics"
+    ],
+    "tools": [
+      "PostgreSQL",
+      "Kafka",
+      "Stripe SDK",
+      "Grafana"
+    ],
+    "acts": [
+      "Programming",
+      "Designing systems",
+      "Monitoring"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Payments Engineer",
+      "Senior Payments Engineer",
+      "Payments Platform Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Payments Engineer Career 2026",
+      "description": "Understand the Payments Engineer role, skills, and why fintech needs them.",
+      "keywords": [
+        "payments engineer",
+        "fintech engineer",
+        "payment gateway",
+        "ledger"
+      ],
+      "faqs": [
+        {
+          "q": "What does a payments engineer build?",
+          "a": "The reliable, secure systems that move and reconcile money between parties."
+        },
+        {
+          "q": "Is it stressful?",
+          "a": "Correctness matters a lot, but good engineering practices keep it manageable."
+        }
+      ]
+    },
+    "rel": [
+      "Fintech",
+      "Quantitative Analyst",
+      "Algorithmic Trading Developer"
+    ]
+  },
+  {
+    "name": "VLSI Design Engineer",
+    "title": "VLSI Design Engineer",
+    "cat": "Engineering",
+    "sub": "VLSI Design",
+    "introduction": "VLSI Design Engineers create integrated circuits at the chip level, from specification to layout. They enable the hardware behind phones, cars, and AI accelerators.",
+    "whoShouldPursue": [
+      "Electrical engineers who like hardware",
+      "People fascinated by how chips work",
+      "Detail-oriented builders"
+    ],
+    "workNature": {
+      "description": "You design digital and analog blocks, verify them, and prepare for fabrication.",
+      "examples": [
+        "Designing an SoC block",
+        "Running timing analysis",
+        "Verifying a chip with simulation"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Electronics/Electrical Engineering",
+      "Knowledge of digital design and HDL",
+      "Semiconductor fundamentals"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Semiconductors",
+        "Consumer Electronics",
+        "Automotive",
+        "Telecom"
+      ],
+      "futureOutlook": "AI accelerators and local chip manufacturing are boosting demand for VLSI talent.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Engineering route",
+        "steps": [
+          {
+            "title": "Study ECE or EE",
+            "description": "Build fundamentals in circuits and digital design."
+          },
+          {
+            "title": "Learn HDL and EDA",
+            "description": "Study Verilog/VHDL and industry tools."
+          },
+          {
+            "title": "Design and verify chips",
+            "description": "Work on blocks, timing, and fabrication prep."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Verilog",
+      "VHDL",
+      "SPICE",
+      "EDA Tools",
+      "Python"
+    ],
+    "soft": [
+      "Problem solving",
+      "Patience",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "detail_oriented",
+      "logical",
+      "patient"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electrical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Cadence",
+      "Synopsys",
+      "ModelSim",
+      "Xilinx Vivado"
+    ],
+    "acts": [
+      "Designing circuits",
+      "Simulation",
+      "Verification"
+    ],
+    "env": "Office/lab with EDA tools",
+    "path": [
+      "VLSI Design Engineer",
+      "Senior VLSI Engineer",
+      "Chip Architect"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "VLSI Design Engineer Career 2026",
+      "description": "Learn how to become a VLSI Design Engineer, the skills required, and industry outlook.",
+      "keywords": [
+        "vlsi design",
+        "chip design",
+        "semiconductor engineer",
+        "verilog"
+      ],
+      "faqs": [
+        {
+          "q": "Is VLSI a good career in India?",
+          "a": "Yes. Chip design and AI hardware are growing, with strong demand for skilled engineers."
+        },
+        {
+          "q": "Which subjects matter most?",
+          "a": "Digital design, semiconductor physics, and HDL programming."
+        }
+      ]
+    },
+    "rel": [
+      "Semiconductor Process Engineer",
+      "Embedded Systems Engineer",
+      "Robotics Engineering"
+    ]
+  },
+  {
+    "name": "Semiconductor Process Engineer",
+    "title": "Semiconductor Process Engineer",
+    "cat": "Engineering",
+    "sub": "Semiconductor Manufacturing",
+    "introduction": "Semiconductor Process Engineers optimize the fabrication of chips. They tune processes in fabs to improve yield, quality, and performance.",
+    "whoShouldPursue": [
+      "Engineers who like physical processes",
+      "People interested in manufacturing",
+      "Problem solvers who enjoy experiments"
+    ],
+    "workNature": {
+      "description": "You run experiments, analyze yield, and improve steps in the fab line.",
+      "examples": [
+        "Tuning a lithography step",
+        "Analyzing defect data",
+        "Improving wafer yield"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in EE, Chemical, or Materials Engineering",
+      "Understanding of fabrication",
+      "Data analysis skills"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Semiconductors",
+        "Electronics",
+        "Automotive"
+      ],
+      "futureOutlook": "New fabs and advanced nodes are increasing demand for process engineers.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Fab route",
+        "steps": [
+          {
+            "title": "Study relevant engineering",
+            "description": "Build foundations in EE, chemical, or materials engineering."
+          },
+          {
+            "title": "Learn fabrication",
+            "description": "Study lithography, etching, and process control."
+          },
+          {
+            "title": "Improve the line",
+            "description": "Run experiments and raise yield in production."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "JMP",
+      "Statistical Process Control",
+      "Fab EDA"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Collaboration",
+      "Problem solving"
+    ],
+    "int": [
+      "problem_solving",
+      "technology",
+      "research"
+    ],
+    "per": [
+      "methodical",
+      "curious",
+      "detail_oriented"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Chemical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "JMP",
+      "Python",
+      "Fab metrology tools"
+    ],
+    "acts": [
+      "Running experiments",
+      "Analyzing data",
+      "Process tuning"
+    ],
+    "env": "Cleanroom and office",
+    "path": [
+      "Process Engineer",
+      "Senior Process Engineer",
+      "Fab Module Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Semiconductor Process Engineer Career 2026",
+      "description": "Explore the Semiconductor Process Engineer role, required skills, and outlook.",
+      "keywords": [
+        "semiconductor process",
+        "fab engineer",
+        "chip manufacturing",
+        "yield engineering"
+      ],
+      "faqs": [
+        {
+          "q": "What does a process engineer do in a fab?",
+          "a": "They optimize manufacturing steps to improve chip yield and quality."
+        },
+        {
+          "q": "Is it a desk job?",
+          "a": "It mixes cleanroom work, data analysis, and collaboration."
+        }
+      ]
+    },
+    "rel": [
+      "VLSI Design Engineer",
+      "Embedded Systems Engineer",
+      "Robotics Engineering"
+    ]
+  },
+  {
+    "name": "Embedded Systems Engineer",
+    "title": "Embedded Systems Engineer",
+    "cat": "Engineering",
+    "sub": "Embedded Systems",
+    "introduction": "Embedded Systems Engineers build the software and firmware that run inside devices, from wearables to cars. They work close to hardware with real-time constraints.",
+    "whoShouldPursue": [
+      "Engineers who like hardware and software",
+      "People who enjoy working close to the metal",
+      "Builders of physical products"
+    ],
+    "workNature": {
+      "description": "You write firmware, bring up boards, and optimize for power and timing.",
+      "examples": [
+        "Programming a microcontroller",
+        "Debugging a sensor driver",
+        "Optimizing battery use"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in ECE, CS, or EE",
+      "C/C++ and microcontroller skills",
+      "Understanding of electronics"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Automotive",
+        "Consumer Electronics",
+        "IoT",
+        "Medical Devices"
+      ],
+      "futureOutlook": "Connected and smart devices keep embedded engineering in steady demand.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Firmware route",
+        "steps": [
+          {
+            "title": "Study ECE or CS",
+            "description": "Build hardware and software fundamentals."
+          },
+          {
+            "title": "Learn microcontrollers",
+            "description": "Study C, RTOS, and board bring-up."
+          },
+          {
+            "title": "Ship devices",
+            "description": "Develop firmware for real products."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "C",
+      "C++",
+      "RTOS",
+      "Arduino",
+      "STM32",
+      "Python"
+    ],
+    "soft": [
+      "Problem solving",
+      "Patience",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "detail_oriented",
+      "practical",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "STM32Cube",
+      "Keil",
+      "Oscilloscope",
+      "GDB"
+    ],
+    "acts": [
+      "Programming",
+      "Debugging hardware",
+      "Testing"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Embedded Engineer",
+      "Senior Embedded Engineer",
+      "Firmware Architect"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": false,
+    "seo": {
+      "title": "Embedded Systems Engineer Career 2026",
+      "description": "Learn the Embedded Systems Engineer role, skills, and how to start.",
+      "keywords": [
+        "embedded systems",
+        "firmware engineer",
+        "microcontroller",
+        "rtos"
+      ],
+      "faqs": [
+        {
+          "q": "Is embedded engineering still relevant?",
+          "a": "Yes. Smart devices, cars, and IoT rely on embedded firmware."
+        },
+        {
+          "q": "Which language should I learn?",
+          "a": "C is essential, with C++ and Python for tooling."
+        }
+      ]
+    },
+    "rel": [
+      "Internet of Things",
+      "Robotics Engineering",
+      "VLSI Design Engineer"
+    ]
+  },
+  {
+    "name": "Autonomous Vehicles Engineer",
+    "title": "Autonomous Vehicles Engineer",
+    "cat": "Engineering",
+    "sub": "Autonomous Systems",
+    "introduction": "Autonomous Vehicles Engineers build the perception, planning, and control systems that let cars drive themselves. They combine robotics, ML, and safety engineering.",
+    "whoShouldPursue": [
+      "Robotics and ML enthusiasts",
+      "Engineers who like safety-critical systems",
+      "Builders of physical AI"
+    ],
+    "workNature": {
+      "description": "You develop sensing, decision-making, and control for self-driving stacks.",
+      "examples": [
+        "Fusing lidar and camera data",
+        "Planning safe trajectories",
+        "Validating behavior in simulation"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS, EE, ME, or Robotics",
+      "ML and controls fundamentals",
+      "Strong programming"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Automotive",
+        "Technology",
+        "Logistics",
+        "Mobility"
+      ],
+      "futureOutlook": "Pilot deployments are expanding, sustaining demand for autonomy talent.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Robotics route",
+        "steps": [
+          {
+            "title": "Study a relevant engineering",
+            "description": "Build foundations in CS, EE, or ME."
+          },
+          {
+            "title": "Learn autonomy",
+            "description": "Study perception, planning, and controls."
+          },
+          {
+            "title": "Build self-driving stacks",
+            "description": "Work on real or simulated autonomous systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "C++",
+      "ROS",
+      "PyTorch",
+      "CUDA"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Rigor"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "innovative",
+      "logical",
+      "detail_oriented"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Electrical Engineering"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Computer Science"
+    ],
+    "tools": [
+      "ROS",
+      "CARLA",
+      "PyTorch",
+      "Docker"
+    ],
+    "acts": [
+      "Programming",
+      "Simulation",
+      "Testing"
+    ],
+    "env": "Office, lab, and test tracks",
+    "path": [
+      "AV Engineer",
+      "Perception Engineer",
+      "Autonomy Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Autonomous Vehicles Engineer Career 2026",
+      "description": "Understand the Autonomous Vehicles Engineer role, skills, and outlook.",
+      "keywords": [
+        "autonomous vehicles",
+        "self driving",
+        "av engineer",
+        "robotics"
+      ],
+      "faqs": [
+        {
+          "q": "What skills are needed for AV engineering?",
+          "a": "Perception, planning, controls, and ML, plus safety mindset."
+        },
+        {
+          "q": "Is it risky as a career?",
+          "a": "Demand is strong in automotive and mobility, though timelines shift with regulation."
+        }
+      ]
+    },
+    "rel": [
+      "Robotics Engineering",
+      "Computer Vision Engineer",
+      "Autonomous Systems Safety Engineer"
+    ]
+  },
+  {
+    "name": "Humanoid Robotics Engineer",
+    "title": "Humanoid Robotics Engineer",
+    "cat": "Engineering",
+    "sub": "Robotics",
+    "introduction": "Humanoid Robotics Engineers design robots that move and act like humans. They integrate mechanics, controls, perception, and AI into bipedal or dexterous systems.",
+    "whoShouldPursue": [
+      "Robotics enthusiasts",
+      "Engineers who like hard physical problems",
+      "Builders of next-gen machines"
+    ],
+    "workNature": {
+      "description": "You develop locomotion, manipulation, and intelligence for humanoid platforms.",
+      "examples": [
+        "Balancing a biped",
+        "Grasping objects with a hand",
+        "Teaching tasks via demonstration"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in ME, EE, CS, or Robotics",
+      "Controls and ML fundamentals",
+      "Strong programming"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Robotics",
+        "Manufacturing",
+        "Research",
+        "Defense"
+      ],
+      "futureOutlook": "Investment in humanoids is rising, creating early but growing demand.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Robotics route",
+        "steps": [
+          {
+            "title": "Study ME, EE, or CS",
+            "description": "Build mechanics, electronics, or AI foundations."
+          },
+          {
+            "title": "Learn robotics",
+            "description": "Study dynamics, control, and perception."
+          },
+          {
+            "title": "Build humanoids",
+            "description": "Work on locomotion, manipulation, and learning."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "C++",
+      "ROS",
+      "PyTorch",
+      "MATLAB"
+    ],
+    "soft": [
+      "Problem solving",
+      "Creativity",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "creative"
+    ],
+    "per": [
+      "innovative",
+      "persistent",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Computer Science"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "ROS",
+      "Gazebo",
+      "PyTorch",
+      "MuJoCo"
+    ],
+    "acts": [
+      "Designing",
+      "Programming",
+      "Testing"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Robotics Engineer",
+      "Humanoid Systems Engineer",
+      "Robotics Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Humanoid Robotics Engineer Career 2026",
+      "description": "Explore the Humanoid Robotics Engineer role, skills, and outlook.",
+      "keywords": [
+        "humanoid robotics",
+        "robotics engineer",
+        "bipedal robot",
+        "embodied ai"
+      ],
+      "faqs": [
+        {
+          "q": "What does a humanoid robotics engineer do?",
+          "a": "They build the locomotion, manipulation, and intelligence of human-like robots."
+        },
+        {
+          "q": "Is this a new field?",
+          "a": "It is emerging fast with new commercial investment in humanoid platforms."
+        }
+      ]
+    },
+    "rel": [
+      "Robotics Engineering",
+      "Autonomous Vehicles Engineer",
+      "Surgical Robotics Engineer"
+    ]
+  },
+  {
+    "name": "Surgical Robotics Engineer",
+    "title": "Surgical Robotics Engineer",
+    "cat": "Engineering",
+    "sub": "Medical Robotics",
+    "introduction": "Surgical Robotics Engineers build robotic systems that assist surgeons with precision procedures. They combine robotics, controls, and medical domain knowledge.",
+    "whoShouldPursue": [
+      "Engineers motivated by healthcare impact",
+      "People who like precision systems",
+      "Builders of safe, complex machines"
+    ],
+    "workNature": {
+      "description": "You develop manipulators, imaging integration, and safety for surgical systems.",
+      "examples": [
+        "Designing a surgical arm",
+        "Integrating haptic feedback",
+        "Validating safety limits"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in ME, EE, or Robotics",
+      "Robotics and controls fundamentals",
+      "Understanding of medical regulation"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Medical Devices",
+        "Healthcare",
+        "Robotics"
+      ],
+      "futureOutlook": "Minimally invasive surgery adoption is growing demand for surgical robotics.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Medtech route",
+        "steps": [
+          {
+            "title": "Study ME or EE",
+            "description": "Build mechanics and controls foundations."
+          },
+          {
+            "title": "Learn medical robotics",
+            "description": "Study kinematics, sensing, and regulation."
+          },
+          {
+            "title": "Build safe systems",
+            "description": "Develop and validate surgical robotic platforms."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "C++",
+      "ROS",
+      "MATLAB",
+      "CAD"
+    ],
+    "soft": [
+      "Problem solving",
+      "Precision",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "precise",
+      "dependable",
+      "innovative"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Biology"
+    ],
+    "tools": [
+      "ROS",
+      "SolidWorks",
+      "MATLAB",
+      "Simulink"
+    ],
+    "acts": [
+      "Designing",
+      "Programming",
+      "Testing"
+    ],
+    "env": "Lab and clinical settings",
+    "path": [
+      "Robotics Engineer",
+      "Surgical Systems Engineer",
+      "Medical Robotics Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Surgical Robotics Engineer Career 2026",
+      "description": "Learn the Surgical Robotics Engineer role, skills, and outlook.",
+      "keywords": [
+        "surgical robotics",
+        "medical robotics",
+        "robotics engineer",
+        "healthcare tech"
+      ],
+      "faqs": [
+        {
+          "q": "What does a surgical robotics engineer do?",
+          "a": "They build and validate robotic systems that help surgeons operate with precision."
+        },
+        {
+          "q": "Is regulation a big part of the job?",
+          "a": "Yes. Safety and compliance are central in medical robotics."
+        }
+      ]
+    },
+    "rel": [
+      "Robotics Engineering",
+      "Humanoid Robotics Engineer",
+      "Health Informatics"
+    ]
+  },
+  {
+    "name": "Solar Energy Engineer",
+    "title": "Solar Energy Engineer",
+    "cat": "Environment & Sustainability",
+    "sub": "Solar Energy",
+    "introduction": "Solar Energy Engineers design and optimize photovoltaic systems and solar plants. They work on efficiency, storage integration, and grid connection.",
+    "whoShouldPursue": [
+      "Engineers who want clean energy impact",
+      "People who like systems and the outdoors",
+      "Builders of infrastructure"
+    ],
+    "workNature": {
+      "description": "You design arrays, model output, and integrate solar with storage and grids.",
+      "examples": [
+        "Sizing a rooftop system",
+        "Modeling plant yield",
+        "Integrating battery storage"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Electrical or Mechanical Engineering",
+      "Power systems fundamentals",
+      "Interest in renewables"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Renewable Energy",
+        "Utilities",
+        "Construction",
+        "Government"
+      ],
+      "futureOutlook": "Solar is among the fastest-growing energy sources, sustaining strong demand.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Renewables route",
+        "steps": [
+          {
+            "title": "Study EE or ME",
+            "description": "Build power and thermal foundations."
+          },
+          {
+            "title": "Learn solar tech",
+            "description": "Study PV, inverters, and storage."
+          },
+          {
+            "title": "Deploy projects",
+            "description": "Design and commission solar systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "PVsyst",
+      "AutoCAD",
+      "Python",
+      "MATLAB",
+      "Helioscope"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Project management"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "practical",
+      "analytical",
+      "dependable"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "M.TECH Renewable Energy",
+      "B.TECH/B.E. Civil Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "PVsyst",
+      "AutoCAD",
+      "HOMER",
+      "Python"
+    ],
+    "acts": [
+      "Designing systems",
+      "Modeling",
+      "Site assessment"
+    ],
+    "env": "Field and office",
+    "path": [
+      "Solar Engineer",
+      "PV Design Engineer",
+      "Renewables Project Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Solar Energy Engineer Career 2026",
+      "description": "Learn how to become a Solar Energy Engineer, skills, and outlook.",
+      "keywords": [
+        "solar energy engineer",
+        "photovoltaic",
+        "renewable energy",
+        "solar pv"
+      ],
+      "faqs": [
+        {
+          "q": "Is solar engineering a good career?",
+          "a": "Yes. Solar deployment is growing rapidly worldwide."
+        },
+        {
+          "q": "Which degree is best?",
+          "a": "Electrical or mechanical engineering with a renewable focus."
+        }
+      ]
+    },
+    "rel": [
+      "Renewable Energy Engineering",
+      "Wind Energy Engineer",
+      "Smart Grid Engineer"
+    ]
+  },
+  {
+    "name": "Wind Energy Engineer",
+    "title": "Wind Energy Engineer",
+    "cat": "Environment & Sustainability",
+    "sub": "Wind Energy",
+    "introduction": "Wind Energy Engineers design and maintain wind turbines and farms. They optimize aerodynamics, structures, and grid integration for clean power.",
+    "whoShouldPursue": [
+      "Engineers drawn to clean energy",
+      "People who like large mechanical systems",
+      "Builders comfortable with heights and data"
+    ],
+    "workNature": {
+      "description": "You design turbine systems, analyze performance, and improve reliability.",
+      "examples": [
+        "Optimizing blade design",
+        "Analyzing turbine data",
+        "Planning a wind farm layout"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Mechanical or Electrical Engineering",
+      "Fluid dynamics and power basics",
+      "Interest in renewables"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Renewable Energy",
+        "Utilities",
+        "Offshore Wind"
+      ],
+      "futureOutlook": "Offshore and onshore wind expansion sustains steady demand.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Renewables route",
+        "steps": [
+          {
+            "title": "Study ME or EE",
+            "description": "Build mechanics and power foundations."
+          },
+          {
+            "title": "Learn wind tech",
+            "description": "Study aerodynamics, structures, and control."
+          },
+          {
+            "title": "Deploy wind projects",
+            "description": "Design and maintain turbine systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "MATLAB",
+      "AutoCAD",
+      "Python",
+      "SCADA",
+      "Bladed"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Analytical thinking"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "practical",
+      "dependable",
+      "analytical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "M.TECH Renewable Energy",
+      "B.TECH/B.E. Mechanical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "MATLAB",
+      "AutoCAD",
+      "Bladed",
+      "Python"
+    ],
+    "acts": [
+      "Designing",
+      "Analyzing data",
+      "Maintenance planning"
+    ],
+    "env": "Field and office",
+    "path": [
+      "Wind Engineer",
+      "Turbine Design Engineer",
+      "Wind Project Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Wind Energy Engineer Career 2026",
+      "description": "Explore the Wind Energy Engineer role, skills, and outlook.",
+      "keywords": [
+        "wind energy engineer",
+        "wind turbine",
+        "renewable energy",
+        "offshore wind"
+      ],
+      "faqs": [
+        {
+          "q": "What does a wind energy engineer do?",
+          "a": "They design, analyze, and maintain wind turbines and farms."
+        },
+        {
+          "q": "Is offshore wind a good area?",
+          "a": "It is growing quickly and offers strong long-term opportunities."
+        }
+      ]
+    },
+    "rel": [
+      "Renewable Energy Engineering",
+      "Solar Energy Engineer",
+      "Smart Grid Engineer"
+    ]
+  },
+  {
+    "name": "Battery Technology Engineer",
+    "title": "Battery Technology Engineer",
+    "cat": "Environment & Sustainability",
+    "sub": "Energy Storage",
+    "introduction": "Battery Technology Engineers develop and improve energy storage for EVs, grids, and devices. They work on chemistry, cells, and battery management systems.",
+    "whoShouldPursue": [
+      "Engineers interested in chemistry and power",
+      "People who like tangible impact",
+      "Builders of the energy transition"
+    ],
+    "workNature": {
+      "description": "You design cells, test chemistries, and build management and safety systems.",
+      "examples": [
+        "Testing a new cell chemistry",
+        "Designing a BMS",
+        "Improving fast-charge safety"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in EE, ME, Chemical, or Materials",
+      "Electrochemistry basics",
+      "Data and testing skills"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Automotive",
+        "Energy Storage",
+        "Consumer Electronics"
+      ],
+      "futureOutlook": "EV and grid storage growth makes batteries a hot area.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Storage route",
+        "steps": [
+          {
+            "title": "Study relevant engineering",
+            "description": "Build EE, chemical, or materials foundations."
+          },
+          {
+            "title": "Learn electrochemistry",
+            "description": "Study cells, BMS, and safety."
+          },
+          {
+            "title": "Build storage products",
+            "description": "Develop and validate battery systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "MATLAB",
+      "CAD",
+      "Battery Simulators"
+    ],
+    "soft": [
+      "Problem solving",
+      "Analytical thinking",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "curious",
+      "precise",
+      "practical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Chemical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "MATLAB",
+      "COMSOL",
+      "Python",
+      "Battery test rigs"
+    ],
+    "acts": [
+      "Testing",
+      "Designing",
+      "Analyzing data"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Battery Engineer",
+      "Cell Design Engineer",
+      "Energy Storage Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Battery Technology Engineer Career 2026",
+      "description": "Understand the Battery Technology Engineer role, skills, and outlook.",
+      "keywords": [
+        "battery engineer",
+        "energy storage",
+        "bms",
+        "ev battery"
+      ],
+      "faqs": [
+        {
+          "q": "What does a battery engineer do?",
+          "a": "They develop cells, chemistries, and management systems for storage."
+        },
+        {
+          "q": "Is this a growing field?",
+          "a": "Yes. EVs and grid storage are driving strong demand."
+        }
+      ]
+    },
+    "rel": [
+      "Electric Vehicle Technology",
+      "Solar Energy Engineer",
+      "Green Hydrogen Engineer"
+    ]
+  },
+  {
+    "name": "Green Hydrogen Engineer",
+    "title": "Green Hydrogen Engineer",
+    "cat": "Environment & Sustainability",
+    "sub": "Hydrogen Energy",
+    "introduction": "Green Hydrogen Engineers develop hydrogen produced from renewables for clean fuel and industry. They work on electrolysis, storage, and integration.",
+    "whoShouldPursue": [
+      "Chemical and energy engineers",
+      "People excited by emerging clean fuels",
+      "Builders of future energy systems"
+    ],
+    "workNature": {
+      "description": "You design electrolyzers, optimize efficiency, and plan hydrogen value chains.",
+      "examples": [
+        "Modeling an electrolyzer",
+        "Designing storage",
+        "Integrating with renewables"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Chemical or Electrical Engineering",
+      "Electrochemistry or process basics",
+      "Interest in clean fuels"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Energy",
+        "Heavy Industry",
+        "Transport"
+      ],
+      "futureOutlook": "Policy support is accelerating early-stage demand for hydrogen talent.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Clean fuels route",
+        "steps": [
+          {
+            "title": "Study chemical or EE",
+            "description": "Build process and power foundations."
+          },
+          {
+            "title": "Learn hydrogen tech",
+            "description": "Study electrolysis, storage, and safety."
+          },
+          {
+            "title": "Build hydrogen projects",
+            "description": "Design and integrate green hydrogen systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "MATLAB",
+      "Aspen",
+      "Process Simulators"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Vision"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "innovative",
+      "analytical",
+      "practical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Chemical Engineering",
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Mechanical Engineering"
+    ],
+    "subj": [
+      "Chemistry",
+      "Physics",
+      "Mathematics"
+    ],
+    "tools": [
+      "Aspen Plus",
+      "MATLAB",
+      "Python",
+      "HSC Chemistry"
+    ],
+    "acts": [
+      "Modeling",
+      "Designing",
+      "Analyzing data"
+    ],
+    "env": "Lab, plant, and office",
+    "path": [
+      "Hydrogen Engineer",
+      "Process Engineer",
+      "Green Fuels Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Green Hydrogen Engineer Career 2026",
+      "description": "Explore the Green Hydrogen Engineer role, skills, and outlook.",
+      "keywords": [
+        "green hydrogen",
+        "hydrogen engineer",
+        "electrolysis",
+        "clean fuel"
+      ],
+      "faqs": [
+        {
+          "q": "What is green hydrogen?",
+          "a": "Hydrogen made by splitting water using renewable electricity, with low emissions."
+        },
+        {
+          "q": "Is it a mature career?",
+          "a": "It is emerging, with demand growing as industries adopt clean fuels."
+        }
+      ]
+    },
+    "rel": [
+      "Renewable Energy Engineering",
+      "Battery Technology Engineer",
+      "Solar Energy Engineer"
+    ]
+  },
+  {
+    "name": "Smart Grid Engineer",
+    "title": "Smart Grid Engineer",
+    "cat": "Environment & Sustainability",
+    "sub": "Smart Grids",
+    "introduction": "Smart Grid Engineers modernize power networks with sensors, automation, and two-way communication. They improve reliability, efficiency, and renewable integration.",
+    "whoShouldPursue": [
+      "Electrical engineers who like networks",
+      "People interested in clean energy systems",
+      "Builders of resilient infrastructure"
+    ],
+    "workNature": {
+      "description": "You design automation, monitor grids, and integrate distributed energy.",
+      "examples": [
+        "Designing grid automation",
+        "Integrating rooftop solar",
+        "Building demand response"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Electrical Engineering",
+      "Power systems and controls",
+      "Networking basics"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Utilities",
+        "Energy",
+        "Smart Cities"
+      ],
+      "futureOutlook": "Grid modernization and renewables push steady demand.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Power systems route",
+        "steps": [
+          {
+            "title": "Study electrical engineering",
+            "description": "Build power and controls foundations."
+          },
+          {
+            "title": "Learn grid tech",
+            "description": "Study SCADA, automation, and DER."
+          },
+          {
+            "title": "Modernize grids",
+            "description": "Design and operate smart grid systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "SCADA",
+      "Python",
+      "MATLAB",
+      "IoT",
+      "AutoCAD"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "analytical",
+      "dependable",
+      "systematic"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "M.TECH Renewable Energy"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "SCADA",
+      "MATLAB",
+      "Python",
+      "ETAP"
+    ],
+    "acts": [
+      "Designing",
+      "Monitoring",
+      "Analyzing data"
+    ],
+    "env": "Office, control room, and field",
+    "path": [
+      "Smart Grid Engineer",
+      "Grid Automation Engineer",
+      "Grid Systems Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Smart Grid Engineer Career 2026",
+      "description": "Learn the Smart Grid Engineer role, skills, and outlook.",
+      "keywords": [
+        "smart grid",
+        "grid engineer",
+        "power systems",
+        "renewable integration"
+      ],
+      "faqs": [
+        {
+          "q": "What is a smart grid?",
+          "a": "A modernized grid using sensors and automation for reliability and renewables."
+        },
+        {
+          "q": "Which skills are key?",
+          "a": "Power systems, controls, and data/communication tech."
+        }
+      ]
+    },
+    "rel": [
+      "Renewable Energy Engineering",
+      "Solar Energy Engineer",
+      "Wind Energy Engineer"
+    ]
+  },
+  {
+    "name": "Carbon Markets Analyst",
+    "title": "Carbon Markets Analyst",
+    "cat": "Environment & Sustainability",
+    "sub": "Carbon Markets",
+    "introduction": "Carbon Markets Analysts track and trade carbon credits and help organizations meet climate targets. They combine finance, policy, and sustainability.",
+    "whoShouldPursue": [
+      "People interested in climate and finance",
+      "Analysts who like markets and policy",
+      "Communicators across business and sustainability"
+    ],
+    "workNature": {
+      "description": "You value emissions, monitor prices, and advise on compliance and offsets.",
+      "examples": [
+        "Pricing a carbon credit",
+        "Modeling compliance cost",
+        "Advising on offset strategy"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Finance, Economics, or Environmental Science",
+      "Understanding of markets",
+      "Knowledge of climate policy"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Energy",
+        "Finance",
+        "Consulting",
+        "Heavy Industry"
+      ],
+      "futureOutlook": "Net-zero commitments are growing demand for carbon market expertise.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Finance + climate route",
+        "steps": [
+          {
+            "title": "Study finance or environment",
+            "description": "Build markets or climate foundations."
+          },
+          {
+            "title": "Learn carbon markets",
+            "description": "Study credits, regulation, and pricing."
+          },
+          {
+            "title": "Advise and trade",
+            "description": "Support compliance and offset strategies."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Excel",
+      "Python",
+      "Bloomberg",
+      "Market Data"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Communication",
+      "Ethics"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "analytical",
+      "principled",
+      "adaptable"
+    ],
+    "deg": [
+      "B.Com",
+      "BBA",
+      "MBA",
+      "MBA"
+    ],
+    "subj": [
+      "Economics",
+      "Business Studies",
+      "Environmental Science",
+      "Mathematics"
+    ],
+    "tools": [
+      "Excel",
+      "Python",
+      "Bloomberg Terminal"
+    ],
+    "acts": [
+      "Analyzing markets",
+      "Advising",
+      "Modeling"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Carbon Markets Analyst",
+      "Carbon Trader",
+      "Climate Finance Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Carbon Markets Analyst Career 2026",
+      "description": "Explore the Carbon Markets Analyst role, skills, and outlook.",
+      "keywords": [
+        "carbon markets",
+        "carbon credits",
+        "climate finance",
+        "esg"
+      ],
+      "faqs": [
+        {
+          "q": "What are carbon markets?",
+          "a": "Systems where emissions allowances and credits are bought and sold to reduce carbon."
+        },
+        {
+          "q": "Do I need a finance background?",
+          "a": "Finance or economics helps, but environmental knowledge is equally valued."
+        }
+      ]
+    },
+    "rel": [
+      "ESG Analyst",
+      "Climate Risk Analyst",
+      "Sustainability"
+    ]
+  },
+  {
+    "name": "Genomic Data Scientist",
+    "title": "Genomic Data Scientist",
+    "cat": "Life Sciences",
+    "sub": "Genomics",
+    "introduction": "Genomic Data Scientists analyze DNA and sequencing data to understand biology and disease. They combine bioinformatics, statistics, and biology.",
+    "whoShouldPursue": [
+      "People who love biology and data",
+      "Analysts drawn to precision medicine",
+      "Builders at the life-science frontier"
+    ],
+    "workNature": {
+      "description": "You process sequencing data, find variants, and support research or diagnostics.",
+      "examples": [
+        "Analyzing a genome sequence",
+        "Finding disease variants",
+        "Building a variant pipeline"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Biology, Genetics, or Data Science",
+      "Statistics and programming",
+      "Understanding of molecular biology"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Biotech",
+        "Healthcare",
+        "Research",
+        "Pharma"
+      ],
+      "futureOutlook": "Genomics and personalized medicine are expanding data roles in biology.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "18-35 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Bio + data route",
+        "steps": [
+          {
+            "title": "Study biology or data science",
+            "description": "Build life-science and quantitative foundations."
+          },
+          {
+            "title": "Learn bioinformatics",
+            "description": "Study sequencing, statistics, and tooling."
+          },
+          {
+            "title": "Analyze genomes",
+            "description": "Build pipelines and support discovery."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "R",
+      "Bioconductor",
+      "SQL",
+      "Linux"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Curiosity",
+      "Collaboration"
+    ],
+    "int": [
+      "research",
+      "problem_solving",
+      "technology"
+    ],
+    "per": [
+      "curious",
+      "precise",
+      "patient"
+    ],
+    "deg": [
+      "B.SC Genetics/Life Sciences",
+      "B.SC Data Science",
+      "M.SC Data Science",
+      "M.SC Mathematics",
+      "B.SC Microbiology"
+    ],
+    "subj": [
+      "Biology",
+      "Mathematics",
+      "Statistics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Bioconductor",
+      "Galaxy",
+      "Python",
+      "RStudio"
+    ],
+    "acts": [
+      "Analyzing data",
+      "Programming",
+      "Research"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Genomic Data Scientist",
+      "Bioinformatics Scientist",
+      "Genomics Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Genomic Data Scientist Career 2026",
+      "description": "Understand the Genomic Data Scientist role, skills, and outlook.",
+      "keywords": [
+        "genomic data scientist",
+        "bioinformatics",
+        "genomics",
+        "precision medicine"
+      ],
+      "faqs": [
+        {
+          "q": "Is genomic data science in demand?",
+          "a": "Yes. Personalized medicine and sequencing growth are creating roles."
+        },
+        {
+          "q": "Which degree is best?",
+          "a": "Biology or genetics plus data science, or vice versa."
+        }
+      ]
+    },
+    "rel": [
+      "Bioinformatics",
+      "Computational Biologist",
+      "Genetic Counseling"
+    ]
+  },
+  {
+    "name": "Computational Biologist",
+    "title": "Computational Biologist",
+    "cat": "Life Sciences",
+    "sub": "Computational Biology",
+    "introduction": "Computational Biologists build models of biological systems to understand life and disease. They combine math, computing, and biology.",
+    "whoShouldPursue": [
+      "Scientists who like modeling",
+      "People bridging biology and code",
+      "Researchers motivated by discovery"
+    ],
+    "workNature": {
+      "description": "You simulate pathways, analyze omics data, and test hypotheses in silico.",
+      "examples": [
+        "Modeling a cell pathway",
+        "Analyzing multi-omics",
+        "Simulating drug response"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Biology, Math, CS, or related",
+      "Modeling and programming",
+      "Biological literacy"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Biotech",
+        "Pharma",
+        "Research",
+        "Healthcare"
+      ],
+      "futureOutlook": "Data-driven biology keeps growing as experiments generate more data.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "18-35 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Modeling route",
+        "steps": [
+          {
+            "title": "Study biology or quantitative field",
+            "description": "Build domain and math foundations."
+          },
+          {
+            "title": "Learn computational methods",
+            "description": "Study modeling, stats, and programming."
+          },
+          {
+            "title": "Do discovery",
+            "description": "Build models that advance research."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "R",
+      "MATLAB",
+      "Linux",
+      "SQL"
+    ],
+    "soft": [
+      "Curiosity",
+      "Analytical thinking",
+      "Collaboration"
+    ],
+    "int": [
+      "research",
+      "problem_solving",
+      "technology"
+    ],
+    "per": [
+      "curious",
+      "logical",
+      "patient"
+    ],
+    "deg": [
+      "B.SC Genetics/Life Sciences",
+      "B.SC Microbiology",
+      "B.SC Data Science",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Biology",
+      "Mathematics",
+      "Statistics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Python",
+      "R",
+      "Jupyter",
+      "Snakemake"
+    ],
+    "acts": [
+      "Modeling",
+      "Analyzing data",
+      "Research"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Computational Biologist",
+      "Research Scientist",
+      "Modeling Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Computational Biologist Career 2026",
+      "description": "Explore the Computational Biologist role, skills, and outlook.",
+      "keywords": [
+        "computational biologist",
+        "systems biology",
+        "bio modeling",
+        "bioinformatics"
+      ],
+      "faqs": [
+        {
+          "q": "What does a computational biologist do?",
+          "a": "They build models and analyze data to understand biological systems."
+        },
+        {
+          "q": "Is coding required?",
+          "a": "Yes. Python or R plus statistical and modeling skills are essential."
+        }
+      ]
+    },
+    "rel": [
+      "Bioinformatics",
+      "Genomic Data Scientist",
+      "Synthetic Biology Engineer"
+    ]
+  },
+  {
+    "name": "Synthetic Biology Engineer",
+    "title": "Synthetic Biology Engineer",
+    "cat": "Life Sciences",
+    "sub": "Synthetic Biology",
+    "introduction": "Synthetic Biology Engineers design and build biological parts and systems, from engineered microbes to sustainable materials. They blend biology, engineering, and computing.",
+    "whoShouldPursue": [
+      "Engineers fascinated by biology",
+      "People who like designing living systems",
+      "Builders of bio-based products"
+    ],
+    "workNature": {
+      "description": "You design genetic circuits, run experiments, and optimize biological production.",
+      "examples": [
+        "Engineering a microbe",
+        "Designing a genetic circuit",
+        "Scaling a bio-production"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Biology, Biotech, or Engineering",
+      "Molecular biology and lab skills",
+      "Design and data literacy"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Biotech",
+        "Materials",
+        "Food",
+        "Pharma"
+      ],
+      "futureOutlook": "Bio-manufacturing investment is creating early but growing demand.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "18-35 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Bioengineering route",
+        "steps": [
+          {
+            "title": "Study biology or biotech",
+            "description": "Build molecular and engineering foundations."
+          },
+          {
+            "title": "Learn syn-bio tools",
+            "description": "Study genetic design and automation."
+          },
+          {
+            "title": "Build bio-systems",
+            "description": "Design and scale engineered organisms."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "Benchling",
+      "CAD for DNA",
+      "Lab Automation"
+    ],
+    "soft": [
+      "Creativity",
+      "Problem solving",
+      "Collaboration"
+    ],
+    "int": [
+      "research",
+      "creative",
+      "technology"
+    ],
+    "per": [
+      "innovative",
+      "curious",
+      "meticulous"
+    ],
+    "deg": [
+      "B.SC Genetics/Life Sciences",
+      "B.SC Microbiology",
+      "B.TECH/B.E. Biotechnology"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "Benchling",
+      "SnapGene",
+      "Python",
+      "Lab robots"
+    ],
+    "acts": [
+      "Designing",
+      "Experimenting",
+      "Analyzing data"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Synthetic Biology Engineer",
+      "Bioengineer",
+      "Syn-Bio Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Synthetic Biology Engineer Career 2026",
+      "description": "Learn the Synthetic Biology Engineer role, skills, and outlook.",
+      "keywords": [
+        "synthetic biology",
+        "bioengineer",
+        "genetic engineering",
+        "biotech"
+      ],
+      "faqs": [
+        {
+          "q": "What is synthetic biology?",
+          "a": "Engineering biology to design new parts, devices, and systems."
+        },
+        {
+          "q": "Is it a growing field?",
+          "a": "Yes. Bio-manufacturing and materials are attracting investment."
+        }
+      ]
+    },
+    "rel": [
+      "Biomedical Engineering",
+      "Computational Biologist",
+      "Genomic Data Scientist"
+    ]
+  },
+  {
+    "name": "Telehealth Specialist",
+    "title": "Telehealth Specialist",
+    "cat": "Healthcare & Medicine",
+    "sub": "Telehealth",
+    "introduction": "Telehealth Specialists deliver and coordinate care remotely using digital tools. They bridge clinical practice and technology to reach patients at a distance.",
+    "whoShouldPursue": [
+      "Clinicians interested in digital care",
+      "People who like patient coordination",
+      "Adaptable healthcare professionals"
+    ],
+    "workNature": {
+      "description": "You run virtual visits, manage remote monitoring, and coordinate care teams.",
+      "examples": [
+        "Conducting a video consult",
+        "Monitoring remote vitals",
+        "Coordinating follow-up care"
+      ]
+    },
+    "eligibility": [
+      "Clinical degree or certification (nursing, MBBS, etc.)",
+      "Comfort with digital tools",
+      "Strong communication"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Healthcare",
+        "Telemedicine",
+        "Public Health"
+      ],
+      "futureOutlook": "Remote care adoption is sustaining demand for telehealth roles.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-17 LPA",
+        "senior": "20-40 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Clinical route",
+        "steps": [
+          {
+            "title": "Train as a clinician",
+            "description": "Earn a nursing, medical, or allied health qualification."
+          },
+          {
+            "title": "Learn telehealth tools",
+            "description": "Study platforms, monitoring, and regulation."
+          },
+          {
+            "title": "Deliver remote care",
+            "description": "Run virtual visits and coordinate teams."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Telehealth Platforms",
+      "EHR",
+      "Remote Monitoring",
+      "Python"
+    ],
+    "soft": [
+      "Communication",
+      "Empathy",
+      "Adaptability"
+    ],
+    "int": [
+      "people",
+      "communication",
+      "technology"
+    ],
+    "per": [
+      "empathetic",
+      "adaptable",
+      "dependable"
+    ],
+    "deg": [
+      "M.SC Health Informatics",
+      "MBBS",
+      "B.SC Nursing"
+    ],
+    "subj": [
+      "Biology",
+      "Computer Science",
+      "Psychology",
+      "English"
+    ],
+    "tools": [
+      "Zoom Health",
+      "Epic",
+      "Remote monitoring apps"
+    ],
+    "acts": [
+      "Patient care",
+      "Coordination",
+      "Using technology"
+    ],
+    "env": "Clinical or remote",
+    "path": [
+      "Telehealth Specialist",
+      "Telehealth Coordinator",
+      "Digital Care Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Telehealth Specialist Career 2026",
+      "description": "Explore the Telehealth Specialist role, skills, and outlook.",
+      "keywords": [
+        "telehealth",
+        "telemedicine",
+        "remote care",
+        "digital health"
+      ],
+      "faqs": [
+        {
+          "q": "What does a telehealth specialist do?",
+          "a": "They deliver and coordinate care remotely using digital tools."
+        },
+        {
+          "q": "Do I need a medical degree?",
+          "a": "A clinical qualification is typically required, such as nursing or medicine."
+        }
+      ]
+    },
+    "rel": [
+      "Health Informatics",
+      "Medical AI Engineer",
+      "Clinical Data Management"
+    ]
+  },
+  {
+    "name": "Medical AI Engineer",
+    "title": "Medical AI Engineer",
+    "cat": "Healthcare & Medicine",
+    "sub": "Medical AI",
+    "introduction": "Medical AI Engineers build models that support diagnosis and treatment, from imaging to clinical decision support. They combine ML with rigorous clinical validation.",
+    "whoShouldPursue": [
+      "ML engineers motivated by health impact",
+      "People who value safety and validation",
+      "Builders of trustworthy AI"
+    ],
+    "workNature": {
+      "description": "You develop and validate models for clinical use with care for bias and safety.",
+      "examples": [
+        "Building an imaging model",
+        "Validating on clinical data",
+        "Designing decision support"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS, Engineering, or related",
+      "ML fundamentals",
+      "Understanding of clinical constraints"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Healthcare",
+        "Medical Devices",
+        "Biotech"
+      ],
+      "futureOutlook": "AI adoption in medicine is accelerating, with strong demand for validated systems.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-17 LPA",
+        "senior": "20-40 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "ML + health route",
+        "steps": [
+          {
+            "title": "Study CS or engineering",
+            "description": "Build ML and software foundations."
+          },
+          {
+            "title": "Learn clinical AI",
+            "description": "Study validation, regulation, and data."
+          },
+          {
+            "title": "Build clinical models",
+            "description": "Develop and validate safe medical AI."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "PyTorch",
+      "MONAI",
+      "SQL",
+      "Docker"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Rigor"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "precise",
+      "logical",
+      "ethical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Data Science",
+      "M.SC Data Science",
+      "M.SC Mathematics",
+      "M.SC Clinical Research"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Biology",
+      "Statistics"
+    ],
+    "tools": [
+      "PyTorch",
+      "MONAI",
+      "scikit-learn",
+      "Docker"
+    ],
+    "acts": [
+      "Programming",
+      "Modeling",
+      "Validation"
+    ],
+    "env": "Office, lab, or hospital",
+    "path": [
+      "Medical AI Engineer",
+      "Clinical ML Engineer",
+      "AI in Health Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Medical AI Engineer Career 2026",
+      "description": "Understand the Medical AI Engineer role, skills, and outlook.",
+      "keywords": [
+        "medical ai",
+        "healthcare ai",
+        "clinical ml",
+        "medical imaging ai"
+      ],
+      "faqs": [
+        {
+          "q": "What does a medical AI engineer do?",
+          "a": "They build and validate AI models that support clinical care."
+        },
+        {
+          "q": "Is regulation important?",
+          "a": "Yes. Clinical AI requires careful validation and compliance."
+        }
+      ]
+    },
+    "rel": [
+      "Health Informatics",
+      "Medical AI Engineer",
+      "Telehealth Specialist"
+    ]
+  },
+  {
+    "name": "Edge Computing Engineer",
+    "title": "Edge Computing Engineer",
+    "cat": "Technology & Software",
+    "sub": "Edge Computing",
+    "introduction": "Edge Computing Engineers run computation close to data sources like sensors and devices, reducing latency and bandwidth. They build distributed, often constrained, systems.",
+    "whoShouldPursue": [
+      "Engineers who like distributed systems",
+      "People interested in IoT and latency",
+      "Builders of resilient edge apps"
+    ],
+    "workNature": {
+      "description": "You deploy models and services on edge devices and gateways.",
+      "examples": [
+        "Running inference on a camera",
+        "Managing edge fleets",
+        "Optimizing for low power"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS or Engineering",
+      "Networking and systems skills",
+      "Familiarity with embedded or cloud"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "IoT",
+        "Manufacturing",
+        "Automotive",
+        "Telecom"
+      ],
+      "futureOutlook": "More processing is moving to the edge, sustaining demand.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "13-25 LPA",
+        "senior": "30-60 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Distributed systems route",
+        "steps": [
+          {
+            "title": "Study CS or engineering",
+            "description": "Build systems and networking foundations."
+          },
+          {
+            "title": "Learn edge tech",
+            "description": "Study containers, IoT, and constrained devices."
+          },
+          {
+            "title": "Deploy at the edge",
+            "description": "Build and manage edge applications."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "Rust",
+      "Docker",
+      "Kubernetes",
+      "MQTT"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "practical",
+      "logical",
+      "resourceful"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.SC Computer Science"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Docker",
+      "K3s",
+      "MQTT",
+      "Grafana"
+    ],
+    "acts": [
+      "Programming",
+      "Deploying",
+      "Monitoring"
+    ],
+    "env": "Remote or field with devices",
+    "path": [
+      "Edge Computing Engineer",
+      "Edge Platform Engineer",
+      "Edge Systems Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Edge Computing Engineer Career 2026",
+      "description": "Learn the Edge Computing Engineer role, skills, and outlook.",
+      "keywords": [
+        "edge computing",
+        "edge engineer",
+        "iot edge",
+        "distributed systems"
+      ],
+      "faqs": [
+        {
+          "q": "What is edge computing?",
+          "a": "Running computation near data sources instead of centralized cloud."
+        },
+        {
+          "q": "Which skills matter?",
+          "a": "Networking, containers, and systems programming."
+        }
+      ]
+    },
+    "rel": [
+      "Internet of Things",
+      "Cloud Computing",
+      "Embedded Systems Engineer"
+    ]
+  },
+  {
+    "name": "Cloud Solutions Architect",
+    "title": "Cloud Solutions Architect",
+    "cat": "Technology & Software",
+    "sub": "Cloud Architecture",
+    "introduction": "Cloud Solutions Architects design scalable, secure cloud systems that meet business needs. They bridge stakeholders and engineering teams.",
+    "whoShouldPursue": [
+      "Experienced engineers who like design",
+      "People who enjoy trade-off decisions",
+      "Communicators who can lead technical vision"
+    ],
+    "workNature": {
+      "description": "You design architectures, choose services, and guide implementation.",
+      "examples": [
+        "Designing a microservices platform",
+        "Choosing a data architecture",
+        "Leading a cloud migration"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS or Engineering",
+      "Deep cloud and systems experience",
+      "Strong communication"
+    ],
+    "stats": {
+      "demandLevel": "High",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Finance",
+        "Healthcare",
+        "Retail"
+      ],
+      "futureOutlook": "Cloud adoption continues, keeping architecture roles in demand.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "13-25 LPA",
+        "senior": "30-60 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Senior engineering route",
+        "steps": [
+          {
+            "title": "Build engineering depth",
+            "description": "Gain experience across software and infrastructure."
+          },
+          {
+            "title": "Master cloud",
+            "description": "Learn architecture patterns and services."
+          },
+          {
+            "title": "Lead designs",
+            "description": "Architect solutions and guide teams."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "AWS",
+      "Azure",
+      "Terraform",
+      "Kubernetes",
+      "Python"
+    ],
+    "soft": [
+      "Communication",
+      "Leadership",
+      "Problem solving"
+    ],
+    "int": [
+      "technology",
+      "business",
+      "problem_solving"
+    ],
+    "per": [
+      "strategic",
+      "logical",
+      "collaborative"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "BCA",
+      "MCA",
+      "MBA"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Business Studies"
+    ],
+    "tools": [
+      "AWS Well-Architected",
+      "Terraform",
+      "Lucidchart",
+      "CloudFormation"
+    ],
+    "acts": [
+      "Designing",
+      "Advising",
+      "Documenting"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Cloud Architect",
+      "Senior Solutions Architect",
+      "Principal Architect"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": false,
+    "seo": {
+      "title": "Cloud Solutions Architect Career 2026",
+      "description": "Explore the Cloud Solutions Architect role, skills, and outlook.",
+      "keywords": [
+        "cloud architect",
+        "solutions architect",
+        "cloud design",
+        "aws architect"
+      ],
+      "faqs": [
+        {
+          "q": "Is cloud architecture a good career?",
+          "a": "Yes. Cloud adoption keeps architecture roles in strong demand."
+        },
+        {
+          "q": "Do I need coding skills?",
+          "a": "Yes, hands-on ability helps even though the role is design-focused."
+        }
+      ]
+    },
+    "rel": [
+      "Cloud Computing",
+      "DevOps",
+      "Cloud Security Engineer"
+    ]
+  },
+  {
+    "name": "High Performance Computing Engineer",
+    "title": "High Performance Computing Engineer",
+    "cat": "Technology & Software",
+    "sub": "High Performance Computing",
+    "introduction": "High Performance Computing Engineers build and optimize systems that run massive computations, from simulations to AI training. They work close to hardware for speed.",
+    "whoShouldPursue": [
+      "Engineers who love performance",
+      "People interested in scientific computing",
+      "Builders who optimize at scale"
+    ],
+    "workNature": {
+      "description": "You parallelize workloads, tune kernels, and manage clusters.",
+      "examples": [
+        "Optimizing a simulation",
+        "Tuning GPU kernels",
+        "Managing a compute cluster"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS, Engineering, or Physics",
+      "Parallel programming and systems",
+      "Strong math"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Research",
+        "Finance",
+        "Weather",
+        "AI"
+      ],
+      "futureOutlook": "AI and simulation growth sustains demand for HPC talent.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "13-25 LPA",
+        "senior": "30-60 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Performance route",
+        "steps": [
+          {
+            "title": "Study CS or engineering",
+            "description": "Build systems and math foundations."
+          },
+          {
+            "title": "Learn parallel computing",
+            "description": "Study MPI, CUDA, and profiling."
+          },
+          {
+            "title": "Optimize at scale",
+            "description": "Tune and run large compute workloads."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "C++",
+      "CUDA",
+      "MPI",
+      "Python",
+      "Linux"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Rigor"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "logical",
+      "precise",
+      "resourceful"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "CUDA",
+      "OpenMPI",
+      "Slurm",
+      "VTune"
+    ],
+    "acts": [
+      "Programming",
+      "Optimizing",
+      "Managing clusters"
+    ],
+    "env": "Office, lab, or data center",
+    "path": [
+      "HPC Engineer",
+      "Performance Engineer",
+      "HPC Systems Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "High Performance Computing Engineer Career 2026",
+      "description": "Understand the High Performance Computing Engineer role, skills, and outlook.",
+      "keywords": [
+        "high performance computing",
+        "hpc engineer",
+        "cuda",
+        "parallel computing"
+      ],
+      "faqs": [
+        {
+          "q": "What is HPC?",
+          "a": "Using many processors or GPUs together to solve large computational problems."
+        },
+        {
+          "q": "Which languages are used?",
+          "a": "C/C++ and CUDA for performance, Python for tooling."
+        }
+      ]
+    },
+    "rel": [
+      "Cloud Computing",
+      "Computer Vision Engineer",
+      "Quantum Computing Research"
+    ]
+  },
+  {
+    "name": "Human-AI Interaction Designer",
+    "title": "Human-AI Interaction Designer",
+    "cat": "Design & Creative",
+    "sub": "Human-AI Interaction",
+    "introduction": "Human-AI Interaction Designers shape how people work with AI systems. They design interfaces, feedback, and trust so AI is usable and safe.",
+    "whoShouldPursue": [
+      "Designers interested in AI",
+      "People who care about trust and UX",
+      "Bridge-builders between design and ML"
+    ],
+    "workNature": {
+      "description": "You design conversational and assistive experiences with care for explainability.",
+      "examples": [
+        "Designing a chatbot flow",
+        "Communicating AI uncertainty",
+        "Testing trust and control"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Design, HCI, or related",
+      "UX and prototyping skills",
+      "Understanding of AI behavior"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Technology",
+        "Product",
+        "Healthcare",
+        "Finance"
+      ],
+      "futureOutlook": "As AI products spread, designing trustworthy interaction is increasingly valued.",
+      "salary": {
+        "entry": "5-9 LPA",
+        "median": "11-20 LPA",
+        "senior": "24-45 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Design route",
+        "steps": [
+          {
+            "title": "Study design or HCI",
+            "description": "Build UX and research foundations."
+          },
+          {
+            "title": "Learn AI interaction",
+            "description": "Study explainability, trust, and feedback."
+          },
+          {
+            "title": "Design AI products",
+            "description": "Create usable, safe AI experiences."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Figma",
+      "Framer",
+      "Prototyping",
+      "Python"
+    ],
+    "soft": [
+      "Creativity",
+      "Communication",
+      "Empathy"
+    ],
+    "int": [
+      "creative",
+      "communication",
+      "technology"
+    ],
+    "per": [
+      "empathetic",
+      "innovative",
+      "collaborative"
+    ],
+    "deg": [
+      "B.Des Graphic Design",
+      "B.Des Graphic Design",
+      "B.Sc Computer Science"
+    ],
+    "subj": [
+      "Design",
+      "Psychology",
+      "Computer Science",
+      "English"
+    ],
+    "tools": [
+      "Figma",
+      "Framer",
+      "Maze",
+      "Miro"
+    ],
+    "acts": [
+      "Designing",
+      "User research",
+      "Prototyping"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "HAI Designer",
+      "UX Designer AI",
+      "Design Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Human-AI Interaction Designer Career 2026",
+      "description": "Explore the Human-AI Interaction Designer role, skills, and outlook.",
+      "keywords": [
+        "human ai interaction",
+        "ai ux",
+        "conversational design",
+        "ai product design"
+      ],
+      "faqs": [
+        {
+          "q": "What does this role do?",
+          "a": "It designs how people interact with AI so it is usable, clear, and trustworthy."
+        },
+        {
+          "q": "Do I need to code?",
+          "a": "Basic literacy helps, but design and research skills are central."
+        }
+      ]
+    },
+    "rel": [
+      "User Experience Design UX",
+      "Product Design",
+      "Product Management"
+    ]
+  },
+  {
+    "name": "Digital Twin Engineer",
+    "title": "Digital Twin Engineer",
+    "cat": "Engineering",
+    "sub": "Digital Twins",
+    "introduction": "Digital Twin Engineers build virtual replicas of physical assets to simulate and optimize them. They combine modeling, IoT, and data.",
+    "whoShouldPursue": [
+      "Engineers who like simulation",
+      "People bridging physical and digital",
+      "Builders of predictive systems"
+    ],
+    "workNature": {
+      "description": "You model assets, connect live data, and run what-if simulations.",
+      "examples": [
+        "Twinning a factory line",
+        "Predicting failures",
+        "Optimizing energy use"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in ME, EE, CS, or related",
+      "Modeling and data skills",
+      "Systems thinking"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Manufacturing",
+        "Infrastructure",
+        "Energy",
+        "Automotive"
+      ],
+      "futureOutlook": "Industry 4.0 adoption is growing digital twin demand.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Modeling route",
+        "steps": [
+          {
+            "title": "Study engineering",
+            "description": "Build mechanics, EE, or CS foundations."
+          },
+          {
+            "title": "Learn simulation",
+            "description": "Study modeling, IoT, and data pipelines."
+          },
+          {
+            "title": "Build twins",
+            "description": "Create and operate digital replicas."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "MATLAB",
+      "Unity",
+      "IoT",
+      "SQL"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Systems thinking"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "creative"
+    ],
+    "per": [
+      "analytical",
+      "innovative",
+      "practical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Civil Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "MATLAB",
+      "Unity",
+      "Python",
+      "Ignition"
+    ],
+    "acts": [
+      "Modeling",
+      "Simulating",
+      "Analyzing data"
+    ],
+    "env": "Office, lab, or plant",
+    "path": [
+      "Digital Twin Engineer",
+      "Simulation Engineer",
+      "Twin Systems Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Digital Twin Engineer Career 2026",
+      "description": "Learn the Digital Twin Engineer role, skills, and outlook.",
+      "keywords": [
+        "digital twin",
+        "simulation engineer",
+        "industry 4.0",
+        "predictive modeling"
+      ],
+      "faqs": [
+        {
+          "q": "What is a digital twin?",
+          "a": "A virtual replica of a physical asset used for simulation and optimization."
+        },
+        {
+          "q": "Which industries use them?",
+          "a": "Manufacturing, energy, infrastructure, and automotive."
+        }
+      ]
+    },
+    "rel": [
+      "Robotics Engineering",
+      "Internet of Things",
+      "Smart Grid Engineer"
+    ]
+  },
+  {
+    "name": "Additive Manufacturing Engineer",
+    "title": "Additive Manufacturing Engineer",
+    "cat": "Engineering",
+    "sub": "Additive Manufacturing",
+    "introduction": "Additive Manufacturing Engineers use 3D printing to build parts layer by layer for prototyping and production. They optimize materials, design, and process.",
+    "whoShouldPursue": [
+      "Mechanical engineers who like making",
+      "People interested in advanced manufacturing",
+      "Problem solvers who enjoy materials"
+    ],
+    "workNature": {
+      "description": "You design for printability, tune parameters, and qualify parts.",
+      "examples": [
+        "Designing a printed part",
+        "Tuning print parameters",
+        "Qualifying a component"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Mechanical or Manufacturing Engineering",
+      "CAD and materials basics",
+      "Process mindset"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Manufacturing",
+        "Aerospace",
+        "Medical Devices",
+        "Automotive"
+      ],
+      "futureOutlook": "Adoption in aerospace and healthcare is growing demand for AM skills.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Manufacturing route",
+        "steps": [
+          {
+            "title": "Study mechanical engineering",
+            "description": "Build design and materials foundations."
+          },
+          {
+            "title": "Learn AM tech",
+            "description": "Study printing processes and design rules."
+          },
+          {
+            "title": "Produce parts",
+            "description": "Design, print, and qualify components."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "CAD",
+      "Python",
+      "MATLAB",
+      "3D Printing Software"
+    ],
+    "soft": [
+      "Problem solving",
+      "Patience",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "creative"
+    ],
+    "per": [
+      "detail_oriented",
+      "practical",
+      "innovative"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "M.TECH Renewable Energy"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "SolidWorks",
+      "Materialise Magics",
+      "Python",
+      "AutoCAD"
+    ],
+    "acts": [
+      "Designing",
+      "Printing",
+      "Testing"
+    ],
+    "env": "Lab, shop floor, and office",
+    "path": [
+      "AM Engineer",
+      "Manufacturing Engineer",
+      "AM Process Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Additive Manufacturing Engineer Career 2026",
+      "description": "Explore the Additive Manufacturing Engineer role, skills, and outlook.",
+      "keywords": [
+        "additive manufacturing",
+        "3d printing engineer",
+        "rapid prototyping",
+        "am engineer"
+      ],
+      "faqs": [
+        {
+          "q": "What is additive manufacturing?",
+          "a": "Building parts layer by layer, commonly known as 3D printing."
+        },
+        {
+          "q": "Which degree is best?",
+          "a": "Mechanical or manufacturing engineering with CAD and materials knowledge."
+        }
+      ]
+    },
+    "rel": [
+      "Robotics Engineering",
+      "Digital Twin Engineer",
+      "Aerospace Engineering"
+    ]
+  },
+  {
+    "name": "ESG Analyst",
+    "title": "ESG Analyst",
+    "cat": "Environment & Sustainability",
+    "sub": "ESG",
+    "introduction": "ESG Analysts assess environmental, social, and governance performance of companies. They combine finance, data, and sustainability to guide investment and reporting.",
+    "whoShouldPursue": [
+      "Finance-minded people who care about impact",
+      "Analysts who like data and disclosure",
+      "Communicators across business and sustainability"
+    ],
+    "workNature": {
+      "description": "You collect ESG data, score companies, and produce reports.",
+      "examples": [
+        "Scoring a company's emissions",
+        "Building an ESG dashboard",
+        "Advising on disclosure"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Finance, Economics, or Environmental Science",
+      "Analytical and reporting skills",
+      "Knowledge of ESG frameworks"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Finance",
+        "Consulting",
+        "Corporate",
+        "Investment"
+      ],
+      "futureOutlook": "Disclosure rules and investor demand are growing ESG roles.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Finance + sustainability route",
+        "steps": [
+          {
+            "title": "Study finance or environment",
+            "description": "Build markets or climate foundations."
+          },
+          {
+            "title": "Learn ESG frameworks",
+            "description": "Study reporting and rating standards."
+          },
+          {
+            "title": "Analyze and report",
+            "description": "Score companies and guide decisions."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Excel",
+      "Python",
+      "Power BI",
+      "Bloomberg"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Communication",
+      "Ethics"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "analytical",
+      "principled",
+      "adaptable"
+    ],
+    "deg": [
+      "B.Com",
+      "BBA",
+      "MBA",
+      "MBA",
+      "M.Sc Environmental Science"
+    ],
+    "subj": [
+      "Economics",
+      "Business Studies",
+      "Environmental Science",
+      "Mathematics"
+    ],
+    "tools": [
+      "Excel",
+      "Power BI",
+      "Bloomberg Terminal",
+      "Python"
+    ],
+    "acts": [
+      "Analyzing data",
+      "Reporting",
+      "Advising"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "ESG Analyst",
+      "Sustainability Analyst",
+      "ESG Strategy Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "ESG Analyst Career 2026",
+      "description": "Understand the ESG Analyst role, skills, and outlook.",
+      "keywords": [
+        "esg analyst",
+        "sustainability analyst",
+        "esg reporting",
+        "responsible investing"
+      ],
+      "faqs": [
+        {
+          "q": "What does ESG stand for?",
+          "a": "Environmental, Social, and Governance factors used to assess companies."
+        },
+        {
+          "q": "Is ESG a finance role?",
+          "a": "It blends finance, data, and sustainability to guide investment and reporting."
+        }
+      ]
+    },
+    "rel": [
+      "Carbon Markets Analyst",
+      "Climate Risk Analyst",
+      "Sustainability"
+    ]
+  },
+  {
+    "name": "IoT Security Engineer",
+    "title": "IoT Security Engineer",
+    "cat": "Technology & Software",
+    "sub": "IoT Security",
+    "introduction": "IoT Security Engineers protect connected devices and their networks. They secure firmware, communications, and edge infrastructure against attacks.",
+    "whoShouldPursue": [
+      "Security engineers who like hardware",
+      "People interested in connected systems",
+      "Defenders of the device frontier"
+    ],
+    "workNature": {
+      "description": "You harden devices, encrypt traffic, and monitor IoT fleets.",
+      "examples": [
+        "Securing a device firmware",
+        "Encrypting sensor traffic",
+        "Monitoring a device fleet"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in CS, EE, or related",
+      "Networking and embedded basics",
+      "Security mindset"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "IoT",
+        "Manufacturing",
+        "Automotive",
+        "Healthcare"
+      ],
+      "futureOutlook": "More connected devices mean more attack surface and steady demand.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "13-25 LPA",
+        "senior": "30-60 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Security route",
+        "steps": [
+          {
+            "title": "Study CS or EE",
+            "description": "Build software and hardware foundations."
+          },
+          {
+            "title": "Learn IoT and security",
+            "description": "Study protocols, firmware, and crypto."
+          },
+          {
+            "title": "Secure devices",
+            "description": "Harden and monitor connected systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "C",
+      "TLS",
+      "MQTT",
+      "Linux"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Vigilance"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "vigilant",
+      "logical",
+      "resourceful"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "LLB"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Wireshark",
+      "Firmware analysis",
+      "MQTT",
+      "Grafana"
+    ],
+    "acts": [
+      "Securing",
+      "Monitoring",
+      "Testing"
+    ],
+    "env": "Remote or lab with devices",
+    "path": [
+      "IoT Security Engineer",
+      "Device Security Engineer",
+      "IoT Security Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "IoT Security Engineer Career 2026",
+      "description": "Learn the IoT Security Engineer role, skills, and outlook.",
+      "keywords": [
+        "iot security",
+        "device security",
+        "iot engineer",
+        "cybersecurity"
+      ],
+      "faqs": [
+        {
+          "q": "What is IoT security?",
+          "a": "Protecting connected devices, their firmware, and communications."
+        },
+        {
+          "q": "Is it different from regular security?",
+          "a": "Yes. It adds embedded and protocol challenges unique to devices."
+        }
+      ]
+    },
+    "rel": [
+      "Internet of Things",
+      "Cloud Security Engineer",
+      "Penetration Tester"
+    ]
+  },
+  {
+    "name": "Climate Risk Analyst",
+    "title": "Climate Risk Analyst",
+    "cat": "Environment & Sustainability",
+    "sub": "Climate Risk",
+    "introduction": "Climate Risk Analysts assess how climate change affects organizations and investments. They combine data, modeling, and finance to quantify physical and transition risk.",
+    "whoShouldPursue": [
+      "Analysts interested in climate and finance",
+      "People who like scenario modeling",
+      "Communicators across risk and business"
+    ],
+    "workNature": {
+      "description": "You model exposures, run scenarios, and advise on resilience.",
+      "examples": [
+        "Modeling flood risk",
+        "Running a transition scenario",
+        "Advising on disclosure"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Finance, Environmental Science, or related",
+      "Data and modeling skills",
+      "Understanding of climate science"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Finance",
+        "Insurance",
+        "Consulting",
+        "Corporate"
+      ],
+      "futureOutlook": "Regulation and physical risk are increasing demand for climate expertise.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Risk + climate route",
+        "steps": [
+          {
+            "title": "Study finance or environment",
+            "description": "Build risk or climate foundations."
+          },
+          {
+            "title": "Learn climate modeling",
+            "description": "Study scenarios, data, and disclosure."
+          },
+          {
+            "title": "Assess and advise",
+            "description": "Quantify risk and guide resilience."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "Excel",
+      "GIS",
+      "Climate Data APIs"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Communication",
+      "Foresight"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "analytical",
+      "principled",
+      "strategic"
+    ],
+    "deg": [
+      "B.SC Environmental Science",
+      "B.Com",
+      "BBA",
+      "MBA",
+      "M.Sc Environmental Science"
+    ],
+    "subj": [
+      "Environmental Science",
+      "Economics",
+      "Mathematics",
+      "Business Studies"
+    ],
+    "tools": [
+      "Python",
+      "Excel",
+      "QGIS",
+      "Climate APIs"
+    ],
+    "acts": [
+      "Modeling",
+      "Analyzing data",
+      "Advising"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Climate Risk Analyst",
+      "Climate Risk Manager",
+      "Resilience Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Climate Risk Analyst Career 2026",
+      "description": "Explore the Climate Risk Analyst role, skills, and outlook.",
+      "keywords": [
+        "climate risk",
+        "climate risk analyst",
+        "physical risk",
+        "esg risk"
+      ],
+      "faqs": [
+        {
+          "q": "What is climate risk?",
+          "a": "The financial and operational risk from climate change impacts and transition."
+        },
+        {
+          "q": "Which skills are needed?",
+          "a": "Data modeling, climate literacy, and clear communication."
+        }
+      ]
+    },
+    "rel": [
+      "Climate Risk Analyst",
+      "ESG Analyst",
+      "Carbon Markets Analyst"
+    ]
+  },
+  {
+    "name": "Autonomous Systems Safety Engineer",
+    "title": "Autonomous Systems Safety Engineer",
+    "cat": "Engineering",
+    "sub": "Autonomy Safety",
+    "introduction": "Autonomous Systems Safety Engineers ensure self-driving, flying, and robotic systems fail safely. They apply safety engineering to AI-driven machines.",
+    "whoShouldPursue": [
+      "Engineers who care about safety",
+      "People who like rigorous methods",
+      "Builders of trustworthy autonomy"
+    ],
+    "workNature": {
+      "description": "You define safety cases, run fault analysis, and validate behavior.",
+      "examples": [
+        "Writing a safety case",
+        "Analyzing failure modes",
+        "Validating emergency stops"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in EE, ME, CS, or related",
+      "Safety and systems engineering",
+      "Understanding of autonomy"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Automotive",
+        "Aviation",
+        "Robotics",
+        "Defense"
+      ],
+      "futureOutlook": "Regulation of autonomy is increasing demand for safety specialists.",
+      "salary": {
+        "entry": "5-10 LPA",
+        "median": "12-22 LPA",
+        "senior": "28-50 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Safety engineering route",
+        "steps": [
+          {
+            "title": "Study engineering",
+            "description": "Build systems and domain foundations."
+          },
+          {
+            "title": "Learn safety methods",
+            "description": "Study FMEA, fault trees, and standards."
+          },
+          {
+            "title": "Certify safety",
+            "description": "Build safety cases for autonomous systems."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "Python",
+      "MATLAB",
+      "SysML",
+      "Simulation"
+    ],
+    "soft": [
+      "Rigor",
+      "Problem solving",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "meticulous",
+      "logical",
+      "dependable"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Computer Science"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Computer Science"
+    ],
+    "tools": [
+      "MATLAB",
+      "Simulink",
+      "Python",
+      "Fault tree tools"
+    ],
+    "acts": [
+      "Analyzing",
+      "Validating",
+      "Documenting"
+    ],
+    "env": "Office, lab, and test sites",
+    "path": [
+      "Safety Engineer",
+      "Autonomy Safety Engineer",
+      "Safety Lead"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Autonomous Systems Safety Engineer Career 2026",
+      "description": "Understand the Autonomous Systems Safety Engineer role, skills, and outlook.",
+      "keywords": [
+        "autonomy safety",
+        "functional safety",
+        "self driving safety",
+        "robotic safety"
+      ],
+      "faqs": [
+        {
+          "q": "What does this role do?",
+          "a": "It ensures autonomous systems behave safely, including in failure."
+        },
+        {
+          "q": "Is it heavily regulated?",
+          "a": "Yes. Standards and safety cases are central to the work."
+        }
+      ]
+    },
+    "rel": [
+      "Autonomous Vehicles Engineer",
+      "Robotics Engineering",
+      "Autonomous Systems Safety Engineer"
+    ]
+  },
+  {
+    "name": "Energy Efficiency Consultant",
+    "title": "Energy Efficiency Consultant",
+    "cat": "Environment & Sustainability",
+    "sub": "Energy Efficiency",
+    "introduction": "Energy Efficiency Consultants help organizations cut energy use and costs. They audit buildings and processes and recommend improvements.",
+    "whoShouldPursue": [
+      "Engineers and analysts who like impact",
+      "People who enjoy site work and advising",
+      "Problem solvers focused on savings"
+    ],
+    "workNature": {
+      "description": "You audit energy use, model savings, and recommend upgrades.",
+      "examples": [
+        "Auditing a building",
+        "Modeling retrofit savings",
+        "Advising on lighting or HVAC"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in Engineering, Architecture, or related",
+      "Energy and analysis basics",
+      "Communication skills"
+    ],
+    "stats": {
+      "demandLevel": "Medium",
+      "jobGrowth": "",
+      "topIndustries": [
+        "Construction",
+        "Corporate",
+        "Government",
+        "Utilities"
+      ],
+      "futureOutlook": "Cost and climate pressure keep demand for efficiency work steady.",
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "9-16 LPA",
+        "senior": "20-38 LPA",
+        "currency": "INR"
+      }
+    },
+    "pathways": [
+      {
+        "name": "Efficiency route",
+        "steps": [
+          {
+            "title": "Study engineering or architecture",
+            "description": "Build technical foundations."
+          },
+          {
+            "title": "Learn energy auditing",
+            "description": "Study standards, modeling, and retrofits."
+          },
+          {
+            "title": "Deliver savings",
+            "description": "Audit and advise on efficiency upgrades."
+          }
+        ]
+      }
+    ],
+    "tech": [
+      "EnergyPlus",
+      "Python",
+      "Excel",
+      "Audit Tools"
+    ],
+    "soft": [
+      "Communication",
+      "Analytical thinking",
+      "Persuasion"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "technology"
+    ],
+    "per": [
+      "practical",
+      "analytical",
+      "dependable"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "MBA",
+      "M.TECH Renewable Energy"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Economics",
+      "Business Studies"
+    ],
+    "tools": [
+      "EnergyPlus",
+      "RETscreen",
+      "Excel",
+      "Power BI"
+    ],
+    "acts": [
+      "Auditing",
+      "Modeling",
+      "Advising"
+    ],
+    "env": "Field and office",
+    "path": [
+      "Energy Consultant",
+      "Efficiency Engineer",
+      "Sustainability Consultant"
+    ],
+    "minEdu": "Bachelor's",
+    "emerging": true,
+    "seo": {
+      "title": "Energy Efficiency Consultant Career 2026",
+      "description": "Explore the Energy Efficiency Consultant role, skills, and outlook.",
+      "keywords": [
+        "energy efficiency consultant",
+        "energy auditor",
+        "energy savings",
+        "sustainability consulting"
+      ],
+      "faqs": [
+        {
+          "q": "What does an energy efficiency consultant do?",
+          "a": "They audit energy use and recommend ways to reduce consumption and cost."
+        },
+        {
+          "q": "Is travel involved?",
+          "a": "Often yes; site audits require visiting buildings and facilities."
+        }
+      ]
+    },
+    "rel": [
+      "Renewable Energy Engineering",
+      "ESG Analyst",
+      "Smart Grid Engineer"
+    ]
+  }
+]

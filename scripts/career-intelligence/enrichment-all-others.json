@@ -5227,65 +5227,2757 @@
   },
   "Game Development": {
     "cat": "Technology & Software",
-    "tech": ["Unity/Unreal Engine", "C#/C++", "Game Design"],
-    "deg": ["B.SC Computer Science/Game Development", "B.TECH/B.E. Computer Science", "ANY degree + game portfolio"],
-    "subj": ["Computer Science", "Mathematics", "Physics", "Design", "Art & Design"],
+    "tech": [
+      "Unity/Unreal Engine",
+      "C#/C++",
+      "Game Design"
+    ],
+    "deg": [
+      "B.SC Computer Science/Game Development",
+      "B.TECH/B.E. Computer Science",
+      "ANY degree + game portfolio"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics",
+      "Design",
+      "Art & Design"
+    ],
     "minEdu": "Bachelor's"
   },
   "Information Technology Business Analysis": {
     "cat": "Technology & Software",
-    "tech": ["Requirements Analysis", "SQL", "Data Modelling"],
-    "deg": ["B.TECH/B.E. Computer Science", "BCA/MCA", "B.COM/BBA + analytics certification"],
-    "subj": ["Computer Science", "Mathematics", "Business Studies", "Statistics"],
+    "tech": [
+      "Requirements Analysis",
+      "SQL",
+      "Data Modelling"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "BCA/MCA",
+      "B.COM/BBA + analytics certification"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Business Studies",
+      "Statistics"
+    ],
     "minEdu": "Bachelor's"
   },
   "Veterinary Science": {
     "cat": "Healthcare & Medicine",
-    "tech": ["Animal Care", "Clinical Diagnostics", "Surgery Assistance"],
-    "deg": ["B.V.Sc & A.H.", "ANY life-science degree"],
-    "subj": ["Biology", "Chemistry", "Physics"],
+    "tech": [
+      "Animal Care",
+      "Clinical Diagnostics",
+      "Surgery Assistance"
+    ],
+    "deg": [
+      "B.V.Sc & A.H.",
+      "ANY life-science degree"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Physics"
+    ],
     "minEdu": "Bachelor's"
   },
   "Forensic Science": {
     "cat": "Life Sciences",
-    "tech": ["Evidence Handling", "Laboratory Analysis", "Chain of Custody"],
-    "deg": ["B.TECH/B.E./BCA + forensic certifications", "ANY life-science degree", "M.Sc Cyber Forensics"],
-    "subj": ["Biology", "Chemistry", "Forensic Science", "Physics"],
+    "tech": [
+      "Evidence Handling",
+      "Laboratory Analysis",
+      "Chain of Custody"
+    ],
+    "deg": [
+      "B.TECH/B.E./BCA + forensic certifications",
+      "ANY life-science degree",
+      "M.Sc Cyber Forensics"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Forensic Science",
+      "Physics"
+    ],
     "minEdu": "Bachelor's"
   },
   "Visual Merchandising": {
     "cat": "Marketing & Advertising",
-    "tech": ["Visual Display", "Retail Planning", "Space Design"],
-    "deg": ["BBA Retail/BBA + MBA", "B.Des Graphic Design", "ANY degree + retail experience", "B.Des Fashion Design"],
-    "subj": ["Art & Design", "Business Studies", "Design", "Marketing"],
+    "tech": [
+      "Visual Display",
+      "Retail Planning",
+      "Space Design"
+    ],
+    "deg": [
+      "BBA Retail/BBA + MBA",
+      "B.Des Graphic Design",
+      "ANY degree + retail experience",
+      "B.Des Fashion Design"
+    ],
+    "subj": [
+      "Art & Design",
+      "Business Studies",
+      "Design",
+      "Marketing"
+    ],
     "minEdu": "Bachelor's"
   },
   "Advertising": {
     "cat": "Marketing & Advertising",
-    "tech": ["Campaign Management", "Copywriting", "Media Planning"],
-    "deg": ["BBA/MBA Marketing common", "BA/BM Journalism & Mass Communication", "ANY degree + MBA Marketing/Research preferred", "BA English Literature + writing practice"],
-    "subj": ["Marketing", "Business Studies", "English", "Mass Communication"],
+    "tech": [
+      "Campaign Management",
+      "Copywriting",
+      "Media Planning"
+    ],
+    "deg": [
+      "BBA/MBA Marketing common",
+      "BA/BM Journalism & Mass Communication",
+      "ANY degree + MBA Marketing/Research preferred",
+      "BA English Literature + writing practice"
+    ],
+    "subj": [
+      "Marketing",
+      "Business Studies",
+      "English",
+      "Mass Communication"
+    ],
     "minEdu": "Bachelor's"
   },
   "Agricultural Engineering": {
     "cat": "Agriculture",
-    "tech": ["Irrigation Systems", "Farm Machinery Design", "Soil Conservation"],
-    "deg": ["B.TECH/B.E. Agricultural Engineering", "B.SC Agriculture", "B.TECH/B.E. Civil Engineering"],
-    "subj": ["Physics", "Mathematics", "Chemistry", "Biology"],
+    "tech": [
+      "Irrigation Systems",
+      "Farm Machinery Design",
+      "Soil Conservation"
+    ],
+    "deg": [
+      "B.TECH/B.E. Agricultural Engineering",
+      "B.SC Agriculture",
+      "B.TECH/B.E. Civil Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry",
+      "Biology"
+    ],
     "minEdu": "Bachelor's"
   },
   "Wildlife Biology": {
     "cat": "Life Sciences",
-    "tech": ["Field Survey", "Species Identification", "Ecological Statistics"],
-    "deg": ["B.SC Marine Biology/Zoology", "B.SC Environmental Science", "ANY life-science degree"],
-    "subj": ["Biology", "Chemistry", "Geography", "Environmental Science"],
+    "tech": [
+      "Field Survey",
+      "Species Identification",
+      "Ecological Statistics"
+    ],
+    "deg": [
+      "B.SC Marine Biology/Zoology",
+      "B.SC Environmental Science",
+      "ANY life-science degree"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Geography",
+      "Environmental Science"
+    ],
     "minEdu": "Bachelor's"
   },
   "Library Sciences": {
     "cat": "Education",
-    "tech": ["Cataloguing", "Information Organisation", "Research Methods"],
-    "deg": ["M.Lib", "ANY degree"],
-    "subj": ["English", "Languages", "Research Methods"],
+    "tech": [
+      "Cataloguing",
+      "Information Organisation",
+      "Research Methods"
+    ],
+    "deg": [
+      "M.Lib",
+      "ANY degree"
+    ],
+    "subj": [
+      "English",
+      "Languages",
+      "Research Methods"
+    ],
     "minEdu": "Master's"
+  },
+  "Computer Vision Engineer": {
+    "cat": "Data & AI",
+    "sub": "Computer Vision",
+    "tech": [
+      "Python",
+      "PyTorch",
+      "TensorFlow",
+      "OpenCV",
+      "CUDA",
+      "ONNX"
+    ],
+    "soft": [
+      "Problem solving",
+      "Analytical thinking",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "detail_oriented",
+      "innovative",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Computer Science"
+    ],
+    "tools": [
+      "PyTorch",
+      "OpenCV",
+      "TensorRT",
+      "Weights & Biases"
+    ],
+    "acts": [
+      "Developing algorithms",
+      "Analyzing data",
+      "Programming"
+    ],
+    "env": "Lab, office, or hybrid with GPU compute access",
+    "path": [
+      "Computer Vision Engineer",
+      "Senior CV Engineer",
+      "Perception Lead"
+    ],
+    "auto": "High",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Machine Learning Engineering",
+      "Robotics Engineering",
+      "Data Science"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "NLP Engineer": {
+    "cat": "Data & AI",
+    "sub": "Natural Language Processing",
+    "tech": [
+      "Python",
+      "PyTorch",
+      "Hugging Face",
+      "LangChain",
+      "spaCy"
+    ],
+    "soft": [
+      "Communication",
+      "Problem solving",
+      "Analytical thinking"
+    ],
+    "int": [
+      "technology",
+      "research",
+      "creative"
+    ],
+    "per": [
+      "curious",
+      "logical",
+      "detail_oriented"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Computer Science",
+      "English",
+      "Mathematics",
+      "Statistics"
+    ],
+    "tools": [
+      "Hugging Face Transformers",
+      "spaCy",
+      "Vector databases"
+    ],
+    "acts": [
+      "Developing algorithms",
+      "Analyzing data",
+      "Programming"
+    ],
+    "env": "Office or remote with cloud compute",
+    "path": [
+      "NLP Engineer",
+      "LLM Engineer",
+      "Conversational AI Lead"
+    ],
+    "auto": "High",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Machine Learning Engineering",
+      "Data Science",
+      "Computer Vision Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "MLOps Engineer": {
+    "cat": "Data & AI",
+    "sub": "ML Infrastructure",
+    "tech": [
+      "Python",
+      "Docker",
+      "Kubernetes",
+      "MLflow",
+      "Terraform",
+      "AWS"
+    ],
+    "soft": [
+      "Collaboration",
+      "Problem solving",
+      "Communication"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "systematic",
+      "reliable",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "BCA",
+      "MCA",
+      "B.SC IT"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics"
+    ],
+    "tools": [
+      "MLflow",
+      "Kubeflow",
+      "Docker",
+      "GitHub Actions"
+    ],
+    "acts": [
+      "Programming",
+      "Developing algorithms",
+      "Monitoring systems"
+    ],
+    "env": "Remote or office with cloud access",
+    "path": [
+      "MLOps Engineer",
+      "Senior MLOps Engineer",
+      "ML Platform Lead"
+    ],
+    "auto": "High",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "DevOps",
+      "Machine Learning Engineering",
+      "Cloud Computing"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Data Governance Analyst": {
+    "cat": "Data & AI",
+    "sub": "Data Governance",
+    "tech": [
+      "SQL",
+      "Collibra",
+      "Alation",
+      "Python",
+      "Data Catalogs"
+    ],
+    "soft": [
+      "Communication",
+      "Analytical thinking",
+      "Attention to detail"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "communication"
+    ],
+    "per": [
+      "meticulous",
+      "dependable",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.Com",
+      "BBA",
+      "MBA",
+      "MBA"
+    ],
+    "subj": [
+      "Computer Science",
+      "Economics",
+      "Business Studies",
+      "Law"
+    ],
+    "tools": [
+      "Collibra",
+      "Alation",
+      "SQL",
+      "Excel"
+    ],
+    "acts": [
+      "Analyzing data",
+      "Documenting policies",
+      "Coordinating teams"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Data Governance Analyst",
+      "Data Steward",
+      "Head of Data Governance"
+    ],
+    "auto": "High",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "High",
+    "rel": [
+      "Business Analytics",
+      "AI Governance Specialist",
+      "Data Science"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "AI Governance Specialist": {
+    "cat": "Data & AI",
+    "sub": "AI Policy",
+    "tech": [
+      "Model Cards",
+      "Risk Registers",
+      "Python",
+      "Documentation Tools"
+    ],
+    "soft": [
+      "Communication",
+      "Critical thinking",
+      "Collaboration"
+    ],
+    "int": [
+      "communication",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "principled",
+      "analytical",
+      "diplomatic"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "LLB",
+      "MBA"
+    ],
+    "subj": [
+      "Law",
+      "Computer Science",
+      "Economics",
+      "English"
+    ],
+    "tools": [
+      "Model documentation",
+      "Audit trackers",
+      "Policy wikis"
+    ],
+    "acts": [
+      "Assessing risk",
+      "Documenting",
+      "Coordinating teams"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "AI Governance Specialist",
+      "AI Risk Manager",
+      "Head of Responsible AI"
+    ],
+    "auto": "High",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "High",
+    "rel": [
+      "AI Governance Specialist",
+      "Data Governance Analyst",
+      "Cyber Law"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Cloud Security Engineer": {
+    "cat": "Technology & Software",
+    "sub": "Cloud Security",
+    "tech": [
+      "AWS",
+      "Azure",
+      "Terraform",
+      "IAM",
+      "Python",
+      "SIEM"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Analytical thinking"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "vigilant",
+      "systematic",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "LLB"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "AWS IAM",
+      "Terraform",
+      "CloudTrail",
+      "Sentinel"
+    ],
+    "acts": [
+      "Securing systems",
+      "Monitoring",
+      "Programming"
+    ],
+    "env": "Remote or office with cloud access",
+    "path": [
+      "Cloud Security Engineer",
+      "Senior Cloud Security Engineer",
+      "Cloud Security Architect"
+    ],
+    "auto": "High",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Cyber Security",
+      "DevOps",
+      "Cloud Computing"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Penetration Tester": {
+    "cat": "Technology & Software",
+    "sub": "Offensive Security",
+    "tech": [
+      "Python",
+      "Burp Suite",
+      "Metasploit",
+      "Linux",
+      "Wireshark"
+    ],
+    "soft": [
+      "Communication",
+      "Problem solving",
+      "Curiosity"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "curious",
+      "persistent",
+      "ethical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "LLB"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Burp Suite",
+      "Metasploit",
+      "Nmap",
+      "Kali Linux"
+    ],
+    "acts": [
+      "Testing systems",
+      "Analyzing vulnerabilities",
+      "Reporting"
+    ],
+    "env": "Remote or lab environment",
+    "path": [
+      "Penetration Tester",
+      "Senior Pentester",
+      "Red Team Lead"
+    ],
+    "auto": "High",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Cyber Security",
+      "Cloud Security Engineer",
+      "Digital Forensics"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Cryptography Engineer": {
+    "cat": "Technology & Software",
+    "sub": "Cryptography",
+    "tech": [
+      "C",
+      "Rust",
+      "Python",
+      "OpenSSL",
+      "Elliptic Curves"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Problem solving",
+      "Precision"
+    ],
+    "int": [
+      "problem_solving",
+      "research",
+      "technology"
+    ],
+    "per": [
+      "precise",
+      "logical",
+      "innovative"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Mathematics",
+      "Computer Science",
+      "Physics"
+    ],
+    "tools": [
+      "OpenSSL",
+      "Rust crypto crates",
+      "SageMath"
+    ],
+    "acts": [
+      "Developing algorithms",
+      "Programming",
+      "Analyzing security"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Cryptography Engineer",
+      "Security Protocol Engineer",
+      "Principal Cryptographer"
+    ],
+    "auto": "High",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "High",
+    "rel": [
+      "Cyber Security",
+      "Cloud Security Engineer",
+      "Blockchain Technology"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Security Operations Analyst": {
+    "cat": "Technology & Software",
+    "sub": "Security Operations",
+    "tech": [
+      "SIEM",
+      "Splunk",
+      "Python",
+      "EDR",
+      "Linux"
+    ],
+    "soft": [
+      "Communication",
+      "Calm under pressure",
+      "Analytical thinking"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "vigilant",
+      "methodical",
+      "team_oriented"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "LLB"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Splunk",
+      "Microsoft Sentinel",
+      "CrowdStrike",
+      "Wireshark"
+    ],
+    "acts": [
+      "Monitoring",
+      "Investigating",
+      "Responding to incidents"
+    ],
+    "env": "Shift-based SOC or remote",
+    "path": [
+      "Security Operations Analyst",
+      "SOC Tier 2",
+      "Incident Response Lead"
+    ],
+    "auto": "High",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Cyber Security",
+      "Cloud Security Engineer",
+      "Penetration Tester"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Quantitative Analyst": {
+    "cat": "Finance & Accounting",
+    "sub": "Quantitative Finance",
+    "tech": [
+      "Python",
+      "C++",
+      "Pandas",
+      "SQL",
+      "NumPy"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Rigor",
+      "Communication"
+    ],
+    "int": [
+      "problem_solving",
+      "research",
+      "business"
+    ],
+    "per": [
+      "logical",
+      "precise",
+      "competitive"
+    ],
+    "deg": [
+      "B.Sc Statistics",
+      "M.Sc Data Science",
+      "M.SC Data Science",
+      "M.SC Mathematics",
+      "B.Com",
+      "BBA",
+      "MBA"
+    ],
+    "subj": [
+      "Mathematics",
+      "Statistics",
+      "Economics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "Bloomberg Terminal"
+    ],
+    "acts": [
+      "Modeling",
+      "Analyzing data",
+      "Programming"
+    ],
+    "env": "Office (trading floor) or remote",
+    "path": [
+      "Quantitative Analyst",
+      "Senior Quant",
+      "Quant Research Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Algorithmic Trading Developer",
+      "Fintech",
+      "Payments Engineer"
+    ],
+    "emerging": false,
+    "minEdu": "Bachelor's"
+  },
+  "Algorithmic Trading Developer": {
+    "cat": "Finance & Accounting",
+    "sub": "Trading Systems",
+    "tech": [
+      "C++",
+      "Python",
+      "Kafka",
+      "Linux",
+      "SQL"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Pressure handling"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "precise",
+      "fast_thinking",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.Sc Statistics",
+      "M.Sc Data Science",
+      "B.Com",
+      "BBA",
+      "MBA"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Economics"
+    ],
+    "tools": [
+      "C++",
+      "Python",
+      "Kdb+",
+      "Grafana"
+    ],
+    "acts": [
+      "Programming",
+      "Developing systems",
+      "Monitoring"
+    ],
+    "env": "Office or remote with market access",
+    "path": [
+      "Algo Trading Developer",
+      "Low Latency Engineer",
+      "Trading Systems Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "High",
+    "rel": [
+      "Quantitative Analyst",
+      "Fintech",
+      "Payments Engineer"
+    ],
+    "emerging": false,
+    "minEdu": "Bachelor's"
+  },
+  "Payments Engineer": {
+    "cat": "Finance & Accounting",
+    "sub": "Payments Infrastructure",
+    "tech": [
+      "Java",
+      "Go",
+      "Python",
+      "PostgreSQL",
+      "Kafka"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Reliability"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "meticulous",
+      "trustworthy",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "BCA",
+      "MCA",
+      "B.Com",
+      "BBA",
+      "MBA"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Economics"
+    ],
+    "tools": [
+      "PostgreSQL",
+      "Kafka",
+      "Stripe SDK",
+      "Grafana"
+    ],
+    "acts": [
+      "Programming",
+      "Designing systems",
+      "Monitoring"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Payments Engineer",
+      "Senior Payments Engineer",
+      "Payments Platform Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Fintech",
+      "Quantitative Analyst",
+      "Algorithmic Trading Developer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "VLSI Design Engineer": {
+    "cat": "Engineering",
+    "sub": "VLSI Design",
+    "tech": [
+      "Verilog",
+      "VHDL",
+      "SPICE",
+      "EDA Tools",
+      "Python"
+    ],
+    "soft": [
+      "Problem solving",
+      "Patience",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "detail_oriented",
+      "logical",
+      "patient"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electrical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Cadence",
+      "Synopsys",
+      "ModelSim",
+      "Xilinx Vivado"
+    ],
+    "acts": [
+      "Designing circuits",
+      "Simulation",
+      "Verification"
+    ],
+    "env": "Office/lab with EDA tools",
+    "path": [
+      "VLSI Design Engineer",
+      "Senior VLSI Engineer",
+      "Chip Architect"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Semiconductor Process Engineer",
+      "Embedded Systems Engineer",
+      "Robotics Engineering"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Semiconductor Process Engineer": {
+    "cat": "Engineering",
+    "sub": "Semiconductor Manufacturing",
+    "tech": [
+      "Python",
+      "JMP",
+      "Statistical Process Control",
+      "Fab EDA"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Collaboration",
+      "Problem solving"
+    ],
+    "int": [
+      "problem_solving",
+      "technology",
+      "research"
+    ],
+    "per": [
+      "methodical",
+      "curious",
+      "detail_oriented"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Chemical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "JMP",
+      "Python",
+      "Fab metrology tools"
+    ],
+    "acts": [
+      "Running experiments",
+      "Analyzing data",
+      "Process tuning"
+    ],
+    "env": "Cleanroom and office",
+    "path": [
+      "Process Engineer",
+      "Senior Process Engineer",
+      "Fab Module Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "VLSI Design Engineer",
+      "Embedded Systems Engineer",
+      "Robotics Engineering"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Embedded Systems Engineer": {
+    "cat": "Engineering",
+    "sub": "Embedded Systems",
+    "tech": [
+      "C",
+      "C++",
+      "RTOS",
+      "Arduino",
+      "STM32",
+      "Python"
+    ],
+    "soft": [
+      "Problem solving",
+      "Patience",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "detail_oriented",
+      "practical",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "STM32Cube",
+      "Keil",
+      "Oscilloscope",
+      "GDB"
+    ],
+    "acts": [
+      "Programming",
+      "Debugging hardware",
+      "Testing"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Embedded Engineer",
+      "Senior Embedded Engineer",
+      "Firmware Architect"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Internet of Things",
+      "Robotics Engineering",
+      "VLSI Design Engineer"
+    ],
+    "emerging": false,
+    "minEdu": "Bachelor's"
+  },
+  "Autonomous Vehicles Engineer": {
+    "cat": "Engineering",
+    "sub": "Autonomous Systems",
+    "tech": [
+      "Python",
+      "C++",
+      "ROS",
+      "PyTorch",
+      "CUDA"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Rigor"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "innovative",
+      "logical",
+      "detail_oriented"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Electrical Engineering"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Computer Science"
+    ],
+    "tools": [
+      "ROS",
+      "CARLA",
+      "PyTorch",
+      "Docker"
+    ],
+    "acts": [
+      "Programming",
+      "Simulation",
+      "Testing"
+    ],
+    "env": "Office, lab, and test tracks",
+    "path": [
+      "AV Engineer",
+      "Perception Engineer",
+      "Autonomy Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Low",
+    "rel": [
+      "Robotics Engineering",
+      "Computer Vision Engineer",
+      "Autonomous Systems Safety Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Humanoid Robotics Engineer": {
+    "cat": "Engineering",
+    "sub": "Robotics",
+    "tech": [
+      "Python",
+      "C++",
+      "ROS",
+      "PyTorch",
+      "MATLAB"
+    ],
+    "soft": [
+      "Problem solving",
+      "Creativity",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "creative"
+    ],
+    "per": [
+      "innovative",
+      "persistent",
+      "logical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.TECH/B.E. Computer Science"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "ROS",
+      "Gazebo",
+      "PyTorch",
+      "MuJoCo"
+    ],
+    "acts": [
+      "Designing",
+      "Programming",
+      "Testing"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Robotics Engineer",
+      "Humanoid Systems Engineer",
+      "Robotics Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Robotics Engineering",
+      "Autonomous Vehicles Engineer",
+      "Surgical Robotics Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Surgical Robotics Engineer": {
+    "cat": "Engineering",
+    "sub": "Medical Robotics",
+    "tech": [
+      "Python",
+      "C++",
+      "ROS",
+      "MATLAB",
+      "CAD"
+    ],
+    "soft": [
+      "Problem solving",
+      "Precision",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "precise",
+      "dependable",
+      "innovative"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Biology"
+    ],
+    "tools": [
+      "ROS",
+      "SolidWorks",
+      "MATLAB",
+      "Simulink"
+    ],
+    "acts": [
+      "Designing",
+      "Programming",
+      "Testing"
+    ],
+    "env": "Lab and clinical settings",
+    "path": [
+      "Robotics Engineer",
+      "Surgical Systems Engineer",
+      "Medical Robotics Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Robotics Engineering",
+      "Humanoid Robotics Engineer",
+      "Health Informatics"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Solar Energy Engineer": {
+    "cat": "Environment & Sustainability",
+    "sub": "Solar Energy",
+    "tech": [
+      "PVsyst",
+      "AutoCAD",
+      "Python",
+      "MATLAB",
+      "Helioscope"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Project management"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "practical",
+      "analytical",
+      "dependable"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "M.TECH Renewable Energy",
+      "B.TECH/B.E. Civil Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "PVsyst",
+      "AutoCAD",
+      "HOMER",
+      "Python"
+    ],
+    "acts": [
+      "Designing systems",
+      "Modeling",
+      "Site assessment"
+    ],
+    "env": "Field and office",
+    "path": [
+      "Solar Engineer",
+      "PV Design Engineer",
+      "Renewables Project Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Renewable Energy Engineering",
+      "Wind Energy Engineer",
+      "Smart Grid Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Wind Energy Engineer": {
+    "cat": "Environment & Sustainability",
+    "sub": "Wind Energy",
+    "tech": [
+      "MATLAB",
+      "AutoCAD",
+      "Python",
+      "SCADA",
+      "Bladed"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Analytical thinking"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "practical",
+      "dependable",
+      "analytical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "M.TECH Renewable Energy",
+      "B.TECH/B.E. Mechanical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "MATLAB",
+      "AutoCAD",
+      "Bladed",
+      "Python"
+    ],
+    "acts": [
+      "Designing",
+      "Analyzing data",
+      "Maintenance planning"
+    ],
+    "env": "Field and office",
+    "path": [
+      "Wind Engineer",
+      "Turbine Design Engineer",
+      "Wind Project Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Renewable Energy Engineering",
+      "Solar Energy Engineer",
+      "Smart Grid Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Battery Technology Engineer": {
+    "cat": "Environment & Sustainability",
+    "sub": "Energy Storage",
+    "tech": [
+      "Python",
+      "MATLAB",
+      "CAD",
+      "Battery Simulators"
+    ],
+    "soft": [
+      "Problem solving",
+      "Analytical thinking",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "curious",
+      "precise",
+      "practical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Chemical Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "MATLAB",
+      "COMSOL",
+      "Python",
+      "Battery test rigs"
+    ],
+    "acts": [
+      "Testing",
+      "Designing",
+      "Analyzing data"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Battery Engineer",
+      "Cell Design Engineer",
+      "Energy Storage Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Electric Vehicle Technology",
+      "Solar Energy Engineer",
+      "Green Hydrogen Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Green Hydrogen Engineer": {
+    "cat": "Environment & Sustainability",
+    "sub": "Hydrogen Energy",
+    "tech": [
+      "Python",
+      "MATLAB",
+      "Aspen",
+      "Process Simulators"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Vision"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "innovative",
+      "analytical",
+      "practical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Chemical Engineering",
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Mechanical Engineering"
+    ],
+    "subj": [
+      "Chemistry",
+      "Physics",
+      "Mathematics"
+    ],
+    "tools": [
+      "Aspen Plus",
+      "MATLAB",
+      "Python",
+      "HSC Chemistry"
+    ],
+    "acts": [
+      "Modeling",
+      "Designing",
+      "Analyzing data"
+    ],
+    "env": "Lab, plant, and office",
+    "path": [
+      "Hydrogen Engineer",
+      "Process Engineer",
+      "Green Fuels Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Renewable Energy Engineering",
+      "Battery Technology Engineer",
+      "Solar Energy Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Smart Grid Engineer": {
+    "cat": "Environment & Sustainability",
+    "sub": "Smart Grids",
+    "tech": [
+      "SCADA",
+      "Python",
+      "MATLAB",
+      "IoT",
+      "AutoCAD"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "business"
+    ],
+    "per": [
+      "analytical",
+      "dependable",
+      "systematic"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "M.TECH Renewable Energy"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "SCADA",
+      "MATLAB",
+      "Python",
+      "ETAP"
+    ],
+    "acts": [
+      "Designing",
+      "Monitoring",
+      "Analyzing data"
+    ],
+    "env": "Office, control room, and field",
+    "path": [
+      "Smart Grid Engineer",
+      "Grid Automation Engineer",
+      "Grid Systems Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Renewable Energy Engineering",
+      "Solar Energy Engineer",
+      "Wind Energy Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Carbon Markets Analyst": {
+    "cat": "Environment & Sustainability",
+    "sub": "Carbon Markets",
+    "tech": [
+      "Excel",
+      "Python",
+      "Bloomberg",
+      "Market Data"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Communication",
+      "Ethics"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "analytical",
+      "principled",
+      "adaptable"
+    ],
+    "deg": [
+      "B.Com",
+      "BBA",
+      "MBA",
+      "MBA"
+    ],
+    "subj": [
+      "Economics",
+      "Business Studies",
+      "Environmental Science",
+      "Mathematics"
+    ],
+    "tools": [
+      "Excel",
+      "Python",
+      "Bloomberg Terminal"
+    ],
+    "acts": [
+      "Analyzing markets",
+      "Advising",
+      "Modeling"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Carbon Markets Analyst",
+      "Carbon Trader",
+      "Climate Finance Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "ESG Analyst",
+      "Climate Risk Analyst",
+      "Sustainability"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Genomic Data Scientist": {
+    "cat": "Life Sciences",
+    "sub": "Genomics",
+    "tech": [
+      "Python",
+      "R",
+      "Bioconductor",
+      "SQL",
+      "Linux"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Curiosity",
+      "Collaboration"
+    ],
+    "int": [
+      "research",
+      "problem_solving",
+      "technology"
+    ],
+    "per": [
+      "curious",
+      "precise",
+      "patient"
+    ],
+    "deg": [
+      "B.SC Genetics/Life Sciences",
+      "B.SC Data Science",
+      "M.SC Data Science",
+      "M.SC Mathematics",
+      "B.SC Microbiology"
+    ],
+    "subj": [
+      "Biology",
+      "Mathematics",
+      "Statistics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Bioconductor",
+      "Galaxy",
+      "Python",
+      "RStudio"
+    ],
+    "acts": [
+      "Analyzing data",
+      "Programming",
+      "Research"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Genomic Data Scientist",
+      "Bioinformatics Scientist",
+      "Genomics Lead"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Bioinformatics",
+      "Computational Biologist",
+      "Genetic Counseling"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Computational Biologist": {
+    "cat": "Life Sciences",
+    "sub": "Computational Biology",
+    "tech": [
+      "Python",
+      "R",
+      "MATLAB",
+      "Linux",
+      "SQL"
+    ],
+    "soft": [
+      "Curiosity",
+      "Analytical thinking",
+      "Collaboration"
+    ],
+    "int": [
+      "research",
+      "problem_solving",
+      "technology"
+    ],
+    "per": [
+      "curious",
+      "logical",
+      "patient"
+    ],
+    "deg": [
+      "B.SC Genetics/Life Sciences",
+      "B.SC Microbiology",
+      "B.SC Data Science",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Biology",
+      "Mathematics",
+      "Statistics",
+      "Computer Science"
+    ],
+    "tools": [
+      "Python",
+      "R",
+      "Jupyter",
+      "Snakemake"
+    ],
+    "acts": [
+      "Modeling",
+      "Analyzing data",
+      "Research"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Computational Biologist",
+      "Research Scientist",
+      "Modeling Lead"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Bioinformatics",
+      "Genomic Data Scientist",
+      "Synthetic Biology Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Synthetic Biology Engineer": {
+    "cat": "Life Sciences",
+    "sub": "Synthetic Biology",
+    "tech": [
+      "Python",
+      "Benchling",
+      "CAD for DNA",
+      "Lab Automation"
+    ],
+    "soft": [
+      "Creativity",
+      "Problem solving",
+      "Collaboration"
+    ],
+    "int": [
+      "research",
+      "creative",
+      "technology"
+    ],
+    "per": [
+      "innovative",
+      "curious",
+      "meticulous"
+    ],
+    "deg": [
+      "B.SC Genetics/Life Sciences",
+      "B.SC Microbiology",
+      "B.TECH/B.E. Biotechnology"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "Mathematics"
+    ],
+    "tools": [
+      "Benchling",
+      "SnapGene",
+      "Python",
+      "Lab robots"
+    ],
+    "acts": [
+      "Designing",
+      "Experimenting",
+      "Analyzing data"
+    ],
+    "env": "Lab and office",
+    "path": [
+      "Synthetic Biology Engineer",
+      "Bioengineer",
+      "Syn-Bio Lead"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Biomedical Engineering",
+      "Computational Biologist",
+      "Genomic Data Scientist"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Telehealth Specialist": {
+    "cat": "Healthcare & Medicine",
+    "sub": "Telehealth",
+    "tech": [
+      "Telehealth Platforms",
+      "EHR",
+      "Remote Monitoring",
+      "Python"
+    ],
+    "soft": [
+      "Communication",
+      "Empathy",
+      "Adaptability"
+    ],
+    "int": [
+      "people",
+      "communication",
+      "technology"
+    ],
+    "per": [
+      "empathetic",
+      "adaptable",
+      "dependable"
+    ],
+    "deg": [
+      "M.SC Health Informatics",
+      "MBBS",
+      "B.SC Nursing"
+    ],
+    "subj": [
+      "Biology",
+      "Computer Science",
+      "Psychology",
+      "English"
+    ],
+    "tools": [
+      "Zoom Health",
+      "Epic",
+      "Remote monitoring apps"
+    ],
+    "acts": [
+      "Patient care",
+      "Coordination",
+      "Using technology"
+    ],
+    "env": "Clinical or remote",
+    "path": [
+      "Telehealth Specialist",
+      "Telehealth Coordinator",
+      "Digital Care Lead"
+    ],
+    "auto": "Low",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Health Informatics",
+      "Medical AI Engineer",
+      "Clinical Data Management"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Medical AI Engineer": {
+    "cat": "Healthcare & Medicine",
+    "sub": "Medical AI",
+    "tech": [
+      "Python",
+      "PyTorch",
+      "MONAI",
+      "SQL",
+      "Docker"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Rigor"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "precise",
+      "logical",
+      "ethical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Data Science",
+      "M.SC Data Science",
+      "M.SC Mathematics",
+      "M.SC Clinical Research"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Biology",
+      "Statistics"
+    ],
+    "tools": [
+      "PyTorch",
+      "MONAI",
+      "scikit-learn",
+      "Docker"
+    ],
+    "acts": [
+      "Programming",
+      "Modeling",
+      "Validation"
+    ],
+    "env": "Office, lab, or hospital",
+    "path": [
+      "Medical AI Engineer",
+      "Clinical ML Engineer",
+      "AI in Health Lead"
+    ],
+    "auto": "Low",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Health Informatics",
+      "Medical AI Engineer",
+      "Telehealth Specialist"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Edge Computing Engineer": {
+    "cat": "Technology & Software",
+    "sub": "Edge Computing",
+    "tech": [
+      "Python",
+      "Rust",
+      "Docker",
+      "Kubernetes",
+      "MQTT"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Adaptability"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "practical",
+      "logical",
+      "resourceful"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "B.SC Computer Science"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Docker",
+      "K3s",
+      "MQTT",
+      "Grafana"
+    ],
+    "acts": [
+      "Programming",
+      "Deploying",
+      "Monitoring"
+    ],
+    "env": "Remote or field with devices",
+    "path": [
+      "Edge Computing Engineer",
+      "Edge Platform Engineer",
+      "Edge Systems Lead"
+    ],
+    "auto": "High",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "High",
+    "rel": [
+      "Internet of Things",
+      "Cloud Computing",
+      "Embedded Systems Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Cloud Solutions Architect": {
+    "cat": "Technology & Software",
+    "sub": "Cloud Architecture",
+    "tech": [
+      "AWS",
+      "Azure",
+      "Terraform",
+      "Kubernetes",
+      "Python"
+    ],
+    "soft": [
+      "Communication",
+      "Leadership",
+      "Problem solving"
+    ],
+    "int": [
+      "technology",
+      "business",
+      "problem_solving"
+    ],
+    "per": [
+      "strategic",
+      "logical",
+      "collaborative"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "BCA",
+      "MCA",
+      "MBA"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Business Studies"
+    ],
+    "tools": [
+      "AWS Well-Architected",
+      "Terraform",
+      "Lucidchart",
+      "CloudFormation"
+    ],
+    "acts": [
+      "Designing",
+      "Advising",
+      "Documenting"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Cloud Architect",
+      "Senior Solutions Architect",
+      "Principal Architect"
+    ],
+    "auto": "High",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Cloud Computing",
+      "DevOps",
+      "Cloud Security Engineer"
+    ],
+    "emerging": false,
+    "minEdu": "Bachelor's"
+  },
+  "High Performance Computing Engineer": {
+    "cat": "Technology & Software",
+    "sub": "High Performance Computing",
+    "tech": [
+      "C++",
+      "CUDA",
+      "MPI",
+      "Python",
+      "Linux"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Rigor"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "logical",
+      "precise",
+      "resourceful"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.SC Computer Science",
+      "M.SC Data Science",
+      "M.SC Mathematics"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "CUDA",
+      "OpenMPI",
+      "Slurm",
+      "VTune"
+    ],
+    "acts": [
+      "Programming",
+      "Optimizing",
+      "Managing clusters"
+    ],
+    "env": "Office, lab, or data center",
+    "path": [
+      "HPC Engineer",
+      "Performance Engineer",
+      "HPC Systems Lead"
+    ],
+    "auto": "High",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "High",
+    "rel": [
+      "Cloud Computing",
+      "Computer Vision Engineer",
+      "Quantum Computing Research"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Human-AI Interaction Designer": {
+    "cat": "Design & Creative",
+    "sub": "Human-AI Interaction",
+    "tech": [
+      "Figma",
+      "Framer",
+      "Prototyping",
+      "Python"
+    ],
+    "soft": [
+      "Creativity",
+      "Communication",
+      "Empathy"
+    ],
+    "int": [
+      "creative",
+      "communication",
+      "technology"
+    ],
+    "per": [
+      "empathetic",
+      "innovative",
+      "collaborative"
+    ],
+    "deg": [
+      "B.Des Graphic Design",
+      "B.Des Graphic Design",
+      "B.Sc Computer Science"
+    ],
+    "subj": [
+      "Design",
+      "Psychology",
+      "Computer Science",
+      "English"
+    ],
+    "tools": [
+      "Figma",
+      "Framer",
+      "Maze",
+      "Miro"
+    ],
+    "acts": [
+      "Designing",
+      "User research",
+      "Prototyping"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "HAI Designer",
+      "UX Designer AI",
+      "Design Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "High",
+    "rel": [
+      "User Experience Design UX",
+      "Product Design",
+      "Product Management"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Digital Twin Engineer": {
+    "cat": "Engineering",
+    "sub": "Digital Twins",
+    "tech": [
+      "Python",
+      "MATLAB",
+      "Unity",
+      "IoT",
+      "SQL"
+    ],
+    "soft": [
+      "Problem solving",
+      "Collaboration",
+      "Systems thinking"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "creative"
+    ],
+    "per": [
+      "analytical",
+      "innovative",
+      "practical"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Civil Engineering"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "tools": [
+      "MATLAB",
+      "Unity",
+      "Python",
+      "Ignition"
+    ],
+    "acts": [
+      "Modeling",
+      "Simulating",
+      "Analyzing data"
+    ],
+    "env": "Office, lab, or plant",
+    "path": [
+      "Digital Twin Engineer",
+      "Simulation Engineer",
+      "Twin Systems Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Robotics Engineering",
+      "Internet of Things",
+      "Smart Grid Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Additive Manufacturing Engineer": {
+    "cat": "Engineering",
+    "sub": "Additive Manufacturing",
+    "tech": [
+      "CAD",
+      "Python",
+      "MATLAB",
+      "3D Printing Software"
+    ],
+    "soft": [
+      "Problem solving",
+      "Patience",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving",
+      "creative"
+    ],
+    "per": [
+      "detail_oriented",
+      "practical",
+      "innovative"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "M.TECH Renewable Energy"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Chemistry"
+    ],
+    "tools": [
+      "SolidWorks",
+      "Materialise Magics",
+      "Python",
+      "AutoCAD"
+    ],
+    "acts": [
+      "Designing",
+      "Printing",
+      "Testing"
+    ],
+    "env": "Lab, shop floor, and office",
+    "path": [
+      "AM Engineer",
+      "Manufacturing Engineer",
+      "AM Process Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Robotics Engineering",
+      "Digital Twin Engineer",
+      "Aerospace Engineering"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "ESG Analyst": {
+    "cat": "Environment & Sustainability",
+    "sub": "ESG",
+    "tech": [
+      "Excel",
+      "Python",
+      "Power BI",
+      "Bloomberg"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Communication",
+      "Ethics"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "analytical",
+      "principled",
+      "adaptable"
+    ],
+    "deg": [
+      "B.Com",
+      "BBA",
+      "MBA",
+      "MBA",
+      "M.Sc Environmental Science"
+    ],
+    "subj": [
+      "Economics",
+      "Business Studies",
+      "Environmental Science",
+      "Mathematics"
+    ],
+    "tools": [
+      "Excel",
+      "Power BI",
+      "Bloomberg Terminal",
+      "Python"
+    ],
+    "acts": [
+      "Analyzing data",
+      "Reporting",
+      "Advising"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "ESG Analyst",
+      "Sustainability Analyst",
+      "ESG Strategy Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Carbon Markets Analyst",
+      "Climate Risk Analyst",
+      "Sustainability"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "IoT Security Engineer": {
+    "cat": "Technology & Software",
+    "sub": "IoT Security",
+    "tech": [
+      "Python",
+      "C",
+      "TLS",
+      "MQTT",
+      "Linux"
+    ],
+    "soft": [
+      "Problem solving",
+      "Communication",
+      "Vigilance"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "vigilant",
+      "logical",
+      "resourceful"
+    ],
+    "deg": [
+      "B.TECH/B.E. Computer Science",
+      "B.TECH/B.E. Electronics & Communication Engineering",
+      "LLB"
+    ],
+    "subj": [
+      "Computer Science",
+      "Mathematics",
+      "Physics"
+    ],
+    "tools": [
+      "Wireshark",
+      "Firmware analysis",
+      "MQTT",
+      "Grafana"
+    ],
+    "acts": [
+      "Securing",
+      "Monitoring",
+      "Testing"
+    ],
+    "env": "Remote or lab with devices",
+    "path": [
+      "IoT Security Engineer",
+      "Device Security Engineer",
+      "IoT Security Lead"
+    ],
+    "auto": "High",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "High",
+    "rel": [
+      "Internet of Things",
+      "Cloud Security Engineer",
+      "Penetration Tester"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Climate Risk Analyst": {
+    "cat": "Environment & Sustainability",
+    "sub": "Climate Risk",
+    "tech": [
+      "Python",
+      "Excel",
+      "GIS",
+      "Climate Data APIs"
+    ],
+    "soft": [
+      "Analytical thinking",
+      "Communication",
+      "Foresight"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "research"
+    ],
+    "per": [
+      "analytical",
+      "principled",
+      "strategic"
+    ],
+    "deg": [
+      "B.SC Environmental Science",
+      "B.Com",
+      "BBA",
+      "MBA",
+      "M.Sc Environmental Science"
+    ],
+    "subj": [
+      "Environmental Science",
+      "Economics",
+      "Mathematics",
+      "Business Studies"
+    ],
+    "tools": [
+      "Python",
+      "Excel",
+      "QGIS",
+      "Climate APIs"
+    ],
+    "acts": [
+      "Modeling",
+      "Analyzing data",
+      "Advising"
+    ],
+    "env": "Office or remote",
+    "path": [
+      "Climate Risk Analyst",
+      "Climate Risk Manager",
+      "Resilience Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Climate Risk Analyst",
+      "ESG Analyst",
+      "Carbon Markets Analyst"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Autonomous Systems Safety Engineer": {
+    "cat": "Engineering",
+    "sub": "Autonomy Safety",
+    "tech": [
+      "Python",
+      "MATLAB",
+      "SysML",
+      "Simulation"
+    ],
+    "soft": [
+      "Rigor",
+      "Problem solving",
+      "Collaboration"
+    ],
+    "int": [
+      "technology",
+      "problem_solving"
+    ],
+    "per": [
+      "meticulous",
+      "logical",
+      "dependable"
+    ],
+    "deg": [
+      "B.TECH/B.E. Mechanical Engineering",
+      "B.TECH/B.E. Electrical Engineering",
+      "B.TECH/B.E. Computer Science"
+    ],
+    "subj": [
+      "Mathematics",
+      "Physics",
+      "Computer Science"
+    ],
+    "tools": [
+      "MATLAB",
+      "Simulink",
+      "Python",
+      "Fault tree tools"
+    ],
+    "acts": [
+      "Analyzing",
+      "Validating",
+      "Documenting"
+    ],
+    "env": "Office, lab, and test sites",
+    "path": [
+      "Safety Engineer",
+      "Autonomy Safety Engineer",
+      "Safety Lead"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Autonomous Vehicles Engineer",
+      "Robotics Engineering",
+      "Autonomous Systems Safety Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
+  },
+  "Energy Efficiency Consultant": {
+    "cat": "Environment & Sustainability",
+    "sub": "Energy Efficiency",
+    "tech": [
+      "EnergyPlus",
+      "Python",
+      "Excel",
+      "Audit Tools"
+    ],
+    "soft": [
+      "Communication",
+      "Analytical thinking",
+      "Persuasion"
+    ],
+    "int": [
+      "business",
+      "problem_solving",
+      "technology"
+    ],
+    "per": [
+      "practical",
+      "analytical",
+      "dependable"
+    ],
+    "deg": [
+      "B.TECH/B.E. Electrical Engineering",
+      "MBA",
+      "M.TECH Renewable Energy"
+    ],
+    "subj": [
+      "Physics",
+      "Mathematics",
+      "Economics",
+      "Business Studies"
+    ],
+    "tools": [
+      "EnergyPlus",
+      "RETscreen",
+      "Excel",
+      "Power BI"
+    ],
+    "acts": [
+      "Auditing",
+      "Modeling",
+      "Advising"
+    ],
+    "env": "Field and office",
+    "path": [
+      "Energy Consultant",
+      "Efficiency Engineer",
+      "Sustainability Consultant"
+    ],
+    "auto": "Medium",
+    "ind": "Medium",
+    "glo": "Medium",
+    "rem": "Medium",
+    "rel": [
+      "Renewable Energy Engineering",
+      "ESG Analyst",
+      "Smart Grid Engineer"
+    ],
+    "emerging": true,
+    "minEdu": "Bachelor's"
   }
 }
