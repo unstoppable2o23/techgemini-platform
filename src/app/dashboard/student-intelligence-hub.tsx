@@ -331,11 +331,11 @@ export default function StudentIntelligenceHub({
           <EmptyState
             icon={Building2}
             title="No verified matches yet"
-            description={
-              d.topCareerId
-                ? "We couldn't find verified institution matches for this pathway yet."
-                : "Complete your top career match to see personalized university recommendations."
-            }
+                description={
+                  d.topCareerId
+                    ? "We couldn't find verified institution matches for this pathway yet. Some recommendations may be category-based rather than confirmed program offerings."
+                    : "Complete your top career match to see personalized university recommendations."
+                }
           />
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

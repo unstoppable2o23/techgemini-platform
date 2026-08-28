@@ -14,16 +14,19 @@ export async function GET() {
     include: { featureAccess: true },
   });
 
-  const flags = studentProfile?.featureAccess || {
-    collegeSearch: false,
-    collegeFinder: false,
-    aiOddsCalculator: false,
-    mockTests: false,
-    scholarshipHub: false,
-    appointments: false,
-    webinars: false,
-    analytics: false,
-    careerLibrary: false,
+  // Features are enabled by default for students; an explicit `false` in
+  // featureAccess means the counselor/admin has locked that specific feature.
+  const access = studentProfile?.featureAccess;
+  const flags = {
+    collegeSearch: access?.collegeSearch ?? true,
+    collegeFinder: access?.collegeFinder ?? true,
+    aiOddsCalculator: access?.aiOddsCalculator ?? true,
+    mockTests: access?.mockTests ?? true,
+    scholarshipHub: access?.scholarshipHub ?? true,
+    appointments: access?.appointments ?? true,
+    webinars: access?.webinars ?? true,
+    analytics: access?.analytics ?? true,
+    careerLibrary: access?.careerLibrary ?? true,
   };
 
   return NextResponse.json({ flags });

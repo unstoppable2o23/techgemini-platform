@@ -305,6 +305,10 @@ async function seedEducation() {
     }
 
     try {
+      const exists = await prisma.careerEducationPathway.findFirst({
+        where: { careerId, degreeId, specializationId, type: "DEGREE_PATHWAY", priority: pathway.priority },
+      });
+      if (exists) continue;
       await prisma.careerEducationPathway.create({
         data: {
           careerId,
@@ -339,22 +343,26 @@ async function seedEducation() {
       const subjectId = subjectCache.get(subjectName.trim());
       if (!subjectId) continue;
       
-      try {
-        await prisma.careerEducationPathway.create({
-          data: {
-            careerId,
-            degreeId: primaryPathway?.degreeId ? degreeCache.get(primaryPathway.degreeName) : null,
-            specializationId: null,
-            subjectId,
-            priority: "ALTERNATIVE",
-            type: "SUBJECT_LINK",
-            notes: "Recommended subject",
-          },
-        });
-        subjectLinkCount++;
-      } catch (e) {
-        // Ignore duplicates
-      }
+    try {
+      const exists = await prisma.careerEducationPathway.findFirst({
+        where: { careerId, subjectId, type: "SUBJECT_LINK" },
+      });
+      if (exists) continue;
+      await prisma.careerEducationPathway.create({
+        data: {
+          careerId,
+          degreeId: primaryPathway?.degreeId ? degreeCache.get(primaryPathway.degreeName) : null,
+          specializationId: null,
+          subjectId,
+          priority: "ALTERNATIVE",
+          type: "SUBJECT_LINK",
+          notes: "Recommended subject",
+        },
+      });
+      subjectLinkCount++;
+    } catch (e) {
+      // Ignore duplicates
+    }
     }
   }
   console.log(`Created ${subjectLinkCount} subject links`);

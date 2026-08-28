@@ -41,7 +41,7 @@ const ALL_ENABLED: StudentFeatureFlags = {
 
 export function useFeatureFlags() {
   const { data: session } = useSession();
-  const [flags, setFlags] = useState<StudentFeatureFlags>(EMPTY_FLAGS);
+  const [flags, setFlags] = useState<StudentFeatureFlags>(ALL_ENABLED);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

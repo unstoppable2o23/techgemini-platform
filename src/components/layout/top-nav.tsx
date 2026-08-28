@@ -142,7 +142,7 @@ function NavDropdown({
           return (
             <DropdownMenuItem key={item.href + item.label}>
               <Link
-                href={enabled ? item.href : "#"}
+                href={item.href}
                 onClick={(e) => {
                   if (!enabled) {
                     e.preventDefault();
@@ -151,7 +151,7 @@ function NavDropdown({
                 }}
                 className={cn(
                   "flex w-full items-start gap-3 rounded-lg px-2 py-2",
-                  !enabled && "opacity-80"
+                  !enabled && "bg-amber-50/60 ring-1 ring-inset ring-amber-200"
                 )}
               >
                 <span
@@ -178,7 +178,7 @@ function NavDropdown({
                   )}
                   {!enabled && (
                     <span className="mt-0.5 block text-[11px] font-medium text-amber-600">
-                      Ask your counselor to enable
+                      Available through your plan
                     </span>
                   )}
                 </span>
@@ -665,7 +665,7 @@ export function TopNav() {
                       }}
                       className={cn(
                         "flex items-center gap-3 rounded-xl border border-border bg-card px-3 py-3 text-sm font-medium text-foreground",
-                        !enabled && "opacity-80"
+                        !enabled && "bg-amber-50/60 ring-1 ring-inset ring-amber-200"
                       )}
                     >
                       <span
