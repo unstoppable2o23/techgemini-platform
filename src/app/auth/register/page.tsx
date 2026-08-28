@@ -207,6 +207,11 @@ export default function RegisterPage() {
 
           <form
             onSubmit={handleSubmit}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && (e.target as HTMLElement).tagName !== "TEXTAREA") {
+                e.preventDefault();
+              }
+            }}
             className="mt-6 flex max-h-[65vh] flex-col gap-4 overflow-y-auto pr-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             <input
