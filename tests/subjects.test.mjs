@@ -33,15 +33,21 @@ before(async () => {
   });
   profile = await prisma.studentProfile.create({ data: { userId: user.id } });
 
-  subject = await prisma.subject.findFirst({ where: { isActive: true } });
+  // Ensure the canonical subject catalogue exists, then deterministically pick a
+  // stable canonical subject (NOT an arbitrary findFirst, which can grab a throwaway
+  // subject another test deletes mid-run -> "subjects not valid" flake).
+  await seedSubjects(prisma);
+  subject = await prisma.subject.findFirst({
+    where: { isActive: true, name: { in: SUBJECT_SEED.map((s) => s.name) } },
+    orderBy: { name: "asc" },
+  });
   if (!subject) {
     subject = await prisma.subject.create({
-      data: { name: `SubjB ${suffix}`, slug: `subjb-${suffix}`, category: "Science" },
+      data: { name: "Mathematics", slug: "mathematics", category: "Science" },
     });
-    // subject not flagged for cleanup since we reused-or-created minimally; clean if created
     created.subject = true;
   }
-  career = await prisma.career.findFirst({ where: { isActive: true } });
+  career = await prisma.career.findFirst({ where: { isActive: true, name: "Computer Vision Engineer" } });
   if (!career) {
     career = await prisma.career.create({
       data: {

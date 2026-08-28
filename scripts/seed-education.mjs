@@ -27,72 +27,151 @@ const EDUCATION_LEVELS = {
   "MLIS": "Master's",
   "MD": "Master's",
   "MS": "Master's",
+  "M.ED": "Master's",
+  "M.PHARM": "Master's",
+  "M.P.ED": "Master's",
+  "MHA": "Master's",
+  "MSW": "Master's",
+  "M.PLAN": "Master's",
+  "B.P.ED": "Bachelor's",
+  "B.OPTOMETRY": "Bachelor's",
+  "BHA": "Bachelor's",
+  "BSW": "Bachelor's",
+  "BOT": "Bachelor's",
+  "BPT": "Bachelor's",
+  "BFA": "Bachelor's",
+  "BHM": "Bachelor's",
+  "B.PLAN": "Bachelor's",
+  "B.F.SC": "Bachelor's",
+  "B.V.SC": "Bachelor's",
+  "PGDIPLOMA": "Diploma",
   "PhD": "Doctoral",
   "Diploma": "Diploma",
   "Certificate": "Certificate",
   "Integrated": "Integrated",
 };
 
-function extractDegreeInfo(degString) {
-  const str = degString.trim();
-  
-  const patterns = [
-    /^(B\.Tech\/?B\.E\.?)\s+(.+)$/i,
-    /^(B\.E\.)\s+(.+)$/i,
-    /^(B\.Tech)\s+(.+)$/i,
-    /^(M\.Tech)\s+(.+)$/i,
-    /^(M\.Sc)\s+(.+)$/i,
-    /^(B\.Sc)\s+(.+)$/i,
-    /^(BBA)\s+(.+)$/i,
-    /^(B\.Com)\s+(.+)$/i,
-    /^(BA)\s+(.+)$/i,
-    /^(BCA)\s+(.+)$/i,
-    /^(B\.Des)\s+(.+)$/i,
-    /^(B\.Arch)\s+(.+)$/i,
-    /^(MBBS)\s*(.*)$/i,
-    /^(B\.Pharm)\s*(.*)$/i,
-    /^(LLB)\s*(.*)$/i,
-    /^(MCA)\s+(.+)$/i,
-    /^(MBA)\s+(.+)$/i,
-    /^(M\.Des)\s+(.+)$/i,
-    /^(M\.Arch)\s+(.+)$/i,
-    /^(Diploma)\s+(.+)$/i,
-    /^(Certificate)\s+(.+)$/i,
-    /^(Integrated)\s+(.+)$/i,
-    /^(PhD)\s+(.+)$/i,
-    /^(MD)\s+(.+)$/i,
-    /^(MS)\s+(.+)$/i,
-  ];
+const DEGREE_PATTERNS = [
+  /^(B\.Tech\/?B\.E\.?)\s+(.+)$/i,
+  /^(B\.E\.)\s+(.+)$/i,
+  /^(B\.Tech)\s+(.+)$/i,
+  /^(M\.Tech)\s+(.+)$/i,
+  /^(M\.Sc)\s+(.+)$/i,
+  /^(B\.Sc)\s+(.+)$/i,
+  /^(BBA)\s+(.+)$/i,
+  /^(B\.Com)\s+(.+)$/i,
+  /^(BA)\s+(.+)$/i,
+  /^(BCA)\s+(.+)$/i,
+  /^(B\.Des)\s+(.+)$/i,
+  /^(B\.Arch)\s+(.+)$/i,
+  /^(MBBS)\s*(.*)$/i,
+  /^(B\.Pharm)\s*(.*)$/i,
+  /^(LLB)\s*(.*)$/i,
+  /^(MCA)\s+(.+)$/i,
+  /^(MBA)\s+(.+)$/i,
+  /^(M\.Des)\s+(.+)$/i,
+  /^(M\.Arch)\s+(.+)$/i,
+  /^(Diploma)\s+(.+)$/i,
+  /^(Certificate)\s+(.+)$/i,
+  /^(Integrated)\s+(.+)$/i,
+  /^(PhD)\s+(.+)$/i,
+  /^(MD)\s+(.+)$/i,
+  /^(MS)\s+(.+)$/i,
+  /^(M\.Ed)\s*(.*)$/i,
+  /^(M\.Pharm)\s*(.*)$/i,
+  /^(M\.P\.Ed)\s*(.*)$/i,
+  /^(B\.P\.Ed)\s*(.*)$/i,
+  /^(B\.Optometry)\s*(.*)$/i,
+  /^(BHA)\s*(.*)$/i,
+  /^(MHA)\s*(.*)$/i,
+  /^(BSW)\s*(.*)$/i,
+  /^(MSW)\s*(.*)$/i,
+  /^(BOT)\s*(.*)$/i,
+  /^(BPT)\s*(.*)$/i,
+  /^(BFA)\s*(.*)$/i,
+  /^(BHM)\s*(.*)$/i,
+  /^(B\.Plan)\s*(.*)$/i,
+  /^(M\.Plan)\s*(.*)$/i,
+  /^(PG Diploma)\s*(.*)$/i,
+  /^(B\.F\.Sc)\s*(.*)$/i,
+  /^(B\.V\.Sc)\s*(.*)$/i,
+];
 
-  for (const pattern of patterns) {
+// Normalize a single degree requirement string into a { degreeType, specialization } pair.
+function singleDegree(str) {
+  const cleanSpec = (spec) => {
+    if (!spec) return undefined;
+    return spec
+      .replace(/\([^)]*\)/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/^[()/]+|[()/]+$/g, '') || undefined;
+  };
+  for (const pattern of DEGREE_PATTERNS) {
     const match = str.match(pattern);
     if (match) {
       const degreeType = match[1].toUpperCase().replace(/\s+/g, '');
-      const specialization = match[2] ? match[2].trim() : null;
-      const cleanSpec = specialization ? specialization
-        .replace(/\([^)]*\)/g, '')
-        .replace(/\s+/g, ' ')
-        .trim()
-        : null;
-      
-      return {
-        degreeType,
-        specialization: cleanSpec || undefined,
-      };
+      return [{ degreeType, specialization: cleanSpec(match[2]) }];
     }
   }
-
+  // Fallback (preserves prior behaviour): the first token is the degree type. This
+  // keeps legitimate single degrees (M.LIB, B.V.Sc, CFA, ...) intact. Junk prefixes
+  // are already filtered by the caller (ANY degree removed, slash combos split).
   const parts = str.split(/\s+/);
-  if (parts.length >= 1) {
-    const degreeType = parts[0].toUpperCase().replace(/\s+/g, '');
-    const specialization = parts.slice(1).join(' ').replace(/\([^)]*\)/g, '').trim();
-    return {
-      degreeType,
-      specialization: specialization || undefined,
-    };
-  }
+  const degreeType = parts[0].toUpperCase().replace(/\s+/g, '');
+  const specialization = parts.slice(1).join(' ');
+  return [{ degreeType, specialization: cleanSpec(specialization) }];
+}
 
-  return { degreeType: str, specialization: undefined };
+// Parse a possibly-combined degree requirement into one or more canonical degrees.
+//  - Leading "ANY degree" is an eligibility note, not a specific Degree.
+//  - Slash-combined prefixes (BCA/MCA, BBA/MBA, ...) are split into alternatives
+//    EXCEPT the intentional "B.Tech/B.E." combined degree which stays single.
+//  - Requirements joined by "+" (e.g. "B.Com/BBA + CFA") are treated as separate
+//    alternatives; trailing certification/experience notes are still parsed via the
+//    fallback, preserving existing behaviour.
+const KNOWN_DEGREE_TYPES = new Set([
+  "B.TECH", "B.E.", "B.SC", "BBA", "B.COM", "BA", "BCA", "B.DES", "B.ARCH",
+  "MBBS", "B.PHARM", "LLB", "M.TECH", "M.SC", "MBA", "MCA", "M.DES", "M.ARCH",
+  "DIPLOMA", "CERTIFICATE", "INTEGRATED", "PHD", "MD", "MS", "M.ED", "M.PHARM",
+  "M.P.ED", "B.P.ED", "B.OPTOMETRY", "BHA", "MHA", "BSW", "MSW", "BOT", "BPT",
+  "BFA", "BHM", "B.PLAN", "M.PLAN", "PGDIPLOMA", "B.F.SC", "B.V.SC", "B.TECH/B.E.",
+]);
+
+function isKnownDegree(token) {
+  return KNOWN_DEGREE_TYPES.has(token.toUpperCase().replace(/\s+/g, ''));
+}
+
+function extractDegrees(raw) {
+  const str = (raw || '').trim();
+  // "ANY degree" (anywhere) is an eligibility note, not a specific Degree.
+  let s = str.replace(/any degree/ig, ' ').replace(/\s+/g, ' ').trim();
+  if (!s) return [];
+
+  const segments = s.split(/\s*\+\s*/).map((x) => x.trim()).filter(Boolean);
+  const out = [];
+  for (const segRaw of segments) {
+    const seg = segRaw.replace(/^[;()+,]+|[;()+,]+$/g, '').trim();
+    if (!seg) continue;
+    const slash = seg.match(/^([A-Za-z.]+(?:\/[A-Za-z.]+)+)\s*(.*)$/);
+    if (slash) {
+      const base = slash[1];
+      const rest = slash[2] ? ' ' + slash[2].trim() : '';
+      if (base.replace(/\./g, '').toLowerCase() === 'btechbee') {
+        out.push(...singleDegree(seg));
+      } else {
+        // Only emit slash-combined alternatives that are real degree types.
+        for (const p of base.split('/')) {
+          if (!isKnownDegree(p)) continue;
+          const r = singleDegree(`${p}${rest}`.trim());
+          if (r.length) out.push(...r);
+        }
+      }
+    } else if (/[A-Za-z]/.test(seg)) {
+      out.push(...singleDegree(seg));
+    }
+  }
+  return out;
 }
 
 function slugify(str) {
@@ -137,29 +216,30 @@ async function seedEducation() {
   Object.entries(allEnrichment).forEach(([careerName, data]) => {
     if (data.deg) {
       data.deg.forEach(degStr => {
-        const { degreeType, specialization } = extractDegreeInfo(degStr);
-        const degreeName = `${degreeType} ${specialization || ''}`.trim();
-        
-        if (!degreeMap.has(degreeName)) {
-          degreeMap.set(degreeName, {
-            degreeType,
-            specializations: new Set(),
-          });
-        }
-        if (specialization) {
-          degreeMap.get(degreeName).specializations.add(specialization);
-        }
-        
         const idx = data.deg.indexOf(degStr);
         const priority = idx === 0 ? "PRIMARY" : idx === 1 ? "ALTERNATIVE" : "OPTIONAL";
-        
-        careerPathways.push({
-          careerName,
-          degreeName,
-          specialization,
-          priority,
-          minEdu: data.minEdu || "Bachelor's",
-        });
+        const degrees = extractDegrees(degStr);
+        for (const { degreeType, specialization } of degrees) {
+          const degreeName = `${degreeType} ${specialization || ''}`.trim();
+
+          if (!degreeMap.has(degreeName)) {
+            degreeMap.set(degreeName, {
+              degreeType,
+              specializations: new Set(),
+            });
+          }
+          if (specialization) {
+            degreeMap.get(degreeName).specializations.add(specialization);
+          }
+
+          careerPathways.push({
+            careerName,
+            degreeName,
+            specialization,
+            priority,
+            minEdu: data.minEdu || "Bachelor's",
+          });
+        }
       });
     }
     if (data.subj) {
@@ -179,18 +259,19 @@ async function seedEducation() {
     const category = educationLevel === "Bachelor's" ? "Undergraduate" : 
                      educationLevel === "Master's" ? "Graduate" : educationLevel;
     
+    const degreeSlug = slugify(degreeName);
     try {
-      const degree = await prisma.degree.upsert({
-        where: { name: degreeName },
-        update: { educationLevel, category, isActive: true },
-        create: {
-          name: degreeName,
-          slug: slugify(degreeName),
-          educationLevel,
-          category,
-          isActive: true,
-        },
-      });
+        const degree = await prisma.degree.upsert({
+          where: { slug: degreeSlug },
+          update: { name: degreeName, educationLevel, category, isActive: true },
+          create: {
+            name: degreeName,
+            slug: degreeSlug,
+            educationLevel,
+            category,
+            isActive: true,
+          },
+        });
       degreeCache.set(degreeName, degree.id);
     } catch (e) {
       console.warn(`  ✗ Failed ${degreeName}:`, e.message);
