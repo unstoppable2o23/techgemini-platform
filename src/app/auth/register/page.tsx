@@ -51,7 +51,9 @@ export default function RegisterPage() {
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [codeOpen, setCodeOpen] = useState(false);
   const honeypotRef = useRef<HTMLInputElement>(null);
+  const codeWrapRef = useRef<HTMLDivElement>(null);
   const loadTime = useRef(Date.now());
 
   useEffect(() => {
@@ -62,6 +64,17 @@ export default function RegisterPage() {
   function update(field: string, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
   }
+
+  useEffect(() => {
+    if (!codeOpen) return;
+    const onDown = (e: MouseEvent) => {
+      if (codeWrapRef.current && !codeWrapRef.current.contains(e.target as Node)) {
+        setCodeOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", onDown);
+    return () => document.removeEventListener("mousedown", onDown);
+  }, [codeOpen]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -284,20 +297,49 @@ export default function RegisterPage() {
             <div>
               <Label className="mb-1.5 block text-[13px] font-medium text-slate-700">Mobile</Label>
               <div className="flex gap-2">
-                <div className="w-[128px] shrink-0">
-                  <Select
+                <div className="w-[150px] shrink-0 relative" ref={codeWrapRef}>
+                  <input
                     value={form.mobileCountryCode}
-                    onValueChange={(v) => update("mobileCountryCode", v)}
-                  >
-                    <SelectTrigger className={selectClass}>
-                      <SelectValue>{form.mobileCountryCode}</SelectValue>
-                    </SelectTrigger>
-                    <SelectContent>
-                      {COUNTRY_CODES.map((c) => (
-                        <SelectItem key={c.code} value={c.code}>{c.label}</SelectItem>
+                    onChange={(e) => {
+                      update("mobileCountryCode", e.target.value);
+                      setCodeOpen(true);
+                    }}
+                    onFocus={() => setCodeOpen(true)}
+                    placeholder="+__"
+                    aria-label="Country code"
+                    className="w-full rounded-lg border border-slate-200 bg-white py-2.5 pl-3 pr-3 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-50"
+                  />
+                  {codeOpen && (
+                    <ul className="absolute z-50 mt-1 max-h-52 w-full overflow-auto rounded-md border bg-white p-1 text-sm shadow-lg">
+                      {COUNTRY_CODES.filter(
+                        (c) =>
+                          c.code.toLowerCase().includes(form.mobileCountryCode.toLowerCase().replace("+", "")) ||
+                          c.label.toLowerCase().includes(form.mobileCountryCode.toLowerCase())
+                      ).map((c) => (
+                        <li key={c.code}>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              update("mobileCountryCode", c.code);
+                              setCodeOpen(false);
+                            }}
+                            className="flex w-full items-center justify-between rounded-sm px-2 py-1.5 text-left hover:bg-blue-50"
+                          >
+                            <span>{c.label}</span>
+                          </button>
+                        </li>
                       ))}
-                    </SelectContent>
-                  </Select>
+                      {COUNTRY_CODES.filter(
+                        (c) =>
+                          c.code.toLowerCase().includes(form.mobileCountryCode.toLowerCase().replace("+", "")) ||
+                          c.label.toLowerCase().includes(form.mobileCountryCode.toLowerCase())
+                      ).length === 0 && (
+                        <li className="px-2 py-1.5 text-slate-400">
+                          No match — your entry will be used
+                        </li>
+                      )}
+                    </ul>
+                  )}
                 </div>
                 <div className="relative flex-1">
                   <Phone className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />

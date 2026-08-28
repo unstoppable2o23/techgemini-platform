@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 
@@ -11,17 +12,40 @@ interface SelectProps {
   placeholder?: string;
 }
 
+type Coords = { top: number; left: number; width: number };
+
 const SelectContext = React.createContext<{
   value: string;
   onValueChange: (value: string) => void;
   open: boolean;
   setOpen: (open: boolean) => void;
+  triggerRef: React.MutableRefObject<HTMLButtonElement | null>;
+  coords: Coords | null;
 } | null>(null);
 
 function Select({ value, onValueChange, children }: SelectProps) {
   const [open, setOpen] = React.useState(false);
+  const triggerRef = React.useRef<HTMLButtonElement | null>(null);
+  const [coords, setCoords] = React.useState<Coords | null>(null);
+
+  React.useEffect(() => {
+    if (open && triggerRef.current) {
+      const t = triggerRef.current.getBoundingClientRect();
+      setCoords({ top: t.bottom + 4, left: t.left, width: t.width });
+    }
+  }, [open]);
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
-    <SelectContext.Provider value={{ value, onValueChange, open, setOpen }}>
+    <SelectContext.Provider value={{ value, onValueChange, open, setOpen, triggerRef, coords }}>
       <div className="relative">{children}</div>
     </SelectContext.Provider>
   );
@@ -34,7 +58,11 @@ const SelectTrigger = React.forwardRef<
   const ctx = React.useContext(SelectContext);
   return (
     <button
-      ref={ref}
+      ref={(node) => {
+        ctx?.triggerRef.current && (ctx.triggerRef.current = node);
+        if (typeof ref === "function") ref(node);
+        else if (ref) (ref as React.MutableRefObject<HTMLButtonElement | null>).current = node;
+      }}
       type="button"
       onClick={() => ctx?.setOpen(!ctx?.open)}
       className={cn(
@@ -72,24 +100,45 @@ const SelectContent = React.forwardRef<
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...props }, ref) => {
   const ctx = React.useContext(SelectContext);
+  const localRef = React.useRef<HTMLDivElement>(null);
+  const [style, setStyle] = React.useState<React.CSSProperties | null>(null);
+
+  React.useLayoutEffect(() => {
+    if (!ctx?.open || !ctx.triggerRef.current) return;
+    const t = ctx.triggerRef.current.getBoundingClientRect();
+    const h = localRef.current?.offsetHeight ?? 220;
+    let top = t.bottom + 4;
+    if (top + h > window.innerHeight - 8) top = Math.max(8, t.top - h - 4);
+    setStyle({ position: "fixed", top, left: t.left, width: t.width, zIndex: 60 });
+  }, [ctx?.open, children]);
+
   if (!ctx?.open) return null;
-  return (
+
+  return createPortal(
     <>
       <div
-        className="fixed inset-0 z-40"
-        onClick={() => ctx?.setOpen(false)}
+        className="fixed inset-0 z-50"
+        onMouseDown={(e) => {
+          if (e.target === e.currentTarget) ctx.setOpen(false);
+        }}
       />
       <div
-        ref={ref}
+        ref={(node) => {
+          (localRef as React.MutableRefObject<HTMLDivElement | null>).current = node;
+          if (typeof ref === "function") ref(node);
+          else if (ref) (ref as React.MutableRefObject<HTMLDivElement | null>).current = node;
+        }}
+        style={style ?? (ctx.coords ? { position: "fixed", ...ctx.coords, zIndex: 60 } : undefined)}
         className={cn(
-          "absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80",
+          "max-h-60 overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md animate-in fade-in-80",
           className
         )}
         {...props}
       >
         {children}
       </div>
-    </>
+    </>,
+    document.body
   );
 });
 SelectContent.displayName = "SelectContent";
