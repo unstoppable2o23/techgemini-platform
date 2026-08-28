@@ -12,16 +12,6 @@ const GRADE_OPTIONS = [
   "8th", "9th", "10th", "11th", "12th", "Pursuing UG", "Completed UG",
 ];
 
-const STUDY_LEVEL_OPTIONS = [
-  "Bachelor's (Undergraduate)", "Master's (Postgraduate)",
-  "PhD / Doctorate", "Diploma / Foundation", "Other",
-];
-
-const EXAM_OPTIONS = [
-  "IELTS", "TOEFL", "SAT", "ACT", "GRE", "GMAT",
-  "A-Levels", "IB Diploma", "CELPIP", "PTE", "None yet",
-];
-
 const COUNTRY_CODES = [
   { code: "+91", label: "India (+91)" },
   { code: "+1", label: "USA / Canada (+1)" },
@@ -58,8 +48,6 @@ export default function RegisterPage() {
     mobile: "",
     gender: "",
     gradeLevel: "",
-    studyLevel: "",
-    exams: [] as string[],
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -73,15 +61,6 @@ export default function RegisterPage() {
 
   function update(field: string, value: string) {
     setForm((prev) => ({ ...prev, [field]: value }));
-  }
-
-  function toggleExam(exam: string) {
-    setForm((prev) => ({
-      ...prev,
-      exams: prev.exams.includes(exam)
-        ? prev.exams.filter((e) => e !== exam)
-        : [...prev.exams, exam],
-    }));
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -363,44 +342,6 @@ export default function RegisterPage() {
                     ))}
                   </SelectContent>
                 </Select>
-              </div>
-            </div>
-
-            <div>
-              <Label className="mb-1.5 block text-[13px] font-medium text-slate-700">
-                What study level are you planning? *
-              </Label>
-              <Select value={form.studyLevel} onValueChange={(v) => update("studyLevel", v)}>
-                <SelectTrigger className={selectClass}>
-                  <SelectValue>Select study level</SelectValue>
-                </SelectTrigger>
-                <SelectContent>
-                  {STUDY_LEVEL_OPTIONS.map((s) => (
-                    <SelectItem key={s} value={s}>{s}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div>
-              <Label className="mb-2 block text-[13px] font-medium text-slate-700">
-                Which entrance exams are you preparing for?
-              </Label>
-              <div className="flex flex-wrap gap-2">
-                {EXAM_OPTIONS.map((exam) => (
-                  <button
-                    key={exam}
-                    type="button"
-                    onClick={() => toggleExam(exam)}
-                    className={`rounded-full border px-3 py-1.5 text-[13px] transition-colors ${
-                      form.exams.includes(exam)
-                        ? "border-transparent bg-blue-600 text-white shadow-sm"
-                        : "border-slate-300 text-slate-500 hover:border-blue-600 hover:text-blue-600"
-                    }`}
-                  >
-                    {exam}
-                  </button>
-                ))}
               </div>
             </div>
 
