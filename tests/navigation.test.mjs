@@ -26,6 +26,8 @@ const REAL_STUDENT_ROUTES = new Set([
   "/saved",
   "/dashboard",
   "/settings",
+  "/shortlist",
+  "/compare",
 ]);
 
 const REAL_COUNSELOR_ROUTES = new Set([

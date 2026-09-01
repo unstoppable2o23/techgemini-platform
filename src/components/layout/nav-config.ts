@@ -21,6 +21,8 @@ import {
   BarChart3,
   Settings,
   Radio,
+  Bookmark,
+  GitCompare,
   type LucideIcon,
 } from "lucide-react";
 
@@ -97,6 +99,18 @@ export const STUDENT_GROUPS: NavGroup[] = [
         icon: Search,
         featureKey: "collegeFinder",
         description: "Search institutions directly",
+      },
+      {
+        label: "My Shortlist",
+        href: "/shortlist",
+        icon: Bookmark,
+        description: "Institutions you've saved to compare",
+      },
+      {
+        label: "Compare",
+        href: "/compare",
+        icon: GitCompare,
+        description: "Side-by-side university comparison",
       },
     ],
   },

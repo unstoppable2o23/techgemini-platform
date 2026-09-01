@@ -748,6 +748,7 @@ export default function CareerDetailClient({ career }: { career: any }) {
                       <Button variant="ghost" size="sm" className="text-xs" onClick={() => setUniExpanded(uniExpanded === m.institution.id ? null : m.institution.id)}>
                         {uniExpanded === m.institution.id ? "Hide" : "Why?"}
                       </Button>
+                      <SaveButton itemType={m.institution.dataset === "indian" ? "INDIAN_INSTITUTION" : "UNIVERSITY"} itemId={m.institution.id} size="sm" className="text-xs" />
                     </div>
                     {uniExpanded === m.institution.id && (
                       <div className="mt-3 space-y-2 text-xs">

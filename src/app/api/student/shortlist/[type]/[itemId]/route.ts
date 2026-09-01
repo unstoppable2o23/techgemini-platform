@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { removeShortlist, type ShortlistItemType } from "@/lib/student/shortlist.ts";
+import { removeShortlist, SHORTLIST_ITEM_TYPES, type ShortlistItemType } from "@/lib/student/shortlist.ts";
 
 export async function DELETE(
   _request: NextRequest,
@@ -16,7 +16,7 @@ export async function DELETE(
     return NextResponse.json({ error: "Only students can manage shortlists" }, { status: 403 });
   }
   const itemType = type.toUpperCase() as ShortlistItemType;
-  if (!["CAREER", "EDUCATION", "UNIVERSITY"].includes(itemType)) {
+  if (!SHORTLIST_ITEM_TYPES.includes(itemType)) {
     return NextResponse.json({ error: "Invalid item type" }, { status: 400 });
   }
   await removeShortlist(session.user.id, itemType, itemId);

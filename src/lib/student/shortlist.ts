@@ -1,6 +1,15 @@
 import { prisma } from "../prisma.ts";
 
-export type ShortlistItemType = "CAREER" | "EDUCATION" | "UNIVERSITY";
+export type ShortlistItemType = "CAREER" | "EDUCATION" | "UNIVERSITY" | "INDIAN_INSTITUTION";
+
+export const SHORTLIST_ITEM_TYPES: ShortlistItemType[] = [
+  "CAREER",
+  "EDUCATION",
+  "UNIVERSITY",
+  "INDIAN_INSTITUTION",
+];
+
+export const MAX_UNIVERSITY_SHORTLIST = 20;
 
 export async function listShortlist(
   studentId: string,

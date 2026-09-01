@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/ui/page-header";
+import SaveButton from "@/components/student/save-button";
 import { Globe, GraduationCap, MapPin, ExternalLink, CheckCircle2, AlertCircle, Clock, Info } from "lucide-react";
 
 function freshnessBadge(freshness: string) {
@@ -34,10 +36,26 @@ export default function UniversityProfilePage({ params, searchParams }: { params
   const dataset = (searchParams.dataset as "indian" | "global") || "global";
   const careerId = searchParams.careerId;
   const studentId = searchParams.studentId;
+  const shortlistItemType = dataset === "indian" ? "INDIAN_INSTITUTION" : "UNIVERSITY";
 
   const [profile, setProfile] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [saved, setSaved] = useState(false);
+
+  // Check shortlist status
+  useEffect(() => {
+    async function loadShortlistStatus() {
+      try {
+        const res = await fetch("/api/student/shortlist");
+        if (!res.ok) return;
+        const data = await res.json();
+        const found = (data.items || []).find((it: any) => it.itemId === id && it.itemType === shortlistItemType);
+        if (found) setSaved(true);
+      } catch { /* ignore */ }
+    }
+    if (id) loadShortlistStatus();
+  }, [id, shortlistItemType]);
 
   useEffect(() => {
     async function fetchProfile() {
@@ -89,6 +107,14 @@ export default function UniversityProfilePage({ params, searchParams }: { params
         {identity.qsRank && identity.qsRank !== "Not available" && (
           <Badge variant="outline">QS Rank: {identity.qsRank}</Badge>
         )}
+      </div>
+
+      {/* Shortlist + compare entry points */}
+      <div className="flex items-center gap-2">
+        <SaveButton itemType={shortlistItemType} itemId={id} initialSaved={saved} />
+        <Link href={`/compare?ids=${id}&dataset=${dataset}`} className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border border-input bg-background shadow-sm hover:bg-accent/10 hover:text-accent px-3 text-xs h-8">
+          Compare
+        </Link>
       </div>
 
       {/* Career context (when opened from matching flow) */}
@@ -166,10 +192,9 @@ export default function UniversityProfilePage({ params, searchParams }: { params
                   </div>
                 </div>
               ))}
-              {/* Category-based fallback note */}
               {profile.programs.verifiedCount < profile.programs.total && (
                 <p className="text-xs text-muted-foreground flex items-center gap-1">
-                  <AlertCircle className="h-3 w-3" /> Some programs are “Relevant institution” (category-based) — exact program not yet verified.
+                  <AlertCircle className="h-3 w-3" /> Some programs are "Relevant institution" (category-based) — exact program not yet verified.
                 </p>
               )}
             </div>
@@ -192,7 +217,6 @@ export default function UniversityProfilePage({ params, searchParams }: { params
         </CardContent>
       </Card>
 
-      {/* Future-proofing note (hidden, for Phase 20/21) */}
       <div className="text-xs text-muted-foreground text-center">
         Profile API supports future fit tiers (Strong/Good/Potential/Explore) and comparison — no refactor needed for Phase 20/21.
       </div>

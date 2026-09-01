@@ -5,6 +5,8 @@ import { prisma } from "@/lib/prisma";
 import {
   addShortlist,
   listShortlist,
+  SHORTLIST_ITEM_TYPES,
+  MAX_UNIVERSITY_SHORTLIST,
   type ShortlistItemType,
 } from "@/lib/student/shortlist.ts";
 
@@ -63,12 +65,50 @@ export async function GET(request: NextRequest) {
             href = `/indian-colleges`;
           }
         }
+      } else if (item.itemType === "INDIAN_INSTITUTION") {
+        // Phase 21: explicit India-institution itemType (distinct from UNIVERSITY)
+        const ind = await prisma.indianInstitution.findUnique({
+          where: { id: item.itemId },
+          select: { name: true },
+        });
+        if (ind) {
+          title = ind.name;
+          href = `/indian-colleges`;
+        }
       }
       return { ...item, title, href };
     })
   );
 
-  return NextResponse.json({ items: enriched });
+  // Phase 21 addition: enrich UNIVERSITY / INDIAN_INSTITUTION items with the shared
+  // read-only university-profile view (verification, freshness, program count).
+  const withProfiles = await Promise.all(
+    enriched.map(async (item) => {
+      if (item.itemType !== "UNIVERSITY" && item.itemType !== "INDIAN_INSTITUTION") {
+        return { ...item, profile: null };
+      }
+      const dataset = item.itemType === "UNIVERSITY" ? "global" : "indian";
+      try {
+        const { getUniversityProfile } = await import("@/lib/university-profile/profile.ts");
+        const profile = await getUniversityProfile(item.itemId, dataset as any);
+        if (!profile) return { ...item, profile: null };
+        return {
+          ...item,
+          profile: {
+            identity: profile.identity,
+            programs: profile.programs,
+            freshness: profile.freshness,
+            hasVerifiedPrograms: profile.hasVerifiedPrograms,
+            isEmpty: profile.isEmpty,
+          },
+        };
+      } catch {
+        return { ...item, profile: null };
+      }
+    })
+  );
+
+  return NextResponse.json({ items: withProfiles });
 }
 
 export async function POST(request: NextRequest) {
@@ -85,13 +125,25 @@ export async function POST(request: NextRequest) {
     const itemId = body.itemId as string;
     if (
       !itemType ||
-      !["CAREER", "EDUCATION", "UNIVERSITY"].includes(itemType) ||
+      !SHORTLIST_ITEM_TYPES.includes(itemType) ||
       !itemId
     ) {
       return NextResponse.json(
-        { error: "itemType (CAREER|EDUCATION|UNIVERSITY) and itemId are required" },
+        { error: `itemType (${SHORTLIST_ITEM_TYPES.join("|")}) and itemId are required` },
         { status: 400 }
       );
+    }
+    // Phase 21: university shortlist is capped at 20 (careers/education are uncapped).
+    if (itemType === "UNIVERSITY" || itemType === "INDIAN_INSTITUTION") {
+      const count = await prisma.studentShortlist.count({
+        where: { studentId: session.user.id, itemType: { in: ["UNIVERSITY", "INDIAN_INSTITUTION"] } },
+      });
+      if (count >= MAX_UNIVERSITY_SHORTLIST) {
+        return NextResponse.json(
+          { error: `University shortlist limit reached (${MAX_UNIVERSITY_SHORTLIST}). Remove one before adding another.` },
+          { status: 400 }
+        );
+      }
     }
     const item = await addShortlist({
       studentId: session.user.id,
