@@ -46,6 +46,7 @@ function mapStudentProfileToSignals(
   }
 ): ProfileSignalInput[] {
   const signals: ProfileSignalInput[] = [];
+  const seen = new Set<string>();
   const push = (
     dimension: TraitDimension,
     value: string,
@@ -53,6 +54,9 @@ function mapStudentProfileToSignals(
     sourceType: string
   ) => {
     if (!value?.trim()) return;
+    const key = `${dimension}::${value.trim()}::${sourceType}`;
+    if (seen.has(key)) return;
+    seen.add(key);
     signals.push({
       dimension,
       value: value.trim(),
@@ -101,6 +105,12 @@ function mapStudentProfileToSignals(
     }
   }
 
+  for (const subject of profile.subjectsStudied || []) {
+    if (subject?.trim()) push("SUBJECT", subject.trim(), 85, "STUDENT_PROFILE");
+  }
+  for (const subject of profile.subjectsEnjoyed || []) {
+    if (subject?.trim()) push("SUBJECT", subject.trim(), 80, "STUDENT_PROFILE");
+  }
   for (const subject of profile.subjectsStudied || []) {
     if (subject?.trim()) push("INTEREST", `subject_studied:${subject.trim()}`, 85, "STUDENT_PROFILE");
   }
