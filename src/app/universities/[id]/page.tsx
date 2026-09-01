@@ -101,12 +101,19 @@ export default function UniversityProfilePage({ params, searchParams }: { params
           </CardHeader>
           <CardContent className="space-y-2">
             <p className="text-sm">{profile.studentContext.pathwayChain}</p>
+            {profile.studentContext.fitTierLabel && (
+              <div className="flex items-center gap-2">
+                <Badge className={profile.studentContext.fitTier === "STRONG_FIT" ? "bg-green-600" : profile.studentContext.fitTier === "GOOD_FIT" ? "bg-blue-600" : profile.studentContext.fitTier === "POTENTIAL_FIT" ? "bg-amber-600" : "bg-muted"}>{profile.studentContext.fitTierLabel}</Badge>
+                <span className="text-xs text-muted-foreground">{profile.studentContext.fitTierExplanation}</span>
+              </div>
+            )}
             {profile.studentContext.reasons && profile.studentContext.reasons.length > 0 && (
               <ul className="text-xs text-muted-foreground list-disc ml-4">
                 {profile.studentContext.reasons.slice(0, 3).map((r: string, i: number) => <li key={i}>{r}</li>)}
               </ul>
             )}
             <p className="text-xs">Match: {profile.studentContext.matchScore ?? "Not available"} · Confidence: {profile.studentContext.confidenceScore ?? "Not available"}</p>
+            <p className="text-xs text-muted-foreground italic">Fit describes how well this matches your profile — not your chance of admission.</p>
           </CardContent>
         </Card>
       )}

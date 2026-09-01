@@ -76,6 +76,8 @@ export interface DimensionScore {
   note?: string;
 }
 
+export type FitTier = "STRONG_FIT" | "GOOD_FIT" | "POTENTIAL_FIT" | "EXPLORE";
+
 export interface MatchResult {
   institution: InstitutionCandidate;
   matchScore: number;
@@ -86,6 +88,9 @@ export interface MatchResult {
   limitations: string[];
   evidence: string[];
   mappingStatus: MappingBasis;
+  fitTier?: FitTier;
+  fitTierLabel?: string;
+  fitTierExplanation?: string;
 }
 
 export interface StudentUniversityMatchResponse {

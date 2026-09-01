@@ -3,6 +3,7 @@ import { getCandidateSet, getSingleCandidate } from "./candidate.ts";
 import { normalizeWeights } from "./config.ts";
 import { scoreInstitution } from "./score.ts";
 import { buildExplanation } from "./explanation.ts";
+import { deriveFitTier, getTierLabel } from "./fit-tier.ts";
 import type {
   CareerContext,
   EducationContext,
@@ -156,12 +157,18 @@ export async function getUniversityMatchesForStudent(
 
   // STEP 4: hard filters are intentionally minimal (no required-country flag
   // exists in the data model). Soft preferences drive the score instead.
-  let results = candidates.map((c) =>
-    buildExplanation(
-      scoreInstitution(c, studentInput, educationContext || {}, careerContext, weights),
-      careerContext?.careerName
-    )
-  );
+  let results = candidates.map((c) => {
+    const scored = scoreInstitution(c, studentInput, educationContext || {}, careerContext, weights);
+    const hasAcademicData = !!(studentInput.averageGrade || studentInput.gradeLevel || studentInput.studyLevel || (studentInput.exams && studentInput.exams.length));
+    const hasBudgetData = !!studentInput.tuitionBudget;
+    const fit = deriveFitTier(scored.matchScore, scored.confidence, scored.mappingStatus, (c as any).program || null, hasAcademicData, hasBudgetData);
+    return {
+      ...buildExplanation(scored, careerContext?.careerName),
+      fitTier: fit.tier,
+      fitTierLabel: fit.label,
+      fitTierExplanation: fit.explanation,
+    } as any;
+  });
 
   // STEP 17: deterministic ranking — match desc, confidence desc, name asc.
   results.sort(
@@ -203,10 +210,16 @@ export async function getUniversityMatchForInstitution(
   const candidate = await getSingleCandidate(institutionId, input.dataset, degreeName);
   if (!candidate) return null;
 
-  const result = buildExplanation(
-    scoreInstitution(candidate, studentInput, educationContext || {}, careerContext, weights),
-    careerContext?.careerName
-  );
+  const scored = scoreInstitution(candidate, studentInput, educationContext || {}, careerContext, weights);
+  const hasAcademicData = !!(studentInput.averageGrade || studentInput.gradeLevel || studentInput.studyLevel || (studentInput.exams && studentInput.exams.length));
+  const hasBudgetData = !!studentInput.tuitionBudget;
+  const fit = deriveFitTier(scored.matchScore, scored.confidence, scored.mappingStatus, (candidate as any).program || null, hasAcademicData, hasBudgetData);
+  const result = {
+    ...buildExplanation(scored, careerContext?.careerName),
+    fitTier: fit.tier,
+    fitTierLabel: fit.label,
+    fitTierExplanation: fit.explanation,
+  } as any;
 
   return {
     result,
