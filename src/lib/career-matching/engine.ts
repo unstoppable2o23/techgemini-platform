@@ -4,6 +4,7 @@ import { generateStudentCareerProfile } from "../career-profile/generate.ts";
 import { scoreCareer, rankMatches } from "./score";
 import type { CareerCandidate, CareerMatch, CareerMatchInput, MatchResult } from "./types";
 import { NO_ASSESSMENT_DISCLAIMER } from "./config";
+import { resolvePreferredCareer, type PreferredCareerResolution } from "./preferred-career";
 
 const ALL_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
 
@@ -56,11 +57,10 @@ export async function getCareerMatches(
   // ---- load preferred career from StudentProfile ----
   const studentProfile = await prisma.studentProfile.findUnique({
     where: { userId },
-    select: { preferredCareer: true },
+    select: { preferredCareer: true, preferredCareerId: true },
   });
-  const preferredCareer = studentProfile?.preferredCareer || null;
 
-  // ---- load all active careers with traits ----
+  // ---- load all active careers with traits + education paths ----
   const careers = await prisma.career.findMany({
     where: { isActive: true },
     select: {
@@ -89,8 +89,24 @@ export async function getCareerMatches(
       traits: {
         select: { dimension: true, value: true, weight: true },
       },
+      careerEducationPathways: {
+        select: {
+          degree: { select: { name: true } },
+          specialization: { select: { name: true } },
+          priority: true,
+        },
+      },
     },
   });
+
+  // ---- resolve preferred career (canonical id first, legacy name fallback) ----
+  const preferredCareer = studentProfile?.preferredCareer || null;
+  const preferredCareerId = studentProfile?.preferredCareerId || null;
+  const preferred: PreferredCareerResolution = resolvePreferredCareer(
+    preferredCareerId,
+    preferredCareer,
+    careers.map((c) => ({ id: c.id, name: c.name }))
+  );
 
   // ---- score each career ----
   const candidates: CareerCandidate[] = careers.map((c) => ({
@@ -113,6 +129,11 @@ export async function getCareerMatches(
     personalityTraits: c.personalityTraits,
     recommendedDegrees: c.recommendedDegrees,
     recommendedSubjects: c.recommendedSubjects,
+    educationPaths: c.careerEducationPathways.map((p) => ({
+      degreeName: p.degree?.name ?? null,
+      specializationName: p.specialization?.name ?? null,
+      priority: p.priority,
+    })),
     traits: c.traits.map((t) => ({
       dimension: t.dimension as TraitDimension,
       value: t.value,
@@ -121,7 +142,7 @@ export async function getCareerMatches(
   }));
 
   const scored: CareerMatch[] = candidates.map((career) =>
-    scoreCareer(career, studentSignals, preferredCareer)
+    scoreCareer(career, studentSignals, preferred)
   );
 
   const ranked = rankMatches(scored);
@@ -156,4 +177,15 @@ export async function getCareerMatchDetail(
 ): Promise<CareerMatch | null> {
   const result = await getCareerMatches(userId, { limit: 200 });
   return result.matches.find((m) => m.careerId === careerId) ?? null;
+}
+
+/**
+ * Strips the internal match trace before a result is exposed to students.
+ * The trace contains internal scoring metadata and is not student-facing.
+ */
+export function sanitizeCareerMatch(
+  match: CareerMatch
+): Omit<CareerMatch, "trace"> {
+  const { trace: _trace, ...rest } = match;
+  return rest;
 }

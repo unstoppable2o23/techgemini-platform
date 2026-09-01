@@ -178,6 +178,8 @@ model StudentProfile {
   targetColleges String[]
   targetCountries String[]
   preferredCareer String?
+  preferredCareerId String?
+  preferredCareerRef Career? @relation("PreferredCareer", fields: [preferredCareerId], references: [id])
   prospectiveSessions String[]
   careerPrefsFilled Boolean @default(false)
   status        StudentStatus @default(OFFLINE)
@@ -487,6 +489,7 @@ model Career {
 
   traits CareerTrait[]
   careerEducationPathways CareerEducationPathway[]
+  preferredByStudentProfiles StudentProfile[] @relation("PreferredCareer")
 
   @@index([name])
   @@index([demandLevel])

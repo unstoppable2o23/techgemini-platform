@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { getCareerMatchDetail } from "@/lib/career-matching/engine";
+import { getCareerMatchDetail, sanitizeCareerMatch } from "@/lib/career-matching/engine";
 
 export async function GET(
   request: NextRequest,
@@ -29,7 +29,7 @@ export async function GET(
         { status: 404 }
       );
     }
-    return NextResponse.json({ match });
+    return NextResponse.json({ match: sanitizeCareerMatch(match) });
   } catch (error) {
     console.error("Career match detail failed:", error);
     return NextResponse.json(

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { getCareerMatches } from "@/lib/career-matching/engine";
+import { getCareerMatches, sanitizeCareerMatch } from "@/lib/career-matching/engine";
 
 export async function GET(request: NextRequest) {
   const session = await getServerSession(authOptions);
@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
     });
 
     return NextResponse.json({
-      matches: result.matches,
+      matches: result.matches.map(sanitizeCareerMatch),
       totalCareersScored: result.totalCareersScored,
       studentSignalsUsed: result.studentSignalsUsed,
       assessmentCoverage: result.assessmentCoverage,

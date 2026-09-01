@@ -109,8 +109,10 @@ export async function saveCareerPreferences(
 
   // ---- Preferred career (canonical by id, legacy by name, or not finalized) ----
   let preferredCareer: string | null = null;
+  let preferredCareerId: string | null = null;
   if (input.careerNotFinalized) {
     preferredCareer = null;
+    preferredCareerId = null;
   } else if (input.careerId) {
     const career = await prisma.career.findFirst({
       where: { id: input.careerId, isActive: true },
@@ -120,6 +122,7 @@ export async function saveCareerPreferences(
       throw new PrefsValidationError("We couldn't find that career. Please choose from the available careers.");
     }
     preferredCareer = career.name;
+    preferredCareerId = career.id;
   } else if (input.preferredCareer) {
     const name = cleanString(input.preferredCareer);
     if (!name) {
@@ -133,6 +136,7 @@ export async function saveCareerPreferences(
       throw new PrefsValidationError("We couldn't find that career. Please choose from the available careers.");
     }
     preferredCareer = career.name;
+    preferredCareerId = career.id;
   } else {
     throw new PrefsValidationError('Please choose a preferred career or select "I haven\'t decided yet".');
   }
@@ -269,6 +273,7 @@ export async function saveCareerPreferences(
     subjectsStudied,
     subjectsEnjoyed,
     preferredCareer,
+    preferredCareerId,
     targetCountries,
     targetColleges,
     tuitionBudget: cleanString(input.tuitionBudget),
