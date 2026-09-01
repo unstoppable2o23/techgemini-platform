@@ -32,19 +32,21 @@ function targetCountriesList(s: StudentMatchInput): string[] {
 }
 
 function educationPathwayScore(basis: MappingBasis): number {
-  if (basis === "curated") return 100;
+  if (basis === "verified-program") return 100;
+  if (basis === "curated") return 85;
   if (basis === "institutionType-category") return 55;
   return 0;
 }
 
 function specializationScore(basis: MappingBasis): number {
-  if (basis === "curated") return 90;
+  if (basis === "verified-program") return 95;
+  if (basis === "curated") return 80;
   if (basis === "institutionType-category") return 45;
   return 0;
 }
 
 function careerAlignmentScore(basis: MappingBasis, careerMatchScore?: number | null): number {
-  const base = basis === "curated" ? 80 : basis === "institutionType-category" ? 50 : 0;
+  const base = basis === "verified-program" ? 90 : basis === "curated" ? 75 : basis === "institutionType-category" ? 50 : 0;
   if (typeof careerMatchScore === "number" && !isNaN(careerMatchScore)) {
     return clamp(Math.round(0.5 * base + 0.5 * clamp(careerMatchScore)));
   }
@@ -110,7 +112,7 @@ function studentPreferencesScore(s: StudentMatchInput, inst: InstitutionCandidat
 }
 
 function confidenceScore(basis: MappingBasis, s: StudentMatchInput, dims: DimensionScore[]): number {
-  const base = basis === "curated" ? 95 : basis === "institutionType-category" ? 60 : 30;
+  const base = basis === "verified-program" ? 98 : basis === "curated" ? 90 : basis === "institutionType-category" ? 60 : 30;
   const present = [
     s.averageGrade,
     s.gradeLevel,

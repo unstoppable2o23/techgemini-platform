@@ -1,5 +1,16 @@
 export type Dataset = "indian" | "global";
-export type MappingBasis = "curated" | "institutionType-category" | "none";
+export type MappingBasis = "verified-program" | "curated" | "institutionType-category" | "none";
+
+export interface ProgramInfo {
+  id: string;
+  name: string;
+  degreeName: string | null;
+  specializationName: string | null;
+  level: string | null;
+  verificationStatus: string;
+  sourceUrl: string | null;
+  verifiedAt: Date | null;
+}
 
 export interface InstitutionCandidate {
   id: string;
@@ -14,6 +25,7 @@ export interface InstitutionCandidate {
   country: string | null;
   qsRank: number | null;
   mappingBasis: MappingBasis;
+  program?: ProgramInfo | null;
 }
 
 export interface StudentMatchInput {

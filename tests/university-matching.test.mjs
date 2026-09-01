@@ -105,10 +105,10 @@ test("Full profile vs partial profile produce deterministic valid scores", () =>
 });
 
 // 11. Curated mapping
-test("Curated mapping: education score 100 and high confidence", () => {
+test("Curated mapping: education score 85 and high confidence", () => {
   const c = makeCandidate({ mappingBasis: "curated" });
   const r = scoreInstitution(c, {}, {}, null, W);
-  assert.equal(r.dimensions.find((d) => d.key === "educationPathway").score, 100);
+  assert.equal(r.dimensions.find((d) => d.key === "educationPathway").score, 85);
   assert.ok(r.confidence >= 75);
 });
 

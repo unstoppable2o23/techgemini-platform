@@ -1,6 +1,7 @@
 import type { MatchResult, MappingBasis } from "./types.ts";
 
 const BASIS_EVIDENCE: Record<MappingBasis, string> = {
+  "verified-program": "Verified program offering — confirmed via official institution source that this institution offers the exact program for the education pathway.",
   curated: "Verified (curated) education-program mapping links this institution to the pathway.",
   "institutionType-category":
     "Category-derived association (institution type ↔ education pathway). Program availability is NOT individually verified.",
@@ -29,7 +30,15 @@ export function buildExplanation(result: MatchResult, careerName?: string): Matc
     }
   }
 
-  if (mappingStatus === "institutionType-category") {
+  if (mappingStatus === "verified-program") {
+    const prog: any = (institution as any).program;
+    if (prog) {
+      strengths.push(`Verified program: ${prog.name}`);
+      reasons.push(`Verified ${prog.name} matches your education pathway`);
+    } else {
+      strengths.push("Verified program offering");
+    }
+  } else if (mappingStatus === "institutionType-category") {
     limitations.push("Related by institution category; individual program availability has not been verified.");
   }
   if (mappingStatus === "none") {
