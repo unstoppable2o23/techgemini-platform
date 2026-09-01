@@ -59,6 +59,25 @@ test("T2: canonical embedded vocab (Logical Mathematical Intelligence) matches a
   assert.equal(canonicalKey("logical_mathematical"), "logical_mathematical");
 });
 
+test("T2b: embedded canonical match requires WHOLE WORDS, never mid-token substrings", () => {
+  // Regression (Phase 16B): strings containing "art" as a substring inside a
+  // larger word must NOT resolve to the art concept. Without word-boundary
+  // matching, "Partnership deals", "Smart devices" and "Charting Basics"
+  // spuriously resolved to "art", so an art/design student falsely matched
+  // unrelated business, law and engineering careers.
+  for (const v of ["Partnership deals", "Smart devices", "Charting Basics", "Startups and founders", "Articulate"]) {
+    assert.equal(canonicalKey(v), null, `"${v}" must not resolve to any concept via a mid-token substring`);
+  }
+  // Word-boundary embedded matches still resolve (e.g. "Art & Design").
+  assert.equal(canonicalKey("Game Art & Design"), "art");
+  assert.equal(canonicalKey("Art-making"), "art");
+  // Whole-word embedded phrases map to their canonical subject concepts.
+  assert.equal(canonicalKey("Human biology"), "biology");
+  assert.equal(canonicalKey("Risk mathematics"), "mathematics");
+  assert.equal(canonicalKey("Consumer psychology"), "psychology");
+  assert.equal(canonicalKey("Logical Mathematical Intelligence"), "logical_mathematical");
+});
+
 test("T3: explicit alias map normalizes Analytical Rigour onto the canonical concept as ALIAS", () => {
   const m = matchSignal("analytical", [{ value: "Analytical Rigour", weight: 1 }]);
   assert.equal(m.matched, true);

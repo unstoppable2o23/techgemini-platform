@@ -88,15 +88,30 @@ export function canonicalKey(value: string): string | null {
 }
 
 /**
- * Finds a canonical key whose human-readable form is exactly embedded in the
- * value. Only returns a key when exactly one candidate matches (never guess
- * between two).
+ * Builds a literal regex that requires `phrase` to appear as whole words (or a
+ * word-delimited whole token) rather than as a raw substring. This prevents
+ * accidental sub-string collisions — e.g. "partnership" must not resolve to
+ * "art" because it contains the letters "art", and "charting" must not resolve
+ * to "art" either.
+ */
+function wholeWordPhraseRegex(phrase: string): RegExp {
+  const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(?:^|[^A-Za-z0-9])${escaped}(?:$|[^A-Za-z0-9])`, "i");
+}
+
+/**
+ * Finds a canonical key whose human-readable form is embedded as a sequence of
+ * WHOLE WORDS in the value (never mid-token). Only returns a key when exactly
+ * one candidate matches (never guess between two).
  */
 function embeddedCanonicalKey(normalized: string): string | null {
   const candidates: string[] = [];
   for (const key of Object.keys(CANONICAL_KEY_HINT)) {
     const human = key.replace(/_/g, " ");
-    if (normalized.includes(human) || normalized.includes(key)) {
+    if (
+      wholeWordPhraseRegex(human).test(normalized) ||
+      wholeWordPhraseRegex(key).test(normalized)
+    ) {
       candidates.push(key);
     }
   }
