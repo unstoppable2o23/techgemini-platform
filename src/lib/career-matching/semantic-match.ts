@@ -40,26 +40,51 @@ export function stripSignalPrefix(value: string): string {
 }
 
 /**
- * Resolves a raw value (student signal or career trait) onto a canonical
- * concept key from the assessment vocabulary. Returns null when the value has
- * no defensible canonical meaning. Values that merely contain a canonical term
- * where exactly ONE canonical term is embedded are accepted (career traits
- * like "Logical Mathematical Intelligence" map to logical_mathematical);
- * ambiguous values return null rather than guessing.
+ * How a value resolved onto a canonical concept key. The two sides of a match
+ * are compared by key, and the *kind* decides whether the match is CANONICAL
+ * (both sides are literal canonical vocabulary) or ALIAS (at least one side
+ * reached the concept through an explicitly maintained mapping — an alias map
+ * or an embedded canonical phrase). This keeps matchType truthful: concept
+ * matches that depend on maintained mappings are reported as ALIAS, not
+ * silently upgraded to CANONICAL.
  */
-export function canonicalKey(value: string): string | null {
+export type ConceptResolution = {
+  key: string | null;
+  kind: "direct" | "alias" | "embedded";
+};
+
+/**
+ * Resolves a raw value (student signal or career trait) onto a canonical
+ * concept key from the assessment vocabulary. Returns a null key when the
+ * value has no defensible canonical meaning. Values that merely contain a
+ * canonical term where exactly ONE canonical term is embedded are accepted
+ * (career traits like "Logical Mathematical Intelligence" map to
+ * logical_mathematical, kind "embedded"); ambiguous values return null rather
+ * than guessing. Alias-mapped terms (e.g. "Analytical Rigour" -> analytical)
+ * return kind "alias".
+ */
+export function resolveConcept(value: string): ConceptResolution {
   const trimmed = value.trim().toLowerCase();
-  if (!trimmed) return null;
-  if (isCanonicalSignal(trimmed)) return trimmed;
+  if (!trimmed) return { key: null, kind: "direct" };
+  if (isCanonicalSignal(trimmed)) return { key: trimmed, kind: "direct" };
 
   const underscored = trimmed.replace(/[\s]+/g, "_");
-  if (isCanonicalSignal(underscored)) return underscored;
+  if (isCanonicalSignal(underscored)) return { key: underscored, kind: "direct" };
 
   const alias = canonicalizeCareerTraitValue(trimmed) ?? canonicalizeCareerTraitValue(underscored);
-  if (alias) return alias;
+  if (alias) return { key: alias, kind: "alias" };
 
   const embedded = embeddedCanonicalKey(trimmed);
-  return embedded;
+  if (embedded) return { key: embedded, kind: "embedded" };
+  return { key: null, kind: "direct" };
+}
+
+/**
+ * Returns just the canonical concept key (null when none). Kept for callers
+ * that only need the concept, not the match tier kind.
+ */
+export function canonicalKey(value: string): string | null {
+  return resolveConcept(value).key;
 }
 
 /**
@@ -198,17 +223,23 @@ function matchSignalAgainstTrait(
   const traitNorm = normalizeForMatch(trait.value);
   if (!traitNorm) return NO_MATCH;
 
-  const studentKey = canonicalKey(raw);
-  const traitKey = canonicalKey(trait.value);
+  const studentRes = resolveConcept(raw);
+  const traitRes = resolveConcept(trait.value);
 
-  // CANONICAL tier — both sides resolve to the same canonical concept.
-  if (studentKey && traitKey && studentKey === traitKey) {
+  // CANONICAL tier — both sides are literal canonical vocabulary for the same
+  // concept. ALIAS tier — same concept, but at least one side only reached it
+  // through an explicitly maintained mapping (alias map or embedded canonical
+  // phrase); truthful tier labelling, never silently upgraded to CANONICAL.
+  if (studentRes.key && traitRes.key && studentRes.key === traitRes.key) {
+    const bothDirect = studentRes.kind === "direct" && traitRes.kind === "direct";
     return {
       matched: true,
-      strength: MATCH_TYPE_STRENGTHS.CANONICAL,
-      matchType: "CANONICAL",
+      strength: bothDirect ? MATCH_TYPE_STRENGTHS.CANONICAL : MATCH_TYPE_STRENGTHS.ALIAS,
+      matchType: bothDirect ? "CANONICAL" : "ALIAS",
       traitValue: trait.value,
-      explanation: `Both ${raw} and '${trait.value}' map to the canonical concept '${studentKey}'.`,
+      explanation: bothDirect
+        ? `Both ${raw} and '${trait.value}' map to the canonical concept '${studentRes.key}'.`
+        : `${raw} and '${trait.value}' map to the canonical concept '${studentRes.key}' (one side via a maintained alias).`,
     };
   }
 

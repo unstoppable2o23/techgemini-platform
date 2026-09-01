@@ -51,17 +51,25 @@ test("T1: canonical concept matching outweighs text similarity", () => {
   assert.equal(m.strength, 1);
 });
 
-test("T2: canonical embedded vocab (Logical Mathematical Intelligence) matches canonical key", () => {
+test("T2: canonical embedded vocab (Logical Mathematical Intelligence) matches as ALIAS, not CANONICAL", () => {
   const m = matchSignal("logical_mathematical", [{ value: "Logical Mathematical Intelligence", weight: 1 }]);
   assert.equal(m.matched, true);
-  assert.equal(m.matchType, "CANONICAL");
+  assert.equal(m.matchType, "ALIAS", "embedded canonical phrase is a maintained mapping, not direct canonical vocabulary");
+  assert.equal(m.strength, 0.9);
   assert.equal(canonicalKey("logical_mathematical"), "logical_mathematical");
 });
 
-test("T3: explicit alias map normalizes Analytical Rigour onto the canonical concept", () => {
+test("T3: explicit alias map normalizes Analytical Rigour onto the canonical concept as ALIAS", () => {
   const m = matchSignal("analytical", [{ value: "Analytical Rigour", weight: 1 }]);
   assert.equal(m.matched, true);
-  assert.equal(m.matchType, "CANONICAL", "alias-map terms resolve to the canonical concept, not a soft tier");
+  assert.equal(m.matchType, "ALIAS", "alias-map terms are a maintained mapping; only literal canonical vocab is CANONICAL");
+  assert.equal(m.strength, 0.9);
+});
+
+test("T3b: direct canonical on BOTH sides stays CANONICAL", () => {
+  const m = matchSignal("analytical", [{ value: "Analytical", weight: 1 }]);
+  assert.equal(m.matched, true);
+  assert.equal(m.matchType, "CANONICAL");
   assert.equal(m.strength, 1);
 });
 
@@ -305,7 +313,7 @@ test("T24: career field mapping feeds the intended dimensions", () => {
 });
 
 // ---------------------------------------------------------------- stage-aware education
-test("T25: school student is NOT penalized for future degree requirements", () => {
+test("T25: school student is scored neutrally on education (no baseline inflation, no penalty)", () => {
   const career = makeCareer({
     recommendedDegrees: ["B.Tech Computer Science"],
     technicalSkills: ["Python"],
@@ -315,15 +323,22 @@ test("T25: school student is NOT penalized for future degree requirements", () =
     makeSignal("EDUCATION", "grade_level:CLASS_10", 100, "ACADEMIC"),
     makeSignal("SUBJECT", "Computer Science", 90, "ACADEMIC"),
   ];
+  const noStage = [makeSignal("SUBJECT", "Computer Science", 90, "ACADEMIC")];
   const match = scoreCareer(career, signals, null);
+  const baseline = scoreCareer(career, noStage, null);
   const edu = match.dimensionScores.find((d) => d.dimension === "EDUCATION");
-  assert.equal(edu.score, 70, "school stage should earn the plausible-baseline education score");
+  assert.equal(edu.score, 0, "school stage is neutral: no generic education baseline");
   assert.ok(
-    match.reasons.some((r) => r.dimension === "EDUCATION" && /future step/i.test(r.text)),
-    "school education reason should talk about a future pathway"
+    !match.reasons.some((r) => r.dimension === "EDUCATION"),
+    "school stage produces no education reasons at all (no penalty, no fake strength)"
   );
   assert.ok(!match.developmentAreas.some((a) => /education/i.test(a)), "no education penalty for a school student");
-  assert.ok(match.matchScore > 0, "school student should still get a real score");
+  assert.ok(match.matchScore > 0, "school student should still get a real score from SUBJECT");
+  assert.equal(
+    match.matchScore,
+    baseline.matchScore,
+    "declared school stage must be score-neutral versus no education evidence"
+  );
 });
 
 test("T26: college stage aligned degree earns aligned education score", () => {
@@ -404,7 +419,7 @@ test("T31: matches expose structured evidence, matchTypes and an internal trace"
   const match = scoreCareer(career, signals, null);
   assert.ok(match.evidence.length > 0, "evidence list should be populated");
   assert.ok(match.evidence.every((e) => e.careerTraitValue && e.strength > 0));
-  assert.ok(match.matchTypes.includes("CANONICAL") || match.matchTypes.includes("LEXICAL"));
+  assert.ok(match.matchTypes.some((t) => ["CANONICAL", "ALIAS", "STRUCTURED", "LEXICAL"].includes(t)));
   assert.ok(match.trace.careerId === career.id);
   assert.ok(match.trace.matchedSignals === new Set(match.evidence.map((e) => stripSignalPrefix(e.studentValue).toLowerCase())).size);
   assert.equal(match.trace.preferredCareerMatch, false);

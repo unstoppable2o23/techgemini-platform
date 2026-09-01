@@ -125,7 +125,11 @@ test("DB3: Class 8 student with Biology subjects is scored on future plausibilit
   assert.ok(hit.matchScore > 0);
   assert.ok(!hit.developmentAreas.some((a) => /education/i.test(a)), "school stage must produce no education penalty");
   const edu = hit.dimensionScores.find((d) => d.dimension === "EDUCATION");
-  assert.equal(edu.score, 70, "school stage should earn the plausible baseline");
+  assert.equal(edu.score, 0, "school stage education is neutral (no generic baseline inflation)");
+  assert.ok(
+    !hit.reasons.some((r) => r.dimension === "EDUCATION"),
+    "school stage must produce no education reasons at all"
+  );
 });
 
 test("DB4: a lone preferred-career signal cannot reach high confidence, even when it matches a career trait", async () => {
@@ -227,4 +231,69 @@ test("DB8: engine scoring is deterministic — repeated calls return identical r
     "repeated runs must be identical"
   );
   assert.ok(a.matches.length >= 1);
+});
+
+test("DB9: mixed aligned+non-aligned evidence shows alignment, never a false VERIFIED_GAP", async () => {
+  const se = await loadCareer("Software Engineering");
+  await prisma.studentCareerSignal.createMany({
+    data: [
+      {
+        profileId: careerProfile.id,
+        ...sig("SKILL", "Python", 90, "ASSESSMENT"),
+      },
+      // Reliable non-aligned evidence in the SAME dimension as a real alignment.
+      { profileId: careerProfile.id, ...sig("SKILL", "Problem Solving", 90, "ASSESSMENT") },
+    ],
+  });
+  const res = await matchesForStudent();
+  const hit = res.matches.find((m) => m.careerId === se.id);
+  assert.ok(hit, "Software Engineering must be scored");
+  const skill = hit.dimensionScores.find((d) => d.dimension === "SKILL");
+  assert.ok(skill.matchedCount > 0, "Problem Solving must align with SKILL");
+  assert.ok(
+    !hit.verifiedGaps.some((g) => /skill/i.test(g)),
+    "mixed aligned+non-aligned SKILL evidence must NOT be a verified gap"
+  );
+  assert.ok(
+    hit.reasons.some((r) => r.dimension === "SKILL" && r.type === "strength"),
+    "the aligned signal should surface as a strength"
+  );
+});
+
+test("DB10: school student's education is score-neutral through the engine (no baseline inflation)", async () => {
+  const medicine = await loadCareer(MEDICINE_NAME);
+  // Same Biology subject, once with a declared school stage and once without any
+  // education evidence. Scores must be identical: school stage neither adds
+  // nor subtracts (and must not emit education reasons).
+  const body = { subjectsStudied: ["Biology"] };
+
+  await prisma.studentProfile.update({
+    where: { id: studentProfile.id },
+    data: { ...body, gradeLevel: "CLASS_8", studyLevel: null, highestEducation: null },
+  });
+  await generateStudentCareerProfile(user.id);
+  const withStage = await matchesForStudent();
+  const withHit = withStage.matches.find((m) => m.careerId === medicine.id);
+  assert.ok(withHit, "Class 8 + Biology must still surface Medicine");
+  const edu = withHit.dimensionScores.find((d) => d.dimension === "EDUCATION");
+  assert.equal(edu.score, 0, "school stage education must be neutral (no baseline)");
+  assert.ok(
+    !withHit.reasons.some((r) => r.dimension === "EDUCATION"),
+    "school stage must produce no education reasons through the engine"
+  );
+  assert.ok(!withHit.developmentAreas.some((a) => /education/i.test(a)), "no education penalty for a school student");
+
+  await prisma.studentProfile.update({
+    where: { id: studentProfile.id },
+    data: { ...body, gradeLevel: null, studyLevel: null, highestEducation: null },
+  });
+  await generateStudentCareerProfile(user.id);
+  const noStage = await matchesForStudent();
+  const noHit = noStage.matches.find((m) => m.careerId === medicine.id);
+  assert.ok(noHit);
+  assert.equal(
+    withHit.matchScore,
+    noHit.matchScore,
+    "declaring a school stage must be score-neutral versus having no education evidence"
+  );
 });

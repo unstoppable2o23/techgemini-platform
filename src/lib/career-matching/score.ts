@@ -38,10 +38,10 @@ const ALL_DIMENSIONS: MatchDimension[] = [
 
 /**
  * Student's education stage, derived from signals. Used by the stage-aware
- * education evaluation so a school student is judged on future plausibility,
- * not on degrees they have not had a chance to earn.
+ * education evaluation so a school student is evaluated neutrally, not on
+ * degrees they have not had a chance to earn.
  */
-type EducationStage = "SCHOOL" | "POST_SCHOOL" | "UNKNOWN";
+export type EducationStage = "SCHOOL" | "POST_SCHOOL" | "UNKNOWN";
 
 type StudentValue = {
   value: string;
@@ -49,6 +49,7 @@ type StudentValue = {
   norm: string;
   sigFactor: number;
   sourceType: string;
+  score: number;
 };
 
 type MatchPoint = {
@@ -60,15 +61,57 @@ type MatchPoint = {
   sourceType: string;
 };
 
-function determineEducationStage(signals: CareerMatchInput[]): EducationStage {
+/**
+ * Phrase markers used by the content-based stage detection. Markers for a
+ * *planned / future* qualification are ignored entirely: a student who says
+ * they are "planning a B.Tech" is still a school student today and must not be
+ * classified POST_SCHOOL from intent.
+ */
+const PLANNED_FUTURE_RE =
+  /planning|planning to|aspiring|aspire|target|dream|wish|\bhop(e|es|ed|ing)\b|future|intend|intending|intends?|\bwant(s|ed|ing)?\b|going to|will (do|take|pursue)|aim(ing|s)?\s+to|pursu(e|ing)/i;
+const POST_SCHOOL_RE =
+  /undergraduate|postgraduate|post.secondary|\bbachelor|\bb\.?(tech|sc|s|a|com|eng|ba|bms|ca|pharm|ds|it|des|ed|mba)\b|\bm\.?(tech|sc|s|a|com|ba|ca|pharm)\b|\bmba\b|\bpgdm\b|\bmbbs\b|\bmd\b|\bms\b|\bllb\b|\bsem\b|\bca\b|\bcf[a-z]?\b|cma|master|doctoral|ph\.?d|\bgraduate\b|diploma|certificate|\bdegree\b|\buniversity\b|\bcollege\b/i;
+const SCHOOL_CLASS_RE =
+  /(^|\b)(class|grade|std|standard|year)\s*\.?\s*(\d{1,2})(\s*(th|rd|st|nd))?\b/i;
+const SCHOOL_PHRASE_RE = /(^|\b)(high school|secondary school|higher secondary|middle school|primary school|elementary school|still in school)(\b|$)/i;
+
+/**
+ * Detects the student's education stage from the EDUCATION-dimension signals.
+ * Content-based on the stripped value so that career-preference-prefixed
+ * values and free-text study levels classify correctly. POST_SCHOOL wins over
+ * SCHOOL when both appear (e.g. a completed "Grade 12 / High School" listed
+ * alongside a current "Year 1 Undergraduate").
+ */
+export function detectEducationStage(signals: CareerMatchInput[]): EducationStage {
+  let sawSchool = false;
+  let sawPostSchool = false;
   for (const s of signals) {
     if (s.dimension !== "EDUCATION") continue;
-    const lower = s.value.toLowerCase();
-    if (lower.startsWith("grade_level:")) return "SCHOOL";
-    if (lower.startsWith("study_level:") || lower.startsWith("highest_education:")) {
-      return "POST_SCHOOL";
+    const raw = s.value.trim();
+    const rawLower = raw.toLowerCase();
+    const norm = normalizeForMatch(stripSignalPrefix(raw));
+    if (!norm || PLANNED_FUTURE_RE.test(norm)) continue;
+
+    if (POST_SCHOOL_RE.test(norm)) {
+      sawPostSchool = true;
+      continue;
+    }
+    if (SCHOOL_CLASS_RE.test(norm) || SCHOOL_PHRASE_RE.test(norm)) {
+      sawSchool = true;
+      continue;
+    }
+
+    // No explicit content marker. Fall back to prefix semantics: a factual
+    // current/highest study level is post-school by nature (a stated present
+    // state, not intent); grade_level always denotes schooling.
+    if (rawLower.startsWith("grade_level")) {
+      sawSchool = true;
+    } else if (rawLower.startsWith("study_level") || rawLower.startsWith("highest_education")) {
+      sawPostSchool = true;
     }
   }
+  if (sawPostSchool) return "POST_SCHOOL";
+  if (sawSchool) return "SCHOOL";
   return "UNKNOWN";
 }
 
@@ -91,7 +134,14 @@ function uniqueStudentValues(
       (Math.max(0, Math.min(100, s.score)) / 100) * (SOURCE_WEIGHTS[s.sourceType] ?? 0.5);
     const existing = byNorm.get(norm);
     if (!existing || sigFactor > existing.sigFactor) {
-      byNorm.set(norm, { value: s.value, stripped, norm, sigFactor, sourceType: s.sourceType });
+      byNorm.set(norm, {
+        value: s.value,
+        stripped,
+        norm,
+        sigFactor,
+        sourceType: s.sourceType,
+        score: s.score,
+      });
     }
   }
   return [...byNorm.values()].sort((a, b) => {
@@ -201,35 +251,24 @@ function scoreEducation(
   stage: EducationStage
 ): EducationResult {
   const degreeTraits = careerDegreeTraits(career);
-  const hasDegreeInfo = degreeTraits.length > 0 || Boolean(career.minStudyLevel);
   const unmatched = degreeTraits.map((t) => t.value);
 
   if (stage === "SCHOOL") {
-    if (!hasDegreeInfo) {
-      return {
-        dimensionScore: { dimension: "EDUCATION", score: 0, matchedCount: 0, totalTraits: degreeTraits.length, matchedValues: [], unmatchedTraitValues: unmatched },
-        includeInScore: false,
-        reasons: [],
-        evidence: [],
-      };
-    }
+    // School students have had no chance to earn degrees, so school-stage
+    // education evidence is neutral: it never inflates the score (no generic
+    // baseline) and never penalises. Future plausibility is carried by other
+    // dimensions such as SUBJECT, never double-counted here.
     return {
       dimensionScore: {
         dimension: "EDUCATION",
-        score: EDUCATION_SCORING.schoolBaseline,
+        score: 0,
         matchedCount: 0,
         totalTraits: degreeTraits.length,
         matchedValues: [],
         unmatchedTraitValues: unmatched,
       },
-      includeInScore: true,
-      reasons: [
-        {
-          type: "strength",
-          dimension: "EDUCATION",
-          text: "This career is educationally plausible from your current stage — the required degree is typically a future step, not a current gap.",
-        },
-      ],
+      includeInScore: false,
+      reasons: [],
       evidence: [],
     };
   }
@@ -351,23 +390,14 @@ function applyPreferredBoost(
   const normalizedPreferred = normalizeForMatch(preferred.careerName);
   if (!normalizedPreferred) return { boosted: 0, preferenceBoost: false };
 
-  const normalizedCareerName = normalizeForMatch(career.name);
-  const normalizedCareerTitle = normalizeForMatch(career.title);
-  const normalizedCategory = normalizeForMatch(career.category || "");
-
-  if (
-    normalizedCareerName === normalizedPreferred ||
-    normalizedCareerTitle === normalizedPreferred ||
-    normalizedCareerName.includes(normalizedPreferred) ||
-    normalizedPreferred.includes(normalizedCareerName)
-  ) {
+  // Very conservative legacy fallback: exact name or exact title equality only.
+  // No substring/containment and no category matching — a preferred "AI" must
+  // not half-boost every career whose name or category merely contains "AI".
+  const exactName = normalizeForMatch(career.name) === normalizedPreferred;
+  const exactTitle =
+    Boolean(career.title) && normalizeForMatch(career.title) === normalizedPreferred;
+  if (exactName || exactTitle) {
     return { boosted: PREFERRED_CAREER_BOOST, preferenceBoost: true };
-  }
-  if (
-    normalizedCategory.includes(normalizedPreferred) ||
-    normalizedPreferred.includes(normalizedCategory)
-  ) {
-    return { boosted: Math.round(PREFERRED_CAREER_BOOST / 2), preferenceBoost: true };
   }
   return { boosted: 0, preferenceBoost: false };
 }
@@ -411,7 +441,7 @@ export function scoreCareer(
   for (const p of career.personalityTraits) addTrait("PERSONALITY", p, 0.8);
   for (const s of career.recommendedSubjects) addTrait("SUBJECT", s, 0.8);
 
-  const stage = determineEducationStage(studentSignals);
+  const stage = detectEducationStage(studentSignals);
 
   // ---- score each dimension ----
   const dimensionScores: DimensionScore[] = [];
@@ -514,14 +544,19 @@ export function scoreCareer(
   else if (evidence.length > 0) matchStrength = "development_area";
 
   // ---- explanations ----
-  // Reliable conflict evidence: signals in a dimension that did not align are
-  // treated as a verified gap only when the evidence itself is reliable
-  // (assessment-derived with a strong score, or a very strong general score).
+  // Reliable conflict evidence: a dimension counts as a potential VERIFIED_GAP
+  // only when the student has reliable evidence in it (assessment-derived with
+  // a strong score, or a very strong general score) AND the dimension produced
+  // zero meaningful alignment (matchedCount === 0, enforced in explain.ts).
+  // Reliability is judged on the deduplicated per-concept representation so
+  // that one concept reported through several weak aliases cannot be mistaken
+  // for strong conflict evidence.
   const verifiedGapDimensions = new Set<MatchDimension>();
-  for (const s of studentSignals) {
-    if (s.dimension === "EDUCATION") continue;
-    const reliable = (s.sourceType === "ASSESSMENT" && s.score >= 60) || s.score >= 85;
-    if (reliable) verifiedGapDimensions.add(s.dimension);
+  for (const dim of ALL_DIMENSIONS) {
+    if (dim === "EDUCATION") continue;
+    const values = valuesByDim.get(dim) || [];
+    const reliable = values.some((v) => (v.sourceType === "ASSESSMENT" && v.score >= 60) || v.score >= 85);
+    if (reliable) verifiedGapDimensions.add(dim);
   }
   const explanation = buildExplanations({
     dimensionScores,

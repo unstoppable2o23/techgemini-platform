@@ -82,12 +82,13 @@ export const SINGLE_SIGNAL_CONTROL = {
 
 /**
  * Stage-aware education scoring.
- * School students are evaluated on future plausibility, not on degrees they
- * have not had a chance to earn; college/graduate students are evaluated
- * against the degree path when evidence aligns.
+ * School students are scored neutrally: they have not had a chance to earn
+ * degrees, so school-stage evidence neither adds nor subtracts from the match
+ * score (future plausibility is carried by other dimensions such as SUBJECT).
+ * College/graduate students are evaluated against the degree path when
+ * evidence aligns.
  */
 export const EDUCATION_SCORING = {
-  schoolBaseline: 70,
   postSchoolAligned: 85,
   postSchoolNeutral: 55,
 } as const;
