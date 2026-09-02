@@ -17,6 +17,7 @@ import {
   normalizeForMatch,
   SINGLE_SIGNAL_CONTROL,
   EDUCATION_SCORING,
+  SPECIFICITY_CONFIG,
 } from "./config.ts";
 import { matchSignal, stripSignalPrefix } from "./semantic-match.ts";
 import { computeConfidence } from "./confidence.ts";
@@ -35,6 +36,52 @@ const ALL_DIMENSIONS: MatchDimension[] = [
   "EDUCATION",
   "WORK_ENVIRONMENT",
 ];
+
+/**
+ * Builds the career-trait frequency map across a set of active careers.
+ * For every normalized trait value a career declares (in any scored dimension),
+ * counts how many distinct careers carry that trait. Used to derive a bounded
+ * distinctiveness credit for ranking discrimination (see SPECIFICITY_CONFIG).
+ * Deterministic: depends only on the supplied career set (the active catalog).
+ */
+export function buildTraitFrequency(
+  careers: { traits: { dimension: string; value: string }[]; technicalSkills?: string[]; softSkills?: string[]; interests?: string[]; personalityTraits?: string[]; recommendedSubjects?: string[] }[]
+): Map<string, number> {
+  const freq = new Map<string, number>();
+  for (const c of careers) {
+    const seen = new Set<string>();
+    const push = (value: string | undefined) => {
+      if (!value) return;
+      const n = normalizeForMatch(value);
+      if (n && !seen.has(n)) { seen.add(n); freq.set(n, (freq.get(n) || 0) + 1); }
+    };
+    for (const t of c.traits || []) push(t.value);
+    for (const s of c.technicalSkills || []) push(s);
+    for (const s of c.softSkills || []) push(s);
+    for (const i of c.interests || []) push(i);
+    for (const p of c.personalityTraits || []) push(p);
+    for (const s of c.recommendedSubjects || []) push(s);
+  }
+  return freq;
+}
+
+/**
+ * Bounded distinctiveness multiplier for a career trait.
+ *   baseline 1 for the most generic trait (present in every career).
+ *   up to 1 + gain for the most distinctive trait (present in one career).
+ * The number of active careers is passed in so the computation is exact and
+ * independent of the caller's test catalog size.
+ */
+export function traitSpecificity(
+  traitValue: string,
+  frequency: Map<string, number> | undefined,
+  activeCareerCount: number
+): number {
+  if (!SPECIFICITY_CONFIG.enabled || !frequency || activeCareerCount <= 1) return 1;
+  const freq = frequency.get(normalizeForMatch(traitValue)) ?? 1;
+  const rawness = 1 - Math.min(1, Math.max(0, freq / activeCareerCount));
+  return 1 + SPECIFICITY_CONFIG.gain * rawness;
+}
 
 /**
  * Student's education stage, derived from signals. Used by the stage-aware
@@ -642,21 +689,105 @@ export function scoreCareer(
 }
 
 /**
- * Ranks scored careers deterministically.
- * Primary: matchScore desc
- * Secondary: confidenceScore desc
- * Tertiary: matched dimension count desc (breadth of evidence)
- * Final: career name asc, then career id asc
+ * Average bounded distinctiveness of the career traits a match actually hit.
+ * Higher = the student matched more distinctive (less generic) career traits,
+ * which is a legitimate tie-break for ranks, NOT a score adjustment.
  */
-export function rankMatches(matches: CareerMatch[]): CareerMatch[] {
-  return [...matches].sort((a, b) => {
-    if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
-    if (b.confidenceScore !== a.confidenceScore) return b.confidenceScore - a.confidenceScore;
-    if (b.supportedDimensions !== a.supportedDimensions) {
-      return b.supportedDimensions - a.supportedDimensions;
+function matchDistinctiveness(
+  match: CareerMatch,
+  frequency: Map<string, number> | undefined,
+  activeCareerCount: number
+): number {
+  if (!frequency || activeCareerCount <= 1) return 0;
+  const values = match.evidence.map((e) => e.careerTraitValue).filter(Boolean);
+  if (!values.length) return 0;
+  const total = values.reduce(
+    (a, v) => a + traitSpecificity(v, frequency, activeCareerCount),
+    0
+  );
+  return total / values.length;
+}
+
+type RankContext = { traitFrequency?: Map<string, number>; activeCareerCount?: number };
+
+function baseRankCompare(a: CareerMatch, b: CareerMatch): number {
+  if (b.matchScore !== a.matchScore) return b.matchScore - a.matchScore;
+  if (b.confidenceScore !== a.confidenceScore) return b.confidenceScore - a.confidenceScore;
+  if (b.supportedDimensions !== a.supportedDimensions) {
+    return b.supportedDimensions - a.supportedDimensions;
+  }
+  const byName = a.career.name.localeCompare(b.career.name);
+  if (byName !== 0) return byName;
+  return a.careerId.localeCompare(b.careerId);
+}
+
+/**
+ * Ranks scored careers deterministically and transitively.
+ *
+ * Ordering, from most to least significant:
+ *   1. matchScore desc
+ *   2. confidenceScore desc
+ *   3. supportedDimensions desc
+ *   4. career name asc, then career id asc
+ *
+ * Phase 16D within-family differentiation: careers can reach the same score on
+ * the same evidence (generic traits like "Mathematics" appear in ~47% of the
+ * catalog), collapsing closely-related careers into exact ties. To restore a
+ * deterministic, useful order WITHOUT reordering careers across families (which
+ * would reduce family diversity in the top-N), careers that are tied on every
+ * non-name key (score, confidence, dimensions) AND share a category are grouped
+ * together: inside a group the more distinctive matched evidence ranks first,
+ * while groups themselves keep the global base order above. Real
+ * distinctiveness only ever breaks ties between same-category careers that are
+ * otherwise indistinguishable; it never competes with confidence or dimensions.
+ *
+ * This is implemented as a two-pass stable grouping sort, NOT a conditional
+ * comparator, so the result is a valid strict weak ordering.
+ *
+ * `context` is optional. When omitted (pure unit tests), the order reduces to
+ * score -> confidence -> dimensions -> name -> id, preserving legacy behavior.
+ */
+export function rankMatches(
+  matches: CareerMatch[],
+  context?: RankContext
+): CareerMatch[] {
+  const freq = context?.traitFrequency;
+  const count = context?.activeCareerCount ?? 0;
+  const distinctiveness = (m: CareerMatch) =>
+    count > 1 ? matchDistinctiveness(m, freq, count) : 0;
+
+  // Pass 1: global base order (score -> confidence -> dims -> name -> id).
+  const base = [...matches].sort(baseRankCompare);
+  if (!base.length) return base;
+
+  // Pass 2: stable grouping. A "run" is a maximal consecutive sequence of
+  // careers sharing the same (matchScore, confidenceScore, supportedDimensions,
+  // career.category) in the base order — careers tied on every non-name key.
+  // Because the base order sorts by confidence then dimensions, identical-key
+  // careers are exactly the evidence-collision class. Within each run, more
+  // distinctive matched evidence ranks first, and equal distinctiveness keeps
+  // the base order. Runs are non-overlapping, so careers that differ on score,
+  // confidence, dimensions, or category are never reordered relative to one
+  // another, and the result is a valid strict weak ordering.
+  const grouped: CareerMatch[] = [];
+  let runStart = 0;
+  const sameRunKey = (a: CareerMatch, b: CareerMatch) =>
+    a.matchScore === b.matchScore &&
+    a.confidenceScore === b.confidenceScore &&
+    a.supportedDimensions === b.supportedDimensions &&
+    a.career.category === b.career.category;
+  for (let i = 1; i <= base.length; i++) {
+    if (i < base.length && sameRunKey(base[runStart], base[i])) continue;
+    const run = base.slice(runStart, i);
+    if (run.length > 1) {
+      run.sort((a, b) => {
+        const d = distinctiveness(b) - distinctiveness(a);
+        if (d !== 0) return d;
+        return baseRankCompare(a, b);
+      });
     }
-    const byName = a.career.name.localeCompare(b.career.name);
-    if (byName !== 0) return byName;
-    return a.careerId.localeCompare(b.careerId);
-  });
+    grouped.push(...run);
+    runStart = i;
+  }
+  return grouped;
 }

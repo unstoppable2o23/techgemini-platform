@@ -170,4 +170,16 @@ export type MatchResult = {
   assessmentCoverage: string[];
   hasAssessmentData: boolean;
   disclaimer: string | null;
+  /**
+   * True when the engine found no meaningful evidence to rank against (e.g. a
+   * near-empty profile, or preferred-career-only with an unresolved preference
+   * and no evidence). Products should present a "not enough information yet"
+   * state rather than an arbitrary alphabetical list of careers.
+   */
+  lowInformation: boolean;
+  /**
+   * The highest match strength tier observed across scored careers. Useful for
+   * quieting recommendations that are all exploration/weak.
+   */
+  topMatchStrength: CareerMatch["matchStrength"];
 };

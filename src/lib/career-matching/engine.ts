@@ -1,7 +1,7 @@
 import { prisma } from "../prisma.ts";
 import type { TraitDimension } from "@prisma/client";
 import { generateStudentCareerProfile } from "../career-profile/generate.ts";
-import { scoreCareer, rankMatches } from "./score";
+import { scoreCareer, rankMatches, buildTraitFrequency } from "./score";
 import type { CareerCandidate, CareerMatch, CareerMatchInput, MatchResult } from "./types";
 import { NO_ASSESSMENT_DISCLAIMER } from "./config";
 import { resolvePreferredCareer, type PreferredCareerResolution } from "./preferred-career";
@@ -141,11 +141,21 @@ export async function getCareerMatches(
     })),
   }));
 
+  // ---- build deterministic career-trait frequency map (specificity) ----
+  // Derived from the same static active catalog the engine scores against. The
+  // frequency counts are catalog-internal and deterministic within a deployment,
+  // so the specificity tie-break is stable and reproducible across calls.
+  const traitFrequency = buildTraitFrequency(careers);
+
   const scored: CareerMatch[] = candidates.map((career) =>
     scoreCareer(career, studentSignals, preferred)
   );
 
-  const ranked = rankMatches(scored);
+  const ranked = rankMatches(scored, {
+    traitFrequency,
+    activeCareerCount: candidates.length,
+  });
+
   const hasAssessmentData = studentSignals.some(
     (s) => s.sourceType === "ASSESSMENT"
   );
@@ -156,6 +166,17 @@ export async function getCareerMatches(
   });
   const completedKinds = [...new Set(testAssignments.map((a) => a.kind))];
 
+  // ---- low-information / zero-score state ----
+  // When no career produced any meaningful non-zero match, the ranked list is
+  // deterministic but arbitrary (lexicographic). We reflect that honestly
+  // instead of presenting it as "recommended careers".
+  const topMatchStrength =
+    ranked[0]?.matchStrength ?? "missing_evidence";
+  const hasMeaningfulMatch = ranked.some(
+    (m) => m.matchScore > 0 && m.evidence.length > 0
+  );
+  const lowInformation = !hasMeaningfulMatch;
+
   return {
     matches: ranked.slice(0, limit),
     totalCareersScored: candidates.length,
@@ -165,6 +186,8 @@ export async function getCareerMatches(
     disclaimer: hasAssessmentData
       ? null
       : NO_ASSESSMENT_DISCLAIMER,
+    lowInformation,
+    topMatchStrength,
   };
 }
 

@@ -1,0 +1,1304 @@
+{
+  "careersAudited": 251,
+  "totalDistinctTraits": 2789,
+  "traitFrequencyHistogram": {
+    "1": 2411,
+    "6-10": 38,
+    "2-5": 285,
+    "21-50": 22,
+    "11-20": 27,
+    "51+": 6
+  },
+  "genericTraits": [
+    {
+      "trait": "Mathematics",
+      "norm": "mathematics",
+      "frequency": 118,
+      "catBreadth": 18,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 47,
+      "categories": [
+        "Technology & Software",
+        "Agriculture",
+        "Data & AI",
+        "Engineering",
+        "Finance & Accounting",
+        "Healthcare & Medicine",
+        "Business & Management",
+        "Architecture & Planning",
+        "Marketing & Advertising",
+        "Life Sciences",
+        "Manufacturing",
+        "Logistics & Supply Chain",
+        "Environment & Sustainability",
+        "Government & Public Services",
+        "Sports & Fitness",
+        "Design & Creative",
+        "Psychology & Social Sciences",
+        "Hospitality & Tourism"
+      ]
+    },
+    {
+      "trait": "Physics",
+      "norm": "physics",
+      "frequency": 87,
+      "catBreadth": 16,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 35,
+      "categories": [
+        "Healthcare & Medicine",
+        "Technology & Software",
+        "Data & AI",
+        "Engineering",
+        "Media & Communication",
+        "Business & Management",
+        "Manufacturing",
+        "Life Sciences",
+        "Government & Public Services",
+        "Environment & Sustainability",
+        "Design & Creative",
+        "Logistics & Supply Chain",
+        "Sports & Fitness",
+        "Hospitality & Tourism",
+        "Architecture & Planning",
+        "Agriculture"
+      ]
+    },
+    {
+      "trait": "Computer Science",
+      "norm": "computer science",
+      "frequency": 74,
+      "catBreadth": 14,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 29,
+      "categories": [
+        "Technology & Software",
+        "Data & AI",
+        "Engineering",
+        "Life Sciences",
+        "Media & Communication",
+        "Finance & Accounting",
+        "Marketing & Advertising",
+        "Healthcare & Medicine",
+        "Design & Creative",
+        "Sports & Fitness",
+        "Agriculture",
+        "Law",
+        "Environment & Sustainability",
+        "Education"
+      ]
+    },
+    {
+      "trait": "Biology",
+      "norm": "biology",
+      "frequency": 66,
+      "catBreadth": 10,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 26,
+      "categories": [
+        "Healthcare & Medicine",
+        "Agriculture",
+        "Life Sciences",
+        "Engineering",
+        "Psychology & Social Sciences",
+        "Humanities",
+        "Hospitality & Tourism",
+        "Environment & Sustainability",
+        "Sports & Fitness",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "Chemistry",
+      "norm": "chemistry",
+      "frequency": 60,
+      "catBreadth": 8,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 24,
+      "categories": [
+        "Healthcare & Medicine",
+        "Agriculture",
+        "Life Sciences",
+        "Engineering",
+        "Design & Creative",
+        "Manufacturing",
+        "Hospitality & Tourism",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "Business Studies",
+      "norm": "business studies",
+      "frequency": 52,
+      "catBreadth": 15,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 21,
+      "categories": [
+        "Sales",
+        "Marketing & Advertising",
+        "Hospitality & Tourism",
+        "Data & AI",
+        "Business & Management",
+        "Law",
+        "Logistics & Supply Chain",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Environment & Sustainability",
+        "Healthcare & Medicine",
+        "Agriculture",
+        "Sports & Fitness",
+        "Education",
+        "Media & Communication"
+      ]
+    },
+    {
+      "trait": "Analytical",
+      "norm": "analytical",
+      "frequency": 45,
+      "catBreadth": 16,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 18,
+      "categories": [
+        "Technology & Software",
+        "Data & AI",
+        "Healthcare & Medicine",
+        "Humanities",
+        "Finance & Accounting",
+        "Life Sciences",
+        "Business & Management",
+        "Marketing & Advertising",
+        "Environment & Sustainability",
+        "Engineering",
+        "Law",
+        "Sports & Fitness",
+        "Design & Creative",
+        "Logistics & Supply Chain",
+        "Psychology & Social Sciences",
+        "Government & Public Services"
+      ]
+    },
+    {
+      "trait": "English",
+      "norm": "english",
+      "frequency": 44,
+      "catBreadth": 13,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 18,
+      "categories": [
+        "Sales",
+        "Law",
+        "Data & AI",
+        "Marketing & Advertising",
+        "Hospitality & Tourism",
+        "Media & Communication",
+        "Business & Management",
+        "Government & Public Services",
+        "Healthcare & Medicine",
+        "Design & Creative",
+        "Logistics & Supply Chain",
+        "Education",
+        "Life Sciences"
+      ]
+    },
+    {
+      "trait": "Economics",
+      "norm": "economics",
+      "frequency": 43,
+      "catBreadth": 13,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 17,
+      "categories": [
+        "Sales",
+        "Marketing & Advertising",
+        "Finance & Accounting",
+        "Data & AI",
+        "Business & Management",
+        "Architecture & Planning",
+        "Law",
+        "Logistics & Supply Chain",
+        "Environment & Sustainability",
+        "Healthcare & Medicine",
+        "Agriculture",
+        "Psychology & Social Sciences",
+        "Government & Public Services"
+      ]
+    },
+    {
+      "trait": "Python",
+      "norm": "python",
+      "frequency": 43,
+      "catBreadth": 8,
+      "dims": [
+        "SKILL"
+      ],
+      "sharePct": 17,
+      "categories": [
+        "Data & AI",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Engineering",
+        "Life Sciences",
+        "Healthcare & Medicine",
+        "Environment & Sustainability",
+        "Design & Creative"
+      ]
+    },
+    {
+      "trait": "Precise",
+      "norm": "precise",
+      "frequency": 42,
+      "catBreadth": 14,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 17,
+      "categories": [
+        "Healthcare & Medicine",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Life Sciences",
+        "Law",
+        "Engineering",
+        "Agriculture",
+        "Logistics & Supply Chain",
+        "Government & Public Services",
+        "Media & Communication",
+        "Environment & Sustainability",
+        "Hospitality & Tourism",
+        "Manufacturing",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "problem_solving",
+      "norm": "problemsolving",
+      "frequency": 36,
+      "catBreadth": 7,
+      "dims": [
+        "INTEREST"
+      ],
+      "sharePct": 14,
+      "categories": [
+        "Data & AI",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Engineering",
+        "Life Sciences",
+        "Healthcare & Medicine",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "B.Tech/B.E. Computer Science",
+      "norm": "btechbe computer science",
+      "frequency": 34,
+      "catBreadth": 5,
+      "dims": [
+        "EDUCATION"
+      ],
+      "sharePct": 14,
+      "categories": [
+        "Technology & Software",
+        "Data & AI",
+        "Finance & Accounting",
+        "Engineering",
+        "Healthcare & Medicine"
+      ]
+    },
+    {
+      "trait": "technology",
+      "norm": "technology",
+      "frequency": 34,
+      "catBreadth": 8,
+      "dims": [
+        "INTEREST"
+      ],
+      "sharePct": 14,
+      "categories": [
+        "Data & AI",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Engineering",
+        "Life Sciences",
+        "Healthcare & Medicine",
+        "Environment & Sustainability",
+        "Design & Creative"
+      ]
+    },
+    {
+      "trait": "Patient",
+      "norm": "patient",
+      "frequency": 32,
+      "catBreadth": 12,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 13,
+      "categories": [
+        "Healthcare & Medicine",
+        "Media & Communication",
+        "Finance & Accounting",
+        "Life Sciences",
+        "Sports & Fitness",
+        "Design & Creative",
+        "Humanities",
+        "Technology & Software",
+        "Agriculture",
+        "Education",
+        "Engineering",
+        "Government & Public Services"
+      ]
+    },
+    {
+      "trait": "Problem Solving",
+      "norm": "problem solving",
+      "frequency": 30,
+      "catBreadth": 7,
+      "dims": [
+        "SKILL"
+      ],
+      "sharePct": 12,
+      "categories": [
+        "Technology & Software",
+        "Data & AI",
+        "Finance & Accounting",
+        "Engineering",
+        "Life Sciences",
+        "Healthcare & Medicine",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "logical_reasoning",
+      "norm": "logicalreasoning",
+      "frequency": 27,
+      "catBreadth": 11,
+      "dims": [
+        "APTITUDE"
+      ],
+      "sharePct": 11,
+      "categories": [
+        "Technology & Software",
+        "Data & AI",
+        "Healthcare & Medicine",
+        "Law",
+        "Life Sciences",
+        "Engineering",
+        "Psychology & Social Sciences",
+        "Design & Creative",
+        "Environment & Sustainability",
+        "Finance & Accounting",
+        "Agriculture"
+      ]
+    },
+    {
+      "trait": "Statistics",
+      "norm": "statistics",
+      "frequency": 27,
+      "catBreadth": 12,
+      "dims": [
+        "SKILL",
+        "SUBJECT"
+      ],
+      "sharePct": 11,
+      "categories": [
+        "Data & AI",
+        "Humanities",
+        "Marketing & Advertising",
+        "Life Sciences",
+        "Healthcare & Medicine",
+        "Finance & Accounting",
+        "Manufacturing",
+        "Psychology & Social Sciences",
+        "Sports & Fitness",
+        "Technology & Software",
+        "Government & Public Services",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "attention_to_detail",
+      "norm": "attentiontodetail",
+      "frequency": 25,
+      "catBreadth": 9,
+      "dims": [
+        "APTITUDE"
+      ],
+      "sharePct": 10,
+      "categories": [
+        "Technology & Software",
+        "Healthcare & Medicine",
+        "Life Sciences",
+        "Finance & Accounting",
+        "Engineering",
+        "Law",
+        "Data & AI",
+        "Design & Creative",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "Psychology",
+      "norm": "psychology",
+      "frequency": 25,
+      "catBreadth": 8,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 10,
+      "categories": [
+        "Marketing & Advertising",
+        "Healthcare & Medicine",
+        "Business & Management",
+        "Psychology & Social Sciences",
+        "Design & Creative",
+        "Education",
+        "Media & Communication",
+        "Law"
+      ]
+    },
+    {
+      "trait": "prefers_quiet",
+      "norm": "prefersquiet",
+      "frequency": 24,
+      "catBreadth": 9,
+      "dims": [
+        "WORK_ENVIRONMENT"
+      ],
+      "sharePct": 10,
+      "categories": [
+        "Technology & Software",
+        "Data & AI",
+        "Life Sciences",
+        "Finance & Accounting",
+        "Healthcare & Medicine",
+        "Law",
+        "Psychology & Social Sciences",
+        "Design & Creative",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "Collaboration",
+      "norm": "collaboration",
+      "frequency": 24,
+      "catBreadth": 7,
+      "dims": [
+        "SKILL"
+      ],
+      "sharePct": 10,
+      "categories": [
+        "Data & AI",
+        "Life Sciences",
+        "Finance & Accounting",
+        "Engineering",
+        "Healthcare & Medicine",
+        "Technology & Software",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "Any stream",
+      "norm": "any stream",
+      "frequency": 24,
+      "catBreadth": 11,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 10,
+      "categories": [
+        "Marketing & Advertising",
+        "Hospitality & Tourism",
+        "Business & Management",
+        "Sports & Fitness",
+        "Media & Communication",
+        "Psychology & Social Sciences",
+        "Design & Creative",
+        "Education",
+        "Government & Public Services",
+        "Humanities",
+        "Law"
+      ]
+    },
+    {
+      "trait": "Practical",
+      "norm": "practical",
+      "frequency": 24,
+      "catBreadth": 8,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 10,
+      "categories": [
+        "Engineering",
+        "Technology & Software",
+        "Business & Management",
+        "Finance & Accounting",
+        "Environment & Sustainability",
+        "Design & Creative",
+        "Agriculture",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "Detail-oriented",
+      "norm": "detailoriented",
+      "frequency": 23,
+      "catBreadth": 12,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 9,
+      "categories": [
+        "Technology & Software",
+        "Healthcare & Medicine",
+        "Data & AI",
+        "Finance & Accounting",
+        "Life Sciences",
+        "Marketing & Advertising",
+        "Engineering",
+        "Law",
+        "Sports & Fitness",
+        "Manufacturing",
+        "Design & Creative",
+        "Education"
+      ]
+    },
+    {
+      "trait": "collaborative_preference",
+      "norm": "collaborativepreference",
+      "frequency": 22,
+      "catBreadth": 9,
+      "dims": [
+        "WORK_ENVIRONMENT"
+      ],
+      "sharePct": 9,
+      "categories": [
+        "Healthcare & Medicine",
+        "Engineering",
+        "Marketing & Advertising",
+        "Finance & Accounting",
+        "Psychology & Social Sciences",
+        "Design & Creative",
+        "Business & Management",
+        "Education",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "Logical",
+      "norm": "logical",
+      "frequency": 21,
+      "catBreadth": 7,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 8,
+      "categories": [
+        "Law",
+        "Data & AI",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Engineering",
+        "Life Sciences",
+        "Healthcare & Medicine"
+      ]
+    },
+    {
+      "trait": "Communication",
+      "norm": "communication",
+      "frequency": 21,
+      "catBreadth": 6,
+      "dims": [
+        "SKILL",
+        "INTEREST"
+      ],
+      "sharePct": 8,
+      "categories": [
+        "Data & AI",
+        "Healthcare & Medicine",
+        "Finance & Accounting",
+        "Technology & Software",
+        "Environment & Sustainability",
+        "Design & Creative"
+      ]
+    },
+    {
+      "trait": "logical_mathematical",
+      "norm": "logicalmathematical",
+      "frequency": 20,
+      "catBreadth": 8,
+      "dims": [
+        "APTITUDE"
+      ],
+      "sharePct": 8,
+      "categories": [
+        "Technology & Software",
+        "Data & AI",
+        "Engineering",
+        "Finance & Accounting",
+        "Psychology & Social Sciences",
+        "Environment & Sustainability",
+        "Architecture & Planning",
+        "Agriculture"
+      ]
+    },
+    {
+      "trait": "Research",
+      "norm": "research",
+      "frequency": 20,
+      "catBreadth": 7,
+      "dims": [
+        "INTEREST"
+      ],
+      "sharePct": 8,
+      "categories": [
+        "Data & AI",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Engineering",
+        "Life Sciences",
+        "Healthcare & Medicine",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "Curious",
+      "norm": "curious",
+      "frequency": 20,
+      "catBreadth": 11,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 8,
+      "categories": [
+        "Data & AI",
+        "Marketing & Advertising",
+        "Technology & Software",
+        "Media & Communication",
+        "Life Sciences",
+        "Engineering",
+        "Finance & Accounting",
+        "Environment & Sustainability",
+        "Psychology & Social Sciences",
+        "Education",
+        "Humanities"
+      ]
+    },
+    {
+      "trait": "creative",
+      "norm": "creative",
+      "frequency": 20,
+      "catBreadth": 10,
+      "dims": [
+        "INTEREST",
+        "PERSONALITY"
+      ],
+      "sharePct": 8,
+      "categories": [
+        "Data & AI",
+        "Marketing & Advertising",
+        "Healthcare & Medicine",
+        "Life Sciences",
+        "Engineering",
+        "Technology & Software",
+        "Design & Creative",
+        "Media & Communication",
+        "Hospitality & Tourism",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "Innovative",
+      "norm": "innovative",
+      "frequency": 18,
+      "catBreadth": 10,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 7,
+      "categories": [
+        "Healthcare & Medicine",
+        "Data & AI",
+        "Technology & Software",
+        "Engineering",
+        "Life Sciences",
+        "Agriculture",
+        "Finance & Accounting",
+        "Environment & Sustainability",
+        "Design & Creative",
+        "Education"
+      ]
+    },
+    {
+      "trait": "independent_preference",
+      "norm": "independentpreference",
+      "frequency": 17,
+      "catBreadth": 9,
+      "dims": [
+        "WORK_ENVIRONMENT"
+      ],
+      "sharePct": 7,
+      "categories": [
+        "Technology & Software",
+        "Data & AI",
+        "Life Sciences",
+        "Finance & Accounting",
+        "Law",
+        "Environment & Sustainability",
+        "Design & Creative",
+        "Psychology & Social Sciences",
+        "Agriculture"
+      ]
+    },
+    {
+      "trait": "Persistent",
+      "norm": "persistent",
+      "frequency": 16,
+      "catBreadth": 9,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Technology & Software",
+        "Sales",
+        "Engineering",
+        "Life Sciences",
+        "Manufacturing",
+        "Healthcare & Medicine",
+        "Education",
+        "Finance & Accounting",
+        "Design & Creative"
+      ]
+    },
+    {
+      "trait": "prefers_structure",
+      "norm": "prefersstructure",
+      "frequency": 16,
+      "catBreadth": 7,
+      "dims": [
+        "WORK_ENVIRONMENT"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Healthcare & Medicine",
+        "Law",
+        "Finance & Accounting",
+        "Engineering",
+        "Life Sciences",
+        "Education",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "Analytical thinking",
+      "norm": "analytical thinking",
+      "frequency": 16,
+      "catBreadth": 6,
+      "dims": [
+        "SKILL"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Data & AI",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Engineering",
+        "Life Sciences",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "Excel",
+      "norm": "excel",
+      "frequency": 16,
+      "catBreadth": 7,
+      "dims": [
+        "SKILL"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Sales",
+        "Finance & Accounting",
+        "Environment & Sustainability",
+        "Agriculture",
+        "Sports & Fitness",
+        "Business & Management",
+        "Government & Public Services"
+      ]
+    },
+    {
+      "trait": "Empathetic",
+      "norm": "empathetic",
+      "frequency": 15,
+      "catBreadth": 7,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Humanities",
+        "Healthcare & Medicine",
+        "Psychology & Social Sciences",
+        "Design & Creative",
+        "Business & Management",
+        "Engineering",
+        "Education"
+      ]
+    },
+    {
+      "trait": "visual_spatial",
+      "norm": "visualspatial",
+      "frequency": 15,
+      "catBreadth": 3,
+      "dims": [
+        "APTITUDE"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Engineering",
+        "Design & Creative",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "Art",
+      "norm": "art",
+      "frequency": 15,
+      "catBreadth": 3,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Media & Communication",
+        "Design & Creative",
+        "Architecture & Planning"
+      ]
+    },
+    {
+      "trait": "Geography",
+      "norm": "geography",
+      "frequency": 15,
+      "catBreadth": 9,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Architecture & Planning",
+        "Life Sciences",
+        "Logistics & Supply Chain",
+        "Hospitality & Tourism",
+        "Environment & Sustainability",
+        "Engineering",
+        "Data & AI",
+        "Government & Public Services",
+        "Humanities"
+      ]
+    },
+    {
+      "trait": "Resilient",
+      "norm": "resilient",
+      "frequency": 14,
+      "catBreadth": 9,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Healthcare & Medicine",
+        "Law",
+        "Sales",
+        "Business & Management",
+        "Engineering",
+        "Psychology & Social Sciences",
+        "Sports & Fitness",
+        "Government & Public Services",
+        "Finance & Accounting"
+      ]
+    },
+    {
+      "trait": "meticulous",
+      "norm": "meticulous",
+      "frequency": 14,
+      "catBreadth": 8,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 6,
+      "categories": [
+        "Data & AI",
+        "Finance & Accounting",
+        "Healthcare & Medicine",
+        "Manufacturing",
+        "Technology & Software",
+        "Life Sciences",
+        "Engineering",
+        "Design & Creative"
+      ]
+    },
+    {
+      "trait": "Composed",
+      "norm": "composed",
+      "frequency": 13,
+      "catBreadth": 8,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 5,
+      "categories": [
+        "Healthcare & Medicine",
+        "Business & Management",
+        "Life Sciences",
+        "Psychology & Social Sciences",
+        "Technology & Software",
+        "Finance & Accounting",
+        "Hospitality & Tourism",
+        "Media & Communication"
+      ]
+    },
+    {
+      "trait": "Observant",
+      "norm": "observant",
+      "frequency": 13,
+      "catBreadth": 9,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 5,
+      "categories": [
+        "Agriculture",
+        "Healthcare & Medicine",
+        "Marketing & Advertising",
+        "Life Sciences",
+        "Design & Creative",
+        "Environment & Sustainability",
+        "Data & AI",
+        "Psychology & Social Sciences",
+        "Law"
+      ]
+    },
+    {
+      "trait": "SQL",
+      "norm": "sql",
+      "frequency": 13,
+      "catBreadth": 6,
+      "dims": [
+        "SKILL"
+      ],
+      "sharePct": 5,
+      "categories": [
+        "Data & AI",
+        "Finance & Accounting",
+        "Technology & Software",
+        "Life Sciences",
+        "Healthcare & Medicine",
+        "Engineering"
+      ]
+    },
+    {
+      "trait": "interpersonal",
+      "norm": "interpersonal",
+      "frequency": 13,
+      "catBreadth": 9,
+      "dims": [
+        "APTITUDE"
+      ],
+      "sharePct": 5,
+      "categories": [
+        "Healthcare & Medicine",
+        "Law",
+        "Marketing & Advertising",
+        "Finance & Accounting",
+        "Psychology & Social Sciences",
+        "Design & Creative",
+        "Environment & Sustainability",
+        "Business & Management",
+        "Education"
+      ]
+    },
+    {
+      "trait": "Organised",
+      "norm": "organised",
+      "frequency": 13,
+      "catBreadth": 5,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 5,
+      "categories": [
+        "Business & Management",
+        "Healthcare & Medicine",
+        "Technology & Software",
+        "Education",
+        "Hospitality & Tourism"
+      ]
+    },
+    {
+      "trait": "business",
+      "norm": "business",
+      "frequency": 12,
+      "catBreadth": 4,
+      "dims": [
+        "INTEREST"
+      ],
+      "sharePct": 5,
+      "categories": [
+        "Data & AI",
+        "Finance & Accounting",
+        "Technology & Software",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "prefers_autonomy",
+      "norm": "prefersautonomy",
+      "frequency": 12,
+      "catBreadth": 5,
+      "dims": [
+        "WORK_ENVIRONMENT"
+      ],
+      "sharePct": 5,
+      "categories": [
+        "Life Sciences",
+        "Design & Creative",
+        "Environment & Sustainability",
+        "Media & Communication",
+        "Agriculture"
+      ]
+    },
+    {
+      "trait": "Ethical",
+      "norm": "ethical",
+      "frequency": 11,
+      "catBreadth": 7,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Technology & Software",
+        "Media & Communication",
+        "Finance & Accounting",
+        "Law",
+        "Life Sciences",
+        "Healthcare & Medicine",
+        "Psychology & Social Sciences"
+      ]
+    },
+    {
+      "trait": "B.TECH/B.E. Electronics & Communication Engineering",
+      "norm": "btechbe electronics communication engineering",
+      "frequency": 11,
+      "catBreadth": 3,
+      "dims": [
+        "EDUCATION"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Technology & Software",
+        "Engineering",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "B.TECH/B.E. Electrical Engineering",
+      "norm": "btechbe electrical engineering",
+      "frequency": 11,
+      "catBreadth": 2,
+      "dims": [
+        "EDUCATION"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Engineering",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "MATLAB",
+      "norm": "matlab",
+      "frequency": 11,
+      "catBreadth": 3,
+      "dims": [
+        "SKILL"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Life Sciences",
+        "Engineering",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "Hands-on",
+      "norm": "handson",
+      "frequency": 10,
+      "catBreadth": 6,
+      "dims": [
+        "PERSONALITY"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Agriculture",
+        "Healthcare & Medicine",
+        "Data & AI",
+        "Engineering",
+        "Sports & Fitness",
+        "Manufacturing"
+      ]
+    },
+    {
+      "trait": "Empathy",
+      "norm": "empathy",
+      "frequency": 10,
+      "catBreadth": 4,
+      "dims": [
+        "SKILL"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Healthcare & Medicine",
+        "Business & Management",
+        "Design & Creative",
+        "Engineering"
+      ]
+    },
+    {
+      "trait": "Political Science",
+      "norm": "political science",
+      "frequency": 10,
+      "catBreadth": 6,
+      "dims": [
+        "SUBJECT"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Humanities",
+        "Law",
+        "Media & Communication",
+        "Healthcare & Medicine",
+        "Psychology & Social Sciences",
+        "Government & Public Services"
+      ]
+    },
+    {
+      "trait": "MBA",
+      "norm": "mba",
+      "frequency": 10,
+      "catBreadth": 4,
+      "dims": [
+        "EDUCATION"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Data & AI",
+        "Finance & Accounting",
+        "Technology & Software",
+        "Environment & Sustainability"
+      ]
+    },
+    {
+      "trait": "B.TECH/B.E. Mechanical Engineering",
+      "norm": "btechbe mechanical engineering",
+      "frequency": 10,
+      "catBreadth": 2,
+      "dims": [
+        "EDUCATION"
+      ],
+      "sharePct": 4,
+      "categories": [
+        "Engineering",
+        "Environment & Sustainability"
+      ]
+    }
+  ],
+  "genericTraitCount": 60,
+  "genericByDimension": {
+    "SUBJECT": 14,
+    "PERSONALITY": 18,
+    "SKILL": 10,
+    "INTEREST": 6,
+    "EDUCATION": 5,
+    "APTITUDE": 5,
+    "WORK_ENVIRONMENT": 5
+  },
+  "broadCareers": [
+    {
+      "name": "Actuarial Science",
+      "nTraits": 24,
+      "nGenericTraits": 7,
+      "avgTraitCatBreadth": 16,
+      "minCohort": 1
+    },
+    {
+      "name": "Chemical Engineering",
+      "nTraits": 24,
+      "nGenericTraits": 6,
+      "avgTraitCatBreadth": 17,
+      "minCohort": 1
+    },
+    {
+      "name": "Agricultural Engineering",
+      "nTraits": 21,
+      "nGenericTraits": 6,
+      "avgTraitCatBreadth": 22,
+      "minCohort": 1
+    },
+    {
+      "name": "Software Engineering",
+      "nTraits": 26,
+      "nGenericTraits": 10,
+      "avgTraitCatBreadth": 22,
+      "minCohort": 1
+    },
+    {
+      "name": "Machine Learning Engineering",
+      "nTraits": 24,
+      "nGenericTraits": 7,
+      "avgTraitCatBreadth": 17,
+      "minCohort": 1
+    },
+    {
+      "name": "Data Science",
+      "nTraits": 25,
+      "nGenericTraits": 7,
+      "avgTraitCatBreadth": 19,
+      "minCohort": 1
+    },
+    {
+      "name": "Medicine",
+      "nTraits": 25,
+      "nGenericTraits": 6,
+      "avgTraitCatBreadth": 15,
+      "minCohort": 1
+    },
+    {
+      "name": "Biomedical Engineering",
+      "nTraits": 19,
+      "nGenericTraits": 3,
+      "avgTraitCatBreadth": 18,
+      "minCohort": 1
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "cases": [
+    {
+      "label": "CS rich",
+      "topConf": {
+        "level": "HIGH",
+        "maxConf": 78
+      },
+      "confFactors": {
+        "matchedSignals": 5,
+        "dimensionsMatched": 3,
+        "sourceDiversity": 2,
+        "assessmentEvidence": true,
+        "coverage": 0.43,
+        "cappedLow": false
+      },
+      "distinctFamiliesTop10": 4,
+      "top10": [
+        "Artificial Intelligence[73/73/HIGH](technology)",
+        "Software Engineering[73/73/HIGH](technology)",
+        "Cloud Computing[73/67/MODERATE](technology)",
+        "Cyber Security[73/67/MODERATE](technology)",
+        "Data Engineering[73/67/MODERATE](technology)",
+        "Data Science[73/67/MODERATE](technology)",
+        "Biotechnology Research[73/61/MODERATE](lifescience)",
+        "Economics[73/61/MODERATE](psychology)",
+        "Gemology and Gem Testing[73/61/MODERATE](design)",
+        "Machine Learning Engineering[69/78/HIGH](technology)"
+      ]
+    },
+    {
+      "label": "PCB rich",
+      "topConf": {
+        "level": "HIGH",
+        "maxConf": 84
+      },
+      "confFactors": {
+        "matchedSignals": 5,
+        "dimensionsMatched": 3,
+        "sourceDiversity": 2,
+        "assessmentEvidence": true,
+        "coverage": 0.43,
+        "cappedLow": false
+      },
+      "distinctFamiliesTop10": 5,
+      "top10": [
+        "Forensic Science[73/73/HIGH](lifescience)",
+        "Medical Laboratory Sciences[73/73/HIGH](medicine)",
+        "Pharmacology[73/73/HIGH](medicine)",
+        "Aerospace Engineering[73/67/MODERATE](engineering)",
+        "Civil Engineering[73/67/MODERATE](engineering)",
+        "Architecture[73/61/MODERATE](architecture)",
+        "Medicine[69/84/HIGH](medicine)",
+        "Chemical Engineering[69/78/HIGH](engineering)",
+        "Actuarial Science[68/46/MODERATE](finance)",
+        "Chartered Accountancy[68/46/MODERATE](finance)"
+      ]
+    },
+    {
+      "label": "Commerce rich",
+      "topConf": {
+        "level": "HIGH",
+        "maxConf": 73
+      },
+      "confFactors": {
+        "matchedSignals": 5,
+        "dimensionsMatched": 3,
+        "sourceDiversity": 2,
+        "assessmentEvidence": true,
+        "coverage": 0.43,
+        "cappedLow": false
+      },
+      "distinctFamiliesTop10": 4,
+      "top10": [
+        "Chartered Accountancy[73/73/HIGH](finance)",
+        "Investment Banking[73/67/MODERATE](finance)",
+        "Retail Banking[73/67/MODERATE](finance)",
+        "Actuarial Science[73/61/MODERATE](finance)",
+        "Aerospace Engineering[68/46/MODERATE](engineering)",
+        "Architecture[68/46/MODERATE](architecture)",
+        "Chemical Engineering[68/46/MODERATE](engineering)",
+        "Civil Engineering[68/46/MODERATE](engineering)",
+        "Economics[64/46/MODERATE](psychology)",
+        "Forensic Accounting[60/52/MODERATE](finance)"
+      ]
+    },
+    {
+      "label": "Design rich",
+      "topConf": {
+        "level": "HIGH",
+        "maxConf": 78
+      },
+      "confFactors": {
+        "matchedSignals": 4,
+        "dimensionsMatched": 3,
+        "sourceDiversity": 2,
+        "assessmentEvidence": true,
+        "coverage": 0.43,
+        "cappedLow": false
+      },
+      "distinctFamiliesTop10": 3,
+      "top10": [
+        "Photography[73/67/MODERATE](design)",
+        "Industrial Design[73/61/MODERATE](design)",
+        "Interior Design[73/61/MODERATE](design)",
+        "Product Design[73/61/MODERATE](design)",
+        "Graphic Design[69/78/HIGH](design)",
+        "Fine Arts[69/71/HIGH](design)",
+        "User Experience Design UX[68/46/MODERATE](design)",
+        "Fashion Design[64/52/MODERATE](design)",
+        "Content Creation[60/46/MODERATE](media)",
+        "Aerospace Engineering[58/28/LOW](engineering)"
+      ]
+    },
+    {
+      "label": "Law rich",
+      "topConf": {
+        "level": "MODERATE",
+        "maxConf": 67
+      },
+      "confFactors": {
+        "matchedSignals": 4,
+        "dimensionsMatched": 3,
+        "sourceDiversity": 3,
+        "assessmentEvidence": true,
+        "coverage": 0.43,
+        "cappedLow": false
+      },
+      "distinctFamiliesTop10": 6,
+      "top10": [
+        "Digital Marketing[71/67/MODERATE](business)",
+        "Public Health[71/61/MODERATE](medicine)",
+        "Social Work and Development Sector[71/61/MODERATE](psychology)",
+        "Psychology[68/52/MODERATE](psychology)",
+        "Special Education[68/52/MODERATE](education)",
+        "Clinical Psychology[68/46/MODERATE](psychology)",
+        "Human Resource Management[68/46/MODERATE](business)",
+        "Medicine[68/46/MODERATE](medicine)",
+        "Retail Banking[68/46/MODERATE](finance)",
+        "User Experience Design UX[68/46/MODERATE](design)"
+      ]
+    }
+  ],
+  "differentiation": {
+    "csTop5": [
+      "Artificial Intelligence",
+      "Software Engineering",
+      "Cloud Computing",
+      "Cyber Security",
+      "Data Engineering"
+    ],
+    "pcbTop5": [
+      "Forensic Science",
+      "Medical Laboratory Sciences",
+      "Pharmacology",
+      "Aerospace Engineering",
+      "Civil Engineering"
+    ],
+    "overlap": 0
+  },
+  "familyFreqInTop10AcrossCases": {
+    "technology": 1,
+    "lifescience": 2,
+    "psychology": 3,
+    "design": 3,
+    "medicine": 2,
+    "engineering": 3,
+    "architecture": 2,
+    "finance": 3,
+    "media": 1,
+    "business": 1,
+    "education": 1
+  }
+}

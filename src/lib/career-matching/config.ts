@@ -139,6 +139,52 @@ export const NO_ASSESSMENT_DISCLAIMER =
   "Your recommendations are currently based on your interests, academic information and preferences. Completing assessments can provide additional personalisation.";
 
 /**
+ * Career-differentiation (trait distinctiveness) controls.
+ *
+ * Phase 16D: generic career traits (e.g. "Mathematics" appears in ~47% of
+ * active careers) let closely-related careers reach the SAME matchScore on the
+ * same evidence, collapsing e.g. Artificial Intelligence / Cloud Computing /
+ * Data Engineering into a tie. To restore ranking discrimination WITHIN a
+ * career family WITHOUT reordering across families (which would hurt family
+ * diversity), a bounded credit bonus is applied as a rank tie-break only
+ * between same-score, same-category careers, proportional to how *distinctive*
+ * their matched traits are.
+ *
+ * The distinctiveness factor is:
+ *     specificity(trait) = 1 + gain * (1 - freq(trait) / activeCareerCount)
+ * and is clamped to [1, 1 + gain]. It is computed only during ranking and is:
+ *   - bounded (max 1 + gain, default 1.15), so it never overrides a career
+ *     that scored clearly higher,
+ *   - deterministic: derived from the static active catalog's trait
+ *     frequencies, which do not change within a deployment,
+ *   - family-scoped: applied only between same-category careers, so it never
+ *     reduces top-N family diversity,
+ *   - a ranking tie-break, NOT a score change: displayed compatibility scores
+ *     and the preferred-career boost are unchanged.
+ *
+ * This is NOT an inverse-document-frequency reweighting of compatibility.
+ * `enabled` can be turned off for pure unit determinism.
+ */
+export const SPECIFICITY_CONFIG = {
+  enabled: process.env.CAREER_MATCH__SPECIFICITY !== "0",
+  gain: 0.15,
+} as const;
+
+/**
+ * Recommended-result states. Phase 16D adds an honest no-confidence state so we
+ * never present an arbitrary alphabetical list as "recommendations" when a
+ * student has no meaningful evidence. The other tiers are derived from the
+ * match-strength thresholds; STRONG > GOOD > POTENTIAL > EXPLORATION.
+ */
+export const RECOMMENDATION_STATES = {
+  strong: "STRONG_MATCH",
+  good: "GOOD_MATCH",
+  potential: "POTENTIAL_MATCH",
+  exploration: "EXPLORATION",
+  insufficient: "INSUFFICIENT_EVIDENCE",
+} as const;
+
+/**
  * Normalise text for comparison: lowercase, trim, remove special chars.
  */
 export function normalizeForMatch(text: string): string {
