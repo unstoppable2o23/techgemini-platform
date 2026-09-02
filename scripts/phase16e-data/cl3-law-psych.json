@@ -1,0 +1,576 @@
+[
+  {
+    "name": "Corporate Law",
+    "title": "Corporate Lawyer",
+    "cat": "Law",
+    "sub": "Corporate & Commercial Legal Practice",
+    "intro": "Corporate law involves advising businesses on mergers, acquisitions, governance, compliance, and commercial transactions. It is one of the highest-paying legal specializations in India, with Tier-1 firms paying premium salaries to fresh graduates.",
+    "whoShouldPursue": [
+      "Students drawn to business, finance, and transactional work",
+      "Those comfortable with high-intensity, deadline-driven environments",
+      "Individuals seeking structured law firm career progression",
+      "Candidates who enjoy negotiation and deal-making over courtroom litigation"
+    ],
+    "eligibility": [
+      "BA LLB or LLB from a recognized university",
+      "Bar Council enrollment (AIBE clearance)",
+      "Strong internships at law firms or corporate legal departments",
+      "NLU degree provides significant advantage for Tier-1 firm entry"
+    ],
+    "workDesc": "Drafting, negotiating, and closing commercial transactions while advising companies on regulatory compliance and corporate governance.",
+    "workExamples": [
+      "Advising on a large-scale M&A deal between two listed Indian companies",
+      "Drafting and reviewing complex shareholder agreements and joint venture contracts",
+      "Handling SEBI compliance and regulatory filings for a publicly listed corporation"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "6-12 LPA",
+    "salaryMedian": "18-35 LPA",
+    "salarySenior": "50 LPA+",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+12%",
+    "topIndustries": ["Law Firms", "Banking & Finance", "Technology & Startups", "Private Equity & Venture Capital", "Real Estate"],
+    "futureOutlook": "India's growing deal ecosystem, SEBI regulatory expansion, and startup boom ensure sustained high demand for corporate lawyers through 2030.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["business strategy", "legal compliance", "financial analysis", "negotiation", "deal structuring"],
+    "per": ["analytical", "detail-oriented", "assertive", "commercially aware", "composed under pressure"],
+    "subj": ["Business Law", "Contract Law", "Corporate Governance", "Finance", "Regulatory Studies"],
+    "tech": ["legal drafting", "due diligence", "M&A advisory", "SEBI regulations", "contract management", "corporate compliance"],
+    "deg": ["LLB degree", "BA LLB or LLB"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "interpersonal", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "linguistic", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 2 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "LLB degree", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Environmental Law",
+    "title": "Environmental Lawyer",
+    "cat": "Law",
+    "sub": "Environmental & Climate Legal Practice",
+    "intro": "Environmental law deals with legal frameworks governing pollution control, biodiversity conservation, climate change, and sustainable development. Practitioners appear before the National Green Tribunal and advise governments, NGOs, and corporations on environmental compliance.",
+    "whoShouldPursue": [
+      "Individuals passionate about environmental protection and climate justice",
+      "Those interested in public interest litigation and policy advocacy",
+      "Students comfortable working across government, NGO, and corporate sectors",
+      "People who want to combine legal expertise with science and ecology"
+    ],
+    "eligibility": [
+      "LLB or BA LLB from a recognized university",
+      "Bar Council enrollment mandatory",
+      "LLM in Environmental Law is a strong advantage",
+      "Background in environmental science or policy is helpful but not required"
+    ],
+    "workDesc": "Representing clients in environmental disputes, advising on regulatory compliance, and advocating for sustainable development through legal frameworks.",
+    "workExamples": [
+      "Filing a PIL before the National Green Tribunal to halt illegal mining in a biodiversity hotspot",
+      "Advising a manufacturing corporation on ESG compliance and environmental clearance requirements",
+      "Representing a community affected by industrial pollution in seeking remediation and compensation"
+    ],
+    "demandLevel": "Emerging",
+    "salaryEntry": "3-6 LPA",
+    "salaryMedian": "8-15 LPA",
+    "salarySenior": "20-40 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+15%",
+    "topIndustries": ["Government & Regulatory Bodies", "NGOs & Advocacy Organizations", "Corporate ESG Departments", "Law Firms", "Think Tanks & Research Institutes"],
+    "futureOutlook": "Rising climate regulations, ESG mandates, and Green Tribunal expansion are driving rapid growth in environmental law demand across India.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": true,
+    "int": ["environmental advocacy", "policy analysis", "sustainability", "public interest litigation", "scientific literacy"],
+    "per": ["passionate", "ethical", "persistent", "community-oriented", "analytical"],
+    "subj": ["Environmental Law", "Constitutional Law", "Ecology", "Public Policy", "Climate Science"],
+    "tech": ["environmental audit", "NGT litigation", "ESG compliance", "RTI activism", "policy drafting", "environmental impact assessment"],
+    "deg": ["LLB degree", "LLM optional"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "naturalist", "weight": 3 },
+      { "value": "linguistic", "weight": 2 },
+      { "value": "emotional_intelligence", "weight": 2 },
+      { "value": "interpersonal", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "prefers_autonomy", "weight": 2 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_quiet", "weight": 1 },
+      { "value": "independent_preference", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "LLB degree", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Human Rights Law",
+    "title": "Human Rights Lawyer",
+    "cat": "Law",
+    "sub": "Human Rights & Social Justice Legal Practice",
+    "intro": "Human rights law focuses on protecting fundamental rights, representing marginalized communities, filing Public Interest Litigations, and advocating for civil liberties. Practitioners work with NGOs, UN agencies, and legal aid organizations.",
+    "whoShouldPursue": [
+      "Individuals driven by social justice and advocacy for vulnerable communities",
+      "Those passionate about constitutional rights and civil liberties",
+      "Students who prefer mission-driven work over purely commercial legal practice",
+      "People comfortable with public speaking, campaigning, and community engagement"
+    ],
+    "eligibility": [
+      "LLB or BA LLB from a recognized university",
+      "Bar Council enrollment mandatory",
+      "LLM in Human Rights Law is advantageous",
+      "Prior experience with NGOs or legal aid organizations is valued"
+    ],
+    "workDesc": "Representing victims of rights violations, filing PILs, and advocating for policy reforms to protect civil liberties and human dignity.",
+    "workExamples": [
+      "Representing bonded laborers in a Supreme Court case seeking enforcement of anti-trafficking laws",
+      "Filing a PIL challenging discriminatory practices against marginalized communities",
+      "Advocating at an international human rights body on digital privacy rights for Indian citizens"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-6 LPA",
+    "salaryMedian": "8-15 LPA",
+    "salarySenior": "15-30 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+8%",
+    "topIndustries": ["NGOs & Human Rights Organizations", "United Nations Agencies", "Legal Aid Societies", "Government Ministries", "International Advocacy Groups"],
+    "futureOutlook": "Growing digital rights concerns, ESG accountability standards, and global human rights frameworks are expanding opportunities for human rights lawyers.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["social justice", "constitutional rights", "advocacy", "policy reform", "community service"],
+    "per": ["empathetic", "principled", "resilient", "articulate", "community-focused"],
+    "subj": ["Constitutional Law", "International Human Rights Law", "Criminal Law", "Social Work", "Public Policy"],
+    "tech": ["PIL drafting", "human rights advocacy", "international legal instruments", "RTI activism", "legal aid provision", "community mobilization"],
+    "deg": ["BA LLB or LLB", "LLB degree"],
+    "apt": [
+      { "value": "emotional_intelligence", "weight": 3 },
+      { "value": "linguistic", "weight": 3 },
+      { "value": "interpersonal", "weight": 2 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "intrapersonal", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_autonomy", "weight": 2 },
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "LLB degree", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "International Law",
+    "title": "International Law Specialist",
+    "cat": "Law",
+    "sub": "International & Cross-Border Legal Practice",
+    "intro": "International law covers cross-border disputes, treaty obligations, international trade, arbitration, and diplomatic legal matters. Practitioners work at international courts, UN bodies, global law firms, and government foreign affairs divisions.",
+    "whoShouldPursue": [
+      "Those fascinated by geopolitics, diplomacy, and global governance",
+      "Students with strong multilingual abilities and cross-cultural awareness",
+      "Individuals seeking careers with international mobility and global exposure",
+      "Candidates who enjoy complex, multi-jurisdictional problem-solving"
+    ],
+    "eligibility": [
+      "LLB or BA LLB from a recognized university",
+      "LLM in International Law strongly preferred",
+      "Bar Council enrollment required for domestic practice",
+      "Proficiency in at least one foreign language is highly advantageous"
+    ],
+    "workDesc": "Advising on cross-border disputes, treaty negotiations, international arbitration, and trade law matters across multiple jurisdictions.",
+    "workExamples": [
+      "Representing India in a WTO dispute settlement panel on agricultural trade subsidies",
+      "Advising a multinational corporation on cross-border M&A compliance across three jurisdictions",
+      "Serving as legal counsel at an international court on a complex case"
+    ],
+    "demandLevel": "Emerging",
+    "salaryEntry": "5-10 LPA",
+    "salaryMedian": "15-30 LPA",
+    "salarySenior": "40 LPA+",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+14%",
+    "topIndustries": ["International Law Firms", "United Nations & Global Bodies", "Government Foreign Affairs", "International Arbitration Chambers", "Multinational Corporations"],
+    "futureOutlook": "India's expanding FDI inflows, growing outbound M&A activity, and increasing participation in international arbitration are creating strong demand for international law specialists.",
+    "minStudyLevel": "Master's",
+    "isEmerging": true,
+    "int": ["geopolitics", "diplomacy", "cross-border transactions", "international arbitration", "global governance"],
+    "per": ["culturally aware", "analytical", "multilingual", "strategic thinker", "globally minded"],
+    "subj": ["International Law", "International Trade Law", "Treaty Law", "Arbitration", "Comparative Law"],
+    "tech": ["international arbitration", "cross-border M&A", "WTO dispute resolution", "treaty drafting", "legal research", "foreign jurisdiction analysis"],
+    "deg": ["LLB degree", "LLM optional"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "linguistic", "weight": 3 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "interpersonal", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 3 },
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "LLB degree", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Tax Law",
+    "title": "Tax Lawyer",
+    "cat": "Law",
+    "sub": "Taxation & Revenue Legal Practice",
+    "intro": "Tax law involves advising individuals, corporations, and governments on income tax, GST, transfer pricing, customs duty, and international tax structuring. It is one of the most recession-proof legal specializations with consistently high demand.",
+    "whoShouldPursue": [
+      "Those with a strong aptitude for numbers, accounting, and financial analysis",
+      "Students who enjoy statutory interpretation and regulatory complexity",
+      "Individuals seeking stable, high-demand legal careers with structured growth",
+      "Candidates comfortable with continuous learning as tax laws evolve frequently"
+    ],
+    "eligibility": [
+      "LLB or B.Com LLB from a recognized university",
+      "Bar Council enrollment mandatory",
+      "B.Com background provides significant advantage",
+      "ADIT or specialized tax certifications are valued additions"
+    ],
+    "workDesc": "Advising clients on tax planning, representing them in ITAT and High Court litigation, and structuring cross-border transactions for tax efficiency.",
+    "workExamples": [
+      "Defending a multinational corporation in a large transfer pricing dispute before the ITAT",
+      "Advising a startup on GST registration, classification, and input tax credit optimization",
+      "Structuring a cross-border joint venture to optimize tax implications under India's DTAA network"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "4-8 LPA",
+    "salaryMedian": "10-22 LPA",
+    "salarySenior": "25-50 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+11%",
+    "topIndustries": ["Big 4 Advisory Firms", "Law Firms", "In-House Corporate Tax Teams", "Government Revenue Departments", "Tax Boutique Firms"],
+    "futureOutlook": "India's new Income Tax Code, GST maturity, and BEPS/Pillar Two implementation are creating unprecedented demand for specialized tax lawyers through 2030.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["financial analysis", "statutory interpretation", "tax planning", "regulatory compliance", "revenue optimization"],
+    "per": ["analytical", "meticulous", "detail-oriented", "patient", "systematic"],
+    "subj": ["Tax Law", "Accounting", "Finance", "Income Tax Act", "GST Law"],
+    "tech": ["tax litigation", "transfer pricing", "GST compliance", "income tax planning", "ITAT representation", "cross-border tax structuring"],
+    "deg": ["LLB degree", "CA also enter"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "logical_mathematical", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "linguistic", "weight": 1 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "prefers_structure", "weight": 3 },
+      { "value": "prefers_formal_setting", "weight": 2 },
+      { "value": "self_driven", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "LLB degree", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Legal Research",
+    "title": "Legal Researcher",
+    "cat": "Law",
+    "sub": "Legal Scholarship & Academic Research",
+    "intro": "Legal research encompasses academic scholarship, policy analysis, legislative drafting, and doctrinal study of law at universities, think tanks, and government bodies. Researchers shape legal reform through published scholarship and evidence-based policy recommendations.",
+    "whoShouldPursue": [
+      "Those passionate about deep analytical study of legal theory and jurisprudence",
+      "Students who enjoy writing, publishing, and contributing to legal scholarship",
+      "Individuals seeking academic or policy-oriented careers over litigation",
+      "Candidates with strong research methodology and critical thinking skills"
+    ],
+    "eligibility": [
+      "LLB from a recognized university",
+      "LLM preferred for research positions",
+      "PhD required for senior academic and research roles",
+      "UGC-NET qualification essential for university teaching positions"
+    ],
+    "workDesc": "Conducting in-depth legal research, publishing scholarly papers, analyzing policy implications, and contributing to legislative reform through evidence-based recommendations.",
+    "workExamples": [
+      "Publishing a peer-reviewed paper on constitutional interpretation of digital privacy rights",
+      "Conducting a commissioned study for the Law Commission on reforming India's criminal justice system",
+      "Developing policy briefs for a government think tank on data protection legislation"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "4-8 LPA",
+    "salaryMedian": "8-18 LPA",
+    "salarySenior": "15-30 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+7%",
+    "topIndustries": ["Universities & Law Schools", "Government Think Tanks", "Law Commissions", "International Research Organizations", "Legal Publishing & Media"],
+    "futureOutlook": "Growing demand for evidence-based legal policy, the expanding NLU system, and increasing government focus on legal reform are sustaining steady demand for legal researchers.",
+    "minStudyLevel": "Master's",
+    "isEmerging": false,
+    "int": ["legal scholarship", "policy analysis", "academic writing", "jurisprudence", "legislative reform"],
+    "per": ["analytical", "intellectual", "methodical", "self-driven", "detail-oriented"],
+    "subj": ["Jurisprudence", "Constitutional Law", "Legal Theory", "Research Methodology", "Public Policy"],
+    "tech": ["legal research", "academic writing", "legislative drafting", "policy analysis", "citation and referencing", "doctrinal analysis"],
+    "deg": ["LLB degree", "PHD for research careers"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "linguistic", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 2 },
+      { "value": "intrapersonal", "weight": 3 },
+      { "value": "pattern_recognition", "weight": 2 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 3 },
+      { "value": "prefers_quiet", "weight": 3 },
+      { "value": "prefers_autonomy", "weight": 3 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_structure", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "LLB degree", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "PHD for research careers", "specialization": null, "priority": "SECONDARY" }
+    ]
+  },
+  {
+    "name": "Counselling Psychology",
+    "title": "Counselling Psychologist",
+    "cat": "Psychology & Social Sciences",
+    "sub": "Counselling & Therapeutic Practice",
+    "intro": "Counselling psychology focuses on helping individuals navigate life transitions, emotional challenges, stress, and relationship issues through evidence-based therapeutic techniques. Unlike clinical psychology, it primarily addresses everyday emotional and adjustment concerns rather than severe mental disorders.",
+    "whoShouldPursue": [
+      "Individuals with deep empathy and strong interpersonal listening skills",
+      "Those drawn to helping people manage stress, grief, career transitions, and relationships",
+      "Students interested in private practice or corporate employee wellness",
+      "People who prefer a therapeutic approach over diagnostic or clinical work"
+    ],
+    "eligibility": [
+      "BA Psychology or B.SC Psychology from a recognized university",
+      "MA/M.SC Psychology with counselling specialization",
+      "Postgraduate diploma in guidance and counselling is a valuable addition",
+      "Relevant supervised counselling hours for practice"
+    ],
+    "workDesc": "Providing therapeutic support to individuals, couples, and groups facing emotional, relational, and career-related challenges through structured counselling sessions.",
+    "workExamples": [
+      "Conducting individual therapy sessions for professionals dealing with workplace burnout",
+      "Facilitating couples counselling for relationship conflicts and communication breakdowns",
+      "Running stress management workshops for corporate employees under an Employee Assistance Programme"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "3-6 LPA",
+    "salaryMedian": "6-12 LPA",
+    "salarySenior": "12-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+14%",
+    "topIndustries": ["Mental Health Platforms", "Corporate Employee Wellness", "Schools & Colleges", "Hospitals & Healthcare", "Private Practice"],
+    "futureOutlook": "Rising mental health awareness, corporate wellness mandates, and expansion of teletherapy platforms are driving strong and sustained demand for counselling psychologists in India.",
+    "minStudyLevel": "Master's",
+    "isEmerging": false,
+    "int": ["mental health", "therapeutic skills", "empathy", "helping others", "interpersonal support"],
+    "per": ["empathetic", "patient", "perceptive", "warm", "good listener"],
+    "subj": ["Psychology", "Psychological Therapies", "Developmental Psychology", "Personality Psychology", "Research Methods"],
+    "tech": ["counselling techniques", "cognitive behavioural approaches", "crisis intervention", "therapeutic assessment", "teletherapy", "session documentation"],
+    "deg": ["BA Psychology", "MA/M.SC Psychology + M.Phil/PsyD for clinical practice"],
+    "apt": [
+      { "value": "emotional_intelligence", "weight": 3 },
+      { "value": "interpersonal", "weight": 3 },
+      { "value": "intrapersonal", "weight": 2 },
+      { "value": "linguistic", "weight": 2 },
+      { "value": "naturalist", "weight": 1 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 3 },
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 2 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "BA Psychology", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "MA/M.SC Psychology + M.Phil/PsyD for clinical practice", "specialization": null, "priority": "SECONDARY" }
+    ]
+  },
+  {
+    "name": "Organizational Psychology",
+    "title": "Organizational Psychologist",
+    "cat": "Psychology & Social Sciences",
+    "sub": "Industrial-Organizational & Workplace Psychology",
+    "intro": "Organizational psychology applies psychological principles to workplace settings, focusing on employee selection, performance management, leadership development, and organizational change. It is a high-compensated non-clinical psychology specialization in India.",
+    "whoShouldPursue": [
+      "Those interested in the intersection of psychology and business management",
+      "Students with strong analytical and data-driven thinking",
+      "Individuals who enjoy working in corporate HR, consulting, or talent strategy",
+      "Candidates seeking high compensation in the psychology field"
+    ],
+    "eligibility": [
+      "BA/B.SC Psychology from a recognized university",
+      "MA/M.SC Psychology with industrial-organizational specialization",
+      "MBA HR with a psychology background is a strong combination",
+      "Psychometric assessment certifications add significant value"
+    ],
+    "workDesc": "Designing employee assessment tools, advising on organizational development, leading leadership coaching programs, and analyzing workplace behavior to improve productivity and engagement.",
+    "workExamples": [
+      "Developing psychometric assessment frameworks for hiring at a large company",
+      "Designing and implementing an employee engagement survey and action plan for a 5000-person organization",
+      "Leading an organizational change management program during a corporate merger"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "5-10 LPA",
+    "salaryMedian": "14-28 LPA",
+    "salarySenior": "30-60 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+13%",
+    "topIndustries": ["Management Consulting Firms", "Corporate HR Departments", "HR Technology Companies", "Executive Coaching Firms", "Large Indian Corporates"],
+    "futureOutlook": "Growing corporate investment in employee wellness and data-driven HR practices are creating premium demand for organizational psychologists.",
+    "minStudyLevel": "Master's",
+    "isEmerging": false,
+    "int": ["workplace behavior", "leadership development", "talent management", "organizational change", "data-driven HR"],
+    "per": ["analytical", "strategic", "data-driven", "business savvy", "influential"],
+    "subj": ["Organizational Behavior", "Industrial Psychology", "HR Analytics", "Leadership Studies", "Psychometric Assessment"],
+    "tech": ["psychometric testing", "HR analytics", "employee engagement surveys", "leadership coaching", "organizational development interventions", "talent assessment"],
+    "deg": ["BA Psychology", "MA/M.SC Psychology + M.Phil/PsyD for clinical practice"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "logical_mathematical", "weight": 2 },
+      { "value": "interpersonal", "weight": 3 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "prefers_formal_setting", "weight": 3 },
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "self_driven", "weight": 2 },
+      { "value": "independent_preference", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "BA Psychology", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "MA/M.SC Psychology + M.Phil/PsyD for clinical practice", "specialization": null, "priority": "SECONDARY" }
+    ]
+  },
+  {
+    "name": "Educational Psychology",
+    "title": "Educational Psychologist",
+    "cat": "Psychology & Social Sciences",
+    "sub": "Learning & Development Psychology",
+    "intro": "Educational psychology applies psychological principles to learning and education, addressing learning disabilities, student mental health, curriculum design, and academic interventions. Practitioners work in schools, universities, EdTech companies, and special education centers.",
+    "whoShouldPursue": [
+      "Those passionate about improving educational outcomes for students",
+      "Individuals interested in child development and learning processes",
+      "Students who enjoy working with children, adolescents, and educational institutions",
+      "People drawn to special education, inclusive learning, and academic research"
+    ],
+    "eligibility": [
+      "BA/B.SC Psychology from a recognized university",
+      "MA/M.SC Psychology with educational specialization",
+      "B.Ed combined with psychology background is valuable",
+      "RCI registration required when working with children with disabilities"
+    ],
+    "workDesc": "Assessing learning difficulties, designing educational interventions, counselling students on academic and emotional challenges, and advising schools on inclusive education practices.",
+    "workExamples": [
+      "Conducting psychoeducational assessments to diagnose learning disabilities in school children",
+      "Designing an anti-bullying intervention program for a school network",
+      "Advising an EdTech company on personalized learning approaches based on cognitive psychology research"
+    ],
+    "demandLevel": "Emerging",
+    "salaryEntry": "3-6 LPA",
+    "salaryMedian": "7-14 LPA",
+    "salarySenior": "12-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+12%",
+    "topIndustries": ["Schools & Educational Institutions", "EdTech Companies", "Special Education Centers", "Government Education Departments", "Child Development NGOs"],
+    "futureOutlook": "NEP 2020 emphasis on student wellness, school counsellor mandates, and EdTech growth are creating structured and expanding demand for educational psychologists.",
+    "minStudyLevel": "Master's",
+    "isEmerging": true,
+    "int": ["learning processes", "child development", "educational intervention", "academic research", "inclusive education"],
+    "per": ["patient", "observant", "nurturing", "analytical", "methodical"],
+    "subj": ["Psychology", "Developmental Psychology", "Cognitive Psychology", "Special Education", "Learning Sciences"],
+    "tech": ["psychoeducational assessment", "learning disability diagnosis", "educational intervention design", "student counselling", "classroom observation", "curriculum evaluation"],
+    "deg": ["BA Psychology", "MA/M.SC Psychology + M.Phil Clinical Psychology"],
+    "apt": [
+      { "value": "emotional_intelligence", "weight": 3 },
+      { "value": "interpersonal", "weight": 3 },
+      { "value": "naturalist", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 },
+      { "value": "logical_reasoning", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 1 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "BA Psychology", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "MA/M.SC Psychology + M.Phil Clinical Psychology", "specialization": null, "priority": "SECONDARY" }
+    ]
+  },
+  {
+    "name": "Social Research",
+    "title": "Social Researcher",
+    "cat": "Psychology & Social Sciences",
+    "sub": "Social Science Research & Policy Analysis",
+    "intro": "Social research involves systematic investigation of social phenomena, communities, and human behavior using qualitative and quantitative methods. Researchers work at universities, think tanks, international development organizations, and government agencies to inform policy and program design.",
+    "whoShouldPursue": [
+      "Those fascinated by understanding social structures, patterns, and human behavior",
+      "Students who enjoy fieldwork, surveys, data collection, and analysis",
+      "Individuals seeking careers in policy research, the development sector, or academia",
+      "Candidates comfortable with both qualitative and quantitative research methodologies"
+    ],
+    "eligibility": [
+      "BA/MA Sociology from a recognized university",
+      "MA Anthropology provides an alternative pathway",
+      "BSW/MSW qualification is valuable for development research",
+      "PhD required for senior academic research positions"
+    ],
+    "workDesc": "Conducting social surveys, analyzing community data, evaluating program impact, and producing evidence-based reports for policy formulation and social intervention design.",
+    "workExamples": [
+      "Designing and conducting a large-scale household survey on migration patterns in urban India",
+      "Evaluating the impact of a government mid-day meal scheme on primary school enrollment rates",
+      "Producing a policy brief on employment discrimination for a national think tank"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-6 LPA",
+    "salaryMedian": "6-12 LPA",
+    "salarySenior": "12-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+8%",
+    "topIndustries": ["Universities & Research Institutions", "Government Think Tanks", "International Development Organizations", "NGOs & Social Enterprises", "Policy Research Institutes"],
+    "futureOutlook": "India's growing focus on evidence-based policy, social impact measurement, and data-driven governance is sustaining steady demand for trained social researchers.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["social analysis", "policy research", "community study", "data collection", "social change"],
+    "per": ["analytical", "curious", "methodical", "empathetic", "field-oriented"],
+    "subj": ["Sociology", "Research Methodology", "Social Statistics", "Anthropology", "Development Studies"],
+    "tech": ["survey design", "qualitative analysis", "statistical software", "field research", "impact evaluation", "data visualization"],
+    "deg": ["BA/MA Sociology", "PHD for research careers"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "logical_mathematical", "weight": 2 },
+      { "value": "linguistic", "weight": 2 },
+      { "value": "interpersonal", "weight": 2 },
+      { "value": "naturalist", "weight": 2 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_autonomy", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "BA/MA Sociology", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "PHD for research careers", "specialization": null, "priority": "SECONDARY" }
+    ]
+  }
+]

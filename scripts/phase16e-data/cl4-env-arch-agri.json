@@ -1,0 +1,593 @@
+[
+  {
+    "name": "Environmental Consultant",
+    "title": "Environmental Consultant",
+    "cat": "Environment & Sustainability",
+    "sub": "Advisory & Compliance",
+    "intro": "Environmental Consultants advise organizations on regulatory compliance, pollution control, and sustainable practices across India's industrial and infrastructure sectors. They conduct site assessments and help clients navigate CPCB, SPCB, and NGT regulations.",
+    "whoShouldPursue": [
+      "Problem-solvers who enjoy variety across industries",
+      "Those interested in environmental law and regulatory frameworks",
+      "Professionals comfortable with fieldwork and report writing",
+      "People who want to bridge business and environmental goals"
+    ],
+    "eligibility": [
+      "B.SC Environmental Science or B.Tech Environmental Engineering",
+      "M.SC Environmental Science or M.Tech Environmental Management",
+      "Certifications in ISO 14001, ZLD, or environmental auditing"
+    ],
+    "workDesc": "Conducting environmental audits, pollution assessments, and compliance advisory for industrial and infrastructure projects.",
+    "workExamples": [
+      "Preparing Environmental Management Plans for factories under CPCB consent conditions",
+      "Conducting groundwater and soil contamination assessments for real estate developers",
+      "Advising textile units on Zero Liquid Discharge compliance"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "3.5-5.5 LPA",
+    "salaryMedian": "7-12 LPA",
+    "salarySenior": "15-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+14%",
+    "topIndustries": ["Environmental Consulting Firms", "Manufacturing & Heavy Industry", "Infrastructure & Real Estate", "Government Regulatory Bodies"],
+    "futureOutlook": "India's tightening pollution norms and NGT enforcement will sustain strong demand for environmental compliance professionals.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["environmental compliance", "pollution control", "field assessments", "environmental law", "sustainability solutions"],
+    "per": ["analytical", "methodical", "detail-oriented", "communicative", "pragmatic"],
+    "subj": ["Environmental Science", "Chemistry", "Environmental Law"],
+    "tech": ["environmental impact reporting", "GIS mapping", "water quality analysis", "noise monitoring", "statutory compliance documentation", "environmental data analysis"],
+    "deg": ["B.SC Environmental Science", "M.SC Environmental Science"],
+    "apt": [
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "naturalist", "weight": 2 },
+      { "value": "linguistic", "weight": 1 }
+    ],
+    "we": [
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 1 },
+      { "value": "independent_preference", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "B.SC Environmental Science", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Climate Policy Analyst",
+    "title": "Climate Policy Analyst",
+    "cat": "Environment & Sustainability",
+    "sub": "Policy & Research",
+    "intro": "Climate Policy Analysts research and design government and institutional policies addressing climate change mitigation and adaptation in India. They work at the intersection of climate science, economics, and governance to shape frameworks under India's NDC commitments.",
+    "whoShouldPursue": [
+      "Those passionate about climate action and governance",
+      "Individuals with strong analytical and writing skills",
+      "Professionals interested in international climate negotiations",
+      "People who want to influence systemic change through policy"
+    ],
+    "eligibility": [
+      "Bachelor's degree in any discipline plus Public Policy training",
+      "M.SC/M.Tech Atmospheric Science or Climate Science",
+      "MBA Sustainability or a sustainability/ESG certification also valued"
+    ],
+    "workDesc": "Researching, drafting, and evaluating climate mitigation and adaptation policies for government agencies, think tanks, and international organizations.",
+    "workExamples": [
+      "Analyzing state-level climate action plans under India's National Action Plan on Climate Change",
+      "Modeling carbon tax policy impacts on India's power sector for a policy think tank",
+      "Drafting adaptation policy briefs for vulnerable coastal districts facing sea-level rise"
+    ],
+    "demandLevel": "Emerging",
+    "salaryEntry": "4-7 LPA",
+    "salaryMedian": "8-14 LPA",
+    "salarySenior": "18-30 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+18%",
+    "topIndustries": ["Government Think Tanks", "International Organizations (UNDP, World Bank)", "Climate Policy Think Tanks", "Research Universities"],
+    "futureOutlook": "India's Net Zero 2070 target and growing climate finance needs will create expanding roles in climate policy analysis.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": true,
+    "int": ["climate policy", "governance", "climate science", "policy analysis", "international negotiations"],
+    "per": ["analytical", "articulate", "systems-thinker", "detail-oriented", "persuasive"],
+    "subj": ["Climate Science", "Economics", "Public Policy"],
+    "tech": ["climate modeling tools", "policy analysis frameworks", "econometric software", "carbon accounting methods", "data visualization", "report writing"],
+    "deg": ["M.SC/MTECH Atmospheric Science or Climate Science", "ANY degree + Master's in Public Policy"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "linguistic", "weight": 2 },
+      { "value": "interpersonal", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 1 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "M.SC/MTECH Atmospheric Science or Climate Science", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Conservation Scientist",
+    "title": "Conservation Scientist",
+    "cat": "Environment & Sustainability",
+    "sub": "Conservation & Ecology",
+    "intro": "Conservation Scientists study and manage India's biodiversity, protecting ecosystems across the Western Ghats, Himalayan corridors, and coastal wetlands. They design habitat restoration plans and work with forest departments and community stakeholders.",
+    "whoShouldPursue": [
+      "Those who feel deeply connected to wildlife and natural ecosystems",
+      "Individuals comfortable with extended fieldwork in remote areas",
+      "People interested in balancing ecological and community needs",
+      "Students of ecology, biology, or forestry with field orientation"
+    ],
+    "eligibility": [
+      "B.SC Forestry or B.SC Environmental Science",
+      "M.SC Forestry or M.SC Wildlife Biology",
+      "Relevant fieldwork or research experience with forest departments"
+    ],
+    "workDesc": "Assessing biodiversity, managing habitat restoration, and developing conservation strategies for protected areas and degraded landscapes.",
+    "workExamples": [
+      "Conducting species richness surveys in the Nilgiri Biosphere Reserve",
+      "Designing community-based mangrove restoration plans in the Sundarbans",
+      "Monitoring corridor connectivity for elephant movement between fragmented forest patches"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-10 LPA",
+    "salarySenior": "14-22 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+10%",
+    "topIndustries": ["Forest Departments & Wildlife Institutes", "NGOs & Conservation Bodies (WWF, WCS)", "Ecological Research Institutes", "Eco-Tourism Companies"],
+    "futureOutlook": "India's expanding protected area network and biodiversity conservation mandates will keep demand steady for conservation professionals.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["wildlife conservation", "ecology", "biodiversity", "habitat restoration", "field research"],
+    "per": ["patient", "field-oriented", "observant", "dedicated", "practical"],
+    "subj": ["Ecology", "Biology", "Forestry"],
+    "tech": ["biodiversity assessment methods", "GPS and remote sensing", "camera trap analysis", "habitat mapping (GIS)", "species identification", "statistical ecology software"],
+    "deg": ["B.SC Forestry", "M.SC Forestry; Indian Forest Service via UPSC for officer roles"],
+    "apt": [
+      { "value": "naturalist", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 2 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "bodily_kinesthetic", "weight": 1 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "self_driven", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 2 },
+      { "value": "prefers_autonomy", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "B.SC Forestry", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Circular Economy Specialist",
+    "title": "Circular Economy Specialist",
+    "cat": "Environment & Sustainability",
+    "sub": "Sustainability Strategy",
+    "intro": "Circular Economy Specialists help Indian businesses redesign products and supply chains to eliminate waste and maximize resource reuse. They drive zero-waste strategies across manufacturing, textiles, and e-commerce sectors.",
+    "whoShouldPursue": [
+      "Systems thinkers who see waste as a design flaw",
+      "Professionals passionate about sustainable business models",
+      "Supply chain and operations experts seeking green transitions",
+      "Entrepreneurs interested in reverse logistics and upcycling ventures"
+    ],
+    "eligibility": [
+      "Bachelor's degree in Engineering, Design, or Business",
+      "MBA Sustainability or a sustainability/ESG certification",
+      "Any degree plus sustainability certification with relevant project experience"
+    ],
+    "workDesc": "Redesigning product lifecycles and supply chains to minimize waste, enable reuse, and create closed-loop material flows.",
+    "workExamples": [
+      "Designing take-back programs for electronics manufacturers under E-Waste Rules",
+      "Creating zero-waste roadmaps for Indian textile mills",
+      "Advising FMCG brands on packaging redesign to meet extended producer responsibility targets"
+    ],
+    "demandLevel": "Emerging",
+    "salaryEntry": "4-6 LPA",
+    "salaryMedian": "8-13 LPA",
+    "salarySenior": "16-28 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+22%",
+    "topIndustries": ["Manufacturing & Textiles", "FMCG & Consumer Goods", "Waste Management & Recycling", "Management Consulting"],
+    "futureOutlook": "India's EPR mandates and waste-management evolution will drive rapid growth in circular economy roles across industries.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": true,
+    "int": ["sustainable business", "waste reduction", "product design", "supply chains", "resource efficiency"],
+    "per": ["creative", "strategic", "detail-oriented", "collaborative", "pragmatic"],
+    "subj": ["Supply Chain Management", "Sustainability", "Industrial Ecology"],
+    "tech": ["life cycle assessment tools", "material flow analysis", "EPR compliance systems", "supply chain analytics", "sustainability reporting frameworks", "waste stream mapping"],
+    "deg": ["MBA Sustainability also valued", "ANY degree + sustainability/ESG certification"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "visual_spatial", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "MBA Sustainability also valued", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Carbon Accounting Specialist",
+    "title": "Carbon Accounting Specialist",
+    "cat": "Environment & Sustainability",
+    "sub": "Emissions Measurement & Reporting",
+    "intro": "Carbon Accounting Specialists measure, verify, and report greenhouse gas emissions for Indian corporations across Scope 1, 2, and 3 boundaries. They ensure compliance with BRSR, SEBI disclosures, and global frameworks like the GHG Protocol.",
+    "whoShouldPursue": [
+      "Detail-oriented professionals who enjoy quantitative analysis",
+      "Those interested in corporate sustainability and ESG reporting",
+      "Accounting or environmental science graduates seeking a niche",
+      "Professionals who want to support India's climate commitments through data"
+    ],
+    "eligibility": [
+      "B.SC Environmental Science or Commerce/Accounting background",
+      "MBA Sustainability or a data background plus ESG training",
+      "GHG Protocol or ISO 14064 certification preferred"
+    ],
+    "workDesc": "Quantifying, verifying, and reporting organizational greenhouse gas emissions using standardized methodologies and regulatory frameworks.",
+    "workExamples": [
+      "Conducting Scope 1-2-3 carbon footprint assessments for listed Indian companies under BRSR",
+      "Verifying emission reduction claims for carbon credit projects in renewable energy",
+      "Training corporate teams on GHG Protocol inventory development for annual sustainability reports"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "4-6 LPA",
+    "salaryMedian": "8-14 LPA",
+    "salarySenior": "18-30 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+25%",
+    "topIndustries": ["ESG & Sustainability Consulting", "Manufacturing & Heavy Industry", "Financial Services & Audit Firms", "Technology Companies"],
+    "futureOutlook": "SEBI's BRSR mandate and global carbon border regulations will make carbon accounting a critical skill across all Indian listed companies.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": true,
+    "int": ["emissions measurement", "ESG reporting", "quantitative analysis", "climate data", "corporate sustainability"],
+    "per": ["meticulous", "quantitative", "compliance-oriented", "analytical", "systematic"],
+    "subj": ["Environmental Science", "Accounting", "Climate Science"],
+    "tech": ["GHG Protocol methodology", "life cycle assessment tools", "ESG reporting platforms", "carbon footprint calculations", "data analysis (Excel, Python)", "BRSR disclosure frameworks"],
+    "deg": ["DATA background + ESG training", "MBA Sustainability also valued"],
+    "apt": [
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "logical_mathematical", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 1 }
+    ],
+    "we": [
+      { "value": "prefers_structure", "weight": 3 },
+      { "value": "prefers_formal_setting", "weight": 2 },
+      { "value": "independent_preference", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "DATA background + ESG training", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Environmental Impact Assessment Specialist",
+    "title": "Environmental Impact Assessment Specialist",
+    "cat": "Environment & Sustainability",
+    "sub": "Regulatory & Assessment",
+    "intro": "Environmental Impact Assessment Specialists conduct mandatory EIAs for infrastructure, mining, and industrial projects under India's EIA Notification. They ensure projects meet environmental clearance conditions set by the environmental ministry and Expert Appraisal Committees.",
+    "whoShouldPursue": [
+      "Those who enjoy multi-disciplinary fieldwork and scientific reporting",
+      "Professionals interested in regulatory compliance and environmental law",
+      "Engineers or scientists who want structured project-based work",
+      "People who want to balance development with environmental protection"
+    ],
+    "eligibility": [
+      "B.SC Environmental Science or B.Tech Environmental Engineering",
+      "M.SC Environmental Science or M.Tech Environmental Management",
+      "Experience with EIA notification processes and public hearing facilitation"
+    ],
+    "workDesc": "Conducting comprehensive environmental impact studies, facilitating public consultations, and preparing EIA reports for regulatory clearance.",
+    "workExamples": [
+      "Preparing EIA reports for highway expansion projects through ecologically sensitive areas",
+      "Facilitating public hearings for industrial projects in industrial corridors",
+      "Monitoring post-clearance environmental conditions for mining operations"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "3.5-6 LPA",
+    "salaryMedian": "8-13 LPA",
+    "salarySenior": "16-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+12%",
+    "topIndustries": ["Environmental Consulting Firms", "Infrastructure & Construction", "Mining & Resources Sector", "Government & Regulatory Bodies"],
+    "futureOutlook": "India's continued infrastructure expansion and EIA regulatory enforcement will maintain strong demand for qualified EIA professionals.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["environmental assessment", "regulatory compliance", "field studies", "project evaluation", "environmental science"],
+    "per": ["methodical", "thorough", "communicative", "analytical", "detail-oriented"],
+    "subj": ["Environmental Science", "Ecology", "Environmental Law"],
+    "tech": ["EIA software and databases", "GIS and remote sensing", "environmental modeling tools", "statistical analysis", "noise and air quality monitoring", "public consultation documentation"],
+    "deg": ["B.SC Environmental Science", "M.SC Environmental Science"],
+    "apt": [
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "naturalist", "weight": 2 },
+      { "value": "linguistic", "weight": 2 }
+    ],
+    "we": [
+      { "value": "prefers_structure", "weight": 3 },
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "B.SC Environmental Science", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Architectural Technology",
+    "title": "Architectural Technologist",
+    "cat": "Architecture & Planning",
+    "sub": "Technical Design & Construction",
+    "intro": "Architectural Technologists bridge design and construction, translating architectural concepts into technical drawings, building specifications, and construction-ready documentation in India's booming real estate sector.",
+    "whoShouldPursue": [
+      "Those who enjoy the technical and construction side of architecture",
+      "Detail-oriented minds who prefer precision over pure creative design",
+      "Students strong in maths, materials science, and CAD tools",
+      "Professionals who want to work closely with contractors on site"
+    ],
+    "eligibility": [
+      "B.Arch or B.Tech/B.Des in Architectural Technology",
+      "B.Arch plus hands-on experience with construction documentation",
+      "Proficiency in BIM and CAD tools with site experience"
+    ],
+    "workDesc": "Developing detailed construction drawings, material specifications, and building system documentation for architectural projects.",
+    "workExamples": [
+      "Creating detailed BIM models and construction drawings for residential tower projects",
+      "Preparing material specifications and BOQs for government institutional buildings",
+      "Coordinating structural and MEP systems integration for mixed-use developments"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "3-5.5 LPA",
+    "salaryMedian": "7-12 LPA",
+    "salarySenior": "14-22 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+15%",
+    "topIndustries": ["Architecture & Design Firms", "Real Estate Development", "Construction Companies", "Government Housing Projects"],
+    "futureOutlook": "India's construction boom and BIM adoption mandate will drive strong demand for technically skilled architectural technologists.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["construction technology", "building design", "technical drawings", "materials science", "project execution"],
+    "per": ["precise", "methodical", "technically minded", "detail-oriented", "practical"],
+    "subj": ["Architecture", "Construction Technology", "Engineering Graphics"],
+    "tech": ["AutoCAD", "Revit BIM", "construction documentation", "material specifications", "building codes (NBC, IS)", "structural coordination"],
+    "deg": ["B.ARCH", "B.TECH/B.E. Civil Engineering"],
+    "apt": [
+      { "value": "visual_spatial", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "logical_mathematical", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 1 }
+    ],
+    "we": [
+      { "value": "prefers_structure", "weight": 3 },
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 1 },
+      { "value": "prefers_autonomy", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "B.ARCH", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Sustainable Architecture",
+    "title": "Sustainable Architect",
+    "cat": "Architecture & Planning",
+    "sub": "Green Building Design",
+    "intro": "Sustainable Architects design energy-efficient, climate-responsive buildings that minimize environmental impact while maximizing occupant comfort across India's diverse climatic zones. They integrate passive design, renewable systems, and green building certifications into projects.",
+    "whoShouldPursue": [
+      "Architects passionate about environmental responsibility",
+      "Those interested in green building certifications and energy modeling",
+      "Designers who want to merge aesthetics with sustainability",
+      "Professionals driven by climate-conscious construction practices"
+    ],
+    "eligibility": [
+      "B.Arch plus a certificate in sustainability or GRIHA/IGBC training",
+      "B.Arch followed by M.Arch in Sustainable Design or Green Architecture",
+      "Experience with energy modeling and green rating tools"
+    ],
+    "workDesc": "Designing climate-responsive buildings incorporating passive strategies, renewable energy, and green building rating systems.",
+    "workExamples": [
+      "Designing GRIHA-rated institutional campuses for universities",
+      "Incorporating passive cooling strategies and solar integration for residential projects in Rajasthan",
+      "Advising developers on green building certification pathways for commercial office towers"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "4-6.5 LPA",
+    "salaryMedian": "9-15 LPA",
+    "salarySenior": "18-30 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+20%",
+    "topIndustries": ["Green Building Consultancies", "Architecture & Design Firms", "Real Estate Development", "Government Smart City Projects"],
+    "futureOutlook": "India's green building codes and Net Zero Energy Building mandates will create significant growth in sustainable architecture roles.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": true,
+    "int": ["green building design", "energy efficiency", "climate-responsive architecture", "renewable energy", "sustainable design"],
+    "per": ["creative", "environmentally conscious", "innovative", "detail-oriented", "principled"],
+    "subj": ["Architecture", "Environmental Science", "Building Physics"],
+    "tech": ["energy modeling tools", "daylight simulation", "green building rating systems (GRIHA/IGBC)", "passive design analysis", "solar design integration", "sustainable materials"],
+    "deg": ["B.ARCH", "SUSTAINABILITY certification"],
+    "apt": [
+      { "value": "visual_spatial", "weight": 3 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "naturalist", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "prefers_autonomy", "weight": 2 },
+      { "value": "self_driven", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "B.ARCH", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "SUSTAINABILITY certification", "specialization": null, "priority": "ALTERNATIVE" }
+    ]
+  },
+  {
+    "name": "Urban Design",
+    "title": "Urban Designer",
+    "cat": "Architecture & Planning",
+    "sub": "City Shaping & Placemaking",
+    "intro": "Urban Designers shape the physical character of cities and neighborhoods by integrating architecture, landscape, and planning into cohesive public spaces. In India, they work on waterfronts, transit corridors, and heritage precinct revitalization across rapidly urbanizing cities.",
+    "whoShouldPursue": [
+      "Those who think at the scale of neighborhoods and streets, not just buildings",
+      "Professionals who enjoy collaborating across architecture, planning, and landscape",
+      "Designers passionate about public spaces and placemaking",
+      "Students interested in India's Smart Cities and urban missions"
+    ],
+    "eligibility": [
+      "B.Arch or B.Plan followed by M.Arch Urban Design or M.Plan",
+      "B.Arch plus M.Plan Urban Planning with a design orientation",
+      "Portfolio demonstrating urban-scale design projects"
+    ],
+    "workDesc": "Designing urban public spaces, streetscapes, and neighborhood plans integrating architecture, landscape, and infrastructure.",
+    "workExamples": [
+      "Redesigning riverfront public spaces as part of urban regeneration",
+      "Developing pedestrianization and streetscape plans for heritage bazaar areas",
+      "Creating transit-oriented development design guidelines for metro corridors"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "4-6 LPA",
+    "salaryMedian": "8-14 LPA",
+    "salarySenior": "16-28 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+13%",
+    "topIndustries": ["Urban Design Consultancies", "Municipal Development Authorities", "Smart City SPVs", "Architecture & Planning Firms"],
+    "futureOutlook": "India's Smart Cities Mission and urban heritage conservation will sustain demand for urban designers who balance modernization with cultural identity.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["urban planning", "public spaces", "placemaking", "streetscape design", "city regeneration"],
+    "per": ["collaborative", "visionary", "spatially aware", "creative", "analytical"],
+    "subj": ["Urban Design", "Architecture", "Landscape Planning"],
+    "tech": ["urban design software", "GIS for urban analysis", "streetscape design", "master plan drafting", "public space design", "regulatory frameworks (Smart City)"],
+    "deg": ["B.ARCH + M.Plan Urban Planning", "B.PLAN"],
+    "apt": [
+      { "value": "visual_spatial", "weight": 3 },
+      { "value": "interpersonal", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "logical_reasoning", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "prefers_autonomy", "weight": 1 },
+      { "value": "prefers_formal_setting", "weight": 2 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "B.ARCH + M.Plan Urban Planning", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Agronomy",
+    "title": "Agronomist",
+    "cat": "Agriculture",
+    "sub": "Crop Science & Soil Management",
+    "intro": "Agronomists are crop scientists who optimize soil health, fertilization, irrigation, and crop rotation to maximize agricultural productivity across India's diverse agro-climatic zones. They play a critical role in addressing food security in states like Punjab, Maharashtra, and Madhya Pradesh.",
+    "whoShouldPursue": [
+      "Those fascinated by soil science and crop physiology",
+      "Students who enjoy both laboratory analysis and fieldwork",
+      "Professionals wanting to directly impact farmer livelihoods",
+      "People interested in sustainable intensification of Indian agriculture"
+    ],
+    "eligibility": [
+      "B.SC Agriculture",
+      "M.SC Agriculture with specialization in Agronomy or Soil Science",
+      "Experience with ICAR research stations or Krishi Vigyan Kendras"
+    ],
+    "workDesc": "Developing and recommending crop management practices, soil improvement strategies, and integrated nutrient management for optimal yields.",
+    "workExamples": [
+      "Conducting soil health assessments and recommending nutrient management for wheat-rice rotations in Punjab",
+      "Designing integrated pest and nutrient management protocols for cotton in Gujarat",
+      "Testing and promoting climate-resilient crop varieties through Krishi Vigyan Kendras"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-10 LPA",
+    "salarySenior": "12-20 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+11%",
+    "topIndustries": ["Agricultural Research (ICAR, SAUs)", "Agri-input Companies (Fertilizer, Seeds)", "Farm Cooperatives & FPOs", "Government Agriculture Departments"],
+    "futureOutlook": "Climate change impacts on cropping patterns and India's food security priorities will sustain demand for skilled agronomists.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["soil science", "crop cultivation", "plant physiology", "agricultural research", "farmer livelihoods"],
+    "per": ["practical", "field-oriented", "scientific", "patient", "observant"],
+    "subj": ["Agronomy", "Soil Science", "Plant Physiology"],
+    "tech": ["soil testing methods", "crop modeling software", "GIS for agriculture", "nutrient management planning", "irrigation scheduling tools", "precision agriculture basics"],
+    "deg": ["B.SC Agriculture", "M.SC Agriculture"],
+    "apt": [
+      { "value": "naturalist", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 },
+      { "value": "bodily_kinesthetic", "weight": 2 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "self_driven", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 1 },
+      { "value": "prefers_structure", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "B.SC Agriculture", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Aquaculture",
+    "title": "Aquaculturist",
+    "cat": "Agriculture",
+    "sub": "Aquatic Farming",
+    "intro": "Aquaculturists manage the farming of fish, shrimp, and other aquatic organisms in controlled freshwater and marine environments across India's coastal and inland regions. This is distinct from Fisheries Science which focuses on wild capture fisheries and fishing livelihoods.",
+    "whoShouldPursue": [
+      "Those interested in aquatic biology and pond management",
+      "Students who enjoy hands-on outdoor work near water bodies",
+      "Professionals wanting to support India's blue economy and protein security",
+      "People comfortable with the technical and physical demands of fish farming"
+    ],
+    "eligibility": [
+      "B.F.SC (Fisheries Science) with aquaculture focus",
+      "B.SC Agriculture or B.SC Biology with aquaculture specialization",
+      "M.SC Aquaculture or Mariculture for advanced roles"
+    ],
+    "workDesc": "Planning, managing, and optimizing fish and shrimp farming operations including water quality, feed, breeding, and disease management.",
+    "workExamples": [
+      "Managing intensive shrimp aquaculture ponds in Andhra Pradesh",
+      "Setting up recirculating aquaculture systems for carp farming in Haryana",
+      "Developing biofloc technology protocols for sustainable tilapia farming in Kerala"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-11 LPA",
+    "salarySenior": "14-24 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+16%",
+    "topIndustries": ["Shrimp & Fish Farming Companies", "Aquaculture Feed & Input Companies", "Marine Products Export Industry", "Government Fisheries Departments"],
+    "futureOutlook": "India's growing seafood export demand and inland aquaculture expansion will drive strong employment growth for trained aquaculturists.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["aquatic biology", "fish farming", "pond management", "blue economy", "protein security"],
+    "per": ["practical", "resilient", "entrepreneurial", "observant", "hands-on"],
+    "subj": ["Aquaculture", "Aquatic Biology", "Fish Nutrition"],
+    "tech": ["water quality testing", "feed formulation", "pond management systems", "biofloc technology", "recirculating aquaculture system design", "disease diagnosis in aquatic species"],
+    "deg": ["B.F.SC", "B.SC Agriculture"],
+    "apt": [
+      { "value": "naturalist", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "bodily_kinesthetic", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 3 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_quiet", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "B.F.SC", "specialization": null, "priority": "PRIMARY" }
+    ]
+  }
+]

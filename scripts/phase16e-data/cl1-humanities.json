@@ -1,0 +1,512 @@
+[
+  {
+    "name": "Philosophy",
+    "title": "Philosopher / Ethics Consultant",
+    "cat": "Humanities",
+    "sub": "Philosophy",
+    "intro": "Philosophy is the systematic study of fundamental questions about existence, knowledge, ethics, and reasoning. Professionals apply rigorous analytical thinking to academic research, public ethics advisory, and interdisciplinary consulting.",
+    "whoShouldPursue": [
+      "Strong inclination toward abstract reasoning and fundamental questions about knowledge and morality",
+      "Enjoys constructing and deconstructing arguments through logical analysis",
+      "Comfortable with long-form reading, writing, and sustained independent thought",
+      "Interested in applying ethical frameworks to real-world policy and technology challenges"
+    ],
+    "eligibility": [
+      "Bachelor's degree in Philosophy or a related humanities discipline",
+      "Master's or M.Phil. in Philosophy for academic and research positions",
+      "PhD required for university-level teaching and independent research",
+      "NET/SET qualification preferred for permanent academic roles in India"
+    ],
+    "workDesc": "Researching philosophical problems, writing papers and books, teaching undergraduates, and advising organisations on ethical questions in technology, healthcare, or public policy.",
+    "workExamples": [
+      "Teaching undergraduate and postgraduate philosophy courses at a college or university",
+      "Conducting and publishing peer-reviewed research on ethics, epistemology, or metaphysics",
+      "Advising tech companies or government bodies on AI ethics and data privacy frameworks"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-10 LPA",
+    "salarySenior": "12-20 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+5%",
+    "topIndustries": ["Higher Education and Universities", "Think Tanks and Research Institutes", "Corporate Ethics and Compliance", "Publishing and Media", "NGOs and Policy Organisations"],
+    "futureOutlook": "Growing demand for ethics consultants in AI, biotech, and data governance will create new non-academic career avenues for philosophy graduates.",
+    "minStudyLevel": "Master's",
+    "isEmerging": false,
+    "int": ["analytical thinking", "abstract reasoning", "ethical inquiry", "argumentation", "conceptual exploration"],
+    "per": ["deeply reflective", "intellectually curious", "patient and persistent", "independent thinker", "open-minded"],
+    "subj": ["Philosophy", "Logic", "Ethics", "History of Ideas", "Critical Theory"],
+    "tech": ["argumentation and logical analysis", "academic research methodology", "philosophical writing and publishing", "critical reading of dense texts", "ethical framework application", "interdisciplinary analysis"],
+    "deg": ["B.A", "M.PHIL/PHD for research careers"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "intrapersonal", "weight": 3 },
+      { "value": "linguistic", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 3 },
+      { "value": "prefers_quiet", "weight": 3 },
+      { "value": "prefers_formal_setting", "weight": 2 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "B.A", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "M.PHIL/PHD for research careers", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Linguistics",
+    "title": "Linguist / Language Scientist",
+    "cat": "Humanities",
+    "sub": "Linguistics",
+    "intro": "Linguistics is the scientific study of language structure, acquisition, and use across cultures and communities. Professionals analyse phonetics, syntax, semantics, and sociolinguistic patterns in research, technology, and language preservation roles.",
+    "whoShouldPursue": [
+      "Fascinated by how languages are structured, learned, and evolve over time",
+      "Strong aptitude for pattern recognition and systematic analysis",
+      "Interested in both human cognition and computational applications of language",
+      "Comfortable working across disciplines like anthropology, psychology, and computer science"
+    ],
+    "eligibility": [
+      "Bachelor's degree in Linguistics or a language-related discipline",
+      "Master's in Linguistics or Computational Linguistics for specialised roles",
+      "PhD required for academic research and university positions",
+      "Coursework in phonetics, syntax, and statistics is highly valued"
+    ],
+    "workDesc": "Analysing language data, conducting fieldwork on understudied languages, developing natural language processing models, and teaching language structure courses.",
+    "workExamples": [
+      "Conducting phonetic fieldwork to document an endangered language",
+      "Building annotation pipelines for natural language processing systems",
+      "Publishing research on syntactic variation across South Asian languages"
+    ],
+    "demandLevel": "Emerging",
+    "salaryEntry": "4-6 LPA",
+    "salaryMedian": "8-14 LPA",
+    "salarySenior": "15-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+12%",
+    "topIndustries": ["Technology and NLP Companies", "Higher Education and Research", "Language Documentation Projects", "Translation and Localisation", "Publishing and Lexicography"],
+    "futureOutlook": "Demand is rising due to growth in NLP, voice assistants, multilingual AI, and government-led language documentation initiatives.",
+    "minStudyLevel": "Master's",
+    "isEmerging": true,
+    "int": ["language fascination", "pattern analysis", "cognitive curiosity", "scientific inquiry", "cross-cultural interest"],
+    "per": ["analytically precise", "methodical researcher", "curious and observant", "detail-oriented", "collaborative across disciplines"],
+    "subj": ["Linguistics", "Phonetics", "Computer Science", "Psychology", "Sociology"],
+    "tech": ["phonetic transcription and analysis", "corpus linguistics tools", "natural language processing fundamentals", "statistical analysis of language data", "fieldwork documentation methods", "computational annotation tools"],
+    "deg": ["B.A", "M.PHIL/PHD for research careers"],
+    "apt": [
+      { "value": "pattern_recognition", "weight": 3 },
+      { "value": "linguistic", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 },
+      { "value": "naturalist", "weight": 1 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 2 },
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "B.A", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "M.PHIL/PHD for research careers", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Cultural Studies",
+    "title": "Cultural Studies Scholar / Cultural Analyst",
+    "cat": "Humanities",
+    "sub": "Cultural Studies",
+    "intro": "Cultural Studies examines how culture, media, power, and identity intersect in societies, drawing from humanities, social sciences, and critical theory. Professionals work as academics, media analysts, policy advisors, and cultural consultants.",
+    "whoShouldPursue": [
+      "Deep interest in analysing media, popular culture, and social power dynamics",
+      "Strong critical thinking and ability to interpret texts, films, and cultural artefacts",
+      "Comfortable with interdisciplinary approaches combining sociology, literature, and history",
+      "Passionate about social justice, identity politics, and cultural equity"
+    ],
+    "eligibility": [
+      "Bachelor's degree in Humanities, Social Sciences, or a related field",
+      "Master's in Cultural Studies, Media Studies, or Gender Studies for specialised roles",
+      "PhD required for academic and research-intensive careers",
+      "Prior coursework in sociology, literature, or anthropology is advantageous"
+    ],
+    "workDesc": "Analysing media representations, conducting research on identity and representation, teaching university courses, and advising organisations on cultural sensitivity and inclusive practices.",
+    "workExamples": [
+      "Publishing research on representations of caste and gender in Indian cinema",
+      "Teaching undergraduate courses on postcolonial theory and media criticism",
+      "Advising NGOs on culturally sensitive program design for marginalised communities"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-10 LPA",
+    "salarySenior": "12-18 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+6%",
+    "topIndustries": ["Higher Education and Research", "Media and Entertainment", "NGOs and Development Sector", "Publishing", "Government Cultural Policy"],
+    "futureOutlook": "The expanding media landscape and growing focus on cultural representation will sustain demand across academia, media analysis, and cultural consulting.",
+    "minStudyLevel": "Master's",
+    "isEmerging": false,
+    "int": ["cultural analysis", "critical thinking about society", "media interpretation", "social justice interest", "interdisciplinary inquiry"],
+    "per": ["critically reflective", "socially aware", "analytical and perceptive", "intellectually adventurous", "empathetic toward diverse perspectives"],
+    "subj": ["Cultural Studies", "Sociology", "Literature", "Media Studies", "Gender Studies"],
+    "tech": ["qualitative research methodology", "critical discourse analysis", "content and media analysis", "interdisciplinary literature review", "ethnographic fieldwork", "academic writing and publishing"],
+    "deg": ["B.A", "M.PHIL/PHD for research careers"],
+    "apt": [
+      { "value": "intrapersonal", "weight": 3 },
+      { "value": "emotional_intelligence", "weight": 2 },
+      { "value": "linguistic", "weight": 3 },
+      { "value": "interpersonal", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 2 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "independent_preference", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "B.A", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "M.PHIL/PHD for research careers", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Museum Studies and Curatorship",
+    "title": "Museum Curator / Heritage Professional",
+    "cat": "Humanities",
+    "sub": "Museum Studies",
+    "intro": "Museum Studies and Curatorship involves the professional management of cultural collections, exhibitions, and heritage sites. Curators research, preserve, and interpret artefacts to educate the public and preserve cultural memory.",
+    "whoShouldPursue": [
+      "Passionate about art, history, archaeology, or material culture",
+      "Strong organisational skills and attention to detail in documentation",
+      "Excellent written and verbal communication for exhibit interpretation",
+      "Enjoys combining research, aesthetics, and public engagement"
+    ],
+    "eligibility": [
+      "Bachelor's degree in History, Archaeology, Fine Arts, or a related humanities field",
+      "Master's in Museum Studies, Curatorial Studies, or Art History preferred",
+      "Internships or volunteer experience at museums, galleries, or heritage sites",
+      "Knowledge of conservation techniques and collection management systems"
+    ],
+    "workDesc": "Managing museum collections, researching artefacts, designing exhibitions, writing catalogues, liaising with donors, and overseeing preservation standards.",
+    "workExamples": [
+      "Researching provenance of a Mughal miniature painting collection",
+      "Designing and installing a temporary exhibition on tribal art forms",
+      "Cataloguing and digitising a museum's archival photographic collection"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-10 LPA",
+    "salarySenior": "12-20 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+5%",
+    "topIndustries": ["Museums and Galleries", "Government Heritage Organisations", "Art Auction Houses", "Cultural Tourism", "Universities and Research Institutes"],
+    "futureOutlook": "India's expanding museum sector and government heritage preservation initiatives will create steady demand for trained curatorial professionals.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["art and heritage appreciation", "public education", "preservation of material culture", "exhibition design", "historical research"],
+    "per": ["meticulous and detail-oriented", "culturally sensitive", "organised and systematic", "creative yet scholarly", "patient with long projects"],
+    "subj": ["Art History", "Archaeology", "History", "Conservation", "Museum Studies"],
+    "tech": ["collection management database systems", "exhibition design and installation", "conservation and preservation techniques", "cataloguing and documentation standards", "digital heritage tools", "public presentation and storytelling"],
+    "deg": ["B.A", "MASTERS in discipline"],
+    "apt": [
+      { "value": "visual_spatial", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "linguistic", "weight": 2 },
+      { "value": "interpersonal", "weight": 2 }
+    ],
+    "we": [
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 3 },
+      { "value": "collaborative_preference", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "B.A", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "MASTERS in discipline", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Archaeology",
+    "title": "Field Archaeologist / Heritage Excavation Specialist",
+    "cat": "Humanities",
+    "sub": "Archaeology",
+    "intro": "Field Archaeology involves the systematic excavation, analysis, and interpretation of material remains to reconstruct past human activity. Unlike purely academic history, this career centres on hands-on fieldwork, site excavation, and heritage management.",
+    "whoShouldPursue": [
+      "Physically fit and comfortable working outdoors in rugged field conditions",
+      "Strong spatial reasoning and ability to document and map excavation layers",
+      "Fascinated by ancient civilisations and material culture",
+      "Patient and methodical with meticulous recording and classification work"
+    ],
+    "eligibility": [
+      "Bachelor's in History or Archaeology with coursework in archaeology",
+      "Postgraduate Diploma in Archaeology for professional field roles (ASI and state departments)",
+      "Master's or PhD for senior research and project leadership positions",
+      "Field training in excavation techniques, survey methods, and artefact handling"
+    ],
+    "workDesc": "Conducting excavation campaigns, analysing recovered artefacts, preparing site reports, and working with government agencies to protect and manage heritage sites.",
+    "workExamples": [
+      "Leading a seasonal excavation at a Harappan settlement in Gujarat",
+      "Conducting surface survey and pottery analysis at a newly discovered megalithic site",
+      "Preparing conservation management plans for an ASI-protected monument"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-10 LPA",
+    "salarySenior": "12-20 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+4%",
+    "topIndustries": ["Archaeological Survey of India", "State Archaeology Departments", "Universities and Research Institutes", "Heritage Consulting Firms", "Cultural Tourism"],
+    "futureOutlook": "Government investment in heritage preservation and expanding archaeology degree programmes will maintain steady, though competitive, demand for field professionals.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["excavation and discovery", "ancient civilisations", "outdoor fieldwork", "material culture analysis", "heritage preservation"],
+    "per": ["methodical and patient", "physically resilient", "detail-oriented and systematic", "self-disciplined", "collaborative in field teams"],
+    "subj": ["Archaeology", "History", "Geology", "Anthropology", "Conservation"],
+    "tech": ["excavation and stratigraphic recording", "site survey and mapping (GIS)", "artefact documentation and cataloguing", "photographic and photogrammetric recording", "geophysical survey methods", "laboratory analysis of finds"],
+    "deg": ["BA/MA History or Archaeology", "PG Diploma in Archaeology for field roles"],
+    "apt": [
+      { "value": "visual_spatial", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "naturalist", "weight": 2 },
+      { "value": "bodily_kinesthetic", "weight": 1 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "prefers_quiet", "weight": 1 },
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_autonomy", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "BA/MA History or Archaeology", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "PG Diploma in Archaeology  for field roles", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Archival Studies",
+    "title": "Archivist / Records Management Specialist",
+    "cat": "Humanities",
+    "sub": "Archival Studies",
+    "intro": "Archival Studies focuses on the collection, preservation, organisation, and access of historical records and documents. Archivists ensure that institutional and cultural memory is systematically maintained for research and legal purposes.",
+    "whoShouldPursue": [
+      "Extremely detail-oriented with strong organisational instincts",
+      "Comfortable working independently with large volumes of documentary material",
+      "Interested in history, information science, and cultural preservation",
+      "Prefers a structured, methodical work environment with minimal disruption"
+    ],
+    "eligibility": [
+      "Bachelor's degree in History, Library Science, or a related humanities discipline",
+      "Master's in Archival Studies, Library Science, or Information Management",
+      "M.Lib qualification is highly relevant for library-adjacent archival roles",
+      "Familiarity with cataloguing standards, metadata schemas, and digital preservation"
+    ],
+    "workDesc": "Appraising, acquiring, organising, and preserving collections of records, manuscripts, and digital files while providing access to researchers and the public.",
+    "workExamples": [
+      "Appraising and accessioning a donated collection of 20th-century Indian political correspondence",
+      "Digitising fragile historical manuscripts using conservation-grade scanning equipment",
+      "Creating finding aids and metadata records for a state government archive"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-9 LPA",
+    "salarySenior": "10-16 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+3%",
+    "topIndustries": ["National and State Archives", "Universities and Libraries", "Government Record Offices", "Museums and Cultural Institutions", "Corporate Records Management"],
+    "futureOutlook": "Digitisation mandates and open-access initiatives are creating new roles, but overall growth remains steady and competitive.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["preservation of records", "historical documentation", "organisational precision", "information access", "cultural memory stewardship"],
+    "per": ["meticulous and orderly", "methodical and systematic", "quiet and focused", "patient with repetitive detail work", "trustworthy and discreet"],
+    "subj": ["History", "Information Science", "Archival Studies", "Library Science", "Records Management"],
+    "tech": ["Records Management", "Archival Appraisal", "Digitisation", "Cataloguing", "Metadata Standards", "Preservation Conservation", "Digital Preservation"],
+    "deg": ["M.LIB", "B.A"],
+    "apt": [
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "linguistic", "weight": 2 },
+      { "value": "intrapersonal", "weight": 2 }
+    ],
+    "we": [
+      { "value": "prefers_quiet", "weight": 3 },
+      { "value": "prefers_structure", "weight": 3 },
+      { "value": "independent_preference", "weight": 3 },
+      { "value": "prefers_formal_setting", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "M.LIB", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "B.A", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Development Studies",
+    "title": "Development Professional / Social Policy Analyst",
+    "cat": "Humanities",
+    "sub": "Development Studies",
+    "intro": "Development Studies examines the social, economic, and political dimensions of poverty, inequality, and progress in the Global South. Professionals work across government, NGOs, and international organisations to design and evaluate interventions that improve livelihoods.",
+    "whoShouldPursue": [
+      "Deep commitment to social justice, poverty reduction, and equitable development",
+      "Strong analytical and research skills applied to real-world social problems",
+      "Comfortable working in multicultural and cross-disciplinary teams",
+      "Willingness to work in challenging field environments across rural and urban India"
+    ],
+    "eligibility": [
+      "Bachelor's degree in Social Sciences, Humanities, or related disciplines",
+      "Master's in Development Studies, Public Policy, or Social Work for professional roles",
+      "Fieldwork experience with NGOs or government programmes is highly valued",
+      "Coursework in economics, sociology, or statistics strengthens candidacy"
+    ],
+    "workDesc": "Designing and monitoring social programmes, conducting impact assessments, analysing policy, and liaising between communities, governments, and funding agencies.",
+    "workExamples": [
+      "Evaluating the impact of a rural livelihood programme across three Indian states",
+      "Writing grant proposals and donor reports for a women's empowerment initiative",
+      "Analysing government policy data on education access in tribal districts"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "3-6 LPA",
+    "salaryMedian": "7-12 LPA",
+    "salarySenior": "15-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+9%",
+    "topIndustries": ["NGOs and Civil Society Organisations", "United Nations and International Agencies", "Government Social Welfare Departments", "Consulting and Research Firms", "Philanthropic Foundations"],
+    "futureOutlook": "Sustainable Development Goals and government welfare expansion will sustain strong demand for trained development professionals across sectors.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["social impact and equity", "community development", "policy analysis", "poverty alleviation", "cross-cultural engagement"],
+    "per": ["empathetic and mission-driven", "analytical yet pragmatic", "resilient under challenging conditions", "collaborative across hierarchies", "self-motivated in ambiguous environments"],
+    "subj": ["Sociology", "Economics", "Political Science", "Anthropology", "Public Policy"],
+    "tech": ["Impact Assessment", "Program Monitoring", "Grant Writing", "Stakeholder Engagement", "Policy Research", "Data Analysis", "Report Writing"],
+    "deg": ["B.A", "BSW/MSW"],
+    "apt": [
+      { "value": "interpersonal", "weight": 3 },
+      { "value": "emotional_intelligence", "weight": 2 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "naturalist", "weight": 1 },
+      { "value": "linguistic", "weight": 1 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_formal_setting", "weight": 1 },
+      { "value": "prefers_autonomy", "weight": 2 },
+      { "value": "independent_preference", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "B.A", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "BSW/MSW", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "International Relations",
+    "title": "International Relations Analyst / Foreign Policy Specialist",
+    "cat": "Humanities",
+    "sub": "International Relations",
+    "intro": "International Relations studies the interactions between nations, international organisations, and global governance systems. Professionals analyse foreign policy, diplomatic strategy, and geopolitical dynamics in government, think tanks, and multinational settings.",
+    "whoShouldPursue": [
+      "Strong interest in global geopolitics, diplomacy, and international law",
+      "Excellent analytical and writing skills with ability to synthesise complex information",
+      "Comfortable with ambiguity and rapidly shifting political landscapes",
+      "Multilingual abilities and cross-cultural sensitivity are valued assets"
+    ],
+    "eligibility": [
+      "Bachelor's degree in Political Science, International Relations, or History",
+      "Master's in International Relations, Strategic Studies, or Public Policy preferred",
+      "Competitive examinations (UPSC, Civil Services) are a common entry route into government IR roles",
+      "PhD or M.Phil for academic and research-focused careers"
+    ],
+    "workDesc": "Monitoring and interpreting global political events, drafting policy briefs, conducting diplomatic research, and advising government or organisational leadership on international strategy.",
+    "workExamples": [
+      "Writing a policy brief on India's trade relations with ASEAN nations for a think tank",
+      "Analysing voting patterns and resolutions at the United Nations General Assembly",
+      "Conducting research on South Asian security dynamics for an academic journal"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "4-6 LPA",
+    "salaryMedian": "8-14 LPA",
+    "salarySenior": "18-30 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+7%",
+    "topIndustries": ["Ministry of External Affairs and Government", "Think Tanks and Policy Research", "International Organisations (UN, World Bank)", "Multinational Corporations", "Media and Journalism"],
+    "futureOutlook": "India's growing global stature and expanding diplomatic footprint will create increasing demand for IR professionals in both government and private sectors.",
+    "minStudyLevel": "Master's",
+    "isEmerging": false,
+    "int": ["global geopolitics", "diplomatic strategy", "international law and policy", "cross-cultural dialogue", "strategic analysis"],
+    "per": ["analytically sharp", "diplomatically tactful", "well-informed and intellectually curious", "composed under pressure", "culturally adept"],
+    "subj": ["Political Science", "International Relations", "History", "Economics", "Law"],
+    "tech": ["geopolitical analysis and forecasting", "policy brief and white paper writing", "diplomatic communication", "quantitative and qualitative policy research", "foreign language proficiency", "strategic risk assessment"],
+    "deg": ["BA/MA Political Science", "M.PHIL/PHD for research careers"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "interpersonal", "weight": 2 },
+      { "value": "linguistic", "weight": 3 },
+      { "value": "pattern_recognition", "weight": 2 }
+    ],
+    "we": [
+      { "value": "prefers_formal_setting", "weight": 3 },
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "self_driven", "weight": 2 },
+      { "value": "prefers_structure", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "BA/MA Political Science", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "M.PHIL/PHD for research careers", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Instructional Design",
+    "title": "Instructional Designer / E-Learning Course Architect",
+    "cat": "Education",
+    "sub": "Instructional Design",
+    "intro": "Instructional Design is the systematic process of creating effective learning experiences by applying educational theory, cognitive science, and multimedia design. Professionals architect courses, curricula, and learning modules for digital and blended environments.",
+    "whoShouldPursue": [
+      "Strong blend of creativity and systematic thinking applied to education",
+      "Excellent writing and visual communication skills for content development",
+      "Interested in how people learn and how to optimise educational outcomes",
+      "Comfortable with e-learning authoring tools and learning management systems"
+    ],
+    "eligibility": [
+      "Bachelor's degree in Education, Humanities, or a related field",
+      "Master's in Education, Instructional Design, or Educational Technology preferred",
+      "Proficiency with e-learning tools (Articulate, Captivate, or similar)",
+      "Knowledge of learning theories, assessment design, and UX principles"
+    ],
+    "workDesc": "Analysing learning needs, designing course structures, developing multimedia content, and evaluating programme effectiveness in collaboration with subject-matter experts.",
+    "workExamples": [
+      "Designing a six-module online certificate course on data literacy for government employees",
+      "Building interactive branching scenarios for a corporate compliance training programme",
+      "Conducting learner analysis and iterating course content based on completion and assessment data"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "4-6 LPA",
+    "salaryMedian": "7-12 LPA",
+    "salarySenior": "14-22 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+11%",
+    "topIndustries": ["EdTech Companies", "Corporate Learning and Development", "Higher Education Institutions", "Government Skill Development Programmes", "Publishing and Media"],
+    "futureOutlook": "India's booming EdTech sector, online programme mandates, and corporate upskilling budgets will drive sustained high demand for skilled instructional designers.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": true,
+    "int": ["learning experience design", "educational technology", "content creation and storytelling", "systematic course development", "user-centred design"],
+    "per": ["creative yet methodical", "organised and detail-oriented", "collaborative with subject experts", "analytical about learner outcomes", "adaptable to evolving tools"],
+    "subj": ["Education", "Instructional Design", "Cognitive Psychology", "Communications", "Graphic Design"],
+    "tech": ["E-Learning Authoring Tools", "Learning Management Systems", "Curriculum Design", "Storyboarding", "Assessment Design", "User Experience Design", "Learning Analytics"],
+    "deg": ["B.A", "MASTERS in discipline"],
+    "apt": [
+      { "value": "visual_spatial", "weight": 2 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "linguistic", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 2 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "prefers_structure", "weight": 3 },
+      { "value": "collaborative_preference", "weight": 2 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "B.A", "specialization": null, "priority": "PRIMARY" },
+      { "degree": "MASTERS in discipline", "specialization": null, "priority": "PRIMARY" }
+    ]
+  }
+]

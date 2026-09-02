@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T09:35:48.444Z",
+  "generatedAt": "2026-09-02T09:15:52.758Z",
   "mode": "after",
   "specificityEnabled": true,
   "profileCount": 23,
@@ -65,15 +65,15 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         }
       ],
       "top10": [
@@ -122,18 +122,29 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Chiropractor",
+          "name": "Prosthetist & Orthotist",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -167,17 +178,6 @@
         },
         {
           "name": "Podiatrist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Prosthetist & Orthotist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -234,18 +234,29 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Chiropractor",
+          "name": "Prosthetist & Orthotist",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -279,28 +290,6 @@
         },
         {
           "name": "Podiatrist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Prosthetist & Orthotist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -408,28 +397,38 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "Battery Technology Engineer",
+          "category": "Environment & Sustainability",
+          "family": "environment",
+          "score": 48,
+          "conf": 33,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "presentFamiliesTop10": [
         "medicine",
         "engineering",
-        "lifescience",
-        "agriculture"
+        "lifescience"
       ],
-      "distinctFamiliesTop10": 4,
+      "distinctFamiliesTop10": 3,
       "scoreDist": {
         "min": 48,
         "max": 50,
         "avg": 48
       },
       "scoreSpreadTop10": 2,
-      "maxDupScoreTop10": 5,
+      "maxDupScoreTop10": 6,
       "confDist": {
         "levels": {
           "MODERATE": 3,
           "LOW": 17
         },
-        "min": 30,
+        "min": 31,
         "max": 46
       },
       "prefBehavior": null,
@@ -1311,8 +1310,7 @@
         "agriculture"
       ],
       "expectedHitTop10": [
-        "medicine",
-        "agriculture"
+        "medicine"
       ],
       "top5": [
         {
@@ -1349,18 +1347,18 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Chiropractor",
+          "name": "Prosthetist & Orthotist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -1406,18 +1404,29 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Chiropractor",
+          "name": "Prosthetist & Orthotist",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -1461,18 +1470,7 @@
           "nDims": 1
         },
         {
-          "name": "Prosthetist & Orthotist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Respiratory Therapist",
+          "name": "Surgeon",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -1518,18 +1516,29 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Chiropractor",
+          "name": "Prosthetist & Orthotist",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -1563,28 +1572,6 @@
         },
         {
           "name": "Podiatrist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Prosthetist & Orthotist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -1703,27 +1690,37 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "Clinical Research",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 33,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "presentFamiliesTop10": [
         "medicine",
-        "engineering",
-        "agriculture"
+        "engineering"
       ],
-      "distinctFamiliesTop10": 3,
+      "distinctFamiliesTop10": 2,
       "scoreDist": {
         "min": 48,
         "max": 50,
         "avg": 48
       },
       "scoreSpreadTop10": 2,
-      "maxDupScoreTop10": 6,
+      "maxDupScoreTop10": 7,
       "confDist": {
         "levels": {
           "MODERATE": 3,
           "LOW": 17
         },
-        "min": 30,
+        "min": 33,
         "max": 46
       },
       "prefBehavior": null,
@@ -2175,6 +2172,7 @@
       ],
       "expectedHitTop10": [
         "humanities",
+        "law",
         "government"
       ],
       "top5": [
@@ -2313,9 +2311,9 @@
           "nDims": 1
         },
         {
-          "name": "Development Studies",
-          "category": "Humanities",
-          "family": "humanities",
+          "name": "Law",
+          "category": "Law",
+          "family": "law",
           "score": 48,
           "conf": 32,
           "level": "LOW",
@@ -2324,9 +2322,9 @@
           "nDims": 1
         },
         {
-          "name": "Documentary Production",
-          "category": "Media & Communication",
-          "family": "media",
+          "name": "Social Work and Development Sector",
+          "category": "Psychology & Social Sciences",
+          "family": "psychology",
           "score": 48,
           "conf": 32,
           "level": "LOW",
@@ -2335,11 +2333,11 @@
           "nDims": 1
         },
         {
-          "name": "International Relations",
-          "category": "Humanities",
-          "family": "humanities",
+          "name": "Air Traffic Management",
+          "category": "Logistics & Supply Chain",
+          "family": "logistics",
           "score": 48,
-          "conf": 32,
+          "conf": 23,
           "level": "LOW",
           "dims": 1,
           "pref": false,
@@ -2419,39 +2417,6 @@
           "family": "humanities",
           "score": 48,
           "conf": 33,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Development Studies",
-          "category": "Humanities",
-          "family": "humanities",
-          "score": 48,
-          "conf": 32,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Documentary Production",
-          "category": "Media & Communication",
-          "family": "media",
-          "score": 48,
-          "conf": 32,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "International Relations",
-          "category": "Humanities",
-          "family": "humanities",
-          "score": 48,
-          "conf": 32,
           "level": "LOW",
           "dims": 1,
           "pref": false,
@@ -2566,15 +2531,50 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "Culinary Arts",
+          "category": "Hospitality & Tourism",
+          "family": "hospitality",
+          "score": 48,
+          "conf": 23,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Event Management",
+          "category": "Hospitality & Tourism",
+          "family": "hospitality",
+          "score": 48,
+          "conf": 23,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Filmmaking and Direction",
+          "category": "Media & Communication",
+          "family": "media",
+          "score": 48,
+          "conf": 23,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "presentFamiliesTop10": [
         "media",
         "humanities",
         "government",
-        "psychology"
+        "psychology",
+        "law",
+        "logistics"
       ],
-      "distinctFamiliesTop10": 4,
+      "distinctFamiliesTop10": 6,
       "scoreDist": {
         "min": 48,
         "max": 48,
@@ -3515,11 +3515,11 @@
           "nDims": 3
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 54,
-          "conf": 30,
+          "name": "Bioinformatics",
+          "category": "Life Sciences",
+          "family": "lifescience",
+          "score": 49,
+          "conf": 37,
           "level": "LOW",
           "dims": 3,
           "pref": false,
@@ -3569,17 +3569,6 @@
           "level": "MODERATE",
           "dims": 3,
           "pref": true,
-          "nDims": 3
-        },
-        {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 54,
-          "conf": 30,
-          "level": "LOW",
-          "dims": 3,
-          "pref": false,
           "nDims": 3
         },
         {
@@ -3636,6 +3625,17 @@
           "dims": 2,
           "pref": false,
           "nDims": 2
+        },
+        {
+          "name": "Dairy Technology",
+          "category": "Agriculture",
+          "family": "agriculture",
+          "score": 49,
+          "conf": 28,
+          "level": "LOW",
+          "dims": 2,
+          "pref": false,
+          "nDims": 2
         }
       ],
       "top20": [
@@ -3681,17 +3681,6 @@
           "level": "MODERATE",
           "dims": 3,
           "pref": true,
-          "nDims": 3
-        },
-        {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 54,
-          "conf": 30,
-          "level": "LOW",
-          "dims": 3,
-          "pref": false,
           "nDims": 3
         },
         {
@@ -3858,6 +3847,17 @@
           "dims": 2,
           "pref": false,
           "nDims": 2
+        },
+        {
+          "name": "Nutrition and Dietetics",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 49,
+          "conf": 28,
+          "level": "LOW",
+          "dims": 2,
+          "pref": false,
+          "nDims": 2
         }
       ],
       "presentFamiliesTop10": [
@@ -3874,7 +3874,7 @@
         "avg": 50
       },
       "scoreSpreadTop10": 6,
-      "maxDupScoreTop10": 5,
+      "maxDupScoreTop10": 6,
       "confDist": {
         "levels": {
           "LOW": 19,
@@ -4778,17 +4778,6 @@
           "nDims": 3
         },
         {
-          "name": "Linguistics",
-          "category": "Humanities",
-          "family": "humanities",
-          "score": 49,
-          "conf": 27,
-          "level": "LOW",
-          "dims": 2,
-          "pref": false,
-          "nDims": 2
-        },
-        {
           "name": "Anthropology",
           "category": "Humanities",
           "family": "humanities",
@@ -4820,6 +4809,17 @@
           "dims": 2,
           "pref": false,
           "nDims": 2
+        },
+        {
+          "name": "Corporate Training",
+          "category": "Education",
+          "family": "education",
+          "score": 49,
+          "conf": 23,
+          "level": "LOW",
+          "dims": 2,
+          "pref": false,
+          "nDims": 2
         }
       ],
       "top10": [
@@ -4833,17 +4833,6 @@
           "dims": 3,
           "pref": false,
           "nDims": 3
-        },
-        {
-          "name": "Linguistics",
-          "category": "Humanities",
-          "family": "humanities",
-          "score": 49,
-          "conf": 27,
-          "level": "LOW",
-          "dims": 2,
-          "pref": false,
-          "nDims": 2
         },
         {
           "name": "Anthropology",
@@ -4932,6 +4921,17 @@
           "dims": 2,
           "pref": false,
           "nDims": 2
+        },
+        {
+          "name": "Human-AI Interaction Designer",
+          "category": "Design & Creative",
+          "family": "design",
+          "score": 49,
+          "conf": 23,
+          "level": "LOW",
+          "dims": 2,
+          "pref": false,
+          "nDims": 2
         }
       ],
       "top20": [
@@ -4945,17 +4945,6 @@
           "dims": 3,
           "pref": false,
           "nDims": 3
-        },
-        {
-          "name": "Linguistics",
-          "category": "Humanities",
-          "family": "humanities",
-          "score": 49,
-          "conf": 27,
-          "level": "LOW",
-          "dims": 2,
-          "pref": false,
-          "nDims": 2
         },
         {
           "name": "Anthropology",
@@ -5145,9 +5134,20 @@
           "nDims": 2
         },
         {
-          "name": "Broadcast Journalism",
-          "category": "Media & Communication",
-          "family": "media",
+          "name": "Clinical Psychology",
+          "category": "Psychology & Social Sciences",
+          "family": "psychology",
+          "score": 49,
+          "conf": 22,
+          "level": "LOW",
+          "dims": 2,
+          "pref": false,
+          "nDims": 2
+        },
+        {
+          "name": "Human Resource Management",
+          "category": "Business & Management",
+          "family": "business",
           "score": 49,
           "conf": 22,
           "level": "LOW",
@@ -5161,9 +5161,10 @@
         "humanities",
         "education",
         "media",
-        "medicine"
+        "medicine",
+        "design"
       ],
-      "distinctFamiliesTop10": 5,
+      "distinctFamiliesTop10": 6,
       "scoreDist": {
         "min": 49,
         "max": 55,
@@ -5229,18 +5230,18 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Chiropractor",
+          "name": "Prosthetist & Orthotist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -5286,18 +5287,29 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Chiropractor",
+          "name": "Prosthetist & Orthotist",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -5341,18 +5353,7 @@
           "nDims": 1
         },
         {
-          "name": "Prosthetist & Orthotist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Respiratory Therapist",
+          "name": "Surgeon",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -5398,18 +5399,29 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Chiropractor",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Chiropractor",
+          "name": "Prosthetist & Orthotist",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 38,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -5443,28 +5455,6 @@
         },
         {
           "name": "Podiatrist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Prosthetist & Orthotist",
-          "category": "Healthcare & Medicine",
-          "family": "medicine",
-          "score": 48,
-          "conf": 38,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Respiratory Therapist",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -5583,27 +5573,37 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "Environmental Engineering",
+          "category": "Engineering",
+          "family": "engineering",
+          "score": 48,
+          "conf": 33,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "presentFamiliesTop10": [
         "medicine",
-        "engineering",
-        "agriculture"
+        "engineering"
       ],
-      "distinctFamiliesTop10": 3,
+      "distinctFamiliesTop10": 2,
       "scoreDist": {
         "min": 48,
         "max": 62,
         "avg": 49
       },
       "scoreSpreadTop10": 14,
-      "maxDupScoreTop10": 6,
+      "maxDupScoreTop10": 7,
       "confDist": {
         "levels": {
           "MODERATE": 3,
           "LOW": 17
         },
-        "min": 30,
+        "min": 33,
         "max": 46
       },
       "prefBehavior": {
@@ -6415,17 +6415,6 @@
           "nDims": 1
         },
         {
-          "name": "Media Planning",
-          "category": "Media & Communication",
-          "family": "media",
-          "score": 48,
-          "conf": 32,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
           "name": "Retail Banking",
           "category": "Finance & Accounting",
           "family": "finance",
@@ -6440,6 +6429,17 @@
           "name": "Advertising",
           "category": "Marketing & Advertising",
           "family": "business",
+          "score": 48,
+          "conf": 23,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "AgriTech",
+          "category": "Agriculture",
+          "family": "agriculture",
           "score": 48,
           "conf": 23,
           "level": "LOW",
@@ -6615,17 +6615,6 @@
           "nDims": 1
         },
         {
-          "name": "International Relations",
-          "category": "Humanities",
-          "family": "humanities",
-          "score": 48,
-          "conf": 32,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
           "name": "Air Traffic Management",
           "category": "Logistics & Supply Chain",
           "family": "logistics",
@@ -6651,6 +6640,17 @@
           "name": "Anthropology",
           "category": "Humanities",
           "family": "humanities",
+          "score": 48,
+          "conf": 23,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Aviation",
+          "category": "Hospitality & Tourism",
+          "family": "hospitality",
           "score": 48,
           "conf": 23,
           "level": "LOW",
@@ -6721,17 +6721,6 @@
           "family": "media",
           "score": 48,
           "conf": 33,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "International Relations",
-          "category": "Humanities",
-          "family": "humanities",
-          "score": 48,
-          "conf": 32,
           "level": "LOW",
           "dims": 1,
           "pref": false,
@@ -6879,6 +6868,17 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "History and Archaeology",
+          "category": "Humanities",
+          "family": "humanities",
+          "score": 48,
+          "conf": 23,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "presentFamiliesTop10": [
@@ -6886,10 +6886,11 @@
         "media",
         "government",
         "psychology",
+        "logistics",
         "humanities",
-        "logistics"
+        "hospitality"
       ],
-      "distinctFamiliesTop10": 6,
+      "distinctFamiliesTop10": 7,
       "scoreDist": {
         "min": 48,
         "max": 60,
@@ -7399,18 +7400,18 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
+          "name": "Agri Business Management",
           "category": "Agriculture",
           "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "score": 48,
+          "conf": 33,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Agri Business Management",
+          "name": "AgriTech",
           "category": "Agriculture",
           "family": "agriculture",
           "score": 48,
@@ -7450,17 +7451,6 @@
           "family": "lifescience",
           "score": 50,
           "conf": 31,
-          "level": "LOW",
-          "dims": 2,
-          "pref": false,
-          "nDims": 2
-        },
-        {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
           "level": "LOW",
           "dims": 2,
           "pref": false,
@@ -7531,6 +7521,17 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "Hospital Administration",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 33,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "top20": [
@@ -7562,17 +7563,6 @@
           "family": "lifescience",
           "score": 50,
           "conf": 31,
-          "level": "LOW",
-          "dims": 2,
-          "pref": false,
-          "nDims": 2
-        },
-        {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
           "level": "LOW",
           "dims": 2,
           "pref": false,
@@ -7753,6 +7743,17 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "Sports Physiotherapy",
+          "category": "Sports & Fitness",
+          "family": "sports",
+          "score": 48,
+          "conf": 33,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "presentFamiliesTop10": [
@@ -7769,13 +7770,13 @@
         "avg": 48
       },
       "scoreSpreadTop10": 2,
-      "maxDupScoreTop10": 6,
+      "maxDupScoreTop10": 7,
       "confDist": {
         "levels": {
           "MODERATE": 2,
           "LOW": 18
         },
-        "min": 30,
+        "min": 31,
         "max": 42
       },
       "prefBehavior": null,
@@ -7830,7 +7831,7 @@
           "nDims": 1
         },
         {
-          "name": "Architectural Technology",
+          "name": "Architecture",
           "category": "Architecture & Planning",
           "family": "architecture",
           "score": 59,
@@ -7841,9 +7842,9 @@
           "nDims": 1
         },
         {
-          "name": "Architecture",
-          "category": "Architecture & Planning",
-          "family": "architecture",
+          "name": "Artificial Intelligence",
+          "category": "Data & AI",
+          "family": "technology",
           "score": 59,
           "conf": 28,
           "level": "LOW",
@@ -7887,17 +7888,6 @@
           "nDims": 1
         },
         {
-          "name": "Architectural Technology",
-          "category": "Architecture & Planning",
-          "family": "architecture",
-          "score": 59,
-          "conf": 28,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
           "name": "Architecture",
           "category": "Architecture & Planning",
           "family": "architecture",
@@ -7912,17 +7902,6 @@
           "name": "Artificial Intelligence",
           "category": "Data & AI",
           "family": "technology",
-          "score": 59,
-          "conf": 28,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Carbon Accounting Specialist",
-          "category": "Environment & Sustainability",
-          "family": "environment",
           "score": 59,
           "conf": 28,
           "level": "LOW",
@@ -7956,6 +7935,28 @@
           "name": "Civil Engineering",
           "category": "Engineering",
           "family": "engineering",
+          "score": 59,
+          "conf": 28,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Climate Science",
+          "category": "Environment & Sustainability",
+          "family": "environment",
+          "score": 59,
+          "conf": 28,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Data Engineering",
+          "category": "Data & AI",
+          "family": "technology",
           "score": 59,
           "conf": 28,
           "level": "LOW",
@@ -7999,17 +8000,6 @@
           "nDims": 1
         },
         {
-          "name": "Architectural Technology",
-          "category": "Architecture & Planning",
-          "family": "architecture",
-          "score": 59,
-          "conf": 28,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
           "name": "Architecture",
           "category": "Architecture & Planning",
           "family": "architecture",
@@ -8024,17 +8014,6 @@
           "name": "Artificial Intelligence",
           "category": "Data & AI",
           "family": "technology",
-          "score": 59,
-          "conf": 28,
-          "level": "LOW",
-          "dims": 1,
-          "pref": false,
-          "nDims": 1
-        },
-        {
-          "name": "Carbon Accounting Specialist",
-          "category": "Environment & Sustainability",
-          "family": "environment",
           "score": 59,
           "conf": 28,
           "level": "LOW",
@@ -8175,9 +8154,31 @@
           "nDims": 1
         },
         {
-          "name": "Media Planning",
-          "category": "Media & Communication",
-          "family": "media",
+          "name": "Retail Banking",
+          "category": "Finance & Accounting",
+          "family": "finance",
+          "score": 59,
+          "conf": 28,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Robotics Engineering",
+          "category": "Engineering",
+          "family": "engineering",
+          "score": 59,
+          "conf": 28,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
+        },
+        {
+          "name": "Software Engineering",
+          "category": "Technology & Software",
+          "family": "technology",
           "score": 59,
           "conf": 28,
           "level": "LOW",
@@ -8799,9 +8800,9 @@
           "nDims": 0
         },
         {
-          "name": "Agronomy",
-          "category": "Agriculture",
-          "family": "agriculture",
+          "name": "AI Governance Specialist",
+          "category": "Data & AI",
+          "family": "technology",
           "score": 0,
           "conf": 11,
           "level": "LOW",
@@ -8810,9 +8811,9 @@
           "nDims": 0
         },
         {
-          "name": "AI Governance Specialist",
-          "category": "Data & AI",
-          "family": "technology",
+          "name": "Air Traffic Management",
+          "category": "Logistics & Supply Chain",
+          "family": "logistics",
           "score": 0,
           "conf": 11,
           "level": "LOW",
@@ -8911,17 +8912,6 @@
           "nDims": 0
         },
         {
-          "name": "Agronomy",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 0,
-          "conf": 11,
-          "level": "LOW",
-          "dims": 0,
-          "pref": false,
-          "nDims": 0
-        },
-        {
           "name": "AI Governance Specialist",
           "category": "Data & AI",
           "family": "technology",
@@ -8999,17 +8989,6 @@
           "nDims": 0
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 0,
-          "conf": 11,
-          "level": "LOW",
-          "dims": 0,
-          "pref": false,
-          "nDims": 0
-        },
-        {
           "name": "AR/VR Development",
           "category": "Technology & Software",
           "family": "technology",
@@ -9021,9 +9000,9 @@
           "nDims": 0
         },
         {
-          "name": "Archaeology",
-          "category": "Humanities",
-          "family": "humanities",
+          "name": "Architecture",
+          "category": "Architecture & Planning",
+          "family": "architecture",
           "score": 0,
           "conf": 11,
           "level": "LOW",
@@ -9032,9 +9011,31 @@
           "nDims": 0
         },
         {
-          "name": "Architectural Technology",
-          "category": "Architecture & Planning",
-          "family": "architecture",
+          "name": "Artificial Intelligence",
+          "category": "Data & AI",
+          "family": "technology",
+          "score": 0,
+          "conf": 11,
+          "level": "LOW",
+          "dims": 0,
+          "pref": false,
+          "nDims": 0
+        },
+        {
+          "name": "Audiology",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 0,
+          "conf": 11,
+          "level": "LOW",
+          "dims": 0,
+          "pref": false,
+          "nDims": 0
+        },
+        {
+          "name": "Autonomous Systems Safety Engineer",
+          "category": "Engineering",
+          "family": "engineering",
           "score": 0,
           "conf": 11,
           "level": "LOW",
@@ -9048,9 +9049,10 @@
         "engineering",
         "business",
         "agriculture",
-        "technology"
+        "technology",
+        "logistics"
       ],
-      "distinctFamiliesTop10": 5,
+      "distinctFamiliesTop10": 6,
       "scoreDist": {
         "min": 0,
         "max": 0,
@@ -9118,18 +9120,18 @@
           "nDims": 2
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
+          "name": "Audiology",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 33,
           "level": "LOW",
-          "dims": 2,
+          "dims": 1,
           "pref": false,
-          "nDims": 2
+          "nDims": 1
         },
         {
-          "name": "Audiology",
+          "name": "Chiropractor",
           "category": "Healthcare & Medicine",
           "family": "medicine",
           "score": 48,
@@ -9169,17 +9171,6 @@
           "family": "lifescience",
           "score": 50,
           "conf": 31,
-          "level": "LOW",
-          "dims": 2,
-          "pref": false,
-          "nDims": 2
-        },
-        {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
           "level": "LOW",
           "dims": 2,
           "pref": false,
@@ -9250,6 +9241,17 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "Paramedic",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 48,
+          "conf": 33,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "top20": [
@@ -9281,17 +9283,6 @@
           "family": "lifescience",
           "score": 50,
           "conf": 31,
-          "level": "LOW",
-          "dims": 2,
-          "pref": false,
-          "nDims": 2
-        },
-        {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 49,
-          "conf": 30,
           "level": "LOW",
           "dims": 2,
           "pref": false,
@@ -9472,29 +9463,39 @@
           "dims": 1,
           "pref": false,
           "nDims": 1
+        },
+        {
+          "name": "Forensic Science",
+          "category": "Life Sciences",
+          "family": "lifescience",
+          "score": 48,
+          "conf": 32,
+          "level": "LOW",
+          "dims": 1,
+          "pref": false,
+          "nDims": 1
         }
       ],
       "presentFamiliesTop10": [
         "engineering",
         "medicine",
         "lifescience",
-        "agriculture",
         "architecture"
       ],
-      "distinctFamiliesTop10": 5,
+      "distinctFamiliesTop10": 4,
       "scoreDist": {
         "min": 48,
         "max": 50,
         "avg": 48
       },
       "scoreSpreadTop10": 2,
-      "maxDupScoreTop10": 6,
+      "maxDupScoreTop10": 7,
       "confDist": {
         "levels": {
           "MODERATE": 2,
           "LOW": 18
         },
-        "min": 30,
+        "min": 31,
         "max": 42
       },
       "prefBehavior": null,
@@ -9661,9 +9662,9 @@
           "nDims": 0
         },
         {
-          "name": "Agronomy",
-          "category": "Agriculture",
-          "family": "agriculture",
+          "name": "AI Governance Specialist",
+          "category": "Data & AI",
+          "family": "technology",
           "score": 0,
           "conf": 11,
           "level": "LOW",
@@ -9672,9 +9673,9 @@
           "nDims": 0
         },
         {
-          "name": "AI Governance Specialist",
-          "category": "Data & AI",
-          "family": "technology",
+          "name": "Air Traffic Management",
+          "category": "Logistics & Supply Chain",
+          "family": "logistics",
           "score": 0,
           "conf": 11,
           "level": "LOW",
@@ -9773,17 +9774,6 @@
           "nDims": 0
         },
         {
-          "name": "Agronomy",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 0,
-          "conf": 11,
-          "level": "LOW",
-          "dims": 0,
-          "pref": false,
-          "nDims": 0
-        },
-        {
           "name": "AI Governance Specialist",
           "category": "Data & AI",
           "family": "technology",
@@ -9861,17 +9851,6 @@
           "nDims": 0
         },
         {
-          "name": "Aquaculture",
-          "category": "Agriculture",
-          "family": "agriculture",
-          "score": 0,
-          "conf": 11,
-          "level": "LOW",
-          "dims": 0,
-          "pref": false,
-          "nDims": 0
-        },
-        {
           "name": "AR/VR Development",
           "category": "Technology & Software",
           "family": "technology",
@@ -9883,9 +9862,9 @@
           "nDims": 0
         },
         {
-          "name": "Archaeology",
-          "category": "Humanities",
-          "family": "humanities",
+          "name": "Architecture",
+          "category": "Architecture & Planning",
+          "family": "architecture",
           "score": 0,
           "conf": 11,
           "level": "LOW",
@@ -9894,9 +9873,31 @@
           "nDims": 0
         },
         {
-          "name": "Architectural Technology",
-          "category": "Architecture & Planning",
-          "family": "architecture",
+          "name": "Artificial Intelligence",
+          "category": "Data & AI",
+          "family": "technology",
+          "score": 0,
+          "conf": 11,
+          "level": "LOW",
+          "dims": 0,
+          "pref": false,
+          "nDims": 0
+        },
+        {
+          "name": "Audiology",
+          "category": "Healthcare & Medicine",
+          "family": "medicine",
+          "score": 0,
+          "conf": 11,
+          "level": "LOW",
+          "dims": 0,
+          "pref": false,
+          "nDims": 0
+        },
+        {
+          "name": "Autonomous Systems Safety Engineer",
+          "category": "Engineering",
+          "family": "engineering",
           "score": 0,
           "conf": 11,
           "level": "LOW",
@@ -9910,9 +9911,10 @@
         "engineering",
         "business",
         "agriculture",
-        "technology"
+        "technology",
+        "logistics"
       ],
-      "distinctFamiliesTop10": 5,
+      "distinctFamiliesTop10": 6,
       "scoreDist": {
         "min": 0,
         "max": 0,
@@ -9935,30 +9937,30 @@
   "aggregate": {
     "scoreBuckets": {
       "0": 40,
-      "50-59": 66,
-      "40-49": 351,
+      "50-59": 65,
+      "40-49": 352,
       "60-69": 3
     },
     "confLevels": {
       "MODERATE": 20,
       "LOW": 440
     },
-    "avgFamiliesTop10": 4.7,
+    "avgFamiliesTop10": 4.8,
     "avgScoreSpreadTop10": 3.7,
     "maxDupScoreTop10AcrossProfiles": 10,
     "broadTop5": {
       "Medicine": 6,
       "Biomedical Engineering": 6,
       "Chemical Engineering": 7,
-      "Bioinformatics": 3,
-      "Aquaculture": 6,
+      "Bioinformatics": 4,
+      "Chiropractor": 4,
       "Actuarial Science": 10,
       "Machine Learning Engineering": 6,
       "Additive Manufacturing Engineer": 4,
       "Battery Technology Engineer": 1,
       "Ceramic Technology": 2,
       "Electric Vehicle Technology": 2,
-      "Chiropractor": 2,
+      "Prosthetist & Orthotist": 2,
       "Business Management": 2,
       "Chartered Accountancy": 2,
       "Agri Business Management": 5,
@@ -9981,18 +9983,19 @@
       "Fine Arts": 2,
       "Filmmaking and Direction": 1,
       "Brand Management": 1,
-      "Linguistics": 1,
       "Career Counselling": 1,
       "Corporate Communication": 1,
+      "Corporate Training": 1,
       "Software Engineering": 1,
       "Company Secretaryship": 1,
       "Entrepreneurship": 1,
       "Financial Planning": 1,
       "Law": 1,
+      "AgriTech": 1,
       "Aerospace Engineering": 3,
       "Agricultural Engineering": 1,
-      "Architectural Technology": 1,
       "Architecture": 1,
+      "Artificial Intelligence": 1,
       "Advertising": 2,
       "Audiology": 1
     },
@@ -10007,5 +10010,5 @@
     ],
     "expectedFamilyHitRate": 14
   },
-  "careersScored": 289
+  "careersScored": 251
 }

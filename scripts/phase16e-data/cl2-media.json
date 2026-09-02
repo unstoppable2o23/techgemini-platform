@@ -1,0 +1,440 @@
+[
+  {
+    "name": "Screenwriting",
+    "title": "Screenwriter",
+    "cat": "Media & Communication",
+    "sub": "Scriptwriting & Narrative",
+    "intro": "Screenwriters craft compelling scripts for films, television series, and digital platforms, shaping narratives through structured dialogue and scene descriptions. The role demands a unique blend of visual storytelling instinct and disciplined adherence to screenplay formatting standards.",
+    "whoShouldPursue": [
+      "Passionate about crafting stories for visual media",
+      "Enjoy working alone for extended creative stretches",
+      "Have a strong sense of dramatic structure and pacing",
+      "Are fascinated by character dialogue and subtext"
+    ],
+    "eligibility": [
+      "Strong command of screenplay format and three-act structure",
+      "Demonstrated writing portfolio or short-film scripts",
+      "Film school training or self-taught through published screenplays",
+      "Understanding of cinematic grammar and visual storytelling"
+    ],
+    "workDesc": "Developing original screenplays or adapting existing material into structured scripts for film, TV, or streaming productions.",
+    "workExamples": [
+      "Writing an original feature-length screenplay for an independent Hindi film",
+      "Adapting a bestselling novel into a limited web-series script for a streaming platform",
+      "Pitching and selling a television pilot to a production house"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-6 LPA",
+    "salaryMedian": "8-15 LPA",
+    "salarySenior": "20-40 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+8%",
+    "topIndustries": ["Film & Television", "OTT/Streaming Platforms", "Advertising & Branded Content", "Gaming & Animation"],
+    "futureOutlook": "Growing demand from OTT platforms is creating more opportunities for skilled screenwriters in Indian and global markets.",
+    "minStudyLevel": "Certificate",
+    "isEmerging": false,
+    "int": ["crafting stories for visual media", "dramatic structure and pacing", "character and dialogue", "cinematic storytelling", "adapting written work to screen"],
+    "per": ["imaginative", "disciplined", "observant", "introspective", "empathetic"],
+    "subj": ["Film Studies", "English Literature", "Drama", "Psychology", "Creative Writing"],
+    "tech": ["screenplay formatting software", "story structure frameworks", "script coverage analysis", "film production knowledge", "dialogue writing techniques", "pitch presentation"],
+    "deg": ["FTII/film school diploma", "BA English Literature + writing practice"],
+    "apt": [
+      { "value": "linguistic", "weight": 3 },
+      { "value": "emotional_intelligence", "weight": 3 },
+      { "value": "visual_spatial", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "intrapersonal", "weight": 1 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 3 },
+      { "value": "prefers_quiet", "weight": 2 },
+      { "value": "prefers_autonomy", "weight": 3 },
+      { "value": "self_driven", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "FTII/ film school diploma", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Broadcast Journalism",
+    "title": "Broadcast Journalist",
+    "cat": "Media & Communication",
+    "sub": "Television & Radio News",
+    "intro": "Broadcast journalists research, write, and present news stories for television and radio platforms, working under strict deadlines in high-pressure newsroom environments. The role combines on-camera or on-air presence with journalistic rigour and real-time editorial judgment.",
+    "whoShouldPursue": [
+      "Comfortable speaking or presenting on camera or microphone",
+      "Thrive under tight deadlines and breaking-news pressure",
+      "Have strong news sense and ethical judgement",
+      "Enjoy field reporting and engaging with diverse sources"
+    ],
+    "eligibility": [
+      "Degree in Journalism or Mass Communication",
+      "Proficiency in news writing and broadcast presentation",
+      "Internship or experience in a newsroom or production studio",
+      "Familiarity with live broadcasting equipment and workflows"
+    ],
+    "workDesc": "Researching, reporting, and presenting news stories for television or radio broadcasts within strict editorial and time constraints.",
+    "workExamples": [
+      "Anchoring a primetime national news bulletin on a Hindi news channel",
+      "Reporting live from a disaster-affected region with a camera crew",
+      "Producing a weekly investigative segment for a radio news programme"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-12 LPA",
+    "salarySenior": "15-30 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "-2%",
+    "topIndustries": ["Television News", "Radio Broadcasting", "Digital News Media", "Government Communication"],
+    "futureOutlook": "Traditional broadcast roles are shrinking, but digital-first news channels and podcast news formats are opening new pathways.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["reporting and current affairs", "on-air communication", "investigative stories", "public affairs", "news production"],
+    "per": ["assertive", "adaptable", "detail-oriented", "outgoing", "empathetic"],
+    "subj": ["Journalism", "Media Studies", "Political Science", "English", "Sociology"],
+    "tech": ["broadcast presentation", "live reporting tools", "video editing basics", "newsroom management systems", "social media for news", "audio mixing for radio"],
+    "deg": ["BA/BM Journalism & Mass Communication", "ANY degree + MA Journalism"],
+    "apt": [
+      { "value": "linguistic", "weight": 3 },
+      { "value": "interpersonal", "weight": 3 },
+      { "value": "emotional_intelligence", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 2 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "prefers_structure", "weight": 3 },
+      { "value": "prefers_formal_setting", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "BA/BM Journalism & Mass Communication", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Documentary Production",
+    "title": "Documentary Producer",
+    "cat": "Media & Communication",
+    "sub": "Non-Fiction Storytelling",
+    "intro": "Documentary producers plan, research, and oversee the creation of long-form non-fiction films that explore real-world issues, cultures, and events. The role blends journalistic research with cinematic craft to produce compelling narratives rooted in truth.",
+    "whoShouldPursue": [
+      "Deeply curious about real-world issues and human stories",
+      "Comfortable with prolonged research and fieldwork",
+      "Can balance artistic vision with factual accuracy",
+      "Are self-motivated and able to manage multi-month projects"
+    ],
+    "eligibility": [
+      "Background in film, journalism, or social sciences",
+      "Strong research and interview skills",
+      "Ability to manage budgets, crews, and post-production",
+      "Portfolio of short documentary work or relevant internships"
+    ],
+    "workDesc": "Leading the end-to-end creation of documentary films from research and scripting through production and post-production.",
+    "workExamples": [
+      "Producing a feature-length documentary on water scarcity in Rajasthan for an international film festival",
+      "Creating a short documentary series on indigenous artisans for a streaming platform",
+      "Shooting and editing an investigative documentary on urban waste management"
+    ],
+    "demandLevel": "Emerging",
+    "salaryEntry": "3-6 LPA",
+    "salaryMedian": "8-18 LPA",
+    "salarySenior": "20-35 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+12%",
+    "topIndustries": ["Film & Television", "Streaming/OTT Platforms", "NGOs & Non-profits", "Journalism & News Media"],
+    "futureOutlook": "Rising demand for non-fiction content on streaming platforms and growing NGO and social-impact funding is driving steady growth.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["exploring real-world issues", "research and investigation", "human stories", "visual storytelling", "social impact"],
+    "per": ["imaginative", "detail-oriented", "empathetic", "methodical", "self-motivated"],
+    "subj": ["Film Studies", "Journalism", "Sociology", "Political Science", "Anthropology"],
+    "tech": ["documentary research", "interview techniques", "story structure for non-fiction", "filming and direction", "video editing", "budget and crew management"],
+    "deg": ["FTII/film school diploma", "ANY degree + MA Journalism"],
+    "apt": [
+      { "value": "linguistic", "weight": 2 },
+      { "value": "emotional_intelligence", "weight": 3 },
+      { "value": "intrapersonal", "weight": 2 },
+      { "value": "interpersonal", "weight": 2 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 2 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_autonomy", "weight": 3 },
+      { "value": "collaborative_preference", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "FTII/ film school diploma", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Technical Writing",
+    "title": "Technical Writer",
+    "cat": "Media & Communication",
+    "sub": "Information Design",
+    "intro": "Technical writers create precise, user-friendly documentation such as user manuals, API references, and software guides that make complex information accessible. The role combines linguistic clarity, logical thinking, and the ability to learn highly technical subject matter.",
+    "whoShouldPursue": [
+      "Enjoy distilling complex ideas into clear, structured content",
+      "Are methodical and detail-oriented by nature",
+      "Have an aptitude for understanding technical systems",
+      "Prefer working independently with minimal supervision"
+    ],
+    "eligibility": [
+      "Strong command of English and technical writing conventions",
+      "Familiarity with documentation tools like Markdown, DITA, or MadCap Flare",
+      "Basic understanding of software development or engineering concepts",
+      "Portfolio of technical documents or help articles"
+    ],
+    "workDesc": "Producing clear, accurate documentation for software products, engineering systems, or technical processes.",
+    "workExamples": [
+      "Writing API reference documentation and developer guides for a SaaS platform",
+      "Creating user manuals and onboarding guides for enterprise software",
+      "Developing internal knowledge-base articles for IT support teams"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "4-7 LPA",
+    "salaryMedian": "8-14 LPA",
+    "salarySenior": "18-30 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+12%",
+    "topIndustries": ["Information Technology", "Software Development", "Manufacturing & Engineering", "Healthcare Technology"],
+    "futureOutlook": "Expanding software product ecosystems and AI-driven tools are increasing demand for skilled technical writers who produce high-quality documentation.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["explaining complex ideas simply", "technical subjects", "documentation and knowledge", "software products", "structured writing"],
+    "per": ["detail-oriented", "methodical", "analytical", "organised", "independent"],
+    "subj": ["English", "Computer Science", "Information Technology", "Engineering", "Linguistics"],
+    "tech": ["technical documentation", "API documentation", "Markdown and DITA", "information architecture", "content management systems", "software product knowledge"],
+    "deg": ["BA English Literature + writing practice", "B.TECH/B.E. Computer Science"],
+    "apt": [
+      { "value": "logical_reasoning", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "linguistic", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 1 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 3 },
+      { "value": "prefers_quiet", "weight": 3 },
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "BA English Literature + writing practice", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Copywriting",
+    "title": "Copywriter",
+    "cat": "Media & Communication",
+    "sub": "Advertising & Marketing Copy",
+    "intro": "Copywriters craft short, persuasive text for advertisements, campaigns, taglines, and marketing materials that drive audience action. The role demands an instinct for consumer psychology, brevity, and the ability to adapt tone and voice across brands and platforms.",
+    "whoShouldPursue": [
+      "Have a natural feel for persuasive and concise language",
+      "Enjoy brainstorming catchy phrases, headlines, and slogans",
+      "Can switch writing styles to match different brand voices",
+      "Are energised by fast-paced, campaign-driven work"
+    ],
+    "eligibility": [
+      "Strong portfolio of advertising or marketing copy samples",
+      "Understanding of consumer behaviour and brand positioning",
+      "Ability to work with creative directors and marketing teams",
+      "Proficiency in both English and regional language copywriting"
+    ],
+    "workDesc": "Writing compelling advertising copy, taglines, product descriptions, and campaign content for brands across digital and print channels.",
+    "workExamples": [
+      "Crafting a tagline and print ad campaign for a new FMCG product launch",
+      "Writing persuasive social media ad copy for an e-commerce brand's sale event",
+      "Developing product descriptions and landing-page copy for a tech startup"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-12 LPA",
+    "salarySenior": "15-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+7%",
+    "topIndustries": ["Advertising Agencies", "Digital Marketing", "Brand Management", "E-commerce"],
+    "futureOutlook": "While AI tools automate basic copy tasks, brands increasingly value human creativity for emotionally resonant and culturally nuanced campaigns.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["persuasive writing", "advertising and campaigns", "consumer behaviour", "brand voice", "marketing"],
+    "per": ["creative", "adaptable", "assertive", "empathetic", "detail-oriented"],
+    "subj": ["English", "Marketing", "Psychology", "Advertising", "Media Studies"],
+    "tech": ["advertising copywriting", "brand voice development", "social media ad copy", "landing page copy", "consumer psychology", "campaign brainstorming"],
+    "deg": ["BA English Literature + writing practice", "BBA/MBA Marketing common"],
+    "apt": [
+      { "value": "linguistic", "weight": 3 },
+      { "value": "emotional_intelligence", "weight": 2 },
+      { "value": "interpersonal", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 1 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "self_driven", "weight": 2 },
+      { "value": "prefers_formal_setting", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "BA English Literature + writing practice", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Photojournalism",
+    "title": "Photojournalist",
+    "cat": "Media & Communication",
+    "sub": "Visual News & Documentary",
+    "intro": "Photojournalists capture powerful images that document news events, social issues, and human stories, combining photographic skill with journalistic integrity. The role demands physical courage, ethical judgement, and the ability to convey complex narratives through a single frame.",
+    "whoShouldPursue": [
+      "Are passionate about visual storytelling and current affairs",
+      "Can work in challenging and sometimes dangerous field conditions",
+      "Have a strong photographic portfolio with a news or documentary focus",
+      "Value truth and accuracy in visual representation"
+    ],
+    "eligibility": [
+      "Proficiency in photography with a focus on news or documentary work",
+      "Understanding of journalistic ethics and press protocols",
+      "Ability to write accurate captions and accompanying text",
+      "Experience shooting in diverse and unpredictable environments"
+    ],
+    "workDesc": "Photographing breaking news, feature stories, and documentary projects for publication in newspapers, magazines, and digital media.",
+    "workExamples": [
+      "Covering a national election with on-ground photo stories for a major English daily",
+      "Documenting the daily lives of migrant workers for a long-form photo essay",
+      "Shooting conflict-zone images for an international wire agency"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "2-5 LPA",
+    "salaryMedian": "5-10 LPA",
+    "salarySenior": "12-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+5%",
+    "topIndustries": ["News Media & Newspapers", "Wire Agencies", "Magazines", "NGOs & Social Impact"],
+    "futureOutlook": "Digital media expansion is sustaining demand, though print decline and freelance competition make the field highly competitive.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["visual storytelling", "current affairs", "documentary photography", "on-ground reporting", "social impact"],
+    "per": ["observant", "adaptable", "independent", "empathetic", "courageous"],
+    "subj": ["Photography", "Journalism", "Media Studies", "Sociology", "Visual Arts"],
+    "tech": ["news photography", "photo essay composition", "caption writing", "photo editing software", "press ethics and protocols", "field shooting"],
+    "deg": ["BFA Photography also available", "ANY degree + photography diploma/portfolio"],
+    "apt": [
+      { "value": "visual_spatial", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 2 },
+      { "value": "linguistic", "weight": 1 },
+      { "value": "emotional_intelligence", "weight": 2 },
+      { "value": "bodily_kinesthetic", "weight": 1 }
+    ],
+    "we": [
+      { "value": "independent_preference", "weight": 3 },
+      { "value": "self_driven", "weight": 3 },
+      { "value": "prefers_autonomy", "weight": 2 },
+      { "value": "collaborative_preference", "weight": 1 }
+    ],
+    "pathways": [
+      { "degree": "ANY degree + photography diploma/portfolio", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Media Planning",
+    "title": "Media Planner",
+    "cat": "Media & Communication",
+    "sub": "Advertising Strategy",
+    "intro": "Media planners research audience data and select the most effective channels and schedules to deliver advertising campaigns within budget. The role sits at the intersection of marketing strategy, analytics, and creative collaboration, requiring both quantitative rigour and market awareness.",
+    "whoShouldPursue": [
+      "Are analytical and comfortable working with data and metrics",
+      "Have a keen interest in advertising trends and consumer media habits",
+      "Can balance creative aspirations with budget constraints",
+      "Enjoy strategic thinking and long-term campaign planning"
+    ],
+    "eligibility": [
+      "Degree in Mass Communication, Marketing, or related field",
+      "Proficiency with media analytics tools and audience measurement systems",
+      "Understanding of digital and traditional media channels",
+      "Strong analytical and budgeting skills"
+    ],
+    "workDesc": "Developing media strategies that identify the optimal mix of channels, timing, and budgets to reach target audiences for advertising campaigns.",
+    "workExamples": [
+      "Designing a multi-channel media plan for a national automobile brand launch",
+      "Allocating digital ad spend across social media, YouTube, and programmatic platforms for a D2C brand",
+      "Negotiating television prime-time slots for a consumer electronics festive campaign"
+    ],
+    "demandLevel": "High",
+    "salaryEntry": "4-6 LPA",
+    "salaryMedian": "8-15 LPA",
+    "salarySenior": "20-35 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+10%",
+    "topIndustries": ["Advertising Agencies", "Media Buying Houses", "Digital Marketing", "Brand Management"],
+    "futureOutlook": "The shift toward data-driven advertising and programmatic buying is increasing demand for media planners who navigate both traditional and digital ecosystems.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["advertising strategy", "media channels", "audience data and analytics", "campaign planning", "marketing"],
+    "per": ["analytical", "organised", "methodical", "adaptable", "detail-oriented"],
+    "subj": ["Marketing", "Statistics", "Media Studies", "Economics", "Business Studies"],
+    "tech": ["media planning tools", "audience measurement", "programmatic buying", "budget allocation", "advertising analytics", "channel strategy"],
+    "deg": ["BA/BM Journalism & Mass Communication", "BBA/MBA Marketing common"],
+    "apt": [
+      { "value": "logical_mathematical", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 2 },
+      { "value": "pattern_recognition", "weight": 2 },
+      { "value": "attention_to_detail", "weight": 1 }
+    ],
+    "we": [
+      { "value": "collaborative_preference", "weight": 3 },
+      { "value": "prefers_structure", "weight": 3 },
+      { "value": "prefers_formal_setting", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "MASS communication preferred", "specialization": null, "priority": "PRIMARY" }
+    ]
+  },
+  {
+    "name": "Publishing",
+    "title": "Publishing Professional",
+    "cat": "Media & Communication",
+    "sub": "Editorial & Book Publishing",
+    "intro": "Publishing professionals oversee the acquisition, editing, production, and distribution of books, journals, and digital publications. The role demands a love of language, sharp editorial judgement, and an understanding of both the creative and commercial dimensions of bringing written works to market.",
+    "whoShouldPursue": [
+      "Have a deep passion for books, reading, and written content",
+      "Are detail-oriented with strong grammatical and editorial instincts",
+      "Can balance creative taste with commercial viability",
+      "Are interested in the business side of content distribution"
+    ],
+    "eligibility": [
+      "Strong command of English and editorial standards",
+      "Experience in editing, proofreading, or manuscript evaluation",
+      "Knowledge of publishing workflows and production processes",
+      "Familiarity with digital publishing platforms and trends"
+    ],
+    "workDesc": "Managing the editorial and production lifecycle of books and publications from manuscript acquisition through to distribution and marketing.",
+    "workExamples": [
+      "Acquiring and editing a debut novelist's manuscript for a major publishing house",
+      "Managing the editorial pipeline for an academic journal with quarterly publication cycles",
+      "Overseeing e-book formatting and distribution across digital platforms"
+    ],
+    "demandLevel": "Medium",
+    "salaryEntry": "3-5 LPA",
+    "salaryMedian": "6-10 LPA",
+    "salarySenior": "15-25 LPA",
+    "salaryCurrency": "INR",
+    "jobGrowth": "+5%",
+    "topIndustries": ["Book Publishing", "Academic & Educational Publishing", "Digital Publishing", "Media & Content Houses"],
+    "futureOutlook": "Print publishing is stabilising while digital and audiobook formats grow, creating hybrid roles that blend traditional editorial skills with digital distribution knowledge.",
+    "minStudyLevel": "Bachelor's",
+    "isEmerging": false,
+    "int": ["books and reading", "editorial content", "manuscript evaluation", "the business of publishing", "written communication"],
+    "per": ["detail-oriented", "methodical", "empathetic", "organised", "independent"],
+    "subj": ["English Literature", "Linguistics", "Journalism", "Business Studies", "Library Science"],
+    "tech": ["manuscript editing", "proofreading and copyediting", "acquisitions", "publishing workflows", "digital publishing", "production management"],
+    "deg": ["BA English Literature + writing practice", "BA English Literature"],
+    "apt": [
+      { "value": "linguistic", "weight": 3 },
+      { "value": "attention_to_detail", "weight": 3 },
+      { "value": "logical_reasoning", "weight": 1 },
+      { "value": "interpersonal", "weight": 1 }
+    ],
+    "we": [
+      { "value": "prefers_formal_setting", "weight": 3 },
+      { "value": "prefers_structure", "weight": 2 },
+      { "value": "collaborative_preference", "weight": 2 }
+    ],
+    "pathways": [
+      { "degree": "BA English Literature", "specialization": null, "priority": "PRIMARY" }
+    ]
+  }
+]

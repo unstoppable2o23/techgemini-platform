@@ -79,6 +79,12 @@ export const PREFERRED_CAREER_ALIASES: Record<string, string> = {
   "psychologist": "Psychology",
   "pharmacist": "Pharmacology",
   "biotechnologist": "Biotechnology Research",
+  // Phase 16E — unambiguous professional-title aliases for newly added careers.
+  "archaeologist": "Archaeology",
+  "linguist": "Linguistics",
+  "curator": "Museum Studies and Curatorship",
+  "copywriter": "Copywriting",
+  "screenwriter": "Screenwriting",
 };
 
 type CareerRef = { id: string; name: string };
