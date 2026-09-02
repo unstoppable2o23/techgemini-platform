@@ -1,0 +1,58 @@
+{
+  "Company Secretaryship": [
+    { "program": "commerce-bcom", "relationshipType": "PRIMARY", "rationale": "Company secretaryship is grounded in commerce study." },
+    { "program": "law-llb", "relationshipType": "COMMON", "rationale": "Corporate-governance law aligns with legal study." },
+    { "program": "accounting", "relationshipType": "COMMON", "rationale": "Financial-corporate skills support the role." }
+  ],
+  "Corporate Law": [
+    { "program": "law-llb", "relationshipType": "PRIMARY", "rationale": "Corporate law builds on the law degree." },
+    { "program": "law-ba-llb", "relationshipType": "COMMON", "rationale": "Integrated law study supports the field." },
+    { "program": "law-llm", "relationshipType": "COMMON", "rationale": "Graduate law supports corporate specialisation." }
+  ],
+  "Cyber Law": [
+    { "program": "law-llb", "relationshipType": "PRIMARY", "rationale": "Cyber law builds on the law degree." },
+    { "program": "law-llm", "relationshipType": "COMMON", "rationale": "Graduate law supports technology specialisation." },
+    { "program": "cyber-security", "relationshipType": "COMMON", "rationale": "Technology understanding supports digital law." }
+  ],
+  "Environmental Law": [
+    { "program": "environmental-law", "relationshipType": "PRIMARY", "rationale": "Environmental law is the direct discipline." },
+    { "program": "law-llb", "relationshipType": "COMMON", "rationale": "Foundational legal study supports the field." },
+    { "program": "environmental-science", "relationshipType": "COMMON", "rationale": "Environmental understanding underpins regulation." }
+  ],
+  "Human Rights Law": [
+    { "program": "law-llb", "relationshipType": "PRIMARY", "rationale": "Human-rights law builds on the law degree." },
+    { "program": "law-llm", "relationshipType": "COMMON", "rationale": "Graduate law supports human-rights specialisation." },
+    { "program": "international-law", "relationshipType": "COMMON", "rationale": "International human-rights law aligns." },
+    { "program": "political-science", "relationshipType": "COMMON", "rationale": "Governance and justice study supports the role." }
+  ],
+  "Intellectual Property Rights": [
+    { "program": "law-llb", "relationshipType": "PRIMARY", "rationale": "IP law builds on the law degree." },
+    { "program": "law-llm", "relationshipType": "COMMON", "rationale": "Graduate law supports IP specialisation." },
+    { "program": "commerce-bcom", "relationshipType": "OPTIONAL", "rationale": "Commercial understanding supports IP practice." }
+  ],
+  "International Law": [
+    { "program": "international-law", "relationshipType": "PRIMARY", "rationale": "International law is the direct discipline." },
+    { "program": "law-llb", "relationshipType": "COMMON", "rationale": "Foundational legal study supports the field." },
+    { "program": "international-relations", "relationshipType": "COMMON", "rationale": "Global-affairs understanding supports international law." }
+  ],
+  "Law": [
+    { "program": "law-llb", "relationshipType": "PRIMARY", "rationale": "The LLB is the direct law degree." },
+    { "program": "law-ba-llb", "relationshipType": "PRIMARY", "rationale": "Integrated BA-LLB is a direct route." },
+    { "program": "law-llm", "relationshipType": "COMMON", "rationale": "Graduate law supports specialisation." }
+  ],
+  "Law Enforcement Studies": [
+    { "program": "criminology", "relationshipType": "PRIMARY", "rationale": "Law-enforcement study aligns with criminology." },
+    { "program": "law-llb", "relationshipType": "COMMON", "rationale": "Legal understanding supports enforcement." },
+    { "program": "political-science", "relationshipType": "COMMON", "rationale": "Public-governance study supports the field." }
+  ],
+  "Legal Research": [
+    { "program": "law-llm", "relationshipType": "PRIMARY", "rationale": "Legal research is grounded in graduate law." },
+    { "program": "law-llb", "relationshipType": "COMMON", "rationale": "Foundational legal study supports research." },
+    { "program": "philosophy", "relationshipType": "RELEVANT", "rationale": "Analytical reasoning supports legal scholarship." }
+  ],
+  "Tax Law": [
+    { "program": "law-llb", "relationshipType": "PRIMARY", "rationale": "Tax law builds on the law degree." },
+    { "program": "law-llm", "relationshipType": "COMMON", "rationale": "Graduate law supports tax specialisation." },
+    { "program": "accounting", "relationshipType": "COMMON", "rationale": "Taxation practice aligns with accounting." }
+  ]
+}

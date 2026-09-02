@@ -1,0 +1,15 @@
+{
+  "phase": "Phase 17",
+  "description": "Database safety baseline captured BEFORE Phase 17 implementation. Source: live DB probe at b0ad8e7.",
+  "capturedAt": "2026-09-03",
+  "counts": {
+    "University": 20,
+    "IndianInstitution": 73969,
+    "Program": 75,
+    "activeCareer": 289,
+    "Degree": 751,
+    "Specialization": 726,
+    "Subject": 59,
+    "CareerEducationPathway": 2111
+  }
+}

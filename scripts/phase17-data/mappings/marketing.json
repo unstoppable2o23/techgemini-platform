@@ -1,0 +1,43 @@
+{
+  "Advertising": [
+    { "program": "advertising", "relationshipType": "PRIMARY", "rationale": "Advertising is the direct discipline." },
+    { "program": "marketing", "relationshipType": "COMMON", "rationale": "Marketing study underpins advertising work." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Creative-communication skills support advertising." }
+  ],
+  "Brand Management": [
+    { "program": "marketing", "relationshipType": "PRIMARY", "rationale": "Brand management is a marketing discipline." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "MBA marketing supports brand strategy." },
+    { "program": "marketing-masters", "relationshipType": "COMMON", "rationale": "Graduate marketing supports advanced brand work." }
+  ],
+  "Digital Marketing": [
+    { "program": "marketing", "relationshipType": "PRIMARY", "rationale": "Digital marketing is a marketing discipline." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Digital-content skills support the field." },
+    { "program": "advertising", "relationshipType": "COMMON", "rationale": "Campaign creation aligns with advertising." },
+    { "program": "data-science", "relationshipType": "OPTIONAL", "rationale": "Campaign analytics builds on data skills." }
+  ],
+  "Growth Marketing": [
+    { "program": "marketing", "relationshipType": "PRIMARY", "rationale": "Growth marketing is a marketing discipline." },
+    { "program": "data-science", "relationshipType": "COMMON", "rationale": "Experiment-driven growth builds on analytics." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Business-strategy skills support growth." }
+  ],
+  "Market Research Analyst": [
+    { "program": "marketing", "relationshipType": "PRIMARY", "rationale": "Market research is a marketing discipline." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Survey and data analysis underpins market research." },
+    { "program": "psychology", "relationshipType": "COMMON", "rationale": "Consumer-behaviour understanding supports research." }
+  ],
+  "Performance Marketing": [
+    { "program": "marketing", "relationshipType": "PRIMARY", "rationale": "Performance marketing is a marketing discipline." },
+    { "program": "data-science", "relationshipType": "COMMON", "rationale": "ROI and attribution analytics build on data skills." },
+    { "program": "advertising", "relationshipType": "COMMON", "rationale": "Paid-campaign media align with advertising." }
+  ],
+  "Social Media Management": [
+    { "program": "mass-communication", "relationshipType": "PRIMARY", "rationale": "Social-media management is a communications discipline." },
+    { "program": "marketing", "relationshipType": "COMMON", "rationale": "Marketing strategy underpins social media." },
+    { "program": "advertising", "relationshipType": "COMMON", "rationale": "Content-campaign creation aligns with advertising." }
+  ],
+  "Visual Merchandising": [
+    { "program": "visual-merchandising", "relationshipType": "PRIMARY", "rationale": "Visual merchandising is the direct discipline." },
+    { "program": "retail-management", "relationshipType": "COMMON", "rationale": "Retail operations align with merchandising." },
+    { "program": "interior-design", "relationshipType": "RELEVANT", "rationale": "Display and spatial design support merchandising." }
+  ]
+}

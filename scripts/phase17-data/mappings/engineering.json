@@ -1,0 +1,179 @@
+{
+  "Additive Manufacturing Engineer": [
+    { "program": "mechanical-engineering", "relationshipType": "PRIMARY", "rationale": "Additive manufacturing is a core mechanical-engineering discipline." },
+    { "program": "materials-science", "relationshipType": "COMMON", "rationale": "Process and property science are central to additive manufacturing." },
+    { "program": "industrial-engineering", "relationshipType": "RELEVANT", "rationale": "Production-process optimisation applies to AM production lines." }
+  ],
+  "Aerospace Engineering": [
+    { "program": "aerospace-engineering", "relationshipType": "PRIMARY", "rationale": "Aerospace engineering is the direct degree for aircraft and space design." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Mechanical engineering is a common entry into aerospace." }
+  ],
+  "Aircraft Maintenance Engineering": [
+    { "program": "aerospace-engineering", "relationshipType": "PRIMARY", "rationale": "Aerospace engineering is the direct preparation for aircraft maintenance." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Mechanical engineering underpins airframe and powerplant work." }
+  ],
+  "Agricultural Engineering": [
+    { "program": "agricultural-science", "relationshipType": "PRIMARY", "rationale": "Agricultural science forms the domain basis for agricultural engineering." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Farm machinery and irrigation design draw on mechanical engineering." }
+  ],
+  "Autonomous Systems Safety Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Autonomous-system software and safety analysis build on computer science." },
+    { "program": "electrical-engineering", "relationshipType": "COMMON", "rationale": "Sensing and control electronics draw on electrical engineering." },
+    { "program": "mechanical-engineering", "relationshipType": "RELEVANT", "rationale": "Physical-platform safety engineering involves mechanical dynamics." },
+    { "program": "artificial-intelligence", "relationshipType": "RELEVANT", "rationale": "Machine-perception grounding supports autonomy safety." }
+  ],
+  "Autonomous Vehicles Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Perception, planning and control software are computer-science domains." },
+    { "program": "electrical-engineering", "relationshipType": "COMMON", "rationale": "Vehicle electronics and sensors draw on electrical engineering." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Vehicle dynamics and propulsion involve mechanical engineering." },
+    { "program": "artificial-intelligence", "relationshipType": "SPECIALIZED", "rationale": "Machine-learning perception is a specialist autonomy track." }
+  ],
+  "Battery Technology Engineer": [
+    { "program": "electrical-engineering", "relationshipType": "PRIMARY", "rationale": "Battery systems and energy storage draw on power electronics." },
+    { "program": "chemical-engineering", "relationshipType": "COMMON", "rationale": "Electrochemistry is central to battery technology." },
+    { "program": "materials-science", "relationshipType": "COMMON", "rationale": "Electrode materials science underpins batteries." }
+  ],
+  "Biomedical Engineering": [
+    { "program": "biomedical-engineering", "relationshipType": "PRIMARY", "rationale": "Biomedical engineering is the direct degree." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Medical-device mechanics draw on mechanical engineering." },
+    { "program": "electronics-engineering", "relationshipType": "COMMON", "rationale": "Diagnostic and monitoring devices depend on electronics." }
+  ],
+  "Ceramic Technology": [
+    { "program": "materials-science", "relationshipType": "PRIMARY", "rationale": "Ceramic technology is a branch of materials science." },
+    { "program": "chemical-engineering", "relationshipType": "COMMON", "rationale": "Ceramic processing draws on chemical engineering." },
+    { "program": "mechanical-engineering", "relationshipType": "RELEVANT", "rationale": "Moulding and process engineering involve mechanical skills." }
+  ],
+  "Chemical Engineering": [
+    { "program": "chemical-engineering", "relationshipType": "PRIMARY", "rationale": "Chemical engineering is the direct degree." }
+  ],
+  "Civil Engineering": [
+    { "program": "civil-engineering", "relationshipType": "PRIMARY", "rationale": "Civil engineering is the direct degree." },
+    { "program": "civil-engineering-masters", "relationshipType": "COMMON", "rationale": "Graduate structural and geotechnical study supports senior roles." }
+  ],
+  "Digital Twin Engineer": [
+    { "program": "mechanical-engineering", "relationshipType": "PRIMARY", "rationale": "Digital-twin modelling of physical assets builds on mechanical engineering." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Simulation software and data pipelines are computer-science domains." },
+    { "program": "civil-engineering", "relationshipType": "OPTIONAL", "rationale": "Built-environment digital twins draw on civil engineering." }
+  ],
+  "Drone Technology": [
+    { "program": "electronics-communication-engineering", "relationshipType": "PRIMARY", "rationale": "Drone avionics and control draw on electronics and communication." },
+    { "program": "aerospace-engineering", "relationshipType": "COMMON", "rationale": "Unmanned-aerial-vehicle design builds on aerospace engineering." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Airframe and propulsion involve mechanical engineering." }
+  ],
+  "Electric Vehicle Technology": [
+    { "program": "electrical-engineering", "relationshipType": "PRIMARY", "rationale": "EV powertrains and charging draw on electrical engineering." },
+    { "program": "mechanical-engineering", "relationshipType": "PRIMARY", "rationale": "Vehicle chassis, drivetrain and thermal systems involve mechanical engineering." },
+    { "program": "electrical-engineering-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate EV engineering supports advanced battery and control work." }
+  ],
+  "Electrical Engineering": [
+    { "program": "electrical-engineering", "relationshipType": "PRIMARY", "rationale": "Electrical engineering is the direct degree." },
+    { "program": "electrical-engineering-masters", "relationshipType": "COMMON", "rationale": "Graduate study supports specialised power and control roles." }
+  ],
+  "Electronics Engineering": [
+    { "program": "electronics-engineering", "relationshipType": "PRIMARY", "rationale": "Electronics engineering is the direct degree." },
+    { "program": "electronics-communication-engineering", "relationshipType": "COMMON", "rationale": "Electronics and communication are closely related disciplines." }
+  ],
+  "Embedded Systems Engineer": [
+    { "program": "electronics-communication-engineering", "relationshipType": "PRIMARY", "rationale": "Embedded systems are core to electronics engineering." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Firmware and system software draw on computer science." }
+  ],
+  "Environmental Engineering": [
+    { "program": "environmental-engineering", "relationshipType": "PRIMARY", "rationale": "Environmental engineering is the direct degree." },
+    { "program": "civil-engineering", "relationshipType": "COMMON", "rationale": "Civil engineering underpins environmental infrastructure." },
+    { "program": "chemical-engineering", "relationshipType": "COMMON", "rationale": "Treatment-process engineering draws on chemical engineering." }
+  ],
+  "Green Hydrogen Engineer": [
+    { "program": "chemical-engineering", "relationshipType": "PRIMARY", "rationale": "Hydrogen production is an electrochemistry and chemical-engineering process." },
+    { "program": "electrical-engineering", "relationshipType": "COMMON", "rationale": "Electrolysis systems draw on electrical engineering." },
+    { "program": "mechanical-engineering", "relationshipType": "OPTIONAL", "rationale": "Gas-handling and plant mechanics involve mechanical engineering." }
+  ],
+  "Humanoid Robotics Engineer": [
+    { "program": "mechanical-engineering", "relationshipType": "PRIMARY", "rationale": "Humanoid mechanisms and actuation draw on mechanical engineering." },
+    { "program": "electronics-communication-engineering", "relationshipType": "COMMON", "rationale": "Sensors and control electronics underpin robots." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Perception and autonomy software build on computer science." },
+    { "program": "robotics-engineering-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate robotics supports advanced humanoid design." }
+  ],
+  "Industrial Quality Engineering": [
+    { "program": "industrial-engineering", "relationshipType": "PRIMARY", "rationale": "Quality engineering is an industrial-engineering discipline." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Manufacturing quality draws on mechanical engineering." }
+  ],
+  "Industrial Safety": [
+    { "program": "industrial-engineering", "relationshipType": "COMMON", "rationale": "Workplace safety is an industrial-engineering discipline." },
+    { "program": "chemical-engineering", "relationshipType": "COMMON", "rationale": "Process-safety expertise draws on chemical engineering." }
+  ],
+  "Marine Engineering": [
+    { "program": "marine-engineering", "relationshipType": "PRIMARY", "rationale": "Marine engineering is the direct degree." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Ship systems and propulsion draw on mechanical engineering." }
+  ],
+  "Mechanical Engineering": [
+    { "program": "mechanical-engineering", "relationshipType": "PRIMARY", "rationale": "Mechanical engineering is the direct degree." },
+    { "program": "mechanical-engineering-masters", "relationshipType": "COMMON", "rationale": "Graduate design and thermal study supports senior roles." }
+  ],
+  "Mechatronics Engineering": [
+    { "program": "mechatronics-engineering", "relationshipType": "PRIMARY", "rationale": "Mechatronics engineering is the direct degree." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Mechanical foundations support mechatronics." },
+    { "program": "electronics-engineering", "relationshipType": "COMMON", "rationale": "Control electronics underpin mechatronic systems." }
+  ],
+  "Mining Engineering": [
+    { "program": "mining-engineering", "relationshipType": "PRIMARY", "rationale": "Mining engineering is the direct degree." },
+    { "program": "geology", "relationshipType": "COMMON", "rationale": "Geology supports mineral-resource engineering." }
+  ],
+  "Nanotechnology": [
+    { "program": "materials-science", "relationshipType": "PRIMARY", "rationale": "Nanotechnology is grounded in materials science." },
+    { "program": "nanotechnology-masters", "relationshipType": "COMMON", "rationale": "Graduate nanotechnology is the direct advanced route." },
+    { "program": "physics", "relationshipType": "COMMON", "rationale": "Nanoscale physics underpins the field." },
+    { "program": "chemistry", "relationshipType": "COMMON", "rationale": "Nanoscale chemistry supports fabrication." }
+  ],
+  "Packaging Technology": [
+    { "program": "packaging-technology", "relationshipType": "PRIMARY", "rationale": "Packaging technology is the direct program." },
+    { "program": "materials-science", "relationshipType": "COMMON", "rationale": "Packaging materials draw on materials science." },
+    { "program": "mechanical-engineering", "relationshipType": "RELEVANT", "rationale": "Machinery and process design support packaging." }
+  ],
+  "Petroleum Engineering": [
+    { "program": "petroleum-engineering", "relationshipType": "PRIMARY", "rationale": "Petroleum engineering is the direct degree." },
+    { "program": "chemical-engineering", "relationshipType": "COMMON", "rationale": "Process engineering underpins oil-and-gas work." },
+    { "program": "mechanical-engineering", "relationshipType": "RELEVANT", "rationale": "Drilling and production equipment draw on mechanical engineering." }
+  ],
+  "Renewable Energy Engineering": [
+    { "program": "electrical-engineering", "relationshipType": "PRIMARY", "rationale": "Renewable-energy systems draw on electrical engineering." },
+    { "program": "renewable-energy-engineering", "relationshipType": "PRIMARY", "rationale": "Renewable-energy engineering is the direct discipline." },
+    { "program": "renewable-energy-engineering-masters", "relationshipType": "COMMON", "rationale": "Graduate study supports specialist design." }
+  ],
+  "Robotics Engineering": [
+    { "program": "robotics-engineering", "relationshipType": "PRIMARY", "rationale": "Robotics engineering is the direct degree." },
+    { "program": "mechatronics-engineering", "relationshipType": "COMMON", "rationale": "Mechatronics is closely aligned." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Mechanical foundations support robotics." },
+    { "program": "robotics-engineering-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate robotics supports advanced design." }
+  ],
+  "Semiconductor Process Engineer": [
+    { "program": "electronics-communication-engineering", "relationshipType": "PRIMARY", "rationale": "Semiconductor processing is an electronics-engineering discipline." },
+    { "program": "electronics-engineering", "relationshipType": "COMMON", "rationale": "Electronics engineering grounds the field." },
+    { "program": "electrical-engineering", "relationshipType": "COMMON", "rationale": "VLSI and devices draw on electrical engineering." },
+    { "program": "materials-science", "relationshipType": "SPECIALIZED", "rationale": "Device materials science supports lithography and doping." }
+  ],
+  "Solar Energy Engineer": [
+    { "program": "electrical-engineering", "relationshipType": "PRIMARY", "rationale": "Solar PV systems draw on power and electrical engineering." },
+    { "program": "renewable-energy-engineering", "relationshipType": "PRIMARY", "rationale": "Renewable-energy engineering is the direct discipline." },
+    { "program": "civil-engineering", "relationshipType": "OPTIONAL", "rationale": "Solar-plant civil works relate to civil engineering." }
+  ],
+  "Space Technology": [
+    { "program": "aerospace-engineering", "relationshipType": "PRIMARY", "rationale": "Space technology draws on aerospace engineering." },
+    { "program": "space-technology-masters", "relationshipType": "COMMON", "rationale": "Graduate space technology is the direct advanced route." },
+    { "program": "electronics-communication-engineering", "relationshipType": "COMMON", "rationale": "Satellite systems rely on electronics and communications." }
+  ],
+  "Surgical Robotics Engineer": [
+    { "program": "mechanical-engineering", "relationshipType": "PRIMARY", "rationale": "Surgical-robot mechanisms draw on mechanical engineering." },
+    { "program": "electronics-communication-engineering", "relationshipType": "COMMON", "rationale": "Control and sensing electronics underpin surgical robots." },
+    { "program": "biomedical-engineering", "relationshipType": "COMMON", "rationale": "Medical-device engineering supports the field." }
+  ],
+  "Textile Engineering": [
+    { "program": "textile-engineering", "relationshipType": "PRIMARY", "rationale": "Textile engineering is the direct degree." },
+    { "program": "materials-science", "relationshipType": "COMMON", "rationale": "Fibre and materials science supports the field." }
+  ],
+  "VLSI Design Engineer": [
+    { "program": "electronics-communication-engineering", "relationshipType": "PRIMARY", "rationale": "VLSI design is an electronics-engineering discipline." },
+    { "program": "electronics-engineering", "relationshipType": "COMMON", "rationale": "Electronics engineering grounds VLSI work." },
+    { "program": "electrical-engineering", "relationshipType": "COMMON", "rationale": "Digital-circuit design draws on electrical engineering." },
+    { "program": "materials-science", "relationshipType": "SPECIALIZED", "rationale": "Device physics supports fabrication-aware design." }
+  ]
+}

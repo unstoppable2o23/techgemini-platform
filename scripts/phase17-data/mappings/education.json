@@ -1,0 +1,55 @@
+{
+  "Career Counselling": [
+    { "program": "psychology", "relationshipType": "PRIMARY", "rationale": "Career counselling is grounded in psychology." },
+    { "program": "counselling-psychology-masters", "relationshipType": "COMMON", "rationale": "Graduate counselling supports practice." },
+    { "program": "education-bed", "relationshipType": "OPTIONAL", "rationale": "Educational guidance aligns with teaching study." }
+  ],
+  "Corporate Training": [
+    { "program": "instructional-design", "relationshipType": "PRIMARY", "rationale": "Corporate-training programmes align with instructional design." },
+    { "program": "human-resource-management", "relationshipType": "COMMON", "rationale": "Workplace-development aligns with HR." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Management study supports training leadership." },
+    { "program": "education-bed", "relationshipType": "COMMON", "rationale": "Undergraduate teaching is the school-stage on-ramp into corporate training." }
+  ],
+  "EdTech Specialist": [
+    { "program": "education-technology", "relationshipType": "PRIMARY", "rationale": "Educational technology is the direct discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Learning-platform engineering builds on computer science." },
+    { "program": "instructional-design", "relationshipType": "COMMON", "rationale": "Learning-solutions design aligns with the field." }
+  ],
+  "Education Administration": [
+    { "program": "educational-leadership-masters", "relationshipType": "PRIMARY", "rationale": "Educational leadership is the direct advanced discipline." },
+    { "program": "education-med", "relationshipType": "COMMON", "rationale": "Graduate education supports administration." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Institutional management aligns with an MBA." },
+    { "program": "education-bed", "relationshipType": "COMMON", "rationale": "Undergraduate teaching is the school-stage on-ramp into education administration." }
+  ],
+  "Higher Education and Academia": [
+    { "program": "education-med", "relationshipType": "PRIMARY", "rationale": "Higher-education practice is grounded in graduate education." },
+    { "program": "educational-leadership-masters", "relationshipType": "COMMON", "rationale": "Academic leadership aligns with the field." },
+    { "program": "library-information-science", "relationshipType": "OPTIONAL", "rationale": "Academic-librarianship supports university roles." },
+    { "program": "education-bed", "relationshipType": "COMMON", "rationale": "Undergraduate teaching is the school-stage on-ramp into academia." }
+  ],
+  "Instructional Design": [
+    { "program": "instructional-design", "relationshipType": "PRIMARY", "rationale": "Instructional design is the direct discipline." },
+    { "program": "education-bed", "relationshipType": "COMMON", "rationale": "Learning-science foundations support the field." },
+    { "program": "education-technology", "relationshipType": "COMMON", "rationale": "Learning-technology design aligns." }
+  ],
+  "Library Sciences": [
+    { "program": "library-information-science", "relationshipType": "PRIMARY", "rationale": "Library and information science is the direct discipline." },
+    { "program": "history-masters", "relationshipType": "OPTIONAL", "rationale": "Historically-focused library roles may suit." },
+    { "program": "english-literature", "relationshipType": "OPTIONAL", "rationale": "Humanities foundations support library work." }
+  ],
+  "Mentoring and Coaching": [
+    { "program": "psychology", "relationshipType": "PRIMARY", "rationale": "Coaching is grounded in behavioural psychology." },
+    { "program": "education-bed", "relationshipType": "COMMON", "rationale": "Learning-and-development approaches align." },
+    { "program": "human-resource-management", "relationshipType": "COMMON", "rationale": "People-development study supports the role." }
+  ],
+  "School Education": [
+    { "program": "education-bed", "relationshipType": "PRIMARY", "rationale": "The B.Ed. is the direct school-teaching degree." },
+    { "program": "education-med", "relationshipType": "COMMON", "rationale": "Graduate education supports senior teaching." },
+    { "program": "educational-leadership-masters", "relationshipType": "OPTIONAL", "rationale": "School leadership aligns with the field." }
+  ],
+  "Special Education": [
+    { "program": "special-education-bed", "relationshipType": "PRIMARY", "rationale": "Special education is the direct discipline." },
+    { "program": "education-bed", "relationshipType": "COMMON", "rationale": "Teaching foundations support special education." },
+    { "program": "psychology", "relationshipType": "COMMON", "rationale": "Developmental-psychology support practice." }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "Business Development": [
+    { "program": "business-administration-mba", "relationshipType": "PRIMARY", "rationale": "Business development is grounded in management study." },
+    { "program": "sales-and-marketing", "relationshipType": "COMMON", "rationale": "Commercial and sales study aligns with the role." },
+    { "program": "marketing", "relationshipType": "COMMON", "rationale": "Marketing understanding supports business development." }
+  ],
+  "Sales Management": [
+    { "program": "sales-and-marketing", "relationshipType": "PRIMARY", "rationale": "Sales management aligns with the sales-and-marketing discipline." },
+    { "program": "marketing", "relationshipType": "COMMON", "rationale": "Marketing study supports sales leadership." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Management study supports sales-team leadership." }
+  ]
+}

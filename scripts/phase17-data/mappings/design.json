@@ -1,0 +1,66 @@
+{
+  "Animation": [
+    { "program": "animation", "relationshipType": "PRIMARY", "rationale": "Animation is the direct discipline." },
+    { "program": "game-design", "relationshipType": "COMMON", "rationale": "Computer-animation supports game and media production." },
+    { "program": "multimedia-design", "relationshipType": "COMMON", "rationale": "Multimedia-design skills support animation production." }
+  ],
+  "Fashion Design": [
+    { "program": "fashion-design", "relationshipType": "PRIMARY", "rationale": "Fashion design is the direct discipline." },
+    { "program": "textile-design", "relationshipType": "COMMON", "rationale": "Textile and garment work are closely linked." }
+  ],
+  "Fine Arts": [
+    { "program": "fine-arts", "relationshipType": "PRIMARY", "rationale": "Fine arts is the direct discipline." },
+    { "program": "fine-arts-masters", "relationshipType": "COMMON", "rationale": "Graduate fine arts supports practice-based careers." }
+  ],
+  "Gemology and Gem Testing": [
+    { "program": "gemology-and-gem-testing", "relationshipType": "PRIMARY", "rationale": "Gemology is the direct discipline." },
+    { "program": "jewellery-design", "relationshipType": "COMMON", "rationale": "Gem-setting and jewellery work align." },
+    { "program": "geology", "relationshipType": "RELEVANT", "rationale": "Mineral science supports gem identification." }
+  ],
+  "Graphic Design": [
+    { "program": "graphic-design", "relationshipType": "PRIMARY", "rationale": "Graphic design is the direct discipline." },
+    { "program": "design-bdes", "relationshipType": "COMMON", "rationale": "Design study underpins graphic work." },
+    { "program": "communication-design", "relationshipType": "COMMON", "rationale": "Visual-communication aligns with graphic design." }
+  ],
+  "Human-AI Interaction Designer": [
+    { "program": "interaction-design", "relationshipType": "PRIMARY", "rationale": "Interaction design is the direct discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "AI-systems understanding builds on computer science." },
+    { "program": "user-experience-design", "relationshipType": "COMMON", "rationale": "UX design sits at the heart of the role." }
+  ],
+  "Industrial Design": [
+    { "program": "industrial-design", "relationshipType": "PRIMARY", "rationale": "Industrial design is the direct discipline." },
+    { "program": "product-design", "relationshipType": "COMMON", "rationale": "Product-design practice is closely aligned." },
+    { "program": "mechanical-engineering", "relationshipType": "OPTIONAL", "rationale": "Manufacturing feasibility relates to mechanical engineering." }
+  ],
+  "Interior Design": [
+    { "program": "interior-design", "relationshipType": "PRIMARY", "rationale": "Interior design is the direct discipline." },
+    { "program": "architecture-barch", "relationshipType": "COMMON", "rationale": "Spatial-design foundations align with architecture." }
+  ],
+  "Jewellery Design": [
+    { "program": "jewellery-design", "relationshipType": "PRIMARY", "rationale": "Jewellery design is the direct discipline." },
+    { "program": "gemology-and-gem-testing", "relationshipType": "COMMON", "rationale": "Gem knowledge supports jewellery work." }
+  ],
+  "Photography": [
+    { "program": "photography", "relationshipType": "PRIMARY", "rationale": "Photography is the direct discipline." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Visual media study supports professional photography." }
+  ],
+  "Product Design": [
+    { "program": "product-design", "relationshipType": "PRIMARY", "rationale": "Product design is the direct discipline." },
+    { "program": "industrial-design", "relationshipType": "COMMON", "rationale": "Industrial design is closely aligned." },
+    { "program": "user-experience-design", "relationshipType": "COMMON", "rationale": "Digital-product UX is a core focus." }
+  ],
+  "Textile Design": [
+    { "program": "textile-design", "relationshipType": "PRIMARY", "rationale": "Textile design is the direct discipline." },
+    { "program": "fashion-design", "relationshipType": "COMMON", "rationale": "Garment and textile work are closely linked." }
+  ],
+  "User Experience Design UX": [
+    { "program": "user-experience-design", "relationshipType": "PRIMARY", "rationale": "User-experience design is the direct discipline." },
+    { "program": "interaction-design", "relationshipType": "COMMON", "rationale": "Interaction design aligns with UX practice." },
+    { "program": "graphic-design", "relationshipType": "COMMON", "rationale": "Visual-design skills support UX work." }
+  ],
+  "User Interface Design": [
+    { "program": "user-experience-design", "relationshipType": "PRIMARY", "rationale": "UI design is grounded in user-experience design." },
+    { "program": "graphic-design", "relationshipType": "COMMON", "rationale": "Visual-interfaces draw on graphic-design skills." },
+    { "program": "design-bdes", "relationshipType": "COMMON", "rationale": "Design education supports interface work." }
+  ]
+}

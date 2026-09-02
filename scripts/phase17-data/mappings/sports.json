@@ -1,0 +1,32 @@
+{
+  "Physical Training": [
+    { "program": "physical-education-bped", "relationshipType": "PRIMARY", "rationale": "Physical education is the direct discipline." },
+    { "program": "sports-science", "relationshipType": "COMMON", "rationale": "Exercise science supports training." },
+    { "program": "physical-education-mped", "relationshipType": "COMMON", "rationale": "Graduate physical education supports the field." }
+  ],
+  "Professional Sports": [
+    { "program": "sports-science", "relationshipType": "PRIMARY", "rationale": "Sports-science study supports athletic careers." },
+    { "program": "physical-education-bped", "relationshipType": "COMMON", "rationale": "Physical-education training aligns." },
+    { "program": "sports-management", "relationshipType": "OPTIONAL", "rationale": "Sports-business skills support professional athletes." }
+  ],
+  "Sports Analytics": [
+    { "program": "statistics", "relationshipType": "PRIMARY", "rationale": "Sports-analytics is grounded in statistical analysis." },
+    { "program": "data-science", "relationshipType": "COMMON", "rationale": "Performance-data modelling aligns with data science." },
+    { "program": "sports-science", "relationshipType": "COMMON", "rationale": "Sports-science context supports analytics." }
+  ],
+  "Sports Coaching": [
+    { "program": "physical-education-bped", "relationshipType": "PRIMARY", "rationale": "Coaching is grounded in physical education." },
+    { "program": "sports-science", "relationshipType": "COMMON", "rationale": "Exercise-science knowledge supports coaching." },
+    { "program": "physical-education-mped", "relationshipType": "COMMON", "rationale": "Graduate physical education supports senior coaching." }
+  ],
+  "Sports Management": [
+    { "program": "sports-management", "relationshipType": "PRIMARY", "rationale": "Sports management is the direct discipline." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Management study aligns with sports business." },
+    { "program": "marketing", "relationshipType": "COMMON", "rationale": "Sports-marketing skills support the field." }
+  ],
+  "Sports Physiotherapy": [
+    { "program": "physiotherapy", "relationshipType": "PRIMARY", "rationale": "Sports physiotherapy builds on physiotherapy." },
+    { "program": "physiotherapy-masters", "relationshipType": "COMMON", "rationale": "Graduate physiotherapy supports specialist sport practice." },
+    { "program": "sports-science", "relationshipType": "COMMON", "rationale": "Exercise-and-injury science supports the field." }
+  ]
+}

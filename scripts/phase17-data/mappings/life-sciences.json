@@ -1,0 +1,58 @@
+{
+  "Bioinformatics": [
+    { "program": "biology", "relationshipType": "PRIMARY", "rationale": "Bioinformatics integrates biology and computation." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Computational methods underpin bioinformatics." },
+    { "program": "genomics", "relationshipType": "COMMON", "rationale": "Genomic-data analysis aligns with the field." },
+    { "program": "life-sciences-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate life-sciences supports research." }
+  ],
+  "Biomedical Scientist": [
+    { "program": "biomedical-engineering", "relationshipType": "PRIMARY", "rationale": "Biomedical science and engineering are aligned." },
+    { "program": "life-sciences", "relationshipType": "COMMON", "rationale": "Life-sciences foundations support the field." },
+    { "program": "biochemistry", "relationshipType": "COMMON", "rationale": "Biochemical research underpins biomedical work." }
+  ],
+  "Biotechnology Research": [
+    { "program": "biotechnology-engineering", "relationshipType": "PRIMARY", "rationale": "Biotechnology is the direct discipline." },
+    { "program": "life-sciences-masters", "relationshipType": "COMMON", "rationale": "Graduate life-sciences supports research." },
+    { "program": "genetics", "relationshipType": "COMMON", "rationale": "Genetic-engineering methods support the field." }
+  ],
+  "Computational Biologist": [
+    { "program": "biology", "relationshipType": "PRIMARY", "rationale": "Computational biology integrates biology and computation." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Modelling and algorithms build on computer science." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Biological-data analysis aligns with statistics." }
+  ],
+  "Forensic Science": [
+    { "program": "life-sciences", "relationshipType": "PRIMARY", "rationale": "Forensic science is grounded in life sciences." },
+    { "program": "chemistry", "relationshipType": "COMMON", "rationale": "Analytical chemistry underpins forensic analysis." },
+    { "program": "criminology", "relationshipType": "COMMON", "rationale": "Crime-science frameworks support the field." }
+  ],
+  "Genetics": [
+    { "program": "genetics", "relationshipType": "PRIMARY", "rationale": "Genetics is the direct discipline." },
+    { "program": "biology", "relationshipType": "COMMON", "rationale": "Biology foundations support genetics." },
+    { "program": "genetics-masters", "relationshipType": "COMMON", "rationale": "Graduate genetics supports the field." }
+  ],
+  "Genomic Data Scientist": [
+    { "program": "genomics", "relationshipType": "PRIMARY", "rationale": "Genomic-data science is grounded in genomics." },
+    { "program": "data-science", "relationshipType": "COMMON", "rationale": "Large-scale data analysis aligns with data science." },
+    { "program": "genetics-masters", "relationshipType": "COMMON", "rationale": "Graduate genetics supports genomic analysis." }
+  ],
+  "Marine Biology": [
+    { "program": "marine-biology", "relationshipType": "PRIMARY", "rationale": "Marine biology is the direct discipline." },
+    { "program": "zoology", "relationshipType": "COMMON", "rationale": "Animal-biology foundations support the field." },
+    { "program": "environmental-science", "relationshipType": "COMMON", "rationale": "Ecosystem science supports marine study." }
+  ],
+  "Microbiology": [
+    { "program": "microbiology", "relationshipType": "PRIMARY", "rationale": "Microbiology is the direct discipline." },
+    { "program": "biology", "relationshipType": "COMMON", "rationale": "Biology foundations support microbiology." },
+    { "program": "microbiology-masters", "relationshipType": "COMMON", "rationale": "Graduate microbiology supports the field." }
+  ],
+  "Synthetic Biology Engineer": [
+    { "program": "biotechnology-engineering", "relationshipType": "PRIMARY", "rationale": "Synthetic biology is grounded in biotechnology." },
+    { "program": "genetics", "relationshipType": "COMMON", "rationale": "Genetic-engineering methods underpin the field." },
+    { "program": "molecular-biology", "relationshipType": "COMMON", "rationale": "Molecular-biology foundations support design." }
+  ],
+  "Wildlife Biology": [
+    { "program": "wildlife-biology", "relationshipType": "PRIMARY", "rationale": "Wildlife biology is the direct discipline." },
+    { "program": "zoology", "relationshipType": "COMMON", "rationale": "Animal-biology foundations support the field." },
+    { "program": "environmental-science", "relationshipType": "COMMON", "rationale": "Ecosystem science supports wildlife study." }
+  ]
+}

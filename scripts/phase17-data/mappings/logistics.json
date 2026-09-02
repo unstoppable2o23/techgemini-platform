@@ -1,0 +1,22 @@
+{
+  "Air Traffic Management": [
+    { "program": "aviation-management", "relationshipType": "PRIMARY", "rationale": "Air-traffic management aligns with aviation management." },
+    { "program": "physics", "relationshipType": "COMMON", "rationale": "Spatial-assessment and technical foundations are relevant." },
+    { "program": "geography", "relationshipType": "COMMON", "rationale": "Spatial and route knowledge support the role." }
+  ],
+  "Logistics and Transportation Management": [
+    { "program": "logistics-management", "relationshipType": "PRIMARY", "rationale": "Logistics management is the direct discipline." },
+    { "program": "supply-chain-management", "relationshipType": "COMMON", "rationale": "Supply-chain study is closely aligned." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Operations leadership supports the field." }
+  ],
+  "Maritime Studies": [
+    { "program": "logistics-management", "relationshipType": "PRIMARY", "rationale": "Maritime logistics aligns with logistics management." },
+    { "program": "supply-chain-management", "relationshipType": "COMMON", "rationale": "Global-supply-chain study supports maritime trade." },
+    { "program": "geography", "relationshipType": "COMMON", "rationale": "Maritime-geography knowledge supports the field." }
+  ],
+  "Supply Chain Management": [
+    { "program": "supply-chain-management", "relationshipType": "PRIMARY", "rationale": "Supply-chain management is the direct discipline." },
+    { "program": "logistics-management", "relationshipType": "COMMON", "rationale": "Logistics study is closely aligned." },
+    { "program": "operations-management", "relationshipType": "COMMON", "rationale": "Operational-management alignment." }
+  ]
+}

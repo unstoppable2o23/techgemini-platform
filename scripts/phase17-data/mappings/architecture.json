@@ -1,0 +1,31 @@
+{
+  "Architectural Technology": [
+    { "program": "architecture-barch", "relationshipType": "PRIMARY", "rationale": "Architectural technology builds on the architecture degree." },
+    { "program": "architecture-masters", "relationshipType": "COMMON", "rationale": "Graduate architecture supports technological specialisation." },
+    { "program": "civil-engineering", "relationshipType": "COMMON", "rationale": "Structural-technology expertise aligns with civil engineering." }
+  ],
+  "Architecture": [
+    { "program": "architecture-barch", "relationshipType": "PRIMARY", "rationale": "The Bachelor of Architecture is the direct degree." },
+    { "program": "architecture-masters", "relationshipType": "COMMON", "rationale": "Graduate architecture supports senior practice." }
+  ],
+  "Landscape Design": [
+    { "program": "landscape-architecture", "relationshipType": "PRIMARY", "rationale": "Landscape architecture is the direct discipline." },
+    { "program": "horticulture", "relationshipType": "COMMON", "rationale": "Plant knowledge supports landscape design." },
+    { "program": "architecture-barch", "relationshipType": "COMMON", "rationale": "Spatial-design foundations align with architecture." }
+  ],
+  "Sustainable Architecture": [
+    { "program": "architecture-barch", "relationshipType": "PRIMARY", "rationale": "Sustainable architecture builds on the architecture degree." },
+    { "program": "architecture-masters", "relationshipType": "COMMON", "rationale": "Graduate design supports sustainable specialisation." },
+    { "program": "environmental-engineering", "relationshipType": "COMMON", "rationale": "Building-environment engineering supports sustainable design." }
+  ],
+  "Urban Design": [
+    { "program": "urban-design", "relationshipType": "PRIMARY", "rationale": "Urban design is the direct discipline." },
+    { "program": "urban-planning", "relationshipType": "COMMON", "rationale": "Urban-planning study supports design practice." },
+    { "program": "architecture-masters", "relationshipType": "COMMON", "rationale": "Graduate architecture supports urban design." }
+  ],
+  "Urban Planning": [
+    { "program": "urban-planning", "relationshipType": "PRIMARY", "rationale": "Urban planning is the direct discipline." },
+    { "program": "urban-planning-masters", "relationshipType": "COMMON", "rationale": "Graduate urban planning supports the field." },
+    { "program": "geography", "relationshipType": "COMMON", "rationale": "Spatial analysis aligns with geography." }
+  ]
+}

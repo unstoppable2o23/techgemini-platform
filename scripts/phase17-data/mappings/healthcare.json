@@ -1,0 +1,154 @@
+{
+  "Audiology": [
+    { "program": "audiology-speech-language-pathology", "relationshipType": "PRIMARY", "rationale": "Audiology is the direct hearing-science discipline." },
+    { "program": "speech-language-pathology", "relationshipType": "COMMON", "rationale": "Communication-sciences work is closely aligned." }
+  ],
+  "Chiropractor": [
+    { "program": "physiotherapy", "relationshipType": "PRIMARY", "rationale": "Chiropractic practice draws on physical-therapy science." },
+    { "program": "physiotherapy-masters", "relationshipType": "COMMON", "rationale": "Advanced musculoskeletal study supports the role." },
+    { "program": "occupational-therapy", "relationshipType": "OPTIONAL", "rationale": "Rehabilitation foundations are relevant." }
+  ],
+  "Clinical Data Management": [
+    { "program": "health-informatics", "relationshipType": "PRIMARY", "rationale": "Clinical-data management aligns with health informatics." },
+    { "program": "clinical-research", "relationshipType": "COMMON", "rationale": "Clinical-trial data handling draws on clinical research." },
+    { "program": "data-science", "relationshipType": "COMMON", "rationale": "Data-management methods support the role." }
+  ],
+  "Clinical Research": [
+    { "program": "clinical-research", "relationshipType": "PRIMARY", "rationale": "Clinical research is the direct discipline." },
+    { "program": "pharmacy-bpharm", "relationshipType": "COMMON", "rationale": "Drug-development understanding supports clinical trials." },
+    { "program": "life-sciences", "relationshipType": "COMMON", "rationale": "Life-sciences foundations underpin research." }
+  ],
+  "Dentistry": [
+    { "program": "dentistry-bds", "relationshipType": "PRIMARY", "rationale": "Dentistry is the direct medical degree." }
+  ],
+  "Epidemiologist": [
+    { "program": "public-health", "relationshipType": "PRIMARY", "rationale": "Epidemiology is a public-health discipline." },
+    { "program": "epidemiology-masters", "relationshipType": "PRIMARY", "rationale": "Epidemiology is the direct graduate discipline." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Biostatistics underpins epidemiological study." },
+    { "program": "public-health-masters", "relationshipType": "COMMON", "rationale": "Graduate public health supports the role." }
+  ],
+  "Genetic Counseling": [
+    { "program": "genetics", "relationshipType": "PRIMARY", "rationale": "Genetic counseling builds on genetics study." },
+    { "program": "genetics-masters", "relationshipType": "COMMON", "rationale": "Graduate genetics supports the field." },
+    { "program": "counselling-psychology-masters", "relationshipType": "COMMON", "rationale": "Client-communication skills support counseling." }
+  ],
+  "Health Educator": [
+    { "program": "public-health", "relationshipType": "PRIMARY", "rationale": "Health education is a public-health discipline." },
+    { "program": "public-health-masters", "relationshipType": "COMMON", "rationale": "Graduate public health supports the role." },
+    { "program": "education-bed", "relationshipType": "COMMON", "rationale": "Teaching and curriculum skills align with education." }
+  ],
+  "Health Informatics": [
+    { "program": "health-informatics", "relationshipType": "PRIMARY", "rationale": "Health informatics is the direct discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Healthcare-software engineering builds on computer science." }
+  ],
+  "Hospital Administration": [
+    { "program": "hospital-administration", "relationshipType": "PRIMARY", "rationale": "Hospital administration is the direct discipline." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Management skills align with administration." },
+    { "program": "public-health-masters", "relationshipType": "COMMON", "rationale": "Health-systems understanding supports the role." },
+    { "program": "business-administration-bba", "relationshipType": "COMMON", "rationale": "Undergraduate business is the school-stage on-ramp into hospital administration." }
+  ],
+  "Medical AI Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Medical AI systems build on computer science." },
+    { "program": "machine-learning", "relationshipType": "COMMON", "rationale": "Diagnostic models are a machine-learning domain." },
+    { "program": "artificial-intelligence", "relationshipType": "COMMON", "rationale": "AI methods underpin medical applications." }
+  ],
+  "Medical Coding": [
+    { "program": "health-informatics", "relationshipType": "PRIMARY", "rationale": "Medical coding is a health-informatics discipline." },
+    { "program": "medical-laboratory-technology", "relationshipType": "OPTIONAL", "rationale": "Healthcare-terminology foundations are relevant." },
+    { "program": "life-sciences", "relationshipType": "RELEVANT", "rationale": "Medical-terminology grounding supports coding." }
+  ],
+  "Medical Laboratory Sciences": [
+    { "program": "medical-laboratory-technology", "relationshipType": "PRIMARY", "rationale": "Medical-laboratory sciences is the direct discipline." },
+    { "program": "microbiology", "relationshipType": "COMMON", "rationale": "Diagnostic microbiology underpins laboratory science." },
+    { "program": "biotechnology-engineering", "relationshipType": "OPTIONAL", "rationale": "Biotechnology methods support analysis." }
+  ],
+  "Medicine": [
+    { "program": "medicine-mbbs", "relationshipType": "PRIMARY", "rationale": "Medicine is the direct medical degree." },
+    { "program": "medicine-postgraduate", "relationshipType": "SPECIALIZED", "rationale": "Postgraduate medical study supports specialisation." }
+  ],
+  "Nursing": [
+    { "program": "nursing", "relationshipType": "PRIMARY", "rationale": "Nursing is the direct discipline." },
+    { "program": "nursing-masters", "relationshipType": "COMMON", "rationale": "Graduate nursing supports advanced practice." }
+  ],
+  "Nutrition and Dietetics": [
+    { "program": "nutrition-dietetics", "relationshipType": "PRIMARY", "rationale": "Nutrition and dietetics is the direct discipline." },
+    { "program": "nutrition-dietetics-masters", "relationshipType": "COMMON", "rationale": "Graduate nutrition supports clinical dietetics." }
+  ],
+  "Occupational Therapy": [
+    { "program": "occupational-therapy", "relationshipType": "PRIMARY", "rationale": "Occupational therapy is the direct discipline." },
+    { "program": "physiotherapy", "relationshipType": "COMMON", "rationale": "Rehabilitation science is closely aligned." }
+  ],
+  "Optometry": [
+    { "program": "optometry", "relationshipType": "PRIMARY", "rationale": "Optometry is the direct discipline." }
+  ],
+  "Paramedic": [
+    { "program": "emergency-medical-services", "relationshipType": "PRIMARY", "rationale": "Emergency-medical-services is the direct discipline." },
+    { "program": "nursing", "relationshipType": "COMMON", "rationale": "Patient-care foundations support paramedic work." }
+  ],
+  "Pharmacology": [
+    { "program": "pharmacy-bpharm", "relationshipType": "PRIMARY", "rationale": "Pharmacology is grounded in pharmacy study." },
+    { "program": "pharmacy-mpharm", "relationshipType": "COMMON", "rationale": "Graduate pharmacy supports pharmacological research." },
+    { "program": "life-sciences", "relationshipType": "COMMON", "rationale": "Biomedical foundations underpin pharmacology." }
+  ],
+  "Pharmacovigilance": [
+    { "program": "pharmacy-bpharm", "relationshipType": "PRIMARY", "rationale": "Drug-safety work draws on pharmacy study." },
+    { "program": "pharmacy-mpharm", "relationshipType": "COMMON", "rationale": "Graduate pharmacy supports pharmacovigilance." },
+    { "program": "clinical-research", "relationshipType": "COMMON", "rationale": "Clinical-trial safety aligns with Clinical research." }
+  ],
+  "Phlebotomist": [
+    { "program": "medical-laboratory-technology", "relationshipType": "PRIMARY", "rationale": "Blood-collection work aligns with laboratory technology." },
+    { "program": "emergency-medical-services", "relationshipType": "OPTIONAL", "rationale": "Clinical-laboratory skills support the role." }
+  ],
+  "Physiotherapy": [
+    { "program": "physiotherapy", "relationshipType": "PRIMARY", "rationale": "Physiotherapy is the direct discipline." },
+    { "program": "physiotherapy-masters", "relationshipType": "COMMON", "rationale": "Graduate physiotherapy supports advanced practice." }
+  ],
+  "Podiatrist": [
+    { "program": "podiatric-medicine", "relationshipType": "PRIMARY", "rationale": "Podiatric medicine is the direct discipline." },
+    { "program": "physiotherapy", "relationshipType": "COMMON", "rationale": "Lower-limb biomechanics align with physiotherapy." }
+  ],
+  "Prosthetist & Orthotist": [
+    { "program": "prosthetics-orthotics", "relationshipType": "PRIMARY", "rationale": "Prosthetics and orthotics is the direct discipline." },
+    { "program": "physiotherapy", "relationshipType": "COMMON", "rationale": "Rehabilitation science supports the field." },
+    { "program": "mechanical-engineering", "relationshipType": "OPTIONAL", "rationale": "Device mechanics are relevant." }
+  ],
+  "Public Health": [
+    { "program": "public-health", "relationshipType": "PRIMARY", "rationale": "Public health is the direct discipline." },
+    { "program": "public-health-masters", "relationshipType": "COMMON", "rationale": "Graduate public health supports senior roles." },
+    { "program": "epidemiology-masters", "relationshipType": "COMMON", "rationale": "Epidemiology is a core public-health method." },
+    { "program": "life-sciences", "relationshipType": "COMMON", "rationale": "Undergraduate life sciences is the school-stage on-ramp into public health." }
+  ],
+  "Radiology Technology": [
+    { "program": "medical-imaging-technology", "relationshipType": "PRIMARY", "rationale": "Radiology technology is the direct discipline." },
+    { "program": "medicine-postgraduate", "relationshipType": "OPTIONAL", "rationale": "Physician-level radiology requires medicine postgraduate study." }
+  ],
+  "Regulatory Affairs": [
+    { "program": "pharmacy-bpharm", "relationshipType": "PRIMARY", "rationale": "Regulatory affairs draws on pharmaceutical knowledge." },
+    { "program": "pharmacy-mpharm", "relationshipType": "COMMON", "rationale": "Graduate pharmacy supports regulatory roles." },
+    { "program": "law-llb", "relationshipType": "OPTIONAL", "rationale": "Regulatory and compliance foundations are relevant." }
+  ],
+  "Respiratory Therapist": [
+    { "program": "respiratory-therapy", "relationshipType": "PRIMARY", "rationale": "Respiratory therapy is the direct discipline." },
+    { "program": "medicine-postgraduate", "relationshipType": "OPTIONAL", "rationale": "Physician-level pulmonology requires medicine postgraduate study." }
+  ],
+  "Sonographer": [
+    { "program": "medical-imaging-technology", "relationshipType": "PRIMARY", "rationale": "Ultrasound imaging aligns with medical-imaging technology." },
+    { "program": "emergency-medical-services", "relationshipType": "OPTIONAL", "rationale": "Clinical-laboratory skills support the role." }
+  ],
+  "Speech-Language Pathology": [
+    { "program": "speech-language-pathology", "relationshipType": "PRIMARY", "rationale": "Speech-language pathology is the direct discipline." },
+    { "program": "audiology-speech-language-pathology", "relationshipType": "COMMON", "rationale": "Communication-sciences study is closely aligned." }
+  ],
+  "Surgeon": [
+    { "program": "medicine-mbbs", "relationshipType": "PRIMARY", "rationale": "Surgery requires the MBBS undergraduate degree." },
+    { "program": "surgery-postgraduate", "relationshipType": "SPECIALIZED", "rationale": "Surgical practice requires postgraduate surgery training." }
+  ],
+  "Telehealth Specialist": [
+    { "program": "health-informatics", "relationshipType": "PRIMARY", "rationale": "Telehealth platforms align with health informatics." },
+    { "program": "nursing", "relationshipType": "COMMON", "rationale": "Clinical-care delivery supports telehealth practice." },
+    { "program": "public-health", "relationshipType": "COMMON", "rationale": "Population-health reach aligns with telehealth." }
+  ],
+  "Veterinary Science": [
+    { "program": "veterinary-science", "relationshipType": "PRIMARY", "rationale": "Veterinary science is the direct discipline." }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "Broadcast Journalism": [
+    { "program": "journalism-mass-communication", "relationshipType": "PRIMARY", "rationale": "Journalism and mass communication is the direct discipline." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Mass-communication study supports broadcast work." },
+    { "program": "journalism-masters", "relationshipType": "COMMON", "rationale": "Graduate journalism supports reporting seniority." }
+  ],
+  "Content Creation": [
+    { "program": "mass-communication", "relationshipType": "PRIMARY", "rationale": "Mass-communication study supports content production." },
+    { "program": "media-studies", "relationshipType": "COMMON", "rationale": "Media-studies enquiry supports content strategy." },
+    { "program": "communication-design", "relationshipType": "COMMON", "rationale": "Visual-content skills support creation." }
+  ],
+  "Copywriting": [
+    { "program": "advertising", "relationshipType": "PRIMARY", "rationale": "Copywriting is central to the advertising discipline." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Commercial-communication study supports copywriting." },
+    { "program": "english-literature", "relationshipType": "COMMON", "rationale": "Writing craft draws on language and literature study." }
+  ],
+  "Corporate Communication": [
+    { "program": "public-relations", "relationshipType": "PRIMARY", "rationale": "Corporate communication aligns with public-relations practice." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Organisational communication builds on mass-communication study." },
+    { "program": "media-studies", "relationshipType": "COMMON", "rationale": "Strategic-communication frameworks support the field." }
+  ],
+  "Creative Writing": [
+    { "program": "creative-writing", "relationshipType": "PRIMARY", "rationale": "Creative writing is the direct discipline." },
+    { "program": "english-literature", "relationshipType": "COMMON", "rationale": "Literary craft draws on language and literature study." },
+    { "program": "english-literature-masters", "relationshipType": "COMMON", "rationale": "Graduate literature supports advanced writing." }
+  ],
+  "Documentary Production": [
+    { "program": "documentary-film-production", "relationshipType": "PRIMARY", "rationale": "Documentary-film production is the direct discipline." },
+    { "program": "film-studies", "relationshipType": "COMMON", "rationale": "Film-study foundations support production." },
+    { "program": "journalism-mass-communication", "relationshipType": "COMMON", "rationale": "Non-fiction storytelling aligns with journalism." }
+  ],
+  "Filmmaking and Direction": [
+    { "program": "film-studies", "relationshipType": "PRIMARY", "rationale": "Film studies is the direct foundation for filmmaking." },
+    { "program": "documentary-film-production", "relationshipType": "COMMON", "rationale": "Production craft aligns with documentary work." },
+    { "program": "performing-arts", "relationshipType": "RELEVANT", "rationale": "Directing draws on performance sensibility." }
+  ],
+  "Interpretation and Translation": [
+    { "program": "translation-interpretation", "relationshipType": "PRIMARY", "rationale": "Translation and interpretation is the direct discipline." },
+    { "program": "foreign-languages", "relationshipType": "COMMON", "rationale": "Language mastery underpins translation." },
+    { "program": "linguistics", "relationshipType": "COMMON", "rationale": "Linguistics supports translation practice." }
+  ],
+  "Journalism": [
+    { "program": "journalism-mass-communication", "relationshipType": "PRIMARY", "rationale": "Journalism and mass communication is the direct discipline." },
+    { "program": "journalism-masters", "relationshipType": "COMMON", "rationale": "Graduate journalism supports senior reporting." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Mass-communication study underpins journalism." }
+  ],
+  "Media Planning": [
+    { "program": "media-studies", "relationshipType": "PRIMARY", "rationale": "Media planning is grounded in media-studies frameworks." },
+    { "program": "advertising", "relationshipType": "COMMON", "rationale": "Campaign planning aligns with advertising." },
+    { "program": "marketing", "relationshipType": "COMMON", "rationale": "Audience analytics aligns with marketing." }
+  ],
+  "Multimedia and Gaming": [
+    { "program": "game-design", "relationshipType": "PRIMARY", "rationale": "Gaming is central to multimedia-and-gaming work." },
+    { "program": "multimedia-design", "relationshipType": "COMMON", "rationale": "Multimedia-design skills support the field." },
+    { "program": "animation", "relationshipType": "COMMON", "rationale": "Animations and assets support gaming." },
+    { "program": "computer-science", "relationshipType": "OPTIONAL", "rationale": "Game-programming builds on computer science." }
+  ],
+  "Performing Arts": [
+    { "program": "performing-arts", "relationshipType": "PRIMARY", "rationale": "Performing arts is the direct discipline." },
+    { "program": "fine-arts", "relationshipType": "COMMON", "rationale": "Performance-based art aligns with fine arts." },
+    { "program": "music", "relationshipType": "COMMON", "rationale": "Musical-performance study supports the field." }
+  ],
+  "Photojournalism": [
+    { "program": "photography", "relationshipType": "PRIMARY", "rationale": "Photography is the direct skill discipline." },
+    { "program": "journalism-mass-communication", "relationshipType": "COMMON", "rationale": "News-storytelling aligns with journalism." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Visual-media study supports photojournalism." }
+  ],
+  "Public Relations": [
+    { "program": "public-relations", "relationshipType": "PRIMARY", "rationale": "Public relations is the direct discipline." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Communications-education underpins PR." },
+    { "program": "media-studies", "relationshipType": "COMMON", "rationale": "Stakeholder-communication frameworks support PR." }
+  ],
+  "Publishing": [
+    { "program": "english-literature", "relationshipType": "PRIMARY", "rationale": "Book-publishing work draws on literary study." },
+    { "program": "mass-communication", "relationshipType": "COMMON", "rationale": "Content-production skills support publishing." },
+    { "program": "creative-writing", "relationshipType": "COMMON", "rationale": "Editorial craft is enhanced by writing study." }
+  ],
+  "Radio Jockey and Anchoring": [
+    { "program": "mass-communication", "relationshipType": "PRIMARY", "rationale": "Broadcast-media study supports radio presenting." },
+    { "program": "performing-arts", "relationshipType": "COMMON", "rationale": "Voice and performance skills support anchoring." },
+    { "program": "journalism-mass-communication", "relationshipType": "COMMON", "rationale": "Broadcast-journalism foundations align with the role." }
+  ],
+  "Screenwriting": [
+    { "program": "screenwriting", "relationshipType": "PRIMARY", "rationale": "Screenwriting is the direct discipline." },
+    { "program": "film-studies", "relationshipType": "COMMON", "rationale": "Film-narrative understanding supports screenwriting." },
+    { "program": "creative-writing", "relationshipType": "COMMON", "rationale": "Dramatic-writing craft enhances screenwriting." }
+  ],
+  "Sound Engineering": [
+    { "program": "sound-engineering", "relationshipType": "PRIMARY", "rationale": "Sound engineering is the direct discipline." },
+    { "program": "film-studies", "relationshipType": "COMMON", "rationale": "Post-production audio aligns with film work." },
+    { "program": "music", "relationshipType": "RELEVANT", "rationale": "Musical-engineering supports the field." }
+  ],
+  "Technical Writing": [
+    { "program": "mass-communication", "relationshipType": "PRIMARY", "rationale": "Professional-communication study supports technical writing." },
+    { "program": "english-literature", "relationshipType": "COMMON", "rationale": "Writing craft draws on language and literature." },
+    { "program": "computer-science", "relationshipType": "RELEVANT", "rationale": "Software-domain knowledge supports technical documentation." }
+  ]
+}

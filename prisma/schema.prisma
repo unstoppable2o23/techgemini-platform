@@ -36,6 +36,14 @@ enum TraitDimension {
   EDUCATION
 }
 
+enum CareerProgramRelationship {
+  PRIMARY
+  COMMON
+  SPECIALIZED
+  RELEVANT
+  OPTIONAL
+}
+
 enum TestStatus {
   DRAFT
   ACTIVE
@@ -490,6 +498,7 @@ model Career {
   traits CareerTrait[]
   careerEducationPathways CareerEducationPathway[]
   preferredByStudentProfiles StudentProfile[] @relation("PreferredCareer")
+  careerProgramMappings CareerProgramMapping[]
 
   @@index([name])
   @@index([demandLevel])
@@ -630,6 +639,49 @@ model Program {
   @@index([indianInstitutionId])
   @@index([verificationStatus])
   @@index([source])
+}
+
+model AcademicProgram {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  level       String
+  category    String
+  isActive    Boolean  @default(true)
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  careerProgramMappings CareerProgramMapping[]
+
+  @@index([level])
+  @@index([category])
+  @@index([isActive])
+  @@index([name])
+}
+
+model CareerProgramMapping {
+  id               String                 @id @default(cuid())
+  careerId         String
+  career           Career                 @relation(fields: [careerId], references: [id], onDelete: Cascade)
+  programId        String
+  program          AcademicProgram        @relation(fields: [programId], references: [id], onDelete: Cascade)
+  relationshipType CareerProgramRelationship @default(RELEVANT)
+  strength         Float                  @default(0.5)
+  confidence       Float                  @default(0.6)
+  rationale        String
+  priority         Int                    @default(100)
+  isActive         Boolean                @default(true)
+  source           String                 @default("phase17-curated")
+  notes            String?
+  createdAt        DateTime               @default(now())
+  updatedAt        DateTime               @updatedAt
+
+  @@unique([careerId, programId])
+  @@index([careerId])
+  @@index([programId])
+  @@index([relationshipType])
+  @@index([isActive])
 }
 
 model CareerTrend {

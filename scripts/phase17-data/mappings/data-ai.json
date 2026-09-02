@@ -1,0 +1,63 @@
+{
+  "AI Governance Specialist": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "AI-governance understanding builds on computer science." },
+    { "program": "artificial-intelligence", "relationshipType": "COMMON", "rationale": "AI literacy is central to governance." },
+    { "program": "public-policy-masters", "relationshipType": "COMMON", "rationale": "Regulatory and policy frameworks align with public policy." }
+  ],
+  "Artificial Intelligence": [
+    { "program": "artificial-intelligence", "relationshipType": "PRIMARY", "rationale": "Artificial intelligence is the direct discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "AI engineering builds on computer science." },
+    { "program": "machine-learning", "relationshipType": "COMMON", "rationale": "Machine learning is a core AI method." },
+    { "program": "artificial-intelligence-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate AI supports advanced research." }
+  ],
+  "Business Analytics": [
+    { "program": "business-administration-bba", "relationshipType": "PRIMARY", "rationale": "Business analytics sits at the intersection of business and data." },
+    { "program": "data-science", "relationshipType": "COMMON", "rationale": "Data-science methods drive analytics." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Statistical modelling underpins analytics." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Management analytics supports the field." }
+  ],
+  "Computer Vision Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Computer-vision systems build on computer science." },
+    { "program": "machine-learning", "relationshipType": "COMMON", "rationale": "Vision models are a machine-learning domain." },
+    { "program": "artificial-intelligence", "relationshipType": "COMMON", "rationale": "AI methods underpin image understanding." },
+    { "program": "computer-science-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate study supports advanced vision research." }
+  ],
+  "Data Engineering": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Data pipelines and systems build on computer science." },
+    { "program": "data-science", "relationshipType": "COMMON", "rationale": "Data-engineering supports data-science workflows." },
+    { "program": "information-technology", "relationshipType": "COMMON", "rationale": "Data infrastructure aligns with IT." }
+  ],
+  "Data Governance Analyst": [
+    { "program": "information-technology", "relationshipType": "PRIMARY", "rationale": "Data governance and metadata management are IT disciplines." },
+    { "program": "data-science", "relationshipType": "COMMON", "rationale": "Data-management understanding aligns with data science." },
+    { "program": "business-administration-bba", "relationshipType": "RELEVANT", "rationale": "Policy and compliance support governance." }
+  ],
+  "Data Science": [
+    { "program": "data-science", "relationshipType": "PRIMARY", "rationale": "Data science is the direct discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Computational foundations support data science." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Statistical methods are central to data science." },
+    { "program": "data-science-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate data science supports senior analytics." }
+  ],
+  "GIS Analyst": [
+    { "program": "geography", "relationshipType": "PRIMARY", "rationale": "GIS work is grounded in geography." },
+    { "program": "geoinformatics", "relationshipType": "COMMON", "rationale": "Spatial-informatics applies directly to GIS." },
+    { "program": "geography-masters", "relationshipType": "COMMON", "rationale": "Graduate geography supports advanced GIS." },
+    { "program": "computer-science", "relationshipType": "OPTIONAL", "rationale": "Spatial-programming skills build on computer science." }
+  ],
+  "Internet of Things": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "IoT software and platforms build on computer science." },
+    { "program": "electronics-communication-engineering", "relationshipType": "COMMON", "rationale": "IoT devices and sensors rely on electronics-communications." },
+    { "program": "computer-engineering", "relationshipType": "COMMON", "rationale": "Embedded IoT hardware draws on computer engineering." }
+  ],
+  "MLOps Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "ML platforms and automation build on computer science." },
+    { "program": "machine-learning", "relationshipType": "COMMON", "rationale": "ML-workflow understanding is central to MLOps." },
+    { "program": "software-engineering", "relationshipType": "COMMON", "rationale": "Deployment engineering aligns with software engineering." }
+  ],
+  "NLP Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "NLP systems build on computer science." },
+    { "program": "machine-learning", "relationshipType": "COMMON", "rationale": "Language models are a machine-learning domain." },
+    { "program": "artificial-intelligence", "relationshipType": "COMMON", "rationale": "AI methods underpin language understanding." },
+    { "program": "computer-science-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate study supports advanced NLP." }
+  ]
+}

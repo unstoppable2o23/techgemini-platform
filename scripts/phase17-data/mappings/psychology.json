@@ -1,0 +1,46 @@
+{
+  "Clinical Psychology": [
+    { "program": "psychology", "relationshipType": "PRIMARY", "rationale": "Clinical psychology builds on psychology." },
+    { "program": "clinical-psychology-masters", "relationshipType": "PRIMARY", "rationale": "Clinical psychology is the direct graduate discipline." },
+    { "program": "psychology-masters", "relationshipType": "COMMON", "rationale": "Graduate psychology supports practice." }
+  ],
+  "Counselling Psychology": [
+    { "program": "psychology", "relationshipType": "PRIMARY", "rationale": "Counselling psychology builds on psychology." },
+    { "program": "counselling-psychology-masters", "relationshipType": "PRIMARY", "rationale": "Counselling psychology is the direct graduate discipline." },
+    { "program": "psychology-masters", "relationshipType": "COMMON", "rationale": "Graduate psychology supports practice." }
+  ],
+  "Economics": [
+    { "program": "economics", "relationshipType": "PRIMARY", "rationale": "Economics is the direct discipline." },
+    { "program": "economics-masters", "relationshipType": "COMMON", "rationale": "Graduate economics supports advanced roles." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Econometrics aligns with statistics." }
+  ],
+  "Educational Psychology": [
+    { "program": "psychology", "relationshipType": "PRIMARY", "rationale": "Educational psychology builds on psychology." },
+    { "program": "education-bed", "relationshipType": "COMMON", "rationale": "Teaching-and-learning study supports the field." },
+    { "program": "psychology-masters", "relationshipType": "COMMON", "rationale": "Graduate psychology supports assessment work." }
+  ],
+  "Organizational Psychology": [
+    { "program": "psychology", "relationshipType": "PRIMARY", "rationale": "Organizational psychology builds on psychology." },
+    { "program": "organizational-psychology-masters", "relationshipType": "COMMON", "rationale": "Graduate organizational psychology is the direct route." },
+    { "program": "human-resource-management", "relationshipType": "COMMON", "rationale": "Workplace-behaviour study aligns with HR." }
+  ],
+  "Political Science": [
+    { "program": "political-science", "relationshipType": "PRIMARY", "rationale": "Political science is the direct discipline." },
+    { "program": "political-science-masters", "relationshipType": "COMMON", "rationale": "Graduate political science supports the field." },
+    { "program": "public-administration", "relationshipType": "COMMON", "rationale": "Governance study aligns with political science." }
+  ],
+  "Psychology": [
+    { "program": "psychology", "relationshipType": "PRIMARY", "rationale": "Psychology is the direct discipline." },
+    { "program": "psychology-masters", "relationshipType": "COMMON", "rationale": "Graduate psychology supports specialist practice." }
+  ],
+  "Social Research": [
+    { "program": "sociology", "relationshipType": "PRIMARY", "rationale": "Social research is grounded in sociology." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Survey and data analysis aligns with statistics." },
+    { "program": "anthropology", "relationshipType": "COMMON", "rationale": "Qualitative methods align with anthropology." }
+  ],
+  "Social Work and Development Sector": [
+    { "program": "social-work", "relationshipType": "PRIMARY", "rationale": "Social work is the direct discipline." },
+    { "program": "social-work-masters", "relationshipType": "COMMON", "rationale": "Graduate social work supports practice." },
+    { "program": "development-studies", "relationshipType": "COMMON", "rationale": "Community-development study aligns." }
+  ]
+}

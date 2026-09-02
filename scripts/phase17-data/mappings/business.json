@@ -1,0 +1,52 @@
+{
+  "Business Management": [
+    { "program": "business-administration-bba", "relationshipType": "PRIMARY", "rationale": "Business management aligns with the BBA." },
+    { "program": "management-bba", "relationshipType": "PRIMARY", "rationale": "Management is the direct undergraduate discipline." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "The MBA supports senior management." }
+  ],
+  "Construction Management": [
+    { "program": "civil-engineering", "relationshipType": "PRIMARY", "rationale": "Construction management is grounded in civil engineering." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Management skills align with project leadership." },
+    { "program": "architecture-barch", "relationshipType": "COMMON", "rationale": "Built-environment understanding supports the field." }
+  ],
+  "Entrepreneurship": [
+    { "program": "business-administration-bba", "relationshipType": "PRIMARY", "rationale": "Entrepreneurship builds on business foundations." },
+    { "program": "entrepreneurship", "relationshipType": "PRIMARY", "rationale": "Entrepreneurship is the direct discipline." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "The MBA supports venture growth." }
+  ],
+  "Human Resource Management": [
+    { "program": "human-resource-management", "relationshipType": "PRIMARY", "rationale": "Human-resource management is the direct discipline." },
+    { "program": "business-administration-bba", "relationshipType": "COMMON", "rationale": "Business foundations underpin HR work." },
+    { "program": "organizational-psychology-masters", "relationshipType": "COMMON", "rationale": "Organisational-behaviour study supports HR." }
+  ],
+  "Image Consulting": [
+    { "program": "image-consulting", "relationshipType": "PRIMARY", "rationale": "Image consulting is the direct discipline." },
+    { "program": "psychology", "relationshipType": "COMMON", "rationale": "Behavioural understanding supports consulting." },
+    { "program": "fashion-design", "relationshipType": "RELEVANT", "rationale": "Styling knowledge supports the role." }
+  ],
+  "Operations Management": [
+    { "program": "operations-management", "relationshipType": "PRIMARY", "rationale": "Operations management is the direct discipline." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "The MBA supports operational leadership." },
+    { "program": "industrial-engineering", "relationshipType": "COMMON", "rationale": "Process-optimisation aligns with operations." }
+  ],
+  "Product Management": [
+    { "program": "business-administration-mba", "relationshipType": "PRIMARY", "rationale": "Product management combines business strategy and technology." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Technical understanding supports product roles." },
+    { "program": "user-experience-design", "relationshipType": "COMMON", "rationale": "User-centred design supports product discovery." }
+  ],
+  "Project Management": [
+    { "program": "business-administration-mba", "relationshipType": "PRIMARY", "rationale": "Project management builds on management study." },
+    { "program": "operations-management", "relationshipType": "COMMON", "rationale": "Operational-delivery skills support projects." },
+    { "program": "civil-engineering", "relationshipType": "OPTIONAL", "rationale": "Engineering-project management aligns with civil engineering." }
+  ],
+  "Retail Management": [
+    { "program": "retail-management", "relationshipType": "PRIMARY", "rationale": "Retail management is the direct discipline." },
+    { "program": "business-administration-bba", "relationshipType": "COMMON", "rationale": "Business foundations underpin retail." },
+    { "program": "operations-management", "relationshipType": "COMMON", "rationale": "Store operations align with operations management." }
+  ],
+  "Strategy Consulting": [
+    { "program": "business-administration-mba", "relationshipType": "PRIMARY", "rationale": "Strategy consulting is grounded in management study." },
+    { "program": "economics", "relationshipType": "COMMON", "rationale": "Market and policy analysis aligns with strategy." },
+    { "program": "business-administration-bba", "relationshipType": "COMMON", "rationale": "Business foundations underpin consulting." }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "AR/VR Development": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "AR/VR systems engineering builds on computer science." },
+    { "program": "interaction-design", "relationshipType": "COMMON", "rationale": "Immersive user-experience design is central to AR/VR." },
+    { "program": "computer-engineering", "relationshipType": "COMMON", "rationale": "XR hardware and rendering draw on computer engineering." }
+  ],
+  "Blockchain Technology": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Blockchain protocols and cryptography build on computer science." },
+    { "program": "computer-science-masters", "relationshipType": "COMMON", "rationale": "Graduate distributed-systems study supports blockchain engineering." },
+    { "program": "computer-engineering", "relationshipType": "RELEVANT", "rationale": "Systems architecture supports blockchain platforms." }
+  ],
+  "Cloud Computing": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Distributed computing and infrastructure are computer-science domains." },
+    { "program": "information-technology", "relationshipType": "COMMON", "rationale": "IT infrastructure aligns with cloud platforms." },
+    { "program": "network-engineering", "relationshipType": "COMMON", "rationale": "Cloud networking draws on network engineering." }
+  ],
+  "Cloud Security Engineer": [
+    { "program": "cyber-security", "relationshipType": "PRIMARY", "rationale": "Cloud security is a cyber-security discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Secure cloud engineering builds on computer science." },
+    { "program": "information-security", "relationshipType": "COMMON", "rationale": "Information-security foundations support the field." }
+  ],
+  "Cloud Solutions Architect": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Systems architecture is a computer-science discipline." },
+    { "program": "information-technology", "relationshipType": "COMMON", "rationale": "IT infrastructure and cloud platforms align." },
+    { "program": "network-engineering", "relationshipType": "RELEVANT", "rationale": "Cloud network design draws on network engineering." }
+  ],
+  "Cryptography Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Applied cryptography builds on computer science." },
+    { "program": "mathematics", "relationshipType": "COMMON", "rationale": "Number theory underpins cryptographic algorithms." },
+    { "program": "cyber-security", "relationshipType": "SPECIALIZED", "rationale": "Security-hardening supports cryptographic engineering." }
+  ],
+  "Cyber Security": [
+    { "program": "cyber-security", "relationshipType": "PRIMARY", "rationale": "Cyber security is the direct discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Computer science underpins security engineering." },
+    { "program": "information-security", "relationshipType": "COMMON", "rationale": "Information security closely aligns." },
+    { "program": "cyber-security-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate cyber security supports advanced roles." }
+  ],
+  "DevOps": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Systems and automation build on computer science." },
+    { "program": "information-technology", "relationshipType": "COMMON", "rationale": "IT operations align with DevOps practice." },
+    { "program": "network-engineering", "relationshipType": "RELEVANT", "rationale": "Infrastructure networking supports DevOps." }
+  ],
+  "Digital Forensics": [
+    { "program": "cyber-security", "relationshipType": "PRIMARY", "rationale": "Digital forensics is a cyber-security discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Computer-science foundations support forensic analysis." },
+    { "program": "information-security", "relationshipType": "COMMON", "rationale": "Information security aligns with incident investigation." }
+  ],
+  "Edge Computing Engineer": [
+    { "program": "computer-engineering", "relationshipType": "PRIMARY", "rationale": "Edge hardware and embedded systems draw on computer engineering." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Distributed systems engineering builds on computer science." },
+    { "program": "electronics-communication-engineering", "relationshipType": "COMMON", "rationale": "Embedded and IoT edge devices rely on electronics-communications." }
+  ],
+  "ERP Consultant": [
+    { "program": "information-technology", "relationshipType": "PRIMARY", "rationale": "Enterprise software and ERP platforms are IT domains." },
+    { "program": "business-administration-bba", "relationshipType": "COMMON", "rationale": "Business-process expertise supports ERP consulting." },
+    { "program": "computer-applications-bca", "relationshipType": "COMMON", "rationale": "Computer-applications foundations support ERP implementation." }
+  ],
+  "Ethical Hacking": [
+    { "program": "cyber-security", "relationshipType": "PRIMARY", "rationale": "Ethical hacking is a cyber-security discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Offensive-security work builds on computer science." },
+    { "program": "information-security", "relationshipType": "COMMON", "rationale": "Information security aligns with vulnerability testing." }
+  ],
+  "Full Stack Development": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Web software engineering is a computer-science discipline." },
+    { "program": "software-engineering", "relationshipType": "PRIMARY", "rationale": "Full-stack engineering aligns with software engineering." },
+    { "program": "computer-applications-bca", "relationshipType": "COMMON", "rationale": "Applications development builds on the BCA foundation." }
+  ],
+  "Game Development": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Game engines and programming build on computer science." },
+    { "program": "game-design", "relationshipType": "COMMON", "rationale": "Game-design discipline supports game development." },
+    { "program": "animation", "relationshipType": "RELEVANT", "rationale": "Art and animation assets support game production." }
+  ],
+  "Hardware and Networking": [
+    { "program": "network-engineering", "relationshipType": "PRIMARY", "rationale": "Networking is the direct discipline for hardware and networking." },
+    { "program": "computer-engineering", "relationshipType": "COMMON", "rationale": "Hardware systems draw on computer engineering." },
+    { "program": "information-technology", "relationshipType": "COMMON", "rationale": "IT infrastructure aligns with the field." }
+  ],
+  "High Performance Computing Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "HPC systems programming builds on computer science." },
+    { "program": "computer-engineering", "relationshipType": "COMMON", "rationale": "Parallel hardware design draws on computer engineering." },
+    { "program": "mathematics", "relationshipType": "RELEVANT", "rationale": "Numerical methods support scientific computing." }
+  ],
+  "Information Technology Business Analysis": [
+    { "program": "information-technology", "relationshipType": "PRIMARY", "rationale": "IT business analysis is an information-technology discipline." },
+    { "program": "business-administration-bba", "relationshipType": "COMMON", "rationale": "Business-process analysis aligns with management study." },
+    { "program": "computer-applications-bca", "relationshipType": "COMMON", "rationale": "Applications foundations support requirements analysis." }
+  ],
+  "IoT Security Engineer": [
+    { "program": "cyber-security", "relationshipType": "PRIMARY", "rationale": "IoT security is a cyber-security discipline." },
+    { "program": "electronics-communication-engineering", "relationshipType": "COMMON", "rationale": "Embedded devices draw on electronics-communications." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Secure systems engineering builds on computer science." }
+  ],
+  "IT Systems Administration": [
+    { "program": "information-technology", "relationshipType": "PRIMARY", "rationale": "Systems administration is an IT discipline." },
+    { "program": "network-engineering", "relationshipType": "COMMON", "rationale": "Server and network administration draw on network engineering." },
+    { "program": "computer-applications-bca", "relationshipType": "COMMON", "rationale": "Applications foundations support administration." }
+  ],
+  "Machine Learning Engineering": [
+    { "program": "machine-learning", "relationshipType": "PRIMARY", "rationale": "Machine learning is the direct discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "ML engineering builds on computer science." },
+    { "program": "artificial-intelligence", "relationshipType": "COMMON", "rationale": "AI and ML are closely linked disciplines." },
+    { "program": "machine-learning-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate ML supports advanced engineering." }
+  ],
+  "Mobile Application Development": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Mobile software engineering builds on computer science." },
+    { "program": "software-engineering", "relationshipType": "PRIMARY", "rationale": "Mobile engineering aligns with software engineering." },
+    { "program": "computer-applications-bca", "relationshipType": "RELEVANT", "rationale": "Applications development builds on the BCA foundation." }
+  ],
+  "Penetration Tester": [
+    { "program": "cyber-security", "relationshipType": "PRIMARY", "rationale": "Penetration testing is a cyber-security discipline." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Exploit development builds on computer science." },
+    { "program": "information-security", "relationshipType": "COMMON", "rationale": "Information security aligns with the field." }
+  ],
+  "Quantum Computing Research": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Quantum algorithms build on computer science." },
+    { "program": "physics", "relationshipType": "COMMON", "rationale": "Quantum mechanics underpins the field." },
+    { "program": "mathematics", "relationshipType": "COMMON", "rationale": "Linear algebra and analysis support quantum computation." }
+  ],
+  "Security Operations Analyst": [
+    { "program": "cyber-security", "relationshipType": "PRIMARY", "rationale": "Security operations is a cyber-security discipline." },
+    { "program": "information-technology", "relationshipType": "COMMON", "rationale": "IT operations aligns with SOC practice." },
+    { "program": "information-security", "relationshipType": "COMMON", "rationale": "Information security supports monitoring and response." }
+  ],
+  "Site Reliability Engineering": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Reliability engineering builds on computer science." },
+    { "program": "software-engineering", "relationshipType": "COMMON", "rationale": "Software systems reliability aligns with software engineering." },
+    { "program": "information-technology", "relationshipType": "RELEVANT", "rationale": "Infrastructure operations support SRE." }
+  ],
+  "Software Engineering": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Computer science is the foundational discipline." },
+    { "program": "software-engineering", "relationshipType": "PRIMARY", "rationale": "Software engineering is the direct degree." },
+    { "program": "computer-engineering", "relationshipType": "COMMON", "rationale": "Systems engineering is closely related." },
+    { "program": "software-engineering-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate software engineering supports senior roles." }
+  ],
+  "Software Testing and Quality Assurance": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Testing automation builds on computer science." },
+    { "program": "software-engineering", "relationshipType": "COMMON", "rationale": "QA processes align with software engineering." },
+    { "program": "information-technology", "relationshipType": "COMMON", "rationale": "IT foundations support testing practice." }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "Airforce": [
+    { "program": "physics", "relationshipType": "COMMON", "rationale": "Officer entry often benefits from science study." },
+    { "program": "aerospace-engineering", "relationshipType": "COMMON", "rationale": "Aviation-engineering knowledge supports air-force service." },
+    { "program": "mathematics", "relationshipType": "COMMON", "rationale": "Analytical foundations underpin technical officer roles." }
+  ],
+  "Civil Services": [
+    { "program": "public-administration", "relationshipType": "PRIMARY", "rationale": "Public administration is central to civil-service work." },
+    { "program": "political-science", "relationshipType": "COMMON", "rationale": "Governance study supports the role." },
+    { "program": "history", "relationshipType": "COMMON", "rationale": "General-studies foundation aligns with civil-service exams." },
+    { "program": "economics", "relationshipType": "COMMON", "rationale": "Economic-policymaking knowledge supports the role." }
+  ],
+  "Defence Services": [
+    { "program": "mathematics", "relationshipType": "COMMON", "rationale": "Quantitative foundations support defence entry." },
+    { "program": "physical-education-bped", "relationshipType": "COMMON", "rationale": "Fitness and discipline align with physical education." },
+    { "program": "political-science", "relationshipType": "COMMON", "rationale": "Strategic-studies knowledge supports officer roles." }
+  ],
+  "Disaster Management": [
+    { "program": "geography", "relationshipType": "PRIMARY", "rationale": "Hazard and spatial analysis aligns with geography." },
+    { "program": "public-policy-masters", "relationshipType": "COMMON", "rationale": "Emergency-policy frameworks align with the field." },
+    { "program": "environmental-science", "relationshipType": "COMMON", "rationale": "Natural-hazard science supports disaster management." }
+  ],
+  "Economic Services": [
+    { "program": "economics", "relationshipType": "PRIMARY", "rationale": "Economics is the direct discipline." },
+    { "program": "economics-masters", "relationshipType": "COMMON", "rationale": "Graduate economics supports service roles." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Economic-data analysis aligns with statistics." }
+  ],
+  "Foreign Services": [
+    { "program": "international-relations", "relationshipType": "PRIMARY", "rationale": "International relations is the direct foundation." },
+    { "program": "political-science", "relationshipType": "COMMON", "rationale": "Governance study supports diplomatic work." },
+    { "program": "history", "relationshipType": "COMMON", "rationale": "Historical understanding underpins diplomacy." },
+    { "program": "economics", "relationshipType": "COMMON", "rationale": "International-economics knowledge supports service." }
+  ],
+  "Public Policy and Governance": [
+    { "program": "public-policy-masters", "relationshipType": "PRIMARY", "rationale": "Public policy is the direct advanced discipline." },
+    { "program": "public-administration", "relationshipType": "COMMON", "rationale": "Public-administration study aligns." },
+    { "program": "political-science", "relationshipType": "COMMON", "rationale": "Governance understanding supports the field." }
+  ],
+  "Staff Selection Services": [
+    { "program": "mathematics", "relationshipType": "COMMON", "rationale": "Quantitative aptitude supports competitive exams." },
+    { "program": "history", "relationshipType": "COMMON", "rationale": "General-studies foundation aligns with selection exams." },
+    { "program": "english-literature", "relationshipType": "COMMON", "rationale": "Language-comprehension skills support the exams." }
+  ]
+}

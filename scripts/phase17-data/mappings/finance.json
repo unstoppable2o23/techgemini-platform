@@ -1,0 +1,86 @@
+{
+  "Actuarial Science": [
+    { "program": "statistics", "relationshipType": "PRIMARY", "rationale": "Actuarial work is grounded in statistical modelling." },
+    { "program": "mathematics", "relationshipType": "COMMON", "rationale": "Mathematical analysis underpins actuarial science." },
+    { "program": "finance", "relationshipType": "COMMON", "rationale": "Financial-modelling expertise supports the field." },
+    { "program": "statistics-masters", "relationshipType": "SPECIALIZED", "rationale": "Graduate statistics supports professional actuarial exams." }
+  ],
+  "Algorithmic Trading Developer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Trading-algorithm engineering builds on computer science." },
+    { "program": "finance", "relationshipType": "COMMON", "rationale": "Market and quantitative-finance knowledge supports the field." },
+    { "program": "mathematics", "relationshipType": "COMMON", "rationale": "Quantitative modelling underpins algorithmic trading." }
+  ],
+  "Chartered Accountancy": [
+    { "program": "commerce-bcom", "relationshipType": "PRIMARY", "rationale": "Commerce study is the standard CA foundation." },
+    { "program": "accounting", "relationshipType": "PRIMARY", "rationale": "Accounting is the direct discipline." },
+    { "program": "auditing", "relationshipType": "COMMON", "rationale": "Audit skills are core to the CA profession." }
+  ],
+  "Cost and Management Accounting": [
+    { "program": "accounting", "relationshipType": "PRIMARY", "rationale": "Management accounting is grounded in accounting." },
+    { "program": "commerce-bcom", "relationshipType": "COMMON", "rationale": "Commerce study underpins cost accounting." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Management financial analysis supports the field." }
+  ],
+  "Financial Analysis": [
+    { "program": "finance", "relationshipType": "PRIMARY", "rationale": "Financial analysis is a finance discipline." },
+    { "program": "commerce-bcom", "relationshipType": "COMMON", "rationale": "Commerce study underpins financial analysis." },
+    { "program": "finance-masters", "relationshipType": "COMMON", "rationale": "Graduate finance supports advanced analysis." }
+  ],
+  "Financial Planning": [
+    { "program": "finance", "relationshipType": "PRIMARY", "rationale": "Financial planning builds on finance study." },
+    { "program": "commerce-bcom", "relationshipType": "COMMON", "rationale": "Commerce study underpins personal-finance planning." },
+    { "program": "finance-masters", "relationshipType": "COMMON", "rationale": "Graduate finance supports advisory roles." }
+  ],
+  "Fintech": [
+    { "program": "finance", "relationshipType": "PRIMARY", "rationale": "Fintech combines finance with technology." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Digital-payment systems build on computer science." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Fintech product and strategy align with an MBA." }
+  ],
+  "Forensic Accounting": [
+    { "program": "forensic-accounting", "relationshipType": "PRIMARY", "rationale": "Forensic accounting is the direct discipline." },
+    { "program": "accounting", "relationshipType": "COMMON", "rationale": "Accounting foundations underpin forensic work." },
+    { "program": "auditing", "relationshipType": "COMMON", "rationale": "Audit investigation skills are core." },
+    { "program": "law-llb", "relationshipType": "OPTIONAL", "rationale": "Legal-fraud frameworks are relevant." }
+  ],
+  "Insurance Underwriting": [
+    { "program": "finance", "relationshipType": "PRIMARY", "rationale": "Underwriting draws on financial-risk knowledge." },
+    { "program": "commerce-bcom", "relationshipType": "COMMON", "rationale": "Commerce study underpins insurance practice." },
+    { "program": "risk-management", "relationshipType": "COMMON", "rationale": "Risk assessment aligns with underwriting." }
+  ],
+  "Investment Advisory": [
+    { "program": "finance", "relationshipType": "PRIMARY", "rationale": "Investment advisory is a finance discipline." },
+    { "program": "finance-masters", "relationshipType": "COMMON", "rationale": "Graduate finance supports advisory expertise." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Client-relationship management aligns with an MBA." }
+  ],
+  "Investment Banking": [
+    { "program": "finance", "relationshipType": "PRIMARY", "rationale": "Investment banking is a finance discipline." },
+    { "program": "finance-masters", "relationshipType": "COMMON", "rationale": "Graduate finance supports deal-structuring work." },
+    { "program": "accounting", "relationshipType": "COMMON", "rationale": "Financial-statement skills underpin banking." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Corporate-finance strategy aligns with an MBA." }
+  ],
+  "Payments Engineer": [
+    { "program": "computer-science", "relationshipType": "PRIMARY", "rationale": "Payments-platform engineering builds on computer science." },
+    { "program": "finance", "relationshipType": "COMMON", "rationale": "Payment-system knowledge aligns with finance." },
+    { "program": "computer-engineering", "relationshipType": "RELEVANT", "rationale": "Systems engineering supports payments infrastructure." }
+  ],
+  "Quantitative Analyst": [
+    { "program": "mathematics", "relationshipType": "PRIMARY", "rationale": "Quantitative analysis is grounded in mathematics." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Statistical modelling underpins quant work." },
+    { "program": "finance", "relationshipType": "COMMON", "rationale": "Financial-markets knowledge aligns with quant roles." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Algorithmic implementation builds on computer science." }
+  ],
+  "Retail Banking": [
+    { "program": "finance", "relationshipType": "PRIMARY", "rationale": "Retail banking is a finance discipline." },
+    { "program": "commerce-bcom", "relationshipType": "COMMON", "rationale": "Commerce study underpins banking practice." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Branch and relationship management align with an MBA." }
+  ],
+  "Risk Management": [
+    { "program": "risk-management", "relationshipType": "PRIMARY", "rationale": "Risk management is the direct discipline." },
+    { "program": "finance", "relationshipType": "COMMON", "rationale": "Financial-risk expertise supports the field." },
+    { "program": "commerce-bcom", "relationshipType": "COMMON", "rationale": "Commerce study underpins risk practice." }
+  ],
+  "Venture Capital Analyst": [
+    { "program": "finance", "relationshipType": "PRIMARY", "rationale": "Venture finance is a finance discipline." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Deal evaluation and strategy align with an MBA." },
+    { "program": "economics", "relationshipType": "RELEVANT", "rationale": "Market and policy analysis supports the field." }
+  ]
+}

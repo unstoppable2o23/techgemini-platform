@@ -1,0 +1,47 @@
+{
+  "Agri Business Management": [
+    { "program": "agricultural-science", "relationshipType": "PRIMARY", "rationale": "Agri-business is grounded in agricultural science." },
+    { "program": "business-administration-mba", "relationshipType": "COMMON", "rationale": "Management skills align with agri-business." },
+    { "program": "agribusiness-management-masters", "relationshipType": "COMMON", "rationale": "Graduate agri-business supports the field." }
+  ],
+  "Agriculture Research": [
+    { "program": "agricultural-science", "relationshipType": "PRIMARY", "rationale": "Agricultural-research is grounded in agricultural science." },
+    { "program": "agricultural-science-masters", "relationshipType": "COMMON", "rationale": "Graduate agricultural science supports research." },
+    { "program": "biotechnology-engineering", "relationshipType": "COMMON", "rationale": "Crop-biotechnology methods support research." }
+  ],
+  "AgriTech": [
+    { "program": "agricultural-science", "relationshipType": "PRIMARY", "rationale": "Agri-technology is grounded in agricultural science." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Precision-agriculture software builds on computer science." },
+    { "program": "agricultural-engineering", "relationshipType": "COMMON", "rationale": "Farm-mechanisation engineering aligns with the field." }
+  ],
+  "Agronomy": [
+    { "program": "agricultural-science", "relationshipType": "PRIMARY", "rationale": "Agronomy is a core agricultural-science discipline." },
+    { "program": "agricultural-science-masters", "relationshipType": "COMMON", "rationale": "Graduate agronomy supports crop-production roles." },
+    { "program": "botany", "relationshipType": "COMMON", "rationale": "Plant-biology foundations support agronomy." }
+  ],
+  "Aquaculture": [
+    { "program": "fisheries-science", "relationshipType": "PRIMARY", "rationale": "Aquaculture is grounded in fisheries science." },
+    { "program": "marine-biology", "relationshipType": "COMMON", "rationale": "Aquatic-biology study supports aquaculture." },
+    { "program": "zoology", "relationshipType": "COMMON", "rationale": "Animal-science foundations support the field." }
+  ],
+  "Dairy Technology": [
+    { "program": "dairy-technology", "relationshipType": "PRIMARY", "rationale": "Dairy technology is the direct discipline." },
+    { "program": "food-technology", "relationshipType": "COMMON", "rationale": "Food-processing science supports dairy work." },
+    { "program": "veterinary-science", "relationshipType": "OPTIONAL", "rationale": "Animal-health understanding supports dairy production." }
+  ],
+  "Fisheries Science": [
+    { "program": "fisheries-science", "relationshipType": "PRIMARY", "rationale": "Fisheries science is the direct discipline." },
+    { "program": "marine-biology", "relationshipType": "COMMON", "rationale": "Aquatic-ecology study supports fisheries." },
+    { "program": "zoology", "relationshipType": "COMMON", "rationale": "Animal-science foundations support the field." }
+  ],
+  "Food Technology": [
+    { "program": "food-technology", "relationshipType": "PRIMARY", "rationale": "Food technology is the direct discipline." },
+    { "program": "food-technology-masters", "relationshipType": "COMMON", "rationale": "Graduate food technology supports product development." },
+    { "program": "microbiology", "relationshipType": "COMMON", "rationale": "Food-safety microbiology supports the field." }
+  ],
+  "Horticulture": [
+    { "program": "horticulture", "relationshipType": "PRIMARY", "rationale": "Horticulture is the direct discipline." },
+    { "program": "agricultural-science", "relationshipType": "COMMON", "rationale": "Crop-science foundations support horticulture." },
+    { "program": "horticulture-masters", "relationshipType": "COMMON", "rationale": "Graduate horticulture supports specialist production." }
+  ]
+}

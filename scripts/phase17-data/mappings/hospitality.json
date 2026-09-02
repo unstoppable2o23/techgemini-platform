@@ -1,0 +1,44 @@
+{
+  "Aviation": [
+    { "program": "aviation-management", "relationshipType": "PRIMARY", "rationale": "Aviation management is the direct discipline." },
+    { "program": "hospitality-management-bhm", "relationshipType": "COMMON", "rationale": "Service-operations study aligns with aviation." }
+  ],
+  "Cabin Services": [
+    { "program": "hospitality-management-bhm", "relationshipType": "PRIMARY", "rationale": "Cabin services draw on hospitality-management skills." },
+    { "program": "aviation-management", "relationshipType": "COMMON", "rationale": "Aviation-operations knowledge supports the role." },
+    { "program": "hotel-management", "relationshipType": "COMMON", "rationale": "Guest-service skills align with the role." }
+  ],
+  "Cosmetology and Beauty Wellness": [
+    { "program": "cosmetology", "relationshipType": "PRIMARY", "rationale": "Cosmetology is the direct discipline." },
+    { "program": "nutrition-dietetics", "relationshipType": "OPTIONAL", "rationale": "Wellness knowledge supports beauty care." }
+  ],
+  "Culinary Arts": [
+    { "program": "culinary-arts", "relationshipType": "PRIMARY", "rationale": "Culinary arts is the direct discipline." },
+    { "program": "hotel-management", "relationshipType": "COMMON", "rationale": "Kitchen-management study aligns with the field." },
+    { "program": "food-technology", "relationshipType": "OPTIONAL", "rationale": "Food-science understanding supports culinary work." }
+  ],
+  "Event Management": [
+    { "program": "event-management", "relationshipType": "PRIMARY", "rationale": "Event management is the direct discipline." },
+    { "program": "business-administration-bba", "relationshipType": "COMMON", "rationale": "Marketing and operations study supports events." },
+    { "program": "hospitality-management-bhm", "relationshipType": "COMMON", "rationale": "Hospitality operations support event execution." }
+  ],
+  "Hotel Management": [
+    { "program": "hotel-management", "relationshipType": "PRIMARY", "rationale": "Hotel management is the direct discipline." },
+    { "program": "hospitality-management-bhm", "relationshipType": "COMMON", "rationale": "Hospitality management closely aligns." }
+  ],
+  "Pilot": [
+    { "program": "airline-pilot-training-cpl", "relationshipType": "PRIMARY", "rationale": "Commercial-pilot training is the direct route." },
+    { "program": "aviation-management", "relationshipType": "OPTIONAL", "rationale": "Aviation-operations study complements flying careers." },
+    { "program": "physics", "relationshipType": "OPTIONAL", "rationale": "Aeronautical-physics foundations are relevant." }
+  ],
+  "Travel and Tourism Management": [
+    { "program": "travel-tourism-management", "relationshipType": "PRIMARY", "rationale": "Travel and tourism management is the direct discipline." },
+    { "program": "hospitality-management-bhm", "relationshipType": "COMMON", "rationale": "Hospitality operations support tourism." },
+    { "program": "marketing", "relationshipType": "COMMON", "rationale": "Destination-marketing skills align with the field." }
+  ],
+  "Yoga and Wellness Instruction": [
+    { "program": "physiotherapy", "relationshipType": "PRIMARY", "rationale": "Yoga instruction is grounded in physical-wellness science." },
+    { "program": "sports-science", "relationshipType": "COMMON", "rationale": "Exercise-and-health study supports yoga teaching." },
+    { "program": "nutrition-dietetics", "relationshipType": "COMMON", "rationale": "Wellness-nutrition knowledge supports the role." }
+  ]
+}

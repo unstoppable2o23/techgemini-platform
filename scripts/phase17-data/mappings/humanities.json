@@ -1,0 +1,60 @@
+{
+  "Anthropology": [
+    { "program": "anthropology", "relationshipType": "PRIMARY", "rationale": "Anthropology is the direct discipline." },
+    { "program": "sociology", "relationshipType": "COMMON", "rationale": "Society-study shares overlap with anthropology." },
+    { "program": "anthropology-masters", "relationshipType": "COMMON", "rationale": "Graduate anthropology supports specialised work." }
+  ],
+  "Archaeology": [
+    { "program": "archaeology", "relationshipType": "PRIMARY", "rationale": "Archaeology is the direct discipline." },
+    { "program": "archaeology-masters", "relationshipType": "COMMON", "rationale": "Graduate archaeology supports field practice." },
+    { "program": "heritage-studies", "relationshipType": "COMMON", "rationale": "Heritage study aligns with archaeology." }
+  ],
+  "Archival Studies": [
+    { "program": "library-information-science", "relationshipType": "PRIMARY", "rationale": "Archival studies is closely tied to library and information science." },
+    { "program": "history-masters", "relationshipType": "COMMON", "rationale": "Historical-record knowledge supports archiving." },
+    { "program": "heritage-studies", "relationshipType": "COMMON", "rationale": "Heritage preservation aligns with archival work." },
+    { "program": "history", "relationshipType": "COMMON", "rationale": "Undergraduate history is the school-stage on-ramp into archives." }
+  ],
+  "Cultural Studies": [
+    { "program": "cultural-studies", "relationshipType": "PRIMARY", "rationale": "Cultural studies is the direct discipline." },
+    { "program": "sociology", "relationshipType": "COMMON", "rationale": "Society and culture study are closely linked." },
+    { "program": "media-studies", "relationshipType": "COMMON", "rationale": "Cultural-media analysis also aligns." }
+  ],
+  "Development Studies": [
+    { "program": "development-studies", "relationshipType": "PRIMARY", "rationale": "Development studies is the direct discipline." },
+    { "program": "economics", "relationshipType": "COMMON", "rationale": "Development economics underpins the field." },
+    { "program": "social-work", "relationshipType": "COMMON", "rationale": "Community-development practice aligns." },
+    { "program": "public-policy-masters", "relationshipType": "COMMON", "rationale": "Policy frameworks support development work." }
+  ],
+  "History and Archaeology": [
+    { "program": "history", "relationshipType": "PRIMARY", "rationale": "Historical studies is the direct foundation." },
+    { "program": "archaeology", "relationshipType": "COMMON", "rationale": "Archaeological method supports the field." },
+    { "program": "history-masters", "relationshipType": "COMMON", "rationale": "Graduate history supports specialisation." }
+  ],
+  "International Relations": [
+    { "program": "international-relations", "relationshipType": "PRIMARY", "rationale": "International relations is the direct discipline." },
+    { "program": "political-science", "relationshipType": "COMMON", "rationale": "Political-science study underpins global affairs." },
+    { "program": "political-science-masters", "relationshipType": "COMMON", "rationale": "Graduate politics supports policy work." }
+  ],
+  "Linguistics": [
+    { "program": "linguistics", "relationshipType": "PRIMARY", "rationale": "Linguistics is the direct discipline." },
+    { "program": "linguistics-masters", "relationshipType": "COMMON", "rationale": "Graduate linguistics supports research." },
+    { "program": "english-literature", "relationshipType": "COMMON", "rationale": "Language and literature study aligns." }
+  ],
+  "Museum Studies and Curatorship": [
+    { "program": "museum-studies", "relationshipType": "PRIMARY", "rationale": "Museum studies is the direct discipline." },
+    { "program": "history-masters", "relationshipType": "COMMON", "rationale": "Historical scholarship supports curation." },
+    { "program": "heritage-studies", "relationshipType": "COMMON", "rationale": "Heritage preservation aligns with curation." },
+    { "program": "history", "relationshipType": "COMMON", "rationale": "Undergraduate history is the school-stage on-ramp into curation." }
+  ],
+  "Philosophy": [
+    { "program": "philosophy", "relationshipType": "PRIMARY", "rationale": "Philosophy is the direct discipline." },
+    { "program": "philosophy-masters", "relationshipType": "COMMON", "rationale": "Graduate philosophy supports academia." },
+    { "program": "english-literature", "relationshipType": "RELEVANT", "rationale": "Analytical-writing skills support philosophical work." }
+  ],
+  "Sociology": [
+    { "program": "sociology", "relationshipType": "PRIMARY", "rationale": "Sociology is the direct discipline." },
+    { "program": "sociology-masters", "relationshipType": "COMMON", "rationale": "Graduate sociology supports research." },
+    { "program": "anthropology", "relationshipType": "COMMON", "rationale": "Society-study shares overlap with sociology." }
+  ]
+}

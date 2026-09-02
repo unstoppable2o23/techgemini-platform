@@ -1,0 +1,88 @@
+{
+  "Carbon Accounting Specialist": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Emissions-accounting is grounded in environmental science." },
+    { "program": "accounting", "relationshipType": "COMMON", "rationale": "Emissions inventories parallel financial accounting." },
+    { "program": "sustainability-management", "relationshipType": "COMMON", "rationale": "Sustainability frameworks support the role." }
+  ],
+  "Carbon Markets Analyst": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Carbon-market analysis is grounded in environmental science." },
+    { "program": "finance", "relationshipType": "COMMON", "rationale": "Market-trading frameworks support the role." },
+    { "program": "economics", "relationshipType": "COMMON", "rationale": "Environmental economics underpins carbon markets." }
+  ],
+  "Circular Economy Specialist": [
+    { "program": "sustainability-management", "relationshipType": "PRIMARY", "rationale": "Circular-economy strategy aligns with sustainability management." },
+    { "program": "environmental-science", "relationshipType": "COMMON", "rationale": "Resource-science supports circular design." },
+    { "program": "industrial-engineering", "relationshipType": "COMMON", "rationale": "Material-flow engineering supports circularity." }
+  ],
+  "Climate Policy Analyst": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Climate-policy analysis is grounded in climate and environmental science." },
+    { "program": "public-policy-masters", "relationshipType": "COMMON", "rationale": "Policy-development frameworks align with the role." },
+    { "program": "political-science", "relationshipType": "COMMON", "rationale": "Governance understanding supports policy work." }
+  ],
+  "Climate Risk Analyst": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Climate-risk analysis is grounded in environmental science." },
+    { "program": "geography", "relationshipType": "COMMON", "rationale": "Geospatial hazard analysis aligns with geography." },
+    { "program": "risk-management", "relationshipType": "COMMON", "rationale": "Risk-modelling frameworks support the role." }
+  ],
+  "Climate Science": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Climate science is grounded in environmental science." },
+    { "program": "environmental-science-masters", "relationshipType": "COMMON", "rationale": "Graduate environmental science supports research." },
+    { "program": "physics", "relationshipType": "COMMON", "rationale": "Atmospheric-physics underpins climate modelling." },
+    { "program": "mathematics", "relationshipType": "SPECIALIZED", "rationale": "Climate-modelling mathematics is a specialist track." }
+  ],
+  "Conservation Scientist": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Conservation science is grounded in environmental science." },
+    { "program": "wildlife-biology", "relationshipType": "COMMON", "rationale": "Species and habitat study supports conservation." },
+    { "program": "forestry", "relationshipType": "COMMON", "rationale": "Natural-resource management aligns with conservation." }
+  ],
+  "Energy Efficiency Consultant": [
+    { "program": "environmental-engineering", "relationshipType": "PRIMARY", "rationale": "Energy-efficiency engineering aligns with environmental engineering." },
+    { "program": "mechanical-engineering", "relationshipType": "COMMON", "rationale": "Building and system efficiency draw on mechanical engineering." },
+    { "program": "renewable-energy-engineering", "relationshipType": "COMMON", "rationale": "Clean-energy systems align with the field." }
+  ],
+  "Environmental Consultant": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Environmental consulting is grounded in environmental science." },
+    { "program": "environmental-science-masters", "relationshipType": "COMMON", "rationale": "Graduate environmental science supports consultancy." },
+    { "program": "environmental-engineering", "relationshipType": "COMMON", "rationale": "Engineering-lens consulting aligns with the field." }
+  ],
+  "Environmental Impact Assessment Specialist": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Impact assessment is grounded in environmental science." },
+    { "program": "environmental-engineering", "relationshipType": "COMMON", "rationale": "Technical impact analysis aligns with environmental engineering." },
+    { "program": "geography", "relationshipType": "COMMON", "rationale": "Spatial and land-use assessment aligns with geography." }
+  ],
+  "Environmental Science": [
+    { "program": "environmental-science", "relationshipType": "PRIMARY", "rationale": "Environmental science is the direct discipline." },
+    { "program": "environmental-science-masters", "relationshipType": "COMMON", "rationale": "Graduate environmental science supports the field." },
+    { "program": "environmental-studies", "relationshipType": "COMMON", "rationale": "Interdisciplinary environmental studies align." }
+  ],
+  "ESG Analyst": [
+    { "program": "sustainability-management", "relationshipType": "PRIMARY", "rationale": "ESG assessment aligns with sustainability management." },
+    { "program": "finance", "relationshipType": "COMMON", "rationale": "Investment-focused ESG analysis aligns with finance." },
+    { "program": "environmental-science", "relationshipType": "COMMON", "rationale": "Environmental-impact expertise supports ESG." }
+  ],
+  "Forestry": [
+    { "program": "forestry", "relationshipType": "PRIMARY", "rationale": "Forestry is the direct discipline." },
+    { "program": "environmental-science", "relationshipType": "COMMON", "rationale": "Ecosystem science supports forestry." },
+    { "program": "forestry-masters", "relationshipType": "COMMON", "rationale": "Graduate forestry supports resource management." }
+  ],
+  "Smart Grid Engineer": [
+    { "program": "electrical-engineering", "relationshipType": "PRIMARY", "rationale": "Smart-grid systems draw on electrical engineering." },
+    { "program": "renewable-energy-engineering", "relationshipType": "COMMON", "rationale": "Distributed-energy integration aligns with the field." },
+    { "program": "computer-science", "relationshipType": "COMMON", "rationale": "Grid-management software builds on computer science." }
+  ],
+  "Sustainability": [
+    { "program": "sustainability-management", "relationshipType": "PRIMARY", "rationale": "Sustainability management is the direct discipline." },
+    { "program": "environmental-science", "relationshipType": "COMMON", "rationale": "Environmental-science base supports sustainability." },
+    { "program": "environmental-studies", "relationshipType": "COMMON", "rationale": "Interdisciplinary sustainability studies align." }
+  ],
+  "Sustainability Analytics": [
+    { "program": "data-science", "relationshipType": "PRIMARY", "rationale": "Sustainability analytics builds on data-science methods." },
+    { "program": "sustainability-management", "relationshipType": "COMMON", "rationale": "Sustainability metrics align with management." },
+    { "program": "statistics", "relationshipType": "COMMON", "rationale": "Statistical analysis supports sustainability reporting." }
+  ],
+  "Wind Energy Engineer": [
+    { "program": "mechanical-engineering", "relationshipType": "PRIMARY", "rationale": "Wind-turbine mechanics draw on mechanical engineering." },
+    { "program": "electrical-engineering", "relationshipType": "COMMON", "rationale": "Power-generation systems draw on electrical engineering." },
+    { "program": "renewable-energy-engineering", "relationshipType": "COMMON", "rationale": "Renewable-energy engineering is the direct domain." }
+  ]
+}
