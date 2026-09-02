@@ -59,7 +59,27 @@ export function legacyPreferredReference(careerName: string | null): PreferredCa
  * equivalents belong here. Do not add speculative mappings — an alias pointing
  * at a nonexistent career simply stays unresolved.
  */
-export const PREFERRED_CAREER_ALIASES: Record<string, string> = {};
+/**
+ * Conservative professional-title aliases. Key = the lowercase free-text a
+ * student might type; value = the single canonical career name they
+ * unambiguously intend. Only added where the display phrase maps to exactly
+ * one defensible discipline. Deliberately EXCLUDED ambiguities:
+ *   - "architect"  -> Cloud Solutions Architect vs Architecture
+ *   - "doctor"     -> broader than any single discipline (Medicine not chosen)
+ *   - "accountant" -> Chartered Accountancy / Cost / Financial Analysis
+ *   - "manager"    -> could cover many management careers
+ * An alias that does not resolve to an active career simply stays unresolved.
+ */
+export const PREFERRED_CAREER_ALIASES: Record<string, string> = {
+  "software engineer": "Software Engineering",
+  "civil engineer": "Civil Engineering",
+  "data scientist": "Data Science",
+  "lawyer": "Law",
+  "physician": "Medicine",
+  "psychologist": "Psychology",
+  "pharmacist": "Pharmacology",
+  "biotechnologist": "Biotechnology Research",
+};
 
 type CareerRef = { id: string; name: string };
 
