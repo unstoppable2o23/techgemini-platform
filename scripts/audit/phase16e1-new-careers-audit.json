@@ -1,0 +1,621 @@
+{
+  "generatedAt": "2026-09-02T19:43:29.651Z",
+  "newCareerCount": 38,
+  "careers": [
+    {
+      "name": "Philosophy",
+      "category": "Humanities",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 31,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Cultural Studies",
+      "category": "Humanities",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 31,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Museum Studies and Curatorship",
+      "category": "Humanities",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 31,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Photojournalism",
+      "category": "Media & Communication",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 32,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Archaeology",
+      "category": "Humanities",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Corporate Law",
+      "category": "Law",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 32,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Legal Research",
+      "category": "Law",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "International Law",
+      "category": "Law",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Documentary Production",
+      "category": "Media & Communication",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 31,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Copywriting",
+      "category": "Media & Communication",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 30,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Organizational Psychology",
+      "category": "Psychology & Social Sciences",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Environmental Consultant",
+      "category": "Environment & Sustainability",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 29,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Social Research",
+      "category": "Psychology & Social Sciences",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Linguistics",
+      "category": "Humanities",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Circular Economy Specialist",
+      "category": "Environment & Sustainability",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 28,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Development Studies",
+      "category": "Humanities",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 34,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Environmental Impact Assessment Specialist",
+      "category": "Environment & Sustainability",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 28,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Agronomy",
+      "category": "Agriculture",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 29,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Archival Studies",
+      "category": "Humanities",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 32,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Instructional Design",
+      "category": "Education",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 32,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Screenwriting",
+      "category": "Media & Communication",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 32,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Broadcast Journalism",
+      "category": "Media & Communication",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 30,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Technical Writing",
+      "category": "Media & Communication",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 31,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Publishing",
+      "category": "Media & Communication",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 30,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Environmental Law",
+      "category": "Law",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Human Rights Law",
+      "category": "Law",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Counselling Psychology",
+      "category": "Psychology & Social Sciences",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Educational Psychology",
+      "category": "Psychology & Social Sciences",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Climate Policy Analyst",
+      "category": "Environment & Sustainability",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 29,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Carbon Accounting Specialist",
+      "category": "Environment & Sustainability",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 28,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Architectural Technology",
+      "category": "Architecture & Planning",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 29,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Sustainable Architecture",
+      "category": "Architecture & Planning",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 29,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Urban Design",
+      "category": "Architecture & Planning",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 29,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Aquaculture",
+      "category": "Agriculture",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 28,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Media Planning",
+      "category": "Media & Communication",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 30,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Tax Law",
+      "category": "Law",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 33,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "International Relations",
+      "category": "Humanities",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 31,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    },
+    {
+      "name": "Conservation Scientist",
+      "category": "Environment & Sustainability",
+      "hasShortDescription": true,
+      "hasJobGrowth": true,
+      "traitCount": 29,
+      "empty": {
+        "technicalSkills": false,
+        "interests": false,
+        "personalityTraits": false,
+        "recommendedDegrees": false,
+        "recommendedSubjects": false,
+        "softSkills": true,
+        "jobGrowth": false
+      }
+    }
+  ],
+  "aggregates": {
+    "withShortDescription": 38,
+    "withJobGrowth": 38,
+    "withAllScalarArrays": 38,
+    "meanTraitCount": 31,
+    "minTraitCount": 28
+  }
+}
