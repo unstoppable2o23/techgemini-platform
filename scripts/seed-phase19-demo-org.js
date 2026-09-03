@@ -91,13 +91,98 @@ async function seedDemoOrg() {
     prisma.counselorProfile.findUnique({ where: { userId: c2.id } }),
   ]);
 
-  // Students
+  // Students — `signals` holds synthetic but realistic career signals whose trait
+  // labels match real values in the active career catalog (interest/subject/skill/
+  // personality traits), so the matching engine produces sensible recommendations.
+  // `preferredCareer` is also resolved to a real catalog career id and stored on
+  // the StudentProfile so the engine's canonical preferred-career boost surfaces
+  // the student's stated field prominently (as happens for real enrolled students).
+  const preferCareers = await prisma.career.findMany({
+    where: { isActive: true, name: { in: ["Data Science", "Architecture", "Medicine", "Product Design", "Clinical Psychology"] } },
+    select: { id: true, name: true },
+  });
+  const preferId = (name) => preferCareers.find((c) => c.name === name)?.id ?? null;
+
   const students = [
-    { first: "Ananya", last: "Sharma", grade: "12th", counselor: prof1, preferredCareer: "Data Science", preferredCareerId: null },
-    { first: "Kabir", last: "Nair", grade: "11th", counselor: prof1, preferredCareer: "Architecture", preferredCareerId: null },
-    { first: "Ishaan", last: "Reddy", grade: "12th", counselor: prof2, preferredCareer: "Medicine", preferredCareerId: null },
-    { first: "Diya", last: "Iyer", grade: "10th", counselor: prof2, preferredCareer: "Product Design", preferredCareerId: null },
-    { first: "Zara", last: "Khan", grade: "11th", counselor: prof1, preferredCareer: "Counseling", preferredCareerId: null },
+    {
+      first: "Ananya", last: "Sharma", grade: "12th", counselor: prof1,
+      preferredCareer: "Data Science", preferredCareerId: preferId("Data Science"),
+      signals: [
+        { dimension: "INTEREST", value: "Finding patterns in data", score: 90 },
+        { dimension: "INTEREST", value: "Prediction and forecasting", score: 82 },
+        { dimension: "SUBJECT", value: "Mathematics", score: 88 },
+        { dimension: "SUBJECT", value: "Statistics", score: 80 },
+        { dimension: "SKILL", value: "Python/R", score: 86 },
+        { dimension: "SKILL", value: "Statistics", score: 78 },
+        { dimension: "SKILL", value: "SQL", score: 72 },
+        { dimension: "SKILL", value: "Machine Learning", score: 84 },
+        { dimension: "PERSONALITY", value: "Analytical", score: 88 },
+        { dimension: "PERSONALITY", value: "Curious", score: 80 },
+      ],
+    },
+    {
+      first: "Kabir", last: "Nair", grade: "11th", counselor: prof1,
+      preferredCareer: "Architecture", preferredCareerId: preferId("Architecture"),
+      signals: [
+        { dimension: "INTEREST", value: "Design and spatial thinking", score: 90 },
+        { dimension: "INTEREST", value: "Built environment", score: 80 },
+        { dimension: "SUBJECT", value: "Physics", score: 84 },
+        { dimension: "SUBJECT", value: "Mathematics", score: 82 },
+        { dimension: "SKILL", value: "Drawing and drafting", score: 88 },
+        { dimension: "SKILL", value: "3D modelling", score: 78 },
+        { dimension: "SKILL", value: "Attention to detail", score: 82 },
+        { dimension: "PERSONALITY", value: "Creative", score: 86 },
+        { dimension: "PERSONALITY", value: "Precise", score: 78 },
+        { dimension: "PERSONALITY", value: "Observant", score: 80 },
+      ],
+    },
+    {
+      first: "Ishaan", last: "Reddy", grade: "12th", counselor: prof2,
+      preferredCareer: "Medicine", preferredCareerId: preferId("Medicine"),
+      signals: [
+        { dimension: "INTEREST", value: "Saving lives", score: 92 },
+        { dimension: "INTEREST", value: "Anatomy and technique", score: 84 },
+        { dimension: "SUBJECT", value: "Biology", score: 90 },
+        { dimension: "SUBJECT", value: "Chemistry", score: 86 },
+        { dimension: "SUBJECT", value: "Physics", score: 80 },
+        { dimension: "SKILL", value: "Patient-focused care", score: 85 },
+        { dimension: "SKILL", value: "Composure under pressure", score: 82 },
+        { dimension: "PERSONALITY", value: "Empathetic", score: 88 },
+        { dimension: "PERSONALITY", value: "Resilient", score: 82 },
+        { dimension: "PERSONALITY", value: "Thorough", score: 84 },
+      ],
+    },
+    {
+      first: "Diya", last: "Iyer", grade: "10th", counselor: prof2,
+      preferredCareer: "Product Design", preferredCareerId: preferId("Product Design"),
+      signals: [
+        { dimension: "INTEREST", value: "Innovation and product thinking", score: 90 },
+        { dimension: "INTEREST", value: "Creativity and problem solving", score: 84 },
+        { dimension: "SUBJECT", value: "Design", score: 86 },
+        { dimension: "SUBJECT", value: "Computer Science", score: 78 },
+        { dimension: "SKILL", value: "Prototyping", score: 84 },
+        { dimension: "SKILL", value: "User research", score: 80 },
+        { dimension: "SKILL", value: "Visual communication", score: 82 },
+        { dimension: "PERSONALITY", value: "Innovative", score: 88 },
+        { dimension: "PERSONALITY", value: "Empathetic", score: 78 },
+      ],
+    },
+    {
+      first: "Zara", last: "Khan", grade: "11th", counselor: prof1,
+      preferredCareer: "Clinical Psychology", preferredCareerId: preferId("Clinical Psychology"),
+      signals: [
+        { dimension: "INTEREST", value: "Society and inequality", score: 86 },
+        { dimension: "INTEREST", value: "Social change", score: 84 },
+        { dimension: "SUBJECT", value: "Psychology", score: 90 },
+        { dimension: "SUBJECT", value: "Sociology", score: 84 },
+        { dimension: "SKILL", value: "Active listening", score: 92 },
+        { dimension: "SKILL", value: "Empathy", score: 88 },
+        { dimension: "SKILL", value: "Communication", score: 84 },
+        { dimension: "PERSONALITY", value: "Empathetic", score: 92 },
+        { dimension: "PERSONALITY", value: "Patient", score: 84 },
+        { dimension: "PERSONALITY", value: "Observant", score: 80 },
+      ],
+    },
   ];
 
   for (const [i, s] of students.entries()) {
@@ -108,8 +193,13 @@ async function seedDemoOrg() {
     });
     const sp = await prisma.studentProfile.upsert({
       where: { userId: user.id },
-      create: { userId: user.id, counselorId: s.counselor.id, gradeLevel: s.grade, status: "ONLINE" },
-      update: {},
+      create: {
+        userId: user.id, counselorId: s.counselor.id, gradeLevel: s.grade, status: "ONLINE",
+        preferredCareer: s.preferredCareer, preferredCareerId: s.preferredCareerId,
+      },
+      update: {
+        preferredCareer: s.preferredCareer, preferredCareerId: s.preferredCareerId,
+      },
     });
 
     // Demo assessment results (synthetic)
@@ -131,9 +221,9 @@ async function seedDemoOrg() {
     }
 
     // Demo career profile (synthetic signals) so career intelligence is populated
-    const cp = await prisma.studentCareerProfile.findUnique({ where: { studentId: user.id } });
+    let cp = await prisma.studentCareerProfile.findUnique({ where: { studentId: user.id } });
     if (!cp) {
-      await prisma.studentCareerProfile.create({
+      cp = await prisma.studentCareerProfile.create({
         data: {
           studentId: user.id,
           completeness: 85,
@@ -143,6 +233,30 @@ async function seedDemoOrg() {
           strengths: ["Analytical thinking", "Communication"],
           metadata: { isDemo: true },
         },
+      });
+    }
+
+    // Write the synthetic career signals (existing profiles are also topped up,
+    // since older seeds left profiles without signals). Idempotent per
+    // (profileId, dimension, value, sourceType) unique constraint.
+    for (const signal of s.signals || []) {
+      await prisma.studentCareerSignal.upsert({
+        where: {
+          profileId_dimension_value_sourceType: {
+            profileId: cp.id,
+            dimension: signal.dimension,
+            value: signal.value,
+            sourceType: "ASSESSMENT",
+          },
+        },
+        create: {
+          profileId: cp.id,
+          ...signal,
+          sourceType: "ASSESSMENT",
+          sourceVersion: "1.0",
+          confidence: 1,
+        },
+        update: {},
       });
     }
   }
