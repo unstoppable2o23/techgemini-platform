@@ -12,6 +12,7 @@ import {
   MessagesSquare,
   Info,
 } from "lucide-react";
+import DemoWalkthrough from "./demo-walkthrough";
 
 export const metadata: Metadata = {
   title: "Sample Student Report | TechGemini",
@@ -81,6 +82,16 @@ export default function DemoPage() {
             This is a <strong>synthetic sample</strong> shown for demonstration. It references no
             real student and uses example (not live) data to illustrate how a report is structured.
           </p>
+        </div>
+
+        {/* Interactive guided demo journey */}
+        <div>
+          <h2 className="mb-3 text-lg font-bold text-slate-900">Guided demo — the full journey</h2>
+          <DemoWalkthrough />
+        </div>
+
+        <div className="border-t border-slate-200 pt-6">
+          <h2 className="text-lg font-bold text-slate-900">Full sample report (10 sections)</h2>
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
