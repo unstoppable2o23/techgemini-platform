@@ -22,8 +22,8 @@ function calculateOdds(gpa: number, sat: number, ecs: number, selectivity: numbe
 }
 
 function getCategory(odds: number): { label: string; color: string } {
-  if (odds >= 80) return { label: "Strong Match", color: "text-green-600" };
-  if (odds >= 50) return { label: "Moderate Chance", color: "text-amber-600" };
+  if (odds >= 80) return { label: "Stronger Fit", color: "text-green-600" };
+  if (odds >= 50) return { label: "Moderate Fit", color: "text-amber-600" };
   if (odds >= 25) return { label: "Reach", color: "text-orange-600" };
   return { label: "High Reach", color: "text-red-600" };
 }
@@ -77,8 +77,8 @@ export default function OddsCalculatorPage() {
     <div className="space-y-6 p-6 pt-20 max-w-4xl mx-auto">
       <PageHeader
         icon={Target}
-        title="AI Odds Calculator"
-        description="Enter your scores to see your admission chances at universities worldwide"
+        title="Chance Estimator"
+        description="A quick estimate based on a few scores — for orientation, not a guarantee of admission"
         eyebrow="Student Tools"
       />
 
@@ -101,8 +101,13 @@ export default function OddsCalculatorPage() {
           </div>
           <Button onClick={calculate} disabled={calculating} className="w-full">
             {calculating ? <Loader2 className="h-4 w-4 mr-2 animate-spin" /> : <Sparkles className="h-4 w-4 mr-2" />}
-            {calculating ? "Analyzing universities..." : "Calculate My Odds"}
+            {calculating ? "Crunching the numbers..." : "Estimate My Chances"}
           </Button>
+          <p className="text-xs text-muted-foreground">
+            This is a simplified, non-scientific estimate based on GPA, SAT and
+            extracurriculars. It is not a prediction and does not reflect any university&apos;s
+            official admissions criteria.
+          </p>
         </CardContent>
       </Card>
 
@@ -111,7 +116,7 @@ export default function OddsCalculatorPage() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <TrendingUp className="h-5 w-5" />
-              Your Admission Odds
+              Your Estimated Chances
               <span className="text-sm font-normal text-muted-foreground">({resultCount} universities)</span>
             </CardTitle>
             <div className="relative mt-2">

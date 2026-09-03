@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
   if (!session?.user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const body = await request.json().catch(() => null);
-  const { institutionIds, dataset, careerId, studentId } = body || {};
+  const { institutionIds, dataset, careerId } = body || {};
 
   if (!Array.isArray(institutionIds) || institutionIds.length === 0) {
     return NextResponse.json({ error: "Provide institutionIds array" }, { status: 400 });
@@ -28,7 +28,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: `Comparison limit is ${MAX_COMPARE}. Received ${institutionIds.length}.` }, { status: 400 });
   }
 
-  const effectiveStudentId = studentId || session.user.id;
+  // Always derive the subject student from the authenticated session. Never
+  // trust a client-supplied studentId (cross-student data leak).
+  const effectiveStudentId = session.user.id;
   const effectiveDataset = dataset || "indian";
 
   const profiles = [];

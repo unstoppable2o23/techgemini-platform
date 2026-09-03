@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 import { getUniversityProfile } from "@/lib/university-profile/profile.ts";
 
 export async function GET(
@@ -8,7 +10,6 @@ export async function GET(
   const { id } = await params;
   const { searchParams } = request.nextUrl;
   const dataset = searchParams.get("dataset") === "global" ? "global" : "indian";
-  const studentId = searchParams.get("studentId") || undefined;
   const careerId = searchParams.get("careerId") || undefined;
   const degreeId = searchParams.get("degreeId") || undefined;
   const specializationId = searchParams.get("specializationId") || undefined;
@@ -17,8 +18,15 @@ export async function GET(
   const page = Math.max(1, parseInt(searchParams.get("page") || "1", 10));
   const limit = Math.min(Math.max(1, parseInt(searchParams.get("limit") || "50", 10)), 100);
 
+  // Personalized "course connects to you" context is only produced for the
+  // authenticated student themselves — never derived from a client-supplied id.
+  const session = await getServerSession(authOptions);
+  if (!session?.user?.id) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
-    const profile = await getUniversityProfile(id, dataset, studentId ? { studentId, careerId, degreeId, specializationId } : undefined);
+    const profile = await getUniversityProfile(id, dataset, { studentId: session.user.id, careerId, degreeId, specializationId });
     if (!profile) {
       return NextResponse.json({ error: "Institution not found" }, { status: 404 });
     }

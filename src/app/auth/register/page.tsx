@@ -151,12 +151,14 @@ export default function RegisterPage() {
             Create your profile so counselors can match you with the right programs, colleges, and scholarships.
           </p>
           <figure className="mt-8 rounded-xl border border-white/15 bg-white/10 p-5 text-[13px] leading-relaxed text-white/90 backdrop-blur">
-            &ldquo;Most students start here and end up abroad within a year. The roadmap does the heavy lifting.&rdquo;
+            &ldquo;Start with what you know — your subjects, interests and goals. Our guided space
+            turns that into careers, study pathways and universities worth exploring, so you can
+            move forward with clearer next steps.&rdquo;
             <figcaption className="mt-3 flex items-center gap-2.5 text-xs text-white/75">
               <span className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-[11px] font-semibold">
-                RN
+                TG
               </span>
-              Admissions Mentor
+              Career Guidance Feature
             </figcaption>
           </figure>
         </div>

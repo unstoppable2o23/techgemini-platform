@@ -227,7 +227,8 @@ export function TopNav() {
     return () => window.removeEventListener("keydown", onKey);
   }, [sheet]);
 
-  if (pathname.startsWith("/auth")) return null;
+  // Public marketing pages render their own header chrome.
+  if (pathname === "/" || pathname.startsWith("/demo") || pathname.startsWith("/auth")) return null;
 
   const role = session?.user?.role;
   const isCounselor = role === "COUNSELOR" || role === "SUPER_ADMIN";

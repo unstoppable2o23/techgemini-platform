@@ -290,20 +290,29 @@ export function CareerProfileClient({
       <Card>
         <CardContent className="pt-6">
           <p className="text-xs text-muted-foreground">
-            Career recommendations based on this profile are coming in a future update.
+            This profile summarises the signals detected from your preferences and assessments.
+            See live suggestions on your{" "}
+            <Link href="/career-matches" className="text-primary underline">
+              Career Matches
+            </Link>{" "}
+            page.
           </p>
-          <Button
-            variant="outline"
-            size="sm"
-            className="mt-2"
-            onClick={() =>
-              fetch("/api/student/career-profile/regenerate", { method: "POST" }).then(() =>
-                window.location.reload()
-              )
-            }
-          >
-            Recalculate profile
-          </Button>
+          <div className="mt-3 flex flex-wrap items-center gap-3">
+            <Link href="/career-matches">
+              <Button size="sm">View my career matches</Button>
+            </Link>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() =>
+                fetch("/api/student/career-profile/regenerate", { method: "POST" }).then(() =>
+                  window.location.reload()
+                )
+              }
+            >
+              Refresh profile signals
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </div>

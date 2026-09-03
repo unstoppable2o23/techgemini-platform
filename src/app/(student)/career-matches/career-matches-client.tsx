@@ -143,8 +143,8 @@ export function CareerMatchesClient() {
       <PageHeader
         icon={TrendingUp}
         title="Your Career Matches"
-        description={`Based on ${data.studentSignalsUsed} career signals across ${data.totalCareersScored} careers.`}
-        eyebrow="Career Intelligence"
+        description="Careers highlighted based on the interests, subjects and goals you've shared."
+        eyebrow="Recommended Careers"
       />
 
       {data.disclaimer && (
@@ -245,6 +245,29 @@ export function CareerMatchesClient() {
             </Link>{" "}
             to browse all careers.
           </p>
+        </CardContent>
+      </Card>
+
+      {/* Next-step funnel */}
+      <Card className="border-accent bg-accent/5">
+        <CardContent className="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-semibold text-foreground">What&apos;s next?</p>
+            <p className="text-sm text-muted-foreground">
+              Explore the study path and universities behind your top match, or talk it through
+              with your counselor.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 sm:shrink-0">
+            <Link href="/dashboard">
+              <Button size="sm">See study pathways</Button>
+            </Link>
+            <Link href="/appointments">
+              <Button size="sm" variant="outline">
+                Book a session
+              </Button>
+            </Link>
+          </div>
         </CardContent>
       </Card>
     </div>
