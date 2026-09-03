@@ -9,9 +9,30 @@ datasource db {
 
 enum Role {
   SUPER_ADMIN
+  ORGANIZATION_ADMIN
   COUNSELOR
   STUDENT
   UNIVERSITY_ADMIN
+}
+
+enum TenantStatus {
+  ACTIVE
+  SUSPENDED
+  TRIAL
+}
+
+enum PlanType {
+  TRIAL
+  STARTER
+  PROFESSIONAL
+  ENTERPRISE
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  TRIAL
+  EXPIRED
+  CANCELLED
 }
 
 enum TestAssignmentStatus {
@@ -88,10 +109,51 @@ model Tenant {
   primaryColor String   @default("#0F172A")
   accentColor  String   @default("#3B82F6")
   isActive     Boolean  @default(true)
+  status       TenantStatus @default(TRIAL)
+  contactName  String?
+  contactEmail String?
+  contactPhone String?
+  planType     PlanType @default(TRIAL)
+  trialStartedAt DateTime?
+  trialEndsAt    DateTime?
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 
-  users User[]
+  users        User[]
+  subscription Subscription?
+}
+
+model SubscriptionPlan {
+  id                          String   @id @default(cuid())
+  name                        String
+  planType                    PlanType @unique
+  maxCounselors               Int      @default(1)
+  maxStudents                 Int      @default(50)
+  hasReports                  Boolean  @default(false)
+  hasUniversityRecommendations Boolean @default(false)
+  hasCounselorFeatures        Boolean  @default(false)
+  trialDays                   Int?
+  isActive                    Boolean  @default(true)
+  createdAt                   DateTime @default(now())
+  updatedAt                   DateTime @updatedAt
+
+  subscriptions Subscription[]
+}
+
+model Subscription {
+  id           String   @id @default(cuid())
+  tenantId     String   @unique
+  tenant       Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  planId       String
+  plan         SubscriptionPlan @relation(fields: [planId], references: [id])
+  status       SubscriptionStatus @default(TRIAL)
+  startedAt    DateTime @default(now())
+  endsAt       DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([planId])
+  @@index([status])
 }
 
 model User {

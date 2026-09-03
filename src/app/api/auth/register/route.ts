@@ -65,6 +65,16 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Suspended organizations cannot create new usage (Phase 19 §17-F). A
+    // suspended org admin can still log in to reach support/upgrade routes,
+    // but new public signups for that tenant are rejected at the entry point.
+    if (tenant.status === "SUSPENDED") {
+      return NextResponse.json(
+        { error: "This organization is currently suspended. Contact support." },
+        { status: 403 }
+      );
+    }
+
     const passwordHash = await bcrypt.hash(password, 12);
 
     const user = await prisma.user.create({

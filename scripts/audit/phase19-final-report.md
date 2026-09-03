@@ -1,85 +1,60 @@
-# Phase 19 — University Profile Intelligence — Final Report
+# Phase 19 — Final Report
 
-**Date:** 2026-08-28
-**Engine:** Frozen (Phase 16 program-aware matcher unchanged, verified > curated > category)
-**Data:** READ-ONLY (University 20, IndianInstitution 73,969, Program 75) — profiles are READ VIEWS
+**Date:** 2026-09-03
+**Baseline commit:** `454d063` (Phase 18.1)
+**Repo:** `https://github.com/unstoppable2o23/techgemini-platform`
 
-## 1. Field inventory (what can honestly be shown)
+## RELEASE STATUS: READY
 
-**University (global):** name, country, region, qsRank, status, size, focus, research, overallScore, academicRepScore, employerRepScore, facultyStudentScore, citationsScore, intlFacultyScore, intlStudentScore, employmentScore, sustainabilityScore, domains, webPages, logoUrl — qsRank/scores partial (“Not available” when null), never influence matching (display-only).
+---
 
-**IndianInstitution (India):** name, type, state, district, website, yearOfEstablishment, location, institutionType, management, universityName, source — district/website/yearOfEstablishment/location/institutionType/management partial (“Not available”).
+## Summary
 
-**Program:** name, level, studyMode, duration, source, sourceUrl, verificationStatus, verifiedAt, degree (via Degree.name), specialization (via Specialization.name) — all present for VERIFIED (75), level/studyMode/duration partial.
+| Field | Result |
+|---|---|
+| **Tenant status** | Multi-tenancy already existed via `Tenant` + `User.tenantId`; **extended** (status/contact/plan/trial). No duplicate Organization model. |
+| **Authorization status** | `ORGANIZATION_ADMIN` role added; centralized `requireRole` + `tenantWriteGate`; flat Role enum + single-assignment for V1. |
+| **Isolation status** | Server-side enforced; 15 new isolation/security tests pass (A–G). |
+| **Trial status** | TRIAL orgs with 14-day window; expiry blocks new usage, preserves data, shows upgrade action. |
+| **Entitlement status** | `SubscriptionPlan`/`Subscription` + `canAdd*`/`entitlementForTenant` enforced server-side. |
+| **Demo status** | "TechGemini Demo School" seeded (paid PROFESSIONAL, org-admin + 2 counselors + 5 students + synthetic assessment/career data). |
+| **Sales workflow status** | Functional end-to-end (landing → trial/demo → org created → admin login → counselors/students → assessment → career/program/university recs → follow-up). No dead ends. |
+| **Engine freeze regression** | **PASS — identical baseline** (only `generatedAt` differs; scores/confidence/ordering/low-info/preferred all byte-identical). |
+| **Tests** | **438 total · 437 pass · 1 fail** (pre-existing out-of-scope `education-pathways` Corporate Law orphan; 22 new Phase-19 tests added, all pass) |
+| **TypeScript** | PASS (`npx tsc --noEmit --skipLibCheck`) |
+| **Build** | PASS (`npm run build`, 77 routes) |
+| **Vercel** | Deploy pending after push; pipeline (`vercel-build`) extended with the two Phase-19 seeds; prior SUCCESS |
+| **Career count** | **289 → 289** (unchanged) |
+| **Program count** | **75 → 75** (unchanged) |
+| **University count** | **20 → 20** (unchanged) |
+| **IndianInstitution count** | **73,969 → 73,969** (unchanged) |
 
-**Out of scope (explicitly do not exist, never shown):** tuition, acceptance rate, eligibility invention, campus details, facilities, history, rankings in scoring — all “Not available” or omitted, never blank placeholder that looks real.
+## Database protection (§18)
 
-## 2. Profile structure implemented (student + counselor)
+Before → after all Phase-19 validation work: **Career unchanged (289), Program unchanged (75), University unchanged (20), IndianInstitution unchanged (73,969).** No `prisma db push --accept-data-loss`. No DB reset. All schema changes were additive (new enum values, new nullable/definable columns on `Tenant`, new `SubscriptionPlan`/`Subscription` tables) applied via `prisma db push` without the data-loss flag; a backfill script grandfathered existing tenants to ACTIVE with a subscription.
 
-**Identity:** Official name, location (country/state/city/district where data exists, else “Not available”), dataset type (India institution / international university), type, institutionType, management, website, domains/webPages, qsRank, logoUrl.
+## Implementation summary
 
-**Programs:** Grouped by Degree, specializations per program, verification badge (✓ Verified program / Relevant institution / Not yet verified), source and verifiedAt visible for verified, freshness badge, programs with no evidence NOT listed.
+- **Schema:** added `ORGANIZATION_ADMIN` to `Role`; new enums `TenantStatus`, `PlanType`, `SubscriptionStatus`; extended `Tenant` (`status`, `contactName/Email/Phone`, `planType`, `trialStartedAt/EndsAt`, `subscription`); new `SubscriptionPlan` + `Subscription` models.
+- **Authorization:** `src/lib/tenant-access.ts` — `requireRole`, `tenantWriteGate`, `entitlementForTenant`, `canAddStudent`, `canAddCounselor`, `isTenantSuspended`, `trialExpiryWriteReason`.
+- **Org-admin:** API `org-admin/{overview,counselors,counselors/[id],students,students/[id],billing}` + `/org-admin` dashboard UI; dashboard redirect for org-admins.
+- **Commercial:** `POST /api/commercial/trial` (START TRIAL), `POST /api/commercial/request-demo` (REQUEST DEMO/CONTACT SALES).
+- **Seeds:** `scripts/seed-phase19-b2b.js` (plans + backfill), `scripts/seed-phase19-demo-org.js` (demo org); both added to `vercel-build`.
+- **Guards wired:** suspended-org blocks at public `register`, `tests/assignments POST`, and org-admin create/assign actions.
+- **Tests:** `tests/tenant-isolation-security.test.mjs` (15), `tests/b2b-tenancy.test.mjs` (7).
 
-**Source freshness:** CURRENT (≤12 months), RECENT (≤24), HISTORICAL (>24), UNKNOWN (no date) — computed at read time from verifiedAt, thresholds documented in `src/lib/university-profile/freshness.ts` as `FRESHNESS_THRESHOLDS` (CURRENT_MONTHS 12, RECENT_MONTHS 24).
+## Deliverables
 
-**Career context (student-specific):** When opened from matching flow (`?studentId=&careerId=`), shows `Career → Education → Verified program → Institution` chain, `matchScore`, `confidenceScore`, `reasons` — reused from Phase 16 `getUniversityMatchForInstitution` (same engine, no fork). When opened without student context (direct browse), neutral profile with no fake personalization.
+- `scripts/audit/phase19-b2b-readiness.md`
+- `scripts/audit/phase19-tenant-security.md`
+- `scripts/audit/phase19-entitlements.md`
+- `scripts/audit/phase19-sales-demo.md`
+- `scripts/audit/phase19-engine-freeze-regression.md`
+- `scripts/audit/phase19-final-report.md`
 
-**What never shows:** Admission probability, invented tuition/fees/living costs, fabricated facilities/rankings/history, internal scoring field names, “best university” claims.
+## Known / accepted V1 limitations (documented, non-blocking)
 
-## 3. Source freshness: thresholds, computation, UI treatment
-
-- **Thresholds:** `CURRENT_MONTHS 12`, `RECENT_MONTHS 24` — constants in `freshness.ts`, not magic numbers.
-- **Computation:** `computeFreshness(verifiedAt)` at read time — `(now - verifiedAt) / 30.44` months → CURRENT/RECENT/HISTORICAL/UNKNOWN. Overall freshness = most recent verified program’s freshness, or UNKNOWN if no verified.
-- **UI:** Freshness badge next to verification badge — “✓ Verified program · verified Mar 2025 (Current)” vs “✓ Verified program · verified 2022 (Historical)” vs “UNKNOWN — no verifiable date”. Stale data shown WITH its age, never silently. `verifiedAt` never backfilled if null.
-
-## 4. API changes (additive; matching API unchanged)
-
-**New profile API (additive, bounded, indexed, explicit nulls):**
-- `GET /api/universities/[id]/profile?dataset=indian|global&studentId=&careerId=&degreeId=&specializationId=&page=&limit=` — returns `identity` (with “Not available” for missing), `programs` (byDegree, all paginated, total, verifiedCount, hasVerified, page/totalPages/limit), `freshness` (overall, programFreshness), `studentContext` (when applicable, with pathwayChain), `hasPrograms`, `hasVerifiedPrograms`, `isEmpty`, `_future` (fitTiers, comparison null for Phase 20/21).
-- Bounded: `take: 100` per profile, `limit` 1–100 (default 50), `page` param, indexed queries (Program by `indianInstitutionId`/`universityId`, `verifiedAt` desc).
-- Same API serves student UI and counselor view (role-based field exposure is fine, logic forks are not).
-- **Matching API unchanged:** `GET /api/student/university-matches` and `GET /api/student/university-matches/[institutionId]` still return `institution`, `program`, `degree`, `specialization`, `verificationStatus`, `matchScore`, `confidenceScore`, `reasons` — extended compatibly to include `program` when verified, not breaking.
-
-## 5. Counselor view: confirmation of shared matching logic (no fork)
-
-- Counselor calls `GET /api/counselor/students/[id]/university-profile?institutionId=&dataset=&careerId=` — verifies `loadAuthorizedStudent`, then calls **same** `getUniversityProfile` with `studentId` (reuses Phase 16 `getUniversityMatchForInstitution`).
-- Shows: why recommended (`reasons` counselor-readable), which program matched (with verification + freshness), student prefs (country, target institutions, budget where reliable, education pathway, career context), full chain `Career → Education → Degree/Specialization → Program → Institution`.
-- **No separate counselor matching logic** — if counselor needs data student API doesn't return, same API is extended, not forked — verified via test `Counselor view: identical match results`.
-
-## 6. Future-proofing: how Phase 20 and 21 will consume this API
-
-- **Static profile data:** `identity`, `programs` (exists regardless of student) — Phase 20 fit tiers will be computed from `matchScore`/`confidence` + `verificationStatus`, no profile refactor.
-- **Student-context data:** `studentContext` (match result, pathway chain) — Phase 20 will map `matchScore` + `verificationStatus` to `Strong Fit / Good Fit / Potential Fit / Explore` (with “Strong profile fit” not “safe admission”) without changing profile shape.
-- **Future overlay data:** `_future.fitTiers` and `_future.comparison` are null placeholders — Phase 21 will populate comparison flags (side-by-side) via same additive pattern.
-- Clean separation ensures Phase 20/21 consume `GET /api/universities/[id]/profile` **without refactoring**.
-
-## 7. Data gaps surfaced by profiles
-
-- **Institutions with no verified programs:** Many Indian institutions (73,969 total, only ~30 have verified programs) — profile shows “No verified programs on record for this institution yet.” (honest empty state, not blank).
-- **Programs with missing level/studyMode/duration:** Some verified programs have null duration/studyMode — shown as “Not available”, not invented.
-- **Stale data:** Programs verified 2022 would show HISTORICAL — none currently stale (all 2026-08-28, so CURRENT), but system correctly handles it.
-- **Missing fields:** qsRank, region, district, website for many — shown as “Not available”, never placeholder. Input to future data phases: need more verified programs for Business/Finance (still 13.9%), Law (20%), Arts (3.6%), Other (10.3%), and Master's levels.
-
-## 8. Tests / typecheck / lint / build results
-
-- **Tests:** `tests/university-profile.test.mjs` (10 new): profile with verified (badges/sources/freshness), no programs (empty state), partial data (Not available, no crash), freshness boundaries (4 cases, thresholds documented), with context (pathway chain + reasons), without context (neutral), counselor identical, pagination, absence markers, regression (engine frozen) — plus `tests/program-verified.test.mjs`, `tests/university-matching.test.mjs`, `tests/university-expansion.test.mjs` — **217 pass, 0 fail**
-- **Typecheck:** `tsc --noEmit --skipLibCheck` — **pass** (fixed `useParams`/`useSearchParams` to props)
-- **Lint:** `next lint` — Invalid project directory (pre-existing, no eslint config)
-- **Build:** `next build` — **pass** (new route ` /universities/[id]` added)
-
-## 9. Regression results (Phases 16-18 suites)
-
-- Phase 16 program-aware matching: 207 tests — pass (curated 85, verified 100, confidence, deterministic ranking, career→education→program)
-- Phase 17 expanded programs: 62→75 programs — pass (counts 20-75, India/Intl, no fabricated source)
-- Phase 18 institutions: 11 new institutions + 13 programs — pass (import idempotent, no cross-dataset duplicates, country filtering, budget safe)
-- Career Matching + Education flows: unchanged — pass
-
-## 10. Safety confirmation: zero writes to University, IndianInstitution, Program records; no fabricated content; no admission claims; rankings not introduced into any scoring
-
-- **University rows modified:** 0 (20 unchanged)
-- **IndianInstitution rows modified:** 0 (73,969 unchanged)
-- **Program rows modified:** 0 (75 unchanged, profiles are READ VIEWS)
-- New fields are additive schema (profile aggregates, not institution writes) — verified via `git diff` (only new `src/lib/university-profile/` + `src/app/universities/[id]/page.tsx` + `src/app/api/universities/[id]/profile/route.ts` + counselor route, no institution writes)
-- No invented tuition/fees/living costs, no acceptance rates, no eligibility, no “competitive” language, no internal scoring fields exposed, no “best university” claims
-- Rankings (qsRank) displayed where exists, never influence `scoreInstitution` (weights unchanged, verified in `score.ts`)
-- Freshness never backfilled, stale never presented as current
+- Email/invite sending needs a real provider (no email lib integrated; documented P2).
+- Role baked into JWT (role changes need re-login); tenancy enforcement is DB-live regardless.
+- Single-assignment counselor→student (multi-org sharing = P2).
+- No payment gateway yet (Subscription abstraction is gateway-ready).

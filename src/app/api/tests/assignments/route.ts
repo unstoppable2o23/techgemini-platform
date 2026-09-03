@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { tokenForStudent, type TestKind } from "@/lib/tests";
+import { tenantWriteGate } from "@/lib/tenant-access";
 
 // Counselor-scoped lookups. The relation path differs by model:
 // - User.studentProfile (StudentProfile) -> counselor.userId   (used for the POST student lookup)
@@ -47,6 +48,11 @@ export async function POST(request: NextRequest) {
   const user = session.user;
   if (user.role !== "COUNSELOR" && user.role !== "SUPER_ADMIN") {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
+  const wg = await tenantWriteGate(session);
+  if (!wg.ok) {
+    return NextResponse.json({ error: wg.error }, { status: wg.status });
   }
 
   try {

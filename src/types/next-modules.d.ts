@@ -36,7 +36,7 @@ declare module "next-auth/react" {
       email: string;
       firstName: string;
       lastName: string;
-      role: "SUPER_ADMIN" | "COUNSELOR" | "STUDENT" | "UNIVERSITY_ADMIN";
+      role: "SUPER_ADMIN" | "ORGANIZATION_ADMIN" | "COUNSELOR" | "STUDENT" | "UNIVERSITY_ADMIN";
       tenantId: string;
       avatarUrl?: string | null;
       image?: string | null;
@@ -90,7 +90,7 @@ declare module "next-auth" {
       email: string;
       firstName: string;
       lastName: string;
-      role: "SUPER_ADMIN" | "COUNSELOR" | "STUDENT" | "UNIVERSITY_ADMIN";
+      role: "SUPER_ADMIN" | "ORGANIZATION_ADMIN" | "COUNSELOR" | "STUDENT" | "UNIVERSITY_ADMIN";
       tenantId: string;
       avatarUrl?: string | null;
     };

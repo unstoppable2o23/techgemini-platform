@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit --skipLibCheck",
-    "vercel-build": "prisma generate && prisma db push && node scripts/seed-careers.mjs && node scripts/seed-career-intelligence.mjs && node scripts/seed-subjects.mjs && node scripts/seed-education.mjs && node scripts/seed-education-orphans.mjs && node scripts/seed-career-trends.mjs && next build",
+    "vercel-build": "prisma generate && prisma db push && node scripts/seed-careers.mjs && node scripts/seed-career-intelligence.mjs && node scripts/seed-subjects.mjs && node scripts/seed-education.mjs && node scripts/seed-education-orphans.mjs && node scripts/seed-career-trends.mjs && node scripts/seed-phase19-b2b.js && node scripts/seed-phase19-demo-org.js && next build",
     "test": "node --import ./scripts/register-loader.mjs --test \"tests/**/*.test.mjs\"",
     "seed:careers": "node scripts/seed-careers.mjs && node scripts/seed-career-intelligence.mjs"
   },

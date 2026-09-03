@@ -44,7 +44,12 @@ export default async function DashboardPage() {
   const user = session.user;
   const isCounselor = user.role === "COUNSELOR" || user.role === "SUPER_ADMIN";
   const isUniversityAdmin = user.role === "UNIVERSITY_ADMIN";
+  const isOrgAdmin = user.role === "ORGANIZATION_ADMIN";
   const isStudent = user.role === "STUDENT";
+
+  if (isOrgAdmin) {
+    redirect("/org-admin");
+  }
 
   if (isStudent) {
     const profile = await prisma.studentProfile.findUnique({
