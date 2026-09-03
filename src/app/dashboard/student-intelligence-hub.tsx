@@ -382,13 +382,17 @@ export default function StudentIntelligenceHub({
         )}
       </section>
 
-      {/* TRENDING — visually lighter, clearly distinct from personalized */}
+      {/* TRENDING — personalized "Trending for You" discovery layer */}
       <section className="space-y-4">
         <SectionHeading
           icon={Flame}
-          eyebrow="Explore"
-          title="What's Trending"
-          subtitle="Careers gaining attention and future relevance — not personalized to you."
+          eyebrow={d.trendingResult?.view === "foryou" ? "Personalized" : "Explore"}
+          title={d.trendingResult?.view === "foryou" ? "Trending for You" : "Trending Careers"}
+          subtitle={
+            d.trendingResult?.view === "foryou"
+              ? "Emerging careers that may be relevant to your education and interests."
+              : "Emerging careers worth exploring."
+          }
         />
         {d.trendingCareers.length === 0 ? (
           <EmptyState icon={Flame} title="Trend information isn't available right now" />
@@ -402,12 +406,24 @@ export default function StudentIntelligenceHub({
               >
                 <p className="truncate text-sm font-medium text-foreground">{t.career.title || t.career.name}</p>
                 <p className="text-xs text-muted-foreground">{t.career.category}</p>
-                <span className="mt-2 inline-flex items-center rounded-full bg-orange-50 px-2 py-0.5 text-[11px] font-semibold text-orange-700 ring-1 ring-inset ring-orange-200">
-                  Trending
-                </span>
+                {t.trendCategory && (
+                  <span className="mt-2 inline-flex items-center rounded-full bg-orange-50 px-2 py-0.5 text-[11px] font-semibold text-orange-700 ring-1 ring-inset ring-orange-200">
+                    {t.trendCategory?.replace(/_/g, " ") ?? "Trending"}
+                  </span>
+                )}
+                {d.trendingResult?.view === "foryou" && t.relevanceScore != null && (
+                  <p className="mt-1.5 text-[11px] text-muted-foreground line-clamp-2">
+                    Relevance: {t.relevanceScore}%
+                  </p>
+                )}
               </Link>
             ))}
           </div>
+        )}
+        {d.trendingResult && d.trendingResult.total > 0 && (
+          <p className="text-xs text-muted-foreground italic">
+            {d.trendingResult.disclaimer}
+          </p>
         )}
       </section>
 

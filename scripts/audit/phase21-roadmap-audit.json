@@ -1,0 +1,88 @@
+{
+  "phase": "Phase 21",
+  "area": "Personalized Student Study Roadmap",
+  "generatedAt": "2026-09-04T00:00:00.000Z",
+  "status": "PASS",
+  "engineFrozen": true,
+  "dbCounts": {
+    "careerActive": 289,
+    "program": 75,
+    "university": 20,
+    "indianInstitution": 73969,
+    "academicProgram": 242
+  },
+  "dbCountsUnchanged": true,
+  "educationStagesSupported": [
+    "SCHOOL_CLASS10",
+    "SCHOOL_CLASS12",
+    "UNDERGRADUATE",
+    "POSTGRADUATE",
+    "CAREER_SWITCHER",
+    "UNKNOWN"
+  ],
+  "destinationsSupported": [
+    "INDIA",
+    "USA",
+    "UK",
+    "CANADA",
+    "AUSTRALIA",
+    "GERMANY",
+    "IRELAND",
+    "NEW_ZEALAND"
+  ],
+  "stepStatuses": [
+    "NOT_STARTED",
+    "IN_PROGRESS",
+    "COMPLETED",
+    "SKIPPED",
+    "NOT_APPLICABLE"
+  ],
+  "priorities": ["HIGH", "MEDIUM", "LOW"],
+  "horizons": ["NOW", "NEXT_3_MONTHS", "NEXT_6_12_MONTHS", "LONGER_TERM"],
+  "milestoneOrder": [
+    "FOUNDATION",
+    "EXPLORATION",
+    "EXAMS",
+    "APPLICATION",
+    "FINANCE",
+    "PREPARATION",
+    "ADMISSION",
+    "START"
+  ],
+  "opportunityOrder": ["NOW", "NEXT_3_MONTHS", "NEXT_6_12_MONTHS", "LONGER_TERM"],
+  "architecture": {
+    "domainLibs": [
+      "src/lib/roadmap/types.ts",
+      "src/lib/roadmap/country-config.ts",
+      "src/lib/roadmap/education-stage.ts",
+      "src/lib/roadmap/rules.ts",
+      "src/lib/roadmap/service.ts"
+    ],
+    "apiRoutes": [
+      "src/app/api/student/roadmap/route.ts",
+      "src/app/api/student/roadmap/steps/[id]/route.ts",
+      "src/app/api/counselor/students/[id]/roadmap/route.ts"
+    ],
+    "studentUi": [
+      "src/app/(student)/roadmap/page.tsx",
+      "src/app/(student)/roadmap/roadmap-client.tsx"
+    ],
+    "counselorUi": [
+      "src/app/(counselor)/students/[id]/roadmap-tab.tsx"
+    ]
+  },
+  "conservationRules": {
+    "noImpossibleEducationSequencing": true,
+    "examsOnlyWithEvidence": true,
+    "noFabricatedDeadlinesCostsRequirements": true,
+    "noGuaranteedAdmissionScholarshipVisaEmployment": true,
+    "honestWhyExplanations": true,
+    "conservativeWording": true
+  },
+  "security": {
+    "studentSeesOnlyOwnRoadmap": true,
+    "counselorOnlyAuthorizedStudents": true,
+    "tenantIsolation": true
+  },
+  "testsSkippedNothing": true
+}

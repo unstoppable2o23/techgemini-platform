@@ -1,0 +1,60 @@
+{
+  "phase": "Phase 21",
+  "area": "Personalized Trending Careers (\"Trending for You\")",
+  "generatedAt": "2026-09-04T00:00:00.000Z",
+  "status": "PASS",
+  "engineFrozen": true,
+  "trendData": {
+    "careerTrendRows": 251,
+    "careersWithTrend": 251,
+    "trendingRows": 168,
+    "emergingRows": 72,
+    "fastGrowingRows": 43,
+    "futureFacingRows": 251,
+    "careersMarkedEmerging": 81
+  },
+  "minRelevanceScore": 30,
+  "views": {
+    "foryou": "Trending for You — sufficient-information student (assessment present and/or a career goal set)",
+    "trending": "Trending Careers — low-information student with no assessment and no career goal"
+  },
+  "relevanceSignals": [
+    "education-stage category gates",
+    "career family / preferredCareer",
+    "subjects studied + subjects enjoyed",
+    "activity interests",
+    "destination context",
+    "trend classification overlap"
+  ],
+  "stageCategories": {
+    "SCHOOL_CLASS10": ["EMERGING_CAREER", "INTERDISCIPLINARY"],
+    "SCHOOL_CLASS12": ["EMERGING_CAREER", "FAST_GROWING", "NEW_AGE", "INTERDISCIPLINARY"],
+    "UNDERGRADUATE": ["EMERGING_CAREER", "FAST_GROWING", "NEW_AGE", "TECHNOLOGY_TREND", "INDUSTRY_SHIFT", "INTERDISCIPLINARY"],
+    "POSTGRADUATE": ["EMERGING_CAREER", "FAST_GROWING", "NEW_AGE", "TECHNOLOGY_TREND", "INDUSTRY_SHIFT", "INTERDISCIPLINARY"],
+    "CAREER_SWITCHER": ["EMERGING_CAREER", "FAST_GROWING", "NEW_AGE", "TECHNOLOGY_TREND", "INDUSTRY_SHIFT", "INTERDISCIPLINARY"],
+    "UNKNOWN": ["EMERGING_CAREER", "FAST_GROWING", "NEW_AGE", "INTERDISCIPLINARY"]
+  },
+  "separationFromCoreEngine": {
+    "trendingRelevanceScoreSeparateFromMatchScore": true,
+    "doesNotAlterMatchScoreConfidenceRanking": true,
+    "doesNotChangePreferredCareer": true,
+    "doesNotWriteRoadmapOnGeneration": true,
+    "noTrendStatisticsOrEmployabilityFabrication": true
+  },
+  "explainability": {
+    "whyTrending_Explanation": true,
+    "whyRelevant_Explanation": true,
+    "destinationContext": true,
+    "trendingToRoadmapConnection": true
+  },
+  "files": [
+    "src/lib/career-trends/personalization.ts",
+    "src/app/api/student/trending/route.ts",
+    "src/app/dashboard/student-intelligence-hub.tsx",
+    "src/lib/student/dashboard.ts"
+  ],
+  "security": {
+    "studentOnlyRoute": true,
+    "ownDataOnly": true
+  }
+}

@@ -2,7 +2,7 @@ import { prisma } from "../prisma.ts";
 import { getStudentBasics, type StudentBasics } from "./basics.ts";
 import { getCareerMatches } from "../career-matching/engine.ts";
 import { getUniversityMatchesForStudent } from "../university-matching/engine.ts";
-import { getTrends } from "../career-trends/service.ts";
+import { getStudentTrendingCareers, type PersonalizedTrendingResult } from "../career-trends/personalization.ts";
 
 const FALLBACK_BASICS: StudentBasics = {
   profileCompleteness: 0,
@@ -21,6 +21,7 @@ export type StudentDashboard = StudentBasics & {
   universityMatches: any | null;
   universityMatchDisclaimer: string | null;
   trendingCareers: any[];
+  trendingResult: PersonalizedTrendingResult | null;
   topCareerId: string | null;
 };
 
@@ -71,12 +72,20 @@ export async function getStudentDashboard(userId: string): Promise<StudentDashbo
   }
 
   let trendingCareers: any[] = [];
+  let trendingResult: PersonalizedTrendingResult | null = null;
   try {
-    const t = await getTrends({ type: "trending", limit: 6 });
-    trendingCareers = t.trends;
+    const t = await getStudentTrendingCareers(userId, { limit: 6 });
+    trendingResult = t;
+    trendingCareers = t.items.map((item) => ({
+      career: { id: item.careerId, name: item.name, slug: item.slug, title: item.title, category: item.category },
+      relevanceScore: item.relevanceScore,
+      trendScore: item.trendScore,
+      trendCategory: item.trendCategory,
+    }));
   } catch (e) {
-    console.error("[dashboard] getTrends failed:", e);
+    console.error("[dashboard] personalized trending failed:", e);
     trendingCareers = [];
+    trendingResult = null;
   }
 
   return {
@@ -87,6 +96,7 @@ export async function getStudentDashboard(userId: string): Promise<StudentDashbo
     universityMatches,
     universityMatchDisclaimer,
     trendingCareers,
+    trendingResult,
     topCareerId,
   };
 }

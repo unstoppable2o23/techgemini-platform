@@ -18,7 +18,10 @@ import {
   Building2,
   StickyNote,
   ListChecks,
+  Compass,
 } from "lucide-react";
+
+import { RoadmapTab } from "./roadmap-tab";
 
 const CAREER_DECISIONS = [
   "SUITABLE",
@@ -154,6 +157,7 @@ export default function Student360Client({
     { key: "universities", label: "Universities", icon: Building2 },
     { key: "notes", label: "Notes", icon: StickyNote },
     { key: "actions", label: "Actions", icon: ListChecks },
+    { key: "roadmap", label: "Roadmap", icon: Compass },
   ];
 
   return (
@@ -214,6 +218,12 @@ export default function Student360Client({
       )}
       {tab === "actions" && (
         <ActionsTab actions={data.actions} onAdd={addAction} onComplete={completeAction} />
+      )}
+      {tab === "roadmap" && (
+        <RoadmapTab
+          studentId={studentId}
+          onCounselorStep={(r) => r && refresh()}
+        />
       )}
     </div>
   );

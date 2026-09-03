@@ -188,6 +188,7 @@ model User {
   testAssignments         TestAssignment[]  @relation("StudentTestAssignments")
   createdTestAssignments  TestAssignment[]  @relation("CreatedTestAssignments")
   careerProfile           StudentCareerProfile?
+  roadmap                 StudentRoadmap?
 
   @@index([tenantId])
   @@index([email])
@@ -838,12 +839,147 @@ model StudentShortlist {
   @@index([itemType, itemId])
 }
 
+// ============================================================================
+// Phase 21 — Personalized Student Study Roadmap
+// The roadmap is a CONSUMER of the existing (frozen) career/program/university
+// intelligence. It never alters matching, scoring, or catalog data.
+// ============================================================================
+
+enum RoadmapEducationStage {
+  SCHOOL_CLASS10
+  SCHOOL_CLASS12
+  UNDERGRADUATE
+  POSTGRADUATE
+  CAREER_SWITCHER
+  UNKNOWN
+}
+
+enum RoadmapPathType {
+  INDIA
+  ABROAD
+}
+
+enum RoadmapStepCategory {
+  SUBJECTS
+  ASSESSMENT
+  ENTRANCE_EXAM
+  PROGRAM_SELECTION
+  UNIVERSITY_SHORTLIST
+  APPLICATION
+  ENGLISH_TEST
+  STANDARDIZED_TEST
+  PROFILE_PORTFOLIO
+  DOCUMENTS
+  SCHOLARSHIP_FUNDING
+  OFFER
+  VISA_IMMIGRATION
+  TRAVEL_ACCOMMODATION
+  ENROLLMENT
+  SKILL_DEVELOPMENT
+  INTERNSHIP_PROJECTS
+  CAREER_PREPARATION
+  COUNSELOR
+  OTHER
+}
+
+enum RoadmapStepStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  SKIPPED
+  NOT_APPLICABLE
+}
+
+enum RoadmapPriority {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum RoadmapTimeHorizon {
+  NOW
+  THREE_MONTHS
+  SIX_TWELVE_MONTHS
+  LONGER_TERM
+}
+
+enum RoadmapStepOrigin {
+  SYSTEM
+  COUNSELOR
+}
+
+model StudentRoadmap {
+  id               String                 @id @default(cuid())
+  studentId        String                 @unique
+  student          User                   @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  version          Int                    @default(1)
+  goalCareerId     String?
+  goalCareerName   String?
+  destination      String?
+  pathType         RoadmapPathType?
+  educationStage   RoadmapEducationStage  @default(UNKNOWN)
+  currentStage     String?
+  progress         Float                  @default(0)
+  snapshot         Json?                  // latest generation inputs: career, program, universities, countries
+  lastGeneratedAt  DateTime               @default(now())
+  createdAt        DateTime               @default(now())
+  updatedAt        DateTime               @updatedAt
+
+  steps      RoadmapStep[]
+  milestones RoadmapMilestone[]
+
+  @@index([studentId])
+}
+
+model RoadmapStep {
+  id                  String               @id @default(cuid())
+  roadmapId           String
+  roadmap             StudentRoadmap       @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  version             Int                  @default(1)
+  index               Int                  @default(0)
+  title               String
+  description         String
+  category            RoadmapStepCategory  @default(OTHER)
+  priority            RoadmapPriority      @default(MEDIUM)
+  timeHorizon         RoadmapTimeHorizon
+  status              RoadmapStepStatus    @default(NOT_STARTED)
+  reason              String?
+  dependency          String?
+  sourceLabel         String?
+  sourceUrl           String?
+  pathType            RoadmapPathType?
+  educationLevel      String?
+  origin              RoadmapStepOrigin    @default(SYSTEM)
+  counselorNote       String?
+  cssTitle            String?
+  dueHint             String?              // relative timing hint, never an invented date
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+
+  @@index([roadmapId, version])
+  @@index([roadmapId, status])
+}
+
+model RoadmapMilestone {
+  id          String              @id @default(cuid())
+  roadmapId   String
+  milestone   StudentRoadmap      @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  version     Int                 @default(1)
+  key         String              // NOW | NEXT_3_MONTHS | NEXT_6_12_MONTHS | APPLICATION | TARGET
+  label       String
+  index       Int                 @default(0)
+  createdAt   DateTime            @default(now())
+
+  @@unique([roadmapId, version, key])
+  @@index([roadmapId, version])
+}
+
 model DailyUsage {
   id           String   @id @default(cuid())
   userId       String
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   date         DateTime
-  totalMinutes Float      @default(0)
+  totalMinutes Float    @default(0)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 

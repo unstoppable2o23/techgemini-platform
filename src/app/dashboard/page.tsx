@@ -30,6 +30,7 @@ import {
   Timer,
   ClipboardCheck,
   Briefcase,
+  Compass,
 } from "lucide-react";
 import { formatUsageMinutes } from "@/lib/format-utils";
 import { PageHeader } from "@/components/ui/page-header";
@@ -205,6 +206,7 @@ export default async function DashboardPage() {
   });
 
   const featureCards = [
+    { label: "My Study Roadmap", icon: Compass, enabled: true, href: "/roadmap" },
     { label: "College Finder", icon: GraduationCap, enabled: featureAccess?.collegeFinder, href: "/college-finder" },
     { label: "AI Odds Calculator", icon: Calculator, enabled: featureAccess?.aiOddsCalculator, href: "/odds-calculator" },
     { label: "Mock Tests", icon: FileText, enabled: featureAccess?.mockTests, href: "/mock-tests" },
