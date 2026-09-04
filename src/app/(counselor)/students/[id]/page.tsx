@@ -29,7 +29,7 @@ export default async function Student360Page({
     counselorUserId:
       session.user.role === "COUNSELOR" ? session.user.id : undefined,
   });
-  if (!data) redirect("/counselor/students");
+  if (!data) redirect("/students");
 
   return (
     <Student360Client data={data} counselorUserId={session.user.id} />
