@@ -38,6 +38,7 @@ import { StatCard } from "@/components/ui/stat-card";
 import { getStudentDashboard } from "@/lib/student/dashboard.ts";
 import { buildStudentJourney } from "@/lib/student/journey.ts";
 import StudentIntelligenceHub from "./student-intelligence-hub";
+import { OnboardingTour } from "@/components/onboarding-tour";
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions);
@@ -125,6 +126,7 @@ export default async function DashboardPage() {
 
     return (
       <div className="space-y-6 p-6 pt-20">
+        <OnboardingTour role="counselor" />
         <PageHeader
           icon={Activity}
           title="Counselor Dashboard"
@@ -139,7 +141,7 @@ export default async function DashboardPage() {
         <Card>
           <CardHeader><CardTitle>Quick Actions</CardTitle></CardHeader>
           <CardContent className="grid gap-4 md:grid-cols-2">
-            <a href="/students" className="group flex items-center gap-4 rounded-xl border bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
+            <a href="/students" data-tour="students" className="group flex items-center gap-4 rounded-xl border bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-white shadow-md shadow-primary/30 transition-transform duration-200 group-hover:scale-110">
                 <Users className="h-6 w-6" />
               </span>
@@ -216,6 +218,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-6 p-6 pt-20">
+      <OnboardingTour role="student" />
       <StudentIntelligenceHub
         dashboard={dashboard}
         studentName={user.firstName}
@@ -224,7 +227,11 @@ export default async function DashboardPage() {
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {featureCards.map((f) => (
-          <Card key={f.label} className={!f.enabled ? "opacity-50" : ""}>
+          <Card
+            key={f.label}
+            data-tour={f.label === "My Study Roadmap" ? "roadmap" : undefined}
+            className={!f.enabled ? "opacity-50" : ""}
+          >
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-sm font-medium">{f.label}</CardTitle>
               <f.icon className="h-4 w-4 text-muted-foreground" />
@@ -239,7 +246,7 @@ export default async function DashboardPage() {
       </div>
 
       {myTests.length > 0 && (
-        <Card>
+        <Card data-tour="tests">
           <CardHeader>
             <CardTitle className="flex items-center gap-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white shadow-md shadow-primary/25">
@@ -359,7 +366,7 @@ async function MyStudentsTable({ tenantId, counselorUserId }: { tenantId: string
   if (students.length === 0) return null;
 
   return (
-    <Card>
+    <Card data-tour="assign">
       <CardHeader>
         <CardTitle className="flex items-center gap-3">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white shadow-md shadow-primary/25">

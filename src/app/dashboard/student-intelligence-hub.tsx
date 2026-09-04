@@ -159,7 +159,7 @@ export default function StudentIntelligenceHub({
       {journey && <StudentJourney journey={journey} />}
 
       {/* CAREER MATCHES */}
-      <section className="space-y-4">
+      <section data-tour="matches" className="space-y-4">
         <SectionHeading
           icon={Sparkles}
           eyebrow="For you"
