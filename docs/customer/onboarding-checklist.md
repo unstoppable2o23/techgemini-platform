@@ -11,7 +11,8 @@ Use this to take a new customer organization from signed contract to active coun
 
 ## 2. Admin setup
 
-- [ ] Org admin confirms organization name and branding.
+- [ ] Org admin completes the **setup wizard** (organization → counselors → students → configure → launch).
+- [ ] Org admin confirms organization name and branding (colors and logo).
 - [ ] Org admin reviews the **Students** and **Counselors** views.
 - [ ] Org admin reviews **Billing / plan** (limits and included features match the contract).
 
@@ -24,22 +25,24 @@ Use this to take a new customer organization from signed contract to active coun
 
 ## 4. Students & data
 
-- [ ] Decide student onboarding approach: (a) org/counselors create student accounts, or (b) students self-register.
-- [ ] Create / register the first students.
+- [ ] Decide student onboarding approach: (a) bulk **CSV import**, (b) org/counselors create each student, or (c) students self-register.
+- [ ] Use the **Students → Import CSV** flow to add the first cohort (validates rows and reports errors per row).
 - [ ] Confirm student profiles capture academics, subjects, interests and study goals.
-- [ ] (Optional) Enroll students in a baseline assessment for richer matches.
+- [ ] **Invite** students so they set their own password via the secure invitation link (valid 7 days). No passwords sent by email.
+- [ ] Track invitation status on the dashboard (pending / accepted) until the cohort is fully active.
 
 ## 5. First use (soft launch)
 
 - [ ] Run one student through the full journey: profile → recommended careers → study pathways → universities → counselor session.
 - [ ] Verify a counselor opens the student **360 view** and sees the recommendations and reasons.
 - [ ] Confirm the student and counselor can book a session and add follow-up notes.
+- [ ] Confirm the org admin can see **pilot metrics** on the Overview tab.
 
 ## 6. Handover & support
 
 - [ ] Hand over customer-facing guides: `docs/customer/org-admin-guide.md`, `counselor-guide.md`, `student-guide.md`.
 - [ ] Confirm the password reset flow works for all roles.
-- [ ] Establish a support contact for the customer.
+- [ ] Confirm the org supports the **Help & Support** flow (from the user menu) for questions, problems, and contact requests.
 
 ## Go-live gate
 

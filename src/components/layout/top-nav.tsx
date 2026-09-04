@@ -43,6 +43,7 @@ import {
   LogOut,
   Users,
   ClipboardCheck,
+  LifeBuoy,
   type LucideIcon,
 } from "lucide-react";
 
@@ -269,6 +270,7 @@ export function TopNav() {
     ...STUDENT_GROUPS[4].items, // More
     { label: "Profile", href: "/career-profile", icon: ClipboardCheck },
     { label: "Settings", href: "/settings", icon: Settings },
+    { label: "Help & Support", href: "/support", icon: LifeBuoy },
   ];
 
   return (
@@ -485,6 +487,12 @@ export function TopNav() {
                     <Link href="/settings" className="flex items-center gap-2">
                       <Settings className="h-4 w-4 text-muted-foreground" />
                       Settings
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link href="/support" className="flex items-center gap-2">
+                      <LifeBuoy className="h-4 w-4 text-muted-foreground" />
+                      Help & Support
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />

@@ -33,6 +33,7 @@ export async function GET() {
     (s) => s.studentProfile?.status === "ONLINE" || s.studentProfile?.status === "IN_TEST"
   ).length;
 
+  const userIds = studentIds.map((s) => s.id);
   const [counselorCount, studentCount, assessmentsCompleted, counselorNotes, counselorActions, feedbackCount] =
     await Promise.all([
       prisma.user.count({ where: { tenantId, role: "COUNSELOR" } }),
@@ -42,6 +43,26 @@ export async function GET() {
       prisma.counselorAction.count({ where: { studentId: { in: profileIds } } }),
       prisma.counselorRecommendationFeedback.count({ where: { studentId: { in: profileIds } } }),
     ]);
+
+  const [
+    careerResults,
+    roadmapsCreated,
+    followUpRequired,
+    shortlistedUniversities,
+    invitationPending,
+    invitationAccepted,
+  ] = await Promise.all([
+    prisma.studentCareerProfile.count({ where: { studentId: { in: userIds }, level: { not: "EMPTY" } } }),
+    prisma.studentRoadmap.count({ where: { studentId: { in: userIds } } }),
+    prisma.counselorAction.count({ where: { studentId: { in: profileIds }, completed: false } }),
+    prisma.studentShortlist.groupBy({
+      by: ["studentId"],
+      where: { studentId: { in: userIds }, itemType: { equals: "UNIVERSITY", mode: "insensitive" } },
+      _count: { _all: true },
+    }),
+    prisma.studentInvitation.count({ where: { tenantId, status: "PENDING" } }),
+    prisma.studentInvitation.count({ where: { tenantId, status: "ACCEPTED" } }),
+  ]);
 
   const plan = tenant.subscription?.plan ?? null;
   const trialEnded = !!tenant.trialEndsAt && tenant.trialEndsAt.getTime() < Date.now();
@@ -81,6 +102,14 @@ export async function GET() {
       counselorNotes,
       counselorActions,
       feedbackCount,
+    },
+    pilotMetrics: {
+      careerResults,
+      roadmapsCreated,
+      followUpRequired,
+      studentsWithShortlistedUniversities: shortlistedUniversities.length,
+      invitationPending,
+      invitationAccepted,
     },
   });
 }

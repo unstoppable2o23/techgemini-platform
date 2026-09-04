@@ -189,6 +189,9 @@ model User {
   createdTestAssignments  TestAssignment[]  @relation("CreatedTestAssignments")
   careerProfile           StudentCareerProfile?
   roadmap                 StudentRoadmap?
+  invitations             StudentInvitation[]        @relation("InvitedStudent")
+  createdInvitations      StudentInvitation[]        @relation("InvitedBy")
+  supportTickets          SupportTicket[]            @relation("SupportTicketUser")
 
   @@index([tenantId])
   @@index([email])
@@ -1003,4 +1006,53 @@ model Notification {
 
   @@index([recipientId, read])
   @@index([recipientId, createdAt])
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  EXPIRED
+  REVOKED
+}
+
+model StudentInvitation {
+  id             String           @id @default(cuid())
+  tenantId       String
+  studentId      String           @unique
+  student        User             @relation("InvitedStudent", fields: [studentId], references: [id], onDelete: Cascade)
+  token          String           @unique
+  tokenExpiresAt DateTime?
+  status         InvitationStatus @default(PENDING)
+  createdById    String?
+  createdBy      User?            @relation("InvitedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  emailedTo      String
+  acceptedAt     DateTime?
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+
+  @@index([tenantId])
+  @@index([token])
+}
+
+enum SupportTicketStatus {
+  OPEN
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}
+
+model SupportTicket {
+  id          String              @id @default(cuid())
+  tenantId    String
+  userId      String?
+  user        User?               @relation("SupportTicketUser", fields: [userId], references: [id], onDelete: SetNull)
+  category    String              // HELP | PROBLEM | CONTACT
+  subject     String
+  description String?
+  status      SupportTicketStatus @default(OPEN)
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+
+  @@index([tenantId])
+  @@index([userId])
 }
