@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
       message:
         category === "PROBLEM"
           ? "Thanks for reporting this. Our team has been notified and will help you." +
-            " You can reach us directly at support@techgemini (or your account manager) for urgent issues."
+            " You can reach us directly at support@suhail (or your account manager) for urgent issues."
           : "Thanks for reaching out. We have received your request.",
     },
     { status: 201 }

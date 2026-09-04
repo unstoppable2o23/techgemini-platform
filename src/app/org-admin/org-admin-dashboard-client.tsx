@@ -86,7 +86,7 @@ export default function OrgAdminDashboardClient() {
   return (
     <div className="space-y-6 p-6 pt-20 max-w-6xl mx-auto">
       <div className="flex flex-wrap items-center justify-between gap-4">
-        <PageHeader icon={Building2} title="Organization Admin" description="Manage your school/org on TechGemini" eyebrow="B2B" />
+        <PageHeader icon={Building2} title="Organization Admin" description="Manage your school/org on SUHAIL" eyebrow="B2B" />
         <div className="flex items-center gap-2">
           {org?.status === "SUSPENDED" && (
             <Badge variant="destructive" className="gap-1"><ShieldAlert className="h-3 w-3" /> Suspended</Badge>

@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Career & Study Pathways | TechGemini",
+  title: "Career & Study Pathways | SUHAIL",
   description:
     "Discover suitable career pathways from your interests, strengths and assessment results — then explore relevant programs and universities.",
 };
@@ -69,7 +69,7 @@ export default function Home() {
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600 text-white">
               <Sparkles className="h-4 w-4" />
             </span>
-            <span className="text-base font-bold tracking-tight">TechGemini</span>
+            <span className="text-base font-bold tracking-tight">SUHAIL</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
             <Link
@@ -250,7 +250,7 @@ export default function Home() {
 
       <footer className="border-t border-slate-200">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-slate-500 sm:flex-row">
-          <span>© 2026 TechGemini</span>
+          <span>© 2026 SUHAIL</span>
           <span>Career and education guidance — directional, not a guarantee.</span>
         </div>
       </footer>

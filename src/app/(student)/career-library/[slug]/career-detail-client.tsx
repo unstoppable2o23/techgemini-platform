@@ -163,6 +163,16 @@ export default function CareerDetailClient({ career }: { career: any }) {
   const clean = (v?: string) => (typeof v === "string" ? v.replace(/^\?+/, "") : v || "");
   const industries = career.topIndustries || [];
 
+  const hasRoleOptions =
+    (career.conventionalOptions?.length || 0) +
+      (career.newAgeOptions?.length || 0) +
+      (career.aiRelatedOptions?.length || 0) >
+    0;
+
+  const fallbackOptions: OptionItem[] = (career.careerPath || [])
+    .filter(Boolean)
+    .map((s: string) => ({ title: s }));
+
   // Education pathways state
   const [educationPathways, setEducationPathways] = useState<{
     primary: EducationPathway[];
@@ -320,7 +330,12 @@ export default function CareerDetailClient({ career }: { career: any }) {
           </h1>
           <p className="text-white/85 mt-4 max-w-2xl text-base md:text-lg">{career.introduction}</p>
           <div className="mt-5">
-            <SaveButton itemType="CAREER" itemId={career.id} />
+            <SaveButton
+              itemType="CAREER"
+              itemId={career.id}
+              size="default"
+              className="border-black bg-black text-white hover:bg-gray-800 hover:text-white"
+            />
           </div>
         </div>
       </div>
@@ -439,22 +454,39 @@ export default function CareerDetailClient({ career }: { career: any }) {
 
       <div>
         <SectionHeader icon={Briefcase}>Career Options</SectionHeader>
-        <div className="space-y-2.5">
-          {career.conventionalOptions?.length > 0 && (
-            <Accordion icon={<Briefcase className="h-4 w-4" />} title="Conventional Options" items={career.conventionalOptions} />
-          )}
-          {career.newAgeOptions?.length > 0 && (
-            <Accordion icon={<Sparkles className="h-4 w-4" />} title="New-Age Options" items={career.newAgeOptions} />
-          )}
-          {career.aiRelatedOptions?.length > 0 && (
-            <Accordion icon={<Cpu className="h-4 w-4" />} title="AI-Related Options" items={career.aiRelatedOptions} />
-          )}
-        </div>
+        {hasRoleOptions ? (
+          <div className="space-y-2.5">
+            {career.conventionalOptions?.length > 0 && (
+              <Accordion icon={<Briefcase className="h-4 w-4" />} title="Conventional Options" items={career.conventionalOptions} />
+            )}
+            {career.newAgeOptions?.length > 0 && (
+              <Accordion icon={<Sparkles className="h-4 w-4" />} title="New-Age Options" items={career.newAgeOptions} />
+            )}
+            {career.aiRelatedOptions?.length > 0 && (
+              <Accordion icon={<Cpu className="h-4 w-4" />} title="AI-Related Options" items={career.aiRelatedOptions} />
+            )}
+          </div>
+        ) : fallbackOptions.length > 0 ? (
+          <div className="space-y-2.5">
+            <Accordion
+              icon={<Briefcase className="h-4 w-4" />}
+              title="Common career options"
+              items={fallbackOptions}
+            />
+          </div>
+        ) : (
+          <div className="rounded-2xl border bg-card p-5">
+            <p className="text-sm text-muted-foreground">
+              Detailed role options for this career are still being added. You can
+              see the typical study route and skills in the sections above.
+            </p>
+          </div>
+        )}
       </div>
 
-      {faqs.length > 0 && (
-        <div>
-          <SectionHeader icon={Sparkles}>FAQs</SectionHeader>
+      <div>
+        <SectionHeader icon={Sparkles}>FAQs</SectionHeader>
+        {faqs.length > 0 ? (
           <div className="space-y-2.5">
             {faqs.map((f, i) => (
               <div key={i} className="rounded-xl border bg-card p-4 transition-shadow hover:shadow-md">
@@ -463,8 +495,15 @@ export default function CareerDetailClient({ career }: { career: any }) {
               </div>
             ))}
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="rounded-2xl border bg-card p-5">
+            <p className="text-sm text-muted-foreground">
+              Common questions are being added for this career. Ask your counselor
+              for personalized guidance in the meantime.
+            </p>
+          </div>
+        )}
+      </div>
 
       {(career.technicalSkills?.length > 0 || career.softSkills?.length > 0) && (
         <div>

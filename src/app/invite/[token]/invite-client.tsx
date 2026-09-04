@@ -89,7 +89,7 @@ export function InviteClient({ token }: { token: string }) {
           <CardTitle className="flex items-center gap-2">
             <ShieldCheck className="h-5 w-5 text-green-600" /> Student Invitation
           </CardTitle>
-          <CardDescription>Set up your TechGemini account securely.</CardDescription>
+          <CardDescription>Set up your SUHAIL account securely.</CardDescription>
         </CardHeader>
         <CardContent>
           {state.phase === "loading" && (
@@ -118,7 +118,7 @@ export function InviteClient({ token }: { token: string }) {
           {state.phase === "form" && (
             <form onSubmit={submit} className="space-y-4">
               <p className="text-sm text-muted-foreground">
-                Hi {state.studentName}, welcome to TechGemini. Create your own password — it is never
+                Hi {state.studentName}, welcome to SUHAIL. Create your own password — it is never
                 sent over email or shared with anyone.
               </p>
               <div className="space-y-1.5">

@@ -55,7 +55,7 @@ export function SupportClient() {
             <Headphones className="h-5 w-5" /> Help & Support
           </CardTitle>
           <CardDescription>
-            Get help, report a problem, or contact the TechGemini team.
+            Get help, report a problem, or contact the SUHAIL team.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-5">
@@ -86,7 +86,7 @@ export function SupportClient() {
 
           {mode === "CONTACT" && (
             <div className="grid gap-1 rounded-lg border bg-muted/40 p-3 text-sm text-muted-foreground">
-              <p><span className="font-medium">Email:</span> support@techgemini.local (your account manager for pilot)</p>
+              <p><span className="font-medium">Email:</span> support@suhail.local (your account manager for pilot)</p>
               <p><span className="font-medium">Response:</span> within 1 business day during the pilot.</p>
             </div>
           )}

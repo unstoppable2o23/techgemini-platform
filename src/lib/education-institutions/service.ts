@@ -46,8 +46,12 @@ const DEFAULT_LIMIT = 20;
  */
 const FIELD_RULES: { tokens: string[]; types: string[] }[] = [
   {
+    tokens: ["diploma"],
+    types: ["Polytechnic"],
+  },
+  {
     tokens: ["engineering", "tech", "b.tech", "m.tech", "be ", "b.e.", "civil", "mechanical", "electrical", "electronics", "computer"],
-    types: ["Technical", "Polytechnic"],
+    types: ["Technical"],
   },
   {
     tokens: ["mba", "management", "pgdm", "business administration"],

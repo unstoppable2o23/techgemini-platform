@@ -214,7 +214,7 @@ function OrganizationStep({ onSaved }: { onSaved: () => void }) {
 
   return (
     <form onSubmit={save} className="space-y-4">
-      <StepHeader title="Primary contact" hint="Who should TechGemini contact about your organization?" />
+      <StepHeader title="Primary contact" hint="Who should SUHAIL contact about your organization?" />
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-1.5">
           <Label>Contact name</Label>
@@ -382,7 +382,7 @@ function ConfigureStep({ onSaved }: { onSaved: () => void }) {
 
   return (
     <form onSubmit={save} className="space-y-4">
-      <StepHeader title="Brand your organization" hint="Optional. Customize how TechGemini appears for your students." />
+      <StepHeader title="Brand your organization" hint="Optional. Customize how SUHAIL appears for your students." />
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-1.5">
           <Label>Brand name</Label>
@@ -466,7 +466,7 @@ function LaunchStep({ onSaved }: { onSaved: () => void }) {
         </div>
       )}
       <div className="rounded-lg border bg-muted/40 p-3 text-xs text-muted-foreground">
-        <p><strong>Operational note:</strong> by default TechGemini does not send email automatically. Copy each student&apos;s invite link and deliver it securely (e.g. via WhatsApp/phone or your own mail), or configure a mail provider for automated delivery. Invite links expire after 7 days.</p>
+        <p><strong>Operational note:</strong> by default SUHAIL does not send email automatically. Copy each student&apos;s invite link and deliver it securely (e.g. via WhatsApp/phone or your own mail), or configure a mail provider for automated delivery. Invite links expire after 7 days.</p>
         {Object.values(invites).filter(Boolean).length > 0 && (
           <div className="mt-2 space-y-1">
             {Object.entries(invites).filter(([, u]) => !!u).map(([id, url]) => {

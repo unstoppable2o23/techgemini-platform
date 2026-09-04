@@ -15,7 +15,7 @@ import {
 import DemoWalkthrough from "./demo-walkthrough";
 
 export const metadata: Metadata = {
-  title: "Sample Student Report | TechGemini",
+  title: "Sample Student Report | SUHAIL",
   description:
     "A synthetic, clearly-labelled example showing how a student report is structured.",
 };
