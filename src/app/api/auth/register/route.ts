@@ -51,18 +51,19 @@ export async function POST(request: NextRequest) {
       where: { subdomain: tenantId },
     });
 
-    if (!tenant) {
+    // On local developer machines (localhost / raw IPs) there is no real
+    // subdomain, so fall back to the platform's first tenant to keep local
+    // demo/test signups working. On any deployed host an unmatched subdomain
+    // is rejected rather than silently enrolling the student into an arbitrary
+    // organization.
+    if (!tenant && isLocalDevHost(host)) {
       tenant = await prisma.tenant.findFirst();
-      if (!tenant) {
-        tenant = await prisma.tenant.create({
-          data: {
-            name: "Default Agency",
-            slug: "default",
-            subdomain: "default",
-            brandName: "Study Abroad Platform",
-          },
-        });
-      }
+    }
+    if (!tenant) {
+      return NextResponse.json(
+        { error: "Organization not found for this address" },
+        { status: 400 }
+      );
     }
 
     // Suspended organizations cannot create new usage (Phase 19 §17-F). A
@@ -124,4 +125,11 @@ function extractSubdomain(hostname: string): string {
     return "default";
   }
   return parts[0];
+}
+
+function isLocalDevHost(hostname: string): boolean {
+  const host = hostname.replace(/:\d+$/, "").toLowerCase();
+  if (host.includes("localhost") || host.includes("127.0.0.1")) return true;
+  const parts = host.split(".");
+  return parts.length > 0 && parts.every((p) => /^\d+$/.test(p));
 }

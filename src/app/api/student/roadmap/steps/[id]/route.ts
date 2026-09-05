@@ -41,8 +41,13 @@ export async function PATCH(
     }
     const ownerId = roadmap.studentId;
 
-    // Authorization: student must own the roadmap; counselor must be authorized (handled via 360 route below).
-    if (session.user.role === "STUDENT" && ownerId !== session.user.id) {
+    // Authorization: this is the student self-service route. Only the owning
+    // student may update their own roadmap steps; staff manage roadmaps via the
+    // counselor routes (which run loadAuthorizedStudent). Reject every other role.
+    if (session.user.role !== "STUDENT") {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+    if (ownerId !== session.user.id) {
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 

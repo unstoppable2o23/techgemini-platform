@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const tenantId = request.headers.get("x-tenant-id");
+  const tenantId = session.user.tenantId;
   if (!tenantId) {
     return NextResponse.json(
       { error: "Tenant not resolved" },
