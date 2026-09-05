@@ -459,6 +459,22 @@ function EducationTab({ data }: any) {
     <Card>
       <CardContent className="p-4">
         <h3 className="font-semibold mb-3">Education Pathways</h3>
+        {ep.postClass10Pathways && ep.postClass10Pathways.length > 0 && (
+          <div className="mb-3 rounded-lg border border-accent/20 bg-accent/5 p-3">
+            <p className="font-medium text-sm mb-1">Post–Class 10 pathways</p>
+            <ul className="space-y-1 text-sm">
+              {ep.postClass10Pathways.map((p: string, i: number) => (
+                <li key={i} className="flex items-start gap-2">
+                  <span className="text-accent shrink-0">→</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-muted-foreground mt-1">
+              Present both tracks as distinct, equally valid routes; a Diploma/Polytechnic is not an engineering degree.
+            </p>
+          </div>
+        )}
         {renderGroup("Primary", ep.primary)}
         {renderGroup("Alternative", ep.alternative)}
         {renderGroup("Optional", ep.optional)}

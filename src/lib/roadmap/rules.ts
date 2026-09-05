@@ -95,6 +95,34 @@ type NowBuilder = () => RoadmapStepSpec[];
 const CHECK_INSTITUTION =
   "Check the official institution's current requirements — these can change.";
 
+/**
+ * Phase 23.1 — Post–Class 10 pathway wording. The technical (Diploma /
+ * Polytechnic) route after Class 10 is presented as a legitimate, distinct
+ * alternative to the academic (Class 11–12 → degree) route. Wording stays
+ * neutral (no economic/ability assumptions) and never equates a diploma with a
+ * B.E./B.Tech degree. Lateral entry is conditional, never guaranteed.
+ */
+const CLASS10_PATHWAY_CHOICE =
+  "After Class 10 you can explore two broad pathways: (1) academic — continue Class 11–12 and then a degree; or (2) technical — a Diploma/Polytechnic after Class 10 leading to a diploma qualification. Neither is inherently better; choose the path that fits your goals and confirm it with your counselor.";
+const DIPLOMA_OPTIONS =
+  "A technical diploma is an alternative pathway available after Class 10, leading to a diploma qualification. It is a distinct route from a B.E./B.Tech degree — a diploma is not the same as an engineering degree.";
+const DIPLOMA_BRANCHES =
+  "Compare diploma branches such as Diploma in Mechanical, Civil, Electrical, Computer or Electronics Engineering. Verify which branches are actually offered by the institutions you consider.";
+const DIPLOMA_ELIGIBILITY =
+  "Diploma admission rules vary by state and institution. Check the official admission criteria for the institutions you shortlist rather than assuming eligibility.";
+const DIPLOMA_SELECT =
+  "Select the institution and programme for your diploma. Confirm the programme you choose is actually offered by that institution before applying.";
+const DIPLOMA_COMPLETE =
+  "Focus on coursework, practical lab work and any industry exposure or apprenticeship your programme offers.";
+const DIPLOMA_AFTER_INDIA =
+  "After completing your diploma you may pursue employment or an apprenticeship, or — where eligible — apply for lateral entry into an engineering degree (B.E./B.Tech) programme. Lateral entry is subject to the applicable state and institution rules and is not automatic.";
+const DIPLOMA_ABROAD =
+  "Check whether your diploma qualification is accepted by the target institution/country. Qualification recognition varies — verify with each institution before planning applications.";
+const ACADEMIC_ALT =
+  "The academic route — continuing to Class 11–12 and then a degree — remains available as an alternative if it suits your goals better.";
+const DIPLOMA_TARGET =
+  "Diploma completion can lead to employment or eligible higher study. Confirm each next step's requirements rather than assuming admission.";
+
 export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
   const specs: RoadmapStepSpec[] = [];
   const milestones: RoadmapMilestoneSpec[] = MILESTONE_ORDER.map((key, i) => ({
@@ -114,24 +142,49 @@ export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
     case "SCHOOL_CLASS10": {
       builder
         .now("Confirm your target career direction", EXPLAIN_GOAL(input), "SUBJECTS", "MEDIUM")
-        .now("Choose Class 11–12 subjects to match your goal", subjectChoiceReason(input), "SUBJECTS", "HIGH")
-        .now("Keep your core subjects strong", coreSubjectsReason(input), "SUBJECTS", "HIGH")
-        ;
-      if (destination === "INDIA") {
+        .now("Choose your post–Class 10 pathway", CLASS10_PATHWAY_CHOICE, "SUBJECTS", "HIGH");
+
+      if (input.diplomaIntent) {
+        // Technical pathway — Diploma / Polytechnic (Phase 23.1). This is a
+        // legitimate technical route after Class 10, distinct from the 4-year
+        // B.E./B.Tech degree track. Wording is neutral: no economic/ability
+        // assumptions, and lateral entry is conditional, never guaranteed.
         builder
-          .next3("Compare relevant degree programs", programCompareReason(input), "PROGRAM_SELECTION", "HIGH")
-          .next3("Check entrance-exam requirements for shortlisted programs", "Some Indian programs are entrance-based; check whether your selected program/institution uses one before planning.", "ENTRANCE_EXAM", "MEDIUM")
-          ;
-      } else if (destination) {
+          .now("Explore Diploma / Polytechnic options", DIPLOMA_OPTIONS, "PROGRAM_SELECTION", "HIGH")
+          .now("Compare diploma branches", DIPLOMA_BRANCHES, "PROGRAM_SELECTION", "HIGH")
+          .next3("Verify diploma eligibility and admission requirements", DIPLOMA_ELIGIBILITY, "ENTRANCE_EXAM", "MEDIUM")
+          .next3("Select an institution and programme for your diploma", DIPLOMA_SELECT, "PROGRAM_SELECTION", "MEDIUM")
+          .later("Complete your diploma", DIPLOMA_COMPLETE, "SKILL_DEVELOPMENT", "MEDIUM");
+        if (destination === "INDIA") {
+          builder
+            .later("Explore employment or eligible higher-study options after your diploma", DIPLOMA_AFTER_INDIA, "CAREER_PREPARATION", "MEDIUM");
+        } else if (destination) {
+          builder
+            .later("Confirm whether your diploma is accepted by your target institutions", DIPLOMA_ABROAD, "APPLICATION", "MEDIUM");
+        }
         builder
-          .next3("Compare relevant degree programs abroad", programCompareReason(input), "PROGRAM_SELECTION", "HIGH")
-          .next3("Identify country and university shortlist", "Begin shortlisting institutions in your target destination for your selected direction.", "UNIVERSITY_SHORTLIST", "MEDIUM");
+          .later("Consider the Class 11–12 academic pathway as an alternative", ACADEMIC_ALT, "SUBJECTS", "LOW")
+          .target("Build from your diploma toward your goal", DIPLOMA_TARGET, "OTHER", "LOW");
       } else {
-        builder.next3("Compare relevant degree programs", programCompareReason(input), "PROGRAM_SELECTION", "HIGH");
+        builder
+          .now("Choose Class 11–12 subjects to match your goal", subjectChoiceReason(input), "SUBJECTS", "HIGH")
+          .now("Keep your core subjects strong", coreSubjectsReason(input), "SUBJECTS", "HIGH");
+        if (destination === "INDIA") {
+          builder
+            .next3("Compare relevant degree programs", programCompareReason(input), "PROGRAM_SELECTION", "HIGH")
+            .next3("Check entrance-exam requirements for shortlisted programs", "Some Indian programs are entrance-based; check whether your selected program/institution uses one before planning.", "ENTRANCE_EXAM", "MEDIUM")
+            ;
+        } else if (destination) {
+          builder
+            .next3("Compare relevant degree programs abroad", programCompareReason(input), "PROGRAM_SELECTION", "HIGH")
+            .next3("Identify country and university shortlist", "Begin shortlisting institutions in your target destination for your selected direction.", "UNIVERSITY_SHORTLIST", "MEDIUM");
+        } else {
+          builder.next3("Compare relevant degree programs", programCompareReason(input), "PROGRAM_SELECTION", "HIGH");
+        }
+        builder
+          .later("Plan Class 11–12 strategy ahead of applications", "Use this phase to build strong grades, relevant activities and any programme prerequisites before you apply.", "APPLICATION", "LOW")
+          .target("Track your roadmap toward application readiness", "As you finish school, the roadmap shifts to entrance tests, applications and offers.", "OTHER", "LOW");
       }
-      builder
-        .later("Plan Class 11–12 strategy ahead of applications", "Use this phase to build strong grades, relevant activities and any programme prerequisites before you apply.", "APPLICATION", "LOW")
-        .target("Track your roadmap toward application readiness", "As you finish school, the roadmap shifts to entrance tests, applications and offers.", "OTHER", "LOW");
       break;
     }
 

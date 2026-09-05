@@ -1,0 +1,58 @@
+{
+  "phase": "23.1",
+  "title": "Polytechnic / Diploma pathway correction",
+  "date": "2026-09-05",
+  "branch": "master",
+  "affectedInstitutions": {
+    "polytechnicTypeRows": 5337,
+    "rowsMutated": 0,
+    "allShareSingleType": "Technical/Polytechnic"
+  },
+  "incorrectMappingsFound": [
+    "Diploma in X Engineering mapped to [Polytechnic, Technical] instead of [Polytechnic] only",
+    "test asserted B.TECH includes Polytechnic (degree labelled as diploma)",
+    "Class-10 roadmap had no diploma/technical branch",
+    "orphan-seed skip suppressed SUBJECT_LINK for degree-mapped careers",
+    "UI showed raw Technical/Polytechnic without Diploma/Polytechnic separation"
+  ],
+  "correctionsMade": [
+    "FIELD_RULES excludeIf=['diploma'] on Technical rule; diploma maps to Polytechnic only, degree maps to Technical only (disjoint)",
+    "Corrected test contract + added diploma/degree separation tests",
+    "Rewrote SCHOOL_CLASS10 roadmap: neutral pathway choice + diploma sequence + conditional lateral entry / abroad acceptance check + academic alternative",
+    "Added diplomaIntent / diplomaIntentOverride plumbing (pure derive, engine untouched)",
+    "Fixed orphan-seed skip logic still creating SUBJECT_LINKs",
+    "UI: 'Diploma / Polytechnic — not a B.E./B.Tech degree institution' labels; counselor 360 dual-pathway panel",
+    "New tests/polytechnic-diploma.test.mjs regression suite (mission items 1-2 + golden cases A-F)"
+  ],
+  "goldenCases": {
+    "A": "Class10 Mechanical Diploma -> diploma/technical branch",
+    "B": "Class10 Computer Diploma -> diploma branch + eligible progression",
+    "C": "Class10 Class 11-12 -> academic branch",
+    "D": "Diploma -> B.Tech -> conditional lateral entry (state/institution rules)",
+    "E": "Diploma -> Medicine/Law -> no regulated diploma pathway (data=0)",
+    "F": "polytechnic with B.Tech -> no B.Tech programs displayed (0 Program rows)"
+  },
+  "counts": {
+    "university_before": 20, "university_after": 20,
+    "indianInstitution_before": 73969, "indianInstitution_after": 73969,
+    "program_before": 75, "program_after": 75,
+    "career_before": 289, "career_after": 289,
+    "degree_before": 751, "degree_after": 751,
+    "careerEducationPathway_before": 2111, "careerEducationPathway_after": 2111,
+    "diplomaDegreeRows": 9,
+    "programRowsAtPolytechnics": 0,
+    "medicineLawDiplomaPathways": 0
+  },
+  "remainingExceptions": [
+    "All 5337 polytechnic rows share single AISHE type 'Technical/Polytechnic'; per-institution diploma-vs-degree separation not possible at query level",
+    "No verified evidence of any polytechnic running B.E./B.Tech; none fabricated",
+    "No technical Diploma-in-Engineering rows exist in degree catalog (no fabrication)"
+  ],
+  "verification": {
+    "tests": "532 pass / 0 fail",
+    "engineFreeze": "byte-identical vs phase18-1-engine-freeze-baseline.json",
+    "typecheck": "PASS",
+    "build": "PASS",
+    "vercel": "https://technology-platform.vercel.app/ (SUHAIL branding; deployment SUCCESS in Phase 23)"
+  }
+}

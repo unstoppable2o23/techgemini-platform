@@ -8,6 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { PageHeader } from "@/components/ui/page-header";
 import { StatCard } from "@/components/ui/stat-card";
 import { useDebouncedValue } from "@/hooks/use-debounced-value";
+import { institutionQualificationLabel } from "@/lib/education-institutions/service";
 import { Search, GraduationCap, Download, Building2, School, Landmark } from "lucide-react";
 
 type Institution = {
@@ -185,7 +186,7 @@ export default function IndianCollegesClient({ role }: { role?: string }) {
                     <td className="px-4 py-3 whitespace-nowrap">{r.type}</td>
                     <td className="px-4 py-3 whitespace-nowrap">{r.state}</td>
                     <td className="px-4 py-3 whitespace-nowrap">{r.district || "—"}</td>
-                    <td className="px-4 py-3">{r.universityName || r.institutionType || "—"}</td>
+                    <td className="px-4 py-3">{r.universityName || institutionQualificationLabel(r.institutionType) || r.institutionType || "—"}</td>
                     <td className="px-4 py-3 whitespace-nowrap">{r.yearOfEstablishment || "—"}</td>
                   </tr>
                 ))}

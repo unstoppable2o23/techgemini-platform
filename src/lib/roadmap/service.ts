@@ -19,7 +19,7 @@ import { getCareerPrograms } from "@/lib/career-program.ts";
 import { getUniversityMatchesForStudent } from "@/lib/university-matching/engine.ts";
 import type { GeneratedRoadmap, RoadmapInputs, RoadmapStepSpec } from "./types.ts";
 import { buildRoadmap } from "./rules.ts";
-import { detectEducationStage } from "./education-stage.ts";
+import { detectEducationStage, detectDiplomaIntent } from "./education-stage.ts";
 import { resolveDestination, destinationLabel, SUPPORTED_DESTINATIONS } from "./country-config.ts";
 
 export interface RoadmapLoadInput {
@@ -28,6 +28,8 @@ export interface RoadmapLoadInput {
   destinationOverride?: string | null;
   /** Optional override preferred career id. */
   careerOverrideId?: string | null;
+  /** Phase 23.1 — explicit Diploma/Polytechnic technical intent for a Class-10 student. */
+  diplomaIntentOverride?: boolean | null;
 }
 
 export interface RoadmapChangeAction {
@@ -44,7 +46,7 @@ export { destinationLabel, SUPPORTED_DESTINATIONS };
  * (top career match, preferred career) and the existing catalog services.
  */
 export async function loadRoadmapInputs(opts: RoadmapLoadInput): Promise<RoadmapInputs> {
-  const { userId, destinationOverride, careerOverrideId } = opts;
+  const { userId, destinationOverride, careerOverrideId, diplomaIntentOverride } = opts;
 
   const studentProfile = await prisma.studentProfile.findUnique({ where: { userId } });
   const user = await prisma.user.findUnique({
@@ -99,6 +101,17 @@ export async function loadRoadmapInputs(opts: RoadmapLoadInput): Promise<Roadmap
     highestEducation: studentProfile?.highestEducation,
   });
 
+  const diplomaIntent =
+    diplomaIntentOverride ??
+    (educationStage === "SCHOOL_CLASS10"
+      ? detectDiplomaIntent({
+          studyLevel: studentProfile?.studyLevel,
+          highestEducation: studentProfile?.highestEducation,
+          exams: studentProfile?.exams ?? [],
+          preferredCareer: studentProfile?.preferredCareer ?? null,
+        })
+      : false);
+
   return {
     userId,
     goalCareerId,
@@ -124,6 +137,7 @@ export async function loadRoadmapInputs(opts: RoadmapLoadInput): Promise<Roadmap
     institutionNames,
     targetIntake: studentProfile?.preferredIntake,
     targetYear: studentProfile?.preferredYear,
+    diplomaIntent,
   };
 }
 

@@ -1,6 +1,7 @@
 import { prisma } from "../prisma.ts";
 import { getCareerMatches } from "../career-matching/engine.ts";
 import { getUniversityMatchesForStudent } from "../university-matching/engine.ts";
+import { detectEducationStage } from "../roadmap/education-stage.ts";
 
 const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
 
@@ -110,6 +111,21 @@ export async function getStudent360(
         .map((s) => s.subject)
         .filter(Boolean),
     };
+
+    // Phase 23.1 — Class-10 students must see BOTH post-Class-10 tracks in the
+    // counselor view: the academic route (Class 11–12 → degree) and the
+    // technical route (Diploma / Polytechnic), presented as distinct and equal.
+    const studentStage = detectEducationStage({
+      gradeLevel: profile.gradeLevel,
+      studyLevel: profile.studyLevel,
+      highestEducation: profile.highestEducation,
+    });
+    if (studentStage === "SCHOOL_CLASS10") {
+      educationPathways.postClass10Pathways = [
+        "Academic pathway — continue Class 11–12 and then a degree",
+        "Technical pathway — Diploma / Polytechnic after Class 10 (a diploma is not a B.E./B.Tech degree)",
+      ];
+    }
   }
 
   // ---- University matches (Phase 7 engine) ----

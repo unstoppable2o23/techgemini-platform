@@ -52,3 +52,28 @@ export function detectEducationStage(input: StageInput): RoadmapEducationStage {
 
   return "UNKNOWN";
 }
+
+/**
+ * Phase 23.1 — Detects a Class-10 student's Diploma / Polytechnic technical
+ * intent from profile hints. Derived, never authoritative: counselors can
+ * always override via `diplomaIntentOverride`. It only affects education
+ * pathway steps, never the frozen career engine.
+ */
+export function detectDiplomaIntent(input: {
+  studyLevel?: string | null;
+  highestEducation?: string | null;
+  exams?: string[] | null;
+  preferredCareer?: string | null;
+}): boolean {
+  const exam = input.exams?.join(" ") ?? "";
+  const hay = [
+    input.studyLevel,
+    input.highestEducation,
+    exam,
+    input.preferredCareer,
+  ]
+    .filter(Boolean)
+    .map((s) => ` ${String(s).toLowerCase()} `)
+    .join(" ");
+  return /diploma|polytechnic|it\s*i\s*t\s*i|politechnick|diplomat\.?\s*(in|degree)/i.test(hay);
+}

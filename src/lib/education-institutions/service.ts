@@ -12,6 +12,8 @@ export interface InstitutionResult {
   universityName: string | null;
   country: string | null;
   qsRank: number | null;
+  /** True when the institution carries the Diploma / Polytechnic category. */
+  diplomaPolytechnic?: boolean;
 }
 
 export interface InstitutionQueryOptions {
@@ -43,8 +45,21 @@ const DEFAULT_LIMIT = 20;
  * a specific institution offers a specific course. The results are returned with
  * `verified: false` and a transparency disclaimer (Phase 6 requirement: do not
  * fabricate course/program offerings).
+ *
+ * Phase 23.1 correction (§ diploma/degree separation): a "diploma" degree name
+ * must NOT also yield the degree-granting `Technical` category. The Technical
+ * rule therefore carries `excludeIf: ["diploma"]` so a Diploma in Mechanical /
+ * Computer / Civil Engineering maps to the Diploma / Polytechnic category ONLY —
+ * the two tracks are kept separate ("Polytechnic / Diploma" vs "B.E./B.Tech").
  */
-const FIELD_RULES: { tokens: string[]; types: string[] }[] = [
+interface FieldRule {
+  tokens: string[];
+  types: string[];
+  /** When ANY of these tokens appear in the degree text, this rule is skipped. */
+  excludeIf?: string[];
+}
+
+const FIELD_RULES: FieldRule[] = [
   {
     tokens: ["diploma"],
     types: ["Polytechnic"],
@@ -52,6 +67,7 @@ const FIELD_RULES: { tokens: string[]; types: string[] }[] = [
   {
     tokens: ["engineering", "tech", "b.tech", "m.tech", "be ", "b.e.", "civil", "mechanical", "electrical", "electronics", "computer"],
     types: ["Technical"],
+    excludeIf: ["diploma"],
   },
   {
     tokens: ["mba", "management", "pgdm", "business administration"],
@@ -87,11 +103,27 @@ export function deriveInstitutionTypeTokens(degreeName: string): string[] {
   const text = ` ${(degreeName || "").toLowerCase()} `;
   const matched = new Set<string>();
   for (const rule of FIELD_RULES) {
+    if (rule.excludeIf?.some((t) => text.includes(t))) continue;
     if (rule.tokens.some((t) => text.includes(t))) {
       rule.types.forEach((ty) => matched.add(ty));
     }
   }
   return [...matched];
+}
+
+/**
+ * Human label for the AISHE "Technical/Polytechnic" institution type.
+ * The dataset stores degree-serving technical colleges and diploma-serving
+ * polytechnics under the shared type string "Technical/Polytechnic". For UI
+ * clarity we surface the Diploma / Polytechnic angle as a separate label so it
+ * is never mistaken for an engineering degree category.
+ */
+export function institutionQualificationLabel(
+  institutionType?: string | null
+): string | null {
+  const t = (institutionType || "").toLowerCase();
+  if (!t.includes("polytechnic")) return null;
+  return "Diploma / Polytechnic";
 }
 
 function emptyResponse(page: number, limit: number, reason: string): InstitutionResponse {
@@ -108,7 +140,7 @@ function emptyResponse(page: number, limit: number, reason: string): Institution
 }
 
 const CATEGORY_DISCLAIMER =
-  "These institutions are related by category (institution type derived from the education pathway). Individual course/program offerings are NOT individually verified. Source: AISHE institution data.";
+  "These institutions are related by category (institution type derived from the education pathway). A Diploma / Polytechnic pathway maps to polytechnic institutions; a B.E./B.Tech degree pathway maps to technical/degree-granting institutions. Individual course/program offerings are NOT individually verified. Source: AISHE institution data.";
 
 async function resolveCuratedMappings(
   degreeIds: string[],
@@ -150,6 +182,7 @@ async function resolveCuratedMappings(
       state: r.state, district: r.district, website: r.website,
       institutionType: r.institutionType, universityName: r.universityName,
       country: null, qsRank: null,
+      diplomaPolytechnic: institutionQualificationLabel(r.institutionType) !== null,
     })),
     ...global.map((r) => ({
       id: r.id, name: r.name, dataset: "global" as const, type: null,
@@ -229,6 +262,7 @@ async function categoryDiscovery(
     state: r.state, district: r.district, website: r.website,
     institutionType: r.institutionType, universityName: r.universityName,
     country: null, qsRank: null,
+    diplomaPolytechnic: institutionQualificationLabel(r.institutionType) !== null,
   }));
 
   return {

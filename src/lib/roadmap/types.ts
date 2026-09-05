@@ -80,6 +80,12 @@ export interface RoadmapInputs {
   institutionNames: string[];
   targetIntake?: string | null;
   targetYear?: string | null;
+  /**
+   * Phase 23.1 — when true, a Class-10 student has indicated a Diploma /
+   * Polytechnic technical pathway (instead of / alongside the Class 11–12
+   * academic path). Only affects education-pathway steps, never career scores.
+   */
+  diplomaIntent?: boolean;
 }
 
 /** A single step produced by the generator (pre-persist). */

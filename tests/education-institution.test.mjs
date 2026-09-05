@@ -15,7 +15,29 @@ test("education canonicalization: case/format variations map identically", () =>
   const b = deriveInstitutionTypeTokens("b.tech computer science");
   assert.deepEqual(a, b);
   assert.ok(a.includes("Technical"));
-  assert.ok(a.includes("Polytechnic"));
+  assert.ok(!a.includes("Polytechnic"), "B.E./B.Tech is a degree — it must not map to the Diploma/Polytechnic category");
+});
+
+test("diploma degrees map to Polytechnic only, never the degree/Technical category", () => {
+  for (const name of [
+    "Diploma in Mechanical Engineering",
+    "Diploma in Civil Engineering",
+    "Diploma in Computer Engineering",
+    "Diploma in Electrical Engineering",
+  ]) {
+    const tokens = deriveInstitutionTypeTokens(name);
+    assert.ok(tokens.includes("Polytechnic"), `expected Polytechnic for "${name}"`);
+    assert.ok(!tokens.includes("Technical"), `diploma must not map to Technical — got ${tokens.join(",")} for "${name}"`);
+    assert.ok(!tokens.includes("University"), `diploma must not map to University — got ${tokens.join(",")} for "${name}"`);
+  }
+});
+
+test("diploma vs degree separation holds across canonicalization", () => {
+  const diploma = deriveInstitutionTypeTokens("Diploma in Computer Engineering");
+  const degree = deriveInstitutionTypeTokens("B.Tech Computer Science");
+  assert.deepEqual([...diploma].sort(), ["Polytechnic"]);
+  assert.deepEqual([...degree].sort(), ["Technical"]);
+  assert.ok(!diploma.some((t) => degree.includes(t)), "diploma and degree paths must stay disjoint");
 });
 
 test("category discovery returns Indian institutions for an engineering degree (verified=false)", async () => {

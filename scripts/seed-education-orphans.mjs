@@ -39,7 +39,11 @@ export async function seedEducationOrphans() {
 
   for (const c of careers) {
     const have = await prisma.careerEducationPathway.count({ where: { careerId: c.id } });
-    if (have > 0) continue; // already mapped by the main education seed
+    // Phase 23.1 fix: a career mapped by the main education seed (>=1 pathway,
+    // e.g. only DEGREE_PATHWAY) must STILL receive missing SUBJECT_LINKs. We
+    // only skip creating NEW DEGREE_PATHWAY rows for such careers, so the
+    // authoritative mapping from the main seed is never duplicated.
+    const alreadyDegreeMapped = have > 0;
 
     let linked = 0;
 
@@ -60,18 +64,21 @@ export async function seedEducationOrphans() {
     }
 
     // Recommended degrees -> DEGREE_PATHWAY (only when an authoritative Degree
-    // record already exists; we do NOT fabricate new Degree records).
-    for (const degName of c.recommendedDegrees || []) {
-      const degree = matchExistingDegree(degName, degrees);
-      if (!degree) continue;
-      const exists = await prisma.careerEducationPathway.findFirst({
-        where: { careerId: c.id, degreeId: degree.id, type: "DEGREE_PATHWAY", priority: "PRIMARY" },
-      });
-      if (exists) continue;
-      await prisma.careerEducationPathway.create({
-        data: { careerId: c.id, degreeId: degree.id, priority: "PRIMARY", type: "DEGREE_PATHWAY", notes: degName },
-      });
-      linked++;
+    // record already exists; we do NOT fabricate new Degree records). Skipped
+    // entirely for careers the main education seed already mapped.
+    if (!alreadyDegreeMapped) {
+      for (const degName of c.recommendedDegrees || []) {
+        const degree = matchExistingDegree(degName, degrees);
+        if (!degree) continue;
+        const exists = await prisma.careerEducationPathway.findFirst({
+          where: { careerId: c.id, degreeId: degree.id, type: "DEGREE_PATHWAY", priority: "PRIMARY" },
+        });
+        if (exists) continue;
+        await prisma.careerEducationPathway.create({
+          data: { careerId: c.id, degreeId: degree.id, priority: "PRIMARY", type: "DEGREE_PATHWAY", notes: degName },
+        });
+        linked++;
+      }
     }
 
     if (linked > 0) {

@@ -39,7 +39,11 @@ after(async () => {
 test("orphan education pathways are mapped from authoritative career data", async () => {
   await seedEducationOrphans(prisma);
 
-  // Careers that carry recommendedSubjects must gain at least one SUBJECT_LINK.
+  // Authoritative Subject catalog (the seed only links names that exist here —
+  // it never fabricates Subject records).
+  const subjectCatalog = await prisma.subject.findMany({ select: { name: true } });
+  const authoritative = new Set(subjectCatalog.map((s) => s.name));
+
   const withSubjects = await prisma.career.findMany({
     where: { isActive: true, recommendedSubjects: { isEmpty: false } },
     select: { id: true, name: true, recommendedSubjects: true },
@@ -52,19 +56,11 @@ test("orphan education pathways are mapped from authoritative career data", asyn
       include: { subject: true },
     });
     const mappedNames = new Set(links.map((l) => l.subject?.name));
-    const allMapped = c.recommendedSubjects.every((s) =>
-      mappedNames.has(s) || !/^(Physics|Chemistry|Accountancy|Mathematics|Business Studies|Law|Computer Science|English|Biology)$/i.test(s)
-    );
+    const mapped = c.recommendedSubjects.filter((s) => authoritative.has(s));
+    if (mapped.length === 0) continue; // nothing authoritative to assert coverage for
     assert.ok(links.length > 0, `${c.name} should have at least one subject-link pathway`);
-    assert.ok(allMappable(c.recommendedSubjects, mappedNames), `${c.name} subject links should cover authoritative subjects`);
+    for (const s of mapped) {
+      assert.ok(mappedNames.has(s), `${c.name} subject link should cover the authoritative subject ${s}`);
+    }
   }
 });
-
-function allMappable(recommended, mappedNames) {
-  // Only assert coverage for subjects that actually exist as Subject records.
-  const existing = ["Physics", "Chemistry", "Accountancy", "Mathematics", "Business Studies", "Law", "Computer Science", "English", "Biology"];
-  for (const s of recommended) {
-    if (existing.includes(s) && !mappedNames.has(s)) return false;
-  }
-  return true;
-}

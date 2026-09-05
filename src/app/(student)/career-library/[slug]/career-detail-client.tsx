@@ -27,6 +27,7 @@ import {
   Award,
   Star,
 } from "lucide-react";
+import { institutionQualificationLabel } from "@/lib/education-institutions/service";
 
 interface EducationPathway {
   id: string;
@@ -679,6 +680,11 @@ export default function CareerDetailClient({ career }: { career: any }) {
                         <p className="text-xs text-muted-foreground">
                           {[inst.institutionType || inst.type, inst.state, inst.country].filter(Boolean).join(" · ")}
                         </p>
+                        {institutionQualificationLabel(inst.institutionType) && (
+                          <p className="text-xs text-accent mt-0.5">
+                            {institutionQualificationLabel(inst.institutionType)} — a diploma-level institution, not a B.E./B.Tech degree institution
+                          </p>
+                        )}
                         {inst.website && (
                           <a
                             href={inst.website}
