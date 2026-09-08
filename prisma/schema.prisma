@@ -192,6 +192,7 @@ model User {
   invitations             StudentInvitation[]        @relation("InvitedStudent")
   createdInvitations      StudentInvitation[]        @relation("InvitedBy")
   supportTickets          SupportTicket[]            @relation("SupportTicketUser")
+  productEvents           ProductEvent[]
 
   @@index([tenantId])
   @@index([email])
@@ -1060,4 +1061,25 @@ model SupportTicket {
 
   @@index([tenantId])
   @@index([userId])
+}
+
+// Phase 25 — lightweight, privacy-safe product analytics for recommendations.
+// Stores coarse interaction events (viewed / opened / compared / CTA clicked)
+// with an optional career reference. NEVER stores assessment answers or any
+// sensitive raw profile data.
+model ProductEvent {
+  id          String   @id @default(cuid())
+  tenantId    String
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  event       String
+  careerId    String?
+  careerSlug  String?
+  careerName  String?
+  meta        Json?
+  createdAt   DateTime @default(now())
+
+  @@index([tenantId, event])
+  @@index([userId, event])
+  @@index([createdAt])
 }

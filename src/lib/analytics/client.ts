@@ -1,0 +1,35 @@
+// Phase 25 — client-side analytics helper. Fire-and-forget POSTs to the
+// student analytics route. Never blocks UI and never carries sensitive data.
+"use client";
+
+export type ClientEventName =
+  | "recommendation_viewed"
+  | "career_detail_opened"
+  | "compare_opened"
+  | "program_explored"
+  | "university_explored"
+  | "profile_completion_cta_clicked"
+  | "assessment_cta_clicked";
+
+type ClientEvent = {
+  event: ClientEventName;
+  careerId?: string;
+  careerSlug?: string;
+  careerName?: string;
+  meta?: Record<string, unknown>;
+};
+
+export function trackRecommendationEvent(payload: ClientEvent) {
+  if (typeof window === "undefined") return;
+  try {
+    fetch("/api/student/analytics/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      // best-effort; do not hold up navigation/interactions
+      keepalive: true,
+    }).catch(() => {});
+  } catch {
+    // never let analytics break the UI
+  }
+}

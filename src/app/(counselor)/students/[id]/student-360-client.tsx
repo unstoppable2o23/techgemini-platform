@@ -401,9 +401,14 @@ function CareerTab({ data, onSubmitFeedback }: any) {
               </div>
               <div className="text-right">
                 <p className="text-lg font-bold text-accent">{m.matchScore}%</p>
-                <p className="text-xs text-muted-foreground">Conf {m.confidenceScore}%</p>
+                <p className="text-xs text-muted-foreground">
+                  Conf {m.confidenceScore}% · {m.confidenceDetail?.level ?? "LOW"}
+                </p>
               </div>
             </div>
+            {m.preferenceBoost && (
+              <Badge className="mt-1 bg-blue-50 text-blue-700 text-[10px]">Student&apos;s preferred career</Badge>
+            )}
             <div className="mt-2 flex flex-wrap gap-1.5">
               {(m.strengths || []).slice(0, 4).map((s: string, i: number) => (
                 <Badge key={i} variant="secondary" className="text-green-700 bg-green-50">{s}</Badge>
@@ -414,6 +419,125 @@ function CareerTab({ data, onSubmitFeedback }: any) {
                 Develop: {(m.developmentAreas || []).slice(0, 3).join(", ")}
               </p>
             )}
+
+            <details className="mt-2">
+              <summary className="cursor-pointer text-sm text-blue-600">Detailed evidence</summary>
+              <div className="mt-2 space-y-3 text-xs">
+                {/* Dimension scores */}
+                {(m.dimensionScores || []).length > 0 && (
+                  <table className="w-full border-collapse">
+                    <thead>
+                      <tr className="border-b text-muted-foreground">
+                        <th className="py-1 text-left font-medium">Dimension</th>
+                        <th className="py-1 text-right font-medium">Score</th>
+                        <th className="py-1 text-right font-medium">Matched signals</th>
+                        <th className="py-1 text-left font-medium pl-2">Matched trait values</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {(m.dimensionScores as any[])
+                        .slice()
+                        .sort((a, b) => b.score - a.score)
+                        .map((ds: any, i: number) => (
+                          <tr key={i} className="border-b border-border/40">
+                            <td className="py-1 font-medium">{ds.dimension}</td>
+                            <td className="py-1 text-right">{Math.round(ds.score)}</td>
+                            <td className="py-1 text-right">{ds.matchedCount}/{ds.totalTraits}</td>
+                            <td className="py-1 pl-2 text-muted-foreground">
+                              {(ds.matchedValues || []).slice(0, 3).join(", ") || "—"}
+                            </td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                )}
+
+                {/* Confidence factors */}
+                {m.confidenceDetail?.factors && (
+                  <div className="rounded-md bg-muted/40 p-2">
+                    <p className="font-medium">Confidence factors</p>
+                    <p className="mt-0.5 text-muted-foreground">
+                      Matched signals: {m.confidenceDetail.factors.matchedSignals} · Dimensions matched:{" "}
+                      {m.confidenceDetail.factors.dimensionsMatched} · Source diversity:{" "}
+                      {m.confidenceDetail.factors.sourceDiversity} · Assessment-derived evidence:{" "}
+                      {m.confidenceDetail.factors.assessmentEvidence ? "yes" : "no"} · Coverage:{" "}
+                      {Math.round((m.confidenceDetail.factors.coverage ?? 0) * 100)}%
+                      {m.confidenceDetail.factors.cappedLow ? " · capped (preferred-only)" : ""}
+                    </p>
+                  </div>
+                )}
+
+                {/* Reason breakdown */}
+                {(m.reasons || []).length > 0 && (
+                  <div>
+                    <p className="font-medium">Reason breakdown</p>
+                    <ul className="mt-1 space-y-1 text-muted-foreground">
+                      {(m.reasons as any[]).map((r: any, i: number) => (
+                        <li key={i} className="flex items-start gap-1.5">
+                          <span className="font-medium text-foreground/70">
+                            {r.type.replace(/_/g, " ")}:
+                          </span>
+                          {r.text}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Evidence rows */}
+                {(m.evidence || []).length > 0 && (
+                  <div>
+                    <p className="font-medium">Matched evidence</p>
+                    <ul className="mt-1 space-y-1 text-muted-foreground">
+                      {(m.evidence as any[])
+                        .slice()
+                        .sort((a: any, b: any) => b.strength - a.strength)
+                        .slice(0, 12)
+                        .map((e: any, i: number) => (
+                          <li key={i} className="flex items-start gap-1.5">
+                            <span className="font-medium text-foreground/70">{e.dimension}:</span>
+                            <span>{e.studentValue}</span>
+                            <span className="text-muted-foreground/60">→</span>
+                            <span>{e.careerTraitValue}</span>
+                            <span className="text-muted-foreground/60">
+                              ({e.sourceType?.toLowerCase()} · {e.matchType})
+                            </span>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Trace highlights */}
+                {m.trace && (
+                  <div className="rounded-md bg-muted/40 p-2">
+                    <p className="font-medium">Trace</p>
+                    <p className="mt-0.5 text-muted-foreground">
+                      Preferred match: {m.trace.preferredCareerMatch ? "yes" : "no"}
+                      {m.trace.preferredCareerSource ? ` (source: ${m.trace.preferredCareerSource})` : ""}
+                      {" · "}Match types: {(m.trace.matchTypes || []).join(", ") || "none"}
+                      {" · "}Supported dimensions: {m.supportedDimensions ?? m.trace.supportedDimensions?.length ?? 0}
+                    </p>
+                  </div>
+                )}
+
+                {/* Missing evidence & verified gaps */}
+                {((m.missingEvidence || []).length > 0 || (m.verifiedGaps || []).length > 0) && (
+                  <div>
+                    <p className="font-medium">What&apos;s not supporting this career yet</p>
+                    <ul className="mt-1 space-y-1 text-muted-foreground">
+                      {(m.missingEvidence || []).map((s: string, i: number) => (
+                        <li key={`me${i}`}>Missing: {s}</li>
+                      ))}
+                      {(m.verifiedGaps || []).map((s: string, i: number) => (
+                        <li key={`vg${i}`}>Conflict: {s}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </details>
+
             <details className="mt-2">
               <summary className="cursor-pointer text-sm text-blue-600">Record counselor feedback</summary>
               <form className="mt-2 space-y-2" onSubmit={(e) => onSubmitFeedback(e, "CAREER", { careerId: m.careerId })}>

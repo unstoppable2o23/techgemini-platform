@@ -2,6 +2,46 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { getCareerMatches, sanitizeCareerMatch } from "@/lib/career-matching/engine";
+import { prisma } from "@/lib/prisma";
+import type { CareerMatch } from "@/lib/career-matching/types";
+
+/**
+ * Presentation-layer enrichment: attaches the career's own education pathways
+ * (primary/alternative degrees) to matched cards. This is display metadata from
+ * the existing Career → Program intelligence — it does NOT affect scoring and
+ * never invents programs or institutions.
+ */
+async function attachEducationPaths(matches: CareerMatch[]) {
+  const ids = matches.map((m) => m.careerId).filter(Boolean);
+  if (ids.length === 0) return;
+  const rows = await prisma.careerEducationPathway.findMany({
+    where: { careerId: { in: ids }, type: "DEGREE_PATHWAY" },
+    select: {
+      careerId: true,
+      priority: true,
+      degree: { select: { name: true, educationLevel: true } },
+      specialization: { select: { name: true } },
+    },
+    orderBy: [{ careerId: "asc" }, { priority: "asc" }, { degree: { name: "asc" } }],
+  });
+
+  const byCareer = new Map<string, { primary: string[]; alternative: string[] }>();
+  for (const r of rows) {
+    if (!r.degree?.name) continue;
+    const label = r.degree.educationLevel
+      ? `${r.degree.name} · ${r.degree.educationLevel}`
+      : r.degree.name;
+    const bucket = r.priority === "ALTERNATIVE" ? "alternative" : "primary";
+    const entry = byCareer.get(r.careerId) ?? { primary: [], alternative: [] };
+    if (!entry[bucket].includes(label)) entry[bucket].push(label);
+    byCareer.set(r.careerId, entry);
+  }
+
+  for (const m of matches) {
+    const entry = byCareer.get(m.careerId);
+    (m as any).educationPath = entry ?? { primary: [], alternative: [] };
+  }
+}
 
 export async function GET(request: NextRequest) {
   const session = await getServerSession(authOptions);
@@ -26,13 +66,18 @@ export async function GET(request: NextRequest) {
       refresh,
     });
 
+    const matches = result.matches.map(sanitizeCareerMatch);
+    await attachEducationPaths(matches as CareerMatch[]);
+
     return NextResponse.json({
-      matches: result.matches.map(sanitizeCareerMatch),
+      matches,
       totalCareersScored: result.totalCareersScored,
       studentSignalsUsed: result.studentSignalsUsed,
       assessmentCoverage: result.assessmentCoverage,
       hasAssessmentData: result.hasAssessmentData,
       disclaimer: result.disclaimer,
+      lowInformation: result.lowInformation,
+      topMatchStrength: result.topMatchStrength,
     });
   } catch (error) {
     console.error("Career matching failed:", error);
@@ -45,6 +90,8 @@ export async function GET(request: NextRequest) {
         hasAssessmentData: false,
         disclaimer:
           "We couldn't generate your career matches right now. Please try again shortly.",
+        lowInformation: false,
+        topMatchStrength: "missing_evidence",
       },
       { status: 200 }
     );
