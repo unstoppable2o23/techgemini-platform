@@ -1,74 +1,97 @@
 # Phase 23.2 — Final Report
 
 **Date:** 2026-09-08
-**Phase:** 23.2 — Polytechnic correction and medical education intelligence v1
+**Phase:** 23.2 — polytechnic pathway hardening and medical education intelligence v1
 **Branch:** master
 
 ---
 
-## 1. What changed
+## 1. Root cause (polytechnic)
 
-### Part A — Polytechnic harness (degree vs diploma hardening)
+The AISHE dataset stores all polytechnics under the single shared type `Technical/Polytechnic`
+with no per-row degree-vs-diploma flag. Prior to Phase 23.2/23.1 two layers inferred a degree
+from this coarse type: category discovery matched degree-only queries via the `/technical/`
+token, and `getSingleCandidate` could report `institutionType-category` for a diploma-level
+institution in a degree-only context. This was a classification/data problem in
+`service.ts` + `candidate.ts`, not just a label.
 
-- `isDiplomaLevelInstitutionType()` classifier (type contains `polytechnic` or `(diploma)`).
-- Degree-only category discovery excludes diploma-level institutions; `M.TECH Environmental
-  Engineering` now yields an honest empty.
-- `getSingleCandidate()` never assigns `institutionType-category` to diploma-level
-  institutions in degree-only contexts (basis `none` + `CATEGORY_EMPTY_DISCLAIMER`).
-- `institutionQualificationLabel()` honest Diploma / Polytechnic labels.
+## 2. Corrections
 
-### Part B — Medical education intelligence v1
+- `isDiplomaLevelInstitutionType()` = type contains `polytechnic` or `(diploma)`.
+- Degree-only category discovery excludes diploma-level institutions.
+- Empty degree-only results → basis `none` + `CATEGORY_EMPTY_DISCLAIMER`.
+- `getSingleCandidate` never category-matches a diploma-level institution for degree-only.
+- Honest Diploma / Polytechnic qualification labels (UI + `institutionQualificationLabel`).
+- Roadmap: distinct Class-10 diploma track; lateral entry conditional; neutral wording
+  (Phase 23.1/23.2).
 
-- **Registry** (`src/lib/medical-education/registry.ts`): 21 disciplines, 34/34 Healthcare &
-  Medicine career coverage, `regulatedEntrance` = exactly {medicine, dentistry, nursing},
-  source/honesty contract enforced by tests (M3/M4).
-- **Roadmap** branch in `src/lib/roadmap/rules.ts`: medical India/abroad steps, conservative
-  NEET-UG wording, internship/PG-entrance/licensing steps, deterministic.
-- **Verified MBBS programs**: +5 rows (Program 75→80) via idempotent seed — KGMU Lucknow,
-  MAMC Delhi, LHMC Delhi, Grant MC Mumbai, CMC Vellore — all official-website-sourced,
-  VERIFIED, resolve `mappingBasis=verified-program`.
-- **UI**: Career Library MEDICAL EDUCATION PATH section; student 360 education panel with
-  entrance/degree/internship/registration rows, alternatives, sources, conservative note.
+**Affected:** 5,337 `Technical/Polytechnic` AISHE rows (classification-level, rows untouched);
+0 Program rows at diploma-level institutions. **Diploma-only institutions are no longer treated
+as 4-year engineering degree institutions** (no name/type → degree inference; verified program
+required).
 
-## 2. Polytechnic issues → status
+## 3. Medical careers enriched
 
-1. Degree-only category could match 5,337 polytechnic rows via `/technical/i` → **fixed**.
-2. Candidate could report `institutionType-category` for a diploma-level institution →
-   **fixed** (basis `none`).
-3. Empty degree-only search mislabelled → **fixed** (honest not-found).
-4. Per-institution diploma-vs-degree within the Technical/Polytechnic block (single AISHE
-   type) → **remaining** (documented limitation, mitigated by 0 program rows + disclaimers).
-5. Catalog has no technical Diploma-in-Engineering rows → **remaining** (as designed).
+34/34 active Healthcare & Medicine careers covered by a 21-discipline registry; roadmap branches
+(Medicine/Dentistry/Nursing medical; others generic). No new careers added; no duplicates.
+Career Library MEDICAL EDUCATION PATH + student 360 education panel + alternatives + FAQ.
 
-## 3. Medical coverage delivered
+## 4. Medical programs added/linked
 
-- Medical careers enriched: 34/34 within Healthcare & Medicine; registry + roadmap for 6 core
-  medical-education careers rendered in the Career Library (see `phase23_2-medical-education.md`).
-- Programs added: **5** (verified MBBS) → linked to `IndianInstitution` rows via Program
-  table (no institution rows created/mutated).
-- Institutions enriched: none created; 5 pre-existing AISHE institutions get verified MBBS
-  Program rows + official source URLs (KGMU/MAMC/LHMC/Grant/CMC).
-- Sources: NMC, NTA, DCI, INC, PCI, NCISM, NCH, AHP NEC (NCAHP), VCI, ICAR, NCERT — registry
-  gate (M4); institutions cite official websites.
++5 verified MBBS (KGMU, MAMC, LHMC, Grant MC, CMC Vellore) → Program 75→80, all VERIFIED with
+official source URLs, resolve `verified-program`. Medicine→MBBS, Dentistry→BDS, Pharmacy→B.Pharm,
+Nursing, Physiotherapy etc. verified intact (B7).
 
-## 4. Verification
+## 5. Medical institutions enriched
 
-- Tests: **565 pass / 0 fail** (`npm test`; 532 + 33 new).
-- TypeScript: `npx tsc --noEmit --skipLibCheck` → 0 errors.
-- Build: `npm run build` → PASS.
-- Engine freeze: **byte-identical** vs `phase18-1-engine-freeze-baseline.json` (excluding
-  `generatedAt`); careersScored 289, profiles 23.
-- Determinism: roadmap (M13) and degree-only discovery (G10) byte-identical across runs.
+5 pre-existing AISHE institutions linked to VERIFIED MBBS Program rows (no institution rows
+created/modified). Institutions surfaced only with real program evidence (verified-program /
+curated / category-with-care). University (20) and IndianInstitution (73,969) **protected**.
 
-## 5. Explicit confirmations
+## 6. Sources
 
-- **CAREER ENGINE UNCHANGED** — byte-identical golden output vs frozen baseline.
-- **ASSESSMENT ENGINE UNCHANGED** — not touched in this phase.
-- **UNIVERSITY DATA SAFE** — 20 rows, unmodified.
-- **INDIANINSTITUTION DATA SAFE** — 73,969 rows, unmodified (Program rows are a separate
-  table; +5 verified MBBS links only).
+NMC, NTA, DCI, INC, PCI, NCISM, NCH, AHP NEC (NCAHP), VCI, ICAR, NCERT + official institution
+websites. Regulator-less disciplines state so explicitly (no fabrication). See
+`phase23_2-source-verification.md`.
 
-## 6. Commit
+## 7. Roadmap changes
 
-- Message: `Phase 23.2: polytechnic correction and medical education intelligence v1`
-- Artifacts: see `phase23_2-data-integrity.md`.
+Medical branch gated to regulated-entrance careers; India( NEET-UG via NTA, notified scope) vs
+abroad (per-country regulator, never automatic) distinct; Phase 23.1 Class-10 diploma track
+retained with conditional lateral entry and neutral wording.
+
+## 8. Golden test results
+
+`tests/phase23-2-golden-profiles.test.mjs` — 14/14 pass (A–D polytechnic, E–J medical,
+K–L medical PG/abroad, determinism). Polytechnic G1–G10 and medical M1–M23 also green.
+
+## 9. Career engine regression
+
+Byte-identical vs `phase18-1-engine-freeze-baseline.json` (excluding `generatedAt`); 289 careers,
+23 profiles.
+
+## 10. Test / TS / build / deploy
+
+- Test count: **579** (`npm test`, 0 fail).
+- `npx tsc --noEmit --skipLibCheck` → 0 errors.
+- `npm run build` → PASS.
+- Vercel: https://technology-platform.vercel.app/ — deployment validated on push time (no
+  infra change this branch).
+
+## 11. Counts
+
+- Career (active): **289**
+- Program: **80**
+- University: **20**
+- IndianInstitution: **73,969**
+
+## 12. Explicit confirmations
+
+- **CAREER ENGINE UNCHANGED**
+- **ASSESSMENT ENGINE UNCHANGED**
+- **UNIVERSITY DATA PROTECTED**
+- **INDIANINSTITUTION DATA PROTECTED**
+
+## 13. Commit
+
+`Phase 23.2: polytechnic pathway hardening and medical education intelligence v1`

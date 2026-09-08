@@ -1,12 +1,16 @@
 {
-  "generatedAt": "2026-09-08T01:51:58.901Z",
+  "generatedAt": "2026-09-08T09:58:24.553Z",
   "phase": "23.2",
   "part": "B",
   "registry": {
     "disciplineCount": 21,
     "medicalCareerCoverage": "34/34",
     "uncoveredCareers": [],
-    "disciplinesWithRegulatorSources": 14,
+    "regulatedEntrance": [
+      "medicine",
+      "dentistry",
+      "nursing"
+    ],
     "disciplinesHonestlyWithoutStatutoryRegister": [
       "public-health",
       "clinical-research",
@@ -18,29 +22,20 @@
     ]
   },
   "roadmap": {
-    "branchTriggeredBy": [
-      "Medicine (MBBS)",
-      "Dentistry (BDS)",
-      "Nursing"
-    ],
-    "alliedHealthExcluded": true,
     "indiaVsAbroadDistinct": true,
     "examWordingConstraint": "no (JEE|NEET|CUET|CAT) (must|required); NEET-UG attributed to NTA with notified scope",
-    "noPgStepsInSchoolStages": true,
-    "noFabricatedCosts": true
+    "medicalBranchCareers": [
+      "Medicine",
+      "Dentistry",
+      "Nursing"
+    ],
+    "deterministic": true
   },
   "programs": {
     "verifiedMbbsTotal": 9,
     "verifiedMbbsIndia": 7,
     "verifiedMbbsInternational": 2,
     "newIndiaPrograms": 5,
-    "newProgramNames": [
-      "KING GEORGE MEDICAL UNIVERSITY — MBBS",
-      "Maulana Azad Medical College — MBBS",
-      "Lady Hardinge Medical College — MBBS",
-      "Grant Medical College, Seth J.J. Compound Byculla, Mumbai — MBBS",
-      "CHRISTIAN MEDICAL COLLEGE (Inst. Code - 011), VELLORE — MBBS"
-    ],
     "allVerified": true,
     "allSourceOfficialWebsite": true,
     "allSourceUrlHttp": true,
@@ -57,18 +52,6 @@
   },
   "engineFreeze": {
     "careersScored": 289,
-    "identicalToBaselineExcludingTimestamp": true,
-    "scoreBuckets": {
-      "0": 40,
-      "90-100": 0,
-      "70-89": 0,
-      "50-69": 69,
-      "30-49": 351,
-      "1-29": 0
-    },
-    "confidence": {
-      "MODERATE": 20,
-      "LOW": 440
-    }
+    "identicalToBaselineExcludingTimestamp": true
   }
 }
