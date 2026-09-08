@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { buildCareerSearchWhere } from "@/lib/careers/search";
 
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
@@ -16,9 +17,7 @@ export async function GET(request: NextRequest) {
 
   if (search) {
     where.OR = [
-      { name: { contains: search, mode: "insensitive" as const } },
-      { title: { contains: search, mode: "insensitive" as const } },
-      { shortDescription: { contains: search, mode: "insensitive" as const } },
+      ...(buildCareerSearchWhere(search) ?? []),
       { technicalSkills: { has: search } },
     ];
   }

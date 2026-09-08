@@ -57,7 +57,9 @@ async function main() {
 
     const existing = await prisma.career.findUnique({ where: { name: c.name } });
     if (existing) {
-      await prisma.career.update({ where: { id: existing.id }, data });
+      const updateData = { ...data };
+      if (!c.category) delete updateData.category;
+      await prisma.career.update({ where: { id: existing.id }, data: updateData });
       updated++;
     } else {
       await prisma.career.create({ data });

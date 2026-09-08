@@ -16,6 +16,7 @@ import {
   TrendingUp,
   GraduationCap,
 } from "lucide-react";
+import { careerMatchesQuery } from "@/lib/careers/search";
 import TrendingCareersSection from "./trending-careers-section";
 
 type CareerItem = {
@@ -249,13 +250,9 @@ export default function CareerLibraryClient() {
   }, []);
 
   const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
     return careers.filter((c) => {
       const matchCat = activeCategory === "All" || c.category === activeCategory;
-      const matchSearch =
-        !q ||
-        (c.title || c.name).toLowerCase().includes(q) ||
-        (c.shortDescription?.toLowerCase().includes(q) ?? false);
+      const matchSearch = careerMatchesQuery(c, search);
       return matchCat && matchSearch;
     });
   }, [careers, activeCategory, search]);
