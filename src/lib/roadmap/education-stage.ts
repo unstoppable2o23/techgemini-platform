@@ -14,7 +14,10 @@ export interface StageInput {
   highestEducation?: string | null;
 }
 
-const GRADE_10_RE = /(^|[^\d])(10|10th|x|class\s*10|standard\s*10|sse?)([^\d]|$)/i;
+// SSC/SSE certificates must be matched as whole tokens — a bare `ss` pattern
+// would also catch the double-s inside "professional" and misclassify a
+// career-switcher as a school student.
+const GRADE_10_RE = /(^|[^\d])(10|10th|x|class\s*10|standard\s*10|ss[ce])([^\d]|$)/i;
 const GRADE_12_RE = /(^|[^\d])(12|12th|xi?i?i?|class\s*12|standard\s*12|hsce?)([^\d]|$)/i;
 const POSTGRAD_RE =
   /\b(m\.?tech|m\.?sc|m\.?a|m\.?com|mba|pgdm|m\.?(ba|pharm|ed|ca|fa|ds|it|des)|master|postgraduate|post-graduate|ph\.?d|doctoral|doctorate)\b/i;

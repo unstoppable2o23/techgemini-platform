@@ -1,5 +1,6 @@
 import { prisma } from "../prisma.ts";
 import { generateStudentCareerProfile } from "../career-profile/generate.ts";
+import { normalizeStage, normalizeSubjectList } from "../onboarding/normalize.ts";
 
 export class PrefsValidationError extends Error {
   status: number;
@@ -53,6 +54,14 @@ export type SaveCareerPrefsInput = {
   preferredIntake?: string;
   preferredYear?: string;
   careerPlanNotes?: string;
+  // Phase 24: student-supplied context (branch/program/role + year). Stored
+  // for display/resume only — never consumed by matching.
+  currentProgram?: string;
+  currentProgramYear?: string;
+  // Phase 24: draft saves persist eligible fields without honoring the
+  // finalize gates (preferred career / study-abroad questions) and without
+  // marking the profile as filled. Defaults to "finalize".
+  mode?: "finalize" | "draft";
 };
 
 function cleanArray(value: unknown): string[] {
@@ -86,6 +95,7 @@ export async function saveCareerPreferences(
   userId: string,
   input: SaveCareerPrefsInput
 ): Promise<{ ok: true }> {
+  const mode = input.mode === "draft" ? "draft" : "finalize";
   const studyAbroad = normalizeStudyAbroad(input.studyAbroad);
   const abroadRequired = studyAbroad === "yes";
 
@@ -94,7 +104,9 @@ export async function saveCareerPreferences(
   if (studyLevel && studyLevel.toLowerCase() === "other") {
     const other = cleanString(input.studyLevelOther);
     if (!other) throw new PrefsValidationError("Please specify your current level of study.");
-    studyLevel = other;
+    studyLevel = normalizeStage(other).value;
+  } else if (studyLevel) {
+    studyLevel = normalizeStage(studyLevel).value;
   }
   // Preserve an explicit gradeLevel if provided, otherwise derive from studyLevel.
   const gradeLevel = cleanString(input.gradeLevel) || studyLevel;
@@ -108,6 +120,8 @@ export async function saveCareerPreferences(
   }
 
   // ---- Preferred career (canonical by id, legacy by name, or not finalized) ----
+  // Draft saves may omit the career entirely; finalize requires one.
+  const requireCareer = mode === "finalize";
   let preferredCareer: string | null = null;
   let preferredCareerId: string | null = null;
   if (input.careerNotFinalized) {
@@ -137,11 +151,11 @@ export async function saveCareerPreferences(
     }
     preferredCareer = career.name;
     preferredCareerId = career.id;
-  } else {
+  } else if (requireCareer) {
     throw new PrefsValidationError('Please choose a preferred career or select "I haven\'t decided yet".');
   }
 
-  // ---- Subjects (resolve canonical ids to names; validate canonical names) ----
+  // ---- Subjects (resolve canonical ids to names; normalize name aliases) ----
   const subjectIdsStudied = cleanArray(input.subjectIdsStudied);
   const subjectIdsEnjoyed = cleanArray(input.subjectIdsEnjoyed);
   const idName = new Map<string, string>();
@@ -158,8 +172,10 @@ export async function saveCareerPreferences(
     }
   }
   // Canonical subject names submitted directly must exist in the taxonomy.
-  const nameStudied = cleanArray(input.subjectsStudied);
-  const nameEnjoyed = cleanArray(input.subjectsEnjoyed);
+  // Aliases are collapsed first ("Maths/Mathematics/math" → "Mathematics" etc.),
+  // so canonical labels stored today also arrive canonical tomorrow (Part 6).
+  const nameStudied = normalizeSubjectList(cleanArray(input.subjectsStudied));
+  const nameEnjoyed = normalizeSubjectList(cleanArray(input.subjectsEnjoyed));
   if (nameStudied.length || nameEnjoyed.length) {
     const wanted = Array.from(new Set([...nameStudied, ...nameEnjoyed]));
     const found = await prisma.subject.findMany({
@@ -218,8 +234,9 @@ export async function saveCareerPreferences(
   const collegeNotFinalized = Boolean(input.collegeNotFinalized);
 
   // Study-abroad planning gates the abroad-specific questions so domestic
-  // students are never forced through them.
-  if (abroadRequired) {
+  // students are never forced through them. Draft saves skip the gate and
+  // keep partial answers until finalize.
+  if (abroadRequired && mode === "finalize") {
     if (targetCountries.length === 0 && !countryNotFinalized) {
       throw new PrefsValidationError('Please add at least one country or select "I haven\'t finalized the country yet".');
     }
@@ -234,13 +251,17 @@ export async function saveCareerPreferences(
   const activityInterests = cleanArray(input.activityInterests);
   const exams = cleanArray(input.exams);
 
-  const hasEnglishResult = Boolean(input.hasEnglishResult);
-  if (hasEnglishResult) {
+  let hasEnglishResult = Boolean(input.hasEnglishResult);
+  if (mode === "finalize" && hasEnglishResult) {
     if (!input.englishTestType) throw new PrefsValidationError("Please select an English exam type.");
     const score = parseFloat(String(input.englishTestScore ?? ""));
     if (!input.englishTestScore || isNaN(score)) {
       throw new PrefsValidationError("Please enter your overall English test score.");
     }
+  }
+  // Draft saves keep a meaningful yes/no without forcing the score pair.
+  if (mode === "draft" && hasEnglishResult && (!input.englishTestType || !input.englishTestScore)) {
+    hasEnglishResult = false;
   }
 
   let dateOfBirth: Date | null = null;
@@ -285,8 +306,10 @@ export async function saveCareerPreferences(
     preferredIntake: cleanString(input.preferredIntake),
     preferredYear: cleanString(input.preferredYear),
     careerPlanNotes: cleanString(input.careerPlanNotes),
+    currentProgram: cleanString(input.currentProgram),
+    currentProgramYear: cleanString(input.currentProgramYear),
     targetCountry: targetCountries[0] ?? null,
-    careerPrefsFilled: true,
+    careerPrefsFilled: mode === "finalize",
   };
 
   await prisma.studentProfile.update({

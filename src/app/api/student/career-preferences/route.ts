@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { saveCareerPreferences, PrefsValidationError } from "@/lib/student/profile";
+import { validateCareerPrefsPayload } from "@/lib/onboarding/validation";
 
 export async function GET() {
   const session = await getServerSession(authOptions);
@@ -39,6 +40,8 @@ export async function GET() {
       preferredYear: true,
       highestEducation: true,
       averageGrade: true,
+      currentProgram: true,
+      currentProgramYear: true,
       careerPlanNotes: true,
       careerPrefsFilled: true,
     },
@@ -55,6 +58,10 @@ export async function POST(request: NextRequest) {
 
   try {
     const body = await request.json();
+    const payloadError = validateCareerPrefsPayload(body);
+    if (payloadError) {
+      return NextResponse.json({ error: payloadError }, { status: 400 });
+    }
     const result = await saveCareerPreferences(session.user.id, body);
     return NextResponse.json(result);
   } catch (error) {

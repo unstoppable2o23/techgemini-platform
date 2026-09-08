@@ -7,10 +7,9 @@ import { Mail, Lock, User, Phone, Calendar, ArrowRight, ArrowLeft, LayoutDashboa
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BrandLogo } from "@/components/brand-logo";
+import { CANONICAL_STAGES, PROGRAM_YEAR_OPTIONS } from "@/lib/onboarding/vocabulary";
 
-const GRADE_OPTIONS = [
-  "8th", "9th", "10th", "11th", "12th", "Pursuing UG", "Completed UG",
-];
+const STAGE_OPTIONS = CANONICAL_STAGES.filter((s) => s !== "Other");
 
 const COUNTRY_CODES = [
   { code: "+91", label: "India (+91)" },
@@ -48,6 +47,8 @@ export default function RegisterPage() {
     mobile: "",
     gender: "",
     gradeLevel: "",
+    currentProgram: "",
+    currentProgramYear: "",
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -378,12 +379,44 @@ export default function RegisterPage() {
                 <Label className="mb-1.5 block text-[13px] font-medium text-slate-700">Student status</Label>
                 <Select value={form.gradeLevel} onValueChange={(v) => update("gradeLevel", v)}>
                   <SelectTrigger className={selectClass}>
-                    <SelectValue>Select your grade</SelectValue>
+                    <SelectValue>Select your current stage</SelectValue>
                   </SelectTrigger>
-                  <SelectContent>
-                    {GRADE_OPTIONS.map((g) => (
+                  <SelectContent className="max-h-72 overflow-y-auto">
+                    {STAGE_OPTIONS.map((g) => (
                       <SelectItem key={g} value={g}>{g}</SelectItem>
                     ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label className="mb-1.5 block text-[13px] font-medium text-slate-700">
+                  Program / branch / current role <span className="text-slate-400">(optional)</span>
+                </Label>
+                <input
+                  type="text"
+                  value={form.currentProgram}
+                  onChange={(e) => update("currentProgram", e.target.value)}
+                  placeholder="e.g. B.Tech Computer Science"
+                  maxLength={120}
+                  className={inputClass}
+                />
+              </div>
+              <div>
+                <Label className="mb-1.5 block text-[13px] font-medium text-slate-700">
+                  Current year <span className="text-slate-400">(optional)</span>
+                </Label>
+                <Select value={form.currentProgramYear} onValueChange={(v) => update("currentProgramYear", v)}>
+                  <SelectTrigger className={selectClass}>
+                    <SelectValue>Select year</SelectValue>
+                  </SelectTrigger>
+                  <SelectContent>
+                    {PROGRAM_YEAR_OPTIONS.map((y) => (
+                      <SelectItem key={y} value={y}>{y}</SelectItem>
+                    ))}
+                    <SelectItem value="Not applicable">Not applicable</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

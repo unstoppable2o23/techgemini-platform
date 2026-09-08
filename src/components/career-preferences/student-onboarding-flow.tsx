@@ -47,6 +47,14 @@ import {
   STUDY_LEVEL_OPTIONS,
   flagFor,
 } from "./career-prefs-constants";
+import {
+  DIPLOMA_BRANCH_OPTIONS,
+  UG_PROGRAM_OPTIONS,
+  PG_PROGRAM_OPTIONS,
+  PROGRAM_YEAR_OPTIONS,
+  type GradeFormat,
+} from "@/lib/onboarding/vocabulary";
+import { classifyStudyLevel, normalizeAverageGrade } from "@/lib/onboarding/normalize";
 
 type Values = {
   nationality: string;
@@ -88,6 +96,10 @@ type Values = {
   preferredIntake: string;
   preferredYear: string;
   careerPlanNotes: string;
+  currentProgram: string;
+  currentProgramYear: string;
+  gradeFormat: GradeFormat | "";
+  gradeValue: string;
 };
 
 const EMPTY: Values = {
@@ -130,6 +142,10 @@ const EMPTY: Values = {
   preferredIntake: "",
   preferredYear: "",
   careerPlanNotes: "",
+  currentProgram: "",
+  currentProgramYear: "",
+  gradeFormat: "",
+  gradeValue: "",
 };
 
 const STEPS = [
@@ -147,6 +163,7 @@ type SubjectOption = { id: string; name: string };
 function highestEducationOptions(studyLevel: string): string[] {
   const sl = (studyLevel || "").toLowerCase();
   const isSchool = sl.includes("class") || sl.includes("secondary") || sl.includes("school");
+  const isDiploma = sl.includes("diploma") || sl.includes("polytechnic");
   const isUndergrad =
     sl.includes("undergraduate") || sl.includes("bachelor") || sl === "year 1 undergraduate" || sl === "year 2 undergraduate" || sl === "year 3 undergraduate" || sl === "year 4 undergraduate";
   const isPostgrad = sl.includes("postgraduate") || sl.includes("master");
@@ -155,6 +172,8 @@ function highestEducationOptions(studyLevel: string): string[] {
   let base: string[];
   if (isSchool) {
     base = ["Still in school", "Primary School", "Middle School", "Secondary School (Grade 10)", "Grade 12 / High School"];
+  } else if (isDiploma) {
+    base = ["Secondary School (Grade 10)", "Grade 12 / High School", "Post-Secondary Certificate", "Undergraduate Diploma"];
   } else if (isUndergrad) {
     base = ["Grade 12 / High School", "Diploma", "Bachelor's Degree"];
   } else if (isPostgrad) {
@@ -182,10 +201,16 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
       base.highestEducationOther = base.highestEducation;
       base.highestEducation = "Other";
     }
+    // Legacy averageGrade is % — surface it through the percentage input.
+    if (base.averageGrade && !base.gradeFormat) {
+      base.gradeFormat = "percentage";
+      if (!base.gradeValue) base.gradeValue = base.averageGrade;
+    }
     return base;
   });
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [draftSaved, setDraftSaved] = useState(false);
 
   const [subjects, setSubjects] = useState<SubjectOption[]>([]);
   const [subjectsLoading, setSubjectsLoading] = useState(true);
@@ -194,7 +219,7 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
   const [subjectKind, setSubjectKind] = useState<"studied" | "enjoyed">("studied");
 
   const [careerQuery, setCareerQuery] = useState("");
-  const [careerResults, setCareerResults] = useState<{ id: string; name: string }[]>([]);
+  const [careerResults, setCareerResults] = useState<{ id: string; name: string; category?: string; shortDescription?: string }[]>([]);
   const [careerOpen, setCareerOpen] = useState(false);
   const careerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -250,7 +275,7 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
     }
     const res = await fetch(`/api/careers?search=${encodeURIComponent(query)}`);
     const data = await res.json();
-    setCareerResults((data.careers || []).map((c: any) => ({ id: c.id, name: c.name })).slice(0, 12));
+    setCareerResults((data.careers || []).map((c: any) => ({ id: c.id, name: c.name, category: c.category, shortDescription: c.shortDescription })).slice(0, 12));
     setCareerOpen(true);
   }
   function handleCareerChange(q: string) {
@@ -344,9 +369,10 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
     }
     if (s === 1) {
       if (!values.averageGradeUnknown) {
-        if (!values.averageGrade) return "Please enter your average grade, or select 'I'm not sure yet'.";
-        const g = parseFloat(values.averageGrade);
-        if (isNaN(g) || g < 0 || g > 100) return "Average grade must be between 0 and 100.";
+        const raw = values.gradeValue.trim() || values.averageGrade;
+        if (!raw) return "Please enter your average grade, or select 'I'm not sure yet'.";
+        const pct = normalizeAverageGrade(raw, values.gradeFormat || "percentage");
+        if (!pct) return "Please enter a valid average grade (percentage, or a CGPA/GPA value).";
       }
     }
     if (s === 2) {
@@ -398,7 +424,10 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
     setError("");
     const payload = {
       ...values,
-      averageGrade: values.averageGradeUnknown ? "" : values.averageGrade,
+      averageGrade: values.averageGradeUnknown
+        ? ""
+        : normalizeAverageGrade(values.gradeValue.trim() || values.averageGrade, values.gradeFormat || "percentage") || values.averageGrade || "",
+      mode: "finalize",
     };
     try {
       const res = await fetch("/api/student/career-preferences", {
@@ -414,6 +443,36 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
       else router.refresh();
     } catch (err: any) {
       setError(err.message || "Failed to save");
+      setSubmitting(false);
+    }
+  }
+
+  // Phase 24 Part 12 — partial draft save: persists eligible fields without
+  // honoring finalize gates or marking the profile as filled.
+  async function handleDraft() {
+    setSubmitting(true);
+    setError("");
+    const payload = {
+      ...values,
+      averageGrade: values.averageGradeUnknown ? "" : normalizeAverageGrade(values.gradeValue.trim() || values.averageGrade, values.gradeFormat || "percentage") || values.averageGrade || "",
+      mode: "draft",
+    };
+    try {
+      const res = await fetch("/api/student/career-preferences", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to save draft");
+      }
+      setDraftSaved(true);
+      setTimeout(() => setDraftSaved(false), 2500);
+      router.refresh();
+    } catch (err: any) {
+      setError(err.message || "Failed to save draft");
+    } finally {
       setSubmitting(false);
     }
   }
@@ -519,6 +578,16 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
               </Field>
             )}
 
+            {values.studyLevel && values.studyLevel !== "Other" && (
+              <ProgramContextFields
+                studyLevel={values.studyLevel}
+                program={values.currentProgram}
+                year={values.currentProgramYear}
+                onProgram={(v) => set("currentProgram", v)}
+                onYear={(v) => set("currentProgramYear", v)}
+              />
+            )}
+
             <div className="grid gap-4 sm:grid-cols-2">
               <Field label="Mobile (optional)">
                 <Input value={values.mobile} onChange={(e) => set("mobile", e.target.value)} placeholder="+91..." />
@@ -549,20 +618,32 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
             <Field
               icon={Layers}
               label="What is your current overall academic average?"
-              hint="Enter your overall average/percentage from recent results. This is not an entrance-exam score (not JEE, SAT, IELTS, etc.)."
+              hint="This is not an entrance-exam score (not JEE, SAT, IELTS, etc.). Enter your average however your school reports it — we store it internally as a percentage."
             >
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
+                <Select
+                  value={values.gradeFormat || "percentage"}
+                  onValueChange={(v) => set("gradeFormat", v as GradeFormat)}
+                >
+                  <SelectTrigger className="w-[200px]">
+                    <SelectValue>Percentage</SelectValue>
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="percentage">Percentage (%)</SelectItem>
+                    <SelectItem value="cgpa">CGPA (10-point)</SelectItem>
+                    <SelectItem value="gpa">GPA (4-point)</SelectItem>
+                  </SelectContent>
+                </Select>
                 <Input
                   type="number"
                   inputMode="decimal"
                   min={0}
-                  max={100}
                   step="any"
                   disabled={values.averageGradeUnknown}
-                  value={values.averageGrade}
-                  onChange={(e) => set("averageGrade", e.target.value)}
-                  placeholder="e.g. 85"
-                  className="max-w-[200px]"
+                  value={values.gradeValue}
+                  onChange={(e) => set("gradeValue", e.target.value)}
+                  placeholder={values.gradeFormat === "cgpa" ? "e.g. 8.5" : values.gradeFormat === "gpa" ? "e.g. 3.2" : "e.g. 85"}
+                  className="max-w-[160px]"
                 />
                 <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
                   <input
@@ -570,7 +651,7 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
                     checked={values.averageGradeUnknown}
                     onChange={(e) => {
                       set("averageGradeUnknown", e.target.checked);
-                      if (e.target.checked) set("averageGrade", "");
+                      if (e.target.checked) set("gradeValue", "");
                     }}
                   />
                   I'm not sure yet
@@ -649,9 +730,12 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
                             <button
                               type="button"
                               onClick={() => selectCareer(c)}
-                              className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-accent/10 text-left"
+                              className="flex w-full flex-col gap-0.5 px-3 py-2 text-left text-sm hover:bg-accent/10"
                             >
-                              {c.name}
+                              <span className="font-medium">{c.name}</span>
+                              <span className="text-xs text-muted-foreground">
+                                {c.category ? `${c.category}` : "Career"}{c.category && c.shortDescription ? " · " : ""}{c.shortDescription || ""}
+                              </span>
                             </button>
                           </li>
                         ))}
@@ -1035,10 +1119,16 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
 
         {step === 4 && <Review values={values} />}
 
-        <div className="flex items-center justify-between pt-2">
-          <Button type="button" variant="ghost" onClick={back} disabled={step === 0 || submitting}>
-            <ArrowLeft className="h-4 w-4 mr-2" /> Back
-          </Button>
+        <div className="flex items-center justify-between gap-2 pt-2">
+          <div className="flex items-center gap-2">
+            <Button type="button" variant="ghost" onClick={handleDraft} disabled={submitting}>
+              <BookOpen className="h-4 w-4 mr-2" />
+              {draftSaved ? "Draft saved ✓" : "Save draft"}
+            </Button>
+            <Button type="button" variant="ghost" onClick={back} disabled={step === 0 || submitting}>
+              <ArrowLeft className="h-4 w-4 mr-2" /> Back
+            </Button>
+          </div>
           {step < STEPS.length - 1 ? (
             <Button type="button" onClick={next}>
               Next <ArrowRight className="h-4 w-4 ml-2" />
@@ -1089,6 +1179,102 @@ function Field({ icon: Icon, label, hint, children }: { icon?: any; label: strin
       </Label>
       {hint && <p className="text-xs text-muted-foreground">{hint}</p>}
       {children}
+    </div>
+  );
+}
+
+// Phase 24 Part 7/8 — role-adaptive education context. The selected branch /
+// program / role is stored in `currentProgram` (and the year in
+// `currentProgramYear`) — additive fields that matching never reads, so the
+// stage value (studyLevel) stays canonical and institution/branch names never
+// leak into signals.
+function ProgramContextFields({
+  studyLevel,
+  program,
+  year,
+  onProgram,
+  onYear,
+}: {
+  studyLevel: string;
+  program: string;
+  year: string;
+  onProgram: (v: string) => void;
+  onYear: (v: string) => void;
+}) {
+  const persona = classifyStudyLevel(studyLevel);
+  if (persona === "school" || persona === "other") return null;
+
+  let options: readonly string[] = [];
+  let label = "";
+  let hint = "";
+  if (persona === "diploma") {
+    options = DIPLOMA_BRANCH_OPTIONS;
+    label = "Which diploma specialisation are you pursuing?";
+    hint = "e.g. Diploma in Computer Engineering (Polytechnic)";
+  } else if (persona === "undergraduate") {
+    options = UG_PROGRAM_OPTIONS;
+    label = "Which degree are you pursuing?";
+    hint = "e.g. B.Tech Computer Science";
+  } else if (persona === "postgraduate") {
+    options = PG_PROGRAM_OPTIONS;
+    label = "Which postgraduate programme are you pursuing?";
+    hint = "e.g. M.Tech / MBA";
+  } else if (persona === "doctoral") {
+    label = "Which programme are you pursuing? (optional)";
+    hint = "e.g. Ph.D. in Physics";
+  } else if (persona === "working") {
+    label = "What is your current role?";
+    hint = "This helps counselors understand your work context";
+  }
+
+  return (
+    <div className="space-y-5">
+      {persona === "working" ? (
+        <Field icon={Briefcase} label={label}>
+          <Input value={program} onChange={(e) => onProgram(e.target.value)} placeholder="e.g. Software Engineer / Sales Executive" />
+        </Field>
+      ) : (
+        <>
+          <Field icon={Layers} label={label} hint={hint}>
+            {options.length > 0 && (
+              <Select value={program && options.includes(program as (typeof options)[number]) ? program : ""} onValueChange={onProgram}>
+                <SelectTrigger className="w-full">
+                  <SelectValue>Select an option...</SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {options.map((o) => (
+                    <SelectItem key={o} value={o}>
+                      {o}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            )}
+            {(program === "Other" || options.length === 0) && (
+              <div className="mt-3">
+                <Input value={program === "Other" ? "" : program} onChange={(e) => onProgram(e.target.value)} placeholder="Please specify" />
+              </div>
+            )}
+          </Field>
+          {persona !== "doctoral" && (
+            <Field icon={Calendar} label="What is your current year?">
+              <Select value={year} onValueChange={onYear}>
+                <SelectTrigger className="w-full">
+                  <SelectValue>Select year...</SelectValue>
+                </SelectTrigger>
+                <SelectContent>
+                  {PROGRAM_YEAR_OPTIONS.map((y) => (
+                    <SelectItem key={y} value={y}>
+                      {y}
+                    </SelectItem>
+                  ))}
+                  <SelectItem value="Not applicable">Not applicable</SelectItem>
+                </SelectContent>
+              </Select>
+            </Field>
+          )}
+        </>
+      )}
     </div>
   );
 }
@@ -1372,7 +1558,9 @@ function Review({ values }: { values: Values }) {
     ["State", values.state || "—"],
     ["Currently studying", values.studyLevel === "Other" ? values.studyLevelOther || "—" : values.studyLevel || "—"],
     ["Highest education", values.highestEducation === "Other" ? values.highestEducationOther || "—" : values.highestEducation || "—"],
-    ["Average grade", values.averageGradeUnknown ? "Not sure yet" : values.averageGrade ? `${values.averageGrade}%` : "—"],
+    ["Program / branch / role", values.currentProgram || "—"],
+    ["Current year", values.currentProgramYear || "—"],
+    ["Average grade", values.averageGradeUnknown ? "Not sure yet" : (values.gradeValue || values.averageGrade) ? `${values.gradeValue || values.averageGrade}${values.gradeFormat === "cgpa" ? " CGPA" : values.gradeFormat === "gpa" ? " GPA" : "%"}` : "—"],
     ["Exams", values.exams.length ? values.exams.join(", ") : "—"],
     ["Subjects studied", [...values.subjectsStudied, ...values.subjectOtherStudied].length ? [...values.subjectsStudied, ...values.subjectOtherStudied].join(", ") : "—"],
     ["Subjects enjoyed", [...values.subjectsEnjoyed, ...values.subjectOtherEnjoyed].length ? [...values.subjectsEnjoyed, ...values.subjectOtherEnjoyed].join(", ") : "—"],
@@ -1399,6 +1587,9 @@ function Review({ values }: { values: Values }) {
           </div>
         ))}
       </dl>
+      <p className="rounded-md bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
+        Your answers help personalize career and education recommendations. They do not guarantee a particular career outcome.
+      </p>
     </div>
   );
 }

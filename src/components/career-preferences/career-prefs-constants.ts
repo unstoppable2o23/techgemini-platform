@@ -1,3 +1,5 @@
+import { CANONICAL_STAGES } from "@/lib/onboarding/vocabulary";
+
 export const CAREER_OPTIONS = [
   "Art & Design",
   "Architecture",
@@ -228,20 +230,10 @@ export const EXAM_OPTIONS = [
   "Other",
 ];
 
-export const STUDY_LEVEL_OPTIONS = [
-  "Class 8",
-  "Class 9",
-  "Class 10",
-  "Class 11",
-  "Class 12",
-  "Year 1 Undergraduate",
-  "Year 2 Undergraduate",
-  "Year 3 Undergraduate",
-  "Year 4 Undergraduate",
-  "Postgraduate",
-  "Doctoral",
-  "Other",
-];
+// Phase 24: canonical stages sourced from the shared onboarding vocabulary so
+// the wizard dropdown stays in lock-step with the server-side registration
+// options (includes Diploma (Polytechnic) and Working Professional).
+export const STUDY_LEVEL_OPTIONS: readonly string[] = CANONICAL_STAGES;
 
 export const GRADE_LEVEL_OPTIONS = [
   "Grade 9",

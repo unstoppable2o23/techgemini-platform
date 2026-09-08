@@ -230,6 +230,11 @@ model StudentProfile {
   gender        String?
   gradeLevel    String?
   studyLevel    String?
+  // Phase 24: additive student-supplied context (branch/program/role + year).
+  // Stored for counselor display and form resume ONLY — it is never consumed by
+  // the career matching engine or roadmap, so stage signals stay canonical.
+  currentProgram String?
+  currentProgramYear String?
   studyAbroad   String? // "yes" | "no" | "unsure" — controls study-abroad question set
   exams         String[]  @default([])
   subjectsStudied  String[] @default([])

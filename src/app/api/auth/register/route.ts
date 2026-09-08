@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma";
 import { rateLimit, clientIp } from "@/lib/rate-limit";
+import { validateRegisterPayload } from "@/lib/onboarding/validation";
+import { normalizeStage } from "@/lib/onboarding/normalize";
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,25 +16,18 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { firstName, lastName, email, password, dateOfBirth, mobile, gender, gradeLevel, studyLevel, exams } = body;
-
     if (body._hp) {
       return NextResponse.json({ error: "Invalid request" }, { status: 400 });
     }
 
-    if (!firstName || !lastName || !email || !password || !mobile || !gender || !gradeLevel) {
-      return NextResponse.json(
-        { error: "All fields are required" },
-        { status: 400 }
-      );
+    // Server-authoritative validation (Phase 24): format, ranges, and dates are
+    // checked here before any database work.
+    const payloadError = validateRegisterPayload(body);
+    if (payloadError) {
+      return NextResponse.json({ error: payloadError }, { status: 400 });
     }
 
-    if (password.length < 8) {
-      return NextResponse.json(
-        { error: "Password must be at least 8 characters" },
-        { status: 400 }
-      );
-    }
+    const { firstName, lastName, email, password, dateOfBirth, mobile, gender, gradeLevel, studyLevel, exams, currentProgram, currentProgramYear } = body;
 
     const existing = await prisma.user.findUnique({ where: { email } });
     if (existing) {
@@ -78,6 +73,15 @@ export async function POST(request: NextRequest) {
 
     const passwordHash = await bcrypt.hash(password, 12);
 
+    // Normalize legacy/alias stage tokens ("10th" → "Class 10", "Polytechnic"
+    // → "Diploma (Polytechnic)") while keeping unknown text unchanged. Study
+    // level is only set when the client explicitly supplies it — legacy
+    // register pages left it null, and mirroring gradeLevel into studyLevel
+    // would misclassify school students as post-school in the engine
+    // (study_level signals win over grade_level).
+    const resolvedGrade = normalizeStage(gradeLevel).value || null;
+    const resolvedStudy = studyLevel ? normalizeStage(studyLevel).value || null : null;
+
     const user = await prisma.user.create({
       data: {
         firstName,
@@ -91,8 +95,10 @@ export async function POST(request: NextRequest) {
             dateOfBirth: dateOfBirth ? new Date(dateOfBirth) : null,
             mobile: mobile || null,
             gender: gender || null,
-            gradeLevel: gradeLevel || null,
-            studyLevel: studyLevel || null,
+            gradeLevel: resolvedGrade || null,
+            studyLevel: resolvedStudy || null,
+            currentProgram: currentProgram || null,
+            currentProgramYear: currentProgramYear || null,
             exams: exams || [],
             featureAccess: { create: {} },
           },
