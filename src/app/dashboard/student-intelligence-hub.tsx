@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import SaveButton from "@/components/student/save-button";
-import StudentJourney from "@/components/student/journey";
+import { JourneySection } from "@/components/student/journey-section";
 import {
   SectionHeading,
   EmptyState,
@@ -17,7 +17,6 @@ import {
   GraduationCap,
   Building2,
   Flame,
-  ListChecks,
   MessagesSquare,
   ArrowRight,
   Check,
@@ -29,7 +28,7 @@ import {
   Clock,
 } from "lucide-react";
 import type { StudentDashboard } from "@/lib/student/dashboard.ts";
-import type { StudentJourney as StudentJourneyData } from "@/lib/student/journey.ts";
+import type { JourneyState } from "@/lib/student/journey-state.ts";
 
 function MappingBadge({ status }: { status?: string }) {
   if (!status) return null;
@@ -49,15 +48,6 @@ function MappingBadge({ status }: { status?: string }) {
   );
 }
 
-function nextActionHref(text: string): string | null {
-  const t = text.toLowerCase();
-  if (t.includes("career profile")) return "/career-preferences";
-  if (t.includes("career library") || t.includes("career matches") || t.includes("top match")) return "/career-matches";
-  if (t.includes("counselor")) return "/appointments";
-  if (t.includes("save")) return "/saved";
-  return null;
-}
-
 export default function StudentIntelligenceHub({
   dashboard,
   studentName,
@@ -65,14 +55,14 @@ export default function StudentIntelligenceHub({
 }: {
   dashboard: StudentDashboard;
   studentName?: string;
-  journey?: StudentJourneyData;
+  journey?: JourneyState;
 }) {
   const d = dashboard;
   const completed = d.assessmentCompletedCount;
   const assessmentState =
     completed === 0 ? "zero" : completed >= 5 ? "full" : "partial";
 
-  const primaryNext = d.nextSteps[0];
+  const nba = journey?.nextBestAction ?? null;
 
   return (
     <div className="space-y-12">
@@ -123,22 +113,23 @@ export default function StudentIntelligenceHub({
           </div>
         </div>
 
-        {primaryNext && (
+        {nba && (
           <div className="mt-5 flex flex-col items-start justify-between gap-3 rounded-xl bg-accent/5 p-4 ring-1 ring-inset ring-accent/15 sm:flex-row sm:items-center">
             <div className="flex items-start gap-3">
               <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                 <Target className="h-4 w-4" />
               </span>
-              <p className="text-sm font-medium text-foreground">{primaryNext}</p>
+              <div>
+                <p className="text-sm font-medium text-foreground">{nba.label}</p>
+                <p className="text-xs text-muted-foreground">{nba.detail}</p>
+              </div>
             </div>
-            {nextActionHref(primaryNext) && (
-              <Link
-                href={nextActionHref(primaryNext)!}
-                className={cn(buttonVariants({ variant: "default", size: "sm" }), "shrink-0")}
-              >
-                Get started
-              </Link>
-            )}
+            <Link
+              href={nba.href}
+              className={cn(buttonVariants({ variant: "default", size: "sm" }), "shrink-0")}
+            >
+              Get started
+            </Link>
           </div>
         )}
 
@@ -156,7 +147,7 @@ export default function StudentIntelligenceHub({
         )}
       </section>
 
-      {journey && <StudentJourney journey={journey} />}
+      {journey && <JourneySection journey={journey} />}
 
       {/* CAREER MATCHES */}
       <section data-tour="matches" className="space-y-4">
@@ -463,36 +454,6 @@ export default function StudentIntelligenceHub({
             ))}
           </div>
         )}
-      </section>
-
-      {/* NEXT STEPS */}
-      <section className="space-y-4">
-        <SectionHeading icon={ListChecks} eyebrow="Plan" title="Next Steps" />
-        <Card className="border-accent/10 shadow-sm">
-          <CardContent className="p-5">
-            <ul className="space-y-3">
-              {d.nextSteps.map((s: string, i: number) => {
-                const href = nextActionHref(s);
-                return (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="mt-1.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-[11px] font-semibold text-accent">
-                      {i + 1}
-                    </span>
-                    <div className="text-sm text-foreground">
-                      {href ? (
-                        <Link href={href} className="hover:text-accent hover:underline">
-                          {s}
-                        </Link>
-                      ) : (
-                        s
-                      )}
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </CardContent>
-        </Card>
       </section>
 
       {/* COUNSELOR HANDOFF */}

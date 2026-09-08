@@ -181,6 +181,7 @@ export default function Student360Client({
         education={data.profile?.highestEducation || "—"}
         universityCount={data.universityMatches?.matches?.length ?? 0}
         followUpRequired={followUpRequired}
+        journey={data.journey}
       />
 
       <div className="flex flex-wrap gap-2 my-4">
@@ -236,10 +237,11 @@ function SummaryBar({
   education,
   universityCount,
   followUpRequired,
+  journey,
 }: any) {
   return (
     <Card>
-      <CardContent className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <CardContent className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-4">
         <Stat label="Profile" value={pct(profileComplete)} />
         <Stat label="Assessments" value={assessments} />
         <Stat label="Education" value={education} />
@@ -247,6 +249,14 @@ function SummaryBar({
         <Stat
           label="Top Career"
           value={topCareers[0] ? `${topCareers[0].career.title || topCareers[0].career.name}` : "—"}
+        />
+        <Stat
+          label="Journey"
+          value={journey ? `${journey.percentComplete}%` : "—"}
+        />
+        <Stat
+          label="Roadmap"
+          value={journey ? `${journey.roadmapProgress}%` : "—"}
         />
         <Stat
           label="Follow-up"
@@ -297,6 +307,58 @@ function OverviewTab({ data }: any) {
           </div>
         </CardContent>
       </Card>
+
+      {data.journey && (
+        <Card>
+          <CardContent className="p-4">
+            <h3 className="font-semibold mb-3 flex items-center gap-2">
+              <Compass className="h-4 w-4" /> Career Journey
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-2 text-sm">
+              <div className="flex gap-2">
+                <span className="text-muted-foreground w-40 shrink-0">Journey</span>
+                <span className="font-medium">{data.journey.percentComplete}%</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-muted-foreground w-40 shrink-0">Assessments</span>
+                <span className="font-medium">
+                  {data.journey.assessmentCompletedCount}/{data.journey.assessmentTotal}
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-muted-foreground w-40 shrink-0">Goal career</span>
+                <span className="font-medium">{data.journey.goalCareerName || "—"}</span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-muted-foreground w-40 shrink-0">Roadmap</span>
+                <span className="font-medium">
+                  {data.journey.roadmapExists
+                    ? `${data.journey.roadmapCompletedCount}/${data.journey.roadmapStepCount} · ${data.journey.roadmapProgress}%`
+                    : "Not started"}
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-muted-foreground w-40 shrink-0">Shortlist</span>
+                <span className="font-medium">
+                  {data.journey.shortlistedCareerCount} careers · {data.journey.shortlistedUniversityCount} universities
+                </span>
+              </div>
+              <div className="flex gap-2">
+                <span className="text-muted-foreground w-40 shrink-0">Programs</span>
+                <span className="font-medium">
+                  {data.journey.programPathwayAvailable ? "Available" : "—"}
+                </span>
+              </div>
+            </div>
+            {data.journey.nextBestAction && (
+              <div className="mt-3 rounded-lg bg-blue-50 p-3 text-sm text-blue-800">
+                <p className="font-medium">Next best action: {data.journey.nextBestAction.label}</p>
+                <p className="text-xs text-blue-700 mt-0.5">{data.journey.nextBestAction.detail}</p>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card>

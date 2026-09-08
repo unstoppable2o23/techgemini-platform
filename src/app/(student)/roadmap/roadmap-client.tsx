@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/ui/page-header";
 import { Skeleton } from "@/components/ui/skeleton";
 import Breadcrumbs from "@/components/student/breadcrumbs";
+import { trackRecommendationEvent } from "@/lib/analytics/client";
 import {
   Target,
   Map as MapIcon,
@@ -115,7 +116,15 @@ export function RoadmapClient() {
         body: JSON.stringify({ status }),
       });
       const j = await r.json();
-      if (r.ok && j?.roadmap) setData(j.roadmap);
+      if (r.ok && j?.roadmap) {
+        setData(j.roadmap);
+        if (status === "COMPLETED") {
+          trackRecommendationEvent({
+            event: "roadmap_action_completed",
+            meta: { step: step.title, category: step.category },
+          });
+        }
+      }
     } catch {
       // ignore transient errors; user can retry
     }
@@ -204,6 +213,13 @@ export function RoadmapClient() {
             <p className="text-xl font-bold">
               {data.goalCareerName || "Set a career direction to personalize this roadmap"}
             </p>
+            {!data.goalCareerName && (
+              <Link href="/career-matches">
+                <Button size="sm" variant="outline" className="mt-1">
+                  <Compass className="mr-1.5 h-3.5 w-3.5" /> Choose your pathway
+                </Button>
+              </Link>
+            )}
             <p className="text-sm text-muted-foreground">
               Current education: {STAGE_LABELS[data.educationStage] || data.educationStage}
               {data.currentStage ? ` · ${data.currentStage}` : ""}

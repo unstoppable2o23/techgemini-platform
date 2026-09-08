@@ -36,7 +36,7 @@ import { formatUsageMinutes } from "@/lib/format-utils";
 import { PageHeader } from "@/components/ui/page-header";
 import { StatCard } from "@/components/ui/stat-card";
 import { getStudentDashboard } from "@/lib/student/dashboard.ts";
-import { buildStudentJourney } from "@/lib/student/journey.ts";
+import { getJourneyState } from "@/lib/student/journey-state.ts";
 import StudentIntelligenceHub from "./student-intelligence-hub";
 import { OnboardingTour } from "@/components/onboarding-tour";
 
@@ -183,16 +183,8 @@ export default async function DashboardPage() {
   const featureAccess = studentProfile?.featureAccess;
   const dashboard = await getStudentDashboard(user.id);
 
-  const appointmentCount = await prisma.appointment
-    .count({
-      where: {
-        studentId: studentProfile?.id,
-        status: { in: ["CONFIRMED", "COMPLETED", "PENDING"] },
-      },
-    })
-    .catch(() => 0);
-  const journey = buildStudentJourney(dashboard, {
-    appointmentBooked: appointmentCount > 0,
+  const journey = await getJourneyState(user.id, {
+    careerMatches: dashboard.topCareerMatches,
   });
 
   const recentResults = await prisma.testResult.findMany({

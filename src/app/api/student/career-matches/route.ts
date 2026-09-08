@@ -69,8 +69,16 @@ export async function GET(request: NextRequest) {
     const matches = result.matches.map(sanitizeCareerMatch);
     await attachEducationPaths(matches as CareerMatch[]);
 
+    // Phase 26 — journey context per match: explored / shortlisted / preferred.
+    const { assessCareerJourneyStates } = await import("@/lib/student/journey-state.ts");
+    const journey = await assessCareerJourneyStates(
+      user.id,
+      matches.map((m) => m.careerId).filter(Boolean)
+    );
+
     return NextResponse.json({
       matches,
+      journey,
       totalCareersScored: result.totalCareersScored,
       studentSignalsUsed: result.studentSignalsUsed,
       assessmentCoverage: result.assessmentCoverage,
@@ -84,6 +92,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(
       {
         matches: [],
+        journey: {},
         totalCareersScored: 0,
         studentSignalsUsed: 0,
         assessmentCoverage: [],

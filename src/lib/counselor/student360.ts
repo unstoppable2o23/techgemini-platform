@@ -39,6 +39,8 @@ export type Student360 = {
   feedback: any[];
   appointments: any[];
   chats: any[];
+  /** Phase 26 — derived career-journey block (profile, next action, roadmap). */
+  journey: Record<string, any> | null;
 };
 
 export async function getStudent360(
@@ -200,6 +202,16 @@ export async function getStudent360(
     take: 5,
   });
 
+  // ---- Journey state (Phase 26) — reuses the derived journey engine. We pass
+  // the already-computed career matches so the engine does not run twice.
+  let journey: Record<string, any> | null = null;
+  try {
+    const { getJourneyState } = await import("../student/journey-state.ts");
+    journey = await getJourneyState(studentUserId, { careerMatches });
+  } catch {
+    journey = null;
+  }
+
   return {
     user: {
       id: user.id,
@@ -221,5 +233,6 @@ export async function getStudent360(
     feedback,
     appointments,
     chats,
+    journey,
   };
 }

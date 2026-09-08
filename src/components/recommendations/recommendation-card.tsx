@@ -14,6 +14,10 @@ import {
   ChevronDown,
   ChevronRight,
   ListChecks,
+  Bookmark,
+  Eye,
+  Compass,
+  Check,
 } from "lucide-react";
 import {
   matchStrengthLabel,
@@ -26,9 +30,17 @@ import {
 } from "@/lib/recommendations/explainability";
 import type { CareerMatch } from "@/lib/career-matching/types";
 import { trackRecommendationEvent } from "@/lib/analytics/client";
+import SaveButton from "@/components/student/save-button";
+import { BuildPathwayButton } from "@/components/student/build-pathway-button";
 
 export type RecommendationMatch = CareerMatch & {
   educationPath?: { primary: string[]; alternative: string[] };
+};
+
+export type CareerJourneyState = {
+  explored: boolean;
+  shortlisted: boolean;
+  preferred: boolean;
 };
 
 const STRENGTH_BADGE: Record<string, string> = {
@@ -44,13 +56,16 @@ export function RecommendationCard({
   rank,
   selected,
   onToggleCompare,
+  journey,
 }: {
   match: RecommendationMatch;
   rank: number;
   selected: boolean;
   onToggleCompare: (m: RecommendationMatch) => void;
+  journey?: CareerJourneyState;
 }) {
   const [detailOpen, setDetailOpen] = useState(false);
+  const j = journey ?? { explored: false, shortlisted: false, preferred: false };
   const label = matchStrengthLabel(match.matchStrength);
   const reasons = whyThisMatches(match, 4);
   const missing = whatIsMissing(match, 3);
@@ -201,6 +216,28 @@ export function RecommendationCard({
           </div>
         )}
 
+        {/* Phase 26 — journey signals for this career */}
+        <div className="flex flex-wrap items-center gap-1.5">
+          {j.preferred && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200">
+              <Check className="h-3 w-3" aria-hidden="true" />
+              Your pathway
+            </span>
+          )}
+          {j.shortlisted && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-sky-50 px-2 py-0.5 text-[11px] font-medium text-sky-700 ring-1 ring-inset ring-sky-200">
+              <Bookmark className="h-3 w-3" aria-hidden="true" />
+              Shortlisted
+            </span>
+          )}
+          {j.explored && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-slate-50 px-2 py-0.5 text-[11px] font-medium text-slate-600 ring-1 ring-inset ring-slate-200">
+              <Eye className="h-3 w-3" aria-hidden="true" />
+              Explored
+            </span>
+          )}
+        </div>
+
         {/* Controls */}
         <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
           <div className="flex items-center gap-2">
@@ -230,23 +267,31 @@ export function RecommendationCard({
                 </>
               )}
             </button>
+            <SaveButton itemType="CAREER" itemId={match.careerId} size="sm" />
           </div>
-          <Link href={`/career-library/${match.career.slug}`}>
-            <Button
-              size="sm"
-              variant="outline"
-              onClick={() =>
-                trackRecommendationEvent({
-                  event: "career_detail_opened",
-                  careerId: match.careerId,
-                  careerSlug: match.career.slug,
-                  careerName: match.career.name,
-                })
-              }
-            >
-              View Career
-            </Button>
-          </Link>
+          <div className="flex flex-wrap items-center gap-2">
+            <BuildPathwayButton
+              careerId={match.careerId}
+              careerName={match.career.name}
+              alreadyPreferred={j.preferred}
+            />
+            <Link href={`/career-library/${match.career.slug}`}>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() =>
+                  trackRecommendationEvent({
+                    event: "career_detail_opened",
+                    careerId: match.careerId,
+                    careerSlug: match.career.slug,
+                    careerName: match.career.name,
+                  })
+                }
+              >
+                View Career
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Part 8 — evidence-based detail */}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import SaveButton from "@/components/student/save-button";
+import { BuildPathwayButton } from "@/components/student/build-pathway-button";
 import { MatchPill, ConfidencePill } from "@/components/student/display";
 import CareerTrendSection from "./career-trend-section";
 import {
@@ -29,6 +30,8 @@ import {
   HeartPulse,
   Newspaper,
   ShieldCheck,
+  Bookmark,
+  Eye,
 } from "lucide-react";
 import { institutionQualificationLabel } from "@/lib/education-institutions/service";
 
@@ -177,11 +180,14 @@ function SectionHeader({ icon: Icon, children }: { icon: any; children: React.Re
 export default function CareerDetailClient({
   career,
   medicalEducation,
+  journey,
 }: {
   career: any;
   medicalEducation?: MedicalEducationInfo | null;
+  journey?: { explored: boolean; shortlisted: boolean; preferred: boolean };
 }) {
   const [showAllPathways, setShowAllPathways] = useState(false);
+  const j = journey ?? { explored: false, shortlisted: false, preferred: false };
 
   const faqs: { question?: string; answer?: string }[] = career.faqs || [];
   const pathways: Pathway[] = career.pathways || [];
@@ -355,13 +361,33 @@ export default function CareerDetailClient({
             {career.title}
           </h1>
           <p className="text-white/85 mt-4 max-w-2xl text-base md:text-lg">{career.introduction}</p>
-          <div className="mt-5">
+          <div className="mt-5 flex flex-wrap items-center gap-3">
             <SaveButton
               itemType="CAREER"
               itemId={career.id}
               size="default"
               className="border-black bg-black text-white hover:bg-gray-800 hover:text-white"
             />
+            <BuildPathwayButton
+              careerId={career.id}
+              careerName={career.name}
+              alreadyPreferred={j.preferred}
+              size="default"
+              variant="secondary"
+              className="bg-white/15 text-white hover:bg-white/25"
+            />
+            {j.explored && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1.5 text-xs font-medium text-white">
+                <Eye className="h-3.5 w-3.5" aria-hidden="true" />
+                Explored
+              </span>
+            )}
+            {j.shortlisted && !j.preferred && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1.5 text-xs font-medium text-white">
+                <Bookmark className="h-3.5 w-3.5" aria-hidden="true" />
+                Shortlisted
+              </span>
+            )}
           </div>
         </div>
       </div>

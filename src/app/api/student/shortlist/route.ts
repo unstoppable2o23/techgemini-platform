@@ -151,6 +151,39 @@ export async function POST(request: NextRequest) {
       itemId,
       note: body.note ?? null,
     });
+
+    // Phase 26 — journey analytics: record the save server-side. Never blocks
+    // the shortlist write.
+    if (itemType === "CAREER") {
+      try {
+        const { recordProductEvent } = await import("@/lib/analytics/record.ts");
+        const c = await prisma.career.findUnique({
+          where: { id: itemId },
+          select: { name: true, slug: true },
+        });
+        await recordProductEvent({
+          userId: session.user.id,
+          event: "career_shortlisted",
+          careerId: itemId,
+          careerSlug: c?.slug ?? null,
+          careerName: c?.name ?? null,
+        });
+      } catch {
+        // best-effort analytics
+      }
+    } else if (itemType === "UNIVERSITY" || itemType === "INDIAN_INSTITUTION") {
+      try {
+        const { recordProductEvent } = await import("@/lib/analytics/record.ts");
+        await recordProductEvent({
+          userId: session.user.id,
+          event: "university_shortlisted",
+          meta: { itemType },
+        });
+      } catch {
+        // best-effort analytics
+      }
+    }
+
     return NextResponse.json({ item }, { status: 201 });
   } catch (error) {
     console.error("Shortlist add failed:", error);

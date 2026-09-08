@@ -19,6 +19,7 @@ import { trackRecommendationEvent } from "@/lib/analytics/client";
 
 type MatchData = {
   matches: RecommendationMatch[];
+  journey?: Record<string, { explored: boolean; shortlisted: boolean; preferred: boolean }>;
   totalCareersScored: number;
   studentSignalsUsed: number;
   assessmentCoverage: string[];
@@ -186,6 +187,7 @@ export function CareerMatchesClient() {
             rank={rank}
             selected={selected.some((s) => s.careerId === match.careerId)}
             onToggleCompare={toggleCompare}
+            journey={data.journey?.[match.careerId]}
           />
         ))}
       </div>

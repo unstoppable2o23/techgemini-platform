@@ -31,6 +31,22 @@ export default async function CareerDetailPage({
   const career = await prisma.career.findUnique({ where: { slug } });
   if (!career) redirect("/career-library");
 
+  // Phase 26 — this student's journey relationship to the career
+  // (explored / shortlisted / preferred) so the detail page can show chips
+  // and the "Build my pathway" CTA. Staff users get empty defaults.
+  let journey = { explored: false, shortlisted: false, preferred: false };
+  if (!isStaff) {
+    const { assessCareerJourneyStates } = await import(
+      "@/lib/student/journey-state.ts"
+    );
+    try {
+      const states = await assessCareerJourneyStates(user!.id, [career.id]);
+      journey = states[career.id] ?? journey;
+    } catch {
+      journey = { explored: false, shortlisted: false, preferred: false };
+    }
+  }
+
   // Phase 23.2 (Part B) — Medical Education Knowledge Layer. The registry is a
   // data-only module (no DB); its info is passed to the client so only medical
   // career pages pay the small payload cost.
@@ -56,5 +72,11 @@ export default async function CareerDetailPage({
       }
     : null;
 
-  return <CareerDetailClient career={career} medicalEducation={medicalEducation} />;
+  return (
+    <CareerDetailClient
+      career={career}
+      medicalEducation={medicalEducation}
+      journey={journey}
+    />
+  );
 }

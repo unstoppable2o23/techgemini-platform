@@ -11,6 +11,12 @@ const ALLOWED: ProductEventName[] = [
   "university_explored",
   "profile_completion_cta_clicked",
   "assessment_cta_clicked",
+  "journey_step_viewed",
+  "career_shortlisted",
+  "pathway_started",
+  "university_shortlisted",
+  "roadmap_action_completed",
+  "next_best_action_clicked",
 ];
 
 // Payloads are explicitly capped and validated: only the event name + optional

@@ -59,7 +59,7 @@ export async function getStudentBasics(userId: string): Promise<StudentBasics> {
   const completedKinds = new Set(assignments.map((a) => a.kind));
   const hasAssessments = completedKinds.size > 0;
 
-  const profileCompleteness = computeCompleteness(studentProfile);
+  const profileCompleteness = computeProfileCompleteness(studentProfile);
   const assessmentProgress: AssessmentProgress[] = ASSESSMENT_KINDS.map(
     (kind) => ({
       kind,
@@ -92,7 +92,11 @@ export async function getStudentBasics(userId: string): Promise<StudentBasics> {
   };
 }
 
-function computeCompleteness(profile: any): number {
+/**
+ * Phase 26 — profile completeness is also needed by the journey-state engine
+ * (and the counselor 360 journey block), so it is exported here.
+ */
+export function computeProfileCompleteness(profile: any): number {
   if (!profile) return 0;
   const signals = [
     profile.gradeLevel,
