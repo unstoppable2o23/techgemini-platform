@@ -40,3 +40,11 @@ the full healthcare breadth.
 Official regulators only (see `phase23_2-source-verification.md`). One discipline is represented
 in the catalog as `Surgeon` (specialization of Medicine) — it resolves to the medicine discipline
 via registry aliases; no duplicate MBBS career exists.
+
+## 5. Last reviewed date (final pass)
+
+Every discipline entry in `src/lib/medical-education/registry.ts` now carries
+`lastReviewed` (= `MEDICAL_EDUCATION_LAST_REVIEWED`, `2026-09-08`). `student360.ts` propagates
+it into `medicalEducationPath.lastReviewed`, and the counselor Medical Education Path panel
+renders "Last reviewed:" via `<time dateTime>`. The knowledge base is never presented as
+timeless. Machine-readable flag: `phase23_2-medical-audit.json` → `lastReviewed`.

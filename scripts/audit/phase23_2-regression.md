@@ -1,6 +1,6 @@
 # Phase 23.2 — Regression
 
-**Phase:** 23.2 — polytechnic pathway hardening and medical education intelligence v1
+**Phase:** 23.2 — final polytechnic pathway hardening and medical education intelligence v1
 
 ---
 
@@ -14,13 +14,16 @@ Ran `scripts/audit/phase16b-golden-harness.mjs` before and after; diffed against
 
 **CAREER ENGINE UNCHANGED. ASSESSMENT ENGINE UNCHANGED.**
 
-## 2. Test suite
+## 2. Test suite (final pass)
 
-- `npm test` → **579 pass / 0 fail** (27 suites).
-  - Baseline 565 (previous Phase 23.2) + **14 new golden profiles** (A–D polytechnic, E–J
-    medical, K–L medical PG/abroad, determinism).
-- FocusP23.2 suites: polytechnic G1–G10 (10), medical M1–M23 (23), golden A–L (14) — all green.
+- `npm test` → **592 pass / 0 fail** (29 suites).
+  - 579 (previous Phase 23.2 commit) + **13 new** `phase23-2-polytechnic-final` tests
+    (qualification-semantics helpers + the 9-point polytechnic routing safety suite).
+- Phase 23.2 files: polytechnic G1–G10 (10), medical M1–M23 (23), golden A–L (14),
+  polytechnic-final (13) — all green (60/60 across the four files).
 - Baselines re-verified: program-verified bound 20–85; career-program-mapping Program 80.
+- Determinism assertions in medical/golden suites now normalise the live
+  `snapshot.generatedAt` wall-clock stamp app-side (test-only; matches the freeze harness).
 
 ## 3. TypeScript / build
 

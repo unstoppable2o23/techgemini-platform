@@ -176,6 +176,10 @@ describe("Phase 23.2 — medical roadmap wording", () => {
   test("M13: medical roadmap is deterministic (two runs identical)", () => {
     const a = buildRoadmap(inputs({ goalCareerName: "Medicine" }));
     const b = buildRoadmap(inputs({ goalCareerName: "Medicine" }));
+    // `snapshot.generatedAt` is a wall-clock stamp (engine-freeze also strips it);
+    // every other field must be byte-identical across runs.
+    delete a.snapshot.generatedAt;
+    delete b.snapshot.generatedAt;
     assert.equal(JSON.stringify(a), JSON.stringify(b));
   });
 

@@ -335,10 +335,14 @@ export async function getSingleCandidate(
     } else if (dataset === "indian" && degreeName) {
       const tokens = deriveInstitutionTypeTokens(degreeName);
       const instType = (rec.institutionType || "").toLowerCase();
-      // Phase 23.2 (Part A — polytechnic hardening): a diploma-level institution
-      // is never presented as a degree-match for a degree-only context purely by
+      // Phase 23.2 (final polytechnic hardening): a diploma-level institution is
+      // never presented as a degree-match for a degree-only context purely by
       // category. A B.E./B.Tech (degree-only) query at a Polytechnic row leaves
-      // basis "none" unless a verified degree program exists (handled above).
+      // basis "none" unless a verified degree program exists (handled above in
+      // tier 1). This is the multi-level case: a polytechnic may legitimately
+      // grant a degree, but ONLY when independently verified — never inferred
+      // from the institution name/type. Missing verification data stays
+      // conservative ("none"), never an invented qualification.
       const degreeOnlyContext = !/diploma/i.test(degreeName || "");
       const diplomaLevel = isDiplomaLevelInstitutionType(rec.institutionType);
       if (

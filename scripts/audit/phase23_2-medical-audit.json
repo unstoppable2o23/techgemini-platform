@@ -31,6 +31,13 @@
     ],
     "deterministic": true
   },
+  "lastReviewed": {
+    "field": "MedicalDisciplineInfo.lastReviewed",
+    "surfacedInUI": "Medical Education Path — 'Last reviewed:' with <time dateTime>",
+    "value": "2026-09-08",
+    "sourceOfTruth": "MEDICAL_EDUCATION_LAST_REVIEWED in src/lib/medical-education/registry.ts",
+    "allDisciplinesStamped": true
+  },
   "programs": {
     "verifiedMbbsTotal": 9,
     "verifiedMbbsIndia": 7,

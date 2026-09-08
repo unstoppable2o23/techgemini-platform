@@ -16,6 +16,22 @@
     "diplomaSuffixRows": 0,
     "degreeGrantingRowsAreSeparateDataset": true
   },
+  "classification": {
+    "totalInstitutionsEvaluated": 73969,
+    "diplomaCompatible": 14213,
+    "degreeCompatible": 58329,
+    "ambiguousMissingType": 1427,
+    "falsePositiveClassifications": 0,
+    "falseNegativeClassifications": 0,
+    "verifiedProgramsAtDiplomaLevel": 0,
+    "diplomaTypes": {
+      "Technical/Polytechnic": 5337,
+      "Nursing (Diploma) Institute": 4821,
+      "Teacher Training (Diploma) Institute": 3913,
+      "Ayurvedic Nursing (Diploma) Institution": 142
+    },
+    "method": "Qualification Level / Education Type is driven ONLY by structured institutionType data. Institution NAME substrings (polytechnic/engineering/technical/institute/college) never participate. Missing type data is conservatively classified 'unknown' (never invented). A diploma-level institution is degree-compatible ONLY via an independently verified Program row (multi-level institution case). False positives/negatives are measured against that rule: 0 degree category matches ever assigned to diploma-level institutions and 0 verified degree programs at diploma-level institutions."
+  },
   "affectedPrograms": {
     "programTableNotModifiedForPolytechnic": true,
     "programTotal": 80,

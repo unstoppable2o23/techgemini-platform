@@ -59,6 +59,9 @@ export interface MedicalDisciplineInfo {
   /** True when a regulated UG medical entrance (e.g. NEET-UG) is the primary
    *  admission route — used by the roadmap medical branch. */
   regulatedEntrance: boolean;
+  /** ISO date of the last factual/evidence review of this entry (surfaced in
+   *  the UI as "Last reviewed date"; never implied to be timeless). */
+  lastReviewed?: string;
 }
 
 export const MEDICAL_DISCIPLINES: MedicalDisciplineInfo[] = [
@@ -660,10 +663,19 @@ export const MEDICAL_DISCIPLINES: MedicalDisciplineInfo[] = [
   },
 ];
 
+/**
+ * ISO review date for the medical-education knowledge base. Every discipline
+ * entry above was re-fact-checked and evidence-attributed as of this date and
+ * surfaced in the UI as the "Last reviewed date" so the information is never
+ * mistaken for timeless.
+ */
+export const MEDICAL_EDUCATION_LAST_REVIEWED = "2026-09-08";
+
 const DISCIPLINE_BY_SLUG = new Map<string, MedicalDisciplineInfo>();
 const DISCIPLINE_BY_NAME = new Map<string, MedicalDisciplineInfo>();
 
 for (const d of MEDICAL_DISCIPLINES) {
+  d.lastReviewed = MEDICAL_EDUCATION_LAST_REVIEWED;
   for (const s of d.careerSlugs) DISCIPLINE_BY_SLUG.set(s.toLowerCase(), d);
   for (const n of d.careerNames) DISCIPLINE_BY_NAME.set(n.toLowerCase(), d);
 }

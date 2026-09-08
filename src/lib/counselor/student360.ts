@@ -152,6 +152,7 @@ export async function getStudent360(
         indiaAbroad: medicalDiscipline.indiaAbroad,
         alternatives: medicalDiscipline.alternatives,
         sources: medicalDiscipline.sources,
+        lastReviewed: medicalDiscipline.lastReviewed,
       };
     }
   }

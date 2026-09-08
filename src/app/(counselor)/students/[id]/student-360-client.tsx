@@ -488,6 +488,11 @@ function EducationTab({ data }: any) {
           <div className="mt-3 rounded-lg border border-accent/20 bg-accent/5 p-3 space-y-2">
             <p className="font-medium text-sm">Medical Education Path — {ep.medicalEducationPath.title}</p>
             <p className="text-xs text-muted-foreground">{ep.medicalEducationPath.summary}</p>
+            {ep.medicalEducationPath.lastReviewed && (
+              <p className="text-xs text-muted-foreground">
+                Last reviewed: <time dateTime={ep.medicalEducationPath.lastReviewed}>{ep.medicalEducationPath.lastReviewed}</time>
+              </p>
+            )}
             <div className="text-xs space-y-1 text-muted-foreground">
               <p><span className="font-medium text-foreground">Entrance (India):</span> {ep.medicalEducationPath.entrance}</p>
               <p><span className="font-medium text-foreground">Primary degree:</span> {ep.medicalEducationPath.degree}</p>

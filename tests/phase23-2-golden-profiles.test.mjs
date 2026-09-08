@@ -189,6 +189,9 @@ describe("Golden medical profiles", () => {
   test("Roadmap is deterministic (same input → identical output)", () => {
     const a = buildRoadmap(inputs({ educationStage: "SCHOOL_CLASS12", goalCareerName: "Medicine" }));
     const b = buildRoadmap(inputs({ educationStage: "SCHOOL_CLASS12", goalCareerName: "Medicine" }));
+    // `snapshot.generatedAt` is a wall-clock stamp (engine-freeze also strips it).
+    delete a.snapshot.generatedAt;
+    delete b.snapshot.generatedAt;
     assert.deepEqual(a, b, "roadmap must be deterministic");
   });
 });

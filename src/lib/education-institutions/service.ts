@@ -148,6 +148,60 @@ export function institutionQualificationLabel(
   return "Diploma";
 }
 
+/**
+ * Structured qualification semantics for a diploma/polytechnic institution.
+ *
+ * Phase 23.2 (final hardening). Qualification Level / Education Type is an
+ * explicit, independent concept from the institution name. An institution is
+ * classified by its structured `institutionType` — never by substrings in its
+ * name ("Polytechnic", "Engineering", "Technical", "Institute", "College").
+ *
+ * - `diploma`: the type marks the institution as diploma-serving.
+ * - `status`: "diploma" when diploma-level, "non-diploma" otherwise, and
+ *   "unknown" when there is no type data (callers must treat unknown as
+ *   conservative — do not invent a level).
+ * - `label`: the human-friendly qualification label (or null).
+ */
+export type InstitutionQualification =
+  | { status: "diploma"; label: string; diploma: true }
+  | { status: "non-diploma"; label: null; diploma: false }
+  | { status: "unknown"; label: null; diploma: false };
+
+export function classifyInstitutionQualification(
+  institutionType?: string | null
+): InstitutionQualification {
+  if (!institutionType || !String(institutionType).trim()) {
+    return { status: "unknown", label: null, diploma: false };
+  }
+  const isDiploma = isDiplomaLevelInstitutionType(institutionType);
+  if (!isDiploma) {
+    return { status: "non-diploma", label: null, diploma: false };
+  }
+  return {
+    status: "diploma",
+    label: institutionQualificationLabel(institutionType) || "Diploma",
+    diploma: true,
+  };
+}
+
+/**
+ * True when a degree-only context may safely category-match a diploma-level
+ * institution. Phase 23.2 final hardening: NEVER by name or type alone — a
+ * diploma-level institution is degree-compatible ONLY when an independently
+ * verified Program row (or an explicit curated education-institution mapping)
+ * proves it grants the degree. `hasVerifiedDegree`/`hasCuratedMapping` carry
+ * that proof; `null` (missing verification data) is treated as NOT compatible
+ * so we never fabricate a qualification.
+ */
+export function canDiplomaInstitutionGrantDegree(
+  institutionType?: string | null,
+  hasVerifiedDegree?: boolean | null,
+  hasCuratedMapping?: boolean | null
+): boolean {
+  if (!isDiplomaLevelInstitutionType(institutionType)) return false;
+  return Boolean(hasVerifiedDegree) || Boolean(hasCuratedMapping);
+}
+
 function emptyResponse(page: number, limit: number, reason: string): InstitutionResponse {
   return {
     institutions: [],
