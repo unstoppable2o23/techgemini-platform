@@ -40,17 +40,22 @@ test("diploma vs degree separation holds across canonicalization", () => {
   assert.ok(!diploma.some((t) => degree.includes(t)), "diploma and degree paths must stay disjoint");
 });
 
-test("category discovery returns Indian institutions for an engineering degree (verified=false)", async () => {
+test("degree-only engineering category discovery excludes diploma-level institutions (honest empty)", async () => {
   const degree = await prisma.degree.findFirst({
     where: { name: { contains: "Tech", mode: "insensitive" } },
   });
   assert.ok(degree, "expected at least one Tech degree in the database");
 
   const res = await getInstitutionsForDegrees([degree.id], { limit: 5 });
+  // Phase 23.2 (Part A): the AISHE "Technical/Polytechnic" type conflates every
+  // polytechnic with the degree token "Technical". Diploma-level institutions are
+  // excluded from degree-only queries, so an unverified engineering degree must
+  // honestly report no category candidates (degree candidates come from the
+  // verified-program / curated tiers instead).
   assert.equal(res.verified, false);
-  assert.equal(res.mappingBasis, "institutionType-category");
-  assert.ok(res.disclaimer, "category discovery must carry a transparency disclaimer");
-  assert.ok(res.institutions.length > 0, "expected category-matched institutions");
+  assert.equal(res.mappingBasis, "none");
+  assert.ok(res.disclaimer, "empty degree-only category result must explain itself");
+  assert.equal(res.institutions.length, 0);
   assert.ok(res.institutions.every((i) => i.dataset === "indian"));
 });
 
@@ -62,7 +67,7 @@ test("degree with no category match returns empty gracefully", async () => {
   assert.ok(res.disclaimer, "missing mapping must explain why it is empty");
 });
 
-test("specialization -> institution flow works", async () => {
+test("specialization -> institution flow is honest for degree-only engineering context", async () => {
   const spec = await prisma.specialization.findFirst({
     where: { degree: { name: { contains: "Tech", mode: "insensitive" } } },
     include: { degree: true },
@@ -70,8 +75,11 @@ test("specialization -> institution flow works", async () => {
   assert.ok(spec, "expected a specialization under a Tech degree");
 
   const res = await getInstitutionsForSpecialization(spec.id, { limit: 5 });
-  assert.ok(res.institutions.length > 0);
-  assert.equal(res.mappingBasis, "institutionType-category");
+  // Degree-only specialization under an engineering degree: the only AISHE
+  // category rows for "Tech" are diploma-level polytechnics, which Phase 23.2
+  // excludes from degree-only queries → category discovery honors the empty.
+  assert.equal(res.institutions.length, 0);
+  assert.equal(res.mappingBasis, "none");
   assert.ok(res.institutions.every((i) => i.dataset === "indian"));
 });
 

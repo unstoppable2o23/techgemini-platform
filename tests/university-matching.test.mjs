@@ -199,13 +199,20 @@ test("Curated education-institution mapping is surfaced by the candidate layer",
   }
 });
 
-// Integration: category-derived candidate retrieval works
-test("Category-derived candidate retrieval returns Indian institutions", async () => {
+// Integration: category-derived candidate retrieval is honest for degree-only engineering queries
+test("Degree-only candidate retrieval never surfaces diploma-level institutions by category", async () => {
   const degree = await prisma.degree.findFirst({ where: { name: { contains: "Tech", mode: "insensitive" } } });
   assert.ok(degree, "need a Tech degree");
   const set = await getCandidateSet({ degreeId: degree.id });
-  assert.equal(set.mappingBasis, "institutionType-category");
-  assert.ok(set.candidates.length > 0);
+  // Phase 23.2 (Part A): an unverified engineering degree may only yield candidates
+  // from the verified-program tier; category mapping must not fabricate polytechnics
+  // as degree institutions (Tier 3 category basis is excluded for diploma-level rows).
+  for (const c of set.candidates) {
+    assert.ok(c.mappingBasis !== "institutionType-category", `degree-only candidate must not be category-based: ${c.name}`);
+    assert.ok(!(c.institutionType || "").toLowerCase().includes("polytechnic"), `polytechnic must not be a degree candidate: ${c.name}`);
+    assert.ok(!(c.institutionType || "").toLowerCase().includes("(diploma)"), `"(diploma)" institute must not be a degree candidate: ${c.name}`);
+  }
+  assert.ok(["verified-program", "none"].includes(set.mappingBasis), `mappingBasis should be verified-program or none, got ${set.mappingBasis}`);
 });
 
 // Integration: full engine flow with a real career context (no student profile -> empty)

@@ -23,6 +23,11 @@ import type {
 } from "./types.ts";
 import { MILESTONE_ORDER } from "./types.ts";
 import { COUNTRY_PATHWAYS, requirementQuestions, destinationLabel } from "./country-config.ts";
+import {
+  getMedicalDisciplineForCareerName,
+  isMedicalCareerName,
+  type MedicalDisciplineInfo,
+} from "../medical-education/registry.ts";
 
 /**
  * Turns a destination's conservative requirement config into roadmap steps
@@ -123,6 +128,49 @@ const ACADEMIC_ALT =
 const DIPLOMA_TARGET =
   "Diploma completion can lead to employment or eligible higher study. Confirm each next step's requirements rather than assuming admission.";
 
+/**
+ * Phase 23.2 (Part B) — Medical-education roadmap wording.
+ *
+ * Applied ONLY when the current target career uses a regulated UG medical
+ * entrance (Medicine / Dentistry / Nursing per the medical-education registry).
+ * Wording is conservative and evidence-attributed:
+ *   - NEET-UG is attributed to NTA and its notified scope (MBBS/BDS + AYUSH +
+ *     some B.Sc-Nursing), never stated as universal.
+ *   - Regulators are named only where they exist (NMC, DCI, INC, PCI, NCISM/NCH).
+ *   - India vs abroad stays distinct; foreign degrees never imply automatic
+ *     recognition.
+ */
+function medicalPathClass10(title: string): string {
+  return `${title} follows a structured sequence in India: Class 11–12 science (Physics, Chemistry, Biology) → the undergraduate entrance that applies to the programs you choose (e.g. NEET-UG where a program requires it) → the degree → internship → registration with the field's council. Confirm which entrance applies to each shortlisted program.`;
+}
+
+function medicalEntranceClass12(discipline: MedicalDisciplineInfo): string {
+  if (discipline.id === "nursing") {
+    return `Nursing admission routes vary across India: some B.Sc-Nursing programs use NEET-UG scores or a state/university entrance, while others use merit. Confirm each institution's announced admission rule for your year — never assume NEET-UG applies to a nursing program.`;
+  }
+  return `${discipline.title} entry in India is through NEET-UG (National Testing Agency) for most MBBS and BDS seats. The notified NEET-UG scope also covers the AYUSH courses (BAMS/BHMS/BUMS/BSMS) and some B.Sc-Nursing admissions. Confirm whether each program you shortlist requires it, and register only where it applies.`;
+}
+
+function medicalRegistrationClass12(title: string): string {
+  return `Practising in ${title} is regulated per field in India — for medicine the National Medical Commission (NMC) oversees the course and registration; dentistry, nursing, pharmacy and the Indian systems have their own councils (DCI, INC, PCI, NCISM/NCH). Verify the registration/recognition step for the career you choose before committing to a program.`;
+}
+
+function medicalAbroadClass12(discipline: MedicalDisciplineInfo): string {
+  return `Medical qualifications are country-regulated. If you plan to study or practise ${discipline.title.toLowerCase()} abroad, check that country's regulator (for example the GMC in the UK, or the USMLE/ECFMG-based pathways in the US) and confirm a foreign degree would be recognised before you commit. Recognition is never automatic.`;
+}
+
+function medicalInternshipUndergrad(discipline: MedicalDisciplineInfo): string {
+  return `Clinical programs prescribe their own training and internship — for example an NMC-regulated rotating internship during the MBBS course. Confirm the prescribed internship/training component for your specific program and course year from the institution and the relevant council.`;
+}
+
+function medicalPgEntranceUndergrad(discipline: MedicalDisciplineInfo): string {
+  return `Postgraduate entry is field-specific: for allopathic medicine PG admission runs through NEET-PG in most institutions, dentistry through dental PG entrances, and other fields through their own national/state entrances or university admissions. Confirm the notified route for your field before planning PG.`;
+}
+
+function medicalRegistrationPostgrad(discipline: MedicalDisciplineInfo): string {
+  return `Eligibility to practise depends on registration with the applicable council for ${discipline.title.toLowerCase()} (e.g. a State Medical Council under NMC norms for allopathic medicine) and, in other countries, that country's licensure. Verify the exact registration step for your field and jurisdiction.`;
+}
+
 export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
   const specs: RoadmapStepSpec[] = [];
   const milestones: RoadmapMilestoneSpec[] = MILESTONE_ORDER.map((key, i) => ({
@@ -134,6 +182,18 @@ export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
   const builder = new StepBuilder(specs);
   const destination = input.destinationLabel;
   const pathType = destination === "INDIA" ? "INDIA" : "ABROAD";
+
+  // Phase 23.2 (Part B): medical-education context. Only careers whose entry
+  // uses a regulated UG medical entrance (Medicine / Dentistry / Nursing) switch
+  // the roadmap into medical wording; allied-health and engineering-adjacent
+  // careers keep the generic conservative wording.
+  const goalName = input.goalCareerName ?? input.topCareerName ?? null;
+  const medicalDiscipline =
+    getMedicalDisciplineForCareerName(goalName) ??
+    getMedicalDisciplineForCareerName(input.goalCareerName) ??
+    getMedicalDisciplineForCareerName(input.topCareerName) ??
+    null;
+  const medicalRoadmapActive = isMedicalCareerName(goalName) && medicalDiscipline !== null;
 
   // =====================================================================
   // Stage-aware core path (the personalised spine).
@@ -169,6 +229,10 @@ export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
         builder
           .now("Choose Class 11–12 subjects to match your goal", subjectChoiceReason(input), "SUBJECTS", "HIGH")
           .now("Keep your core subjects strong", coreSubjectsReason(input), "SUBJECTS", "HIGH");
+        if (medicalDiscipline) {
+          builder
+            .next3("Explore the medical education pathway", medicalPathClass10(medicalDiscipline.title), "PROGRAM_SELECTION", "HIGH");
+        }
         if (destination === "INDIA") {
           builder
             .next3("Compare relevant degree programs", programCompareReason(input), "PROGRAM_SELECTION", "HIGH")
@@ -200,6 +264,11 @@ export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
           .next3("Prepare application documents", "Gather the transcripts, certificates and any statements the institutions you apply to require.", "DOCUMENTS", "MEDIUM")
           .next3("Submit program applications", "Submit applications to your shortlisted Indian institutions within their official timelines.", "APPLICATION", "HIGH")
           .later("Review offers and enrol", "Compare offers, complete enrolment and plan your funding.", "OFFER", "HIGH");
+        if (medicalRoadmapActive) {
+          builder
+            .now("Check the entrance route for your medical path", medicalEntranceClass12(medicalDiscipline!), "ENTRANCE_EXAM", "HIGH")
+            .next3("Understand registration and regulated practice for your field", medicalRegistrationClass12(medicalDiscipline!.title), "CAREER_PREPARATION", "MEDIUM");
+        }
       } else if (destination) {
         builder
           .now("Check English-language and standardized-test requirements", destTestReason(destination), "ENGLISH_TEST", "HIGH")
@@ -209,6 +278,10 @@ export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
           .later("Plan funding and scholarships", "Research scholarships and funding for your destination; check eligibility — do not assume you qualify.", "SCHOLARSHIP_FUNDING", "MEDIUM")
           .later("Prepare for offers and visa", "When offers arrive, review them and begin the official visa process for your destination.", "VISA_IMMIGRATION", "MEDIUM")
           .target("Arrange travel, accommodation and enrolment", "Complete enrolment, travel and accommodation once your offer and visa are confirmed.", "TRAVEL_ACCOMMODATION", "LOW");
+        if (medicalRoadmapActive) {
+          builder
+            .now("Check how your target country regulates the profession", medicalAbroadClass12(medicalDiscipline!), "APPLICATION", "HIGH");
+        }
       } else {
         builder
           .next3("Decide your destination (India / abroad)", "Choose where to apply so your roadmap can show the right steps for each path.", "OTHER", "MEDIUM")
@@ -226,6 +299,11 @@ export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
         .next3("Build key skills and portfolio", "Develop the technical and soft skills your target roles or programs look for.", "SKILL_DEVELOPMENT", "MEDIUM")
         .later("Shortlist postgraduate programs or career options", "Compare options that build on your degree toward your goal.", "PROGRAM_SELECTION", "MEDIUM")
         .target("Prepare applications to your chosen next step", "When you're close to applying, prepare tests, documents and applications for your path.", "APPLICATION", "LOW");
+      if (medicalRoadmapActive) {
+        builder
+          .now("Confirm your program's internship and regulated practice steps", medicalInternshipUndergrad(medicalDiscipline!), "SKILL_DEVELOPMENT", "HIGH")
+          .next3("Check the postgraduate entrance route for your field", medicalPgEntranceUndergrad(medicalDiscipline!), "ENTRANCE_EXAM", "MEDIUM");
+      }
       break;
     }
 
@@ -236,6 +314,10 @@ export function buildRoadmap(input: RoadmapInputs): GeneratedRoadmap {
         .next3("Build projects, research and professional experience", "Strengthen the evidence for your target roles or further study.", "INTERNSHIP_PROJECTS", "MEDIUM")
         .later("Shortlist jobs, further study or certifications", "Compare the next opportunities your postgraduate path unlocks.", "CAREER_PREPARATION", "MEDIUM")
         .target("Prepare for applications or interviews", "Tailor CVs, statements and references for your chosen next step.", "CAREER_PREPARATION", "LOW");
+      if (medicalRoadmapActive) {
+        builder
+          .next3("Confirm professional registration and licensing for your jurisdiction", medicalRegistrationPostgrad(medicalDiscipline!), "CAREER_PREPARATION", "MEDIUM");
+      }
       break;
     }
 

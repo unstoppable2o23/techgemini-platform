@@ -70,39 +70,77 @@ test("Career → Education → University: Biotechnology Research", async () => 
   assert.ok(res.institutions.length >= 0);
 });
 
-test("Emerging careers: at least 15 of 40 flow to institutions", async () => {
+test("Emerging careers: institution flows remain evidence-based after polytechnic hardening", async () => {
   const emerging = await prisma.career.findMany({ where: { isEmerging: true, isActive: true }, take: 40 });
   assert.ok(emerging.length >= 40, `should have 40 emerging, got ${emerging.length}`);
   let ok = 0;
-  for (const c of emerging.slice(0, 20)) {
+  const details = [];
+  for (const c of emerging) {
     const res = await getInstitutionsForCareer(c.id, { limit: 5 });
-    if (res.total > 0) ok++;
+    if (res.total > 0) {
+      ok++;
+      details.push(`${c.name}=category(${res.total})`);
+      continue;
+    }
+    const set = await getCandidateSet({ careerId: c.id });
+    if (set.candidates.length > 0) {
+      ok++;
+      details.push(`${c.name}=${set.mappingBasis}(${set.total})`);
+    }
   }
-  assert.ok(ok >= 10, `at least 10 emerging should have institution candidates, got ${ok}`);
+  // Phase 23.2 (Part A) removes the polytechnic conflation that previously inflated
+  // engineering flows; flows now come only from verified programs, curated mappings,
+  // or genuine non-diploma categories. Observed evidence-based flows (17 of 40 at
+  // Phase 23.2): Management-category (Product Mgmt/Sustainability/Sports Mgmt/Entrepreneurship/
+  // Venture Capital/Data Governance) + verified-program engineering (ML/SRE/AR-VR/NLP/MLOps/
+  // Computer Vision/Blockchain/Ethical Hacking/Quantum/AgriTech/Renewable Energy).
+  assert.ok(ok >= 10, `at least 10 emerging should flow via verified/curated/genuine-category, got ${ok} [${details.join(", ")}]`);
 });
 
-test("Medical careers: at least 10 flow to institutions", async () => {
-  const med = await prisma.career.findMany({ where: { category: "Healthcare & Medicine", isActive: true }, take: 15 });
-  assert.ok(med.length >= 10);
+test("Medical careers: evidence-based institution flows (verified-program or non-diploma category)", async () => {
+  const names = ["Medicine", "Pharmacy", "Nursing", "Physiotherapy", "Optometry", "Paramedic"];
   let ok = 0;
-  for (const c of med.slice(0, 12)) {
+  const details = [];
+  for (const name of names) {
+    const c = await prisma.career.findFirst({ where: { name, isActive: true } });
+    if (!c) continue;
     const res = await getInstitutionsForCareer(c.id, { limit: 5 });
-    if (res.total > 0) ok++;
+    if (res.total > 0) {
+      ok++;
+      details.push(`${name}=category(${res.total})`);
+      continue;
+    }
+    // Degree-only medical categories are mostly diploma-level (Nursing/Paramedical/
+    // Ayurvedic Nursing (Diploma) etc.), so also count the verified-program tier
+    // (e.g. Medicine → AIIMS/KGMU/MAMC/LHMC/GMC MBBS, Nursing → B.Sc, Pharmacy → B.Pharm).
+    const set = await getCandidateSet({ careerId: c.id });
+    if (set.candidates.length > 0) {
+      ok++;
+      details.push(`${name}=${set.mappingBasis}(${set.total})`);
+    }
   }
-  // Category-based matching is broad; 5+ is expected given current institutionType tokens
-  assert.ok(ok >= 5, `at least 5 medical should have candidates, got ${ok}`);
+  // Phase 23.2 keeps flows evidence-based; Medicine/Pharmacy/Nursing/Physio provide
+  // verified-program flows, so a modest threshold holds honestly.
+  assert.ok(ok >= 3, `at least 3 medical should have candidate flows, got ${ok} [${details.join(", ")}]`);
 });
 
-test("University matching: new Intl institutions participate via category", async () => {
-  // Use a career that maps to engineering (e.g., Computer Vision Engineer → B.Tech)
+test("University matching: engineering degree careers never surface Polytechnic institutions as degree candidates", async () => {
+  // Use a career that maps to an engineering degree (e.g., Computer Vision Engineer → B.E./B.Tech family)
   const career = await prisma.career.findFirst({ where: { name: "Computer Vision Engineer" } });
   assert.ok(career);
   const { candidates } = await getCandidateSet({ careerId: career.id });
-  // Should have candidates (category-based at least)
-  assert.ok(candidates.length > 0, "should have candidates");
-  // New Intl institutions should be able to appear when country filtering is not strict
-  // (We don't filter by country in candidate set, so any engineering-type Indian institutions will appear;
-  // Intl universities appear via same career but are not filtered out)
+  // Any candidate that exists must be evidence-based (verified-program / curated);
+  // AISHE "Technical/Polytechnic" rows are never degree candidates.
+  for (const c of candidates) {
+    assert.ok(
+      !/polytechnic|\(diploma\)/i.test(c.institutionType || ""),
+      `diploma-level institution must not be an engineering degree candidate: ${c.name}`
+    );
+    assert.ok(c.mappingBasis !== "institutionType-category", `degree-only candidate must not be category-based: ${c.name}`);
+  }
+  // Total is still computable and safe (may be zero — honest).
+  const res = await getInstitutionsForCareer(career.id, { limit: 20 });
+  assert.ok(typeof res.total === "number");
 });
 
 test("Existing institutions not modified: IDs unchanged", async () => {
@@ -124,15 +162,17 @@ test("No fabricated program mappings", async () => {
   assert.equal(curated, 0, "should have 0 CURATED mappings (not fabricated)");
 });
 
-test("Country filtering: targetCountry is respected by matching (not by candidate set)", async () => {
-  // The matching engine handles country via student preference, not hard filter
-  // Verify that a candidate set for a career returns both Indian and global candidates when no country filter
+test("Country filtering: degree-only engineering category is honestly empty; matching handles country, not candidate set", async () => {
+  // The matching engine handles country via student preference, not hard filter.
+  // Phase 23.2: a Computer Vision Engineer (B.E./B.Tech degree-only) has no genuine
+  // degree category rows in AISHE (the "Technical" category is 100% polytechnics),
+  // so category discovery must honestly return zero — Indian or otherwise.
   const career = await prisma.career.findFirst({ where: { name: "Computer Vision Engineer" } });
   const res = await getInstitutionsForCareer(career.id, { limit: 20 });
-  assert.ok(res.institutions.length > 0);
-  // Should include Indian institutions (since category-based)
-  const hasIndian = res.institutions.some((r) => r.dataset === "indian");
-  assert.ok(hasIndian, "should have Indian institutions");
+  assert.ok(Array.isArray(res.institutions));
+  for (const r of res.institutions) {
+    assert.ok(!/polytechnic|\(diploma\)/i.test(r.institutionType || ""), `diploma-level institution leaked: ${r.name}`);
+  }
 });
 
 test("Budget handling: no fabricated tuition", async () => {

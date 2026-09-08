@@ -112,18 +112,40 @@ export function deriveInstitutionTypeTokens(degreeName: string): string[] {
 }
 
 /**
- * Human label for the AISHE "Technical/Polytechnic" institution type.
+ * True when the AISHE `institutionType` string marks the institution as a
+ * diploma-level institution (polytechnics plus the "(Diploma)" institutes
+ * such as Nursing / Teacher Training / Ayurvedic Nursing). These institutions
+ * are legitimate for DIPLOMA pathways but must NOT be presented as degree
+ * institutions for B.E./B.Tech (or other degree-only) pathways without a
+ * verified degree program.
+ *
+ * Phase 23.2 (Part A — polytechnic hardening): the AISHE dataset stores ALL
+ * polytechnics under the shared type "Technical/Polytechnic" and the degree
+ * token "Technical" therefore matches only diploma-level rows. Degree-only
+ * category queries exclude diploma-level institutions so a B.E./B.Tech query
+ * never surfaces a Polytechnic row; degree candidates must come from the
+ * verified-program / curated tiers instead.
+ */
+export function isDiplomaLevelInstitutionType(institutionType?: string | null): boolean {
+  const t = (institutionType || "").toLowerCase();
+  return t.includes("polytechnic") || t.includes("(diploma)");
+}
+
+/**
+ * Human label for the AISHE diploma-level institution types.
  * The dataset stores degree-serving technical colleges and diploma-serving
- * polytechnics under the shared type string "Technical/Polytechnic". For UI
- * clarity we surface the Diploma / Polytechnic angle as a separate label so it
- * is never mistaken for an engineering degree category.
+ * polytechnics under the shared type string "Technical/Polytechnic"; "(Diploma)"
+ * institutes (Nursing / Teacher Training / Ayurvedic Nursing) are similarly
+ * diploma-level. For UI clarity we surface the Diploma angle as a separate label
+ * so these institutes are never mistaken for a degree institution.
  */
 export function institutionQualificationLabel(
   institutionType?: string | null
 ): string | null {
   const t = (institutionType || "").toLowerCase();
-  if (!t.includes("polytechnic")) return null;
-  return "Diploma / Polytechnic";
+  if (!t.includes("polytechnic") && !t.includes("(diploma)")) return null;
+  if (t.includes("polytechnic")) return "Diploma / Polytechnic";
+  return "Diploma";
 }
 
 function emptyResponse(page: number, limit: number, reason: string): InstitutionResponse {
@@ -140,7 +162,7 @@ function emptyResponse(page: number, limit: number, reason: string): Institution
 }
 
 const CATEGORY_DISCLAIMER =
-  "These institutions are related by category (institution type derived from the education pathway). A Diploma / Polytechnic pathway maps to polytechnic institutions; a B.E./B.Tech degree pathway maps to technical/degree-granting institutions. Individual course/program offerings are NOT individually verified. Source: AISHE institution data.";
+  "These institutions are related by category (institution type derived from the education pathway). A Diploma / Polytechnic pathway maps to polytechnic and other diploma-level institutions; a B.E./B.Tech (or other degree-only) pathway maps ONLY to institutions verified or curated to grant that degree — diploma-level institutions are excluded because AISHE category data cannot certify degree offerings. Individual course/program offerings are NOT individually verified. Source: AISHE institution data.";
 
 async function resolveCuratedMappings(
   degreeIds: string[],
@@ -228,11 +250,30 @@ async function categoryDiscovery(
     );
   }
 
+  // Phase 23.2 (Part A — polytechnic hardening). When EVERY degree in the query
+  // is a degree (none is a Diploma), diploma-level institutions (polytechnics,
+  // "(Diploma)" institutes) must not be returned as category matches: the AISHE
+  // category cannot certify degree offerings at a diploma institution. Degree
+  // candidates then come from the verified-program / curated tiers only. Queries
+  // that include a Diploma degree (or Diploma-only careers) keep the diploma
+  // institutions, which is where they legitimately belong.
+  const degreeOnlyContext = !degrees.some((d) => /diploma/i.test(d.name || ""));
+
   const where: any = {
     AND: [
       { OR: [...tokens].map((t) => ({ institutionType: { contains: t, mode: "insensitive" } })) },
     ],
   };
+  if (degreeOnlyContext) {
+    where.AND.push({
+      NOT: {
+        OR: [
+          { institutionType: { contains: "Polytechnic", mode: "insensitive" } },
+          { institutionType: { contains: "(Diploma)", mode: "insensitive" } },
+        ],
+      },
+    });
+  }
   if (opts.state && opts.state !== "All") where.AND.push({ state: opts.state });
   if (opts.search) {
     where.AND.push({
@@ -265,15 +306,18 @@ async function categoryDiscovery(
     diplomaPolytechnic: institutionQualificationLabel(r.institutionType) !== null,
   }));
 
+  const CATEGORY_EMPTY_DISCLAIMER =
+    "No institution matched this education pathway in the AISHE institution dataset. For degree-only pathways the diploma-level institutions (polytechnics, \"(Diploma)\" institutes) are excluded because AISHE category data cannot certify degree offerings; try the verified-program or curated tiers for evidence-based degree institutions.";
+
   return {
     institutions,
     total,
     page,
     totalPages: Math.max(1, Math.ceil(total / limit)),
     verified: false,
-    mappingBasis: "institutionType-category",
+    mappingBasis: total > 0 ? "institutionType-category" : "none",
     source: "aishe-category",
-    disclaimer: CATEGORY_DISCLAIMER,
+    disclaimer: total > 0 ? CATEGORY_DISCLAIMER : CATEGORY_EMPTY_DISCLAIMER,
   };
 }
 

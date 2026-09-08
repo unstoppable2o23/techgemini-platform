@@ -26,8 +26,27 @@ import {
   BookOpen,
   Award,
   Star,
+  HeartPulse,
+  Newspaper,
+  ShieldCheck,
 } from "lucide-react";
 import { institutionQualificationLabel } from "@/lib/education-institutions/service";
+
+interface MedicalEducationInfo {
+  title: string;
+  summary: string;
+  curriculumFacts: string[];
+  schoolSubjects: string[];
+  entrance: string;
+  degree: string;
+  internshipTraining: string;
+  registration: string;
+  specialization: string;
+  careerOptions: string[];
+  alternatives: string[];
+  indiaAbroad: string;
+  sources: { name: string; url: string }[];
+}
 
 interface EducationPathway {
   id: string;
@@ -155,7 +174,13 @@ function SectionHeader({ icon: Icon, children }: { icon: any; children: React.Re
   );
 }
 
-export default function CareerDetailClient({ career }: { career: any }) {
+export default function CareerDetailClient({
+  career,
+  medicalEducation,
+}: {
+  career: any;
+  medicalEducation?: MedicalEducationInfo | null;
+}) {
   const [showAllPathways, setShowAllPathways] = useState(false);
 
   const faqs: { question?: string; answer?: string }[] = career.faqs || [];
@@ -484,6 +509,94 @@ export default function CareerDetailClient({ career }: { career: any }) {
           </div>
         )}
       </div>
+
+      {medicalEducation && (
+        <div>
+          <SectionHeader icon={HeartPulse}>Medical Education Path</SectionHeader>
+          <div className="rounded-2xl border bg-card p-5 space-y-4">
+            <p className="text-sm text-muted-foreground">{medicalEducation.summary}</p>
+
+            <div className="space-y-3">
+              {[
+                { label: "School subjects to confirm", value: medicalEducation.schoolSubjects.join(", ") },
+                { label: "Entrance (India)", value: medicalEducation.entrance },
+                { label: "Primary degree", value: medicalEducation.degree },
+                { label: "Internship / training", value: medicalEducation.internshipTraining },
+                { label: "Registration / regulation", value: medicalEducation.registration },
+                { label: "Post-degree progression", value: medicalEducation.specialization },
+                { label: "India vs abroad", value: medicalEducation.indiaAbroad },
+              ].map((row) => (
+                <div key={row.label} className="rounded-lg border bg-background p-3">
+                  <p className="text-xs font-medium text-accent mb-1">{row.label}</p>
+                  <p className="text-sm text-muted-foreground">{row.value}</p>
+                </div>
+              ))}
+            </div>
+
+            {medicalEducation.curriculumFacts.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-2">What the course looks like</h3>
+                <ul className="space-y-1.5">
+                  {medicalEducation.curriculumFacts.map((f, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm">
+                      <CheckCircle2 className="h-4 w-4 mt-0.5 text-accent shrink-0" />
+                      <span className="text-muted-foreground">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {medicalEducation.careerOptions.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
+                  <Briefcase className="h-4 w-4" /> Typical career options
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {medicalEducation.careerOptions.map((o, i) => (
+                    <span key={i} className="rounded-full border bg-card px-3 py-1 text-xs">{o}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {medicalEducation.alternatives.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
+                  <Target className="h-4 w-4" /> Alternative healthcare careers
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {medicalEducation.alternatives.map((a, i) => (
+                    <span key={i} className="rounded-full bg-accent/10 px-3 py-1 text-xs text-accent">{a}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {medicalEducation.sources.length > 0 && (
+              <div>
+                <h3 className="text-sm font-medium mb-2 flex items-center gap-2">
+                  <Newspaper className="h-4 w-4" /> Sources
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {medicalEducation.sources.map((s, i) => (
+                    <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">
+                      {s.name} ↗
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <p className="text-xs text-muted-foreground flex items-start gap-1.5">
+              <ShieldCheck className="h-3.5 w-3.5 mt-0.5 shrink-0" />
+              A career&apos;s popularity on this platform is not a reason to choose it — align your choice with
+              your goals and a counselor&apos;s review. Guidance here is conservative: always confirm requirements
+              with the relevant council, institution and the admission-year notification.
+            </p>
+          </div>
+        </div>
+      )}
 
       <div>
         <SectionHeader icon={Sparkles}>FAQs</SectionHeader>

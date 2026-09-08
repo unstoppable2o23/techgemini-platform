@@ -13,7 +13,7 @@ const LEGACY_MALFORMED = [/ANY\s+degree/i, /12TH/i, /PASS\s/i, /^\s*\)/];
 const BASELINE = {
   University: 20,
   IndianInstitution: 73969,
-  Program: 75,
+  Program: 80,
   activeCareer: 289,
 };
 
@@ -144,8 +144,8 @@ test("9: Career / University / IndianInstitution / Program counts unchanged vs P
   assert.equal(prog, BASELINE.Program, "Program table count changed");
 });
 
-test("10: Program table remains at 75 rows", async () => {
-  assert.equal(await prisma.program.count(), 75);
+test("10: Program table remains at 80 rows", async () => {
+  assert.equal(await prisma.program.count(), 80);
 });
 
 test("11: University table remains at 20 rows", async () => {

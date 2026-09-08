@@ -484,6 +484,31 @@ function EducationTab({ data }: any) {
             <Badge key={i} variant="outline">{s?.name}</Badge>
           ))}
         </div>
+        {ep.medicalEducationPath && (
+          <div className="mt-3 rounded-lg border border-accent/20 bg-accent/5 p-3 space-y-2">
+            <p className="font-medium text-sm">Medical Education Path — {ep.medicalEducationPath.title}</p>
+            <p className="text-xs text-muted-foreground">{ep.medicalEducationPath.summary}</p>
+            <div className="text-xs space-y-1 text-muted-foreground">
+              <p><span className="font-medium text-foreground">Entrance (India):</span> {ep.medicalEducationPath.entrance}</p>
+              <p><span className="font-medium text-foreground">Primary degree:</span> {ep.medicalEducationPath.degree}</p>
+              <p><span className="font-medium text-foreground">Internship / training:</span> {ep.medicalEducationPath.internshipTraining}</p>
+              <p><span className="font-medium text-foreground">Registration:</span> {ep.medicalEducationPath.registration}</p>
+            </div>
+            {ep.medicalEducationPath.alternatives?.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {ep.medicalEducationPath.alternatives.map((a: string, i: number) => (
+                  <Badge key={i} variant="outline">{a}</Badge>
+                ))}
+              </div>
+            )}
+            {ep.medicalEducationPath.sources?.length > 0 && (
+              <p className="text-xs text-muted-foreground">
+                Sources: {ep.medicalEducationPath.sources.map((s: any) => s.name).join(", ")}. Wording is
+                conservative — confirm requirements with the relevant council and institution.
+              </p>
+            )}
+          </div>
+        )}
       </CardContent>
     </Card>
   );

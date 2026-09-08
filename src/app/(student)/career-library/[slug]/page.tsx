@@ -2,6 +2,10 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import {
+  getMedicalDisciplineForCareerName,
+  getMedicalDisciplineForCareerSlug,
+} from "@/lib/medical-education/registry";
 import CareerDetailClient from "./career-detail-client";
 
 export default async function CareerDetailPage({
@@ -27,5 +31,30 @@ export default async function CareerDetailPage({
   const career = await prisma.career.findUnique({ where: { slug } });
   if (!career) redirect("/career-library");
 
-  return <CareerDetailClient career={career} />;
+  // Phase 23.2 (Part B) — Medical Education Knowledge Layer. The registry is a
+  // data-only module (no DB); its info is passed to the client so only medical
+  // career pages pay the small payload cost.
+  const discipline =
+    getMedicalDisciplineForCareerName(career.name) ??
+    getMedicalDisciplineForCareerSlug(career.slug) ??
+    null;
+  const medicalEducation = discipline
+    ? {
+        title: discipline.title,
+        summary: discipline.summary,
+        curriculumFacts: discipline.curriculumFacts,
+        schoolSubjects: discipline.schoolSubjects,
+        entrance: discipline.entrance,
+        degree: discipline.degree,
+        internshipTraining: discipline.internshipTraining,
+        registration: discipline.registration,
+        specialization: discipline.specialization,
+        careerOptions: discipline.careerOptions,
+        alternatives: discipline.alternatives,
+        indiaAbroad: discipline.indiaAbroad,
+        sources: discipline.sources,
+      }
+    : null;
+
+  return <CareerDetailClient career={career} medicalEducation={medicalEducation} />;
 }

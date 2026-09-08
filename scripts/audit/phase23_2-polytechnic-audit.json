@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-09-08T01:51:58.898Z",
+  "phase": "23.2",
+  "part": "A",
+  "issuesFound": [
+    "Degree-only category queries could surface 'Technical/Polytechnic' institutions as degree-granting (e.g. any B.E./B.Tech or M.Tech degree matched 5,337 diploma-level polytechnic rows via the shared 'Technical' token).",
+    "The candidate layer could attach an 'institutionType-category' matching basis to a Polytechnic or '(Diploma)' institution for a degree-only context.",
+    "Polytechnics and '(Diploma)' institutions are diploma-serving and cannot be certified as granting B.E./B.Tech via AISHE category data."
+  ],
+  "corrections": [
+    "Added isDiplomaLevelInstitutionType() (institutionType contains 'polytechnic' or '(diploma)').",
+    "categoryDiscovery now excludes diploma-level institutions for degree-only contexts (no degree name contains /diploma/i).",
+    "Empty category results now report mappingBasis 'none' + CATEGORY_EMPTY_DISCLAIMER (was 'institutionType-category').",
+    "getSingleCandidate() now never assigns 'institutionType-category' to diploma-level institutions in degree-only contexts.",
+    "institutionQualificationLabel() surfaces 'Diploma / Polytechnic' vs 'Diploma' labels for UI honesty."
+  ],
+  "counts": {
+    "indianInstitution": 73969,
+    "university": 20,
+    "verifiedProgramsWithoutInstitute": "0",
+    "polytechnicInstitutions": 5337,
+    "diplomaTypeInstitutions": 8876,
+    "unverifiedPrograms": 0,
+    "programTotal": 80
+  },
+  "verification": {
+    "degreeOnlyEngineeringCategoryIsNeverPolytechnic": true,
+    "mTechEnvironmentalEngineeringHonestEmpty": true,
+    "noVerifiedProgramAtDiplomaLevelInstitution": true,
+    "countsStable": true,
+    "deterministic": true
+  }
+}

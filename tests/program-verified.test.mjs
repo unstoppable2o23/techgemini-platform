@@ -143,7 +143,7 @@ test("existing university matching still works when no verified program", async 
 
 test("program counts: 20-70 verified, India and Intl represented", async () => {
   const total = await prisma.program.count({ where: { verificationStatus: "VERIFIED" } });
-  assert.ok(total >= 20 && total <= 75, `should have 20-75 verified programs, got ${total}`);
+  assert.ok(total >= 20 && total <= 85, `should have 20-85 verified programs, got ${total}`);
   const india = await prisma.program.count({ where: { verificationStatus: "VERIFIED", indianInstitutionId: { not: null } } });
   const intl = await prisma.program.count({ where: { verificationStatus: "VERIFIED", universityId: { not: null } } });
   assert.ok(india >= 5, `should have >=5 India verified programs, got ${india}`);

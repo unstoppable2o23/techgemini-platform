@@ -4,6 +4,7 @@ import {
   getInstitutionsForDegrees,
   getInstitutionsForSpecialization,
   deriveInstitutionTypeTokens,
+  isDiplomaLevelInstitutionType,
 } from "../education-institutions/service.ts";
 import type { InstitutionCandidate, MappingBasis } from "./types.ts";
 
@@ -334,7 +335,17 @@ export async function getSingleCandidate(
     } else if (dataset === "indian" && degreeName) {
       const tokens = deriveInstitutionTypeTokens(degreeName);
       const instType = (rec.institutionType || "").toLowerCase();
-      if (tokens.length && tokens.some((t) => instType.includes(t.toLowerCase()))) {
+      // Phase 23.2 (Part A — polytechnic hardening): a diploma-level institution
+      // is never presented as a degree-match for a degree-only context purely by
+      // category. A B.E./B.Tech (degree-only) query at a Polytechnic row leaves
+      // basis "none" unless a verified degree program exists (handled above).
+      const degreeOnlyContext = !/diploma/i.test(degreeName || "");
+      const diplomaLevel = isDiplomaLevelInstitutionType(rec.institutionType);
+      if (
+        tokens.length &&
+        tokens.some((t) => instType.includes(t.toLowerCase())) &&
+        !(degreeOnlyContext && diplomaLevel)
+      ) {
         basis = "institutionType-category";
       }
     }

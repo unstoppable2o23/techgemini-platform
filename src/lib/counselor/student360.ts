@@ -2,6 +2,10 @@ import { prisma } from "../prisma.ts";
 import { getCareerMatches } from "../career-matching/engine.ts";
 import { getUniversityMatchesForStudent } from "../university-matching/engine.ts";
 import { detectEducationStage } from "../roadmap/education-stage.ts";
+import {
+  getMedicalDisciplineForCareerName,
+  getMedicalDisciplineForCareerSlug,
+} from "../medical-education/registry.ts";
 
 const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
 
@@ -125,6 +129,30 @@ export async function getStudent360(
         "Academic pathway — continue Class 11–12 and then a degree",
         "Technical pathway — Diploma / Polytechnic after Class 10 (a diploma is not a B.E./B.Tech degree)",
       ];
+    }
+
+    // Phase 23.2 (Part B) — Medical Education Knowledge. When the student's top
+    // career is a healthcare/medical career, the counselor view gets a compact,
+    // evidence-attributed medical-education note (entrance, degree, training,
+    // registration, India-vs-abroad). Conservative, no fabricated details.
+    const topCareer = careerMatches[0]?.career as { name?: string; slug?: string } | null | undefined;
+    const medicalDiscipline = topCareer
+      ? getMedicalDisciplineForCareerName(topCareer.name) ??
+        getMedicalDisciplineForCareerSlug(topCareer.slug) ??
+        null
+      : null;
+    if (medicalDiscipline) {
+      educationPathways.medicalEducationPath = {
+        title: medicalDiscipline.title,
+        summary: medicalDiscipline.summary,
+        entrance: medicalDiscipline.entrance,
+        degree: medicalDiscipline.degree,
+        internshipTraining: medicalDiscipline.internshipTraining,
+        registration: medicalDiscipline.registration,
+        indiaAbroad: medicalDiscipline.indiaAbroad,
+        alternatives: medicalDiscipline.alternatives,
+        sources: medicalDiscipline.sources,
+      };
     }
   }
 
