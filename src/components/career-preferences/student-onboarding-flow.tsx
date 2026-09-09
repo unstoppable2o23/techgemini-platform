@@ -345,7 +345,14 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
     const names = values[namesKey];
     const has = names.includes(name);
     set(namesKey, has ? names.filter((x) => x !== name) : [...names, name]);
-    if (id) set(idsKey, has ? ids.filter((x) => x !== id) : [...ids, id]);
+    if (id) {
+      set(idsKey, has ? ids.filter((x) => x !== id) : [...ids, id]);
+    } else if (has) {
+      // Removal by chip passes no id; drop the matching canonical id too so
+      // a stale id cannot resurrect the subject on the next save (§8).
+      const matched = subjects.find((s) => s.name === name);
+      if (matched) set(idsKey, ids.filter((x) => x !== matched.id));
+    }
     setError("");
   }
   function addOtherSubject(kind: "studied" | "enjoyed") {

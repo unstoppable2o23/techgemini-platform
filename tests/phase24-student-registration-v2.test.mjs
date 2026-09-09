@@ -386,6 +386,27 @@ test("P2: subject aliases are accepted and stored canonically", async () => {
   assert.ok(p.subjectsEnjoyed.includes("Computer Science"));
 });
 
+test("P2b: brief §9 enjoyed subjects stay separate from studied in career signals", async () => {
+  await saveCareerPreferences(user.id, {
+    nationality: "Indian",
+    state: "Kerala",
+    studyLevel: "Class 10",
+    highestEducation: "Still in school",
+    careerId: career.id,
+    subjectsStudied: ["Physics", "Mathematics"],
+    subjectsEnjoyed: ["Computer Science"],
+  });
+  await generateStudentCareerProfile(user.id);
+  const sp = await prisma.studentCareerProfile.findUnique({ where: { studentId: user.id } });
+  const values = (
+    await prisma.studentCareerSignal.findMany({ where: { profileId: sp.id }, select: { value: true } })
+  ).map((s) => s.value);
+  assert.ok(values.some((v) => v === "subject_studied:Physics"), "studied emits subject_studied signal");
+  assert.ok(values.some((v) => v === "subject_enjoyed:Computer Science"), "enjoyed emits subject_enjoyed signal");
+  assert.ok(!values.some((v) => v.startsWith("subject_enjoyed:Physics")), "studied-only subject must not appear as enjoyed");
+  assert.ok(!values.some((v) => v.startsWith("subject_studied:Computer Science")), "enjoyed-only subject must not appear as studied");
+});
+
 test("P3: unrecognized subject names are still rejected from the canonical list", async () => {
   await assert.rejects(
     () => saveCareerPreferences(user.id, {
