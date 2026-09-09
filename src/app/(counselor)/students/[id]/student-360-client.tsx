@@ -603,6 +603,8 @@ function AssessmentsTab({ data }: any) {
                 <span className="font-medium text-sm">{labels[k.kind] || k.kind}</span>
                 {k.completed ? (
                   <Badge variant="secondary" className="text-green-700 bg-green-50">Completed</Badge>
+                ) : k.inProgress ? (
+                  <Badge variant="outline" className="text-blue-600">In progress</Badge>
                 ) : k.assigned ? (
                   <Badge variant="outline" className="text-amber-600">Assigned</Badge>
                 ) : (
@@ -610,7 +612,13 @@ function AssessmentsTab({ data }: any) {
                 )}
               </div>
               <p className="text-xs text-muted-foreground mt-1">
-                {k.completed ? `Completed ${fmtDate(k.completedAt)}` : "Pending"}
+                {k.completed
+                  ? `Completed ${fmtDate(k.completedAt)}`
+                  : k.inProgress
+                  ? "In progress"
+                  : k.assigned
+                  ? "Not started"
+                  : "Pending"}
                 {k.version ? ` · v${k.version}` : ""}
               </p>
             </div>

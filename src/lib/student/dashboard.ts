@@ -9,6 +9,7 @@ const FALLBACK_BASICS: StudentBasics = {
   hasAssessments: false,
   assessmentProgress: [],
   assessmentCompletedCount: 0,
+  assessmentTotal: 0,
   savedCount: 0,
   savedItems: [],
   nextSteps: ["Complete your profile to see personalized recommendations."],

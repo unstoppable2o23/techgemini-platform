@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
+import { summarizeAssignmentsByStudent } from "@/lib/student/assessments";
 import bcrypt from "bcryptjs";
 
 export async function GET(request: NextRequest) {
@@ -51,7 +52,6 @@ export async function GET(request: NextRequest) {
     where,
     include: {
       careerProfile: { select: { completeness: true } },
-      _count: { select: { testAssignments: { where: { status: "COMPLETED" } } } },
       studentProfile: {
         select: {
           id: true,
@@ -77,25 +77,36 @@ export async function GET(request: NextRequest) {
     : [];
   const openActionMap = new Map(openActions.map((o) => [o.studentId, o._count._all]));
 
+  const assignmentRows = await prisma.testAssignment.findMany({
+    where: { studentId: { in: students.map((s) => s.id) } },
+    select: { studentId: true, kind: true, status: true },
+  });
+  const assessmentByStudent = summarizeAssignmentsByStudent(assignmentRows);
+
   let rows = students.map((s) => {
-    const completed = s._count.testAssignments;
+    const summary = assessmentByStudent.get(s.id);
     return {
       id: s.id,
       firstName: s.firstName,
       lastName: s.lastName,
       email: s.email,
-      assessmentCompleted: completed,
-      assessmentTotal: 5,
+      assessmentCompleted: summary?.completedCount ?? 0,
+      assessmentTotal: summary?.assignedTotal ?? 0,
       profileCompleteness: s.careerProfile?.completeness ?? null,
       preferredCareer: s.studentProfile?.preferredCareer ?? null,
       openActions: openActionMap.get(s.studentProfile?.id ?? "") ?? 0,
     };
   });
 
-  // JS filters that are awkward to express in a single where
-  if (assessmentStatus === "complete") rows = rows.filter((r) => r.assessmentCompleted >= 5);
-  if (assessmentStatus === "incomplete") rows = rows.filter((r) => r.assessmentCompleted < 5);
-  if (assessmentStatus === "partial") rows = rows.filter((r) => r.assessmentCompleted > 0 && r.assessmentCompleted < 5);
+  // JS filters that are awkward to express in a single where. Semantics are
+  // ASSIGNED-driven: students with no assigned assessments are complete/not
+  // incomplete (assessments are optional), never blocked by a fixed "5".
+  if (assessmentStatus === "complete")
+    rows = rows.filter((r) => (r.assessmentTotal ?? 0) === 0 || r.assessmentCompleted >= r.assessmentTotal);
+  if (assessmentStatus === "incomplete")
+    rows = rows.filter((r) => (r.assessmentTotal ?? 0) > 0 && r.assessmentCompleted < r.assessmentTotal);
+  if (assessmentStatus === "partial")
+    rows = rows.filter((r) => r.assessmentCompleted > 0 && r.assessmentCompleted < r.assessmentTotal);
   if (profileComplete === "true") rows = rows.filter((r) => (r.profileCompleteness ?? 0) > 0);
   if (profileComplete === "false") rows = rows.filter((r) => (r.profileCompleteness ?? 0) === 0);
   if (followUp === "true") rows = rows.filter((r) => r.openActions > 0);

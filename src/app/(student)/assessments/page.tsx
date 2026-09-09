@@ -75,6 +75,7 @@ export default async function AssessmentsPage() {
         {ASSESSMENTS.map((a) => {
           const assignment = byKind.get(a.kind);
           const completed = assignment?.status === "COMPLETED" || Boolean(assignment?.completedAt);
+          const inProgress = !completed && assignment?.status === "IN_PROGRESS";
           return (
             <Card key={a.kind} className="border-accent/10 shadow-sm">
               <CardContent className="flex items-start gap-3 p-4">
@@ -86,8 +87,10 @@ export default async function AssessmentsPage() {
                     <p className="text-sm font-semibold text-foreground">{a.label}</p>
                     {completed ? (
                       <Badge variant="success">Completed</Badge>
+                    ) : inProgress ? (
+                      <Badge variant="warning">In progress</Badge>
                     ) : assignment ? (
-                      <Badge variant="warning">Pending</Badge>
+                      <Badge variant="secondary">Not started</Badge>
                     ) : null}
                   </div>
                   <p className="mt-0.5 text-xs text-muted-foreground">
@@ -103,7 +106,7 @@ export default async function AssessmentsPage() {
                         variant: completed ? "outline" : "default",
                       })}
                     >
-                      {completed ? "View report" : "Start"}
+                      {completed ? "View report" : inProgress ? "Continue" : "Start"}
                     </Link>
                   ) : (
                     <span className="inline-flex items-center gap-1 rounded-md bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground">

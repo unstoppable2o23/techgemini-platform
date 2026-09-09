@@ -12,6 +12,7 @@
  */
 import { prisma } from "../prisma.ts";
 import { computeProfileCompleteness } from "../student/basics.ts";
+import { summarizeAssignmentsByStudent } from "../student/assessments.ts";
 import {
   ATTENTION_STATES,
   ATTENTION_LABELS,
@@ -20,8 +21,6 @@ import {
   primaryAttention,
 } from "./attention.ts";
 import type { AttentionOverview, AttentionState, FollowUpBucket } from "./attention.ts";
-
-const ASSESSMENT_TOTAL = 5;
 
 export interface StudentAttentionRow {
   userId: string;
@@ -92,9 +91,6 @@ export async function getCounselorCommandCenter(
       lastName: true,
       email: true,
       lastSeen: true,
-      _count: {
-        select: { testAssignments: { where: { status: "COMPLETED" } } },
-      },
       studentProfile: {
         select: {
           id: true,
@@ -133,7 +129,7 @@ export async function getCounselorCommandCenter(
     .map((u) => u.studentProfile?.id)
     .filter((x): x is string => Boolean(x));
 
-  const [shortlists, openActions, allActions, decisions] = await Promise.all([
+  const [shortlists, openActions, allActions, decisions, assignments] = await Promise.all([
     prisma.studentShortlist.groupBy({
       by: ["studentId"],
       where: {
@@ -159,7 +155,13 @@ export async function getCounselorCommandCenter(
         studentInterest: true,
       },
     }),
+    prisma.testAssignment.findMany({
+      where: { studentId: { in: userIds } },
+      select: { studentId: true, kind: true, status: true },
+    }),
   ]);
+
+  const assessmentByStudent = summarizeAssignmentsByStudent(assignments);
 
   const shortlistCount = new Map(shortlists.map((s) => [s.studentId, s._count._all]));
   const openByProfile = new Map<string, Array<{ dueDate: Date | null }>>();
@@ -187,7 +189,16 @@ export async function getCounselorCommandCenter(
   const rows: StudentAttentionRow[] = users.map((u) => {
     const profile = u.studentProfile ?? null;
     const profileCompleteness = Math.round(computeProfileCompleteness(profile));
-    const completedTests = u._count?.testAssignments ?? 0;
+    const summary = assessmentByStudent.get(u.id);
+    const assessed = summary ?? {
+      hasAssignments: false,
+      assignedKinds: [],
+      completedKinds: [],
+      inProgressKinds: [],
+      notStartedKinds: [],
+      assignedTotal: 0,
+      completedCount: 0,
+    };
     const roadmap = u.roadmap ?? null;
     const roadmapProgress = roadmap?.progress ?? 0;
     const staleMs =
@@ -201,8 +212,8 @@ export async function getCounselorCommandCenter(
     );
     const overview: AttentionOverview = {
       profileCompleteness,
-      assessmentCompletedCount: completedTests,
-      assessmentTotal: ASSESSMENT_TOTAL,
+      assessmentCompletedCount: assessed.completedCount,
+      assessmentTotal: assessed.assignedTotal,
       hasCareerDirection,
       roadmapExists: Boolean(roadmap),
       roadmapProgress,
@@ -226,8 +237,8 @@ export async function getCounselorCommandCenter(
       targetCountry: profile?.targetCountry ?? null,
       preferredCareer: profile?.preferredCareer ?? null,
       profileCompleteness,
-      assessmentCompleted: completedTests,
-      assessmentTotal: ASSESSMENT_TOTAL,
+      assessmentCompleted: assessed.completedCount,
+      assessmentTotal: assessed.assignedTotal,
       states,
       primary: primaryAttention(overview),
       roadmapExists: Boolean(roadmap),

@@ -545,7 +545,7 @@ export function StudentManagementClient({
 
                       <TableCell>
                         <span className="text-sm text-muted-foreground whitespace-nowrap">
-                          {student.assessmentCompleted ?? 0}/{student.assessmentTotal ?? 5} done
+                          {student.assessmentCompleted ?? 0}/{student.assessmentTotal ?? 0} done
                         </span>
                       </TableCell>
 

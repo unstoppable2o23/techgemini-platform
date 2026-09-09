@@ -183,7 +183,7 @@ before(async () => {
       targetCountry: "UK",
     },
   });
-  await seedAssignments(students.b.id, 2);
+  await seedAssignments(students.b.id, 2, ["COMPLETED", "ASSIGNED"]);
   await prisma.counselorAction.create({
     data: {
       studentId: profileB.id,
@@ -274,7 +274,7 @@ before(async () => {
   });
 });
 
-async function seedAssignments(studentUserId, count) {
+async function seedAssignments(studentUserId, count, statuses) {
   const kinds = ["stream", "ideal", "personality", "intelligences", "learning"];
   for (let i = 0; i < count; i++) {
     await prisma.testAssignment.create({
@@ -284,8 +284,8 @@ async function seedAssignments(studentUserId, count) {
         assignedById: counselor.id,
         kind: kinds[i % kinds.length],
         token: `ph27-${suffix}-${studentUserId}-${i}`,
-        status: "COMPLETED",
-        completedAt: new Date(),
+        status: statuses?.[i] ?? "COMPLETED",
+        completedAt: statuses?.[i] === "COMPLETED" ? new Date() : null,
       },
     });
   }
@@ -395,7 +395,7 @@ test("6 · dashboard counts from seeded roster (counselor scope)", async () => {
   const cc = await getCounselorCommandCenter({ tenantId: tenant.id, counselorUserId: counselor.id });
   assert.equal(cc.counts.totalStudents, 4);
   assert.equal(cc.counts.needsFollowUp, 1); // beta
-  assert.equal(cc.counts.assessmentsIncomplete, 2); // beta (2), delta (0)
+  assert.equal(cc.counts.assessmentsIncomplete, 1); // beta (1 of 2 done)
   assert.equal(cc.counts.profilesIncomplete, 1); // beta
   assert.equal(cc.counts.withCareerRecommendations, 2); // alpha (DEVELOPING), gamma (COMPLETE)
   assert.equal(cc.counts.noSelectedPathway, 2); // beta, delta
@@ -532,8 +532,11 @@ test("15 · incomplete assessment/profile counts", async () => {
   const cc = await getCounselorCommandCenter({ tenantId: tenant.id, counselorUserId: counselor.id });
   const byId = new Map(cc.students.map((s) => [s.userId, s]));
   assert.equal(byId.get(students.a.id).assessmentCompleted, 5);
-  assert.equal(byId.get(students.b.id).assessmentCompleted, 2);
+  assert.equal(byId.get(students.a.id).assessmentTotal, 5);
+  assert.equal(byId.get(students.b.id).assessmentCompleted, 1);
+  assert.equal(byId.get(students.b.id).assessmentTotal, 2);
   assert.equal(byId.get(students.d.id).assessmentCompleted, 0);
+  assert.equal(byId.get(students.d.id).assessmentTotal, 0);
   assert.ok(byId.get(students.b.id).profileCompleteness < 60, "beta profile is partial");
   assert.ok(byId.get(students.c.id).profileCompleteness >= 60);
 });

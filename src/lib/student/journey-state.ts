@@ -14,14 +14,9 @@
 import { prisma } from "../prisma.ts";
 import { getCareerMatches } from "../career-matching/engine.ts";
 import { computeProfileCompleteness } from "./basics.ts";
-
-export const ASSESSMENT_KINDS = [
-  "stream",
-  "ideal",
-  "personality",
-  "intelligences",
-  "learning",
-] as const;
+import { summarizeAssignments, ASSESSMENT_KINDS } from "./assessments.ts";
+// Back-compat export (decision-pack/loader and others import the suite here).
+export { ASSESSMENT_KINDS } from "./assessments.ts";
 
 export type JourneyStatus = "done" | "current" | "locked" | "upcoming";
 
@@ -177,7 +172,7 @@ export function computeJourneyState(inputs: JourneyInputs): JourneyState {
 
   const profileProgress = clamp(inputs.profileCompleteness, 0, 100);
   const assessmentProgress =
-    total > 0 ? Math.round((completedAssessments / total) * 100) : 0;
+    total > 0 ? Math.round((completedAssessments / total) * 100) : 100;
 
   const stepped: Array<{
     id: JourneyStepId;
@@ -205,7 +200,10 @@ export function computeJourneyState(inputs: JourneyInputs): JourneyState {
       description: "Aptitude, personality and interest tests that personalize matches.",
       href: "/assessments",
       base: baseStatus(completedAssessments >= total),
-      value: `${completedAssessments}/${total} completed`,
+      value:
+        total === 0
+          ? "No assessments assigned"
+          : `${completedAssessments}/${total} completed`,
       progress: assessmentProgress,
       optional: true,
     },
@@ -616,9 +614,8 @@ export async function getJourneyState(
         where: {
           studentId: userId,
           kind: { in: ASSESSMENT_KINDS as unknown as string[] },
-          completedAt: { not: null },
         },
-        select: { kind: true },
+        select: { kind: true, status: true },
       }),
       prisma.studentShortlist.findMany({
         where: { studentId: userId },
@@ -645,7 +642,7 @@ export async function getJourneyState(
       }),
     ]);
 
-  const completedKinds = new Set(assignments.map((a) => a.kind));
+  const summary = summarizeAssignments(assignments);
 
   const shortlistedCareerIds = saved
     .filter((s) => s.itemType === "CAREER")
@@ -691,8 +688,8 @@ export async function getJourneyState(
 
   return computeJourneyState({
     profileCompleteness: computeProfileCompleteness(profile),
-    assessmentCompletedCount: completedKinds.size,
-    assessmentTotal: ASSESSMENT_KINDS.length,
+    assessmentCompletedCount: summary.completedCount,
+    assessmentTotal: summary.assignedTotal,
     careerMatches: careerMatches.map((m: any) => ({
       careerId: m.careerId ?? m.career?.id,
       careerName: m.career?.name ?? null,

@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
 
     const assignment = await prisma.testAssignment.findUnique({
       where: { token },
-      select: { id: true },
+      select: { id: true, status: true },
     });
     if (!assignment) {
       return NextResponse.json({ error: "Assignment not found" }, { status: 404 });
@@ -18,7 +18,10 @@ export async function POST(request: NextRequest) {
 
     await prisma.testAssignment.update({
       where: { id: assignment.id },
-      data: { answers },
+      data: {
+        answers,
+        ...(assignment.status === "COMPLETED" ? {} : { status: "IN_PROGRESS" }),
+      },
     });
 
     return NextResponse.json({ ok: true });

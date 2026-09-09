@@ -9,16 +9,20 @@
 const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
 
 // ---- Assessment Completeness ----
-// Simple: fraction of the 5 assessments completed × 100
+// Denominator is the COUNSELLOR-ASSIGNED suite, not a fixed 5. Passing an
+// explicit empty [] means "nothing was assigned" → 100% (never penalized for
+// tests a counselor never assigned). Omitting the argument keeps the full
+// 5-kind catalogue as a backward-compatible default for isolated callers.
 
 export function calculateAssessmentCompleteness(
-  completedKinds: string[]
+  completedKinds: string[],
+  assignedKinds: string[] = ASSESSMENT_KINDS
 ): { score: number; completed: string[]; missing: string[] } {
   const completed = new Set(completedKinds);
-  const done = ASSESSMENT_KINDS.filter((k) => completed.has(k));
-  const missing = ASSESSMENT_KINDS.filter((k) => !completed.has(k));
+  const done = assignedKinds.filter((k) => completed.has(k));
+  const missing = assignedKinds.filter((k) => !completed.has(k));
   return {
-    score: Math.round((done.length / ASSESSMENT_KINDS.length) * 100),
+    score: assignedKinds.length === 0 ? 100 : Math.round((done.length / assignedKinds.length) * 100),
     completed: done,
     missing,
   };
@@ -50,6 +54,8 @@ export type ProfileCompletenessInput = {
   dimensionsWithSignals: string[];
   hasProfileData: boolean;
   hasPreferredCareer: boolean;
+  /** Counsellor-assigned kinds; empty array means nothing was assigned. */
+  assignedKinds?: string[];
 };
 
 export type ProfileCompletenessResult = {
@@ -67,11 +73,17 @@ export function calculateProfileCompleteness(
   const W = PROFILE_COMPLETENESS_WEIGHTS;
   const completed = new Set(input.completedAssessments);
 
+  // Assessments contribute 40% of the profile score. The numerator is the
+  // fraction of the ASSIGNED suite completed; an explicit empty suite is
+  // credited as fully complete so optional assessments never block a profile.
+  // Omitting `assignedKinds` falls back to the full 5-kind catalogue.
+  const assigned = input.assignedKinds ?? ASSESSMENT_KINDS;
   const assessmentContribution =
-    (ASSESSMENT_KINDS.reduce((acc, k) => acc + (completed.has(k) ? 1 : 0), 0) /
-      ASSESSMENT_KINDS.length) *
-    W.assessmentSuite *
-    100;
+    assigned.length === 0
+      ? W.assessmentSuite * 100
+      : (assigned.filter((k) => completed.has(k)).length / assigned.length) *
+        W.assessmentSuite *
+        100;
 
   let profileDataContribution = 0;
   const dimensionBreakdown: Record<string, number> = {};

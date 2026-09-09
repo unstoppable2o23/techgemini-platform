@@ -12,8 +12,7 @@ import type { AttentionState } from "./attention.ts";
 import { listCareerDecisions, listProgramPlans } from "./planning.ts";
 import { getDecisionCenter } from "../decision-center/center.ts";
 import type { DecisionCenterState } from "../decision-center/center.ts";
-
-const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
+import { ASSESSMENT_KINDS } from "../student/assessments.ts";
 
 export type Student360 = {
   user: {
@@ -29,11 +28,13 @@ export type Student360 = {
       kind: string;
       assigned: boolean;
       completed: boolean;
+      inProgress: boolean;
       completedAt: string | null;
       version: string | null;
     }
   >;
   assessmentCompletedCount: number;
+  assessmentAssignedCount: number;
   assessmentTotal: number;
   careerProfile: Record<string, any> | null;
   careerMatches: any[];
@@ -95,7 +96,7 @@ export async function getStudent360(
   if (!user || !user.studentProfile) return null;
   const profile = user.studentProfile;
 
-  // ---- Assessments (5 kinds) ----
+  // ---- Assessments (5 kinds; totals derived from the assigned suite) ----
   const assignments = await prisma.testAssignment.findMany({
     where: { studentId: studentUserId },
     orderBy: { createdAt: "desc" },
@@ -104,14 +105,19 @@ export async function getStudent360(
   for (const kind of ASSESSMENT_KINDS) {
     const all = assignments.filter((a) => a.kind === kind);
     const completed = all.find((a) => a.status === "COMPLETED");
+    const inProgress = all.some((a) => a.status === "IN_PROGRESS");
     assessmentByKind[kind] = {
       kind,
       assigned: all.length > 0,
       completed: !!completed,
+      inProgress,
       completedAt: completed?.completedAt ? completed.completedAt.toISOString() : null,
       version: completed?.assessmentVersion ?? all[0]?.assessmentVersion ?? null,
     };
   }
+  const assessmentAssignedCount = ASSESSMENT_KINDS.filter(
+    (k) => assessmentByKind[k].assigned
+  ).length;
   const assessmentCompletedCount = ASSESSMENT_KINDS.filter(
     (k) => assessmentByKind[k].completed
   ).length;
@@ -295,7 +301,7 @@ export async function getStudent360(
   const attentionOverview = {
     profileCompleteness,
     assessmentCompletedCount,
-    assessmentTotal: ASSESSMENT_KINDS.length,
+    assessmentTotal: assessmentAssignedCount,
     hasCareerDirection,
     roadmapExists: Boolean(roadmap),
     roadmapProgress,
@@ -357,7 +363,8 @@ export async function getStudent360(
     profile: profile as unknown as Record<string, any>,
     assessmentByKind,
     assessmentCompletedCount,
-    assessmentTotal: ASSESSMENT_KINDS.length,
+    assessmentAssignedCount,
+    assessmentTotal: assessmentAssignedCount,
     careerProfile: (user.careerProfile as unknown as Record<string, any>) ?? null,
     careerMatches,
     careerMatchDisclaimer,

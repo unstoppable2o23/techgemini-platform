@@ -3,6 +3,7 @@ import type { TraitDimension } from "@prisma/client";
 import type { ExamReport } from "../tests";
 import { normalizeAssessmentReport } from "./normalize";
 import { calculateAssessmentCompleteness, calculateProfileCompleteness } from "./completeness";
+import { summarizeAssignments } from "../student/assessments";
 
 const KINDS: string[] = ["stream", "ideal", "personality", "intelligences", "learning"];
 
@@ -134,17 +135,18 @@ function mapStudentProfileToSignals(
 export async function generateStudentCareerProfile(
   userId: string
 ): Promise<ProfileGenerationResult | null> {
-  // ---- load latest COMPLETED assessment per kind ----
+  // ---- load ALL assessment assignments so the completeness denominator is
+  // the counsellor-assigned suite (not a fixed 5) ----
   const assignments = await prisma.testAssignment.findMany({
     where: {
       studentId: userId,
-      status: "COMPLETED",
       kind: { in: KINDS },
     },
     orderBy: { createdAt: "desc" },
     select: {
       id: true,
       kind: true,
+      status: true,
       result: true,
       assessmentVersion: true,
     },
@@ -152,6 +154,7 @@ export async function generateStudentCareerProfile(
 
   const latestByKind = new Map<string, (typeof assignments)[number]>();
   for (const a of assignments) {
+    if (a.status !== "COMPLETED") continue;
     if (!latestByKind.has(a.kind)) latestByKind.set(a.kind, a);
   }
 
@@ -216,14 +219,21 @@ export async function generateStudentCareerProfile(
 
   const allSignals = [...assessmentSignals, ...profileSignals];
 
-  // ---- dual completeness ----
-  const assessmentCompleteness = calculateAssessmentCompleteness(completedAssessments);
+  // ---- dual completeness (denominators = counsellor-assigned suite) ----
+  const assignedSummary = summarizeAssignments(
+    assignments.map((a) => ({ kind: a.kind, status: a.status }))
+  );
+  const assessmentCompleteness = calculateAssessmentCompleteness(
+    completedAssessments,
+    assignedSummary.assignedKinds
+  );
   const dimensionsWithSignals = [...new Set(allSignals.map((s) => s.dimension as string))];
   const profileCompleteness = calculateProfileCompleteness({
     completedAssessments,
     dimensionsWithSignals,
     hasProfileData: profileSignals.length > 0,
     hasPreferredCareer: Boolean(studentProfile?.preferredCareer),
+    assignedKinds: assignedSummary.assignedKinds,
   });
 
   // ---- persist ----

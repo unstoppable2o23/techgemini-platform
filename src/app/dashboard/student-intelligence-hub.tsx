@@ -59,8 +59,9 @@ export default function StudentIntelligenceHub({
 }) {
   const d = dashboard;
   const completed = d.assessmentCompletedCount;
+  const assigned = d.assessmentTotal ?? 5;
   const assessmentState =
-    completed === 0 ? "zero" : completed >= 5 ? "full" : "partial";
+    assigned === 0 ? "none" : completed === 0 ? "zero" : completed >= assigned ? "full" : "partial";
 
   const nba = journey?.nextBestAction ?? null;
 
@@ -73,6 +74,8 @@ export default function StudentIntelligenceHub({
             ? "Your profile is fully enriched"
             : assessmentState === "partial"
             ? "Your recommendations are taking shape"
+            : assessmentState === "none"
+            ? "Your profile is ready without assessments"
             : "Let's start discovering your path"}
         </p>
         <h1 className="mt-1 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -93,15 +96,21 @@ export default function StudentIntelligenceHub({
           <div className="rounded-xl border bg-muted/20 p-4">
             <p className="text-sm font-semibold text-foreground">Assessment progress</p>
             <p className="mt-1 text-2xl font-bold text-accent">
-              {completed}
-              <span className="text-base font-medium text-muted-foreground"> / 5 complete</span>
+              {assigned === 0 ? "—" : completed}
+              {assigned > 0 && (
+                <span className="text-base font-medium text-muted-foreground">
+                  {" "}of {assigned} assigned
+                </span>
+              )}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
-              {assessmentState === "zero"
+              {assessmentState === "none"
+                ? "No assessments assigned yet — nothing blocks your path"
+                : assessmentState === "zero"
                 ? "Optional — profile info still guides you"
                 : assessmentState === "partial"
                 ? "More assessments = more personalization"
-                : "All assessments done"}
+                : "All assigned assessments done"}
             </p>
           </div>
           <div className="rounded-xl border bg-muted/20 p-4">
@@ -133,11 +142,17 @@ export default function StudentIntelligenceHub({
           </div>
         )}
 
+        {assessmentState === "none" && (
+          <p className="mt-3 text-sm text-muted-foreground">
+            Your recommendations use your academics, subjects, interests and preferences — no
+            assessment is required. Want deeper personalization? Ask your counselor to assign one.
+          </p>
+        )}
         {assessmentState === "zero" && (
           <p className="mt-3 text-sm text-muted-foreground">
             Your recommendations use your academics, subjects, interests and preferences.
             Want deeper personalization?{" "}
-            <span className="font-medium text-accent">Take assessments →</span>
+            <span className="font-medium text-accent">Take your assigned assessments →</span>
           </p>
         )}
         {assessmentState === "partial" && (

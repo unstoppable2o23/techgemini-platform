@@ -1,13 +1,10 @@
 import { prisma } from "../prisma.ts";
 import type { AssessmentProgress } from "./types.ts";
-
-const ASSESSMENT_KINDS = [
-  "stream",
-  "ideal",
-  "personality",
-  "intelligences",
-  "learning",
-] as const;
+import {
+  ASSESSMENT_KINDS,
+  ASSESSMENT_KIND_LABELS,
+  summarizeAssignments,
+} from "./assessments.ts";
 
 const KIND_LABELS: Record<string, string> = {
   stream: "Stream Assessment",
@@ -22,6 +19,7 @@ export interface StudentBasics {
   hasAssessments: boolean;
   assessmentProgress: AssessmentProgress[];
   assessmentCompletedCount: number;
+  assessmentTotal: number;
   savedCount: number;
   savedItems: Array<{
     id: string;
@@ -46,9 +44,8 @@ export async function getStudentBasics(userId: string): Promise<StudentBasics> {
       where: {
         studentId: userId,
         kind: { in: ASSESSMENT_KINDS as unknown as string[] },
-        completedAt: { not: null },
       },
-      select: { kind: true },
+      select: { kind: true, status: true },
     }),
     prisma.studentShortlist.findMany({
       where: { studentId: userId },
@@ -56,16 +53,22 @@ export async function getStudentBasics(userId: string): Promise<StudentBasics> {
     }),
   ]);
 
-  const completedKinds = new Set(assignments.map((a) => a.kind));
-  const hasAssessments = completedKinds.size > 0;
+  const summary = summarizeAssignments(assignments);
+  const hasAssessments = summary.hasAssignments;
 
   const profileCompleteness = computeProfileCompleteness(studentProfile);
+  const statusByKind = new Map<string, "ASSIGNED" | "IN_PROGRESS" | "COMPLETED">(
+    summary.completedKinds.map((k) => [k, "COMPLETED"])
+  );
+  for (const k of summary.inProgressKinds) statusByKind.set(k, "IN_PROGRESS");
+  for (const k of summary.notStartedKinds) statusByKind.set(k, "ASSIGNED");
   const assessmentProgress: AssessmentProgress[] = ASSESSMENT_KINDS.map(
     (kind) => ({
       kind,
-      label: KIND_LABELS[kind] ?? kind,
-      completed: completedKinds.has(kind),
-      assigned: false,
+      label: KIND_LABELS[kind] ?? ASSESSMENT_KIND_LABELS[kind] ?? kind,
+      completed: statusByKind.get(kind) === "COMPLETED",
+      assigned: statusByKind.has(kind),
+      status: statusByKind.get(kind) ?? null,
     })
   );
 
@@ -79,7 +82,8 @@ export async function getStudentBasics(userId: string): Promise<StudentBasics> {
     profileCompleteness,
     hasAssessments,
     assessmentProgress,
-    assessmentCompletedCount: completedKinds.size,
+    assessmentCompletedCount: summary.completedCount,
+    assessmentTotal: summary.assignedTotal,
     savedCount: saved.length,
     savedItems: saved.map((s) => ({
       id: s.id,

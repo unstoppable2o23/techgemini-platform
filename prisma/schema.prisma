@@ -37,6 +37,7 @@ enum SubscriptionStatus {
 
 enum TestAssignmentStatus {
   ASSIGNED
+  IN_PROGRESS
   COMPLETED
 }
 

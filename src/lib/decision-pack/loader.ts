@@ -100,16 +100,18 @@ async function loadAssessments(userId: string): Promise<DecisionPackInputs["asse
     orderBy: { createdAt: "desc" },
   });
   const completed: string[] = [];
+  const assigned: string[] = [];
   for (const kind of ASSESSMENT_KINDS) {
     const rows = assignments.filter((a) => a.kind === kind);
+    if (rows.length > 0) assigned.push(kind);
     if (rows.some((a) => a.status === "COMPLETED")) completed.push(kind);
   }
-  const remaining = ASSESSMENT_KINDS.filter((k) => !completed.includes(k));
+  const remaining = assigned.filter((k) => !completed.includes(k));
   return {
     completed: [...completed].sort(),
     remaining: [...remaining].sort(),
     completedCount: completed.length,
-    total: ASSESSMENT_KINDS.length,
+    total: assigned.length,
   };
 }
 

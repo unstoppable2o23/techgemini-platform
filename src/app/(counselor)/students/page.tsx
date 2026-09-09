@@ -33,9 +33,6 @@ export default async function StudentManagementPage({
     },
     include: {
       careerProfile: { select: { completeness: true } },
-      _count: {
-        select: { testAssignments: { where: { status: "COMPLETED" } } },
-      },
       studentProfile: {
         include: {
           featureAccess: true,
@@ -48,7 +45,7 @@ export default async function StudentManagementPage({
   });
 
   const safeStudents: any[] = students.map((s) => {
-    const { passwordHash: _ph, studentProfile, careerProfile, _count, ...rest } = s;
+    const { passwordHash: _ph, studentProfile, careerProfile, ...rest } = s;
     const safeProfile = studentProfile
       ? {
           ...studentProfile,
@@ -68,8 +65,8 @@ export default async function StudentManagementPage({
     return {
       ...rest,
       studentProfile: safeProfile,
-      assessmentCompleted: _count?.testAssignments ?? 0,
-      assessmentTotal: 5,
+      assessmentCompleted: 0,
+      assessmentTotal: 0,
       profileCompleteness: careerProfile?.completeness ?? null,
       preferredCareer: studentProfile?.preferredCareer ?? null,
       targetCountry: studentProfile?.targetCountry ?? null,
@@ -87,6 +84,8 @@ export default async function StudentManagementPage({
     if (!row) continue;
     s.attentionPrimary = row.primary;
     s.attentionStates = row.states;
+    s.assessmentCompleted = row.assessmentCompleted;
+    s.assessmentTotal = row.assessmentTotal;
     s.roadmapProgress = row.roadmapExists ? Math.round(row.roadmapProgress) : null;
     s.educationStage = row.educationStage;
     if (s.targetCountry == null) s.targetCountry = row.targetCountry;
@@ -124,7 +123,9 @@ export default async function StudentManagementPage({
 
   const total = safeStudents.length;
   const assessmentComplete = safeStudents.filter(
-    (s) => (s.assessmentCompleted ?? 0) >= 5
+    (s) =>
+      (s.assessmentTotal ?? 0) === 0 ||
+      (s.assessmentCompleted ?? 0) >= (s.assessmentTotal ?? 0)
   ).length;
   const profileWithData = safeStudents.filter(
     (s) => (s.profileCompleteness ?? 0) > 0
