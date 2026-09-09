@@ -463,10 +463,13 @@ test("13 · the 4 admissions events are allowlisted and student-firable", async 
     assert.ok(client.includes(e), `client.ts allows ${e}`);
     assert.ok(eventsRoute.includes(e), `events route allows ${e}`);
   }
-  // persistence smoke: record one event server-side
-  const before = await prisma.productEvent.count();
+  // persistence smoke: record one event server-side.
+  // Count is scoped to THIS test user: parallel test files also insert
+  // productEvent rows into the shared dev DB, so a global count is racy.
+  const scope = { userId: student.id };
+  const before = await prisma.productEvent.count({ where: scope });
   await recordProductEvent({ userId: student.id, event: "admissions_guidance_viewed", meta: { source: "unit-test" } });
-  const after = await prisma.productEvent.count();
+  const after = await prisma.productEvent.count({ where: scope });
   assert.equal(after, before + 1);
 });
 
