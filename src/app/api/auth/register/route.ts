@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { rateLimit, clientIp } from "@/lib/rate-limit";
 import { validateRegisterPayload } from "@/lib/onboarding/validation";
 import { normalizeStage } from "@/lib/onboarding/normalize";
+import { resolveRegistrationTenant } from "@/lib/onboarding/tenant";
 
 export async function POST(request: NextRequest) {
   try {
@@ -40,20 +41,12 @@ export async function POST(request: NextRequest) {
 
     const host = request.headers.get("host") || "";
     const tenantSub = extractSubdomain(host);
-    const tenantId = tenantSub === "default" ? "default" : tenantSub;
 
-    let tenant = await prisma.tenant.findUnique({
-      where: { subdomain: tenantId },
-    });
-
-    // On local developer machines (localhost / raw IPs) there is no real
-    // subdomain, so fall back to the platform's first tenant to keep local
-    // demo/test signups working. On any deployed host an unmatched subdomain
-    // is rejected rather than silently enrolling the student into an arbitrary
-    // organization.
-    if (!tenant && isLocalDevHost(host)) {
-      tenant = await prisma.tenant.findFirst();
-    }
+    // §7: students registering without an organization (platform root host,
+    // localhost or raw IP) resolve to the platform default tenant; org-linked
+    // students continue through their org subdomain; unknown org subdomains on
+    // deployed hosts are rejected rather than enrolled into an arbitrary org.
+    const tenant = await resolveRegistrationTenant(tenantSub, isLocalDevHost(host));
     if (!tenant) {
       return NextResponse.json(
         { error: "Organization not found for this address" },

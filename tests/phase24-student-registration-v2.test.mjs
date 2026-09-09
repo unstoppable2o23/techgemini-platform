@@ -11,6 +11,7 @@ import {
 } from "../src/lib/onboarding/normalize.ts";
 import { canonicalStageAlias, canonicalSubjectAlias, CANONICAL_SUBJECTS } from "../src/lib/onboarding/vocabulary.ts";
 import { validateRegisterPayload, validateCareerPrefsPayload } from "../src/lib/onboarding/validation.ts";
+import { resolveRegistrationTenant } from "../src/lib/onboarding/tenant.ts";
 import { detectEducationStage } from "../src/lib/career-matching/score.ts";
 import { detectEducationStage as roadmapStage } from "../src/lib/roadmap/education-stage.ts";
 import { generateStudentCareerProfile } from "../src/lib/career-profile/generate.ts";
@@ -174,6 +175,43 @@ test("N6: register schema accepts valid and rejects invalid payloads", () => {
   assert.match(validateRegisterPayload({ firstName: "A", lastName: "B", email: "a@b.com", password: "123" }), /8 characters/i);
   assert.match(validateRegisterPayload({ firstName: "", lastName: "B", email: "a@b.com", password: "12345678" }), /first name/i);
   assert.match(validateRegisterPayload({ firstName: "A", lastName: "B", email: "a@b.com", password: "12345678", dateOfBirth: "2100-01-01" }), /future/i);
+});
+
+test("N6b: brief §6 mobile accepts dial-code + national and rejects malformed", () => {
+  const base = { firstName: "A", lastName: "B", email: "a@b.com", password: "12345678" };
+  assert.equal(validateRegisterPayload({ ...base, mobile: "+91 9876543210" }), null, "India +91 with space");
+  assert.equal(validateRegisterPayload({ ...base, mobile: "+971-5-12345678" }), null, "UAE hyphenated");
+  assert.equal(validateRegisterPayload({ ...base, mobile: "+14155552671" }), null, "pasted full number, no separator");
+  assert.equal(validateRegisterPayload({ ...base, mobile: "9876543210" }), null, "legacy bare digits");
+  assert.match(validateRegisterPayload({ ...base, mobile: "+99999 123456" }), /mobile/i, "5-digit fake dial code");
+  assert.match(validateRegisterPayload({ ...base, mobile: "+0 9876543210" }), /mobile/i, "dial code starting with 0");
+  assert.match(validateRegisterPayload({ ...base, mobile: "+91 1234" }), /mobile/i, "national too short");
+  assert.match(validateRegisterPayload({ ...base, mobile: "1234" }), /mobile/i, "bare number too short");
+  assert.match(validateRegisterPayload({ ...base, mobile: "+91 98765abc210" }), /mobile/i, "non-digit characters");
+  assert.match(validateRegisterPayload({ ...base, mobile: "98765" + "0".repeat(12) }), /mobile/i, "bare number too long");
+});
+
+test("N8: brief §7 organization resolution — standalone students join the platform tenant, unknown orgs are rejected", async () => {
+  // A registration on the platform root host (no org subdomain) must resolve
+  // to the platform default tenant ("Default Academy", subdomain "app").
+  const platformTenant = await resolveRegistrationTenant("default", false);
+  assert.ok(platformTenant, "root-host registration resolves to a platform tenant");
+  assert.ok(
+    ["app", "default"].includes(platformTenant.subdomain),
+    `platform fallback should be app/default, got ${platformTenant.subdomain}`,
+  );
+
+  // Organization-linked students keep resolving to their own org.
+  const ownOrg = await resolveRegistrationTenant(tenant.subdomain, false);
+  assert.equal(ownOrg?.id, tenant.id, "org subdomain resolves to its own tenant");
+
+  // Unknown org subdomain on a deployed host → null (caller rejects).
+  const unknown = await resolveRegistrationTenant(`no-such-org-${suffix}`, false);
+  assert.equal(unknown, null, "unknown org subdomain on a deployed host is rejected");
+
+  // A local developer host falls back to any tenant for demo signups.
+  const local = await resolveRegistrationTenant(`no-such-org-${suffix}`, true);
+  assert.ok(local, "local developer host falls back to any tenant");
 });
 
 test("N7: career prefs schema is a coarse gate and preserves unknown keys", () => {

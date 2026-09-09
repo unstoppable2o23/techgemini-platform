@@ -35,7 +35,8 @@ export const registerSchema = z.object({
   mobile: z
     .string()
     .trim()
-    .regex(/^\+?[\d\s\-]{4,16}$/, "Please enter a valid mobile number")
+    .max(20, "Mobile number is too long")
+    .regex(/^\+?[\d\s\-]+$/, "Please enter a valid mobile number")
     .optional()
     .or(z.literal("")),
   gender: optionalString(20, "Gender"),
@@ -120,7 +121,36 @@ export function validateRegisterPayload(body: unknown): string | null {
     if (parsed.getTime() > Date.now()) return "Date of birth cannot be in the future.";
     if (parsed.getFullYear() < 1900) return "Please enter a valid date of birth.";
   }
+  const mobile = r.data.mobile;
+  if (mobile && !isValidMobile(mobile)) {
+    return "Please enter a valid mobile number with the correct country code.";
+  }
   return null;
+}
+
+/**
+ * Strict mobile check (brief §6): accepts either a bare subscriber number
+ * (legacy) or a dial code + national number. Dial codes are 1-4 digits and
+ * never start with zero; the national part must be 5-13 digits. Combined
+ * input stays within 8-15 digits when a dial code is present.
+ */
+function isValidMobile(value: string): boolean {
+  const v = value.trim();
+  if (v.startsWith("+")) {
+    const body = v.slice(1).trim();
+    const digits = body.replace(/[^\d]/g, "");
+    if (digits.length < 8 || digits.length > 15) return false;
+    const tokens = body.split(/[\s-]+/).filter(Boolean);
+    if (tokens.length === 1) {
+      return /^[1-9]\d+$/.test(digits);
+    }
+    const code = tokens[0];
+    if (!/^[1-9]\d{0,3}$/.test(code)) return false;
+    const national = tokens.slice(1).join("");
+    return /^\d{5,13}$/.test(national);
+  }
+  const digits = v.replace(/[^\d]/g, "");
+  return digits.length >= 6 && digits.length <= 15;
 }
 
 export function validateCareerPrefsPayload(body: unknown): string | null {
