@@ -25,6 +25,7 @@ const REAL_STUDENT_ROUTES = new Set([
   "/career-preferences",
   "/decision-center",
   "/decision-pack",
+  "/admissions",
   "/saved",
   "/dashboard",
   "/settings",

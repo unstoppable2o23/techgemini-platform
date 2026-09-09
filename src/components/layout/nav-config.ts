@@ -23,6 +23,7 @@ import {
   Radio,
   Bookmark,
   GitCompare,
+  DoorOpen,
   type LucideIcon,
 } from "lucide-react";
 
@@ -98,6 +99,12 @@ export const STUDENT_GROUPS: NavGroup[] = [
         href: "/decision-pack",
         icon: FileText,
         description: "Print or share a snapshot of your career plan",
+      },
+      {
+        label: "Admissions",
+        href: "/admissions",
+        icon: DoorOpen,
+        description: "Admission routes and official sources to verify",
       },
       {
         label: "Universities",

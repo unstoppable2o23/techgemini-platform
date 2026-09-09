@@ -20,6 +20,10 @@ import {
   ListChecks,
   Compass,
   FileText,
+  ShieldCheck,
+  ExternalLink,
+  AlertTriangle,
+  Info,
 } from "lucide-react";
 
 import { RoadmapTab } from "./roadmap-tab";
@@ -196,6 +200,7 @@ export default function Student360Client({
     { key: "assessments", label: "Assessments", icon: ListChecks },
     { key: "career", label: "Career Intelligence", icon: TrendingUp },
     { key: "education", label: "Education", icon: GraduationCap },
+    { key: "admissions", label: "Admissions", icon: ShieldCheck },
     { key: "universities", label: "Universities", icon: Building2 },
     { key: "notes", label: "Notes", icon: StickyNote },
     { key: "actions", label: "Actions", icon: ListChecks },
@@ -273,6 +278,7 @@ export default function Student360Client({
         />
       )}
       {tab === "education" && <EducationTab data={data} />}
+      {tab === "admissions" && <AdmissionsTab data={data} />}
       {tab === "universities" && (
         <UniversitiesTab data={data} onSubmitFeedback={submitFeedback} />
       )}
@@ -955,6 +961,128 @@ function EducationTab({ data }: any) {
             )}
           </div>
         )}
+      </CardContent>
+    </Card>
+  );
+}
+
+function AdmissionsTab({ data }: any) {
+  const g = data.decisionCenter?.admissionsGuidance;
+  if (!g)
+    return (
+      <Card>
+        <CardContent className="p-4 text-sm text-muted-foreground">
+          No admission guidance is available yet — the student has no Decision Center state. Ask the student to build a career profile first.
+        </CardContent>
+      </Card>
+    );
+
+  const readinessVariant =
+    g.readiness === "READY_TO_RESEARCH"
+      ? "success"
+      : g.readiness === "NEEDS_VERIFICATION"
+        ? "warning"
+        : "destructive";
+
+  return (
+    <Card>
+      <CardContent className="p-4 space-y-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge variant={readinessVariant}>
+            {g.readiness === "READY_TO_RESEARCH" && <CheckCircle2 className="mr-1 h-3 w-3" />}
+            {g.readiness === "NEEDS_VERIFICATION" && <AlertTriangle className="mr-1 h-3 w-3" />}
+            {g.readiness === "INFORMATION_MISSING" && <Info className="mr-1 h-3 w-3" />}
+            {g.readinessLabel}
+          </Badge>
+          <span className="text-sm text-muted-foreground">{g.readinessReason}</span>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-semibold mb-2">What applies to the student&apos;s pathway</h4>
+          {g.focusPrograms.length === 0 ? (
+            <p className="text-sm text-muted-foreground">No education pathway mapped yet.</p>
+          ) : (
+            <div className="space-y-2">
+              {g.focusPrograms.map((p: any) => (
+                <div key={p.programId} className="rounded-lg border border-border/70 p-3">
+                  <p className="font-medium text-sm">{p.programName}</p>
+                  <div className="flex flex-wrap gap-1.5 mt-1.5">
+                    {p.expectedRoutes.map((r: any) => (
+                      <Badge key={r.route} variant="outline">{r.label}</Badge>
+                    ))}
+                    <Badge variant="secondary">{p.verificationState}</Badge>
+                  </div>
+                  {p.relevantEntranceExams?.length > 0 && (
+                    <p className="text-xs text-muted-foreground mt-1.5">
+                      {p.relevantEntranceExams
+                        .map((e: any) => `${e.name} — ${e.context}`)
+                        .join(" ")}
+                    </p>
+                  )}
+                  {p.eligibilityGuidance && (
+                    <p className="text-xs text-muted-foreground mt-1">{p.eligibilityGuidance}</p>
+                  )}
+                  {p.unknownAspects?.length > 0 && (
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Still to confirm: {p.unknownAspects.join(" · ")}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {g.missingInformation.length > 0 && (
+          <div>
+            <h4 className="text-sm font-semibold mb-1">Missing info to verify</h4>
+            <ul className="space-y-1 text-sm">
+              {g.missingInformation.map((m: any) => (
+                <li key={m.id} className="flex gap-2">
+                  <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+                  <span>{m.label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div>
+          <h4 className="text-sm font-semibold mb-1.5">Official sources</h4>
+          {g.officialSources.length === 0 ? (
+            <p className="text-sm text-muted-foreground">
+              No official source linked yet — ask the student to check the institution&apos;s admissions page.
+            </p>
+          ) : (
+            <ul className="space-y-1.5">
+              {g.officialSources.map((s: any) => (
+                <li key={s.id} className="flex flex-wrap items-center justify-between gap-2 text-sm">
+                  <span>
+                    {s.name}
+                    <span className="text-xs text-muted-foreground"> · {s.domain}</span>
+                  </span>
+                  <a href={s.canonicalUrl} target="_blank" rel="noreferrer">
+                    <Button size="sm" variant="outline">
+                      Open Official Source <ExternalLink className="ml-1 h-3 w-3" />
+                    </Button>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <div className="rounded-lg border border-accent/20 bg-accent/5 p-3">
+          <h4 className="text-sm font-semibold mb-1">Questions to discuss</h4>
+          <ul className="space-y-1 text-sm text-muted-foreground">
+            <li>Which focus program does the student want to pursue first?</li>
+            <li>Which official source should the student verify first this week?</li>
+            {g.missingInformation.length > 0 && (
+              <li>Confirm the missing item: {g.missingInformation[0].label}.</li>
+            )}
+            <li>Set a next action for the student (see the Actions tab).</li>
+          </ul>
+        </div>
       </CardContent>
     </Card>
   );

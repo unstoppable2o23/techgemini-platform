@@ -13,6 +13,10 @@
  * persisted state yields byte-identical packs.
  */
 import type { PathwayStage } from "../decision-center/center.ts";
+import type {
+  AdmissionsReadiness,
+  AdmissionsVerificationState,
+} from "../admissions-intelligence/types.ts";
 
 export type DecisionPackActionType =
   | "PROFILE"
@@ -86,6 +90,27 @@ export interface DecisionPackEducationPathway {
   relationshipType: string | null;
   verification: ProgramVerification;
   verifiedInstitutionCount: number;
+  /** Phase 31 — parent-friendly admission guidance for this pathway (PROGRAM rows). */
+  admissions: DecisionPackPathwayAdmissions | null;
+}
+
+/** Parent-friendly, printable admissions & next-steps for one pathway. */
+export interface DecisionPackPathwayAdmissions {
+  routes: string[];
+  entranceGuidance: string | null;
+  eligibilityGuidance: string | null;
+  officialSources: Array<{ name: string; url: string }>;
+  needsVerification: boolean;
+  verificationState: AdmissionsVerificationState;
+  note: string;
+}
+
+/** Overall admissions-readiness snapshot for the pack cover. */
+export interface DecisionPackAdmissionsSummary {
+  readiness: AdmissionsReadiness;
+  readinessLabel: string;
+  pathwayGuidanceCount: number;
+  missingInfoCount: number;
 }
 
 export interface DecisionPackInstitution {
@@ -226,6 +251,8 @@ export interface DecisionPack {
   currentDecision: DecisionPackCurrentDecision;
   actionPlan: DecisionPackAction[];
   parentSummary: DecisionPackParentSummary;
+  /** Phase 31 — overall admissions-readiness summary for the pack. */
+  admissionsSummary: DecisionPackAdmissionsSummary;
   /** Present only in an authorized counselor view. */
   counselor?: DecisionPackCounselorSummary;
   disclaimer: string;

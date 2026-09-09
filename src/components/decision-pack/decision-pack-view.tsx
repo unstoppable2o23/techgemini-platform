@@ -25,6 +25,7 @@ import type {
   DecisionPack,
   DecisionPackAction,
   DecisionPackCareerCard,
+  DecisionPackPathwayAdmissions,
   ProgramVerification,
 } from "@/lib/decision-pack/types";
 
@@ -90,7 +91,7 @@ export function DecisionPackView({
       </p>
 
       {/* Snapshot strip */}
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 print:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5 print:grid-cols-5">
         <StatCard label="Profile completeness" value={`${pack.snapshot.profileCompleteness}%`} />
         <StatCard
           label="Assessments"
@@ -101,6 +102,7 @@ export function DecisionPackView({
           value={pack.snapshot.lowInformation ? "More info needed" : `${pack.snapshot.careerMatchCount}`}
         />
         <StatCard label="Decision stage" value={pack.currentDecision.stage} />
+        <StatCard label="Admissions readiness" value={pack.admissionsSummary.readinessLabel} />
       </div>
 
       <Section id="student" icon={Users} title="Student snapshot">
@@ -166,15 +168,20 @@ export function DecisionPackView({
         ) : (
           <ul className="divide-y divide-border/60">
             {pack.educationPathways.map((p) => (
-              <li key={`${p.kind}-${p.programId ?? p.programName}`} className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm">
-                <span className="flex flex-wrap items-center gap-2">
-                  <Badge variant={p.kind === "PROGRAM" ? "secondary" : "outline"}>{p.kind === "PROGRAM" ? "Program" : "Degree route"}</Badge>
-                  <span className="font-medium">{p.programName ?? p.careerName}</span>
-                  {p.careerName && p.kind === "PROGRAM" && (
-                    <span className="text-muted-foreground">· {p.careerName}</span>
-                  )}
-                </span>
-                <VerifyBadge verification={p.verification} count={p.verifiedInstitutionCount} />
+              <li key={`${p.kind}-${p.programId ?? p.programName}`} className="py-2 text-sm">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="flex flex-wrap items-center gap-2">
+                    <Badge variant={p.kind === "PROGRAM" ? "secondary" : "outline"}>{p.kind === "PROGRAM" ? "Program" : "Degree route"}</Badge>
+                    <span className="font-medium">{p.programName ?? p.careerName}</span>
+                    {p.careerName && p.kind === "PROGRAM" && (
+                      <span className="text-muted-foreground">· {p.careerName}</span>
+                    )}
+                  </span>
+                  <VerifyBadge verification={p.verification} count={p.verifiedInstitutionCount} />
+                </div>
+                {p.admissions && (
+                  <AdmissionsStep admissions={p.admissions} programName={p.programName} />
+                )}
               </li>
             ))}
           </ul>
@@ -345,6 +352,67 @@ function Section({
         <CardContent className="p-4">{children}</CardContent>
       </Card>
     </section>
+  );
+}
+
+function AdmissionsStep({
+  admissions,
+  programName,
+}: {
+  admissions: DecisionPackPathwayAdmissions;
+  programName: string | null;
+}) {
+  void programName;
+  return (
+    <div className="mt-1.5 ml-6 rounded-xl border border-border/70 bg-secondary/20 p-3">
+      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        Admissions &amp; next steps
+      </p>
+      {admissions.routes.length > 0 && (
+        <p className="mt-1 text-xs text-foreground">
+          Route(s): {admissions.routes.join(" · ")}
+        </p>
+      )}
+      {admissions.needsVerification && (
+        <p className="mt-1 flex items-center gap-1.5 text-xs text-muted-foreground">
+          <AlertTriangle className="h-3 w-3" aria-hidden="true" />
+          Confirm current-year eligibility, dates and cutoffs with the official source — never assumed.
+        </p>
+      )}
+      {admissions.eligibilityGuidance && (
+        <p className="mt-1 text-xs text-muted-foreground">
+          {admissions.eligibilityGuidance}
+        </p>
+      )}
+      {admissions.entranceGuidance && (
+        <p className="mt-1 text-xs text-muted-foreground">
+          Entrance: {admissions.entranceGuidance}
+        </p>
+      )}
+      {admissions.officialSources.length > 0 ? (
+        <ul className="mt-1.5 space-y-0.5">
+          {admissions.officialSources.map((s) => (
+            <li key={s.url}>
+              <Link
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                className="text-xs text-accent hover:underline"
+              >
+                {s.name} — {s.url}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="mt-1 text-xs text-muted-foreground">
+          No official source linked yet — check the institution&apos;s admissions page.
+        </p>
+      )}
+      {admissions.note && (
+        <p className="mt-1.5 text-xs text-muted-foreground">{admissions.note}</p>
+      )}
+    </div>
   );
 }
 

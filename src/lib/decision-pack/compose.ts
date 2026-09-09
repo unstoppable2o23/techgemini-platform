@@ -18,12 +18,15 @@ import type { DecisionCenterState, InformationGap } from "../decision-center/cen
 import { buildDecisionPackActions, nextDecisionReason } from "./actions.ts";
 import { buildCounselorSummary, deriveSurveyStage } from "./counselor.ts";
 import type { CounselorInput } from "./counselor.ts";
+import { focusProgramAdmission } from "../admissions-intelligence/guidance.ts";
 import type {
   DecisionPack,
+  DecisionPackAdmissionsSummary,
   DecisionPackCareerCard,
   DecisionPackCurrentDecision,
   DecisionPackEducationPathway,
   DecisionPackParentSummary,
+  DecisionPackPathwayAdmissions,
 } from "./types.ts";
 
 export interface DecisionPackAssessmentInput {
@@ -252,6 +255,28 @@ function buildParentSummary(
   };
 }
 
+function pathwayAdmissions(
+  center: DecisionCenterState,
+  programId: string | null
+): DecisionPackPathwayAdmissions | null {
+  const g = focusProgramAdmission(center.admissionsGuidance, programId);
+  if (!g) return null;
+  return {
+    routes: g.expectedRoutes.map((r) => r.label),
+    entranceGuidance: g.relevantEntranceExams.length
+      ? g.relevantEntranceExams.map((e) => `${e.name} — ${e.context}`).join(" ")
+      : null,
+    eligibilityGuidance: g.eligibilityGuidance,
+    officialSources: g.officialSources.map((s) => ({
+      name: s.name,
+      url: s.canonicalUrl,
+    })),
+    needsVerification: g.needsVerification,
+    verificationState: g.verificationState,
+    note: g.note,
+  };
+}
+
 function buildEducationPathways(
   center: DecisionCenterState,
   catalog: DecisionPackCatalogRow[]
@@ -269,6 +294,7 @@ function buildEducationPathways(
         relationshipType: p.relationshipType,
         verification: p.verified ? "VERIFIED" : "PARTIAL",
         verifiedInstitutionCount: p.verifiedInstitutionCount,
+        admissions: pathwayAdmissions(center, p.programId),
       };
     }
   );
@@ -284,6 +310,7 @@ function buildEducationPathways(
       relationshipType: row.priority,
       verification: "NOT_VERIFIED",
       verifiedInstitutionCount: 0,
+      admissions: null,
     });
   }
 
@@ -294,6 +321,17 @@ function buildEducationPathways(
       b.programName ?? b.careerName ?? ""
     );
   });
+}
+
+function buildAdmissionsSummary(
+  center: DecisionCenterState
+): DecisionPackAdmissionsSummary {
+  return {
+    readiness: center.admissionsGuidance.readiness,
+    readinessLabel: center.admissionsGuidance.readinessLabel,
+    pathwayGuidanceCount: center.admissionsGuidance.focusPrograms.length,
+    missingInfoCount: center.admissionsGuidance.missingInformation.length,
+  };
 }
 
 /**
@@ -345,6 +383,7 @@ export function composeDecisionPack(inputs: DecisionPackInputs): DecisionPack {
     currentDecision: buildCurrentDecision(center),
     actionPlan,
     parentSummary: buildParentSummary(center, firstName),
+    admissionsSummary: buildAdmissionsSummary(center),
     disclaimer: disclaimers.join(" "),
   };
 

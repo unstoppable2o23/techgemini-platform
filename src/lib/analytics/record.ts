@@ -29,7 +29,11 @@ export type ProductEventName =
   | "decision_pack_viewed"
   | "decision_pack_printed"
   | "decision_pack_action_opened"
-  | "decision_pack_counselor_reviewed";
+  | "decision_pack_counselor_reviewed"
+  | "admissions_guidance_viewed"
+  | "admissions_source_opened"
+  | "admissions_action_opened"
+  | "admissions_verify_clicked";
 
 export type ProductEventInput = {
   userId: string;

@@ -24,6 +24,8 @@ import { getJourneyState } from "../student/journey-state.ts";
 import { detectEducationStage } from "../roadmap/education-stage.ts";
 import { coversAcademicProgram } from "../program-intelligence/availability.ts";
 import { REL_RANK } from "../career-program.ts";
+import { buildAdmissionsGuidance } from "../admissions-intelligence/guidance.ts";
+import type { StudentAdmissionsGuidance } from "../admissions-intelligence/types.ts";
 import type { CareerMatch } from "../career-matching/types.ts";
 
 /* ------------------------------- vocabulary ----------------------------- */
@@ -218,6 +220,8 @@ export interface DecisionCenterState {
   roadmapProgress: RoadmapProgressCard;
   parentSummary: ParentSummary;
   counselorBrief: CounselorBrief;
+  /** Phase 31 — evidence-first admissions & counselling intelligence. */
+  admissionsGuidance: StudentAdmissionsGuidance;
 }
 
 /* ------------------------------- input shape ---------------------------- */
@@ -884,6 +888,18 @@ export function buildDecisionCenter(inputs: DecisionCenterInputs): DecisionCente
       inputs
     ),
     counselorBrief,
+    admissionsGuidance: buildAdmissionsGuidance({
+      focusPrograms: recommendedPrograms.map((p) => ({
+        programId: p.programId,
+        programName: p.programName,
+        level: p.level,
+        category: p.category,
+      })),
+      hasCareerDirection: Boolean(
+        pathwayFinal.careerId ?? pathwayFinal.careerName
+      ),
+      counselorAssigned: inputs.counselorAssigned,
+    }),
   };
 }
 

@@ -13,6 +13,7 @@ import {
   AlertTriangle,
   ArrowRight,
   Sparkles,
+  ShieldCheck,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -397,6 +398,59 @@ export default function DecisionCenterPage() {
               ))}
             </ul>
           )}
+        </CardContent>
+      </Card>
+
+      {/* 5.5 — Admissions readiness */}
+      <Card>
+        <CardHeader className="pb-2">
+          <CardTitle className="flex items-center gap-2 text-base">
+            <ShieldCheck className="h-4 w-4 text-accent" />
+            Admissions readiness
+          </CardTitle>
+          <p className="text-xs text-muted-foreground">
+            How much of the admission picture is established: which route applies, which official source to verify, and what is still unknown. Eligibility should be verified against the official criteria — it is never inferred.
+          </p>
+        </CardHeader>
+        <CardContent className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge
+              variant={
+                state.admissionsGuidance.readiness === "READY_TO_RESEARCH"
+                  ? "success"
+                  : state.admissionsGuidance.readiness === "NEEDS_VERIFICATION"
+                    ? "warning"
+                    : "destructive"
+              }
+            >
+              {state.admissionsGuidance.readiness === "READY_TO_RESEARCH" && (
+                <CheckCircle2 className="mr-1 h-3 w-3" />
+              )}
+              {state.admissionsGuidance.readiness === "NEEDS_VERIFICATION" && (
+                <AlertTriangle className="mr-1 h-3 w-3" />
+              )}
+              {state.admissionsGuidance.readiness === "INFORMATION_MISSING" && (
+                <Info className="mr-1 h-3 w-3" />
+              )}
+              {state.admissionsGuidance.readinessLabel}
+            </Badge>
+            <span className="text-sm text-muted-foreground">
+              {state.admissionsGuidance.missingInformation.length} item(s) to confirm · {state.admissionsGuidance.officialSources.length} official source(s)
+            </span>
+          </div>
+          <Link
+            href="/admissions"
+            onClick={() =>
+              trackRecommendationEvent({
+                event: "admissions_action_opened",
+                meta: { actionId: "open_admissions_page", href: "/admissions" },
+              })
+            }
+          >
+            <Button size="sm" variant="outline">
+              Open admissions guidance <ArrowRight className="ml-1 h-4 w-4" />
+            </Button>
+          </Link>
         </CardContent>
       </Card>
 
