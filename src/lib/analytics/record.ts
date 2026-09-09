@@ -18,7 +18,14 @@ export type ProductEventName =
   | "university_shortlisted"
   | "program_shortlisted"
   | "roadmap_action_completed"
-  | "next_best_action_clicked";
+  | "next_best_action_clicked"
+  | "decision_center_viewed"
+  | "career_option_opened"
+  | "program_option_opened"
+  | "institution_option_opened"
+  | "decision_shortlisted"
+  | "pathway_selected"
+  | "counselor_review_clicked";
 
 export type ProductEventInput = {
   userId: string;

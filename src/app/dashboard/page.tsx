@@ -183,6 +183,7 @@ export default async function DashboardPage() {
   });
 
   const featureCards = [
+    { label: "Decision Center", icon: Compass, enabled: true, href: "/decision-center" },
     { label: "My Study Roadmap", icon: Compass, enabled: true, href: "/roadmap" },
     { label: "College Finder", icon: GraduationCap, enabled: featureAccess?.collegeFinder, href: "/college-finder" },
     { label: "AI Odds Calculator", icon: Calculator, enabled: featureAccess?.aiOddsCalculator, href: "/odds-calculator" },

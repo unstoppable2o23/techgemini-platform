@@ -23,6 +23,7 @@ const REAL_STUDENT_ROUTES = new Set([
   "/scholarships",
   "/indian-colleges",
   "/career-preferences",
+  "/decision-center",
   "/saved",
   "/dashboard",
   "/settings",

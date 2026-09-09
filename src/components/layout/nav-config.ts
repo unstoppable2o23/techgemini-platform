@@ -88,6 +88,12 @@ export const STUDENT_GROUPS: NavGroup[] = [
         description: "Explore degrees and specializations",
       },
       {
+        label: "Decision Center",
+        href: "/decision-center",
+        icon: Compass,
+        description: "Your strongest options across careers, programs and institutions",
+      },
+      {
         label: "Universities",
         href: "/universities",
         icon: Building2,

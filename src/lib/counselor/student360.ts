@@ -10,6 +10,8 @@ import { computeProfileCompleteness } from "../student/basics.ts";
 import { attentionStates, primaryAttention } from "./attention.ts";
 import type { AttentionState } from "./attention.ts";
 import { listCareerDecisions, listProgramPlans } from "./planning.ts";
+import { getDecisionCenter } from "../decision-center/center.ts";
+import type { DecisionCenterState } from "../decision-center/center.ts";
 
 const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
 
@@ -61,6 +63,8 @@ export type Student360 = {
     category: string | null;
     notedAt: Date;
   }>;
+  /** Phase 29 — derived decision center state (option groups, gaps, brief). */
+  decisionCenter: DecisionCenterState | null;
 };
 
 export async function getStudent360(
@@ -334,6 +338,15 @@ export async function getStudent360(
     journey = null;
   }
 
+  // ---- Decision center (Phase 29) — composed from the same career matches,
+  // so no second engine computation occurs in the counselor view either.
+  let decisionCenter: DecisionCenterState | null = null;
+  try {
+    decisionCenter = await getDecisionCenter(studentUserId, { careerMatches });
+  } catch {
+    decisionCenter = null;
+  }
+
   return {
     user: {
       id: user.id,
@@ -360,5 +373,6 @@ export async function getStudent360(
     careerDecisions,
     programPlans,
     shortlistedPrograms,
+    decisionCenter,
   };
 }
