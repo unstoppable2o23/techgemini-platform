@@ -6,6 +6,10 @@ import {
   getMedicalDisciplineForCareerName,
   getMedicalDisciplineForCareerSlug,
 } from "../medical-education/registry.ts";
+import { computeProfileCompleteness } from "../student/basics.ts";
+import { attentionStates, primaryAttention } from "./attention.ts";
+import type { AttentionState } from "./attention.ts";
+import { listCareerDecisions, listProgramPlans } from "./planning.ts";
 
 const ASSESSMENT_KINDS = ["stream", "ideal", "personality", "intelligences", "learning"];
 
@@ -41,6 +45,14 @@ export type Student360 = {
   chats: any[];
   /** Phase 26 — derived career-journey block (profile, next action, roadmap). */
   journey: Record<string, any> | null;
+  /** Phase 27 — deterministic attention state for this student. */
+  attention: {
+    states: AttentionState[];
+    primary: AttentionState | null;
+    lastActivityAt: string | null;
+  };
+  careerDecisions: any[];
+  programPlans: any[];
 };
 
 export async function getStudent360(
@@ -57,6 +69,14 @@ export async function getStudent360(
         },
       },
       careerProfile: { include: { signals: true } },
+      roadmap: {
+        select: {
+          goalCareerId: true,
+          progress: true,
+          updatedAt: true,
+          educationStage: true,
+        },
+      },
     },
   });
 
@@ -202,6 +222,72 @@ export async function getStudent360(
     take: 5,
   });
 
+  // ---- Phase 27 — planning records + deterministic attention ----
+  const [careerDecisions, programPlans, shortlistCounts] = await Promise.all([
+    listCareerDecisions(profile.id),
+    listProgramPlans(profile.id),
+    prisma.studentShortlist.groupBy({
+      by: ["studentId"],
+      where: {
+        studentId: studentUserId,
+        itemType: { in: ["UNIVERSITY", "INDIAN_INSTITUTION"] },
+      },
+      _count: { _all: true },
+    }),
+  ]);
+  const universityShortlistCount = shortlistCounts[0]?._count._all ?? 0;
+
+  const roadmap = user.roadmap ?? null;
+  const roadmapProgress = roadmap?.progress ?? 0;
+  const staleMs =
+    roadmap && roadmap.progress > 0 && roadmap.progress < 100 && roadmap.updatedAt
+      ? Date.now() - roadmap.updatedAt.getTime()
+      : null;
+  const openActions = actions.filter((a) => !a.completed);
+
+  const profileCompleteness = Math.round(computeProfileCompleteness(profile));
+  const hasCareerDirection = Boolean(
+    profile.preferredCareerId ||
+      roadmap?.goalCareerId ||
+      careerDecisions.some(
+        (d) => d.selectedPathway || d.shortlistedCareer || d.studentInterest
+      )
+  );
+  const attentionOverview = {
+    profileCompleteness,
+    assessmentCompletedCount,
+    assessmentTotal: ASSESSMENT_KINDS.length,
+    hasCareerDirection,
+    roadmapExists: Boolean(roadmap),
+    roadmapProgress,
+    roadmapStaleDays: staleMs === null ? null : Math.floor(staleMs / 86400000),
+    universityShortlistCount,
+    hasOpenAction: openActions.length > 0,
+    openActionDueInDays: (() => {
+      if (openActions.length === 0) return null;
+      const dueDates = openActions
+        .filter((a) => a.dueDate)
+        .map((a) => (new Date(a.dueDate!).getTime() - Date.now()) / 86400000);
+      return dueDates.length ? Math.min(...dueDates) : null;
+    })(),
+    openActionCount: openActions.length,
+    educationStage: roadmap?.educationStage ?? null,
+    targetCountry: profile.targetCountry ?? null,
+  };
+  const attention = {
+    states: attentionStates(attentionOverview),
+    primary: primaryAttention(attentionOverview),
+    lastActivityAt: null as string | null,
+  };
+  const seen = [user.lastSeen, profile.updatedAt, roadmap?.updatedAt].filter(
+    (d): d is Date => Boolean(d)
+  );
+  if (seen.length > 0) {
+    attention.lastActivityAt = new Date(
+      Math.max(...seen.map((d) => new Date(d).getTime()))
+    ).toISOString();
+  }
+
   // ---- Journey state (Phase 26) — reuses the derived journey engine. We pass
   // the already-computed career matches so the engine does not run twice.
   let journey: Record<string, any> | null = null;
@@ -234,5 +320,8 @@ export async function getStudent360(
     appointments,
     chats,
     journey,
+    attention,
+    careerDecisions,
+    programPlans,
   };
 }

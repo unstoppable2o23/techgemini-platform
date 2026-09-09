@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +19,7 @@ import {
   StickyNote,
   ListChecks,
   Compass,
+  FileText,
 } from "lucide-react";
 
 import { RoadmapTab } from "./roadmap-tab";
@@ -149,6 +150,47 @@ export default function Student360Client({
     refresh();
   }
 
+  async function saveCareerDecision(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const careerId = String(fd.get("careerId") || "");
+    if (!careerId) return;
+    await fetch(`/api/counselor/students/${studentId}/career-decision`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        careerId,
+        discussed: fd.get("discussed") === "on",
+        studentInterest: fd.get("studentInterest") === "on",
+        shortlistedCareer: fd.get("shortlistedCareer") === "on",
+        selectedPathway: fd.get("selectedPathway") === "on",
+        followUpRequired: fd.get("followUpRequired") === "on",
+        counselorRecommendation: String(fd.get("counselorRecommendation") || "") || null,
+        note: String(fd.get("note") || "") || null,
+      }),
+    });
+    refresh();
+  }
+
+  async function saveProgramPlan(programId: string, flags: Record<string, boolean>) {
+    const careerId = String(flags._careerId || "");
+    if (!careerId || !programId) return;
+    await fetch(`/api/counselor/students/${studentId}/program-plan`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        careerId,
+        programId,
+        discussed: flags.discussed,
+        shortlisted: flags.shortlisted,
+        requiresResearch: flags.requiresResearch,
+        studentInterested: flags.studentInterested,
+        note: null,
+      }),
+    });
+    refresh();
+  }
+
   const tabs = [
     { key: "overview", label: "Overview", icon: ArrowLeft },
     { key: "assessments", label: "Assessments", icon: ListChecks },
@@ -172,6 +214,20 @@ export default function Student360Client({
           </h1>
           <p className="text-sm text-muted-foreground">{data.user.email}</p>
         </div>
+        <div className="ml-auto flex items-center gap-2">
+          <Button size="sm" variant="outline" onClick={() => router.push(`/students/${studentId}/report`)}>
+            <FileText className="h-4 w-4 mr-1.5" />
+            Report
+          </Button>
+          <Button size="sm" variant="outline" onClick={() => router.push("/calendar")}>
+            <Calendar className="h-4 w-4 mr-1.5" />
+            Book follow-up
+          </Button>
+          <Button size="sm" variant="outline" onClick={() => router.push("/messages")}>
+            <MessageSquare className="h-4 w-4 mr-1.5" />
+            Open chat
+          </Button>
+        </div>
       </div>
 
       <SummaryBar
@@ -182,6 +238,7 @@ export default function Student360Client({
         universityCount={data.universityMatches?.matches?.length ?? 0}
         followUpRequired={followUpRequired}
         journey={data.journey}
+        attention={data.attention}
       />
 
       <div className="flex flex-wrap gap-2 my-4">
@@ -204,7 +261,12 @@ export default function Student360Client({
       {tab === "overview" && <OverviewTab data={data} />}
       {tab === "assessments" && <AssessmentsTab data={data} />}
       {tab === "career" && (
-        <CareerTab data={data} onSubmitFeedback={submitFeedback} />
+        <CareerTab
+          data={data}
+          onSubmitFeedback={submitFeedback}
+          onSaveDecision={saveCareerDecision}
+          onSaveProgramPlan={saveProgramPlan}
+        />
       )}
       {tab === "education" && <EducationTab data={data} />}
       {tab === "universities" && (
@@ -238,10 +300,15 @@ function SummaryBar({
   universityCount,
   followUpRequired,
   journey,
+  attention,
 }: any) {
+  const primary = attention?.primary ? String(attention.primary).replace(/_/g, " ").toLowerCase() : "on track";
+  const lastActivity = attention?.lastActivityAt
+    ? fmtDate(attention.lastActivityAt)
+    : "—";
   return (
     <Card>
-      <CardContent className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-4">
+      <CardContent className="p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-4">
         <Stat label="Profile" value={pct(profileComplete)} />
         <Stat label="Assessments" value={assessments} />
         <Stat label="Education" value={education} />
@@ -263,6 +330,13 @@ function SummaryBar({
           value={followUpRequired ? "Required" : "None"}
           danger={followUpRequired}
         />
+        <div>
+          <p className="text-xs text-muted-foreground">Attention</p>
+          <p className={`font-semibold capitalize ${attention?.primary ? "text-orange-600" : "text-green-600"}`}>
+            {primary}
+          </p>
+          <p className="text-[10px] text-muted-foreground">Last activity {lastActivity}</p>
+        </div>
       </CardContent>
     </Card>
   );
@@ -395,12 +469,105 @@ function OverviewTab({ data }: any) {
               href="/chat"
               className="inline-flex items-center gap-1.5 rounded-md border border-gray-200 px-3 py-1.5 text-sm font-medium hover:bg-gray-50"
             >
-              <MessageSquare className="h-4 w-4" /> Open Chat
+<MessageSquare className="h-4 w-4" /> Open Chat
             </a>
           </CardContent>
         </Card>
       </div>
     </div>
+  );
+}
+
+function ProgramPlanning({
+  studentId,
+  careers,
+  defaultCareerId,
+  onSaveProgramPlan,
+}: any) {
+  const [careerId, setCareerId] = useState(defaultCareerId || "");
+  const [programs, setPrograms] = useState<any[] | null>(null);
+
+  useEffect(() => {
+    setPrograms(null);
+    if (!careerId) return;
+    fetch(
+      `/api/counselor/students/${studentId}/programs?careerId=${encodeURIComponent(careerId)}`
+    )
+      .then((r) => r.json())
+      .then((j) => setPrograms(j.programs ?? []))
+      .catch(() => setPrograms([]));
+  }, [careerId, studentId]);
+
+  const FLAGS = [
+    { key: "discussed", label: "Discussed" },
+    { key: "shortlisted", label: "Shortlisted" },
+    { key: "requiresResearch", label: "Needs research" },
+    { key: "studentInterested", label: "Student interested" },
+  ] as const;
+
+  return (
+    <Card>
+      <CardContent className="p-4">
+        <div className="flex items-center justify-between gap-3">
+          <p className="font-semibold text-sm">Program planning</p>
+          <select
+            value={careerId}
+            onChange={(e) => setCareerId(e.target.value)}
+            className="border rounded p-1.5 text-sm"
+          >
+            {careers.length === 0 && <option value="">Select a career</option>}
+            {careers.map((c: any) => (
+              <option key={c.careerId} value={c.careerId}>
+                {(c.career && (c.career.title || c.career.name)) || c.careerId}
+              </option>
+            ))}
+          </select>
+        </div>
+        {!programs && <p className="mt-2 text-xs text-muted-foreground">Loading programs…</p>}
+        {programs && programs.length === 0 && (
+          <p className="mt-2 text-xs text-muted-foreground">
+            No mapped programs for this career.
+          </p>
+        )}
+        {programs && programs.length > 0 && (
+          <div className="mt-2 space-y-2">
+            {programs.slice(0, 10).map((p: any) => (
+              <div key={p.programId} className="flex flex-wrap items-center justify-between gap-2 rounded-md border p-2 text-sm">
+                <div className="min-w-0">
+                  <p className="font-medium truncate">{p.programName}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {p.level} · {p.relationshipType}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {FLAGS.map((f) => {
+                    const active = Boolean(p.plan?.[f.key]);
+                    return (
+                      <button
+                        key={f.key}
+                        type="button"
+                        onClick={() =>
+                          onSaveProgramPlan(p.programId, {
+                            ...Object.fromEntries(FLAGS.map((x) => [x.key, Boolean(p.plan?.[x.key])])),
+                            [f.key]: !active,
+                            _careerId: careerId,
+                          })
+                        }
+                        className={`rounded-full px-2.5 py-1 text-[11px] border transition ${
+                          active ? "bg-blue-600 text-white border-blue-600" : "bg-white text-gray-600 border-gray-200 hover:bg-gray-50"
+                        }`}
+                      >
+                        {f.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </CardContent>
+    </Card>
   );
 }
 
@@ -447,12 +614,89 @@ function AssessmentsTab({ data }: any) {
   );
 }
 
-function CareerTab({ data, onSubmitFeedback }: any) {
+function CareerTab({ data, onSubmitFeedback, onSaveDecision, onSaveProgramPlan }: any) {
   const matches = data.careerMatches || [];
+  const decisions = data.careerDecisions || [];
+  const decisionByCareer = new Map(decisions.map((d: any) => [d.careerId, d]));
   if (matches.length === 0)
-    return <Card><CardContent className="p-4 text-sm text-muted-foreground">No career matches available yet.</CardContent></Card>;
+    return (
+      <div className="space-y-3">
+        <Card><CardContent className="p-4 text-sm text-muted-foreground">No career matches available yet.</CardContent></Card>
+        <ProgramPlanning matches={matches} studentId={data.user.id} onSaveProgramPlan={onSaveProgramPlan} />
+      </div>
+    );
+
+  const selectedDecision = decisionByCareer.get(matches[0]?.careerId) as any;
   return (
     <div className="space-y-3">
+      {/* Phase 27 — system recommendation summary + counselor decision workflow */}
+      <Card className="border-blue-200 bg-blue-50/40">
+        <CardContent className="p-4">
+          <div className="flex items-center gap-3">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600 text-white">
+              <TrendingUp className="h-4 w-4" />
+            </span>
+            <div>
+              <p className="font-semibold">System recommendation</p>
+              <p className="text-xs text-muted-foreground">
+                {matches[0]?.career.title || matches[0]?.career.name} · {matches[0]?.matchScore}% match (
+                confidence {matches[0]?.confidenceScore}%, {matches[0]?.confidenceDetail?.level ?? "LOW"})
+              </p>
+            </div>
+          </div>
+          {selectedDecision && (
+            <p className="mt-2 text-xs text-muted-foreground">
+              Counselor decision recorded:
+              {selectedDecision.selectedPathway && " Selected as pathway"}
+              {selectedDecision.shortlistedCareer && " · Shortlisted"}
+              {selectedDecision.studentInterest && " · Student interested"}
+              {selectedDecision.counselorRecommendation
+                ? ` · ${selectedDecision.counselorRecommendation}`
+                : ""}
+            </p>
+          )}
+
+          <details className="mt-3">
+            <summary className="cursor-pointer text-sm text-blue-600 underline">
+              Record a career decision
+            </summary>
+            <form className="mt-2 grid gap-2 text-sm" onSubmit={onSaveDecision}>
+              <select name="careerId" className="w-full border rounded p-2" defaultValue={matches[0]?.careerId}>
+                {matches.map((m: any) => (
+                  <option key={m.careerId} value={m.careerId}>
+                    {m.career.title || m.career.name}
+                  </option>
+                ))}
+              </select>
+              <div className="flex flex-wrap gap-3">
+                <label className="flex items-center gap-1.5">
+                  <input name="discussed" type="checkbox" /> Discussed
+                </label>
+                <label className="flex items-center gap-1.5">
+                  <input name="studentInterest" type="checkbox" /> Student interested
+                </label>
+                <label className="flex items-center gap-1.5">
+                  <input name="shortlistedCareer" type="checkbox" /> Shortlisted
+                </label>
+                <label className="flex items-center gap-1.5">
+                  <input name="selectedPathway" type="checkbox" /> Selected as pathway
+                </label>
+                <label className="flex items-center gap-1.5">
+                  <input name="followUpRequired" type="checkbox" /> Needs follow-up
+                </label>
+              </div>
+              <input
+                name="counselorRecommendation"
+                placeholder="Counselor recommendation (optional)"
+                className="w-full border rounded p-2"
+              />
+              <textarea name="note" placeholder="Note (optional)" className="w-full border rounded p-2" rows={2} />
+              <Button type="submit" size="sm">Save decision</Button>
+            </form>
+          </details>
+        </CardContent>
+      </Card>
+
       {matches.map((m: any) => (
         <Card key={m.careerId}>
           <CardContent className="p-4">
@@ -616,6 +860,13 @@ function CareerTab({ data, onSubmitFeedback }: any) {
           </CardContent>
         </Card>
       ))}
+
+      <ProgramPlanning
+        studentId={data.user.id}
+        careers={matches}
+        defaultCareerId={matches[0]?.careerId}
+        onSaveProgramPlan={onSaveProgramPlan}
+      />
     </div>
   );
 }

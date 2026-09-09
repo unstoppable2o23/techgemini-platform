@@ -171,13 +171,30 @@ export function RoadmapTab({
     );
   }
 
+  const byStatus = {
+    completed: data.steps.filter((s) => s.status === "COMPLETED"),
+    inProgress: data.steps.filter((s) => s.status === "IN_PROGRESS"),
+    next: data.steps.filter(
+      (s) => s.status === "NOT_STARTED" && s.timeHorizon === "NOW"
+    ),
+    notStarted: data.steps.filter(
+      (s) => s.status === "NOT_STARTED" && s.timeHorizon !== "NOW"
+    ),
+    skipped: data.steps.filter((s) => s.status === "SKIPPED"),
+  };
+  const statusOrder: Array<[keyof typeof byStatus, string]> = [
+    ["inProgress", "In Progress"],
+    ["next", "Up Next"],
+    ["notStarted", "Not Started"],
+    ["completed", "Completed"],
+    ["skipped", "Skipped"],
+  ];
   const byMilestone = new Map<string, Step[]>();
   for (const s of data.steps) {
     const key = HORIZON_TO_MILESTONE[s.timeHorizon] || "NEXT_3_MONTHS";
     if (!byMilestone.has(key)) byMilestone.set(key, []);
     byMilestone.get(key)!.push(s);
   }
-  const order = ["NOW", "NEXT_3_MONTHS", "NEXT_6_12_MONTHS", "TARGET"];
   const msLabel = (k: string) => data.milestones.find((m) => m.key === k)?.label || k;
 
   return (
@@ -210,6 +227,17 @@ export function RoadmapTab({
         </CardContent>
       </Card>
 
+      <Card>
+        <CardContent className="flex flex-wrap gap-2 p-3">
+          {statusOrder.map(([key, label]) => (
+            <Badge key={key} variant="secondary" className="gap-1">
+              {label}
+              <span className="font-semibold">{byStatus[key].length}</span>
+            </Badge>
+          ))}
+        </CardContent>
+      </Card>
+
       {showForm && (
         <Card className="border-primary/30">
           <CardContent className="space-y-3 p-4">
@@ -228,18 +256,19 @@ export function RoadmapTab({
         </Card>
       )}
 
-      {order.map((mk) => {
-        const steps = byMilestone.get(mk) || [];
+      {statusOrder.map(([key, label]) => {
+        const steps = byStatus[key];
         if (!steps.length) return null;
         return (
-          <section key={mk} className="space-y-2">
+          <section key={key} className="space-y-2">
             <h3 className="text-sm font-semibold flex items-center gap-2">
-              <Target className="h-4 w-4 text-primary" /> {msLabel(mk)}
+              <Target className="h-4 w-4 text-primary" /> {label}
+              <Badge variant="secondary" className="rounded-full px-2">{steps.length}</Badge>
             </h3>
             {steps.map((s, i) => {
-              const actualIndex = data.steps.indexOf(s);
+              const mk = HORIZON_TO_MILESTONE[s.timeHorizon] || "NEXT_3_MONTHS";
               return (
-                <Card key={s.id || `${mk}-${i}`} className={s.status === "COMPLETED" ? "opacity-70" : ""}>
+                <Card key={s.id || `${key}-${i}`} className={s.status === "COMPLETED" ? "opacity-70" : ""}>
                   <CardContent className="flex items-start gap-3 p-3">
                     <button
                       onClick={() => updateStep(s, s.status === "COMPLETED" ? "NOT_STARTED" : "COMPLETED")}
@@ -258,7 +287,7 @@ export function RoadmapTab({
                             <MessageSquare className="h-3 w-3" /> Counselor
                           </span>
                         )}
-                        <span className="text-[11px] text-muted-foreground">{fmtHorizon(s.timeHorizon)}</span>
+                        <span className="text-[11px] text-muted-foreground">{fmtHorizon(s.timeHorizon)} · {msLabel(mk)}</span>
                       </div>
                       {s.description && <p className="mt-1 text-xs text-muted-foreground">{s.description}</p>}
                       {s.counselorNote && <p className="mt-1 rounded-md bg-violet-50 p-2 text-xs text-violet-700">Note: {s.counselorNote}</p>}

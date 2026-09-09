@@ -5,7 +5,9 @@ export type NoteType =
   | "CAREER"
   | "EDUCATION"
   | "UNIVERSITY"
-  | "FOLLOW_UP";
+  | "FOLLOW_UP"
+  | "PARENT_MEETING"
+  | "PROGRAM_REVIEW";
 
 export type ActionType =
   | "FOLLOW_UP"
@@ -13,6 +15,12 @@ export type ActionType =
   | "CAREER_REVIEW"
   | "EDUCATION_REVIEW"
   | "UNIVERSITY_REVIEW"
+  | "ROADMAP_REVIEW"
+  | "PARENT_MEETING"
+  | "SUBJECT_SELECTION"
+  | "ENTRANCE_EXAM"
+  | "PROGRAM_REVIEW"
+  | "STUDENT_FOLLOW_UP"
   | "GENERAL";
 
 export async function listNotes(studentProfileId: string) {

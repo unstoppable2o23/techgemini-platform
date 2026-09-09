@@ -21,7 +21,6 @@ import {
   Users,
   FileText,
   Calendar,
-  Activity,
   ArrowUpRight,
   GraduationCap,
   Calculator,
@@ -31,12 +30,15 @@ import {
   ClipboardCheck,
   Briefcase,
   Compass,
+  MessageSquare,
+  BellRing,
 } from "lucide-react";
 import { formatUsageMinutes } from "@/lib/format-utils";
 import { PageHeader } from "@/components/ui/page-header";
-import { StatCard } from "@/components/ui/stat-card";
 import { getStudentDashboard } from "@/lib/student/dashboard.ts";
 import { getJourneyState } from "@/lib/student/journey-state.ts";
+import { getCounselorCommandCenter } from "@/lib/counselor/command-center";
+import { CounselorCommandCenter } from "./counselor-command-center";
 import StudentIntelligenceHub from "./student-intelligence-hub";
 import { OnboardingTour } from "@/components/onboarding-tour";
 
@@ -95,52 +97,21 @@ export default async function DashboardPage() {
   }
 
   if (isCounselor) {
-    const studentCount = await prisma.user.count({
-      where: {
-        role: "STUDENT",
-        tenantId: user.tenantId,
-        ...(user.role === "COUNSELOR"
-          ? { studentProfile: { counselor: { userId: user.id } } }
-          : {}),
-      },
+    const commandCenter = await getCounselorCommandCenter({
+      tenantId: user.tenantId,
+      counselorUserId: user.role === "COUNSELOR" ? user.id : undefined,
     });
-
-    const testCount = await prisma.testResult.count({
-      where: { student: { userId: user.id } },
-    });
-
-    const upcomingAppointments = await prisma.appointment.count({
-      where: {
-        counselorId: user.id,
-        status: "CONFIRMED",
-        startTime: { gte: new Date() },
-      },
-    });
-
-    const stats = [
-      { title: "Total Students", value: studentCount, icon: Users, hint: "Registered students" },
-      { title: "Tests Completed", value: testCount, icon: FileText, hint: "All time" },
-      { title: "Upcoming Appointments", value: upcomingAppointments, icon: Calendar, hint: "Confirmed" },
-      { title: "Active Students", value: studentCount, icon: Activity, hint: "Currently active" },
-    ];
 
     return (
       <div className="space-y-6 p-6 pt-20">
         <OnboardingTour role="counselor" />
-        <PageHeader
-          icon={Activity}
-          title="Counselor Dashboard"
-          description={`Welcome back, ${user.firstName}`}
-          eyebrow="Overview"
+        <CounselorCommandCenter
+          commandCenter={commandCenter}
+          firstName={user.firstName}
         />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <StatCard key={stat.title} title={stat.title} value={stat.value} icon={stat.icon} hint={stat.hint} />
-          ))}
-        </div>
         <Card>
           <CardHeader><CardTitle>Quick Actions</CardTitle></CardHeader>
-          <CardContent className="grid gap-4 md:grid-cols-2">
+          <CardContent className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <a href="/students" data-tour="students" className="group flex items-center gap-4 rounded-xl border bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-white shadow-md shadow-primary/30 transition-transform duration-200 group-hover:scale-110">
                 <Users className="h-6 w-6" />
@@ -161,16 +132,28 @@ export default async function DashboardPage() {
               </div>
               <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground/50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
             </a>
+            <a href="/calendar" className="group flex items-center gap-4 rounded-xl border bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-white shadow-md shadow-primary/30 transition-transform duration-200 group-hover:scale-110">
+                <BellRing className="h-6 w-6" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold">Book Follow-up</p>
+                <p className="text-xs text-muted-foreground">Schedule a follow-up appointment</p>
+              </div>
+              <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground/50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+            </a>
+            <a href="/messages" className="group flex items-center gap-4 rounded-xl border bg-white p-4 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-accent text-white shadow-md shadow-primary/30 transition-transform duration-200 group-hover:scale-110">
+                <MessageSquare className="h-6 w-6" />
+              </span>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold">Open Chat</p>
+                <p className="text-xs text-muted-foreground">Messages with students</p>
+              </div>
+              <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground/50 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+            </a>
           </CardContent>
         </Card>
-
-        {user.role === "COUNSELOR" && (
-          <MyStudentsTable tenantId={user.tenantId} counselorUserId={user.id} />
-        )}
-
-        {user.role === "SUPER_ADMIN" && (
-          <AllUsersTable tenantId={user.tenantId} />
-        )}
       </div>
     );
   }
@@ -315,12 +298,6 @@ export default async function DashboardPage() {
   );
 }
 
-const STATUS_CONFIG: Record<string, { label: string; variant: "success" | "warning" | "secondary"; dot: string }> = {
-  ONLINE: { label: "Online", variant: "success", dot: "bg-green-500" },
-  IN_TEST: { label: "In Test", variant: "warning", dot: "bg-orange-500" },
-  OFFLINE: { label: "Offline", variant: "secondary", dot: "bg-gray-400" },
-};
-
 function formatLastSeen(date: string | Date | null): string {
   if (!date) return "Never";
   const now = Date.now();
@@ -333,97 +310,6 @@ function formatLastSeen(date: string | Date | null): string {
   const days = Math.floor(hours / 24);
   if (days < 7) return `${days}d ago`;
   return new Date(date).toLocaleDateString();
-}
-
-async function MyStudentsTable({ tenantId, counselorUserId }: { tenantId: string; counselorUserId: string }) {
-  const students = await prisma.user.findMany({
-    where: {
-      role: "STUDENT",
-      tenantId,
-      studentProfile: { counselor: { userId: counselorUserId } },
-    },
-    orderBy: { lastSeen: { sort: "desc", nulls: "last" } },
-    select: {
-      id: true,
-      firstName: true,
-      lastName: true,
-      email: true,
-      isActive: true,
-      lastSeen: true,
-      totalUsageMinutes: true,
-      studentProfile: { select: { status: true, _count: { select: { testResults: true } } } },
-    },
-  });
-
-  if (students.length === 0) return null;
-
-  return (
-    <Card data-tour="assign">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white shadow-md shadow-primary/25">
-            <Users className="h-5 w-5" />
-          </span>
-          My Students
-          <Badge variant="secondary" className="ml-1 rounded-full px-2">
-            {students.length}
-          </Badge>
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="p-0">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>Student</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Tests</TableHead>
-              <TableHead>Last Seen</TableHead>
-              <TableHead>Usage Time</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {students.map((s) => {
-              const status = s.studentProfile?.status || "OFFLINE";
-              const sc = STATUS_CONFIG[status] || STATUS_CONFIG.OFFLINE;
-              return (
-                <TableRow key={s.id}>
-                  <TableCell>
-                    <div>
-                      <p className="text-sm font-medium">{s.firstName} {s.lastName}</p>
-                      <p className="text-xs text-muted-foreground">{s.email}</p>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <Badge variant={sc.variant} className="gap-1.5">
-                      <span className={`h-1.5 w-1.5 rounded-full ${sc.dot}`} />
-                      {sc.label}
-                    </Badge>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <ClipboardCheck className="h-3 w-3" />
-                      {s.studentProfile?._count?.testResults || 0}
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <span className="text-sm text-muted-foreground whitespace-nowrap">
-                      {formatLastSeen(s.lastSeen)}
-                    </span>
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Timer className="h-3 w-3" />
-                      {formatUsageMinutes(s.totalUsageMinutes ?? 0)}
-                    </div>
-                  </TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </CardContent>
-    </Card>
-  );
 }
 
 async function AllUsersTable({ tenantId }: { tenantId: string }) {

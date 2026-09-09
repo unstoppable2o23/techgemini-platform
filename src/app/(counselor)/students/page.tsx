@@ -3,12 +3,21 @@ import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { StudentManagementClient } from "./student-management-client";
 import { redirect } from "next/navigation";
+import { getCounselorCommandCenter } from "@/lib/counselor/command-center";
 
-export default async function StudentManagementPage() {
+export default async function StudentManagementPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
   const session = await getServerSession(authOptions);
   if (!session || !session.user) redirect("/auth/login");
   const user = session.user;
   if (user.role !== "COUNSELOR" && user.role !== "SUPER_ADMIN") redirect("/auth/login");
+
+  const sp = await searchParams;
+  const one = (v: string | string[] | undefined) =>
+    typeof v === "string" ? v : undefined;
 
   const students = await prisma.user.findMany({
     where: {
@@ -38,7 +47,7 @@ export default async function StudentManagementPage() {
     orderBy: { createdAt: "desc" },
   });
 
-  const safeStudents = students.map((s) => {
+  const safeStudents: any[] = students.map((s) => {
     const { passwordHash: _ph, studentProfile, careerProfile, _count, ...rest } = s;
     const safeProfile = studentProfile
       ? {
@@ -63,7 +72,54 @@ export default async function StudentManagementPage() {
       assessmentTotal: 5,
       profileCompleteness: careerProfile?.completeness ?? null,
       preferredCareer: studentProfile?.preferredCareer ?? null,
+      targetCountry: studentProfile?.targetCountry ?? null,
     };
+  });
+
+  // Phase 27 — attention + roadmap filter fields (persisted rows, no engine).
+  const commandCenter = await getCounselorCommandCenter({
+    tenantId: user.tenantId,
+    counselorUserId: user.role === "COUNSELOR" ? user.id : undefined,
+  });
+  const byUserId = new Map(commandCenter.students.map((r) => [r.userId, r]));
+  for (const s of safeStudents) {
+    const row = byUserId.get(s.id);
+    if (!row) continue;
+    s.attentionPrimary = row.primary;
+    s.attentionStates = row.states;
+    s.roadmapProgress = row.roadmapExists ? Math.round(row.roadmapProgress) : null;
+    s.educationStage = row.educationStage;
+    if (s.targetCountry == null) s.targetCountry = row.targetCountry;
+  }
+
+  const filterOpts = {
+    attention: Array.from(
+      new Set(safeStudents.map((s) => s.attentionPrimary).filter((x): x is string => Boolean(x)))
+    ).sort(),
+    countries: Array.from(
+      new Set(safeStudents.map((s) => s.targetCountry).filter((x): x is string => Boolean(x)))
+    ).sort(),
+    stages: Array.from(
+      new Set(safeStudents.map((s) => s.educationStage).filter((x): x is string => Boolean(x)))
+    ).sort(),
+  };
+
+  const attentionF = one(sp.attention);
+  const countryF = one(sp.country);
+  const stageF = one(sp.stage);
+  const roadmapF = one(sp.roadmap);
+
+  const filteredStudents = safeStudents.filter((s) => {
+    if (attentionF && s.attentionPrimary !== attentionF) return false;
+    if (countryF && s.targetCountry !== countryF) return false;
+    if (stageF && s.educationStage !== stageF) return false;
+    if (roadmapF) {
+      if (roadmapF === "none" && s.roadmapProgress !== null) return false;
+      if (roadmapF === "in-progress" && !(s.roadmapProgress !== null && s.roadmapProgress > 0 && s.roadmapProgress < 100)) return false;
+      if (roadmapF === "complete" && s.roadmapProgress !== 100) return false;
+      if (roadmapF === "started" && !(s.roadmapProgress !== null && s.roadmapProgress > 0)) return false;
+    }
+    return true;
   });
 
   const total = safeStudents.length;
@@ -98,7 +154,16 @@ export default async function StudentManagementPage() {
           </div>
         ))}
       </div>
-      <StudentManagementClient students={safeStudents} />
+      <StudentManagementClient
+        students={filteredStudents}
+        filterOptions={filterOpts}
+        filters={{
+          attention: attentionF,
+          country: countryF,
+          stage: stageF,
+          roadmap: roadmapF,
+        }}
+      />
     </div>
   );
 }

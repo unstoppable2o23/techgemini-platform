@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -73,13 +73,24 @@ function formatLastSeen(date: string | Date): string {
 
 export function StudentManagementClient({
   students: initialStudents,
+  filterOptions,
+  filters,
 }: {
   students: any[];
+  filterOptions?: { attention: string[]; countries: string[]; stages: string[] };
+  filters?: { attention?: string; country?: string; stage?: string; roadmap?: string };
 }) {
   const router = useRouter();
   const [students, setStudents] = useState(initialStudents);
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("all");
+
+  function setFilter(key: string, value: string) {
+    const next = new URLSearchParams(window.location.search);
+    if (value && value !== "all") next.set(key, value);
+    else next.delete(key);
+    router.push(`/students?${next.toString()}`);
+  }
   const [addOpen, setAddOpen] = useState(false);
   const [addForm, setAddForm] = useState({ firstName: "", lastName: "", email: "", password: "" });
   const [adding, setAdding] = useState(false);
@@ -391,6 +402,59 @@ export function StudentManagementClient({
             <SelectItem value="OFFLINE">Offline</SelectItem>
           </SelectContent>
         </Select>
+
+        <Select value={filters?.attention || "all"} onValueChange={(v) => setFilter("attention", v)}>
+          <SelectTrigger className="w-[200px]">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Attention</SelectItem>
+            {(filterOptions?.attention ?? []).map((a) => (
+              <SelectItem key={a} value={a}>
+                {a.replace(/_/g, " ").toLowerCase()}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        <Select value={filters?.stage || "all"} onValueChange={(v) => setFilter("stage", v)}>
+          <SelectTrigger className="w-[200px]">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Stages</SelectItem>
+            {(filterOptions?.stages ?? []).map((s) => (
+              <SelectItem key={s} value={s}>
+                {s.replace(/_/g, " ").toLowerCase()}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        <Select value={filters?.country || "all"} onValueChange={(v) => setFilter("country", v)}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Countries</SelectItem>
+            {(filterOptions?.countries ?? []).map((c) => (
+              <SelectItem key={c} value={c}>{c}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        <Select value={filters?.roadmap || "all"} onValueChange={(v) => setFilter("roadmap", v)}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All Roadmaps</SelectItem>
+            <SelectItem value="none">Not started</SelectItem>
+            <SelectItem value="started">Started</SelectItem>
+            <SelectItem value="in-progress">In progress</SelectItem>
+            <SelectItem value="complete">Complete</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       <Card>
@@ -405,6 +469,7 @@ export function StudentManagementClient({
                 <TableHead>Assessment</TableHead>
                 <TableHead>Profile</TableHead>
                 <TableHead>Career</TableHead>
+                <TableHead>Attention</TableHead>
                 <TableHead>Account</TableHead>
                 <TableHead className="min-w-[400px]">
                   Feature Access
@@ -414,9 +479,9 @@ export function StudentManagementClient({
             </TableHeader>
             <TableBody>
               {filteredStudents.length === 0 ? (
-                <TableRow>
+<TableRow>
                       <TableCell
-                        colSpan={10}
+                        colSpan={11}
                         className="h-32 text-center text-muted-foreground"
                       >
                     No students found
@@ -486,14 +551,24 @@ export function StudentManagementClient({
 
                       <TableCell>
                         <span className="text-sm text-muted-foreground whitespace-nowrap">
-                          {student.profileCompleteness != null ? `${student.profileCompleteness}%` : "—"}
+                          {student.profileCompleteness != null ? `${student.profileCompleteness}%` : "â€”"}
                         </span>
                       </TableCell>
 
                       <TableCell>
                         <span className="text-sm text-muted-foreground whitespace-nowrap">
-                          {student.preferredCareer || "—"}
+                          {student.preferredCareer || "â€”"}
                         </span>
+                      </TableCell>
+
+                      <TableCell>
+                        {student.attentionPrimary ? (
+                          <Badge variant="secondary" className="whitespace-nowrap text-[10px]">
+                            {student.attentionPrimary.replace(/_/g, " ").toLowerCase()}
+                          </Badge>
+                        ) : (
+                          <span className="text-sm text-muted-foreground">â€”</span>
+                        )}
                       </TableCell>
 
                       <TableCell>

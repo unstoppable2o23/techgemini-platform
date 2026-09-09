@@ -827,12 +827,56 @@ model CounselorRecommendationFeedback {
   decision           String
   note               String?
   createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
 
   @@index([studentId])
   @@index([counselorId])
   @@index([recommendationType])
+}
+
+// Phase 27 — Counselor career decision record (Part 6). Structured, additive
+// advisor context. It NEVER replaces StudentProfile.preferredCareerId (the
+// student's own selection) and is never fed into the frozen career engine.
+model CounselorCareerDecision {
+  id                    String   @id @default(cuid())
+  studentId             String // StudentProfile.id
+  careerId              String
+  discussed             Boolean  @default(false)
+  studentInterest       Boolean  @default(false)
+  shortlistedCareer     Boolean  @default(false)
+  selectedPathway       Boolean  @default(false)
+  counselorRecommendation String?
+  followUpRequired      Boolean  @default(false)
+  note                  String?
+  createdById           String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@unique([studentId, careerId])
+  @@index([studentId])
   @@index([careerId])
-  @@index([institutionId])
+}
+
+// Phase 27 — Counselor program planning (Part 7). Flags sit against the
+// canonical AcademicProgram rows (via CareerProgramMapping) — never invented.
+model CounselorProgramPlan {
+  id                String   @id @default(cuid())
+  studentId         String // StudentProfile.id
+  careerId          String
+  programId         String
+  discussed         Boolean  @default(false)
+  shortlisted       Boolean  @default(false)
+  requiresResearch  Boolean  @default(false)
+  studentInterested Boolean  @default(false)
+  note              String?
+  createdById       String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@unique([studentId, careerId, programId])
+  @@index([studentId])
+  @@index([careerId])
+  @@index([programId])
 }
 
 model StudentShortlist {
