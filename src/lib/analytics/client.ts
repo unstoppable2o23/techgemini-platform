@@ -23,7 +23,10 @@ export type ClientEventName =
   | "institution_option_opened"
   | "decision_shortlisted"
   | "pathway_selected"
-  | "counselor_review_clicked";
+  | "counselor_review_clicked"
+  | "decision_pack_viewed"
+  | "decision_pack_printed"
+  | "decision_pack_action_opened";
 
 type ClientEvent = {
   event: ClientEventName;

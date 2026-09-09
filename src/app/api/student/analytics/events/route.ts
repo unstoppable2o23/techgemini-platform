@@ -25,6 +25,9 @@ const ALLOWED: ProductEventName[] = [
   "decision_shortlisted",
   "pathway_selected",
   "counselor_review_clicked",
+  "decision_pack_viewed",
+  "decision_pack_printed",
+  "decision_pack_action_opened",
 ];
 
 // Payloads are explicitly capped and validated: only the event name + optional

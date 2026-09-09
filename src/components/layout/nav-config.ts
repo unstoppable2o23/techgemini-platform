@@ -94,6 +94,12 @@ export const STUDENT_GROUPS: NavGroup[] = [
         description: "Your strongest options across careers, programs and institutions",
       },
       {
+        label: "Decision Pack",
+        href: "/decision-pack",
+        icon: FileText,
+        description: "Print or share a snapshot of your career plan",
+      },
+      {
         label: "Universities",
         href: "/universities",
         icon: Building2,

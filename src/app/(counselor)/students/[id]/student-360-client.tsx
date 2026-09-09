@@ -215,6 +215,10 @@ export default function Student360Client({
           <p className="text-sm text-muted-foreground">{data.user.email}</p>
         </div>
         <div className="ml-auto flex items-center gap-2">
+          <Button size="sm" variant="outline" onClick={() => router.push(`/students/${studentId}/decision-pack`)}>
+            <FileText className="h-4 w-4 mr-1.5" />
+            Decision Pack
+          </Button>
           <Button size="sm" variant="outline" onClick={() => router.push(`/students/${studentId}/report`)}>
             <FileText className="h-4 w-4 mr-1.5" />
             Report

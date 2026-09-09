@@ -25,7 +25,11 @@ export type ProductEventName =
   | "institution_option_opened"
   | "decision_shortlisted"
   | "pathway_selected"
-  | "counselor_review_clicked";
+  | "counselor_review_clicked"
+  | "decision_pack_viewed"
+  | "decision_pack_printed"
+  | "decision_pack_action_opened"
+  | "decision_pack_counselor_reviewed";
 
 export type ProductEventInput = {
   userId: string;
