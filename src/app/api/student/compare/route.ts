@@ -3,6 +3,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { getUniversityProfile } from "@/lib/university-profile/profile.ts";
 import { buildComparison } from "@/lib/student/comparison.ts";
+import { getProgramAvailability, availabilityNote } from "@/lib/program-intelligence/availability.ts";
+import { prisma } from "@/lib/prisma";
 
 const MAX_COMPARE = 4;
 
@@ -12,6 +14,19 @@ async function lookupProfile(id: string, dataset: string, ctx?: { studentId?: st
   // Fallback: try the alternate dataset (shortlist can contain mixed types)
   const fallback = dataset === "indian" ? "global" : "indian";
   return getUniversityProfile(id, fallback as any, ctx);
+}
+
+/** Phase 28 — attach read-only program availability to each compared profile. */
+async function attachAvailability(profile: Awaited<ReturnType<typeof getUniversityProfile>>, dataset: string) {
+  if (!profile) return null;
+  const kind = dataset === "indian" ? "INDIAN" : "INTERNATIONAL";
+  const inst =
+    kind === "INDIAN"
+      ? await prisma.indianInstitution.findUnique({ where: { id: profile.identity.id }, select: { id: true } })
+      : await prisma.university.findUnique({ where: { id: profile.identity.id }, select: { id: true } });
+  if (!inst) return { state: "NOT_VERIFIED" as const, verifiedCount: 0, hasVerified: false, rows: [], qualificationCoverage: [], note: availabilityNote({ state: "NOT_VERIFIED", rows: [], verifiedCount: 0, hasVerified: false, qualificationCoverage: [] }) };
+  const availability = await getProgramAvailability(prisma, { institutionId: profile.identity.id, kind });
+  return { ...availability, note: availabilityNote(availability) };
 }
 
 export async function POST(request: NextRequest) {
@@ -39,7 +54,8 @@ export async function POST(request: NextRequest) {
       const ctx = careerId ? { studentId: effectiveStudentId, careerId } : undefined;
       const profile = await lookupProfile(id, effectiveDataset, ctx);
       if (!profile) continue;
-      profiles.push(profile);
+      const availability = await attachAvailability(profile, effectiveDataset);
+      profiles.push(availability ? { ...profile, availability } : profile);
     } catch {
       continue;
     }

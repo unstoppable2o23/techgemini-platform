@@ -162,6 +162,46 @@ export async function getOrCreateRoadmap(userId: string): Promise<GeneratedRoadm
   return createRoadmap({ userId });
 }
 
+/**
+ * Phase 28 — records the student's recognized goal program on the roadmap.
+ * Additive and non-destructive: it only sets the two goal-program fields and
+ * never rewrites steps, career, or destination.
+ */
+export async function setGoalProgram(userId: string, programId: string, programName?: string | null): Promise<RoadmapChangeAction> {
+  const program = await prisma.academicProgram.findUnique({
+    where: { id: programId },
+    select: { id: true, name: true },
+  });
+  if (!program) return { ok: false, error: "Program not found in the catalog." };
+  const name = programName ?? program.name;
+
+  await prisma.studentRoadmap.upsert({
+    where: { studentId: userId },
+    create: { studentId: userId, goalProgramId: program.id, goalProgramName: name },
+    update: { goalProgramId: program.id, goalProgramName: name },
+  });
+
+  const roadmap = await prisma.studentRoadmap.findUnique({
+    where: { studentId: userId },
+    include: { steps: { orderBy: { index: "asc" } }, milestones: { orderBy: { index: "asc" } } },
+  });
+  return { ok: true, roadmap: roadmap ? mapToGenerated(roadmap) : null };
+}
+
+export async function clearGoalProgram(userId: string): Promise<RoadmapChangeAction> {
+  const existing = await prisma.studentRoadmap.findUnique({ where: { studentId: userId } });
+  if (!existing) return { ok: true, roadmap: null };
+  await prisma.studentRoadmap.update({
+    where: { studentId: userId },
+    data: { goalProgramId: null, goalProgramName: null },
+  });
+  const roadmap = await prisma.studentRoadmap.findUnique({
+    where: { studentId: userId },
+    include: { steps: { orderBy: { index: "asc" } }, milestones: { orderBy: { index: "asc" } } },
+  });
+  return { ok: true, roadmap: roadmap ? mapToGenerated(roadmap) : null };
+}
+
 export async function createRoadmap(opts: RoadmapLoadInput): Promise<GeneratedRoadmap | null> {
   const generated = await generateRoadmap(opts);
   const spec = buildRoadmap(generated.inputs);
@@ -458,6 +498,8 @@ function mapToGenerated(r: RoadmapWithSteps): GeneratedRoadmap & { stepsWithIds:
     version: r.version,
     goalCareerId: r.goalCareerId,
     goalCareerName: r.goalCareerName,
+    goalProgramId: r.goalProgramId,
+    goalProgramName: r.goalProgramName,
     destination: r.destination,
     destinationLabel: (r.destination ? resolveDestination(r.destination) : null),
     pathType: (r.pathType as GeneratedRoadmap["pathType"]) ?? undefined,

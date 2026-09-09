@@ -8,6 +8,7 @@ import SaveButton from "@/components/student/save-button";
 import { BuildPathwayButton } from "@/components/student/build-pathway-button";
 import { MatchPill, ConfidencePill } from "@/components/student/display";
 import CareerTrendSection from "./career-trend-section";
+import CareerProgramSection from "@/components/student/career-program-section";
 import {
   ArrowLeft,
   Briefcase,
@@ -785,6 +786,11 @@ export default function CareerDetailClient({
           </div>
         </div>
       )}
+
+      <div>
+        <SectionHeader icon={GraduationCap}>Recommended Programs</SectionHeader>
+        <CareerProgramSection careerId={career.id} />
+      </div>
 
       {(educationPathways.primary.length > 0 || educationPathways.alternative.length > 0 || educationPathways.optional.length > 0) && (
         <div>

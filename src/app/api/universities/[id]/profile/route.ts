@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { getUniversityProfile } from "@/lib/university-profile/profile.ts";
+import { getProgramAvailability, availabilityNote } from "@/lib/program-intelligence/availability.ts";
+import { prisma } from "@/lib/prisma";
 
 export async function GET(
   request: NextRequest,
@@ -44,6 +46,25 @@ export async function GET(
     }
 
     // Explicit absence markers
+    // Phase 28 — institution-level program availability (read-only over the
+    // verified Program catalog). Never fabricates absent claims.
+    let availability: (Awaited<ReturnType<typeof getProgramAvailability>> & {
+      note: ReturnType<typeof availabilityNote>;
+    }) | null = null;
+    try {
+      const kind = dataset === "global" ? "INTERNATIONAL" : "INDIAN";
+      const institutionId =
+        dataset === "global"
+          ? (await prisma.university.findUnique({ where: { id }, select: { id: true } }))?.id
+          : (await prisma.indianInstitution.findUnique({ where: { id }, select: { id: true } }))?.id;
+      if (institutionId) {
+        const avail = await getProgramAvailability(prisma, { institutionId, kind });
+        availability = { ...avail, note: availabilityNote(avail) };
+      }
+    } catch {
+      availability = null;
+    }
+
     const response = {
       identity: {
         ...profile.identity,
@@ -77,6 +98,7 @@ export async function GET(
         fitTiers: null, // Phase 20 will populate
         comparison: null, // Phase 21 will consume
       },
+      availability,
     };
 
     return NextResponse.json(response);

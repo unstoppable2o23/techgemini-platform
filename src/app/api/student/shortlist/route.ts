@@ -7,6 +7,7 @@ import {
   listShortlist,
   SHORTLIST_ITEM_TYPES,
   MAX_UNIVERSITY_SHORTLIST,
+  MAX_PROGRAM_SHORTLIST,
   type ShortlistItemType,
 } from "@/lib/student/shortlist.ts";
 
@@ -23,6 +24,16 @@ export async function GET(request: NextRequest) {
   const items = await listShortlist(
     session.user.id,
     typeParam ?? undefined
+  );
+
+  const programIds = items.filter((i) => i.itemType === "PROGRAM").map((i) => i.itemId);
+  const programMap = new Map(
+    (
+      await prisma.academicProgram.findMany({
+        where: { id: { in: programIds } },
+        select: { id: true, name: true, slug: true, level: true, category: true },
+      })
+    ).map((p) => [p.id, p])
   );
 
   const enriched = await Promise.all(
@@ -74,6 +85,12 @@ export async function GET(request: NextRequest) {
         if (ind) {
           title = ind.name;
           href = `/indian-colleges`;
+        }
+      } else if (item.itemType === "PROGRAM") {
+        const p = programMap.get(item.itemId);
+        if (p) {
+          title = p.name;
+          href = `/student/programs?p=${encodeURIComponent(p.slug)}`;
         }
       }
       return { ...item, title, href };
@@ -134,6 +151,7 @@ export async function POST(request: NextRequest) {
       );
     }
     // Phase 21: university shortlist is capped at 20 (careers/education are uncapped).
+    // Phase 28: programs are likewise capped at 20.
     if (itemType === "UNIVERSITY" || itemType === "INDIAN_INSTITUTION") {
       const count = await prisma.studentShortlist.count({
         where: { studentId: session.user.id, itemType: { in: ["UNIVERSITY", "INDIAN_INSTITUTION"] } },
@@ -141,6 +159,17 @@ export async function POST(request: NextRequest) {
       if (count >= MAX_UNIVERSITY_SHORTLIST) {
         return NextResponse.json(
           { error: `University shortlist limit reached (${MAX_UNIVERSITY_SHORTLIST}). Remove one before adding another.` },
+          { status: 400 }
+        );
+      }
+    }
+    if (itemType === "PROGRAM") {
+      const count = await prisma.studentShortlist.count({
+        where: { studentId: session.user.id, itemType: "PROGRAM" },
+      });
+      if (count >= MAX_PROGRAM_SHORTLIST) {
+        return NextResponse.json(
+          { error: `Program shortlist limit reached (${MAX_PROGRAM_SHORTLIST}). Remove one before adding another.` },
           { status: 400 }
         );
       }
@@ -178,6 +207,17 @@ export async function POST(request: NextRequest) {
           userId: session.user.id,
           event: "university_shortlisted",
           meta: { itemType },
+        });
+      } catch {
+        // best-effort analytics
+      }
+    } else if (itemType === "PROGRAM") {
+      try {
+        const { recordProductEvent } = await import("@/lib/analytics/record.ts");
+        await recordProductEvent({
+          userId: session.user.id,
+          event: "program_shortlisted",
+          meta: { programId: itemId },
         });
       } catch {
         // best-effort analytics

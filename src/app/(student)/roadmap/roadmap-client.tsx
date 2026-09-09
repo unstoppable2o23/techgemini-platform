@@ -45,6 +45,8 @@ type Milestone = { key: string; label: string; index: number };
 type RoadmapData = {
   version: number;
   goalCareerName?: string | null;
+  goalProgramId?: string | null;
+  goalProgramName?: string | null;
   destinationLabel?: string | null;
   pathType?: string | null;
   educationStage: string;
@@ -224,6 +226,16 @@ export function RoadmapClient() {
               Current education: {STAGE_LABELS[data.educationStage] || data.educationStage}
               {data.currentStage ? ` · ${data.currentStage}` : ""}
             </p>
+            {data.goalProgramName && (
+              <p className="flex items-center gap-2 text-sm">
+                <Badge className="bg-accent/10 text-accent border-accent/30" variant="outline">
+                  Recognized program
+                </Badge>
+                <Link href="/student/programs" className="text-accent hover:underline">
+                  {data.goalProgramName}
+                </Link>
+              </p>
+            )}
             <div className="flex items-center gap-2 pt-2">
               <span className="text-xs text-muted-foreground">Path:</span>
               <Badge variant="secondary">

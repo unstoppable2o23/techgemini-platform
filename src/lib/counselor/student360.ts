@@ -53,6 +53,14 @@ export type Student360 = {
   };
   careerDecisions: any[];
   programPlans: any[];
+  /** Phase 28 — resolved program shortlist for this student. */
+  shortlistedPrograms: Array<{
+    programId: string;
+    programName: string;
+    level: string | null;
+    category: string | null;
+    notedAt: Date;
+  }>;
 };
 
 export async function getStudent360(
@@ -223,7 +231,7 @@ export async function getStudent360(
   });
 
   // ---- Phase 27 — planning records + deterministic attention ----
-  const [careerDecisions, programPlans, shortlistCounts] = await Promise.all([
+  const [careerDecisions, programPlans, shortlistCounts, programShortlists] = await Promise.all([
     listCareerDecisions(profile.id),
     listProgramPlans(profile.id),
     prisma.studentShortlist.groupBy({
@@ -234,8 +242,35 @@ export async function getStudent360(
       },
       _count: { _all: true },
     }),
+    prisma.studentShortlist.findMany({
+      where: { studentId: studentUserId, itemType: "PROGRAM" },
+      orderBy: { createdAt: "desc" },
+      take: 12,
+    }),
   ]);
   const universityShortlistCount = shortlistCounts[0]?._count._all ?? 0;
+
+  // ---- Phase 28 — resolved program shortlist for the counselor (batched) ----
+  const programShortlistIds = programShortlists.map((s) => s.itemId);
+  const programShortlistMeta = new Map(
+    (
+      await prisma.academicProgram.findMany({
+        where: { id: { in: programShortlistIds } },
+        select: { id: true, name: true, level: true, category: true },
+      })
+    ).map((p) => [p.id, p])
+  );
+  const shortlistedPrograms = programShortlists.map((s) => {
+    const p = programShortlistMeta.get(s.itemId);
+    return {
+      programId: s.itemId,
+      programName: p?.name ?? s.itemId,
+      level: p?.level ?? null,
+      category: p?.category ?? null,
+      notedAt: s.createdAt,
+    };
+  });
+  const shortlistedProgramCount = shortlistedPrograms.length;
 
   const roadmap = user.roadmap ?? null;
   const roadmapProgress = roadmap?.progress ?? 0;
@@ -262,6 +297,7 @@ export async function getStudent360(
     roadmapProgress,
     roadmapStaleDays: staleMs === null ? null : Math.floor(staleMs / 86400000),
     universityShortlistCount,
+    shortlistedProgramCount,
     hasOpenAction: openActions.length > 0,
     openActionDueInDays: (() => {
       if (openActions.length === 0) return null;
@@ -323,5 +359,6 @@ export async function getStudent360(
     attention,
     careerDecisions,
     programPlans,
+    shortlistedPrograms,
   };
 }

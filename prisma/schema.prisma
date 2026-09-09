@@ -968,6 +968,8 @@ model StudentRoadmap {
   version          Int                    @default(1)
   goalCareerId     String?
   goalCareerName   String?
+  goalProgramId    String?
+  goalProgramName  String?
   destination      String?
   pathType         RoadmapPathType?
   educationStage   RoadmapEducationStage  @default(UNKNOWN)

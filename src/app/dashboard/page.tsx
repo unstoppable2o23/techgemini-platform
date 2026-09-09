@@ -189,6 +189,7 @@ export default async function DashboardPage() {
     { label: "Mock Tests", icon: FileText, enabled: featureAccess?.mockTests, href: "/mock-tests" },
     { label: "Scholarships", icon: Trophy, enabled: featureAccess?.scholarshipHub, href: "/scholarships" },
     { label: "Career Library", icon: Briefcase, enabled: featureAccess?.careerLibrary, href: "/career-library" },
+    { label: "Program Explorer", icon: GraduationCap, enabled: featureAccess?.careerLibrary, href: "/student/programs" },
   ];
 
   return (

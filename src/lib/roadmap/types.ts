@@ -117,6 +117,8 @@ export interface GeneratedRoadmap {
   version: number;
   goalCareerId?: string | null;
   goalCareerName?: string | null;
+  goalProgramId?: string | null;
+  goalProgramName?: string | null;
   destination?: string | null;
   destinationLabel?: DestinationLabel | null;
   pathType?: RoadmapPathType;

@@ -16,6 +16,7 @@ export type ProductEventName =
   | "career_shortlisted"
   | "pathway_started"
   | "university_shortlisted"
+  | "program_shortlisted"
   | "roadmap_action_completed"
   | "next_best_action_clicked";
 

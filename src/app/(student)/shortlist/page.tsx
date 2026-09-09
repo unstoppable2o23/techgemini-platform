@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { PageHeader } from "@/components/ui/page-header";
-import { Bookmark, Trash2, GitCompare, MapPin } from "lucide-react";
+import { Bookmark, Trash2, GitCompare, MapPin, GraduationCap } from "lucide-react";
 import Link from "next/link";
 
 type SavedItem = {
@@ -28,21 +28,23 @@ type SavedItem = {
 export default function ShortlistPage() {
   const [items, setItems] = useState<SavedItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [tab, setTab] = useState<"universities" | "programs">("universities");
 
   async function fetchShortlist() {
     setLoading(true);
     const res = await fetch("/api/student/shortlist");
     const data = await res.json();
-    const unis = (data.items || []).filter(
-      (it: SavedItem) => it.itemType === "UNIVERSITY" || it.itemType === "INDIAN_INSTITUTION"
-    );
-    setItems(unis);
+    setItems(data.items || []);
     setLoading(false);
   }
 
   useEffect(() => { fetchShortlist(); }, []);
 
-  const compareIds = items.slice(0, 4).map((i) => i.itemId).join(",");
+  const unis = items.filter(
+    (it) => it.itemType === "UNIVERSITY" || it.itemType === "INDIAN_INSTITUTION"
+  );
+  const programs = items.filter((it) => it.itemType === "PROGRAM");
+  const compareIds = unis.slice(0, 4).map((i) => i.itemId).join(",");
 
   async function remove(item: SavedItem) {
     await fetch(
@@ -56,13 +58,59 @@ export default function ShortlistPage() {
 
   return (
     <div className="space-y-6 p-6 pt-20 max-w-4xl mx-auto">
-      <PageHeader icon={Bookmark} title="My University Shortlist" description={`${items.length} of 20 saved — verification, fit tiers, and explanations retained`} />
+      <PageHeader icon={Bookmark} title="My Shortlist" description={`${items.length} saved items — universities, institutions, and programs with verification retained`} />
 
-      {items.length === 0 ? (
+      <div className="flex gap-2">
+        <Button variant={tab === "universities" ? "default" : "outline"} size="sm" onClick={() => setTab("universities")}>
+          Universities ({unis.length}/20)
+        </Button>
+        <Button variant={tab === "programs" ? "default" : "outline"} size="sm" onClick={() => setTab("programs")}>
+          Programs ({programs.length}/20)
+        </Button>
+      </div>
+
+      {tab === "programs" && (
+        programs.length === 0 ? (
+          <Card>
+            <CardContent className="py-12 text-center text-muted-foreground">
+              <GraduationCap className="h-10 w-10 mx-auto mb-3 opacity-50" />
+              <p className="font-medium">No saved programs</p>
+              <p className="text-sm mt-1">Save programs from the Program Explorer to track the exact qualification and admission route.</p>
+              <Link href="/student/programs" className="text-sm text-accent hover:underline mt-3 inline-block">Open Program Explorer</Link>
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="grid gap-4">
+            {programs.map((item) => (
+              <Card key={item.id}>
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-base flex items-center justify-between">
+                    <span className="flex items-center gap-2">
+                      <GraduationCap className="h-4 w-4 text-accent" data-testid="program-icon" />
+                      {item.title || item.itemId}
+                    </span>
+                    <Button variant="ghost" size="sm" onClick={() => remove(item)}><Trash2 className="h-4 w-4" /></Button>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2">
+                  <Badge variant="secondary">Catalog program</Badge>
+                  {item.href && item.href !== "/career-library" && (
+                    <div className="flex items-center gap-3 pt-1">
+                      <Link href={item.href} className="text-xs text-accent hover:underline">View in Explorer</Link>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )
+      )}
+
+      {tab === "universities" && (unis.length === 0 ? (
         <Card>
           <CardContent className="py-12 text-center text-muted-foreground">
             <Bookmark className="h-10 w-10 mx-auto mb-3 opacity-50" />
-            <p className="font-medium">Your shortlist is empty</p>
+            <p className="font-medium">Your university shortlist is empty</p>
             <p className="text-sm mt-1">Save universities from match results or profiles to compare them side-by-side.</p>
             <Link href="/universities" className="text-sm text-accent hover:underline mt-3 inline-block">Browse universities</Link>
           </CardContent>
@@ -70,15 +118,15 @@ export default function ShortlistPage() {
       ) : (
         <>
           <div className="flex justify-between items-center">
-            <p className="text-sm text-muted-foreground">{items.length} / 20 saved · careers live in <Link href="/saved" className="text-accent hover:underline">Saved</Link></p>
-            {items.length >= 2 && (
+            <p className="text-sm text-muted-foreground">{unis.length} / 20 saved · careers live in <Link href="/saved" className="text-accent hover:underline">Saved</Link></p>
+            {unis.length >= 2 && (
               <Link href={`/compare?ids=${compareIds}`}>
                 <Button variant="outline" size="sm"><GitCompare className="h-4 w-4 mr-1" /> Compare selected</Button>
               </Link>
             )}
           </div>
           <div className="grid gap-4">
-            {items.map((item) => (
+            {unis.map((item) => (
               <Card key={item.id}>
                 <CardHeader className="pb-2">
                   <CardTitle className="text-base flex items-center justify-between">
@@ -112,7 +160,7 @@ export default function ShortlistPage() {
             ))}
           </div>
         </>
-      )}
+      ))}
     </div>
   );
 }

@@ -40,6 +40,25 @@ export const COMPARISON_ROWS: CompareRow[] = [
     getValue: (p: any) => (p.hasVerifiedPrograms ? "✓ Verified program" : "Relevant institution — exact program not yet verified"),
   },
   { key: "freshness", label: "Source Freshness", getValue: (p: any) => p.freshness?.overall || "UNKNOWN" },
+  {
+    key: "programAvailability",
+    label: "Program Availability",
+    getValue: (p: any) => {
+      const a = p.availability;
+      if (!a) return "Program availability not verified";
+      if (a.state === "VERIFIED") return `${a.verifiedCount} offered program${a.verifiedCount === 1 ? "" : "s"} (source-verified)`;
+      if (a.state === "PARTIAL") return "Program availability partially verified";
+      return "Program availability not verified";
+    },
+  },
+  {
+    key: "programCoverage",
+    label: "Offered Qualification Coverage",
+    getValue: (p: any) => {
+      const cov = p.availability?.qualificationCoverage;
+      return Array.isArray(cov) && cov.length ? cov.join(", ") : "Not available";
+    },
+  },
   { key: "matchScore", label: "Match Score", getValue: (p: any) => p.studentContext?.matchScore ?? "Not available" },
   { key: "confidence", label: "Confidence", getValue: (p: any) => p.studentContext?.confidenceScore ?? "Not available" },
   {

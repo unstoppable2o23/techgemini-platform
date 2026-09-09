@@ -117,6 +117,30 @@ export default function UniversityProfilePage({ params, searchParams }: { params
         </Link>
       </div>
 
+      {/* Program availability (Phase 28) */}
+      {profile.availability && (
+        <Card className={profile.availability.note?.css ? "border-destructive/40" : "border-accent/30"}>
+          <CardContent className="space-y-1.5 p-4">
+            <p className="text-sm font-medium flex items-center gap-2">
+              {profile.availability.note?.state === "VERIFIED" ? (
+                <CheckCircle2 className="h-4 w-4 text-green-600" />
+              ) : (
+                <AlertCircle className="h-4 w-4 text-amber-600" />
+              )}
+              {profile.availability.note?.title ?? "Program availability"}
+            </p>
+            <p className="text-xs text-muted-foreground">{profile.availability.note?.body}</p>
+            {profile.availability.qualificationCoverage.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {profile.availability.qualificationCoverage.map((q: string) => (
+                  <Badge key={q} variant="outline" className="text-[11px]">{q}</Badge>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      )}
+
       {/* Career context (when opened from matching flow) */}
       {profile.studentContext && profile.studentContext.pathwayChain && (
         <Card className="border-accent">
