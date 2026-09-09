@@ -110,6 +110,45 @@ test("6 · journey assessments step: zero-assignment done, 1/2 partial", () => {
   assert.notEqual(pStep.status, "done");
 });
 
+test("6b · brief §5 B: 1 assigned → progress based on 1 (all done)", () => {
+  const s = computeJourneyState({
+    profileCompleteness: 60,
+    assessmentCompletedCount: 1,
+    assessmentTotal: 1,
+    careerMatches: [],
+  });
+  const step = s.steps.find((x) => x.id === "assessments");
+  assert.equal(step.value, "1/1 completed");
+  assert.equal(step.progress, 100);
+  assert.equal(step.status, "done");
+});
+
+test("6c · brief §5 C: 3 assigned → progress based on 3", () => {
+  const s = computeJourneyState({
+    profileCompleteness: 60,
+    assessmentCompletedCount: 1,
+    assessmentTotal: 3,
+    careerMatches: [],
+  });
+  const step = s.steps.find((x) => x.id === "assessments");
+  assert.equal(step.value, "1/3 completed");
+  assert.equal(step.progress, 33);
+  assert.notEqual(step.status, "done");
+});
+
+test("6d · brief §5 D: completed assignment keeps its status/result over retakes", () => {
+  // A completed kind stays COMPLETED for count purposes even when a newer
+  // partial (IN_PROGRESS) row exists; progress-save never downgrades it.
+  const s = summarizeAssignments([
+    { kind: "stream", status: "COMPLETED" },
+    { kind: "stream", status: "IN_PROGRESS" },
+  ]);
+  assert.equal(s.completedCount, 1);
+  assert.equal(s.assignedTotal, 1);
+  assert.deepEqual(s.completedKinds, ["stream"]);
+  assert.deepEqual(s.inProgressKinds, []);
+});
+
 // ---------------------------------------------------------------------------
 // DB loaders
 // ---------------------------------------------------------------------------
