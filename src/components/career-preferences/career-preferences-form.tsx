@@ -163,9 +163,14 @@ export function CareerPreferencesForm({ initial, title, description, submitLabel
     }
     const res = await fetch(`/api/student/college-search?q=${encodeURIComponent(query)}`);
     const data = await res.json();
+    if (!res.ok) {
+      setCollegeResults([]);
+      setCollegeOpen(false);
+      return;
+    }
     const results: CollegeResult[] = [
-      ...data.universities.map((u: any) => ({ id: u.id, name: u.name, country: u.country, kind: "uni" as const })),
-      ...data.institutions.map((i: any) => ({ id: i.id, name: i.name, state: i.state, type: i.type, kind: "indian" as const })),
+      ...(data.universities || []).map((u: any) => ({ id: u.id, name: u.name, country: u.country, kind: "uni" as const })),
+      ...(data.institutions || []).map((i: any) => ({ id: i.id, name: i.name, state: i.state, type: i.type, kind: "indian" as const })),
     ];
     setCollegeResults(results);
     setCollegeOpen(true);
@@ -205,8 +210,12 @@ export function CareerPreferencesForm({ initial, title, description, submitLabel
 
   useEffect(() => {
     fetch("/api/careers")
-      .then((r) => r.json())
+      .then(async (r) => {
+        if (!r.ok) return null;
+        return r.json();
+      })
       .then((data) => {
+        if (!data) return;
         const dbNames = (data.careers || []).map((c: any) => c.name).filter(Boolean);
         setCareerOptions((prev) => {
           const combined = [...prev];

@@ -26,18 +26,23 @@ export async function GET() {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  const assignments = await prisma.testAssignment.findMany({
-    where: {
-      tenantId: user.tenantId,
-      ...(user.role === "COUNSELOR" ? counselorAssignmentScope(user.id) : {}),
-    },
-    include: {
-      student: { select: { firstName: true, lastName: true, email: true } },
-    },
-    orderBy: { createdAt: "desc" },
-  });
+  try {
+    const assignments = await prisma.testAssignment.findMany({
+      where: {
+        tenantId: user.tenantId,
+        ...(user.role === "COUNSELOR" ? counselorAssignmentScope(user.id) : {}),
+      },
+      include: {
+        student: { select: { firstName: true, lastName: true, email: true } },
+      },
+      orderBy: { createdAt: "desc" },
+    });
 
-  return NextResponse.json({ assignments });
+    return NextResponse.json({ assignments });
+  } catch (error) {
+    console.error("Failed to list assignments:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }
 
 export async function POST(request: NextRequest) {

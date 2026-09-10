@@ -51,33 +51,38 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Token required" }, { status: 400 });
   }
 
-  const assignment = await prisma.testAssignment.findUnique({
-    where: { token },
-    select: {
-      status: true,
-      answers: true,
-      result: true,
-      completedAt: true,
-      assessmentVersion: true,
-      kind: true,
-      profileProcessedAt: true,
-    },
-  });
+  try {
+    const assignment = await prisma.testAssignment.findUnique({
+      where: { token },
+      select: {
+        status: true,
+        answers: true,
+        result: true,
+        completedAt: true,
+        assessmentVersion: true,
+        kind: true,
+        profileProcessedAt: true,
+      },
+    });
 
-  if (!assignment) {
-    return NextResponse.json({ error: "Assignment not found" }, { status: 404 });
+    if (!assignment) {
+      return NextResponse.json({ error: "Assignment not found" }, { status: 404 });
+    }
+
+    return NextResponse.json({
+      status: assignment.status,
+      answers: assignment.answers,
+      report: assignment.result,
+      completedAt: assignment.completedAt,
+      assessmentVersion: assignment.assessmentVersion,
+      kind: assignment.kind,
+      profileProcessed: Boolean(assignment.profileProcessedAt),
+      meta: await reportMeta(token),
+    });
+  } catch (error) {
+    console.error("Failed to load assignment:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
-
-  return NextResponse.json({
-    status: assignment.status,
-    answers: assignment.answers,
-    report: assignment.result,
-    completedAt: assignment.completedAt,
-    assessmentVersion: assignment.assessmentVersion,
-    kind: assignment.kind,
-    profileProcessed: Boolean(assignment.profileProcessedAt),
-    meta: await reportMeta(token),
-  });
 }
 
 export async function POST(request: NextRequest) {

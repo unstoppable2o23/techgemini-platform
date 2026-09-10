@@ -125,7 +125,7 @@ export default function CollegeFinderPage() {
                       </div>
                     </div>
                   </div>
-                  {u.overallScore && (
+                  {typeof u.overallScore === "number" && (
                     <div className="text-right">
                       <div className="text-2xl font-bold text-accent">{u.overallScore.toFixed(1)}</div>
                       <div className="text-xs text-muted-foreground">QS Overall Score</div>

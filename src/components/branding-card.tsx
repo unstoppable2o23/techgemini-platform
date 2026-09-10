@@ -18,7 +18,10 @@ export function BrandingCard() {
 
   useEffect(() => {
     fetch("/api/tenant/branding")
-      .then((r) => r.json())
+      .then(async (r) => {
+        if (!r.ok) throw new Error("Failed to load branding");
+        return r.json();
+      })
       .then((data) => {
         const t = data.tenant;
         if (t) {

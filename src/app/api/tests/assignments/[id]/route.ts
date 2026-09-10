@@ -20,37 +20,42 @@ export async function DELETE(
 
   const { id } = await params;
 
-  const assignment = await prisma.testAssignment.findUnique({
-    where: { id },
-    include: {
-      student: {
-        select: {
-          tenantId: true,
-          studentProfile: { select: { counselor: { select: { userId: true } } } },
+  try {
+    const assignment = await prisma.testAssignment.findUnique({
+      where: { id },
+      include: {
+        student: {
+          select: {
+            tenantId: true,
+            studentProfile: { select: { counselor: { select: { userId: true } } } },
+          },
         },
       },
-    },
-  });
+    });
 
-  if (!assignment || assignment.student.tenantId !== user.tenantId) {
-    return NextResponse.json({ error: "Assignment not found" }, { status: 404 });
-  }
-  if (
-    user.role === "COUNSELOR" &&
-    assignment.assignedById !== user.id &&
-    assignment.student.studentProfile?.counselor?.userId !== user.id
-  ) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  }
+    if (!assignment || assignment.student.tenantId !== user.tenantId) {
+      return NextResponse.json({ error: "Assignment not found" }, { status: 404 });
+    }
+    if (
+      user.role === "COUNSELOR" &&
+      assignment.assignedById !== user.id &&
+      assignment.student.studentProfile?.counselor?.userId !== user.id
+    ) {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
 
-  const age = Date.now() - new Date(assignment.createdAt).getTime();
-  if (age > UNASSIGN_WINDOW_MS) {
-    return NextResponse.json(
-      { error: "The 20-minute unassign window has expired." },
-      { status: 403 }
-    );
-  }
+    const age = Date.now() - new Date(assignment.createdAt).getTime();
+    if (age > UNASSIGN_WINDOW_MS) {
+      return NextResponse.json(
+        { error: "The 20-minute unassign window has expired." },
+        { status: 403 }
+      );
+    }
 
-  await prisma.testAssignment.delete({ where: { id } });
-  return NextResponse.json({ ok: true });
+    await prisma.testAssignment.delete({ where: { id } });
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error("Failed to unassign test:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }

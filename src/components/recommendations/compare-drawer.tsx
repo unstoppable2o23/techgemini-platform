@@ -35,12 +35,13 @@ export function CompareDrawer({
     trackRecommendationEvent({ event: "compare_opened", meta: { count: matches.length } });
     const qs = matches.map((m, i) => `careerId=${encodeURIComponent(m.careerId)}`).join("&");
     fetch(`/api/student/career-matches/compare?${qs}`)
-      .then((r) => r.json())
-      .then((j) => {
-        if (j.error) setError(j.error);
-        else setData(j.careers ?? []);
+      .then(async (r) => {
+        const j = await r.json();
+        if (!r.ok || j.error) throw new Error(j.error || "Couldn't load comparison.");
+        return j;
       })
-      .catch(() => setError("Couldn't load comparison."));
+      .then((j) => setData(j.careers ?? []))
+      .catch((e) => setError(e.message || "Couldn't load comparison."));
   }, [matches]);
 
   return (

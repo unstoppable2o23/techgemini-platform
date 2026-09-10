@@ -11,43 +11,48 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const profile = await prisma.studentProfile.findUnique({
-    where: { userId: session.user.id },
-    select: {
-      dateOfBirth: true,
-      mobile: true,
-      gender: true,
-      gradeLevel: true,
-      studyLevel: true,
-      studyAbroad: true,
-      exams: true,
-      subjectsStudied: true,
-      subjectsEnjoyed: true,
-      activityInterests: true,
-      nationality: true,
-      state: true,
-      hasEnglishResult: true,
-      englishTestType: true,
-      englishTestScore: true,
-      englishProficiency: true,
-      tuitionBudget: true,
-      fundingSource: true,
-      targetColleges: true,
-      targetCountries: true,
-      preferredCareer: true,
-      prospectiveSessions: true,
-      preferredIntake: true,
-      preferredYear: true,
-      highestEducation: true,
-      averageGrade: true,
-      currentProgram: true,
-      currentProgramYear: true,
-      careerPlanNotes: true,
-      careerPrefsFilled: true,
-    },
-  });
+  try {
+    const profile = await prisma.studentProfile.findUnique({
+      where: { userId: session.user.id },
+      select: {
+        dateOfBirth: true,
+        mobile: true,
+        gender: true,
+        gradeLevel: true,
+        studyLevel: true,
+        studyAbroad: true,
+        exams: true,
+        subjectsStudied: true,
+        subjectsEnjoyed: true,
+        activityInterests: true,
+        nationality: true,
+        state: true,
+        hasEnglishResult: true,
+        englishTestType: true,
+        englishTestScore: true,
+        englishProficiency: true,
+        tuitionBudget: true,
+        fundingSource: true,
+        targetColleges: true,
+        targetCountries: true,
+        preferredCareer: true,
+        prospectiveSessions: true,
+        preferredIntake: true,
+        preferredYear: true,
+        highestEducation: true,
+        averageGrade: true,
+        currentProgram: true,
+        currentProgramYear: true,
+        careerPlanNotes: true,
+        careerPrefsFilled: true,
+      },
+    });
 
-  return NextResponse.json({ profile });
+    return NextResponse.json({ profile });
+  } catch (error) {
+    console.error("Career preferences fetch failed:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }
 
 export async function POST(request: NextRequest) {

@@ -37,7 +37,6 @@ export async function GET(request: NextRequest) {
       const rows = await prisma.indianInstitution.findMany({
         where,
         orderBy: [{ state: "asc" }, { name: "asc" }],
-        take: 50000,
         select: {
           aisheCode: true,
           name: true,

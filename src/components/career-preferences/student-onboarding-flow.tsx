@@ -249,7 +249,10 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
     setSubjectsLoading(true);
     setSubjectsError(false);
     fetch("/api/subjects")
-      .then((r) => r.json())
+      .then(async (r) => {
+        if (!r.ok) throw new Error("Failed to load subjects");
+        return r.json();
+      })
       .then((d) => {
         if (!active) return;
         setSubjects(d.subjects || []);
@@ -275,6 +278,11 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
     }
     const res = await fetch(`/api/careers?search=${encodeURIComponent(query)}`);
     const data = await res.json();
+    if (!res.ok) {
+      setCareerResults([]);
+      setCareerOpen(false);
+      return;
+    }
     setCareerResults((data.careers || []).map((c: any) => ({ id: c.id, name: c.name, category: c.category, shortDescription: c.shortDescription })).slice(0, 12));
     setCareerOpen(true);
   }
@@ -300,6 +308,11 @@ export function StudentOnboardingFlow({ initial, isNew }: { initial?: Partial<Va
     }
     const res = await fetch(`/api/student/college-search?q=${encodeURIComponent(query)}`);
     const data = await res.json();
+    if (!res.ok) {
+      setCollegeResults([]);
+      setCollegeOpen(false);
+      return;
+    }
     setCollegeResults([
       ...(data.universities || []).map((u: any) => ({ id: u.id, name: u.name, country: u.country, kind: "uni" as const })),
       ...(data.institutions || []).map((i: any) => ({ id: i.id, name: i.name, state: i.state, kind: "indian" as const })),
