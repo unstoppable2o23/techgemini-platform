@@ -194,6 +194,7 @@ model User {
   createdInvitations      StudentInvitation[]        @relation("InvitedBy")
   supportTickets          SupportTicket[]            @relation("SupportTicketUser")
   productEvents           ProductEvent[]
+  applications            StudentApplication[]
 
   @@index([tenantId])
   @@index([email])
@@ -1129,4 +1130,88 @@ model ProductEvent {
   @@index([tenantId, event])
   @@index([userId, event])
   @@index([createdAt])
+}
+
+// ============================================================================
+// Phase 33 (P5) — Scholarships (additive). READ-ONLY catalog of funding
+// opportunities. Amounts/deadlines are NEVER set from unverifiable sources:
+// a null amountSummary or deadlineDisplay surfaces as "Information not
+// available" in the UI instead of an invented figure.
+// ============================================================================
+
+enum ScholarshipVerificationState {
+  VERIFIED
+  PARTIALLY_VERIFIED
+  UNVERIFIED
+  DATA_REQUIRED
+}
+
+model Scholarship {
+  id                    String                       @id @default(cuid())
+  slug                  String                       @unique
+  name                  String                       @unique
+  provider              String
+  providerType          String                       @default("OTHER") // GOVERNMENT | UNIVERSITY | PRIVATE | INTERNATIONAL_ORGANIZATION | OTHER
+  country               String                       @default("GLOBAL")
+  destinationCountries  String[]                     @default([])
+  educationLevels       String[]                     @default([])
+  eligibleNationalities String[]                     @default([])
+  courseCategories      String[]                     @default([])
+  summary               String
+  coverage              String[]                     @default([]) // Tuition | Maintainance | Travel | Full-cost | Other
+  amountSummary         String?                      // null => "Information not available"
+  eligibilitySummary    String                       // broad note — never a guarantee
+  applicationRoute      String?                      // NATIONAL_PORTAL | INSTITUTION_PORTAL | PROVIDER_SITE | OTHER
+  applicationUrl        String?                      // official URL when verified
+  applicationUrlVerified Boolean                     @default(false)
+  deadlineDisplay       String?                      // null => "Information not available"
+  deadlineVerified      Boolean                      @default(false)
+  documentsRequired     String[]                     @default([])
+  verificationState     ScholarshipVerificationState @default(DATA_REQUIRED)
+  sourceName            String
+  sourceUrl             String
+  isActive              Boolean                      @default(true)
+  createdAt             DateTime                     @default(now())
+  updatedAt             DateTime                     @updatedAt
+
+  @@index([isActive])
+  @@index([country])
+  @@index([providerType])
+  @@index([verificationState])
+}
+
+// ============================================================================
+// Phase 33 (P5) — Student-owned application tracker (additive). Students
+// record institutions they are pursuing with an honest status; no submission,
+// payment, or admission outcome is ever automated here.
+// ============================================================================
+
+enum StudentApplicationStatus {
+  EXPLORING
+  SHORTLISTED
+  APPLICATION_STARTED
+  DOCUMENTS_PENDING
+  APPLIED
+  INTERVIEW_SELECTION
+  OFFER_RECEIVED
+  ACCEPTED
+  REJECTED
+  WITHDRAWN
+}
+
+model StudentApplication {
+  id              String                   @id @default(cuid())
+  studentId       String
+  student         User                     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  institutionType String                   // UNIVERSITY | INDIAN_INSTITUTION
+  institutionId   String
+  programName     String?
+  status          StudentApplicationStatus @default(EXPLORING)
+  notes           String?
+  createdAt       DateTime                 @default(now())
+  updatedAt       DateTime                 @updatedAt
+
+  @@unique([studentId, institutionType, institutionId, programName])
+  @@index([studentId])
+  @@index([institutionType, institutionId])
 }
