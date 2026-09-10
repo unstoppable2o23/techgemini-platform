@@ -3,12 +3,12 @@ import { prisma } from "@/lib/prisma";
 
 export async function GET(
   _request: NextRequest,
-  { params }: { params: Promise<{ slug: string }> }
+  { params }: { params: Promise<{ careerId: string }> }
 ) {
-  const { slug } = await params;
+  const { careerId } = await params;
 
-  const career = await prisma.career.findUnique({
-    where: { slug },
+  const career = await prisma.career.findFirst({
+    where: { OR: [{ id: careerId }, { slug: careerId }] },
   });
 
   if (!career) {

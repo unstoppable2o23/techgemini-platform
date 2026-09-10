@@ -54,32 +54,6 @@ export type ConceptResolution = {
 };
 
 /**
- * Resolves a raw value (student signal or career trait) onto a canonical
- * concept key from the assessment vocabulary. Returns a null key when the
- * value has no defensible canonical meaning. Values that merely contain a
- * canonical term where exactly ONE canonical term is embedded are accepted
- * (career traits like "Logical Mathematical Intelligence" map to
- * logical_mathematical, kind "embedded"); ambiguous values return null rather
- * than guessing. Alias-mapped terms (e.g. "Analytical Rigour" -> analytical)
- * return kind "alias".
- */
-export function resolveConcept(value: string): ConceptResolution {
-  const trimmed = value.trim().toLowerCase();
-  if (!trimmed) return { key: null, kind: "direct" };
-  if (isCanonicalSignal(trimmed)) return { key: trimmed, kind: "direct" };
-
-  const underscored = trimmed.replace(/[\s]+/g, "_");
-  if (isCanonicalSignal(underscored)) return { key: underscored, kind: "direct" };
-
-  const alias = canonicalizeCareerTraitValue(trimmed) ?? canonicalizeCareerTraitValue(underscored);
-  if (alias) return { key: alias, kind: "alias" };
-
-  const embedded = embeddedCanonicalKey(trimmed);
-  if (embedded) return { key: embedded, kind: "embedded" };
-  return { key: null, kind: "direct" };
-}
-
-/**
  * Returns just the canonical concept key (null when none). Kept for callers
  * that only need the concept, not the match tier kind.
  */
@@ -88,35 +62,45 @@ export function canonicalKey(value: string): string | null {
 }
 
 /**
- * Builds a literal regex that requires `phrase` to appear as whole words (or a
- * word-delimited whole token) rather than as a raw substring. This prevents
- * accidental sub-string collisions — e.g. "partnership" must not resolve to
- * "art" because it contains the letters "art", and "charting" must not resolve
- * to "art" either.
+ * Resolves a raw value (student signal or career trait) onto a canonical
+ * concept key from the assessment vocabulary. Returns a null key when the
+ * value has no defensible canonical meaning. Values that merely contain a
+ * canonical term where exactly ONE canonical term is embedded are accepted
+ * (career traits like "Logical Mathematical Intelligence" map to
+ * logical_mathematical, kind "embedded"); ambiguous values return null rather
+ * than guessing. Alias-mapped terms (e.g. "Analytical Rigour" -> analytical)
+ * return kind "alias".
+ *
+ * Pure + deterministic over a static vocabulary, so results are memoized:
+ * career trait values come from a small shared set, and this function runs on
+ * the matching hot path for every (signal, trait) pair. The cache only ever
+ * returns what the function would compute.
  */
-function wholeWordPhraseRegex(phrase: string): RegExp {
-  const escaped = phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`(?:^|[^A-Za-z0-9])${escaped}(?:$|[^A-Za-z0-9])`, "i");
-}
+const conceptCache = new Map<string, ConceptResolution>();
 
-/**
- * Finds a canonical key whose human-readable form is embedded as a sequence of
- * WHOLE WORDS in the value (never mid-token). Only returns a key when exactly
- * one candidate matches (never guess between two).
- */
-function embeddedCanonicalKey(normalized: string): string | null {
-  const candidates: string[] = [];
-  for (const key of Object.keys(CANONICAL_KEY_HINT)) {
-    const human = key.replace(/_/g, " ");
-    if (
-      wholeWordPhraseRegex(human).test(normalized) ||
-      wholeWordPhraseRegex(key).test(normalized)
-    ) {
-      candidates.push(key);
-    }
-  }
-  if (candidates.length === 1) return candidates[0];
-  return null;
+export function resolveConcept(value: string): ConceptResolution {
+  const trimmed = value.trim().toLowerCase();
+  const cached = conceptCache.get(trimmed);
+  if (cached !== undefined) return cached;
+
+  const compute = (): ConceptResolution => {
+    if (!trimmed) return { key: null, kind: "direct" };
+    if (isCanonicalSignal(trimmed)) return { key: trimmed, kind: "direct" };
+
+    const underscored = trimmed.replace(/[\s]+/g, "_");
+    if (isCanonicalSignal(underscored)) return { key: underscored, kind: "direct" };
+
+    const alias = canonicalizeCareerTraitValue(trimmed) ?? canonicalizeCareerTraitValue(underscored);
+    if (alias) return { key: alias, kind: "alias" };
+
+    const embedded = embeddedCanonicalKey(trimmed);
+    if (embedded) return { key: embedded, kind: "embedded" };
+    return { key: null, kind: "direct" };
+  };
+
+  const resolution = compute();
+  conceptCache.set(trimmed, resolution);
+  return resolution;
 }
 
 /**
@@ -157,6 +141,40 @@ const CANONICAL_KEY_HINT: Record<string, true> = {
   focus_persistence: true,
   self_motivation: true,
 };
+
+/**
+ * Precompiled whole-word matchers for every canonical hint key. RegExp
+ * compilation is expensive and `embeddedCanonicalKey` runs per (signal,
+ * trait) pair inside the matching hot loop, so the patterns are built exactly
+ * once at module load. Same pattern strings as `wholeWordPhraseRegex`.
+ */
+const CANONICAL_HINT_MATCHERS: { key: string; patterns: RegExp[] }[] =
+  Object.keys(CANONICAL_KEY_HINT).map((key) => ({
+    key,
+    patterns: [key.replace(/_/g, " "), key].map(
+      (phrase) =>
+        new RegExp(
+          `(?:^|[^A-Za-z0-9])${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:$|[^A-Za-z0-9])`,
+          "i"
+        )
+    ),
+  }));
+
+/**
+ * Finds a canonical key whose human-readable form is embedded as a sequence of
+ * WHOLE WORDS in the value (never mid-token). Only returns a key when exactly
+ * one candidate matches (never guess between two). Matchers are precompiled.
+ */
+function embeddedCanonicalKey(normalized: string): string | null {
+  const candidates: string[] = [];
+  for (const { key, patterns } of CANONICAL_HINT_MATCHERS) {
+    if (patterns[0].test(normalized) || patterns[1].test(normalized)) {
+      candidates.push(key);
+    }
+  }
+  if (candidates.length === 1) return candidates[0];
+  return null;
+}
 
 /**
  * Defensible concept groups for the STRUCTURED tier: near-synonyms that share
@@ -220,10 +238,15 @@ export function matchSignal(
   const norm = normalizeForMatch(raw);
   if (!norm) return NO_MATCH;
 
+  // Loop-invariant resolutions: the student side never changes across trait
+  // comparisons, so compute it once per signal instead of once per trait.
+  const studentRes = resolveConcept(raw);
+  const studentGroup = conceptGroup(raw);
+
   let best: SemanticMatch = NO_MATCH;
 
   for (const trait of traits) {
-    const m = matchSignalAgainstTrait(raw, norm, trait);
+    const m = matchSignalAgainstTrait(raw, norm, trait, studentRes, studentGroup);
     if (m.matched && m.strength > best.strength) best = m;
   }
 
@@ -233,12 +256,13 @@ export function matchSignal(
 function matchSignalAgainstTrait(
   raw: string,
   norm: string,
-  trait: { value: string; weight: number }
+  trait: { value: string; weight: number },
+  studentRes: ConceptResolution,
+  studentGroup: string | null
 ): SemanticMatch {
   const traitNorm = normalizeForMatch(trait.value);
   if (!traitNorm) return NO_MATCH;
 
-  const studentRes = resolveConcept(raw);
   const traitRes = resolveConcept(trait.value);
 
   // CANONICAL tier — both sides are literal canonical vocabulary for the same
@@ -259,14 +283,13 @@ function matchSignalAgainstTrait(
   }
 
   // STRUCTURED tier — both sides belong to the same defended concept group.
-  const group = conceptGroup(raw);
-  if (group && conceptGroup(trait.value) === group) {
+  if (studentGroup && conceptGroup(trait.value) === studentGroup) {
     return {
       matched: true,
       strength: MATCH_TYPE_STRENGTHS.STRUCTURED,
       matchType: "STRUCTURED",
       traitValue: trait.value,
-      explanation: `${raw} and '${trait.value}' are equivalent synonyms (${group}).`,
+      explanation: `${raw} and '${trait.value}' are equivalent synonyms (${studentGroup}).`,
     };
   }
 

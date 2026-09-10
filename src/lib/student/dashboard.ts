@@ -28,28 +28,51 @@ export type StudentDashboard = StudentBasics & {
 
 export async function getStudentDashboard(userId: string): Promise<StudentDashboard> {
   let basics: StudentBasics = FALLBACK_BASICS;
-  try {
-    basics = await getStudentBasics(userId);
-  } catch (e) {
-    console.error("[dashboard] getStudentBasics failed:", e);
-  }
-
   let topCareerMatches: any[] = [];
   let careerMatchDisclaimer: string | null = null;
   let topCareerId: string | null = null;
+  let trendingCareers: any[] = [];
+  let trendingResult: PersonalizedTrendingResult | null = null;
+
+  // The three big loads are independent of each other, so run them concurrently
+  // instead of serially. Pathways + university matches still wait on the top
+  // career id produced by the career-matches load.
+  const [basicsRes, matchesRes, trendingRes] = await Promise.allSettled([
+    getStudentBasics(userId),
+    getCareerMatches(userId, { limit: 3 }),
+    getStudentTrendingCareers(userId, { limit: 6 }),
+  ]);
+
+  if (basicsRes.status === "fulfilled") {
+    basics = basicsRes.value;
+  } else {
+    console.error("[dashboard] getStudentBasics failed:", basicsRes.reason);
+  }
+
+  if (matchesRes.status === "fulfilled") {
+    topCareerMatches = matchesRes.value.matches;
+    careerMatchDisclaimer = matchesRes.value.disclaimer ?? null;
+    topCareerId = topCareerMatches[0]?.career?.id ?? null;
+  } else {
+    console.error("[dashboard] getCareerMatches failed:", matchesRes.reason);
+    careerMatchDisclaimer = "Career matches are currently unavailable.";
+  }
+
+  if (trendingRes.status === "fulfilled") {
+    trendingResult = trendingRes.value;
+    trendingCareers = trendingRes.value.items.map((item) => ({
+      career: { id: item.careerId, name: item.name, slug: item.slug, title: item.title, category: item.category },
+      relevanceScore: item.relevanceScore,
+      trendScore: item.trendScore,
+      trendCategory: item.trendCategory,
+    }));
+  } else {
+    console.error("[dashboard] personalized trending failed:", trendingRes.reason);
+  }
+
   let educationPathways: any = null;
   let universityMatches: any = null;
   let universityMatchDisclaimer: string | null = null;
-
-  try {
-    const matches = await getCareerMatches(userId, { limit: 3 });
-    topCareerMatches = matches.matches;
-    careerMatchDisclaimer = matches.disclaimer ?? null;
-    topCareerId = topCareerMatches[0]?.career?.id ?? null;
-  } catch (e) {
-    console.error("[dashboard] getCareerMatches failed:", e);
-    careerMatchDisclaimer = "Career matches are currently unavailable.";
-  }
 
   if (topCareerId) {
     try {
@@ -70,23 +93,6 @@ export async function getStudentDashboard(userId: string): Promise<StudentDashbo
       universityMatches = null;
       universityMatchDisclaimer = "Personalized university matches are currently unavailable.";
     }
-  }
-
-  let trendingCareers: any[] = [];
-  let trendingResult: PersonalizedTrendingResult | null = null;
-  try {
-    const t = await getStudentTrendingCareers(userId, { limit: 6 });
-    trendingResult = t;
-    trendingCareers = t.items.map((item) => ({
-      career: { id: item.careerId, name: item.name, slug: item.slug, title: item.title, category: item.category },
-      relevanceScore: item.relevanceScore,
-      trendScore: item.trendScore,
-      trendCategory: item.trendCategory,
-    }));
-  } catch (e) {
-    console.error("[dashboard] personalized trending failed:", e);
-    trendingCareers = [];
-    trendingResult = null;
   }
 
   return {
