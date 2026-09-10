@@ -23,6 +23,7 @@
 //  20  unknown wording + status-text-with-icon copy on the UI surfaces
 //  21  readiness rules (READY vs NEEDS vs MISSING)
 //  22  route/UI integration (nav + REAL_STUDENT_ROUTES + build)
+//  23  counselling-process copy is specific but never over-certain (P3)
 import { test, before, after } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -604,4 +605,28 @@ test("22 · nav, route guard, decision-pack loader and build all agree", () => {
   assert.equal(focusProgramAdmission(guidanceForPrograms([]), "nope"), null);
   const loader = readRel("src/lib/decision-pack/loader.ts");
   assert.match(loader, /composeDecisionPack/);
+});
+
+/* 23 · counselling-process copy is specific but never over-certain (P3) */
+test("23 · counselling process text reflects MCC, notified AYUSH, national JEE, and CUET variability", () => {
+  const med = buildProgramAdmissionGuidance({ programId: "medicine", programName: "Medicine (MBBS)", level: "Degree", category: null });
+  assert.match(med.counsellingProcess, /Medical Counselling Committee \(MCC\)/i, "MBBS cites MCC by name");
+  assert.match(med.counsellingProcess, /All-India quota|state counselling authority/i, "MBBS covers AIQ + state");
+  const dent = buildProgramAdmissionGuidance({ programId: "dentistry", programName: "Dentistry (BDS)", level: "Degree", category: null });
+  assert.match(dent.counsellingProcess, /Medical Counselling Committee \(MCC\)/i, "BDS cites MCC by name");
+
+  for (const name of ["Ayurveda (BAMS)", "Homeopathy (BHMS)"]) {
+    const ay = buildProgramAdmissionGuidance({ programId: name.toLowerCase(), programName: name, level: "Degree", category: null });
+    assert.ok(ay.counsellingProcess, `${name} has counselling guidance`);
+    assert.match(ay.counsellingProcess, /notified counselling authority/i, `${name} hedges on notified authority`);
+    assert.match(ay.counsellingProcess, /domicile/i, `${name} mentions domicile rules`);
+    assert.match(ay.relevantEntranceExams[0].context, /NEET-UG/i, `${name} references NEET-UG`);
+  }
+
+  const eng = buildProgramAdmissionGuidance({ programId: "en1", programName: "B.E. in Mechanical Engineering", level: "Degree", category: "engineering" });
+  assert.match(eng.counsellingProcess, /national joint-seat-allocation/i, "B.E. hedges with national seat-allocation wording");
+  assert.match(eng.counsellingProcess, /outside the national round/i, "B.E. cites non-national routes");
+
+  const law = buildProgramAdmissionGuidance({ programId: "law1", programName: "Bachelor of Laws (LL.B.)", level: "Degree", category: "law" });
+  assert.match(law.counsellingProcess, /Never assume every CUET university follows one identical process/i, "CUET variability is explicit");
 });

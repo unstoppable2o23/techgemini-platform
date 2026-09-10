@@ -1,0 +1,85 @@
+{
+  "Ayurveda": [
+    {
+      "program": "ayurveda-medicine",
+      "relationshipType": "PRIMARY",
+      "rationale": "Ayurveda (BAMS) is the direct Indian-system medicine degree."
+    },
+    {
+      "program": "public-health-masters",
+      "relationshipType": "RELEVANT",
+      "rationale": "Public-health training supports preventive-care practice."
+    },
+    {
+      "program": "hospital-administration",
+      "relationshipType": "RELEVANT",
+      "rationale": "Practice management complements clinical care."
+    }
+  ],
+  "Homeopathy": [
+    {
+      "program": "homeopathy-medicine",
+      "relationshipType": "PRIMARY",
+      "rationale": "Homeopathy (BHMS) is the direct Indian-system medicine degree."
+    },
+    {
+      "program": "public-health-masters",
+      "relationshipType": "RELEVANT",
+      "rationale": "Public-health training supports preventive-care practice."
+    },
+    {
+      "program": "hospital-administration",
+      "relationshipType": "RELEVANT",
+      "rationale": "Practice management complements clinical care."
+    }
+  ],
+  "Medical Writing": [
+    {
+      "program": "life-sciences",
+      "relationshipType": "PRIMARY",
+      "rationale": "Life-sciences study is the standard on-ramp into medical writing."
+    },
+    {
+      "program": "pharmacy-bpharm",
+      "relationshipType": "COMMON",
+      "rationale": "Pharmacy background supports clinical and regulatory writing."
+    },
+    {
+      "program": "clinical-research",
+      "relationshipType": "RELEVANT",
+      "rationale": "Clinical-research knowledge feeds regulatory writing work."
+    },
+    {
+      "program": "public-health-masters",
+      "relationshipType": "RELEVANT",
+      "rationale": "Public-health study supports evidence communication."
+    }
+  ],
+  "Healthcare Management": [
+    {
+      "program": "hospital-administration",
+      "relationshipType": "PRIMARY",
+      "rationale": "Hospital administration is the direct management discipline."
+    },
+    {
+      "program": "business-administration-mba",
+      "relationshipType": "COMMON",
+      "rationale": "Management education underpins healthcare leadership."
+    },
+    {
+      "program": "operations-management",
+      "relationshipType": "RELEVANT",
+      "rationale": "Operations skills apply to running healthcare services."
+    },
+    {
+      "program": "public-health-masters",
+      "relationshipType": "RELEVANT",
+      "rationale": "Health-systems understanding supports the role."
+    },
+    {
+      "program": "business-administration-bba",
+      "relationshipType": "COMMON",
+      "rationale": "Undergraduate business is the school-stage on-ramp into healthcare management."
+    }
+  ]
+}

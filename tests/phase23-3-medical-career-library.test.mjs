@@ -11,8 +11,11 @@
  *    Pharmacy/Nursing/Physiotherapy/Optometry never MBBS);
  *  - polytechnic/diploma invariants from Phase 23.2 stay intact.
  *
- * No new careers are created — the layer only fixes how the existing 289 careers
- * are found. Career count and engine baselines are asserted unchanged.
+ * The layer itself creates no careers — it fixes how catalogue careers are
+ * found. The P3 production-acceptance pass extended the catalogue from 289 to
+ * 293 active careers via an additive seed (Ayurveda, Homeopathy, Medical
+ * Writing, Healthcare Management) with phase17-curated mappings; every other
+ * engine/core-table baseline is asserted unchanged.
  */
 import assert from "node:assert/strict";
 import test, { describe } from "node:test";
@@ -231,9 +234,9 @@ describe("Career -> program mappings", () => {
     }
   });
 
-  test("18: no healthcare career was added — Career count stays frozen at 289", async () => {
+  test("18: catalogue count matches the P3 baseline of 293 active careers", async () => {
     const count = await prisma.career.count({ where: { isActive: true } });
-    assert.equal(count, 289, "adding a career row would break the engine freeze baseline");
+    assert.equal(count, 293, "career catalogue must stay at the P3 medical-coverage baseline");
   });
 });
 

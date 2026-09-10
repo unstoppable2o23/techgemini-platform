@@ -149,9 +149,11 @@ function medicalGuidance(
         ]
       : [];
   const counsellingProcess =
-    routes.includes("CENTRAL_COUNSELLING")
-      ? "For the All-India quota, counselling is centralized (Medical Counselling Committee). State quotas run through the respective state counselling authorities — confirm the notified procedure for your domicile."
-      : null;
+    d.id === "medicine" || d.id === "dentistry"
+      ? "For participating MBBS/BDS seats under the All-India quota, counselling is centralized through the Medical Counselling Committee (MCC): register → fill choices for participating colleges → seat-allotment rounds → document verification → accept the seat and report to the allotted institution if you choose it. State quota seats go through the respective state counselling authority, which runs a similar choice → allotment → verify → report cycle under its own notified rules and domicile eligibility. Round counts, dates and required documents change every year — always confirm against the current MCC and state notices."
+      : d.id === "ayush"
+        ? "Where an AYUSH program (BAMS/BHMS/BUMS/BSMS) admits through NEET-UG, the counselling and seat allocation for your year are run by the notified counselling authority — All-India quota and state quota rules apply per your domicile, and some institutions admit through their own process. Confirm which authority counsels each college you shortlist and follow its notified schedule for the current year."
+        : null;
   return {
     programId: program.programId,
     programName: program.programName,
@@ -193,7 +195,8 @@ function nonMedicalGuidance(
             "Law admissions follow institution-specific routes: some National Law Universities use CLAT, others (or states) use CUET-UG or their own entrances. Verify the notified entrance per institution.",
         },
       ],
-      counsellingProcess: null,
+      counsellingProcess:
+        "CUET is a common university entrance; the admission process after the test is decided by each participating university (for example the University of Delhi runs its own central allocation process for UG admissions). Never assume every CUET university follows one identical process — check each university's official admission notice for your admission year.",
       eligibilityGuidance: "Class 12, unless the institution specifies otherwise.",
       officialSources: [
         getOfficialSource("clat-consortium")!,
@@ -240,7 +243,7 @@ function nonMedicalGuidance(
         },
       ],
       counsellingProcess:
-        "Institutions that participate in a national joint-seat-allocation (JoSAA) round follow that process; others follow state or institution counselling — confirm the notified route.",
+        "Institutions that participate in a national joint-seat-allocation process (e.g. JoSAA) follow its cycle for participating seats: register → fill choices → seat-allocation rounds → document verification → report to the allotted institution if you accept the seat. Institutions outside the national round run state or university counselling with their own notified rules — confirm the route that applies to each college and to your admission year.",
       eligibilityGuidance: "Class 12 (Maths + Science stream where required) — confirm the notified criteria.",
       officialSources: [
         getOfficialSource("nta")!,

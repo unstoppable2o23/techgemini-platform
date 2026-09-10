@@ -2,16 +2,21 @@
  * Phase 23.2 — Part B: Medical Education Intelligence regression suite.
  *
  * Covers:
- *   - The medical-education registry (pure data) fully covers the 34 active
- *     Healthcare & Medicine careers with honest, attributed wording.
+ *   - The medical-education registry (pure data) fully covers the 36 clinical
+ *     Healthcare & Medicine careers (the 4 P3 additions include 2 clinical AYUSH
+ *     careers — Ayurveda/Homeopathy — plus 2 non-clinical exclusions:
+ *     Medical Writing and Healthcare Management).
  *   - Roadmap medical-branch wording constraints: no "(JEE|NEET|CUET|CAT)
  *     must/required" patterns, no PG steps in school stages, India vs abroad
  *     never conflated, no fabricated costs.
  *   - The 5 new verified MBBS programs (KGMU, Maulana Azad MC, Lady Hardinge MC,
  *     Grant MC, CMC Vellore) resolve through the verified-program candidate tier
  *     and contain no fabrication.
- *   - No core-table drift (Career 289, Degree 751, University 20,
- *     IndianInstitution 73969).
+ *   - No core-table drift (Career 293, Degree 751, University 20,
+ *     IndianInstitution 73969). Career 289 -> 293 reflects the P3 additive
+ *     medical-coverage expansion (Ayurveda, Homeopathy, Medical Writing,
+ *     Healthcare Management) seeded via scripts/seed-career-intelligence.mjs;
+ *     the engine logic and all other core tables remain frozen.
  */
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
@@ -75,11 +80,35 @@ describe("Phase 23.2 — medical-education registry (knowledge layer)", () => {
     assert.equal(new Set(all.map((d) => d.title.toLowerCase())).size, 21);
   });
 
-  test("M2: registry covers every active Healthcare & Medicine career (34/34)", async () => {
-    const careers = await prisma.career.findMany({ where: { category: "Healthcare & Medicine", isActive: true }, select: { slug: true } });
-    assert.equal(careers.length, 34);
-    const missing = careers.filter((c) => !getMedicalDisciplineForCareerSlug(c.slug));
-    assert.deepEqual(missing, [], `uncovered medical careers: ${missing.map((c) => c.slug).join(", ")}`);
+  test("M2: registry covers every clinical active Healthcare & Medicine career (36/38; 2 non-clinical exclusions)", async () => {
+    const careers = await prisma.career.findMany({ where: { category: "Healthcare & Medicine", isActive: true }, select: { slug: true, name: true } });
+    assert.equal(careers.length, 38);
+    // Deliberate P3 additions that are healthcare careers but NOT clinical
+    // systems of medicine — they carry generic conservative wording instead of
+    // a regulated-medical-entrance registry entry (Phase 23.2 design).
+    const NON_CLINICAL_EXCLUSIONS = new Map([
+      ["medical-writing", "non-clinical medical communications (no regulated clinical entry)"],
+      ["healthcare-management", "non-clinical healthcare management (no regulated clinical entry)"],
+    ]);
+    const unresolvedClinical = careers.filter(
+      (c) => !NON_CLINICAL_EXCLUSIONS.has(c.slug) && !getMedicalDisciplineForCareerSlug(c.slug)
+    );
+    assert.deepEqual(
+      unresolvedClinical.map((c) => c.slug),
+      [],
+      `uncovered clinical medical careers: ${unresolvedClinical.map((c) => c.slug).join(", ")}`
+    );
+    for (const [slug, why] of NON_CLINICAL_EXCLUSIONS) {
+      assert.ok(careers.some((c) => c.slug === slug), `${slug} must exist`);
+      assert.equal(
+        getMedicalDisciplineForCareerSlug(slug),
+        null,
+        `${slug} must stay intentionally excluded (${why})`
+      );
+    }
+    // The two clinical AYUSH additions resolve into the ayush discipline.
+    assert.ok(getMedicalDisciplineForCareerSlug("ayurveda")?.id === "ayush", "ayurveda must resolve to ayush");
+    assert.ok(getMedicalDisciplineForCareerSlug("homeopathy")?.id === "ayush", "homeopathy must resolve to ayush");
   });
 
   test("M3: every discipline has the required evidence fields populated; sources are required where a regulator exists", () => {
@@ -251,8 +280,8 @@ describe("Phase 23.2 — verified MBBS programs (data addition)", () => {
     }
   });
 
-  test("M21: core counts unchanged — Career 289, Degree 751, University 20, IndianInstitution 73969", async () => {
-    assert.equal(await prisma.career.count({ where: { isActive: true } }), 289);
+  test("M21: core counts unchanged — Career 293, Degree 751, University 20, IndianInstitution 73969", async () => {
+    assert.equal(await prisma.career.count({ where: { isActive: true } }), 293);
     assert.equal(await prisma.degree.count(), 751);
     assert.equal(await prisma.university.count(), 20);
     assert.equal(await prisma.indianInstitution.count(), 73969);

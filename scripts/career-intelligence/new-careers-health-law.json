@@ -3165,5 +3165,653 @@
       "Public Health"
     ],
     "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Ayurveda",
+    "title": "Ayurvedic Physician (BAMS)",
+    "introduction": "Ayurveda is one of India's traditional systems of medicine. The mainstream route is the Bachelor of Ayurvedic Medicine and Surgery (BAMS), a full undergraduate degree regulated by the National Commission for Indian System of Medicine (NCISM).",
+    "whoShouldPursue": [
+      "Students interested in Indian systems of medicine",
+      "Learners drawn to holistic, plant-based treatment approaches",
+      "Those willing to complete a regulated BAMS degree and internship"
+    ],
+    "workNature": {
+      "description": "Ayurvedic physicians diagnose and treat patients using Ayurvedic principles, prescribe formulations, counsel lifestyle and preventive care, and maintain clinical records.",
+      "examples": [
+        "Patient consultation and diagnosis",
+        "Prescribing Ayurvedic formulations",
+        "Lifestyle and preventive-care counselling",
+        "Clinical documentation"
+      ]
+    },
+    "eligibility": [
+      "Class 12 with Physics, Chemistry and Biology",
+      "Entrance exam where notified (NEET-UG is accepted for notified AYUSH admissions)",
+      "Admission to a NCISM-recognised BAMS college"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "4-7 LPA",
+        "median": "8-15 LPA",
+        "senior": "18-30 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "Growing",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Hospital Chains",
+        "Ayurvedic Clinics & Wellness Centres",
+        "OPD & Polyclinics",
+        "Pharma & Nutraceuticals",
+        "Public Health Programmes"
+      ],
+      "futureOutlook": "Demand for regulated, qualified Ayurvedic practitioners continues to grow alongside India's AYUSH sector and wellness industry."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route (BAMS)",
+        "steps": [
+          {
+            "title": "Class 11-12 Science",
+            "description": "Physics, Chemistry and Biology foundation."
+          },
+          {
+            "title": "Undergraduate Entrance",
+            "description": "BAMS admission is entrance-based where notified (e.g. NEET-UG for notified AYUSH admissions); confirm the current notified route."
+          },
+          {
+            "title": "BAMS Degree",
+            "description": "Bachelor of Ayurvedic Medicine and Surgery at an NCISM-recognised college, including the prescribed clinical internship."
+          },
+          {
+            "title": "Registration",
+            "description": "Practising requires registration under the applicable state board / NCISM rules."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Ayurvedic Hospital / Clinic Practice",
+        "description": "Clinical practice with an NCISM-recognised qualification."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Wellness & Lifestyle Consulting",
+        "description": "Preventive-care and wellness programmes built on Ayurvedic practice."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "Digital Wellness Platforms",
+        "description": "Tele-consultation and digital Ayurvedic health services."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Ayurveda (BAMS) Career in India: Eligibility & Pathway",
+      "description": "Ayurveda career guide - BAMS eligibility, NEET-UG where notified, NCISM registration and pathways.",
+      "keywords": [
+        "BAMS career India",
+        "Ayurveda admission",
+        "NCISM registration"
+      ],
+      "faqs": [
+        {
+          "question": "Is NEET-UG compulsory for BAMS?",
+          "answer": "NEET-UG's notified scope has included AYUSH courses such as BAMS. Confirm the current year's notification and the institution's own admission rules."
+        },
+        {
+          "question": "Who regulates Ayurveda education in India?",
+          "answer": "The National Commission for Indian System of Medicine (NCISM)."
+        }
+      ]
+    },
+    "cat": "Healthcare & Medicine",
+    "sub": "Indian Systems of Medicine",
+    "tech": [
+      "Ayurvedic Diagnostics",
+      "Formulation Knowledge",
+      "Electronic Health Records",
+      "Clinical Documentation"
+    ],
+    "soft": [
+      "Patient Communication",
+      "Empathy",
+      "Ethical Practice",
+      "Documentation Discipline"
+    ],
+    "int": [
+      "Traditional medicine",
+      "Holistic patient care",
+      "Preventive healthcare"
+    ],
+    "per": [
+      "Compassionate",
+      "Patient",
+      "Ethical",
+      "Observant"
+    ],
+    "deg": [
+      "BAMS (Bachelor of Ayurvedic Medicine and Surgery)"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Biology"
+    ],
+    "tools": [
+      "Ayurvedic formularies",
+      "EHR systems",
+      "Referral networks"
+    ],
+    "acts": [
+      "Patient consultation",
+      "Prescribing formulations",
+      "Preventive-care counselling",
+      "Clinical documentation"
+    ],
+    "env": "Clinics, hospitals and wellness centres; consultation-based practice",
+    "path": [
+      "BAMS Graduate",
+      "Ayurvedic Medical Officer",
+      "Consultant Ayurvedic Physician",
+      "Hospital Department Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Homeopathy",
+      "Medicine",
+      "Hospital Administration"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Homeopathy",
+    "title": "Homoeopathic Physician (BHMS)",
+    "introduction": "Homeopathy is one of India's traditional systems of medicine. The mainstream route is the Bachelor of Homoeopathic Medicine and Surgery (BHMS), a full undergraduate degree regulated by the National Commission for Homoeopathy (NCH).",
+    "whoShouldPursue": [
+      "Students interested in the homoeopathic system of medicine",
+      "Learners drawn to individualised, low-dose treatment approaches",
+      "Those willing to complete a regulated BHMS degree and internship"
+    ],
+    "workNature": {
+      "description": "Homoeopathic physicians consult patients, take detailed case histories, select remedies on homoeopathic principles, counsel follow-up care and maintain clinical records.",
+      "examples": [
+        "Case-taking and history analysis",
+        "Remedy selection and prescribing",
+        "Follow-up and treatment monitoring",
+        "Clinical documentation"
+      ]
+    },
+    "eligibility": [
+      "Class 12 with Physics, Chemistry and Biology",
+      "Entrance exam where notified (NEET-UG is accepted for notified AYUSH admissions)",
+      "Admission to an NCH-recognised BHMS college"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "3-6 LPA",
+        "median": "7-14 LPA",
+        "senior": "16-28 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "Growing",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Hospital Chains",
+        "Homoeopathic Clinics & Dispensaries",
+        "OPD & Polyclinics",
+        "Public Health Programmes"
+      ],
+      "futureOutlook": "Regulated, qualified homoeopathic practitioners remain in steady demand across India's AYUSH sector."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route (BHMS)",
+        "steps": [
+          {
+            "title": "Class 11-12 Science",
+            "description": "Physics, Chemistry and Biology foundation."
+          },
+          {
+            "title": "Undergraduate Entrance",
+            "description": "BHMS admission is entrance-based where notified (e.g. NEET-UG for notified AYUSH admissions); confirm the current notified route."
+          },
+          {
+            "title": "BHMS Degree",
+            "description": "Bachelor of Homoeopathic Medicine and Surgery at an NCH-recognised college, including the prescribed clinical internship."
+          },
+          {
+            "title": "Registration",
+            "description": "Practising requires registration under the applicable state board / NCH rules."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Homoeopathic Clinic / Dispensary Practice",
+        "description": "Clinical practice with an NCH-recognised qualification."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Telemedicine & Digital Clinics",
+        "description": "Remote consultation and follow-up services for homoeopathic care."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "Digital Health Records",
+        "description": "Technology-enabled case documentation and practice management."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Homeopathy (BHMS) Career in India: Eligibility & Pathway",
+      "description": "Homeopathy career guide - BHMS eligibility, NEET-UG where notified, NCH registration and pathways.",
+      "keywords": [
+        "BHMS career India",
+        "Homeopathy admission",
+        "NCH registration"
+      ],
+      "faqs": [
+        {
+          "question": "Is NEET-UG compulsory for BHMS?",
+          "answer": "NEET-UG's notified scope has included AYUSH courses such as BHMS. Confirm the current year's notification and the institution's own admission rules."
+        },
+        {
+          "question": "Who regulates homeopathy education in India?",
+          "answer": "The National Commission for Homoeopathy (NCH)."
+        }
+      ]
+    },
+    "cat": "Healthcare & Medicine",
+    "sub": "Indian Systems of Medicine",
+    "tech": [
+      "Homoeopathic Case-Taking",
+      "Remedy Knowledge",
+      "Repertory Tools",
+      "Clinical Documentation"
+    ],
+    "soft": [
+      "Patient Communication",
+      "Empathy",
+      "Ethical Practice",
+      "Documentation Discipline"
+    ],
+    "int": [
+      "Homoeopathic medicine",
+      "Individualised patient care",
+      "Preventive healthcare"
+    ],
+    "per": [
+      "Compassionate",
+      "Attentive",
+      "Ethical",
+      "Observant"
+    ],
+    "deg": [
+      "BHMS (Bachelor of Homoeopathic Medicine and Surgery)"
+    ],
+    "subj": [
+      "Physics",
+      "Chemistry",
+      "Biology"
+    ],
+    "tools": [
+      "Repertories",
+      "EHR systems",
+      "Referral networks"
+    ],
+    "acts": [
+      "Case-taking and analysis",
+      "Remedy selection and prescribing",
+      "Follow-up and monitoring",
+      "Clinical documentation"
+    ],
+    "env": "Clinics, dispensaries and hospitals; consultation-based practice",
+    "path": [
+      "BHMS Graduate",
+      "Homoeopathic Medical Officer",
+      "Consultant Homoeopathic Physician",
+      "Hospital Department Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "Medium",
+    "rem": "Low",
+    "rel": [
+      "Ayurveda",
+      "Medicine",
+      "Hospital Administration"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Medical Writing",
+    "title": "Medical Writer",
+    "introduction": "Medical writers translate complex biomedical and regulatory information into clear documents - clinical study reports, patient-information leaflets, regulatory submissions and scientific publications - for pharma, CROs and healthcare communications.",
+    "whoShouldPursue": [
+      "Life-science graduates who enjoy writing",
+      "Detail-oriented communicators drawn to regulated documentation",
+      "Professionals seeking healthcare careers outside clinical practice"
+    ],
+    "workNature": {
+      "description": "Medical writers plan, research, draft and revise clinical and regulatory documents, aligning references and ensuring submissions follow applicable standards.",
+      "examples": [
+        "Drafting clinical study documentation",
+        "Writing patient information and education content",
+        "Preparing regulatory submission documents",
+        "Editing and referencing scientific publications"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's in life sciences / pharmacy / similar",
+      "Strong scientific writing and English proficiency",
+      "Regulatory-writing training or certification helpful"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "4-8 LPA",
+        "median": "10-18 LPA",
+        "senior": "25-45 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+15%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Pharmaceutical Companies",
+        "Clinical Research Organisations",
+        "Medical Communications Agencies",
+        "Regulatory Consultancies",
+        "Healthcare Publishing"
+      ],
+      "futureOutlook": "India's CRO and pharma ecosystem sustains strong demand for qualified medical writers, including remote global roles."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Bachelor's Degree",
+            "description": "B.Sc Life Sciences / B.Pharm or a similar science degree."
+          },
+          {
+            "title": "Medical Writing Training",
+            "description": "Add regulatory or scientific writing training and portfolio pieces."
+          },
+          {
+            "title": "First medical-writing Role",
+            "description": "Join pharma, a CRO or a med-comm agency as a junior medical writer."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Regulatory Medical Writer",
+        "description": "Clinical and regulatory documents for submissions."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Scientific Communications Specialist",
+        "description": "Publications, conference content and evidence communications."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "AI-Assisted Medical Writing",
+        "description": "Using drafting tools with human verification under regulatory standards."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Medical Writing Career in India: Courses, Salary & Scope",
+      "description": "Medical writing career guide - qualifications, regulatory writing scope and CRO careers in India.",
+      "keywords": [
+        "medical writing careers India",
+        "regulatory writing course",
+        "medical writer salary"
+      ],
+      "faqs": [
+        {
+          "question": "What qualification do I need to become a medical writer?",
+          "answer": "A life-science or pharmacy bachelor's degree, strong writing skills and usually regulatory/scientific writing training."
+        },
+        {
+          "question": "Is medical writing a remote-friendly career?",
+          "answer": "Yes, many CRO and med-comm writing roles are remote-friendly."
+        }
+      ]
+    },
+    "cat": "Healthcare & Medicine",
+    "sub": "Medical Communications",
+    "tech": [
+      "Scientific Writing",
+      "Regulatory Documentation (ICH/CTD basics)",
+      "Reference Management",
+      "MS Office / Docs"
+    ],
+    "soft": [
+      "Written Clarity",
+      "Precision",
+      "Deadline Discipline",
+      "Team Collaboration"
+    ],
+    "int": [
+      "Biomedical science",
+      "Regulated documentation",
+      "Healthcare communication"
+    ],
+    "per": [
+      "Meticulous",
+      "Methodical",
+      "Reliable",
+      "Curious"
+    ],
+    "deg": [
+      "B.Sc Life Sciences / B.Pharm + medical-writing training"
+    ],
+    "subj": [
+      "Biology",
+      "Chemistry",
+      "English"
+    ],
+    "tools": [
+      "Reference managers",
+      "ICH/CTD templates",
+      "MS Word / Google Docs",
+      "AI-assist tools"
+    ],
+    "acts": [
+      "Researching and drafting documents",
+      "Building and verifying references",
+      "Editing and revising content",
+      "Coordinating with clinical and regulatory teams"
+    ],
+    "env": "Pharma, CROs and med-comm agencies; office or remote",
+    "path": [
+      "Junior Medical Writer",
+      "Medical Writer",
+      "Senior Medical Writer",
+      "Medical Writing Lead"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "High",
+    "rel": [
+      "Clinical Research",
+      "Regulatory Affairs",
+      "Pharmacovigilance"
+    ],
+    "minEdu": "Bachelor's"
+  },
+  {
+    "name": "Healthcare Management",
+    "title": "Healthcare Manager",
+    "introduction": "Healthcare managers run the operational, financial and administrative side of hospitals, clinics and healthcare organisations - turning clinical work into well-run services.",
+    "whoShouldPursue": [
+      "Organisers drawn to hospitals and healthcare systems",
+      "Graduates who want an impact role without clinical practice",
+      "Leaders with strong process and people skills"
+    ],
+    "workNature": {
+      "description": "Healthcare managers plan operations, manage budgets and staff, coordinate departments, improve quality and compliance, and work with clinical teams and vendors.",
+      "examples": [
+        "Managing hospital operations and patient flow",
+        "Overseeing budgets and procurement",
+        "Coordinating departments and staff",
+        "Driving quality and compliance initiatives"
+      ]
+    },
+    "eligibility": [
+      "Bachelor's degree (management/healthcare or any stream with relevant experience)",
+      "Hospital / healthcare administration training or MBA (Healthcare) helpful",
+      "Graduate management admission route where applicable"
+    ],
+    "stats": {
+      "salary": {
+        "entry": "5-9 LPA",
+        "median": "12-22 LPA",
+        "senior": "30-55 LPA",
+        "currency": "INR"
+      },
+      "jobGrowth": "+12%",
+      "demandLevel": "High",
+      "topIndustries": [
+        "Hospital Chains",
+        "Healthcare Startups",
+        "Diagnostics & Labs",
+        "Health Insurance",
+        "Public Health Systems"
+      ],
+      "futureOutlook": "Multi-specialty growth, NABH-standard operations and digital health keep healthcare management roles in steady demand."
+    },
+    "pathways": [
+      {
+        "name": "Academic Route",
+        "steps": [
+          {
+            "title": "Bachelor's Degree",
+            "description": "Any stream works; healthcare/management-related courses help."
+          },
+          {
+            "title": "Postgraduate / Certification",
+            "description": "MBA (Healthcare/Health Administration) or hospital-administration certification."
+          },
+          {
+            "title": "Management Trainee Role",
+            "description": "Join a hospital or healthcare organisation as a trainee."
+          }
+        ]
+      }
+    ],
+    "conventionalOptions": [
+      {
+        "title": "Hospital Operations Manager",
+        "description": "Running day-to-day hospital operations."
+      }
+    ],
+    "newAgeOptions": [
+      {
+        "title": "Digital Health Product Manager",
+        "description": "Managing healthcare products, telemedicine and health-tech platforms."
+      }
+    ],
+    "aiRelatedOptions": [
+      {
+        "title": "Healthcare Data Manager",
+        "description": "Using data and dashboards to run operations."
+      }
+    ],
+    "videoRecommendations": [],
+    "seo": {
+      "title": "Healthcare Management Career in India: Courses & Scope",
+      "description": "Healthcare management career guide - courses, hospital administration and management scope in India.",
+      "keywords": [
+        "healthcare management India",
+        "hospital administration career",
+        "MBA healthcare"
+      ],
+      "faqs": [
+        {
+          "question": "What degree do I need for healthcare management?",
+          "answer": "Any bachelor's degree, usually followed by hospital/healthcare administration training or an MBA (Healthcare)."
+        },
+        {
+          "question": "Is healthcare management the same as hospital administration?",
+          "answer": "Healthcare management is the broader field; hospital administration focuses on hospital operations. Both are management careers, not clinical ones."
+        }
+      ]
+    },
+    "cat": "Healthcare & Medicine",
+    "sub": "Healthcare Operations & Management",
+    "tech": [
+      "Hospital Information Systems",
+      "Budgeting & Finance Basics",
+      "Compliance (NABH basics)",
+      "Data Dashboards"
+    ],
+    "soft": [
+      "Leadership",
+      "People Management",
+      "Process Improvement",
+      "Stakeholder Communication"
+    ],
+    "int": [
+      "Healthcare systems",
+      "Operations and process",
+      "Team leadership"
+    ],
+    "per": [
+      "Organised",
+      "Decisive",
+      "Empathetic",
+      "Resilient"
+    ],
+    "deg": [
+      "Bachelor's + MBA (Healthcare/Health Administration)"
+    ],
+    "subj": [
+      "Biology",
+      "Mathematics",
+      "Business Studies"
+    ],
+    "tools": [
+      "Hospital info systems",
+      "Excel / dashboards",
+      "Project management tools"
+    ],
+    "acts": [
+      "Planning hospital operations",
+      "Managing budgets and staff",
+      "Coordinating departments",
+      "Quality and compliance work"
+    ],
+    "env": "Hospitals, clinics and healthcare startups; on-site with some desk work",
+    "path": [
+      "Management Trainee",
+      "Operations Executive",
+      "Assistant Manager",
+      "Hospital / Department Manager"
+    ],
+    "auto": "Medium",
+    "ind": "High",
+    "glo": "High",
+    "rem": "Medium",
+    "rel": [
+      "Hospital Administration",
+      "Public Health",
+      "Business Analyst"
+    ],
+    "minEdu": "Bachelor's"
   }
 ]

@@ -130,8 +130,8 @@ export const MEDICAL_DISCIPLINES: MedicalDisciplineInfo[] = [
   {
     id: "ayush",
     title: "Integrated & Indian Systems of Medicine (AYUSH)",
-    careerSlugs: [],
-    careerNames: [],
+    careerSlugs: ["ayurveda", "homeopathy"],
+    careerNames: ["ayurveda", "homeopathy"],
     summary:
       "BAMS (Ayurveda), BHMS (Homoeopathy), BUMS (Unani) and BSMS (Siddha) are separate undergraduate qualifications in India's Indian Systems of Medicine — distinct from allopathic MBBS. Regulatory oversight sits with the National Commission for Indian System of Medicine (NCISM) and the National Commission for Homoeopathy (NCH).",
     curriculumFacts: [

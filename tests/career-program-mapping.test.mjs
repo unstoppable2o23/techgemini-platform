@@ -10,11 +10,14 @@ const VALID_REL = new Set(["PRIMARY", "COMMON", "SPECIALIZED", "RELEVANT", "OPTI
 const LEGACY_MALFORMED = [/ANY\s+degree/i, /12TH/i, /PASS\s/i, /^\s*\)/];
 
 // Baseline DB-safety values captured before Phase 17 (scripts/audit/phase17-db-baseline.json).
+// activeCareer was 289; the P3 medical-coverage expansion added 4 active careers
+// (Ayurveda, Homeopathy, Medical Writing, Healthcare Management) via additive seed
+// + phase17-curated mappings, bringing the catalogue baseline to 293.
 const BASELINE = {
   University: 20,
   IndianInstitution: 73969,
   Program: 80,
-  activeCareer: 289,
+  activeCareer: 293,
 };
 
 // ========== 1. Every active career has >=1 active mapping ==========
