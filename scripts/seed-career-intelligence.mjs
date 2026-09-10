@@ -1,7 +1,8 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 import { PrismaClient } from "@prisma/client";
+import { cleanDegreeList } from "./phase16e1-data/degree-clean.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const prisma = new PrismaClient();
@@ -37,6 +38,37 @@ function loadNewCareers() {
     }
   }
   return all;
+}
+
+/**
+ * Builds the scalar update for one enrichment entry (P4: extracted for
+ * testability and to guarantee write-time hygiene). Degree tokens are always
+ * passed through cleanDegreeList so a re-seed can never re-introduce the
+ * forbidden legacy patterns; isEmerging is only touched when authored, so an
+ * existing flag is preserved.
+ */
+export function buildEnrichmentUpdate(e, career) {
+  return {
+    category: e.cat || undefined,
+    subcategory: e.sub || undefined,
+    technicalSkills: e.tech || undefined,
+    softSkills: e.soft || undefined,
+    interests: e.int || undefined,
+    personalityTraits: e.per || undefined,
+    recommendedDegrees: e.deg ? cleanDegreeList(e.deg) : undefined,
+    recommendedSubjects: e.subj || undefined,
+    toolsAndTechnologies: e.tools || undefined,
+    workActivities: e.acts || undefined,
+    workEnvironment: e.env || undefined,
+    careerPath: e.path || undefined,
+    automationRisk: e.auto || undefined,
+    indiaRelevance: e.ind || undefined,
+    globalRelevance: e.glo || undefined,
+    remotePotential: e.rem || undefined,
+    relatedCareers: e.rel || undefined,
+    isEmerging: e.emerging === undefined ? career.isEmerging : Boolean(e.emerging),
+    minStudyLevel: e.minEdu || undefined,
+  };
 }
 
 async function main() {
@@ -78,7 +110,7 @@ async function main() {
       softSkills: c.soft || [],
       interests: c.int || [],
       personalityTraits: c.per || [],
-      recommendedDegrees: c.deg || [],
+      recommendedDegrees: cleanDegreeList(c.deg),
       recommendedSubjects: c.subj || [],
       toolsAndTechnologies: c.tools || [],
       workActivities: c.acts || [],
@@ -171,27 +203,7 @@ async function main() {
     }
     await prisma.career.update({
       where: { id: career.id },
-      data: {
-        category: e.cat || undefined,
-        subcategory: e.sub || undefined,
-        technicalSkills: e.tech || undefined,
-        softSkills: e.soft || undefined,
-        interests: e.int || undefined,
-        personalityTraits: e.per || undefined,
-        recommendedDegrees: e.deg || undefined,
-        recommendedSubjects: e.subj || undefined,
-        toolsAndTechnologies: e.tools || undefined,
-        workActivities: e.acts || undefined,
-        workEnvironment: e.env || undefined,
-        careerPath: e.path || undefined,
-        automationRisk: e.auto || undefined,
-        indiaRelevance: e.ind || undefined,
-        globalRelevance: e.glo || undefined,
-        remotePotential: e.rem || undefined,
-        relatedCareers: e.rel || undefined,
-        isEmerging: Boolean(e.emerging),
-        minStudyLevel: e.minEdu || undefined,
-      },
+      data: buildEnrichmentUpdate(e, career),
     });
 
     // derive traits
@@ -219,9 +231,14 @@ async function main() {
   console.log(`Total careers in database: ${total}`);
 }
 
-main()
-  .catch((e) => {
-    console.error(e);
-    process.exit(1);
-  })
-  .finally(() => prisma.$disconnect());
+if (
+  process.argv[1] &&
+  import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href
+) {
+  main()
+    .catch((e) => {
+      console.error(e);
+      process.exit(1);
+    })
+    .finally(() => prisma.$disconnect());
+}

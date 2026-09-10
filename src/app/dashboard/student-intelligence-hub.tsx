@@ -193,7 +193,7 @@ export default function StudentIntelligenceHub({
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {d.topCareerMatches.map((m: any) => (
-              <Card key={m.careerId} className="flex flex-col border-accent/15 shadow-sm transition-shadow hover:shadow-md">
+              <Card key={m.careerId} className="min-w-0 flex flex-col border-accent/15 shadow-sm transition-shadow hover:shadow-md">
                 <CardContent className="flex flex-1 flex-col gap-3 p-5">
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
